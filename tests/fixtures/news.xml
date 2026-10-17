@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<rss version="2.0"><channel><title>Synthetic fixture feed</title><link>https://example.test</link><description>Test data only</description>
+<item><title>Test VPN vulnerability CVE-2026-99001</title><link>https://example.test/vpn?utm_source=test</link><pubDate>Sat, 17 Oct 2026 06:00:00 GMT</pubDate><description><![CDATA[Synthetic advisory. <a href="https://example.test/rules/test.yml">Rule</a> T1566.001.]]></description></item>
+<item><title>Undated synthetic item</title><link>https://example.test/undated</link><description>Test missing publication date.</description></item>
+<item><title>Future item</title><link>https://example.test/future</link><pubDate>Sun, 17 Oct 2027 06:00:00 GMT</pubDate></item>
+<item><title>Invalid scheme</title><link>javascript:alert(1)</link></item>
+</channel></rss>

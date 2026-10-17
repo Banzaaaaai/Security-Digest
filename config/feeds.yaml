@@ -1,0 +1,427 @@
+feeds:
+- name: The Hacker News
+  url: https://feeds.feedburner.com/TheHackersNews
+  tier: news
+  site: https://feeds.feedburner.com/TheHackersNews
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: BleepingComputer
+  url: https://www.bleepingcomputer.com/feed/
+  tier: news
+  site: https://www.bleepingcomputer.com/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: The Register Security
+  url: https://www.theregister.com/security/headlines.atom
+  tier: news
+  site: https://www.theregister.com/security/headlines.atom
+  enabled: false
+  type: rss
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Help Net Security
+  url: https://www.helpnetsecurity.com/feed/
+  tier: news
+  site: https://www.helpnetsecurity.com/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: SecurityWeek
+  url: https://www.securityweek.com/feed/
+  tier: news
+  site: https://www.securityweek.com/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Dark Reading
+  url: https://www.darkreading.com/rss.xml
+  tier: news
+  site: https://www.darkreading.com/rss.xml
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Infosecurity Magazine
+  url: https://www.infosecurity-magazine.com/rss/news/
+  tier: news
+  site: https://www.infosecurity-magazine.com/rss/news/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Cybersecurity Dive
+  url: https://www.cybersecuritydive.com/feeds/news/
+  tier: news
+  site: https://www.cybersecuritydive.com/feeds/news/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: SC Media
+  url: TODO_VERIFY
+  tier: news
+  site: https://scworld.com
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: CSO Online
+  url: TODO_VERIFY
+  tier: news
+  site: https://csoonline.com
+  enabled: false
+  type: rss
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: KrebsOnSecurity
+  url: https://krebsonsecurity.com/feed/
+  tier: investigation
+  site: https://krebsonsecurity.com/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: The Record
+  url: https://therecord.media/feed
+  tier: investigation
+  site: https://therecord.media/feed
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: CyberScoop
+  url: https://cyberscoop.com/feed/
+  tier: policy
+  site: https://cyberscoop.com/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Schneier on Security
+  url: https://www.schneier.com/feed/atom/
+  tier: analysis
+  site: https://www.schneier.com/feed/atom/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Security Boulevard (Security Bloggers Network)
+  url: TODO_VERIFY
+  tier: aggregator
+  site: https://securityboulevard.com
+  enabled: false
+  type: rss
+  verified: true
+  last_error: HTTPStatusError
+- name: Packet Storm News
+  url: https://packetstorm.news/rss/news
+  tier: aggregator
+  site: https://packetstorm.news/rss/news
+  enabled: false
+  type: rss
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Microsoft Security Blog
+  url: https://www.microsoft.com/en-us/security/blog/feed/
+  tier: vendor
+  site: https://www.microsoft.com/en-us/security/blog/feed/
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: WeLiveSecurity (ESET)
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://welivesecurity.com
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Unit 42
+  url: https://unit42.paloaltonetworks.com/feed/
+  tier: vendor
+  site: https://unit42.paloaltonetworks.com
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Cisco Talos
+  url: https://blog.talosintelligence.com/rss/
+  tier: vendor
+  site: https://blog.talosintelligence.com
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Sophos X-Ops
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://news.sophos.com
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Wiz Research
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://wiz.io/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Okta Security Advisories
+  url: TODO_VERIFY
+  tier: advisory
+  site: https://sec.okta.com
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Proofpoint Threat Insight
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://proofpoint.com/us/blog/threat-insight
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Abnormal Threat Research
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://abnormal.ai/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Cofense Intelligence
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://cofense.com/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: CISA ICS Advisories
+  url: TODO_VERIFY
+  tier: advisory
+  site: https://cisa.gov/news-events/ics-advisories
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Dragos Blog
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://dragos.com/blog
+  enabled: false
+  type: rss
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Claroty Team82
+  url: https://claroty.com/team82/disclosure-dashboard/feed/atom
+  tier: vendor
+  site: https://claroty.com/team82/research
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Nozomi Networks Labs
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://nozominetworks.com/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: SANS ICS Blog
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://sans.org/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: OWASP GenAI Security Project
+  url: https://genai.owasp.org/feed/
+  tier: research
+  site: https://genai.owasp.org
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Embrace The Red
+  url: TODO_VERIFY
+  tier: research
+  site: https://embracethered.com/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Simon Willison (prompt injection)
+  url: https://simonwillison.net/atom/everything/
+  tier: research
+  site: https://simonwillison.net
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: Socket.dev Blog
+  url: https://socket.dev/api/blog/feed.atom
+  tier: vendor
+  site: https://socket.dev/blog
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: StepSecurity Blog
+  url: TODO_VERIFY
+  tier: vendor
+  site: https://stepsecurity.io/blog
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: SANS ISC
+  url: https://isc.sans.edu/rssfeed.xml
+  tier: advisory
+  site: https://isc.sans.edu/rssfeed.xml
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: CISA Advisories
+  url: https://www.cisa.gov/cybersecurity-advisories/all.xml
+  tier: advisory
+  site: https://www.cisa.gov/cybersecurity-advisories/all.xml
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: MSRC Update Guide
+  url: https://api.msrc.microsoft.com/update-guide/rss
+  tier: advisory
+  site: https://api.msrc.microsoft.com/update-guide/rss
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: NCSC-NL
+  url: TODO_VERIFY
+  tier: regional
+  region: Europe
+  site: https://ncsc.nl
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: NCSC-UK
+  url: TODO_VERIFY
+  tier: regional
+  region: Europe
+  site: https://ncsc.gov.uk
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: ENISA
+  url: TODO_VERIFY
+  tier: regional
+  region: Europe
+  site: https://enisa.europa.eu
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Security.NL
+  url: https://www.security.nl/rss/headlines.xml
+  tier: regional
+  region: Europe
+  site: https://security.nl
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: NCSC Ireland
+  url: TODO_VERIFY
+  tier: regional
+  region: Europe
+  site: https://ncsc.gov.ie
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Central Bank of Ireland
+  url: TODO_VERIFY
+  tier: regulator
+  region: Europe
+  site: https://centralbank.ie/news-media
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: NCSC.ch / BACS
+  url: TODO_VERIFY
+  tier: regional
+  region: Europe
+  site: https://ncsc.admin.ch
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: FINMA News
+  url: TODO_VERIFY
+  tier: regulator
+  region: Europe
+  site: https://finma.ch/en/news
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: UAE Cyber Security Council
+  url: TODO_VERIFY
+  tier: regional
+  region: MEA
+  site: https://csc.gov.ae
+  enabled: false
+  type: rss
+  verified: true
+  last_error: ConnectError
+- name: Saudi NCA
+  url: TODO_VERIFY
+  tier: regional
+  region: MEA
+  site: https://nca.gov.sa
+  enabled: false
+  type: page_watch
+  verified: true
+  last_error: No valid RSS/Atom feed found
+- name: Gulf Business (tech/security)
+  url: TODO_VERIFY
+  tier: regional
+  region: MEA
+  site: https://gulfbusiness.com
+  enabled: false
+  type: rss
+  verified: true
+  last_error: ValueError
+- name: ITP.net (security)
+  url: TODO_VERIFY
+  tier: regional
+  region: MEA
+  site: https://itp.net
+  enabled: false
+  type: rss
+  verified: true
+  last_error: ValueError
+enrichment:
+  cisa_kev_json: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+  epss_api: https://api.first.org/data/v1/epss
+  nvd_api: https://services.nvd.nist.gov/rest/json/cves/2.0
+  github_advisories_api: https://api.github.com/advisories
+  mitre_attack_stix: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json

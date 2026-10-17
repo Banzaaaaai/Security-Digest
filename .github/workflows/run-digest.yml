@@ -1,0 +1,124 @@
+name: SecDigest shared runner
+on:
+  workflow_call:
+    inputs:
+      kind:
+        required: true
+        type: string
+      manual:
+        required: true
+        type: boolean
+      force_send:
+        default: false
+        type: boolean
+      period:
+        default: ''
+        type: string
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Check scheduled local hour before setup
+        id: hour
+        env:
+          KIND: ${{ inputs.kind }}
+          MANUAL: ${{ inputs.manual }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          import os
+          now = datetime.now(ZoneInfo('Europe/Amsterdam'))
+          kind = os.environ['KIND']
+          allowed = os.environ['MANUAL'] == 'true' or (now.hour == (7 if kind == 'daily' else 8) and (kind != 'weekly' or now.weekday() == 0))
+          print('run=' + str(allowed).lower())
+          PY
+      - uses: actions/setup-python@v6
+        if: steps.hour.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install locked runtime dependencies
+        if: steps.hour.outputs.run == 'true'
+        run: |
+          pip install -r requirements.txt
+          pip install --no-deps .
+      - name: Check configuration activation gate
+        if: steps.hour.outputs.run == 'true'
+        id: guard
+        env:
+          KIND: ${{ inputs.kind }}
+          MANUAL: ${{ inputs.manual }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from secdigest.config import Config
+          from secdigest.scheduling import schedule_allowed
+          import os
+          print('run=' + str(schedule_allowed(Config(), os.environ['KIND'], manual=os.environ['MANUAL'] == 'true')).lower())
+          PY
+      - name: Read database storage mode
+        if: steps.guard.outputs.run == 'true'
+        id: storage
+        run: python scripts/ci_storage.py inspect >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/restore@v4
+        if: steps.guard.outputs.run == 'true' && steps.storage.outputs.cache_database == 'true'
+        id: database
+        with:
+          path: data/secdigest.sqlite
+          key: secdigest-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: secdigest-db-${{ github.ref_name }}-
+      - name: Run digest
+        if: steps.guard.outputs.run == 'true'
+        id: digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          KIND: ${{ inputs.kind }}
+          PERIOD: ${{ inputs.period }}
+          FORCE_SEND: ${{ inputs.force_send }}
+          CACHE_DATABASE: ${{ steps.storage.outputs.cache_database }}
+        run: |
+          python - <<'PY'
+          import os, subprocess, sys
+          from pathlib import Path
+          if os.environ['CACHE_DATABASE'] == 'true' and not Path('data/secdigest.sqlite').exists():
+              sys.exit('Database cache is unavailable. Restore a backup before resuming delivery.')
+          kind = os.environ['KIND']
+          command = ['secdigest', 'run-' + kind]
+          if os.environ['PERIOD']:
+              command += ['--date' if kind == 'daily' else '--week', os.environ['PERIOD']]
+          if os.environ['FORCE_SEND'] == 'true':
+              command.append('--force-send')
+          sys.exit(subprocess.call(command))
+          PY
+      - name: Check database size
+        if: always() && steps.guard.outputs.run == 'true'
+        id: size
+        run: python scripts/ci_storage.py prepare >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/save@v4
+        if: always() && steps.guard.outputs.run == 'true' && steps.size.outputs.cache_database == 'true'
+        with:
+          path: data/secdigest.sqlite
+          key: secdigest-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Commit runtime artifacts, including failure status
+        if: always() && steps.guard.outputs.run == 'true'
+        env:
+          CACHE_DATABASE: ${{ steps.size.outputs.cache_database }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          python scripts/ci_storage.py stage
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: archive SecDigest run"
+            git push
+          fi

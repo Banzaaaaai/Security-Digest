@@ -1,0 +1,29 @@
+name: SecDigest weekly
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      force_send:
+        description: Send again even if this week's digest was already sent
+        type: boolean
+        default: false
+      week:
+        description: Optional ISO week (YYYY-Www)
+        type: string
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: secdigest-data-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  digest:
+    uses: ./.github/workflows/run-digest.yml
+    with:
+      kind: weekly
+      manual: ${{ github.event_name == 'workflow_dispatch' }}
+      force_send: ${{ inputs.force_send || false }}
+      period: ${{ inputs.week || '' }}
+    secrets: inherit

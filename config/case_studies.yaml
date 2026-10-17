@@ -1,0 +1,97 @@
+case_studies:
+  security-at-telecom-scale:
+    title: Security at telecom scale
+    industry: telecommunications
+    country: NL
+    practice_areas:
+    - vuln_exposure_mgmt
+    - siem_detection
+    - security_automation
+    url: https://brusiantsou.com/stories/security-at-telecom-scale/
+  secure-azure-migration:
+    title: Secure azure migration
+    industry: private_banking
+    country: CH
+    practice_areas:
+    - zero_trust_cloud
+    - data_protection_dlp
+    - grc_audit
+    url: https://brusiantsou.com/stories/secure-azure-migration/
+  zero-trust-at-enterprise-scale:
+    title: Zero trust at enterprise scale
+    industry: energy_services
+    country: AE
+    practice_areas:
+    - zero_trust_cloud
+    - iam_pam
+    url: https://brusiantsou.com/stories/zero-trust-at-enterprise-scale/
+  continuous-vulnerability-management:
+    title: Continuous vulnerability management
+    industry: energy_services
+    country: AE
+    practice_areas:
+    - vuln_exposure_mgmt
+    - security_automation
+    url: https://brusiantsou.com/stories/continuous-vulnerability-management/
+  security-in-the-delivery-path:
+    title: Security in the delivery path
+    industry: government
+    country: AE
+    practice_areas:
+    - devsecops
+    url: https://brusiantsou.com/stories/security-in-the-delivery-path/
+  vendor-release-automation:
+    title: Vendor release automation
+    industry: retail_banking
+    country: IE
+    practice_areas:
+    - vuln_exposure_mgmt
+    - security_automation
+    - devsecops
+    url: https://brusiantsou.com/stories/vendor-release-automation/
+  audit-ready-by-design:
+    title: Audit ready by design
+    industry: global_it_services
+    country: US
+    practice_areas:
+    - grc_audit
+    url: https://brusiantsou.com/stories/audit-ready-by-design/
+  security-foundations-for-logistics:
+    title: Security foundations for logistics
+    industry: logistics
+    country: AE
+    practice_areas:
+    - grc_audit
+    - zero_trust_cloud
+    url: https://brusiantsou.com/stories/security-foundations-for-logistics/
+  security-visibility-for-manufacturing:
+    title: Security visibility for manufacturing
+    industry: industrial_manufacturing
+    country: CIS
+    practice_areas:
+    - siem_detection
+    - ot_ics
+    url: https://brusiantsou.com/stories/security-visibility-for-manufacturing/
+  security-services-for-investment-management:
+    title: Security services for investment management
+    industry: investment_management
+    country: US
+    practice_areas:
+    - grc_audit
+    - security_automation
+    url: https://brusiantsou.com/stories/security-services-for-investment-management/
+  secure-development-for-automotive:
+    title: Secure development for automotive
+    industry: automotive
+    country: US
+    practice_areas:
+    - devsecops
+    url: https://brusiantsou.com/stories/secure-development-for-automotive/
+  securing-offshore-operations:
+    title: Securing offshore operations
+    industry: energy_services
+    country: Multi-country
+    practice_areas:
+    - ot_ics
+    - data_protection_dlp
+    url: https://brusiantsou.com/stories/securing-offshore-operations/

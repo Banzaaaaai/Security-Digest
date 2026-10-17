@@ -1,0 +1,300 @@
+[
+  {
+    "timestamp": "2026-10-17T20:39:13.358902+00:00",
+    "status": "success",
+    "stage": "feeds",
+    "emails": [],
+    "synthetic": false,
+    "duration_s": 9.73,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
+  },
+  {
+    "timestamp": "2026-10-17T20:58:19.078469+00:00",
+    "status": "success",
+    "stage": "feeds",
+    "emails": [],
+    "synthetic": false,
+    "duration_s": 10.03,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
+  },
+  {
+    "timestamp": "2026-10-17T20:58:30.639128+00:00",
+    "status": "success",
+    "stage": "enrichment",
+    "emails": [],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-17T20:58:30.707003+00:00",
+      "enabled": 22,
+      "failures": 0,
+      "new": 5211,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 50
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 15
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 50
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 250
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 15
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 15
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 30
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "CISA Advisories",
+          "ok": true,
+          "new": 30
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 4609
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 50
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "duration_s": 53.98,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
+  },
+  {
+    "timestamp": "2026-10-17T21:00:18.194485+00:00",
+    "status": "success",
+    "stage": "enrichment",
+    "emails": [],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-17T21:00:18.286510+00:00",
+      "enabled": 22,
+      "failures": 0,
+      "new": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "duration_s": 4.3,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
+  },
+  {
+    "timestamp": "2026-10-17T21:02:07.709578+00:00",
+    "status": "success",
+    "stage": "config",
+    "emails": [],
+    "synthetic": false,
+    "duration_s": 0.08,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
+  }
+]

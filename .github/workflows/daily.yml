@@ -1,0 +1,29 @@
+name: SecDigest daily
+on:
+  schedule:
+    - cron: '0 5 * * *'
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_send:
+        description: Send again even if this day's digest was already sent
+        type: boolean
+        default: false
+      date:
+        description: Optional report date (YYYY-MM-DD)
+        type: string
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: secdigest-data-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  digest:
+    uses: ./.github/workflows/run-digest.yml
+    with:
+      kind: daily
+      manual: ${{ github.event_name == 'workflow_dispatch' }}
+      force_send: ${{ inputs.force_send || false }}
+      period: ${{ inputs.date || '' }}
+    secrets: inherit

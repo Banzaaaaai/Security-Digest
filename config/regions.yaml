@@ -1,0 +1,22 @@
+regions:
+  US:
+    description: United States
+  Europe:
+    description: EU, EEA, UK, Switzerland
+  MEA:
+    description: 'Middle East and Africa: GCC (UAE, KSA, Kuwait, Oman, Qatar, Bahrain),
+      Iraq, rest of the Middle East, Algeria, rest of Africa'
+  Other:
+    description: India, CIS, APAC, LATAM
+priority_countries:
+  US: US
+  NL: Europe
+  IE: Europe
+  CH: Europe
+  GB: Europe
+  AE: MEA
+  SA: MEA
+country_aliases:
+  UK: GB
+  UAE: AE
+country_bonus: 10

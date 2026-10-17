@@ -1,0 +1,59 @@
+importance_points:
+  critical: 100
+  high: 75
+  medium: 45
+  low: 15
+weights:
+  importance: 0.4
+  location: 0.2
+  industry: 0.2
+  practice: 0.2
+priority_regions:
+- US
+- Europe
+- MEA
+categories:
+- vulnerability
+- exploitation_in_the_wild
+- data_breach
+- ransomware
+- apt_nation_state
+- supply_chain
+- fraud_phishing
+- regulation_policy
+- law_enforcement
+- research
+- vendor_product
+- other
+rubric: '| Level | Criteria (any one is sufficient) |
+
+  |---|---|
+
+  | **critical** | Active in-the-wild exploitation of a `watch_tech` product or other
+  widely deployed enterprise technology; new CISA KEV entry for such technology; systemic
+  supply-chain compromise (major vendor, MSP/RMM tool, popular package or CI action);
+  major breach or outage at an organization in a target industry in the US, Europe
+  or MEA; nation-state campaign against critical infrastructure in a target region
+  |
+
+  | **high** | Critical or high CVE (CVSS ≥ 8.0) with a public PoC or vendor emergency
+  patch; significant breach (millions of records or a regulated entity); new ransomware
+  or phishing campaign hitting target industries; binding regulation with near-term
+  effect in a target region; major law-enforcement takedown; new OT/ICS advisory for
+  equipment common in energy or manufacturing |
+
+  | **medium** | Notable vulnerability without exploitation; breach at a mid-size
+  or non-target-industry organization; threat research with new TTPs; proposed regulation
+  or regulator guidance; notable vendor or security product change |
+
+  | **low** | Opinion pieces, product marketing, funding or M&A news, minor incidents
+  outside the target scope, recap articles |'
+title_similarity: 85
+cve_title_similarity: 55
+cluster_days: 7
+epss_threshold: 0.5
+independent_sources: 3
+inclusion:
+  min_importance: medium
+  relevance: 60
+cross_industry_floor: 40

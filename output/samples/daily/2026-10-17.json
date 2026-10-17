@@ -1,0 +1,1224 @@
+{
+  "kind": "daily",
+  "period": "2026-10-17",
+  "start": "2026-10-16T08:00:00+00:00",
+  "end": "2026-10-17T08:00:00+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": true,
+  "items": [
+    {
+      "cluster_id": "fixture-06",
+      "headline": "Build pipeline package compromise affects suppliers",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 95
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 95,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "GitHub Actions"
+      ],
+      "cves": [
+        "CVE-2026-99003"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "automotive",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/6",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T01:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "GitHub Actions",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {
+        "CVE-2026-99003": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "priority": 98.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-01",
+      "headline": "Dutch carrier strengthens identity monitoring",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "apt_nation_state",
+      "importance": "critical",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 100,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 95,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 95,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Cisco IOS XE"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-at-telecom-scale",
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/1",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T06:00:00+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://source1.example.test/story/1",
+          "source": "Fixture source 2",
+          "published": "2026-10-17T06:00:00+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://source2.example.test/story/1",
+          "source": "Fixture source 3",
+          "published": "2026-10-17T06:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Cisco IOS XE",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {},
+      "priority": 98.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-00",
+      "headline": "Enterprise VPN exploitation requires urgent triage",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "exploitation_in_the_wild",
+      "importance": "critical",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 95,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Fortinet FortiOS"
+      ],
+      "cves": [
+        "CVE-2026-99001"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-at-telecom-scale",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/0",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T07:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "CISA KEV added within seven days; watch technology match"
+      ],
+      "watch_tech": [
+        {
+          "name": "Fortinet FortiOS",
+          "aliases": [
+            "FortiOS"
+          ],
+          "cross_industry": true,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {
+        "CVE-2026-99001": {
+          "kev": {
+            "dateAdded": "2026-10-16",
+            "vendorProject": "Fortinet",
+            "product": "FortiOS",
+            "requiredAction": "Synthetic patch instruction"
+          },
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "priority": 98.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-02",
+      "headline": "UAE energy operator reviews industrial gateway patch",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "vulnerability",
+      "importance": "critical",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 100,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "AE"
+      ],
+      "industry_relevance": {
+        "energy_services": 95,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 95,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Industrial gateway"
+      ],
+      "cves": [
+        "CVE-2026-99002"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "energy_services",
+        "region": "MEA",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/2",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T05:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "EPSS meets configured threshold"
+      ],
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-99002": {
+          "kev": null,
+          "epss": 0.6,
+          "cvss": null
+        }
+      },
+      "priority": 98.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-07",
+      "headline": "Investment managers review email fraud safeguards",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 95,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 95,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Microsoft 365"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "investment_management",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/7",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Microsoft 365",
+          "aliases": [
+            "Office 365",
+            "M365"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "priority": 88.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-10",
+      "headline": "Government teams automate exposure reporting",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 100,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "SA"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 95,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 95,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Qualys"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-at-telecom-scale",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "MEA",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/10",
+          "source": "Fixture source 1",
+          "published": "2026-10-16T21:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Qualys",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "vulnerability"
+        }
+      ],
+      "cve_details": {},
+      "priority": 76.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-04",
+      "headline": "Irish banks receive operational resilience guidance",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 100,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "IE"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 95,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 95,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "dora",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "secure-azure-migration",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "retail_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/4",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T03:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 76.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-08",
+      "headline": "Logistics teams test a data exposure response plan",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 100,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "AE"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 95,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 95,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Azure"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "secure-azure-migration",
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "logistics",
+        "region": "MEA",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/8",
+          "source": "Fixture source 1",
+          "published": "2026-10-16T23:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Azure",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "priority": 76.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-03",
+      "headline": "Swiss private banks examine privileged access controls",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 100,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 95,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 95,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Entra ID"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "secure-azure-migration",
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "private_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/3",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T04:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Entra ID",
+          "aliases": [
+            "Azure AD",
+            "Microsoft Entra"
+          ],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "priority": 76.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-09",
+      "headline": "Manufacturing SOC publishes industrial detection notes",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "KZ"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 95,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 95,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Wazuh"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "security-at-telecom-scale",
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "industrial_manufacturing",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/9",
+          "source": "Fixture source 1",
+          "published": "2026-10-16T22:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Wazuh",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "siem"
+        }
+      ],
+      "cve_details": {},
+      "priority": 59.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-05",
+      "headline": "Research demonstrates prompt injection in MCP tools",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "IN"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 95,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 95
+      },
+      "affected_technologies": [
+        "Model Context Protocol (MCP)"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/5",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T02:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Model Context Protocol (MCP)",
+          "aliases": [
+            "Model Context Protocol",
+            "MCP"
+          ],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "priority": 59.0,
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-11",
+      "headline": "Cloud vendors announce a minor dashboard refresh",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "JP"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "AWS"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "secure-azure-migration",
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/11",
+          "source": "Fixture source 1",
+          "published": "2026-10-16T20:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "AWS",
+          "aliases": [
+            "Amazon Web Services"
+          ],
+          "cross_industry": false,
+          "vendor": "infrastructure"
+        }
+      ],
+      "cve_details": {},
+      "priority": 12.0,
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 4,
+    "high": 1,
+    "medium": 6,
+    "low": 1
+  },
+  "unclassified": 0,
+  "new_kev": [
+    {
+      "cve": "CVE-2026-99001",
+      "dateAdded": "2026-10-16",
+      "vendorProject": "Fortinet",
+      "product": "FortiOS",
+      "requiredAction": "Synthetic patch instruction"
+    }
+  ],
+  "watch_hits": 10,
+  "watch": {
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "Build pipeline package compromise affects suppliers",
+        "cluster_id": "fixture-06"
+      },
+      {
+        "technology": "GitHub Actions",
+        "headline": "Build pipeline package compromise affects suppliers",
+        "cluster_id": "fixture-06"
+      }
+    ],
+    "endpoint_network": [
+      {
+        "technology": "Cisco IOS XE",
+        "headline": "Dutch carrier strengthens identity monitoring",
+        "cluster_id": "fixture-01"
+      },
+      {
+        "technology": "Fortinet FortiOS",
+        "headline": "Enterprise VPN exploitation requires urgent triage",
+        "cluster_id": "fixture-00"
+      }
+    ],
+    "microsoft": [
+      {
+        "technology": "Microsoft 365",
+        "headline": "Investment managers review email fraud safeguards",
+        "cluster_id": "fixture-07"
+      },
+      {
+        "technology": "Azure",
+        "headline": "Logistics teams test a data exposure response plan",
+        "cluster_id": "fixture-08"
+      },
+      {
+        "technology": "Entra ID",
+        "headline": "Swiss private banks examine privileged access controls",
+        "cluster_id": "fixture-03"
+      }
+    ],
+    "vulnerability": [
+      {
+        "technology": "Qualys",
+        "headline": "Government teams automate exposure reporting",
+        "cluster_id": "fixture-10"
+      }
+    ],
+    "siem": [
+      {
+        "technology": "Wazuh",
+        "headline": "Manufacturing SOC publishes industrial detection notes",
+        "cluster_id": "fixture-09"
+      }
+    ],
+    "ai": [
+      {
+        "technology": "Model Context Protocol (MCP)",
+        "headline": "Research demonstrates prompt injection in MCP tools",
+        "cluster_id": "fixture-05"
+      }
+    ],
+    "infrastructure": [
+      {
+        "technology": "AWS",
+        "headline": "Cloud vendors announce a minor dashboard refresh",
+        "cluster_id": "fixture-11"
+      }
+    ]
+  },
+  "regulations": {
+    "Europe": [
+      {
+        "key": "dora",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "DORA",
+        "headline": "Irish banks receive operational resilience guidance",
+        "sources": [
+          {
+            "url": "https://source0.example.test/story/4",
+            "source": "Fixture source 1",
+            "published": "2026-10-17T03:00:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ]
+  },
+  "other_count": 1,
+  "source_health": {},
+  "enrichment_warnings": [],
+  "cases": {
+    "security-in-the-delivery-path": [
+      "fixture-06"
+    ],
+    "vendor-release-automation": [
+      "fixture-06",
+      "fixture-04"
+    ],
+    "security-at-telecom-scale": [
+      "fixture-01",
+      "fixture-00",
+      "fixture-10",
+      "fixture-09"
+    ],
+    "security-visibility-for-manufacturing": [
+      "fixture-01",
+      "fixture-09"
+    ],
+    "continuous-vulnerability-management": [
+      "fixture-00",
+      "fixture-02",
+      "fixture-10"
+    ],
+    "zero-trust-at-enterprise-scale": [
+      "fixture-02",
+      "fixture-03",
+      "fixture-11"
+    ],
+    "security-services-for-investment-management": [
+      "fixture-07"
+    ],
+    "secure-azure-migration": [
+      "fixture-04",
+      "fixture-08",
+      "fixture-03",
+      "fixture-11"
+    ],
+    "security-foundations-for-logistics": [
+      "fixture-08"
+    ],
+    "audit-ready-by-design": [
+      "fixture-05"
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+regulations:
+  iso_27001:
+    name: ISO 27001
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  pci_dss:
+    name: PCI DSS
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  nist_csf_2_0:
+    name: NIST CSF 2.0
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  nist_ssdf:
+    name: NIST SSDF
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  soc_2:
+    name: SOC 2
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  iec_62443:
+    name: IEC 62443
+    jurisdiction: Global / standards
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  nis2:
+    name: NIS2
+    jurisdiction: EU
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  dora:
+    name: DORA
+    jurisdiction: EU
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  gdpr:
+    name: GDPR
+    jurisdiction: EU
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  eu_ai_act:
+    name: EU AI Act
+    jurisdiction: EU
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  cyber_resilience_act_cra:
+    name: Cyber Resilience Act (CRA)
+    jurisdiction: EU
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  uk_gdpr:
+    name: UK GDPR
+    jurisdiction: UK
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  uk_cyber_security_and_resilience_bill:
+    name: UK Cyber Security and Resilience Bill
+    jurisdiction: UK
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  fca_operational_resilience:
+    name: FCA operational resilience
+    jurisdiction: UK
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  finma_circulars_operational_risks_and_resilience:
+    name: FINMA circulars (operational risks and resilience)
+    jurisdiction: Switzerland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  revised_fadp:
+    name: revised FADP
+    jurisdiction: Switzerland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  ncsc_bacs_cyberattack_reporting_obligation:
+    name: NCSC/BACS cyberattack reporting obligation
+    jurisdiction: Switzerland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  cyberbeveiligingswet_nis2_implementation:
+    name: Cyberbeveiligingswet (NIS2 implementation)
+    jurisdiction: Netherlands
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  dnb_requirements:
+    name: DNB requirements
+    jurisdiction: Netherlands
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  uae_information_assurance_standard:
+    name: UAE Information Assurance Standard
+    jurisdiction: UAE
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  cyber_security_council_directives:
+    name: Cyber Security Council directives
+    jurisdiction: UAE
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  cbuae_requirements:
+    name: CBUAE requirements
+    jurisdiction: UAE
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  nca_essential_cybersecurity_controls_ecc:
+    name: NCA Essential Cybersecurity Controls (ECC)
+    jurisdiction: KSA
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  nca_ot_controls:
+    name: NCA OT controls
+    jurisdiction: KSA
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  sama_cyber_security_framework:
+    name: SAMA Cyber Security Framework
+    jurisdiction: KSA
+    region: MEA
+    industries: all
+    milestones: []
+    needs_dates: true
+  nis2_transposition_national_cyber_security_bill:
+    name: NIS2 transposition (National Cyber Security Bill)
+    jurisdiction: Ireland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  central_bank_of_ireland_cross_industry_guidance_on_operational_resilience_and_outsourcing:
+    name: Central Bank of Ireland cross-industry guidance on operational resilience
+      and outsourcing
+    jurisdiction: Ireland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  dora_supervision_by_the_central_bank:
+    name: DORA supervision by the Central Bank
+    jurisdiction: Ireland
+    region: Europe
+    industries: all
+    milestones: []
+    needs_dates: true
+  sec_cyber_disclosure_rules:
+    name: SEC cyber disclosure rules
+    jurisdiction: US
+    region: US
+    industries: all
+    milestones: []
+    needs_dates: true
+  circia:
+    name: CIRCIA
+    jurisdiction: US
+    region: US
+    industries: all
+    milestones: []
+    needs_dates: true
+  nydfs_part_500:
+    name: NYDFS Part 500
+    jurisdiction: US
+    region: US
+    industries: all
+    milestones: []
+    needs_dates: true
+  cmmc:
+    name: CMMC
+    jurisdiction: US
+    region: US
+    industries: all
+    milestones: []
+    needs_dates: true
+  state_privacy_laws:
+    name: state privacy laws
+    jurisdiction: US
+    region: US
+    industries: all
+    milestones: []
+    needs_dates: true
+  unece_r155_r156_automotive:
+    name: UNECE R155/R156 (automotive)
+    jurisdiction: Sector
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  nerc_cip_energy:
+    name: NERC CIP (energy)
+    jurisdiction: Sector
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true
+  tsa_pipeline_directives:
+    name: TSA pipeline directives
+    jurisdiction: Sector
+    region: all
+    industries: all
+    milestones: []
+    needs_dates: true

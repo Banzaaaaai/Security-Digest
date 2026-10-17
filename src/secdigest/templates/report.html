@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>SecDigest {{ report.kind }} {{ report.period }}</title>
+{% if not email %}<style>body{color-scheme:light dark}a{overflow-wrap:anywhere}table{font-variant-numeric:tabular-nums}@media(prefers-color-scheme:dark){body,.paper{background:#111827!important;color:#e5e7eb!important}td,th{border-color:#475569!important}a{color:#93c5fd!important}h2{color:#e5e7eb!important}}</style>{% endif %}
+</head>
+{% macro value(v) -%}
+{% if v is mapping %}{% if v.url|safe_url %}<a href="{{ v.url|safe_url }}" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">{{ v.text }}</a>{% else %}{{ v.text }}{% endif %}
+{% elif v is iterable and v is not string %}{% for part in v %}{{ value(part) }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+{% else %}{{ v }}{% endif %}
+{%- endmacro %}
+<body style="margin:0;padding:0;background:#edf1f6;color:#172033;font-family:Segoe UI,Arial,sans-serif;font-size:14px;line-height:1.6">
+<table role="presentation" style="width:100%;border-collapse:collapse"><tr><td align="center" style="padding:16px 8px">
+<table role="presentation" class="paper" style="width:100%;max-width:{{ 680 if email else 1200 }}px;border-collapse:collapse;background:#ffffff"><tr><td style="padding:26px 20px;background:#16263e;color:#ffffff">
+<p style="margin:0;font-size:12px;letter-spacing:2px;color:#b9cee7">SECURITY INTELLIGENCE</p>
+<h1 style="margin:6px 0;font-size:27px;line-height:1.25">SecDigest · {{ report.kind|capitalize }}</h1><p style="margin:0;color:#d8e4f4">{{ report.period }} · Enterprise security architecture</p></td></tr>
+<tr><td style="padding:16px 20px;overflow-wrap:anywhere">
+{% if moved or compact %}<p style="padding:12px;border:1px solid #b45309">{{ moved }} stories moved to the attachment to keep this email below its size limit. The attachment contains the complete report.</p>{% endif %}
+{% for block in blocks %}
+{% if block.kind == 'heading' %}<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">{{ block.text }}</h2>
+{% elif block.kind == 'paragraph' %}<p style="margin:10px 0">{{ block.text }}</p>
+{% elif block.kind == 'list' %}<ul style="padding-left:20px;margin:10px 0">{% for v in block['values'] %}<li style="margin:6px 0">{{ value(v) }}</li>{% endfor %}</ul>
+{% elif block.kind == 'table' %}<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;{{ 'table-layout:fixed;' if email else '' }}"><thead><tr>{% for h in block.headers %}<th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for row in block.rows %}<tr>{% for cell in row %}<td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">{{ value(cell) }}</td>{% endfor %}</tr>{% else %}<tr><td colspan="{{ block.headers|length }}" style="padding:8px">None recorded.</td></tr>{% endfor %}</tbody></table></div>
+{% elif block.kind == 'heatmap' %}<table style="width:100%;table-layout:fixed;border-collapse:collapse;font-size:11px"><tr><th style="width:32%;text-align:left;padding:5px">Area</th>{% for level in block.levels %}<th style="padding:4px;font-size:10px;overflow-wrap:anywhere">{{ level|upper }}</th>{% endfor %}</tr>{% for row in block.rows %}<tr><th style="padding:6px 3px;text-align:left;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">{{ row.name }}</th>{% for level in block.levels %}{% set cell = row.cells[level] %}<td style="padding:6px 2px;text-align:center;border:2px solid #ffffff;background:{{ colors[level] if cell.count else '#e2e8f0' }};color:{{ '#ffffff' if cell.count else '#172033' }}">{{ cell.count }}<br>{{ cell.average }}%</td>{% endfor %}</tr>{% endfor %}</table>
+{% elif block.kind == 'story' %}{% set i = block.item %}<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid {{ colors[i.importance] }}">
+<span style="padding:3px 7px;background:{{ colors[i.importance] }};color:#ffffff;font-size:11px;font-weight:bold">{{ i.importance|upper }}</span><span style="font-size:12px"> · Priority {{ i.priority }}</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">{{ i.headline }}</h3><p style="font-size:12px;margin:8px 0">{{ block.tags }}</p><p>{{ i.summary }}</p>
+<p><strong>Why it matters:</strong> {{ i.importance_rationale }}</p>{% if i.recommended_action %}<p><strong>Action:</strong> {{ i.recommended_action }}</p>{% endif %}
+{% if block.cves %}<p style="font-size:12px">{{ value(block.cves) }}</p>{% endif %}{% if block.techniques %}<p><strong>ATT&amp;CK:</strong> {{ value(block.techniques) }}</p>{% endif %}
+{% if block.detection %}<p><strong>Detection references:</strong> {{ value(block.detection) }}</p>{% endif %}{% if i.detection_coverage_note %}<p><strong>Detection assessment:</strong> {{ i.detection_coverage_note }}</p>{% endif %}
+{% if block.cases %}<p><strong>Relevant to your work:</strong> {{ value(block.cases) }}</p>{% endif %}<p><strong>Sources:</strong> {{ value(block.sources) }}</p>
+{% if i.overrides %}<p style="font-size:11px">Scoring overrides: {{ i.overrides|join('; ') }}</p>{% endif %}</td></tr></table>
+{% endif %}
+{% endfor %}
+</td></tr><tr><td style="padding:18px 20px;border-top:1px solid #cbd5e1;font-size:11px">SecDigest · Original-source links accompany each story. Relevance scores are analytical assessments. Case studies are anonymized; no client involvement is implied.</td></tr></table>
+</td></tr></table></body></html>

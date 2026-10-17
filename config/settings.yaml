@@ -1,0 +1,36 @@
+timezone: Europe/Amsterdam
+database: data/secdigest.sqlite
+output: output
+http:
+  timeout: 15
+  concurrency: 8
+  user_agent: SecDigest/0.1 (+https://brusiantsou.com)
+  max_bytes: 20000000
+models:
+  classification: claude-haiku-5-5
+  synthesis: claude-sonnet-5-5
+  batch_size: 5
+  max_tokens: 16000
+  prices_per_million: {}
+enrichment:
+  epss: false
+  nvd: false
+  github: false
+business_signals:
+  enabled: false
+weekly:
+  window: calendar
+  heatmap_min_relevance: 30
+email:
+  send_when_empty: true
+  max_html_bytes: 90000
+  table_rows: 20
+  retry_count: 3
+  source_health_silence_days: 3
+retention:
+  daily_days: 90
+  database_days: 120
+scheduling:
+  enabled: false
+  daily_hour: 7
+  weekly_hour: 8

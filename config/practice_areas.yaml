@@ -1,0 +1,45 @@
+practice_areas:
+  zero_trust_cloud:
+    name: Zero Trust and cloud security
+    signals: Azure/AWS/GCP misconfigurations, landing zones, conditional access, ZTNA,
+      SASE, cloud migration risk
+  vuln_exposure_mgmt:
+    name: Vulnerability and exposure management
+    signals: CVEs, KEV, EPSS, patch cadence, attack-surface management, scanner vendors
+      (Qualys, Tenable, Wiz)
+  devsecops:
+    name: Secure software delivery and DevSecOps
+    signals: CI/CD compromise, GitHub Actions, package supply chain, SAST/DAST/SCA,
+      SBOM, NIST SSDF, code-signing
+  siem_detection:
+    name: SIEM, monitoring and detection engineering
+    signals: new TTPs, detection rules, log sources, Sentinel/Splunk/QRadar/Wazuh/Elastic,
+      SOC operations
+  iam_pam:
+    name: Identity and privileged access
+    signals: Entra ID, Okta, MFA bypass, token theft, OAuth abuse, CyberArk, BeyondTrust,
+      service accounts
+  email_phishing:
+    name: Email protection and phishing response
+    signals: phishing kits, BEC, QR phishing, DMARC/SPF/DKIM, Proofpoint, Abnormal,
+      Cofense
+  data_protection_dlp:
+    name: Data protection and DLP
+    signals: data breaches, exfiltration, Purview, classification, GDPR/FADP incidents,
+      insider risk
+  ot_ics:
+    name: OT and industrial control systems
+    signals: ICS advisories, PLC/HMI vulnerabilities, removable-media threats, OT
+      ransomware, IEC 62443
+  grc_audit:
+    name: Audit readiness, governance and risk
+    signals: regulations, enforcement actions, ISO 27001, PCI DSS, NIST CSF, SOC 2,
+      audit findings, board reporting
+  security_automation:
+    name: Security automation and reporting
+    signals: SOAR, security dashboards, automation tooling, metrics, API-driven security
+      operations
+  ai_governance:
+    name: AI-assisted work and AI governance
+    signals: LLM/agent vulnerabilities, prompt injection, MCP security, model supply
+      chain, EU AI Act, AI policy

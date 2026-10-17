@@ -1,0 +1,41 @@
+industries:
+  energy_services:
+    name: Energy services
+    signals: utilities, oil & gas, oilfield and offshore services, power grid, renewables,
+      OT/ICS/SCADA, pipelines, NERC CIP
+  telecommunications:
+    name: Telecommunications
+    signals: carriers, ISPs, cable operators, 5G core, SS7/Diameter, SIM swap, lawful-intercept
+      systems, Salt Typhoon-style campaigns, routers and CPE
+  private_banking:
+    name: Private banking
+    signals: wealth management, HNWI targeting, Swiss and Luxembourg banks, family
+      offices, BEC/wire fraud against clients, FINMA
+  investment_management:
+    name: Investment management
+    signals: asset managers, hedge funds, brokers, trading platforms, SEC/FCA rules,
+      market-data providers, file-transfer platform breaches
+  government:
+    name: Government
+    signals: federal, national, state and municipal bodies, defense, elections, public
+      services, CISA/ENISA/NCSC directives
+  retail_banking:
+    name: Retail banking
+    signals: consumer banks, payments, cards, banking trojans, mobile banking malware,
+      account takeover, DORA, PSD2/PSD3, SWIFT, SAMA, Central Bank of Ireland
+  global_it_services:
+    name: Global IT services
+    signals: MSPs, outsourcers, consultancies, system integrators, RMM tools, IT supply
+      chain, cloud providers, managed SOCs
+  logistics:
+    name: Logistics
+    signals: shipping, ports, freight forwarding, cargo operations, warehousing, fleet
+      telematics
+  industrial_manufacturing:
+    name: Industrial manufacturing
+    signals: factories, PLCs, MES, ICS vendors (Siemens, Rockwell, Schneider), industrial
+      IP theft
+  automotive:
+    name: Automotive
+    signals: OEMs, tier-1 suppliers, dealer-management systems, connected vehicles,
+      EV charging, UNECE R155/R156

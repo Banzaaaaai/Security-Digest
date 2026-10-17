@@ -1,0 +1,222 @@
+watch_tech:
+  microsoft:
+  - name: Defender for Endpoint
+    aliases: []
+    cross_industry: false
+  - name: Defender for Office 365
+    aliases: []
+    cross_industry: false
+  - name: Defender for Identity
+    aliases: []
+    cross_industry: false
+  - name: Defender for Cloud
+    aliases: []
+    cross_industry: false
+  - name: Sentinel
+    aliases: []
+    cross_industry: false
+  - name: Entra ID
+    aliases:
+    - Azure AD
+    - Microsoft Entra
+    cross_industry: false
+  - name: Azure
+    aliases: []
+    cross_industry: false
+  - name: Microsoft 365
+    aliases:
+    - Office 365
+    - M365
+    cross_industry: true
+  - name: Exchange
+    aliases:
+    - Microsoft Exchange
+    - Exchange Server
+    cross_industry: true
+  - name: SharePoint
+    aliases: []
+    cross_industry: false
+  - name: Windows Server
+    aliases:
+    - Microsoft Windows Server
+    cross_industry: true
+  - name: Intune
+    aliases: []
+    cross_industry: false
+  - name: Purview
+    aliases: []
+    cross_industry: false
+  endpoint_network:
+  - name: CrowdStrike Falcon
+    aliases: []
+    cross_industry: false
+  - name: SentinelOne
+    aliases: []
+    cross_industry: false
+  - name: Zscaler
+    aliases: []
+    cross_industry: false
+  - name: Cloudflare
+    aliases: []
+    cross_industry: false
+  - name: Palo Alto PAN-OS
+    aliases:
+    - PAN-OS
+    cross_industry: false
+  - name: GlobalProtect
+    aliases: []
+    cross_industry: false
+  - name: Fortinet FortiOS
+    aliases:
+    - FortiOS
+    cross_industry: true
+  - name: FortiGate
+    aliases:
+    - Fortinet FortiGate
+    cross_industry: true
+  - name: Cisco ASA
+    aliases: []
+    cross_industry: false
+  - name: Cisco IOS XE
+    aliases: []
+    cross_industry: false
+  - name: Citrix NetScaler
+    aliases:
+    - NetScaler
+    - Citrix ADC
+    cross_industry: true
+  - name: Ivanti Connect Secure
+    aliases: []
+    cross_industry: false
+  identity:
+  - name: Okta
+    aliases: []
+    cross_industry: false
+  - name: Cisco Duo
+    aliases: []
+    cross_industry: false
+  - name: CyberArk
+    aliases: []
+    cross_industry: false
+  - name: BeyondTrust
+    aliases: []
+    cross_industry: false
+  vulnerability:
+  - name: Qualys
+    aliases: []
+    cross_industry: false
+  - name: Tenable
+    aliases: []
+    cross_industry: false
+  - name: Wiz
+    aliases: []
+    cross_industry: false
+  - name: OpenVAS
+    aliases: []
+    cross_industry: false
+  siem:
+  - name: Splunk
+    aliases: []
+    cross_industry: false
+  - name: IBM QRadar
+    aliases: []
+    cross_industry: false
+  - name: Wazuh
+    aliases: []
+    cross_industry: false
+  - name: Elastic
+    aliases: []
+    cross_industry: false
+  email:
+  - name: Proofpoint
+    aliases: []
+    cross_industry: false
+  - name: Abnormal Security
+    aliases: []
+    cross_industry: false
+  - name: Cofense
+    aliases: []
+    cross_industry: false
+  devops_appsec:
+  - name: GitHub
+    aliases: []
+    cross_industry: false
+  - name: GitHub Actions
+    aliases: []
+    cross_industry: false
+  - name: GitLab
+    aliases: []
+    cross_industry: false
+  - name: Jenkins
+    aliases: []
+    cross_industry: false
+  - name: SonarQube
+    aliases: []
+    cross_industry: false
+  - name: Checkmarx
+    aliases: []
+    cross_industry: false
+  - name: Burp Suite
+    aliases: []
+    cross_industry: false
+  - name: OWASP ZAP
+    aliases: []
+    cross_industry: false
+  infrastructure:
+  - name: Kubernetes
+    aliases: []
+    cross_industry: false
+  - name: Docker
+    aliases: []
+    cross_industry: false
+  - name: VMware ESXi
+    aliases: []
+    cross_industry: false
+  - name: VMware vCenter
+    aliases: []
+    cross_industry: false
+  - name: Terraform
+    aliases: []
+    cross_industry: false
+  - name: AWS
+    aliases:
+    - Amazon Web Services
+    cross_industry: false
+  - name: Google Cloud
+    aliases:
+    - GCP
+    cross_industry: false
+  ai:
+  - name: Claude API
+    aliases: []
+    cross_industry: false
+  - name: Claude Code
+    aliases: []
+    cross_industry: false
+  - name: OpenAI API
+    aliases: []
+    cross_industry: false
+  - name: Model Context Protocol (MCP)
+    aliases:
+    - Model Context Protocol
+    - MCP
+    cross_industry: false
+  - name: AI agent frameworks
+    aliases: []
+    cross_industry: false
+  enterprise_apps:
+  - name: SAP
+    aliases: []
+    cross_industry: false
+  - name: Oracle
+    aliases: []
+    cross_industry: false
+  - name: Atlassian Confluence
+    aliases: []
+    cross_industry: false
+  - name: Atlassian Jira
+    aliases: []
+    cross_industry: false
+  - name: MuleSoft
+    aliases: []
+    cross_industry: false

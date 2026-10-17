@@ -1,0 +1,18 @@
+writing:
+  from-log-feeds-to-detections:
+    title: From log feeds to detections
+    url: https://brusiantsou.com/writing/from-log-feeds-to-detections/
+    tags:
+    - siem_detection
+  discovery-before-the-roadmap:
+    title: Discovery before the roadmap
+    url: https://brusiantsou.com/writing/discovery-before-the-roadmap/
+    tags:
+    - grc_audit
+    - vuln_exposure_mgmt
+  privacy-and-security-in-private-banking:
+    title: Privacy and security in private banking
+    url: https://brusiantsou.com/writing/privacy-and-security-in-private-banking/
+    tags:
+    - private_banking
+    - data_protection_dlp
