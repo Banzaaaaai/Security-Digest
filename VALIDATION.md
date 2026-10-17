@@ -6,7 +6,11 @@ Latest validation: **18 October 2026**, Europe/Paris. Live checks below were per
 
 `OPENAI_BASE_URL` is now an optional environment variable and GitHub Actions repository secret. All OpenAI client operations use it, including classification, weekly synthesis, model lookup and batch/files requests. Missing or blank values select `https://api.openai.com/v1`; surrounding whitespace is trimmed. Fixture workflows remove the key and endpoint from the child environment.
 
-**80 tests passed locally**, with Ruff and formatting checks passing. Mock HTTP tests verify classification/model requests at both the default endpoint and a custom endpoint with a path prefix, while configuration tests verify empty-value fallback and rejection of invalid URLs without printing their values. The custom endpoint has not been exercised live; the user will configure its secret in GitHub before another live preview.
+**83 tests passed locally**, with Ruff and formatting checks passing. Mock HTTP tests verify classification/model requests at both the default endpoint and a custom endpoint with a path prefix, empty-value fallback and rejection of invalid URLs without printing their values. Tests also verify that denied model metadata access does not block permitted generation, while a generation denial still stops the run.
+
+The [live daily preview for 18 October 2026](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39074207750) succeeded at the user-configured endpoint. It classified **9 story clusters** (3 critical, 4 high, 2 medium), with **zero unclassified clusters**, in **19.35 seconds** of application runtime. HTML, Markdown, JSON, CSV and an email preview were downloaded and inspected. The run log confirms `synthetic: false` and `email_sent: false`; the MIME preview uses placeholder addresses. The model metadata endpoint returned 403, but actual generation was permitted. OpenAI documents [separate model-read and model-request permissions](https://developers.openai.com/api/docs/guides/rbac).
+
+Recorded usage was 9,912 uncached input tokens, 6,400 cached input tokens and 4,110 output tokens. The configured-rate estimate was **$0.026409**; this is not a measured charge for the configured endpoint.
 
 ## Completed
 
@@ -14,7 +18,7 @@ Latest validation: **18 October 2026**, Europe/Paris. Live checks below were per
 |---|---|
 | Project environment | Python 3.12.13 installed through uv; dependency lock and pip requirements export generated |
 | Configuration | 4 regions, 10 industries, 11 practice areas, 12 case studies, 3 writing references and 51 feed definitions |
-| Automated tests | **71 passed** on GitHub after the OpenAI migration and diagnostics update; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata distinguishing quota exhaustion from rate limiting |
+| Automated tests | **83 passed locally** after the endpoint and metadata-permission updates; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata distinguishing quota exhaustion from rate limiting |
 | Ruff | Lint passed; source, tests and scripts formatted |
 | Python syntax | `compileall` completed for source and scripts |
 | Workflow files | All four workflow YAML files parsed successfully |
@@ -32,13 +36,13 @@ Latest validation: **18 October 2026**, Europe/Paris. Live checks below were per
 | Enrichment health | No KEV/ATT&CK refresh warnings in the live ingestion run |
 | Database size | Approximately 7 MB; below the 50 MB Actions-cache threshold |
 
-Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are test inputs, not real incident reports. The live database contains source summaries and advisory facts but **no live AI classifications**.
+Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are test inputs, not real incident reports. The committed database contains source summaries and advisory facts; live classifications from the successful Actions preview exist in its report artifact, because preview mode does not commit or cache database changes.
 
 ## OpenAI migration
 
 At the user's request, classification and weekly synthesis now use the OpenAI Responses API with strict function calls. Historical backfills use the OpenAI Batch API, including persisted file/job IDs and partial-failure handling. Defaults are `gpt-5.4-mini` and `gpt-5.4`; public model support and standard pricing were checked against the official model pages. Dependencies are locked to OpenAI SDK 2.54.0; Anthropic is no longer a runtime dependency.
 
-The latest [GitHub live daily preview](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39072206668) successfully authenticated and retrieved the configured classification model, resolving the earlier HTTP 401 issue. The first Responses API classification request then failed with HTTP **429**, categorized from the provider response as **quota exhaustion**. No token usage was recorded, and no live digest was generated. Check API credits and spending limits for the key's project before retrying; another key rotation is not indicated by this response. Actual schema acceptance and generated content remain unverified.
+Earlier attempts at the default endpoint encountered authentication and quota errors. After the user configured the custom endpoint, its model metadata endpoint returned 403. Model lookup now tolerates that specific denial, allowing the requested generation operation to validate model access itself. The subsequent live daily preview succeeded, including strict function-schema acceptance and evidence validation. No alternate model was selected.
 
 That run checked 22 enabled feeds: 21 succeeded, CISA Advisories returned an HTTP error, and no new articles were added. The existing database was reused. Preview mode provided no SMTP credentials and the diagnostic log confirms `email_sent: false`.
 
@@ -62,15 +66,15 @@ Preview messages and sample run logs are ignored by Git. Archived sample reports
 
 ## Still requiring live credentials or client review
 
-Email secrets and an authenticated `OPENAI_API_KEY` exist in GitHub Actions. Available OpenAI API quota is still needed. Secret values were neither requested in chat nor exposed. Consequently:
+Email secrets and working API key/endpoint secrets exist in GitHub Actions. Secret values were neither requested in chat nor exposed. Remaining checks:
 
-- Retrieval of `gpt-5.4-mini` succeeded against the user's API project. Successful generation and access to the weekly synthesis model remain unverified.
-- OpenAI tool-schema acceptance, actual classification/synthesis quality and real token usage remain unverified. Retry, evidence validation, SDK request structure and Batch API resumption were exercised with mocks; cost calculations use published standard rates rather than measured charges.
+- Live classification with `gpt-5.4-mini` succeeded. Live weekly synthesis with `gpt-5.4` and asynchronous Batch API execution remain unverified.
+- Strict classification schema acceptance and real token usage are verified. Generated summaries and scores still require editorial review; cost calculations use configured rates rather than measured charges.
 - No Gmail message was sent. MIME structure, STARTTLS context, recipient parsing, transient retries and authentication-error handling were tested with mocked SMTP.
 - Gmail/Outlook desktop, phone presentation and forced dark-mode behavior have not been reviewed in those clients.
-- The complete live `run-daily` acceptance target of under five minutes is **not yet verified**. The measured 53.98 seconds covers collection and advisory enrichment only; API classification and email would add time.
+- The live daily preview completed in 19.35 seconds for nine clusters, below the five-minute target. Larger workloads and real email delivery have not been timed.
 - EPSS, NVD and GitHub enrichment are optional and disabled by default; these integrations were not exercised against live services during this build.
-- The updated [GitHub checks workflow passed](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39072205428), including 71 tests, Ruff and daily/weekly fixture previews. Manual daily fixture execution passed; live execution remains blocked by OpenAI API quota exhaustion. Scheduled delivery and server cron have not been exercised.
+- Manual daily fixture and live preview workflows succeeded. Scheduled delivery and server cron have not been exercised.
 
 `scheduling.enabled` remains **false**. Complete the preview review and successful real email test required by the original prompt before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
 
@@ -79,6 +83,7 @@ Email secrets and an authenticated `OPENAI_API_KEY` exist in GitHub Actions. Ava
 - The disabled-source list includes sites with no discovered feed, access restrictions and failed feed candidates. Their coverage is unavailable until a valid feed is configured; no page scrapers were created. Review the source-check report for the specific outcome per source.
 - MSRC contributed 4,609 of the stored articles. Backfilling every retained cluster is substantially larger than a normal daily window. Use the resumable batch command deliberately and configure verified pricing first.
 - Source-independence counts use configured publisher identities or feed hosts; syndicated content may require `independence_key` overrides.
+- The live preview contains overlapping ConnectWise incident coverage in separate clusters. Differently worded or multilingual reports can require further clustering adjustments; cluster counts are not counts of distinct incidents.
 - Historical reports reuse stored classifications and currently cached advisory facts; they are not immutable snapshots of what was known at the historical date.
 - Relevance scores and model-written summaries remain analytical judgments. Evidence filtering is conservative but is not an independent factual investigation.
 - If an Actions database cache is evicted, restore a backup before resuming. Cache storage is not an archival backup service.
