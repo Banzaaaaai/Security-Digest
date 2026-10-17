@@ -7,11 +7,20 @@ http:
   user_agent: SecDigest/0.1 (+https://brusiantsou.com)
   max_bytes: 20000000
 models:
-  classification: claude-haiku-5-5
-  synthesis: claude-sonnet-5-5
+  classification: gpt-5.4-mini
+  synthesis: gpt-5.4
   batch_size: 5
   max_tokens: 16000
-  prices_per_million: {}
+  # Standard API rates checked against official model pages on 2026-10-17.
+  prices_per_million:
+    gpt-5.4-mini:
+      input_tokens: 0.75
+      cache_read_input_tokens: 0.075
+      output_tokens: 4.50
+    gpt-5.4:
+      input_tokens: 2.50
+      cache_read_input_tokens: 0.25
+      output_tokens: 15.00
 enrichment:
   epss: false
   nvd: false

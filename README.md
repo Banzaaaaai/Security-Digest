@@ -1,6 +1,6 @@
 # SecDigest
 
-Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, cluster duplicate coverage, enrich CVEs, classify with Claude, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
+Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
 
 The original requirements are in [security-digest-prompt.md](security-digest-prompt.md). All taxonomies and scoring rules are editable YAML. There is no web server or hosted dashboard to operate.
 
@@ -15,7 +15,7 @@ uv run secdigest --dry-run
 uv run secdigest --dry-run weekly --preview
 ```
 
-On this machine the environment is already installed. You can also use `.venv\Scripts\secdigest.exe` directly.
+You can also use `.venv\Scripts\secdigest.exe` directly. On this Windows workspace, migration checks use `.venv-openai\Scripts\secdigest.exe` because Windows denied removing a package from the older environment. To use that environment with uv, set `$env:UV_PROJECT_ENVIRONMENT = '.venv-openai'` before the commands above.
 
 Dry runs use a fixed clock and 12 synthetic clusters / 14 source items. They make **no network calls and send no email**, even with `--send` or `--force-send`. They use an in-memory database and write only under `output/samples/`:
 
@@ -32,19 +32,19 @@ Set environment variables through your shell/session or secret manager. The appl
 
 | Variable | Use |
 |---|---|
-| `ANTHROPIC_API_KEY` | Claude classification and weekly synthesis |
+| `OPENAI_API_KEY` | OpenAI classification and weekly synthesis |
 | `SMTP_HOST` | SMTP server; defaults to `smtp.gmail.com` |
 | `SMTP_PORT` | STARTTLS port; defaults to `587` |
 | `SMTP_USER` | Gmail sender address |
 | `SMTP_PASSWORD` | Gmail app password |
 | `EMAIL_TO` | Comma-separated recipient addresses; whitespace and empty entries removed |
 
-Keep the supplied model names in `config/settings.yaml` only if your Anthropic account supports them. They are specification defaults, **not verified available models**. Live classification retrieves the configured model before using it and fails if it is unavailable; it does not silently choose a different model. Use an available Haiku model for classification and an available Sonnet model for synthesis.
+The defaults in `config/settings.yaml` are `gpt-5.4-mini` for classification and `gpt-5.4` for weekly synthesis. Both use the OpenAI Responses API with strict function schemas and local evidence validation. Live classification retrieves the configured model before using it and fails if unavailable; it does not silently choose another model. The model IDs and public rates are documented by OpenAI, but access still depends on your API project. Anthropic credentials are no longer used. The original prompt is preserved as the initial specification; the provider was changed at the user's request.
 
 ```powershell
 uv run secdigest feeds check
 uv run secdigest ingest
-uv run secdigest run-daily --no-send
+uv run secdigest run-daily --no-send --preview
 uv run secdigest daily --preview
 uv run secdigest weekly --week 2026-W42 --preview
 uv run secdigest email test
@@ -62,7 +62,7 @@ uv run secdigest classify --batch-api
 uv run secdigest weekly --week 2026-W42 --preview
 ```
 
-Batch IDs and memberships are persisted in SQLite. A pending batch is logged as pending, does not produce a success digest, and is resumed without resubmission. Keep configuration unchanged while a batch is pending. Failed requests remain unclassified for a subsequent run. `--reclassify` explicitly replaces saved classifications.
+OpenAI Batch API input file IDs, job IDs and memberships are persisted in SQLite. Jobs target `/v1/responses` with a 24-hour completion window. A pending batch is logged as pending, does not produce a success digest, and is resumed without resubmission. Keep configuration unchanged while a batch is pending. Failed or missing requests remain unclassified for a subsequent run. A pending job from another provider must be resolved before migration. `--reclassify` explicitly replaces saved classifications.
 
 ## Commands
 
@@ -157,12 +157,16 @@ Daily outputs are retained for 90 days and stored news for 120 days; weekly arch
 
 The workflows are ready but `scheduling.enabled` is **false**. Before changing it:
 
-1. Configure supported Anthropic models and the repository secrets listed above.
+1. Configure `OPENAI_API_KEY` and the email repository secrets listed above, and verify model access.
 2. Generate and review daily/weekly previews, including Gmail desktop and phone presentation.
 3. Run `secdigest email test` and confirm receipt.
 4. Run a live daily digest and a weekly preview, verify coverage and usage, then set `scheduling.enabled: true`.
 
-Daily schedules use `0 5 * * *` and `0 6 * * *` UTC, guarded for 07:00 Europe/Amsterdam. Weekly schedules use `0 6 * * 1` and `0 7 * * 1`, guarded for Monday 08:00. Manual dispatch skips the timing/activation guards and supports `force_send` plus date/week overrides. GitHub scheduled jobs may start late; the guard accepts the target hour. If you change the configured timezone or target hours, update the workflow's early hour guard and UTC schedules too.
+Daily schedules use `0 5 * * *` and `0 6 * * *` UTC, guarded for 07:00 Europe/Amsterdam. Weekly schedules use `0 6 * * 1` and `0 7 * * 1`, guarded for Monday 08:00. Manual dispatch skips the timing/activation guards and supports `mode`, `force_send` and date/week overrides. GitHub scheduled jobs may start late; the guard accepts the target hour. If you change the configured timezone or target hours, update the workflow's early hour guard and UTC schedules too.
+
+Manual runs default to `mode=preview`: daily runs collect and classify live news; weekly runs summarize stored news. Both generate reports and `.eml` previews without SMTP credentials or delivery. Choose `mode=fixtures` for an offline demonstration requiring no API key. Preview artifacts are downloadable from the Actions run for seven days and are not committed back or saved to the database cache. Choose `mode=send` explicitly for email delivery; only that mode honors `force_send`. Enabled scheduled runs use `send`.
+
+Once a valid `OPENAI_API_KEY` Actions secret and these workflow changes are on the selected GitHub branch, run **Actions → SecDigest daily → Run workflow → mode: preview**. Without a key, choose `fixtures`.
 
 Both workflows serialize on the same concurrency group because they share SQLite and archives. The shared runner uses Python 3.12, pip caching, the locked requirements export, and the existing tracker's `github-actions[bot]` identity. It commits only runtime artifacts when changed, including failure logs. It never force-pushes. A database above 50 MB switches to `actions/cache` and emits a notice; `data/storage-mode.json` records that choice. Keep an independent database backup because Actions caches can be evicted. A missing required database cache stops processing instead of silently rebuilding history.
 
@@ -178,20 +182,19 @@ On cron implementations without `CRON_TZ`, use equivalent UTC schedules with `se
 
 ## Model usage and cost
 
-Each run records input/output/cache-write/cache-read tokens. Configure `models.prices_per_million` using verified prices for the model IDs your account actually uses:
+Each run records uncached input, cached input and output tokens (including reasoning tokens). OpenAI prompt caching is automatic for eligible repeated prefixes; the shared rubric and schemas precede story data. Requests set `store=false`. Configure `models.prices_per_million` for your chosen model IDs:
 
 ```yaml
 prices_per_million:
   your-verified-model-id:
     input_tokens: 0.0
     output_tokens: 0.0
-    cache_creation_input_tokens: 0.0
     cache_read_input_tokens: 0.0
 ```
 
-The zeroes above are placeholders, not model prices. Use the actual rates. Missing rates produce an unknown estimate, not a misleading $0. The estimate sums `tokens × price / 1,000,000` across all four categories; batch estimates apply the configured provider's standard 50% batch discount. Weekly synthesis usage is separate from classification. Rates and discounts should be rechecked against your provider agreement.
+The zeroes above are placeholders. The shipped configuration uses public standard rates checked on 2026-10-17: [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini) costs $0.75 / $0.075 / $4.50 per million uncached input / cached input / output tokens; [GPT-5.4](https://developers.openai.com/api/docs/models/gpt-5.4) costs $2.50 / $0.25 / $15.00 respectively. Cached input is subtracted from the API's input total before pricing, so it is not counted twice. Missing rates produce an unknown estimate. Batch estimates apply the standard 50% discount; synchronous validation retries use standard rates. Weekly usage is recorded separately. Estimates exclude regional/long-context surcharges and contractual differences; recheck rates for your account.
 
-Daily budget planning: for `N` new daily clusters and batch size 5, expect `ceil(N / 5)` classification calls plus at most one validation retry per call. A weekly run adds one synthesis call and at most one retry, reusing daily classifications. As a token-volume example, 100 daily clusters at 1,000 source tokens and 800 output tokens each imply roughly 100,000 source-input and 80,000 output tokens per day, plus cached rubric/schema overhead; a seven-day week is roughly seven times that plus synthesis. Actual dollar estimates remain unavailable until model availability and prices are verified. Initial historical backfills are additional usage.
+Daily budget planning: for `N` new daily clusters and batch size 5, expect `ceil(N / 5)` classification calls plus at most one validation retry per call. A weekly run adds one synthesis call and at most one retry, reusing daily classifications. As a token-volume example, 100 daily clusters at 1,000 source tokens and 800 output tokens each imply roughly 100,000 source-input and 80,000 output tokens per day, plus cached rubric/schema overhead; a seven-day week is roughly seven times that plus synthesis. Actual usage appears after a successful live call. Initial historical backfills are additional usage.
 
 ## Tests and validation
 
@@ -205,4 +208,4 @@ The suite covers dynamic taxonomy schemas, invalid-model retries, claim filterin
 
 `scripts/fixture_previews.py` regenerates synthetic report archives. Its `--update-golden` flag deliberately replaces test expectations; review rendered changes before using it. `scripts/seed_config.py` is a one-time importer from the original prompt and refuses to overwrite existing configuration. The running application does not depend on the prompt file.
 
-See [VALIDATION.md](VALIDATION.md) for observed live checks, remaining credential-dependent checks and limitations. This repository has not been published or deployed by the build process.
+See [VALIDATION.md](VALIDATION.md) for observed checks, remaining credential-dependent checks and limitations.

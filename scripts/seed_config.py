@@ -201,8 +201,8 @@ def main():
                 "max_bytes": 20000000,
             },
             "models": {
-                "classification": "claude-haiku-5-5",
-                "synthesis": "claude-sonnet-5-5",
+                "classification": "gpt-5.4-mini",
+                "synthesis": "gpt-5.4",
                 "batch_size": 5,
                 "max_tokens": 16000,
                 "prices_per_million": {},

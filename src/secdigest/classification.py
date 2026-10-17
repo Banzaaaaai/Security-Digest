@@ -1,4 +1,4 @@
-"""Strict Claude tool use, evidence filtering, cached prompts and resumable batches."""
+"""Strict OpenAI function calls, evidence filtering and resumable Batch API jobs."""
 
 from __future__ import annotations
 
@@ -6,7 +6,8 @@ import json
 import os
 from datetime import UTC, datetime
 
-from anthropic import Anthropic
+from openai import OpenAI
+from openai.types.responses import Response
 from pydantic import ValidationError
 
 from .evidence import validate_claims
@@ -31,9 +32,9 @@ def system_prompt(config):
 
 
 def client_from_env():
-    if not os.getenv("ANTHROPIC_API_KEY"):
-        raise RuntimeError("ANTHROPIC_API_KEY is not configured; use --dry-run for offline previews")
-    return Anthropic(timeout=90, max_retries=2)
+    if not os.getenv("OPENAI_API_KEY"):
+        raise RuntimeError("OPENAI_API_KEY is not configured; use --dry-run for offline previews")
+    return OpenAI(timeout=90, max_retries=2)
 
 
 def verify_model(client, name):
@@ -42,9 +43,12 @@ def verify_model(client, name):
 
 def usage_record(config, response, model, batch=False):
     usage = response.usage
+    cached = getattr(getattr(usage, "input_tokens_details", None), "cached_tokens", 0) or 0
+    # OpenAI's input total includes cached tokens; avoid charging them twice.
     values = {
-        key: getattr(usage, key, 0) or 0
-        for key in ("input_tokens", "output_tokens", "cache_creation_input_tokens", "cache_read_input_tokens")
+        "input_tokens": usage.input_tokens - cached,
+        "output_tokens": usage.output_tokens,
+        "cache_read_input_tokens": cached,
     }
     prices = config.settings["models"]["prices_per_million"].get(model)
     estimate = (
@@ -55,6 +59,34 @@ def usage_record(config, response, model, batch=False):
     if estimate is not None and batch:
         estimate *= 0.5
     return {"model": model, **values, "estimated_usd": estimate, "batch": batch}
+
+
+def tool_params(model, name, description, schema, instructions, content, max_tokens):
+    return {
+        "model": model,
+        "max_output_tokens": max_tokens,
+        "instructions": instructions,
+        "tools": [
+            {
+                "type": "function",
+                "name": name,
+                "description": description,
+                "parameters": schema,
+                "strict": True,
+            }
+        ],
+        "tool_choice": {"type": "function", "name": name},
+        "parallel_tool_calls": False,
+        "store": False,
+        "input": [{"role": "user", "content": json.dumps(content, ensure_ascii=False)}],
+    }
+
+
+def tool_arguments(response, name):
+    calls = [part for part in response.output if part.type == "function_call" and part.name == name]
+    if response.status != "completed" or len(calls) != 1:
+        raise ValueError("Incomplete or refused function output")
+    return json.loads(calls[0].arguments)
 
 
 def classification_params(config, clusters, fulltext=None):
@@ -72,30 +104,23 @@ def classification_params(config, clusters, fulltext=None):
     if fulltext:
         for doc in documents:
             doc["internal_fulltext"] = fulltext.get(doc["cluster_id"], "")[:20000]
-    return {
-        "model": config.settings["models"]["classification"],
-        "max_tokens": config.settings["models"]["max_tokens"],
-        "system": [{"type": "text", "text": system_prompt(config), "cache_control": {"type": "ephemeral"}}],
-        "tools": [
-            {
-                "name": "classify_clusters",
-                "description": "Classify supplied news clusters with exact configured taxonomy keys",
-                "input_schema": schema,
-                "strict": True,
-            }
-        ],
-        "tool_choice": {"type": "tool", "name": "classify_clusters"},
-        "messages": [{"role": "user", "content": json.dumps(documents, ensure_ascii=False)}],
-    }
+    return tool_params(
+        config.settings["models"]["classification"],
+        "classify_clusters",
+        "Classify supplied news clusters with exact configured taxonomy keys",
+        schema,
+        system_prompt(config),
+        documents,
+        config.settings["models"]["max_tokens"],
+    )
 
 
 def parse_response(config, response, clusters, store):
-    calls = [
-        part for part in response.content if part.type == "tool_use" and part.name == "classify_clusters"
-    ]
-    if len(calls) != 1 or response.stop_reason == "max_tokens":
-        raise ValueError("Incomplete classification tool output")
-    result = batch_model(config).model_validate(calls[0].input).model_dump(mode="json")["items"]
+    result = (
+        batch_model(config)
+        .model_validate(tool_arguments(response, "classify_clusters"))
+        .model_dump(mode="json")["items"]
+    )
     expected = {c["id"] for c in clusters}
     if {r["cluster_id"] for r in result} != expected or len(result) != len(expected):
         raise ValueError("Classification IDs do not match input clusters")
@@ -120,7 +145,7 @@ def classify(config, store, reclassify=False, client=None, fulltext=None, candid
         clusters = pending[start : start + size]
         params = classification_params(config, clusters, fulltext)
         for attempt in range(2):
-            response = client.messages.create(**params)
+            response = client.responses.create(**params)
             usage.append(usage_record(config, response, model))
             store.put("last_classification_usage", usage)
             try:
@@ -129,7 +154,7 @@ def classify(config, store, reclassify=False, client=None, fulltext=None, candid
             except (ValidationError, ValueError):
                 if attempt:
                     raise ValueError("Model returned invalid classifications twice") from None
-                params["messages"].append(
+                params["input"].append(
                     {
                         "role": "user",
                         "content": "Previous output failed validation. Return one complete tool call containing exactly the supplied IDs, all configured score keys, scores 0-100, and no extra fields.",
@@ -146,8 +171,10 @@ def batch_classify(config, store, reclassify=False, client=None, candidates=None
     client = client or client_from_env()
     job = store.get("batch_job")
     if job and job["status"] == "pending":
-        batch = client.messages.batches.retrieve(job["id"])
-        if batch.processing_status != "ended":
+        if job.get("provider") != "openai":
+            raise ValueError("Pending batch belongs to another provider; resolve it before migration")
+        batch = client.batches.retrieve(job["id"])
+        if batch.status not in {"completed", "failed", "expired", "cancelled"}:
             return {"status": "pending", "id": job["id"]}
         clusters = {c["id"]: c for c in store.clusters()}
         count, failures, usage = 0, [], []
@@ -155,24 +182,38 @@ def batch_classify(config, store, reclassify=False, client=None, candidates=None
             raise ValueError(
                 "Configuration changed while batch was pending; restore it before consuming results"
             )
-        for entry in client.messages.batches.results(job["id"]):
-            if entry.result.type != "succeeded":
-                failures.append(entry.custom_id)
+        entries = {}
+        for file_id in (batch.output_file_id, batch.error_file_id):
+            if file_id:
+                for line in client.files.content(file_id).text.splitlines():
+                    entry = json.loads(line)
+                    entries[entry["custom_id"]] = entry
+        for custom_id, group_ids in job["groups"].items():
+            entry = entries.get(custom_id, {})
+            result = entry.get("response") or {}
+            if entry.get("error") or result.get("status_code") != 200:
+                failures.append(custom_id)
                 continue
-            group = [clusters[ident] for ident in job["groups"][entry.custom_id]]
+            group = [clusters[ident] for ident in group_ids]
             try:
-                items = parse_response(config, entry.result.message, group, store)
+                response = Response.model_validate(result["body"])
+                usage.append(usage_record(config, response, job["model"], batch=True))
+                items = parse_response(config, response, group, store)
             except (ValidationError, ValueError):
                 # One ordinary API retry for a completed but invalid batch result.
-                retry = client.messages.create(**classification_params(config, group))
+                retry = client.responses.create(**classification_params(config, group))
                 usage.append(usage_record(config, retry, job["model"]))
-                items = parse_response(config, retry, group, store)
-            usage.append(usage_record(config, entry.result.message, job["model"], batch=True))
+                try:
+                    items = parse_response(config, retry, group, store)
+                except (ValidationError, ValueError):
+                    failures.append(custom_id)
+                    continue
             for item in items:
                 store.classify(item["cluster_id"], item, job["fingerprint"], job["model"])
                 count += 1
         job.update(status="complete" if not failures else "partial", failures=failures)
         store.put("batch_job", job)
+        store.put("last_classification_usage", usage)
         return {"status": job["status"], "classified": count, "failures": failures, "usage": usage}
     pending = [
         c
@@ -185,16 +226,28 @@ def batch_classify(config, store, reclassify=False, client=None, candidates=None
     verify_model(client, model)
     size = config.settings["models"]["batch_size"]
     groups = {f"group-{i}": pending[i : i + size] for i in range(0, len(pending), size)}
-    response = client.messages.batches.create(
-        requests=[
-            {"custom_id": key, "params": classification_params(config, group)}
-            for key, group in groups.items()
-        ]
+    requests = [
+        {
+            "custom_id": key,
+            "method": "POST",
+            "url": "/v1/responses",
+            "body": classification_params(config, group),
+        }
+        for key, group in groups.items()
+    ]
+    payload = "\n".join(json.dumps(request, ensure_ascii=False) for request in requests) + "\n"
+    uploaded = client.files.create(
+        file=("classifications.jsonl", payload.encode("utf-8"), "application/jsonl"), purpose="batch"
+    )
+    response = client.batches.create(
+        input_file_id=uploaded.id, endpoint="/v1/responses", completion_window="24h"
     )
     store.put(
         "batch_job",
         {
             "id": response.id,
+            "provider": "openai",
+            "input_file_id": uploaded.id,
             "status": "pending",
             "model": model,
             "fingerprint": config.fingerprint,

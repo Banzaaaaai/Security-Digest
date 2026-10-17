@@ -2,6 +2,9 @@ name: SecDigest shared runner
 on:
   workflow_call:
     inputs:
+      mode:
+        default: preview
+        type: string
       kind:
         required: true
         type: string
@@ -77,41 +80,38 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         id: digest
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          OPENAI_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_API_KEY || '' }}
+          SMTP_HOST: ${{ inputs.mode == 'send' && secrets.SMTP_HOST || '' }}
+          SMTP_PORT: ${{ inputs.mode == 'send' && secrets.SMTP_PORT || '' }}
+          SMTP_USER: ${{ inputs.mode == 'send' && secrets.SMTP_USER || '' }}
+          SMTP_PASSWORD: ${{ inputs.mode == 'send' && secrets.SMTP_PASSWORD || '' }}
+          EMAIL_TO: ${{ inputs.mode == 'send' && secrets.EMAIL_TO || '' }}
+          MODE: ${{ inputs.mode }}
           KIND: ${{ inputs.kind }}
           PERIOD: ${{ inputs.period }}
           FORCE_SEND: ${{ inputs.force_send }}
           CACHE_DATABASE: ${{ steps.storage.outputs.cache_database }}
-        run: |
-          python - <<'PY'
-          import os, subprocess, sys
-          from pathlib import Path
-          if os.environ['CACHE_DATABASE'] == 'true' and not Path('data/secdigest.sqlite').exists():
-              sys.exit('Database cache is unavailable. Restore a backup before resuming delivery.')
-          kind = os.environ['KIND']
-          command = ['secdigest', 'run-' + kind]
-          if os.environ['PERIOD']:
-              command += ['--date' if kind == 'daily' else '--week', os.environ['PERIOD']]
-          if os.environ['FORCE_SEND'] == 'true':
-              command.append('--force-send')
-          sys.exit(subprocess.call(command))
-          PY
+        run: python scripts/workflow_digest.py
+      - name: Upload preview reports and email files
+        if: steps.digest.outcome == 'success' && inputs.mode != 'send'
+        uses: actions/upload-artifact@v4
+        with:
+          name: secdigest-${{ inputs.kind }}-${{ inputs.mode }}-${{ github.run_id }}
+          path: |
+            output/
+            run_log.json
+          retention-days: 7
       - name: Check database size
-        if: always() && steps.guard.outputs.run == 'true'
+        if: always() && steps.guard.outputs.run == 'true' && inputs.mode == 'send'
         id: size
         run: python scripts/ci_storage.py prepare >> "$GITHUB_OUTPUT"
       - uses: actions/cache/save@v4
-        if: always() && steps.guard.outputs.run == 'true' && steps.size.outputs.cache_database == 'true'
+        if: always() && steps.guard.outputs.run == 'true' && inputs.mode == 'send' && steps.size.outputs.cache_database == 'true'
         with:
           path: data/secdigest.sqlite
           key: secdigest-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Commit runtime artifacts, including failure status
-        if: always() && steps.guard.outputs.run == 'true'
+        if: always() && steps.guard.outputs.run == 'true' && inputs.mode == 'send'
         env:
           CACHE_DATABASE: ${{ steps.size.outputs.cache_database }}
         run: |

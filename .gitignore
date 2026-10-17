@@ -1,4 +1,5 @@
 .venv/
+.venv-openai/
 .uv-cache/
 .pytest_cache/
 pytest-cache-files-*/

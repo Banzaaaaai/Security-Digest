@@ -5,6 +5,11 @@ on:
     - cron: '0 7 * * 1'
   workflow_dispatch:
     inputs:
+      mode:
+        description: Preview stored news, preview offline fixtures, or send email
+        type: choice
+        default: preview
+        options: [preview, fixtures, send]
       force_send:
         description: Send again even if this week's digest was already sent
         type: boolean
@@ -23,6 +28,7 @@ jobs:
     uses: ./.github/workflows/run-digest.yml
     with:
       kind: weekly
+      mode: ${{ inputs.mode || 'send' }}
       manual: ${{ github.event_name == 'workflow_dispatch' }}
       force_send: ${{ inputs.force_send || false }}
       period: ${{ inputs.week || '' }}
