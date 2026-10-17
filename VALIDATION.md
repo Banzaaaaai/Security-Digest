@@ -12,6 +12,12 @@ The [live daily preview for 18 October 2026](https://github.com/Banzaaaaai/Secur
 
 Recorded usage was 9,912 uncached input tokens, 6,400 cached input tokens and 4,110 output tokens. The configured-rate estimate was **$0.026409**; this is not a measured charge for the configured endpoint.
 
+## Full daily delivery
+
+The [full daily run for 18 October 2026](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39074556888) succeeded in **16.89 seconds**, including SMTP delivery. It generated nine classified clusters (3 critical, 4 high, 2 medium) with zero unclassified clusters and sent the daily email with full HTML and CSV attachments to the configured recipients. SMTP accepted the message; the run log records the daily email as sent, and SQLite contains the delivery marker for `daily` / `2026-10-18`. Inbox receipt and client rendering still require recipient review.
+
+The workflow archived the reports, classifications and delivery state on `codex/openai-daily-preview`. Those artifacts were synchronized locally and the delivery record was verified. The configured-rate API estimate for this run was $0.020334. CISA Advisories was the only failed source among 22 enabled feeds; the report records that coverage gap.
+
 ## Completed
 
 | Check | Observed result |
@@ -36,7 +42,7 @@ Recorded usage was 9,912 uncached input tokens, 6,400 cached input tokens and 4,
 | Enrichment health | No KEV/ATT&CK refresh warnings in the live ingestion run |
 | Database size | Approximately 7 MB; below the 50 MB Actions-cache threshold |
 
-Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are test inputs, not real incident reports. The committed database contains source summaries and advisory facts; live classifications from the successful Actions preview exist in its report artifact, because preview mode does not commit or cache database changes.
+Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are test inputs, not real incident reports. The committed database now also contains live classifications and the successful daily delivery marker from the full run. Preview runs themselves do not commit or cache database changes.
 
 ## OpenAI migration
 
@@ -56,6 +62,8 @@ Manual Actions runs now default to `preview`; `fixtures` works without a key and
 - [Weekly sample HTML](output/samples/weekly/2026-W42.html)
 - [Daily sample Markdown](output/samples/daily/2026-10-17.md)
 - [Weekly sample Markdown](output/samples/weekly/2026-W42.md)
+- [Sent daily digest HTML](output/daily/2026-10-18.html)
+- [Sent daily digest CSV](output/daily/2026-10-18.csv)
 - `output/samples/preview/secdigest-daily-2026-10-17.eml`
 - `output/samples/preview/secdigest-weekly-2026-W42.eml`
 - `output/source-check.json`: source-by-source status and discovered feed candidates
@@ -70,13 +78,13 @@ Email secrets and working API key/endpoint secrets exist in GitHub Actions. Secr
 
 - Live classification with `gpt-5.4-mini` succeeded. Live weekly synthesis with `gpt-5.4` and asynchronous Batch API execution remain unverified.
 - Strict classification schema acceptance and real token usage are verified. Generated summaries and scores still require editorial review; cost calculations use configured rates rather than measured charges.
-- No Gmail message was sent. MIME structure, STARTTLS context, recipient parsing, transient retries and authentication-error handling were tested with mocked SMTP.
+- The daily email was accepted by the configured SMTP server. MIME structure, STARTTLS context, recipient parsing, transient retries and authentication-error handling are also covered by mocked SMTP tests; inbox receipt is not independently verified.
 - Gmail/Outlook desktop, phone presentation and forced dark-mode behavior have not been reviewed in those clients.
-- The live daily preview completed in 19.35 seconds for nine clusters, below the five-minute target. Larger workloads and real email delivery have not been timed.
+- The full daily run, including SMTP delivery, completed in 16.89 seconds for nine clusters, below the five-minute target. Larger workloads have not been timed.
 - EPSS, NVD and GitHub enrichment are optional and disabled by default; these integrations were not exercised against live services during this build.
-- Manual daily fixture and live preview workflows succeeded. Scheduled delivery and server cron have not been exercised.
+- Manual daily fixture, live preview and full email-delivery workflows succeeded. Scheduled delivery and server cron have not been exercised.
 
-`scheduling.enabled` remains **false**. Complete the preview review and successful real email test required by the original prompt before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
+`scheduling.enabled` remains **false**. Confirm inbox receipt and review client rendering before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
 
 ## Operational limits
 

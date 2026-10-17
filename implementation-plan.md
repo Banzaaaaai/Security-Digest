@@ -1,6 +1,6 @@
 # SecDigest implementation plan
 
-Status: approved by the user on 2026-10-17. Application implemented; offline tests, live source ingestion and an OpenAI daily preview through the configured API endpoint are verified. Live weekly synthesis, real email delivery and schedule activation remain pending validation and preview review. See `VALIDATION.md`. The plan below records the original approved architecture; the original prompt is unchanged.
+Status: approved by the user on 2026-10-17. Application implemented; offline tests, live source ingestion, an OpenAI daily preview and a full daily run with SMTP acceptance are verified. Live weekly synthesis, inbox/client review and schedule activation remain pending. See `VALIDATION.md`. The plan below records the original approved architecture; the original prompt is unchanged.
 
 ## Checked starting point
 
