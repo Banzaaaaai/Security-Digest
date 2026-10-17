@@ -34,8 +34,6 @@ Detection references:
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
 
-Relevant to your work: [Security in the delivery path](https://brusiantsou.com/stories/security-in-the-delivery-path/); [Vendor release automation](https://brusiantsou.com/stories/vendor-release-automation/)
-
 Sources: [Fixture source 1](https://source0.example.test/story/6)
 
 ### Dutch carrier strengthens identity monitoring
@@ -55,8 +53,6 @@ ATT&CK:
 Detection references: 
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Relevant to your work: [Security at telecom scale](https://brusiantsou.com/stories/security-at-telecom-scale/); [Security visibility for manufacturing](https://brusiantsou.com/stories/security-visibility-for-manufacturing/)
 
 Sources: [Fixture source 1](https://source0.example.test/story/1); [Fixture source 2](https://source1.example.test/story/1); [Fixture source 3](https://source2.example.test/story/1)
 
@@ -78,8 +74,6 @@ Detection references:
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
 
-Relevant to your work: [Security at telecom scale](https://brusiantsou.com/stories/security-at-telecom-scale/); [Continuous vulnerability management](https://brusiantsou.com/stories/continuous-vulnerability-management/)
-
 Sources: [Fixture source 1](https://source0.example.test/story/0)
 
 ### UAE energy operator reviews industrial gateway patch
@@ -99,8 +93,6 @@ ATT&CK:
 Detection references: 
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Relevant to your work: [Zero trust at enterprise scale](https://brusiantsou.com/stories/zero-trust-at-enterprise-scale/); [Continuous vulnerability management](https://brusiantsou.com/stories/continuous-vulnerability-management/)
 
 Sources: [Fixture source 1](https://source0.example.test/story/2)
 
@@ -122,8 +114,6 @@ Detection references:
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
 
-Relevant to your work: [Security services for investment management](https://brusiantsou.com/stories/security-services-for-investment-management/)
-
 Sources: [Fixture source 1](https://source0.example.test/story/7)
 
 ### Government teams automate exposure reporting
@@ -143,8 +133,6 @@ ATT&CK:
 Detection references: 
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Relevant to your work: [Security at telecom scale](https://brusiantsou.com/stories/security-at-telecom-scale/); [Continuous vulnerability management](https://brusiantsou.com/stories/continuous-vulnerability-management/)
 
 Sources: [Fixture source 1](https://source0.example.test/story/10)
 
@@ -166,8 +154,6 @@ Detection references:
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
 
-Relevant to your work: [Secure azure migration](https://brusiantsou.com/stories/secure-azure-migration/); [Vendor release automation](https://brusiantsou.com/stories/vendor-release-automation/)
-
 Sources: [Fixture source 1](https://source0.example.test/story/4)
 
 ### Logistics teams test a data exposure response plan
@@ -187,8 +173,6 @@ ATT&CK:
 Detection references: 
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Relevant to your work: [Secure azure migration](https://brusiantsou.com/stories/secure-azure-migration/); [Security foundations for logistics](https://brusiantsou.com/stories/security-foundations-for-logistics/)
 
 Sources: [Fixture source 1](https://source0.example.test/story/8)
 
@@ -210,8 +194,6 @@ Detection references:
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
 
-Relevant to your work: [Secure azure migration](https://brusiantsou.com/stories/secure-azure-migration/); [Zero trust at enterprise scale](https://brusiantsou.com/stories/zero-trust-at-enterprise-scale/)
-
 Sources: [Fixture source 1](https://source0.example.test/story/3)
 
 ### Manufacturing SOC publishes industrial detection notes
@@ -231,8 +213,6 @@ ATT&CK:
 Detection references: 
 
 Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Relevant to your work: [Security at telecom scale](https://brusiantsou.com/stories/security-at-telecom-scale/); [Security visibility for manufacturing](https://brusiantsou.com/stories/security-visibility-for-manufacturing/)
 
 Sources: [Fixture source 1](https://source0.example.test/story/9)
 

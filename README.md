@@ -93,6 +93,8 @@ All report commands accept mutually exclusive `--send` / `--no-send`, plus `--pr
 
 Email story details display **Location relevance**, **Industry relevance** and **Technology relevance** on separate labeled lines in both HTML and plain text. The HTML priority table uses the same layout. Technology relevance shows the existing technical practice-area scores; the labels and line breaks do not change scoring.
 
+News story details omit the "Relevant to your work" line and its linked case studies in HTML, Markdown and email.
+
 Optional full text is available for classification only:
 
 ```powershell

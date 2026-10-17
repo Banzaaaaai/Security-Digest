@@ -4,6 +4,8 @@ Latest validation: **18 October 2026**, Europe/Paris. Live checks below were per
 
 ## Email relevance layout
 
+News story details now omit the "Relevant to your work" line and its associated links in daily and weekly HTML, Markdown and email bodies. Updated golden reports differ only by those removed lines. All 99 existing tests and Ruff checks passed; regenerated daily and synthetic weekly previews under `output/preview/news-layout/` confirm the line is absent while source links and the separate relevance fields remain. No email was sent.
+
 Email story details now place **Location relevance**, **Industry relevance** and **Technology relevance** on separate labeled lines. HTML uses explicit line breaks, including in the daily priority table; the plain-text alternative uses separate text lines. Technology relevance displays the existing technical practice-area scores, with no scoring changes.
 
 The existing **99 tests passed**, and Ruff lint and formatting checks passed. Decoded MIME previews were checked using the six-item deduplicated daily report and the synthetic weekly report: every relevance label has its own line with its values, in both HTML and plain text. HTML bodies measured 18,094 and 40,496 bytes respectively, below the 90,000-byte limit. Previews are under `output/preview/relevance-lines/`. No email was sent and no API requests were made.

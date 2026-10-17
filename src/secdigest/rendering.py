@@ -59,10 +59,6 @@ def details(config, item):
             for t in item["attack_techniques"]
         ],
         "detection": [link(r["type"].upper(), r["url"]) for r in item["detection_refs"]],
-        "cases": [
-            link(config.case_studies[s]["title"], config.case_studies[s]["url"])
-            for s in item["related_case_studies"]
-        ],
         "sources": [link(s["source"], s["url"]) for s in item["sources"]],
     }
 
@@ -424,8 +420,6 @@ def render_markdown(config, report, email=False):
                     "Detection references: " + md_value(block["detection"]),
                     "",
                     "Detection assessment: " + md_value(i["detection_coverage_note"]),
-                    "",
-                    "Relevant to your work: " + md_value(block["cases"]),
                     "",
                     "Sources: " + md_value(block["sources"]),
                 ]

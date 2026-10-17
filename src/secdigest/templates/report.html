@@ -27,7 +27,7 @@
 <p><strong>Why it matters:</strong> {{ i.importance_rationale }}</p>{% if i.recommended_action %}<p><strong>Action:</strong> {{ i.recommended_action }}</p>{% endif %}
 {% if block.cves %}<p style="font-size:12px">{{ value(block.cves) }}</p>{% endif %}{% if block.techniques %}<p><strong>ATT&amp;CK:</strong> {{ value(block.techniques) }}</p>{% endif %}
 {% if block.detection %}<p><strong>Detection references:</strong> {{ value(block.detection) }}</p>{% endif %}{% if i.detection_coverage_note %}<p><strong>Detection assessment:</strong> {{ i.detection_coverage_note }}</p>{% endif %}
-{% if block.cases %}<p><strong>Relevant to your work:</strong> {{ value(block.cases) }}</p>{% endif %}<p><strong>Sources:</strong> {{ value(block.sources) }}</p>
+<p><strong>Sources:</strong> {{ value(block.sources) }}</p>
 {% if i.overrides %}<p style="font-size:11px">Scoring overrides: {{ i.overrides|join('; ') }}</p>{% endif %}</td></tr></table>
 {% endif %}
 {% endfor %}
