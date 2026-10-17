@@ -19,16 +19,27 @@ def link(text, url):
     return {"text": str(text), "url": safe_url(url)}
 
 
-def top_tags(config, item):
-    values = [f"{k} {v}%" for k, v in item["location_relevance"].items()]
-    for field, taxonomy in (
-        ("industry_relevance", config.industries),
-        ("practice_area_relevance", config.practice_areas),
+def relevance_fields(config, item):
+    fields = [
+        {
+            "label": "Location relevance",
+            "text": " · ".join(f"{k} {v}%" for k, v in item["location_relevance"].items()),
+        }
+    ]
+    # Technology relevance displays the existing technical practice-area scores.
+    for label, field, taxonomy in (
+        ("Industry relevance", "industry_relevance", config.industries),
+        ("Technology relevance", "practice_area_relevance", config.practice_areas),
     ):
-        values.extend(
+        values = [
             f"{taxonomy[k]['name']} {v}%" for k, v in sorted(item[field].items(), key=lambda p: -p[1])[:2]
-        )
-    return " · ".join(values)
+        ]
+        fields.append({"label": label, "text": " · ".join(values)})
+    return fields
+
+
+def top_tags(config, item):
+    return " · ".join(field["text"] for field in relevance_fields(config, item))
 
 
 def details(config, item):
@@ -41,6 +52,7 @@ def details(config, item):
         "kind": "story",
         "item": item,
         "tags": top_tags(config, item),
+        "relevance": relevance_fields(config, item),
         "cves": cves,
         "techniques": [
             link(t, "https://attack.mitre.org/techniques/" + t.replace(".", "/") + "/")
@@ -138,7 +150,7 @@ def sections(config, report, email=False, item_limit=None, compact=False):
                 [
                     [
                         i["importance"].upper(),
-                        [link(i["headline"], i["sources"][0]["url"]), top_tags(config, i)],
+                        [link(i["headline"], i["sources"][0]["url"]), *relevance_fields(config, i)],
                         i["priority"],
                     ]
                     for i in rows
@@ -375,7 +387,7 @@ def md_value(value):
     )
 
 
-def render_markdown(config, report):
+def render_markdown(config, report, email=False):
     lines = [f"# SecDigest {report['kind']} — {report['period']}", ""]
     for block in sections(config, report):
         kind = block["kind"]
@@ -387,11 +399,17 @@ def render_markdown(config, report):
             lines.extend("- " + md_value(v) for v in block["values"])
         elif kind == "story":
             i = block["item"]
+            metadata = f"**{i['importance'].upper()}** · Priority {i['priority']}"
+            relevance = (
+                [metadata, "", *[f"**{r['label']}:** {md_value(r['text'])}" for r in block["relevance"]]]
+                if email
+                else [metadata + " · " + md_value(block["tags"])]
+            )
             lines.extend(
                 [
                     "### " + md_value(i["headline"]),
                     "",
-                    f"**{i['importance'].upper()}** · Priority {i['priority']} · {md_value(block['tags'])}",
+                    *relevance,
                     "",
                     md_value(i["summary"]),
                     "",

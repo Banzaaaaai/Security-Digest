@@ -4,7 +4,7 @@
 {% if not email %}<style>body{color-scheme:light dark}a{overflow-wrap:anywhere}table{font-variant-numeric:tabular-nums}@media(prefers-color-scheme:dark){body,.paper{background:#111827!important;color:#e5e7eb!important}td,th{border-color:#475569!important}a{color:#93c5fd!important}h2{color:#e5e7eb!important}}</style>{% endif %}
 </head>
 {% macro value(v) -%}
-{% if v is mapping %}{% if v.url|safe_url %}<a href="{{ v.url|safe_url }}" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">{{ v.text }}</a>{% else %}{{ v.text }}{% endif %}
+{% if v is mapping %}{% if v.label is defined %}<strong>{{ v.label }}:</strong> {{ v.text }}{% elif v.url|safe_url %}<a href="{{ v.url|safe_url }}" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">{{ v.text }}</a>{% else %}{{ v.text }}{% endif %}
 {% elif v is iterable and v is not string %}{% for part in v %}{{ value(part) }}{% if not loop.last %}<br>{% endif %}{% endfor %}
 {% else %}{{ v }}{% endif %}
 {%- endmacro %}
@@ -23,7 +23,7 @@
 {% elif block.kind == 'heatmap' %}<table style="width:100%;table-layout:fixed;border-collapse:collapse;font-size:11px"><tr><th style="width:32%;text-align:left;padding:5px">Area</th>{% for level in block.levels %}<th style="padding:4px;font-size:10px;overflow-wrap:anywhere">{{ level|upper }}</th>{% endfor %}</tr>{% for row in block.rows %}<tr><th style="padding:6px 3px;text-align:left;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">{{ row.name }}</th>{% for level in block.levels %}{% set cell = row.cells[level] %}<td style="padding:6px 2px;text-align:center;border:2px solid #ffffff;background:{{ colors[level] if cell.count else '#e2e8f0' }};color:{{ '#ffffff' if cell.count else '#172033' }}">{{ cell.count }}<br>{{ cell.average }}%</td>{% endfor %}</tr>{% endfor %}</table>
 {% elif block.kind == 'story' %}{% set i = block.item %}<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid {{ colors[i.importance] }}">
 <span style="padding:3px 7px;background:{{ colors[i.importance] }};color:#ffffff;font-size:11px;font-weight:bold">{{ i.importance|upper }}</span><span style="font-size:12px"> · Priority {{ i.priority }}</span>
-<h3 style="font-size:17px;line-height:1.4;margin:10px 0">{{ i.headline }}</h3><p style="font-size:12px;margin:8px 0">{{ block.tags }}</p><p>{{ i.summary }}</p>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">{{ i.headline }}</h3><p style="font-size:12px;margin:8px 0">{{ value(block.relevance if email else block.tags) }}</p><p>{{ i.summary }}</p>
 <p><strong>Why it matters:</strong> {{ i.importance_rationale }}</p>{% if i.recommended_action %}<p><strong>Action:</strong> {{ i.recommended_action }}</p>{% endif %}
 {% if block.cves %}<p style="font-size:12px">{{ value(block.cves) }}</p>{% endif %}{% if block.techniques %}<p><strong>ATT&amp;CK:</strong> {{ value(block.techniques) }}</p>{% endif %}
 {% if block.detection %}<p><strong>Detection references:</strong> {{ value(block.detection) }}</p>{% endif %}{% if i.detection_coverage_note %}<p><strong>Detection assessment:</strong> {{ i.detection_coverage_note }}</p>{% endif %}

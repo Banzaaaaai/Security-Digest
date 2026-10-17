@@ -91,6 +91,8 @@ OpenAI Batch API input file IDs, job IDs and memberships are persisted in SQLite
 
 All report commands accept mutually exclusive `--send` / `--no-send`, plus `--preview`. A preview writes the exact MIME message without sending, even if combined with `--send`. Standalone `daily`/`weekly` commands default to no sending; `run-*` defaults to delivery. `--root PATH` selects a project folder and goes before the command. `--dry-run` can go before a command or after a pipeline/report command.
 
+Email story details display **Location relevance**, **Industry relevance** and **Technology relevance** on separate labeled lines in both HTML and plain text. The HTML priority table uses the same layout. Technology relevance shows the existing technical practice-area scores; the labels and line breaks do not change scoring.
+
 Optional full text is available for classification only:
 
 ```powershell

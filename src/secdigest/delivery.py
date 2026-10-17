@@ -77,7 +77,7 @@ def digest_message(config, report, paths, preview=False, now=None):
     return compose(
         report["kind"],
         subject(report["kind"], report),
-        render_markdown(config, report),
+        render_markdown(config, report, email=True),
         render_html(config, report, email=True),
         attachments,
         preview,

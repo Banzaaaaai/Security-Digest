@@ -2,6 +2,12 @@
 
 Latest validation: **18 October 2026**, Europe/Paris. Live checks below were performed on 17 October unless stated otherwise.
 
+## Email relevance layout
+
+Email story details now place **Location relevance**, **Industry relevance** and **Technology relevance** on separate labeled lines. HTML uses explicit line breaks, including in the daily priority table; the plain-text alternative uses separate text lines. Technology relevance displays the existing technical practice-area scores, with no scoring changes.
+
+The existing **99 tests passed**, and Ruff lint and formatting checks passed. Decoded MIME previews were checked using the six-item deduplicated daily report and the synthetic weekly report: every relevance label has its own line with its values, in both HTML and plain text. HTML bodies measured 18,094 and 40,496 bytes respectively, below the 90,000-byte limit. Previews are under `output/preview/relevance-lines/`. No email was sent and no API requests were made.
+
 ## Post-classification duplicate check
 
 **99 tests pass locally**, with Ruff lint and formatting checks passing. New regression coverage includes the three ConnectWise reports, identical Drupal coverage, distinct victims/products/CVEs/actors, a CVE roundup, separate regulatory events, publication timing, transitive roundup protection, source URL normalization, preserved evidence, repeatability and unmodified stored inputs. Daily output tests verify one incident entry with all sources across HTML, Markdown, CSV and email. Weekly tests verify unique incident counts, previous-week comparisons, CVE-specific source attribution and the input to synthesis.
