@@ -15,6 +15,7 @@ def invocation(environ):
     if mode == "fixtures":
         command += ["--dry-run", kind, "--preview"]
         env.pop("OPENAI_API_KEY", None)
+        env.pop("OPENAI_BASE_URL", None)
     else:
         if not env.get("OPENAI_API_KEY"):
             raise ValueError("Set the OPENAI_API_KEY Actions secret, or use mode=fixtures")

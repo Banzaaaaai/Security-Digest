@@ -6,6 +6,7 @@ import json
 import os
 from datetime import UTC, datetime
 
+import httpx
 from openai import OpenAI
 from openai.types.responses import Response
 from pydantic import ValidationError
@@ -34,7 +35,16 @@ def system_prompt(config):
 def client_from_env():
     if not os.getenv("OPENAI_API_KEY"):
         raise RuntimeError("OPENAI_API_KEY is not configured; use --dry-run for offline previews")
-    return OpenAI(timeout=90, max_retries=2)
+    endpoint = (os.getenv("OPENAI_BASE_URL") or "").strip() or "https://api.openai.com/v1"
+    try:
+        url = httpx.URL(endpoint)
+    except httpx.InvalidURL:
+        raise ValueError("OPENAI_BASE_URL must be an HTTP(S) API base URL") from None
+    if url.scheme not in {"https", "http"} or not url.host or url.userinfo or url.query or url.fragment:
+        raise ValueError(
+            "OPENAI_BASE_URL must be an HTTP(S) API base URL without credentials, query or fragment"
+        )
+    return OpenAI(base_url=endpoint, timeout=90, max_retries=2)
 
 
 def verify_model(client, name):

@@ -16,6 +16,7 @@ def test_workflow_delivery_modes(kind, mode):
         "MODE": mode,
         "FORCE_SEND": "true",
         "OPENAI_API_KEY": "test-placeholder",
+        "OPENAI_BASE_URL": "https://gateway.example.test/openai/v1",
         "SMTP_HOST": "smtp.example.test",
         "SMTP_PORT": "587",
         "SMTP_USER": "sender@example.test",
@@ -28,6 +29,7 @@ def test_workflow_delivery_modes(kind, mode):
     if mode == "send":
         assert "--force-send" in command
         assert child["SMTP_PASSWORD"] == "test-placeholder"
+        assert child["OPENAI_BASE_URL"] == env["OPENAI_BASE_URL"]
     else:
         assert "--force-send" not in command
         assert "--preview" in command
@@ -36,6 +38,9 @@ def test_workflow_delivery_modes(kind, mode):
         )
         assert ("--dry-run" in command) == (mode == "fixtures")
         assert ("OPENAI_API_KEY" in child) == (mode == "preview")
+        assert ("OPENAI_BASE_URL" in child) == (mode == "preview")
+        if mode == "preview":
+            assert child["OPENAI_BASE_URL"] == env["OPENAI_BASE_URL"]
     assert "SMTP_PASSWORD" in env  # Do not mutate the parent environment.
 
 

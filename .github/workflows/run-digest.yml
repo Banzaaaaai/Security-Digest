@@ -81,6 +81,7 @@ jobs:
         id: digest
         env:
           OPENAI_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_API_KEY || '' }}
+          OPENAI_BASE_URL: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_BASE_URL || '' }}
           SMTP_HOST: ${{ inputs.mode == 'send' && secrets.SMTP_HOST || '' }}
           SMTP_PORT: ${{ inputs.mode == 'send' && secrets.SMTP_PORT || '' }}
           SMTP_USER: ${{ inputs.mode == 'send' && secrets.SMTP_USER || '' }}

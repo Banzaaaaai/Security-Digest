@@ -33,6 +33,7 @@ Set environment variables through your shell/session or secret manager. The appl
 | Variable | Use |
 |---|---|
 | `OPENAI_API_KEY` | OpenAI classification and weekly synthesis |
+| `OPENAI_BASE_URL` | Optional API endpoint/base URL; defaults to `https://api.openai.com/v1` when omitted or blank |
 | `SMTP_HOST` | SMTP server; defaults to `smtp.gmail.com` |
 | `SMTP_PORT` | STARTTLS port; defaults to `587` |
 | `SMTP_USER` | Gmail sender address |
@@ -40,6 +41,10 @@ Set environment variables through your shell/session or secret manager. The appl
 | `EMAIL_TO` | Comma-separated recipient addresses; whitespace and empty entries removed |
 
 The defaults in `config/settings.yaml` are `gpt-5.4-mini` for classification and `gpt-5.4` for weekly synthesis. Both use the OpenAI Responses API with strict function schemas and local evidence validation. Live classification retrieves the configured model before using it and fails if unavailable; it does not silently choose another model. The model IDs and public rates are documented by OpenAI, but access still depends on your API project. Anthropic credentials are no longer used. The original prompt is preserved as the initial specification; the provider was changed at the user's request.
+
+For a custom API endpoint, add a GitHub Actions repository secret named **`OPENAI_BASE_URL`**, alongside **`OPENAI_API_KEY`**. Set it to the provider's API base URL, for example `https://gateway.example.com/v1` or `https://resource.openai.azure.com/openai/v1`. Include the provider's required path prefix, but omit operation suffixes such as `/responses` or `/chat/completions`, credentials, query parameters and fragments. The application uses this endpoint for classification, weekly synthesis, model lookup and Batch/Files API calls. The provider must support the Responses API with strict function calls and the configured model IDs; batch backfills also require its Batch/Files APIs. Configure model names and pricing for that provider in `config/settings.yaml`. Do not change the endpoint while a batch job is pending.
+
+The same environment variable works locally. Surrounding whitespace is trimmed; an empty GitHub secret keeps the standard OpenAI endpoint. Fixture mode removes both API settings and stays offline. The endpoint is not printed in application logs.
 
 ```powershell
 uv run secdigest feeds check
@@ -157,7 +162,7 @@ Daily outputs are retained for 90 days and stored news for 120 days; weekly arch
 
 The workflows are ready but `scheduling.enabled` is **false**. Before changing it:
 
-1. Configure `OPENAI_API_KEY` and the email repository secrets listed above, and verify model access.
+1. Configure `OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, and the email repository secrets listed above, and verify model access at that endpoint.
 2. Generate and review daily/weekly previews, including Gmail desktop and phone presentation.
 3. Run `secdigest email test` and confirm receipt.
 4. Run a live daily digest and a weekly preview, verify coverage and usage, then set `scheduling.enabled: true`.

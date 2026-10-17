@@ -1,6 +1,12 @@
 # SecDigest validation record
 
-Validation date: **17 October 2026**, Europe/Paris.
+Latest validation: **18 October 2026**, Europe/Paris. Live checks below were performed on 17 October unless stated otherwise.
+
+## Custom API endpoint
+
+`OPENAI_BASE_URL` is now an optional environment variable and GitHub Actions repository secret. All OpenAI client operations use it, including classification, weekly synthesis, model lookup and batch/files requests. Missing or blank values select `https://api.openai.com/v1`; surrounding whitespace is trimmed. Fixture workflows remove the key and endpoint from the child environment.
+
+**80 tests passed locally**, with Ruff and formatting checks passing. Mock HTTP tests verify classification/model requests at both the default endpoint and a custom endpoint with a path prefix, while configuration tests verify empty-value fallback and rejection of invalid URLs without printing their values. The custom endpoint has not been exercised live; the user will configure its secret in GitHub before another live preview.
 
 ## Completed
 

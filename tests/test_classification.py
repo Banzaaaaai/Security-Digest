@@ -5,10 +5,9 @@ from unittest.mock import Mock
 
 import httpx
 import pytest
-from openai import OpenAI
 from openai.types.responses import Response
 
-from secdigest.classification import batch_classify, classify, parse_response, usage_record
+from secdigest.classification import batch_classify, classify, client_from_env, parse_response, usage_record
 from secdigest.evidence import validate_claims
 
 
@@ -68,21 +67,24 @@ def test_second_invalid_output_fails(config, populated):
     assert client.responses.create.call_count == 2
 
 
-def test_responses_sdk_request_and_persistence(config, populated, respx_mock):
+@pytest.mark.parametrize("endpoint", ["https://api.openai.com/v1", "https://gateway.example.test/openai/v1"])
+def test_responses_sdk_request_and_persistence(config, populated, respx_mock, monkeypatch, endpoint):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
+    monkeypatch.setenv("OPENAI_BASE_URL", "  " + endpoint + "/  ")
     cluster = populated.clusters()[0]
     valid = deepcopy(cluster["classification"])
     with populated.db:
         populated.db.execute("DELETE FROM classifications WHERE cluster_id=?", (cluster["id"],))
     model = config.settings["models"]["classification"]
-    respx_mock.get("https://api.openai.com/v1/models/" + model).mock(
+    respx_mock.get(endpoint + "/models/" + model).mock(
         return_value=httpx.Response(
             200, json={"id": model, "object": "model", "created": 1, "owned_by": "openai"}
         )
     )
-    route = respx_mock.post("https://api.openai.com/v1/responses").mock(
+    route = respx_mock.post(endpoint + "/responses").mock(
         return_value=httpx.Response(200, json=response([valid]).model_dump())
     )
-    with OpenAI(api_key="test-placeholder", base_url="https://api.openai.com/v1") as client:
+    with client_from_env() as client:
         result = classify(config, populated, client=client)
     assert result["classified"] == 1
     body = json.loads(route.calls[0].request.content)
@@ -93,6 +95,36 @@ def test_responses_sdk_request_and_persistence(config, populated, respx_mock):
     assert body["tools"][0]["parameters"]["additionalProperties"] is False
     assert "max_output_tokens" in body
     assert populated.clusters()[0]["classification"]["headline"] == valid["headline"]
+
+
+@pytest.mark.parametrize("endpoint", [None, "", "  "])
+def test_missing_or_blank_endpoint_uses_openai_default(monkeypatch, endpoint):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
+    if endpoint is None:
+        monkeypatch.delenv("OPENAI_BASE_URL", raising=False)
+    else:
+        monkeypatch.setenv("OPENAI_BASE_URL", endpoint)
+    with client_from_env() as client:
+        assert str(client.base_url) == "https://api.openai.com/v1/"
+
+
+@pytest.mark.parametrize(
+    "endpoint",
+    [
+        "not-an-endpoint",
+        "file:///private-placeholder",
+        "https://user:private-placeholder@example.test/v1",
+        "https://example.test/v1?token=private-placeholder",
+        "https://example.test/v1#private-placeholder",
+    ],
+)
+def test_invalid_endpoint_errors_do_not_expose_its_value(monkeypatch, endpoint):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
+    monkeypatch.setenv("OPENAI_BASE_URL", endpoint)
+    with pytest.raises(ValueError) as error:
+        client_from_env()
+    assert "OPENAI_BASE_URL" in str(error.value)
+    assert "private-placeholder" not in str(error.value)
 
 
 def test_unsupported_claims_are_dropped(config, populated):
