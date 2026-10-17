@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-18",
-  "start": "2026-10-16T22:19:11.824917+00:00",
-  "end": "2026-10-17T22:19:11.824917+00:00",
+  "start": "2026-10-16T22:41:47.003226+00:00",
+  "end": "2026-10-17T22:41:47.003226+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -15,11 +15,13 @@
       "importance_rationale": "This is an active credential-abuse campaign affecting a widely deployed enterprise platform and a managed service provider supply-chain path. It has direct implications for Microsoft 365 tenant security and MSP trust relationships.",
       "location_relevance": {
         "US": 50,
-        "Europe": 30,
+        "Europe": 40,
         "MEA": 10,
         "Other": 10
       },
-      "countries_mentioned": [],
+      "countries_mentioned": [
+        "NL"
+      ],
       "industry_relevance": {
         "energy_services": 40,
         "telecommunications": 40,
@@ -48,7 +50,8 @@
       "affected_technologies": [
         "Microsoft 365",
         "ConnectWise Cloud Backup",
-        "managed service provider (MSP) environments"
+        "managed service provider (MSP) environments",
+        "SkyKick Cloud Backup"
       ],
       "cves": [],
       "threat_actors": [],
@@ -74,175 +77,13 @@
           "source": "The Hacker News",
           "published": "2026-10-17T06:16:46+00:00",
           "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [
-        {
-          "name": "Microsoft 365",
-          "aliases": [
-            "Office 365",
-            "M365"
-          ],
-          "cross_industry": true,
-          "vendor": "microsoft"
-        }
-      ],
-      "cve_details": {},
-      "priority": 87.0,
-      "included": true
-    },
-    {
-      "cluster_id": "f15f3cdf858354ce656b4b1a",
-      "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
-      "summary": "Attackers abused a ConnectWise cloud backup supply-chain issue to access application identities and compromise Microsoft 365 tenants. Organizations using the service should review identity trust, rotate credentials, and check for unauthorized access paths.",
-      "category": "supply_chain",
-      "importance": "critical",
-      "importance_rationale": "A managed service supply-chain compromise affecting Microsoft 365 tenants is a high-impact enterprise incident with broad downstream exposure.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 50,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [
-        "NL"
-      ],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 80,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 80,
-        "vuln_exposure_mgmt": 20,
-        "devsecops": 20,
-        "siem_detection": 55,
-        "iam_pam": 85,
-        "email_phishing": 0,
-        "data_protection_dlp": 35,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "ConnectWise Cloud Backup",
-        "SkyKick Cloud Backup",
-        "Microsoft 365"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. Relevant monitoring would focus on application identity misuse, abnormal Microsoft 365 tenant activity, and unexpected consent or token events.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review connected application identities, revoke suspicious tokens or consents, rotate secrets, and audit Microsoft 365 tenant activity for impacted customers.",
-      "confidence": 0.99,
-      "sources": [
+        },
         {
           "url": "https://www.security.nl/posting/958045/Supplychain-aanval+via+ConnectWise+Cloud+Backup+raakt+tal+van+bedrijven?channel=rss",
           "source": "Security.NL",
           "published": "2026-10-17T16:32:55+00:00",
           "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [
-        {
-          "name": "Microsoft 365",
-          "aliases": [
-            "Office 365",
-            "M365"
-          ],
-          "cross_industry": true,
-          "vendor": "microsoft"
-        }
-      ],
-      "cve_details": {},
-      "priority": 83.0,
-      "included": true
-    },
-    {
-      "cluster_id": "622bd951152759335bff398f",
-      "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
-      "summary": "Attackers abused a ConnectWise cloud backup supply-chain issue to access application identities and compromise Microsoft 365 tenants. Organizations using the service should review identity trust, rotate credentials, and check for unauthorized access paths.",
-      "category": "supply_chain",
-      "importance": "critical",
-      "importance_rationale": "A managed service supply-chain compromise affecting Microsoft 365 tenants is a high-impact enterprise incident with broad downstream exposure.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 80,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 80,
-        "vuln_exposure_mgmt": 20,
-        "devsecops": 20,
-        "siem_detection": 55,
-        "iam_pam": 85,
-        "email_phishing": 0,
-        "data_protection_dlp": 35,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "ConnectWise Cloud Backup",
-        "SkyKick Cloud Backup",
-        "Microsoft 365"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. Relevant monitoring would focus on application identity misuse, abnormal Microsoft 365 tenant activity, and unexpected consent or token events.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review connected application identities, revoke suspicious tokens or consents, rotate secrets, and audit Microsoft 365 tenant activity for impacted customers.",
-      "confidence": 0.99,
-      "sources": [
+        },
         {
           "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/",
           "source": "BleepingComputer",
@@ -263,8 +104,13 @@
         }
       ],
       "cve_details": {},
-      "priority": 81.0,
-      "included": true
+      "priority": 87.0,
+      "included": true,
+      "merged_cluster_ids": [
+        "614eb364146c341c337919f1",
+        "622bd951152759335bff398f",
+        "f15f3cdf858354ce656b4b1a"
+      ]
     },
     {
       "cluster_id": "dc7947b6d8241b518f700fb5",
@@ -568,73 +414,7 @@
           "source": "Security.NL",
           "published": "2026-10-17T15:38:00+00:00",
           "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 61.0,
-      "included": true
-    },
-    {
-      "cluster_id": "978985bee2a5f3ab64de6a95",
-      "headline": "Drupal fixes critical remote code execution flaws",
-      "summary": "Drupal released security updates for critical flaws that could let attackers execute code on affected sites. The advisory indicates exploitation may follow soon, so exposed deployments should prioritize patching and validation.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "Critical RCE flaws in a widely deployed web platform create immediate patching urgency, even though the report does not confirm active exploitation.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 85,
-        "devsecops": 55,
-        "siem_detection": 20,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Drupal"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. Defenders should review internet-facing Drupal instances, patch status, and any unusual webshell or command execution activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Patch affected Drupal installations immediately, inventory exposed instances, and hunt for signs of webshells or post-exploitation activity.",
-      "confidence": 0.98,
-      "sources": [
+        },
         {
           "url": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaws-warns-exploits-may-emerge-soon/",
           "source": "BleepingComputer",
@@ -645,8 +425,12 @@
       "overrides": [],
       "watch_tech": [],
       "cve_details": {},
-      "priority": 59.0,
-      "included": true
+      "priority": 61.0,
+      "included": true,
+      "merged_cluster_ids": [
+        "978985bee2a5f3ab64de6a95",
+        "f55de43848d3b29bb4d16601"
+      ]
     },
     {
       "cluster_id": "f5625e2270c3db076816a81b",
@@ -722,37 +506,28 @@
     }
   ],
   "counts": {
-    "critical": 3,
-    "high": 4,
+    "critical": 1,
+    "high": 3,
     "medium": 2,
     "low": 0
   },
   "unclassified": 0,
+  "duplicates_removed": 3,
   "new_kev": [],
-  "watch_hits": 3,
+  "watch_hits": 1,
   "watch": {
     "microsoft": [
       {
         "technology": "Microsoft 365",
         "headline": "Compromised ConnectWise credential used to access Microsoft 365 tenants",
         "cluster_id": "614eb364146c341c337919f1"
-      },
-      {
-        "technology": "Microsoft 365",
-        "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
-        "cluster_id": "f15f3cdf858354ce656b4b1a"
-      },
-      {
-        "technology": "Microsoft 365",
-        "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
-        "cluster_id": "622bd951152759335bff398f"
       }
     ]
   },
   "regulations": {},
   "other_count": 0,
   "source_health": {
-    "at": "2026-10-17T22:19:11.824917+00:00",
+    "at": "2026-10-17T22:41:47.003226+00:00",
     "enabled": 22,
     "failures": 1,
     "new": 0,
@@ -874,8 +649,6 @@
   "cases": {
     "audit-ready-by-design": [
       "614eb364146c341c337919f1",
-      "f15f3cdf858354ce656b4b1a",
-      "622bd951152759335bff398f",
       "fb152e7d9cd2d8fc80f7f90d"
     ],
     "security-in-the-delivery-path": [

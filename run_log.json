@@ -479,5 +479,155 @@
     "estimated_usd": 0.020333999999999998,
     "email_type": "daily",
     "email_sent": true
+  },
+  {
+    "timestamp": "2026-10-17T22:41:46.918364+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [
+      {
+        "email_type": "daily",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-17T22:41:47.003226+00:00",
+      "enabled": 22,
+      "failures": 1,
+      "new": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA Advisories",
+          "ok": false,
+          "new": 0,
+          "error": "HTTPStatusError"
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "classification": {
+      "classified": 0,
+      "usage": []
+    },
+    "period": "2026-10-18",
+    "counts": {
+      "critical": 1,
+      "high": 3,
+      "medium": 2,
+      "low": 0
+    },
+    "items": 6,
+    "duplicates_removed": 3,
+    "duration_s": 2.57,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": "daily",
+    "email_sent": true
   }
 ]
