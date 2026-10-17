@@ -8,7 +8,7 @@ Validation date: **17 October 2026**, Europe/Paris.
 |---|---|
 | Project environment | Python 3.12.13 installed through uv; dependency lock and pip requirements export generated |
 | Configuration | 4 regions, 10 industries, 11 practice areas, 12 case studies, 3 writing references and 51 feed definitions |
-| Automated tests | **59 passed** after the OpenAI migration; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation and preview credential isolation |
+| Automated tests | **66 passed** locally and on GitHub after the OpenAI migration and diagnostics update; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata |
 | Ruff | Lint passed; source, tests and scripts formatted |
 | Python syntax | `compileall` completed for source and scripts |
 | Workflow files | All four workflow YAML files parsed successfully |
@@ -32,11 +32,13 @@ Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are t
 
 At the user's request, classification and weekly synthesis now use the OpenAI Responses API with strict function calls. Historical backfills use the OpenAI Batch API, including persisted file/job IDs and partial-failure handling. Defaults are `gpt-5.4-mini` and `gpt-5.4`; public model support and standard pricing were checked against the official model pages. Dependencies are locked to OpenAI SDK 2.54.0; Anthropic is no longer a runtime dependency.
 
-The authorized local key was added to GitHub Actions secrets without displaying it, but an OpenAI model-list request returned HTTP 401. The user will replace `OPENAI_API_KEY` later and requested implementation-only verification meanwhile. No live classification or synthesis was attempted after that instruction. API project model access, actual schema acceptance and generated content remain unverified.
+The latest [GitHub live daily preview](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39071539762) reached classification but failed with HTTP **401 `invalid_api_key`**, including after the user replaced the repository secret. The runner trims surrounding whitespace and rejects obvious quoted/assignment-form credentials. OpenAI still rejected the normalized secret. No token usage was recorded, and no live digest was generated. API project model access, actual schema acceptance and generated content remain unverified until a working API key is configured.
+
+That run checked 22 enabled feeds: 21 succeeded, CISA Advisories returned an HTTP error, and no new articles were added. The existing database was reused. Preview mode provided no SMTP credentials and the diagnostic log confirms `email_sent: false`.
 
 The suite passed in `.venv-openai` (Python 3.12.13) after Windows blocked removal of an old package in `.venv`; pytest required execution outside the filesystem sandbox to access its temporary directory. Daily and weekly fixture runs through `scripts/workflow_digest.py` succeeded with API and email credentials removed from the child environment. Both produced all four report formats and `.eml` previews, with 12 synthetic clusters and zero unclassified items. No email was sent.
 
-Manual Actions runs now default to `preview`; `fixtures` works without a key and `send` explicitly enables email. Preview modes do not commit artifacts or update the persistent database cache. The updated workflows have been checked locally, not dispatched on GitHub.
+Manual Actions runs now default to `preview`; `fixtures` works without a key and `send` explicitly enables email. Preview modes do not commit artifacts or update the persistent database cache. The [GitHub daily fixture preview](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39071318944) succeeded, and its downloaded artifact was verified: 12 synthetic clusters, all four report formats, an `.eml` preview and `email_sent: false`. Failed previews also upload a diagnostic run log; inspect its latest status before treating any archived files in the artifact as a completed live report.
 
 ## Artifacts
 
@@ -62,7 +64,7 @@ Email secrets exist in GitHub Actions. A working `OPENAI_API_KEY` is still neede
 - Gmail/Outlook desktop, phone presentation and forced dark-mode behavior have not been reviewed in those clients.
 - The complete live `run-daily` acceptance target of under five minutes is **not yet verified**. The measured 53.98 seconds covers collection and advisory enrichment only; API classification and email would add time.
 - EPSS, NVD and GitHub enrichment are optional and disabled by default; these integrations were not exercised against live services during this build.
-- The original GitHub checks workflow passed ([run 39069412641](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39069412641)). The updated OpenAI workflows, live digest workflow and server cron have not been executed. YAML parsing and mocked/local DST tests do not substitute for an actual scheduled run.
+- The updated [GitHub checks workflow passed](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39071539324), including 66 tests, Ruff and daily/weekly fixture previews. Manual daily fixture execution passed; live execution remains blocked by OpenAI authentication. Scheduled delivery and server cron have not been exercised.
 
 `scheduling.enabled` remains **false**. Complete the preview review and successful real email test required by the original prompt before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
 
@@ -75,4 +77,4 @@ Email secrets exist in GitHub Actions. A working `OPENAI_API_KEY` is still neede
 - Relevance scores and model-written summaries remain analytical judgments. Evidence filtering is conservative but is not an independent factual investigation.
 - If an Actions database cache is evicted, restore a backup before resuming. Cache storage is not an archival backup service.
 
-This migration has not been committed or pushed. Scheduling remains disabled.
+The migration and diagnostic changes are published on `codex/openai-daily-preview`; they have not been merged into `main`. Scheduling remains disabled.
