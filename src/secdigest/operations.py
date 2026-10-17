@@ -13,8 +13,59 @@ def api_error_details(exc):
     if not isinstance(exc, APIStatusError):
         return {}
     details = {"provider": "openai", "status_code": exc.status_code}
-    if exc.code in {"invalid_api_key", "insufficient_quota", "rate_limit_exceeded", "model_not_found"}:
+    known_codes = {
+        "invalid_api_key",
+        "insufficient_quota",
+        "rate_limit_exceeded",
+        "model_not_found",
+        "billing_hard_limit_reached",
+        "billing_not_active",
+        "quota_exceeded",
+    }
+    if isinstance(exc.code, str) and exc.code in known_codes:
         details["code"] = exc.code
+    # Responses may supply the cause in `type` or message while leaving `code` empty.
+    # Inspect in memory and emit only our fixed labels, never provider text.
+    body = exc.body if isinstance(exc.body, dict) else {}
+    if isinstance(body.get("error"), dict):
+        body = body["error"]
+    reason = " ".join(str(body.get(key, "")) for key in ("code", "type", "message")).lower()
+    if exc.status_code == 429:
+        if any(
+            phrase in reason
+            for phrase in (
+                "insufficient_quota",
+                "quota_exceeded",
+                "current quota",
+                "billing quota",
+                "run out of credits",
+                "insufficient credits",
+                "no balance left",
+                "credit balance",
+            )
+        ):
+            details["category"] = "quota_exhausted"
+        elif any(
+            phrase in reason
+            for phrase in (
+                "billing_hard_limit_reached",
+                "billing_not_active",
+                "spend limit",
+                "spending limit",
+            )
+        ):
+            details["category"] = "billing_limit"
+        elif any(
+            phrase in reason
+            for phrase in (
+                "rate limit",
+                "rate_limit",
+                "tokens per min",
+                "requests per min",
+                "request too large",
+            )
+        ):
+            details["category"] = "rate_limit"
     return details
 
 
