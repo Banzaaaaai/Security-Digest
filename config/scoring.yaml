@@ -51,6 +51,10 @@ rubric: '| Level | Criteria (any one is sufficient) |
 title_similarity: 85
 cve_title_similarity: 55
 cluster_days: 7
+post_dedup:
+  window_hours: 48
+  headline_similarity: 70
+  summary_similarity: 65
 epss_threshold: 0.5
 independent_sources: 3
 inclusion:

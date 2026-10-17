@@ -4,6 +4,7 @@ from collections import Counter, defaultdict
 from datetime import UTC, date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
+from .deduplication import deduplicate
 from .scheduling import window
 from .scoring import score
 from .synthesis import synthesize
@@ -44,16 +45,43 @@ def trends(items):
     }
 
 
+def report_items(config, clusters, store, end):
+    """Deduplicate before all totals, trends, synthesis and output rendering."""
+    clusters = [
+        {
+            **cluster,
+            "articles": [a for a in cluster["articles"] if datetime.fromisoformat(a["published"]) < end],
+        }
+        for cluster in clusters
+    ]
+    classified = [c for c in clusters if c["classification"] and c["articles"]]
+    scored = {c["id"]: score(config, c, store, end) for c in classified}
+    ranked = sorted(
+        classified,
+        key=lambda c: (
+            -config.scoring["importance_points"][scored[c["id"]]["importance"]],
+            -scored[c["id"]]["priority"],
+            scored[c["id"]]["headline"],
+            c["id"],
+        ),
+    )
+    merged = deduplicate(config, ranked)
+    items = []
+    for cluster in merged:
+        item = scored[cluster["id"]]
+        if "merged_cluster_ids" in cluster:
+            item = score(config, cluster, store, end)
+            item["merged_cluster_ids"] = cluster["merged_cluster_ids"]
+        items.append(item)
+    return merged, sorted(items, key=lambda i: (-i["priority"], i["headline"]))
+
+
 def build_report(config, store, kind, period=None, now=None, dry_run=False, synthesis_client=None):
     start, end, period = window(config, kind, period, now)
     clusters = store.clusters(start, end)
-    for cluster in clusters:
-        cluster["articles"] = [a for a in cluster["articles"] if datetime.fromisoformat(a["published"]) < end]
-    items = sorted(
-        [score(config, c, store, end) for c in clusters if c["classification"]],
-        key=lambda i: (-i["priority"], i["headline"]),
-    )
     pending = sum(c["classification"] is None for c in clusters)
+    classified_count = len(clusters) - pending
+    clusters, items = report_items(config, clusters, store, end)
     counts = {
         level: sum(i["importance"] == level for i in items) for level in config.scoring["importance_points"]
     }
@@ -87,6 +115,7 @@ def build_report(config, store, kind, period=None, now=None, dry_run=False, synt
         "items": items,
         "counts": counts,
         "unclassified": pending,
+        "duplicates_removed": classified_count - len(items),
         "new_kev": new_kev,
         "watch_hits": sum(bool(i["watch_tech"]) for i in items),
         "watch": dict(watch),
@@ -102,7 +131,7 @@ def build_report(config, store, kind, period=None, now=None, dry_run=False, synt
         UTC
     )
     previous_clusters = store.clusters(previous_start, start)
-    previous = [score(config, c, store, start) for c in previous_clusters if c["classification"]]
+    _, previous = report_items(config, previous_clusters, store, start)
     current_trends, old_trends = trends(items), trends(previous)
     for name, values in old_trends.items():
         for key in values:

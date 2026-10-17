@@ -58,6 +58,10 @@ uv run secdigest run-daily
 
 The first daily command classifies only the report's 24-hour window. This matters because some feeds, especially MSRC, expose thousands of historical entries. Regular daily runs reuse previously stored classifications. `weekly` and `run-weekly` use stored classifications and synthesize the week's summary; they do not reclassify stories. Reports prominently show the count of unclassified clusters so incomplete collection is not represented as a quiet period.
 
+After classification, a second duplicate check combines matching incident coverage into one report entry with all distinct source links. It compares normalized headlines and summaries, protects differing named subjects, CVEs and regulatory events, and requires every member of a group to match every other member. `scoring.yaml` → `post_dedup` controls the publication window (48 hours by default) and headline/summary similarity thresholds (70/65). This is a conservative text heuristic: ambiguous matches remain separate. It adds no API calls and leaves stored articles and classifications intact.
+
+The representative is selected by severity, then priority; its prose and relevance scores are retained. Validated CVEs, technologies, actors, techniques, detection links and countries are combined, and scoring overrides are recomputed from the original model values. Deduplication runs before daily and weekly totals, previous-week comparisons, synthesis and every output format, including email. JSON includes `duplicates_removed` and each merged item's `merged_cluster_ids`; the run log also records the removed count.
+
 For an initial backfill, `secdigest classify` processes **all unclassified stored clusters** and can incur substantial API usage. Prefer the asynchronous batch option:
 
 ```powershell
@@ -109,7 +113,7 @@ Full text is fetched under the site's robots policy, used transiently as classif
 | `regulations.yaml` | Regulation keys, jurisdiction, region, relevant industries and milestones |
 | `case_studies.yaml` | Published anonymized studies and sector/practice/country references |
 | `writing.yaml` | Published writing used by content outlines |
-| `scoring.yaml` | Cached importance rubric, categories, weights, thresholds and inclusion rules |
+| `scoring.yaml` | Cached importance rubric, categories, weights, deduplication thresholds and inclusion rules |
 
 The JSON tool schema and cached system prompt are generated at runtime from these files. Adding an industry or practice requires no Python edits. Existing classifications do not silently acquire scores for new keys: explicitly reclassify affected stored clusters after a taxonomy change. Run `config check` after edits.
 

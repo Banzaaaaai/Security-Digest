@@ -157,12 +157,18 @@ def run(args, config, store, record):
     record["stage"] = "reporting"
     report = build_report(config, store, kind, period, now, dry)
     paths = archive(config, report)
-    record.update(period=report["period"], counts=report["counts"], items=len(report["items"]))
+    record.update(
+        period=report["period"],
+        counts=report["counts"],
+        items=len(report["items"]),
+        duplicates_removed=report["duplicates_removed"],
+    )
     print_json(
         {
             "artifacts": paths,
             "counts": report["counts"],
             "unclassified": report["unclassified"],
+            "duplicates_removed": report["duplicates_removed"],
             "synthetic": dry,
         }
     )

@@ -2,6 +2,14 @@
 
 Latest validation: **18 October 2026**, Europe/Paris. Live checks below were performed on 17 October unless stated otherwise.
 
+## Post-classification duplicate check
+
+**99 tests pass locally**, with Ruff lint and formatting checks passing. New regression coverage includes the three ConnectWise reports, identical Drupal coverage, distinct victims/products/CVEs/actors, a CVE roundup, separate regulatory events, publication timing, transitive roundup protection, source URL normalization, preserved evidence, repeatability and unmodified stored inputs. Daily output tests verify one incident entry with all sources across HTML, Markdown, CSV and email. Weekly tests verify unique incident counts, previous-week comparisons, CVE-specific source attribution and the input to synthesis.
+
+The actual 18 October daily report was regenerated from a read-only copy of the saved database using its original reporting window, without API requests or SMTP delivery. **9 entries became 6 incidents**: ConnectWise coverage merged from three entries into one with three source links, and Drupal coverage merged from two entries into one with two source links. The revised counts are **1 critical, 3 high and 2 medium**. All nine source links remain available. HTML, Markdown, JSON, CSV and an email preview were generated under `output/preview/deduplicated/`; the CSV has six rows and the MIME preview has both expected attachments. The previously sent archives, database and daily delivery marker are unchanged.
+
+Deduplication runs before report totals, weekly synthesis and rendering. It preserves the selected representative's prose and relevance scores, combines validated evidence and recomputes scoring overrides from original values. JSON records the removed count and merged cluster IDs; run logs record the removed count. This is a conservative text heuristic with configurable thresholds and a 48-hour publication window. It keeps uncertain matches separate and does not guarantee detection of every paraphrase.
+
 ## Custom API endpoint
 
 `OPENAI_BASE_URL` is now an optional environment variable and GitHub Actions repository secret. All OpenAI client operations use it, including classification, weekly synthesis, model lookup and batch/files requests. Missing or blank values select `https://api.openai.com/v1`; surrounding whitespace is trimmed. Fixture workflows remove the key and endpoint from the child environment.
@@ -24,7 +32,7 @@ The workflow archived the reports, classifications and delivery state on `codex/
 |---|---|
 | Project environment | Python 3.12.13 installed through uv; dependency lock and pip requirements export generated |
 | Configuration | 4 regions, 10 industries, 11 practice areas, 12 case studies, 3 writing references and 51 feed definitions |
-| Automated tests | **83 passed locally** after the endpoint and metadata-permission updates; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata distinguishing quota exhaustion from rate limiting |
+| Automated tests | **99 passed locally** after the duplicate-check update; includes report deduplication, SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata distinguishing quota exhaustion from rate limiting |
 | Ruff | Lint passed; source, tests and scripts formatted |
 | Python syntax | `compileall` completed for source and scripts |
 | Workflow files | All four workflow YAML files parsed successfully |
@@ -91,7 +99,7 @@ Email secrets and working API key/endpoint secrets exist in GitHub Actions. Secr
 - The disabled-source list includes sites with no discovered feed, access restrictions and failed feed candidates. Their coverage is unavailable until a valid feed is configured; no page scrapers were created. Review the source-check report for the specific outcome per source.
 - MSRC contributed 4,609 of the stored articles. Backfilling every retained cluster is substantially larger than a normal daily window. Use the resumable batch command deliberately and configure verified pricing first.
 - Source-independence counts use configured publisher identities or feed hosts; syndicated content may require `independence_key` overrides.
-- The live preview contains overlapping ConnectWise incident coverage in separate clusters. Differently worded or multilingual reports can require further clustering adjustments; cluster counts are not counts of distinct incidents.
+- Raw ingestion clusters can contain overlapping coverage. The report-time duplicate check now consolidates the observed ConnectWise and Drupal duplicates; substantially different wording, classification errors or coverage outside the configured window may still leave separate entries. Stored cluster counts remain distinct from report item counts.
 - Historical reports reuse stored classifications and currently cached advisory facts; they are not immutable snapshots of what was known at the historical date.
 - Relevance scores and model-written summaries remain analytical judgments. Evidence filtering is conservative but is not an independent factual investigation.
 - If an Actions database cache is evicted, restore a backup before resuming. Cache storage is not an archival backup service.
