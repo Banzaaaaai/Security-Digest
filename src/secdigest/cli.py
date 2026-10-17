@@ -17,7 +17,7 @@ from .config import Config
 from .delivery import compose, digest_message, preview_message, send, send_failure_email, subject
 from .enrichment import enrich
 from .fixtures import FIXTURE_NOW, seed
-from .operations import atomic_json, prune, safe_trace, source_health_due, write_run
+from .operations import api_error_details, atomic_json, prune, safe_trace, source_health_due, write_run
 from .rendering import archive
 from .reporting import build_report
 from .scheduling import schedule_allowed, window
@@ -239,6 +239,10 @@ def main(argv=None):
             except Exception as exc:
                 record.update(status="failure", error=safe_trace(exc))
                 log.error("Run failed at %s (%s)", record["stage"], type(exc).__name__)
+                details = api_error_details(exc)
+                if details:
+                    record["api_error"] = details
+                    log.error("API error: %s", json.dumps(details))
                 # Only commands that requested delivery may send failure alerts.
                 if (
                     not args.dry_run

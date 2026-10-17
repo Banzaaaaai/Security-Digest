@@ -92,8 +92,8 @@ jobs:
           FORCE_SEND: ${{ inputs.force_send }}
           CACHE_DATABASE: ${{ steps.storage.outputs.cache_database }}
         run: python scripts/workflow_digest.py
-      - name: Upload preview reports and email files
-        if: steps.digest.outcome == 'success' && inputs.mode != 'send'
+      - name: Upload preview outputs and diagnostic run log
+        if: always() && (steps.digest.outcome == 'success' || steps.digest.outcome == 'failure') && inputs.mode != 'send'
         uses: actions/upload-artifact@v4
         with:
           name: secdigest-${{ inputs.kind }}-${{ inputs.mode }}-${{ github.run_id }}

@@ -48,3 +48,18 @@ def test_live_workflow_requires_key_but_fixtures_do_not():
 def test_workflow_rejects_unknown_modes():
     with pytest.raises(ValueError, match="Unknown"):
         invocation({"KIND": "daily", "MODE": "typo"})
+
+
+def test_workflow_trims_surrounding_key_whitespace():
+    _, child = invocation({"KIND": "daily", "MODE": "preview", "OPENAI_API_KEY": "  test-placeholder\n"})
+    assert child["OPENAI_API_KEY"] == "test-placeholder"
+
+
+@pytest.mark.parametrize(
+    "key", ['"private-placeholder"', "OPENAI_API_KEY=private-placeholder", "private placeholder", "  "]
+)
+def test_workflow_rejects_malformed_key_without_exposing_it(key):
+    with pytest.raises(ValueError) as error:
+        invocation({"KIND": "daily", "MODE": "preview", "OPENAI_API_KEY": key})
+    assert "private" not in str(error.value)
+    assert "invalid formatting" in str(error.value)

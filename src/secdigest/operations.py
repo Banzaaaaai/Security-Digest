@@ -5,6 +5,18 @@ import traceback
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
+from openai import APIStatusError
+
+
+def api_error_details(exc):
+    """Allowlist API metadata; error messages and arbitrary provider values stay private."""
+    if not isinstance(exc, APIStatusError):
+        return {}
+    details = {"provider": "openai", "status_code": exc.status_code}
+    if exc.code in {"invalid_api_key", "insufficient_quota", "rate_limit_exceeded", "model_not_found"}:
+        details["code"] = exc.code
+    return details
+
 
 def atomic_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
