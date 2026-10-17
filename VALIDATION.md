@@ -8,7 +8,7 @@ Validation date: **17 October 2026**, Europe/Paris.
 |---|---|
 | Project environment | Python 3.12.13 installed through uv; dependency lock and pip requirements export generated |
 | Configuration | 4 regions, 10 industries, 11 practice areas, 12 case studies, 3 writing references and 51 feed definitions |
-| Automated tests | **66 passed** locally and on GitHub after the OpenAI migration and diagnostics update; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata |
+| Automated tests | **71 passed** on GitHub after the OpenAI migration and diagnostics update; includes SDK HTTP request mocks, invalid-output retries, cached-token cost accounting, batch resumption/failure handling, weekly reference validation, preview credential isolation and secret-safe error metadata distinguishing quota exhaustion from rate limiting |
 | Ruff | Lint passed; source, tests and scripts formatted |
 | Python syntax | `compileall` completed for source and scripts |
 | Workflow files | All four workflow YAML files parsed successfully |
@@ -32,7 +32,7 @@ Fixture reports are explicitly synthetic. Their CVEs, headlines and scores are t
 
 At the user's request, classification and weekly synthesis now use the OpenAI Responses API with strict function calls. Historical backfills use the OpenAI Batch API, including persisted file/job IDs and partial-failure handling. Defaults are `gpt-5.4-mini` and `gpt-5.4`; public model support and standard pricing were checked against the official model pages. Dependencies are locked to OpenAI SDK 2.54.0; Anthropic is no longer a runtime dependency.
 
-The latest [GitHub live daily preview](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39071539762) reached classification but failed with HTTP **401 `invalid_api_key`**, including after the user replaced the repository secret. The runner trims surrounding whitespace and rejects obvious quoted/assignment-form credentials. OpenAI still rejected the normalized secret. No token usage was recorded, and no live digest was generated. API project model access, actual schema acceptance and generated content remain unverified until a working API key is configured.
+The latest [GitHub live daily preview](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39072206668) successfully authenticated and retrieved the configured classification model, resolving the earlier HTTP 401 issue. The first Responses API classification request then failed with HTTP **429**, categorized from the provider response as **quota exhaustion**. No token usage was recorded, and no live digest was generated. Check API credits and spending limits for the key's project before retrying; another key rotation is not indicated by this response. Actual schema acceptance and generated content remain unverified.
 
 That run checked 22 enabled feeds: 21 succeeded, CISA Advisories returned an HTTP error, and no new articles were added. The existing database was reused. Preview mode provided no SMTP credentials and the diagnostic log confirms `email_sent: false`.
 
@@ -56,15 +56,15 @@ Preview messages and sample run logs are ignored by Git. Archived sample reports
 
 ## Still requiring live credentials or client review
 
-Email secrets exist in GitHub Actions. A working `OPENAI_API_KEY` is still needed. Secret values were neither requested in chat nor exposed. Consequently:
+Email secrets and an authenticated `OPENAI_API_KEY` exist in GitHub Actions. Available OpenAI API quota is still needed. Secret values were neither requested in chat nor exposed. Consequently:
 
-- The configured OpenAI model IDs have not been verified against the user's API project. Confirm access before enabling live classification.
+- Retrieval of `gpt-5.4-mini` succeeded against the user's API project. Successful generation and access to the weekly synthesis model remain unverified.
 - OpenAI tool-schema acceptance, actual classification/synthesis quality and real token usage remain unverified. Retry, evidence validation, SDK request structure and Batch API resumption were exercised with mocks; cost calculations use published standard rates rather than measured charges.
 - No Gmail message was sent. MIME structure, STARTTLS context, recipient parsing, transient retries and authentication-error handling were tested with mocked SMTP.
 - Gmail/Outlook desktop, phone presentation and forced dark-mode behavior have not been reviewed in those clients.
 - The complete live `run-daily` acceptance target of under five minutes is **not yet verified**. The measured 53.98 seconds covers collection and advisory enrichment only; API classification and email would add time.
 - EPSS, NVD and GitHub enrichment are optional and disabled by default; these integrations were not exercised against live services during this build.
-- The updated [GitHub checks workflow passed](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39071539324), including 66 tests, Ruff and daily/weekly fixture previews. Manual daily fixture execution passed; live execution remains blocked by OpenAI authentication. Scheduled delivery and server cron have not been exercised.
+- The updated [GitHub checks workflow passed](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39072205428), including 71 tests, Ruff and daily/weekly fixture previews. Manual daily fixture execution passed; live execution remains blocked by OpenAI API quota exhaustion. Scheduled delivery and server cron have not been exercised.
 
 `scheduling.enabled` remains **false**. Complete the preview review and successful real email test required by the original prompt before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
 
