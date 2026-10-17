@@ -5,6 +5,7 @@ from unittest.mock import Mock
 
 import httpx
 import pytest
+from openai import PermissionDeniedError
 from openai.types.responses import Response
 
 from secdigest.classification import batch_classify, classify, client_from_env, parse_response, usage_record
@@ -68,7 +69,10 @@ def test_second_invalid_output_fails(config, populated):
 
 
 @pytest.mark.parametrize("endpoint", ["https://api.openai.com/v1", "https://gateway.example.test/openai/v1"])
-def test_responses_sdk_request_and_persistence(config, populated, respx_mock, monkeypatch, endpoint):
+@pytest.mark.parametrize("metadata_status", [200, 403])
+def test_responses_sdk_request_and_persistence(
+    config, populated, respx_mock, monkeypatch, endpoint, metadata_status
+):
     monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
     monkeypatch.setenv("OPENAI_BASE_URL", "  " + endpoint + "/  ")
     cluster = populated.clusters()[0]
@@ -78,7 +82,10 @@ def test_responses_sdk_request_and_persistence(config, populated, respx_mock, mo
     model = config.settings["models"]["classification"]
     respx_mock.get(endpoint + "/models/" + model).mock(
         return_value=httpx.Response(
-            200, json={"id": model, "object": "model", "created": 1, "owned_by": "openai"}
+            metadata_status,
+            json={"id": model, "object": "model", "created": 1, "owned_by": "openai"}
+            if metadata_status == 200
+            else {"error": {"message": "Model metadata access denied"}},
         )
     )
     route = respx_mock.post(endpoint + "/responses").mock(
@@ -95,6 +102,23 @@ def test_responses_sdk_request_and_persistence(config, populated, respx_mock, mo
     assert body["tools"][0]["parameters"]["additionalProperties"] is False
     assert "max_output_tokens" in body
     assert populated.clusters()[0]["classification"]["headline"] == valid["headline"]
+
+
+def test_generation_permission_denial_still_stops_classification(config, populated, respx_mock, monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
+    monkeypatch.setenv("OPENAI_BASE_URL", "https://gateway.example.test/v1")
+    with populated.db:
+        populated.db.execute("DELETE FROM classifications")
+    respx_mock.get(
+        "https://gateway.example.test/v1/models/" + config.settings["models"]["classification"]
+    ).mock(return_value=httpx.Response(403, json={"error": {"message": "Metadata denied"}}))
+    route = respx_mock.post("https://gateway.example.test/v1/responses").mock(
+        return_value=httpx.Response(403, json={"error": {"message": "Generation denied"}})
+    )
+    with client_from_env() as client, pytest.raises(PermissionDeniedError):
+        classify(config, populated, client=client)
+    assert route.call_count == 1
+    assert all(cluster["classification"] is None for cluster in populated.clusters())
 
 
 @pytest.mark.parametrize("endpoint", [None, "", "  "])

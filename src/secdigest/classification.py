@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 from datetime import UTC, datetime
 
 import httpx
-from openai import OpenAI
+from openai import OpenAI, PermissionDeniedError
 from openai.types.responses import Response
 from pydantic import ValidationError
 
@@ -48,7 +49,14 @@ def client_from_env():
 
 
 def verify_model(client, name):
-    client.models.retrieve(name)
+    try:
+        client.models.retrieve(name)
+    except PermissionDeniedError:
+        # Model metadata and inference have separate permissions. The requested
+        # API operation still validates access to the configured model itself.
+        logging.getLogger(__name__).warning(
+            "Model metadata lookup not permitted; the API request will verify model access"
+        )
 
 
 def usage_record(config, response, model, batch=False):
