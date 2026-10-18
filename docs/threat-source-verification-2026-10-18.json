@@ -1,0 +1,552 @@
+{
+  "review_date": "2026-10-18",
+  "scope": "Public metadata/feed GET requests with SecDigest Fetcher and robots policy; no credentials, AI calls, or delivery.",
+  "observations": [
+    {
+      "name": "Contagio",
+      "url": "https://contagiodump.blogspot.com/feeds/posts/default?alt=rss",
+      "resolved_url": "https://contagiodump.blogspot.com/feeds/posts/default?alt=rss",
+      "ok": true,
+      "kind": "rss20",
+      "items": 25,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00",
+      "first_entry_date": "Tue, 12 Nov 2024 03:05:00 +0000"
+    },
+    {
+      "name": "Core Impact",
+      "url": "https://www.coresecurity.com/core-labs/exploits",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "robots.txt unavailable or access denied",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "EPSS",
+      "url": "https://api.first.org/data/v1/epss?cve=CVE-2024-3094",
+      "resolved_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-3094",
+      "ok": true,
+      "kind": "json",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "GitHub advisories Atom",
+      "url": "https://github.com/advisories.atom",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 406,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "GitHub advisories API",
+      "url": "https://api.github.com/advisories?per_page=1",
+      "resolved_url": "https://api.github.com/advisories?per_page=1",
+      "ok": true,
+      "kind": "json",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Google Project Zero",
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default?alt=rss",
+      "resolved_url": "https://projectzero.google/feed.xml",
+      "ok": true,
+      "kind": "atom10",
+      "items": 10,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00",
+      "first_entry_date": "2026-10-06T00:00:00-07:00"
+    },
+    {
+      "name": "Google Zero Day",
+      "url": "https://googleprojectzero.github.io/0days-in-the-wild/",
+      "resolved_url": "https://googleprojectzero.github.io/0days-in-the-wild/",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "GreyNoise",
+      "url": "https://www.greynoise.io/blog/rss.xml",
+      "resolved_url": "https://www.greynoise.io/blog/rss.xml",
+      "ok": true,
+      "kind": "rss20",
+      "items": 100,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00",
+      "first_entry_date": "Thu, 15 Oct 2026 00:00:00 GMT"
+    },
+    {
+      "name": "Immunity CANVAS",
+      "url": "https://www.immunityinc.com/products/canvas/",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "MISP exploits",
+      "url": "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters/exploit-kit.json",
+      "resolved_url": "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters/exploit-kit.json",
+      "ok": true,
+      "kind": "json",
+      "items": 54,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "MISP actors",
+      "url": "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters/threat-actor.json",
+      "resolved_url": "https://raw.githubusercontent.com/MISP/misp-galaxy/main/clusters/threat-actor.json",
+      "ok": true,
+      "kind": "json",
+      "items": 1097,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "McAfee",
+      "url": "https://www.mcafee.com/blogs/feed/",
+      "ok": false,
+      "error": "ReadError",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Trellix",
+      "url": "https://www.trellix.com/blogs/research/",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "robots.txt unavailable or access denied",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Metasploit",
+      "url": "https://www.rapid7.com/blog/tag/metasploit/rss/",
+      "resolved_url": "https://www.rapid7.com/blog/tag/metasploit/rss/",
+      "ok": true,
+      "kind": "rss20",
+      "items": 20,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00",
+      "first_entry_date": "Fri, 25 Sep 2026 14:38:05 GMT"
+    },
+    {
+      "name": "Packet Storm",
+      "url": "https://packetstorm.news/rss/news",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "Disallowed by robots.txt",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Packet Storm files",
+      "url": "https://packetstorm.news/rss/files",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "Disallowed by robots.txt",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Qualys threat DB",
+      "url": "https://www.qualys.com/apps/threat-protection/",
+      "resolved_url": "https://www.qualys.com/apps/threat-protection",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Ransomware catalog",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+      "resolved_url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+      "ok": true,
+      "kind": "json",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "ReversingLabs",
+      "url": "https://www.reversinglabs.com/blog/rss.xml",
+      "resolved_url": "https://www.reversinglabs.com/blog/rss.xml",
+      "ok": true,
+      "kind": "rss20",
+      "items": 50,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00",
+      "first_entry_date": "Thu, 15 Oct 2026 15:00:00 GMT"
+    },
+    {
+      "name": "Seebug",
+      "url": "https://paper.seebug.org/rss/",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "robots.txt unavailable or access denied",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Seebug vulnerabilities",
+      "url": "https://www.seebug.org/rss/new/",
+      "resolved_url": "https://www.seebug.org/rss/new/",
+      "ok": true,
+      "kind": "rss20",
+      "items": 0,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Trending CVEs",
+      "url": "https://www.cvedetails.com/vulnerabilities-exploits/",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "robots.txt unavailable or access denied",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Twitter trending CVEs",
+      "url": "https://www.cvedetails.com/cve-twitter-trends/",
+      "ok": false,
+      "error": "ValueError",
+      "reason": "robots.txt unavailable or access denied",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Weaponized catalog",
+      "url": "https://www.qualys.com/research/",
+      "resolved_url": "https://www.qualys.com/",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "White Phosphorus",
+      "url": "https://www.immunityinc.com/products/white-phosphorus/",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "D2",
+      "url": "https://www.d2sec.com/",
+      "resolved_url": "https://www.d2sec.com/",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "D2 Elliot",
+      "url": "https://www.d2sec.com/elliot.html",
+      "resolved_url": "https://www.d2sec.com/elliot.html",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T20:59:30.128679+00:00"
+    },
+    {
+      "name": "Project Zero canonical",
+      "url": "https://projectzero.google/feed.xml",
+      "resolved_url": "https://projectzero.google/feed.xml",
+      "ok": true,
+      "kind": "atom10",
+      "items": 10,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00",
+      "first_entry_date": "2026-10-06T00:00:00-07:00"
+    },
+    {
+      "name": "Google Zero Day feed",
+      "url": "https://googleprojectzero.github.io/0days-in-the-wild/feed.xml",
+      "resolved_url": "https://googleprojectzero.github.io/0days-in-the-wild/feed.xml",
+      "ok": true,
+      "kind": "atom10",
+      "items": 0,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "GitHub Security Blog",
+      "url": "https://github.blog/security/feed/",
+      "resolved_url": "https://github.blog/security/feed/",
+      "ok": true,
+      "kind": "rss20",
+      "items": 10,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00",
+      "first_entry_date": "Tue, 13 Oct 2026 17:56:33 +0000"
+    },
+    {
+      "name": "Qualys canonical feed",
+      "url": "https://blog.qualys.com/category/vulnerabilities-threat-research/feed",
+      "resolved_url": "https://blog.qualys.com/vulnerabilities-threat-research/feed",
+      "ok": true,
+      "kind": "rss20",
+      "items": 10,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00",
+      "first_entry_date": "Tue, 13 Oct 2026 21:32:08 +0000"
+    },
+    {
+      "name": "Qualys main feed",
+      "url": "https://blog.qualys.com/feed",
+      "resolved_url": "https://blog.qualys.com/feed",
+      "ok": true,
+      "kind": "rss20",
+      "items": 10,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00",
+      "first_entry_date": "Wed, 14 Oct 2026 12:46:46 +0000"
+    },
+    {
+      "name": "Qualys threat DB",
+      "url": "https://www.qualys.com/apps/threat-protection/",
+      "resolved_url": "https://www.qualys.com/apps/threat-protection",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "Qualys source documentation",
+      "url": "https://docs.qualys.com/en/vmdr/latest/threat/intelligence_sources.htm",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "FIRST EPSS docs",
+      "url": "https://www.first.org/epss/api",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "McAfee threat center",
+      "url": "https://www.mcafee.com/en-us/threat-center.html",
+      "ok": false,
+      "error": "ReadTimeout",
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "MISP feeds",
+      "url": "https://www.misp-project.org/feeds/",
+      "resolved_url": "https://www.misp-project.org/feeds/",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "MISP news",
+      "url": "https://www.misp-project.org/feed.xml",
+      "resolved_url": "https://www.misp-project.org/feed.xml",
+      "ok": true,
+      "kind": "rss20",
+      "items": 285,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00",
+      "first_entry_date": "Wed, 14 Oct 2026 00:00:00 +0000"
+    },
+    {
+      "name": "VulnCheck ransomware catalog",
+      "url": "https://ransomware.live/api",
+      "resolved_url": "https://ransomware.live/api",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "GreyNoise API docs",
+      "url": "https://docs.greynoise.io/docs/using-the-greynoise-community-api",
+      "resolved_url": "https://docs.greynoise.io/docs/using-the-greynoise-community-api",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "Seebug API docs",
+      "url": "https://www.seebug.org/api/",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "Immunity products",
+      "url": "https://www.immunityinc.com/",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 405,
+      "checked_at": "2026-10-18T21:00:41.927962+00:00"
+    },
+    {
+      "name": "Qualys threat intelligence sources",
+      "url": "https://docs.qualys.com/en/vmdr/latest/mergedProjects/prioritize_your_vulnerabilities/threat_intelligence/threat_intelligence.htm",
+      "resolved_url": "https://docs.qualys.com/en/vmdr/latest/mergedProjects/prioritize_your_vulnerabilities/threat_intelligence/threat_intelligence.htm",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:02:09.301031+00:00"
+    },
+    {
+      "name": "Qualys Cloud Threat DB launch",
+      "url": "https://blog.qualys.com/product-tech/2023/02/08/introducing-qualys-ml-based-threat-intelligence",
+      "resolved_url": "https://blog.qualys.com/product-tech/2023/02/08/introducing-qualys-ml-based-threat-intelligence",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:02:09.301031+00:00"
+    },
+    {
+      "name": "Qualys exploit sources",
+      "url": "https://notifications.qualys.com/product/2023/05/12/new-exploit-sources-added-to-vulnerability-management",
+      "resolved_url": "https://notifications.qualys.com/product/2023/05/12/new-exploit-sources-added-to-vulnerability-management",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:02:09.301031+00:00"
+    },
+    {
+      "name": "Qualys public ThreatPROTECT",
+      "url": "https://threatprotect.qualys.com/",
+      "resolved_url": "https://threatprotect.qualys.com/",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:02:09.301031+00:00"
+    },
+    {
+      "name": "Qualys ThreatPROTECT feed",
+      "url": "https://threatprotect.qualys.com/feed/",
+      "resolved_url": "https://threatprotect.qualys.com/feed/",
+      "ok": true,
+      "kind": "rss20",
+      "items": 10,
+      "checked_at": "2026-10-18T21:02:55.062959+00:00",
+      "first_entry_date": "Thu, 15 Oct 2026 13:38:48 +0000"
+    },
+    {
+      "name": "GitHub REST rate limits",
+      "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "resolved_url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "ok": true,
+      "kind": "html",
+      "checked_at": "2026-10-18T21:02:55.062959+00:00"
+    },
+    {
+      "name": "EPSS user guide",
+      "url": "https://www.first.org/epss/user-guide",
+      "ok": false,
+      "error": "HTTPStatusError",
+      "http_status": 404,
+      "checked_at": "2026-10-18T21:02:55.062959+00:00"
+    }
+  ],
+  "live_ingestion": {
+    "checked_at": "2026-10-18T21:04:46.961540+00:00",
+    "first": {
+      "at": "2026-10-18T21:04:46.961540+00:00",
+      "enabled": 10,
+      "failures": 0,
+      "new": 106,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 13
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 50
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "repeat": {
+      "at": "2026-10-18T21:04:46.961540+00:00",
+      "enabled": 10,
+      "failures": 0,
+      "new": 0,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "epss": {
+      "cve": "CVE-2024-3094",
+      "epss": "0.909000000",
+      "percentile": "0.998070000",
+      "date": "2026-10-18"
+    }
+  },
+  "offline_tests": {
+    "passed": 139
+  }
+}

@@ -126,8 +126,9 @@ feeds:
   enabled: false
   type: rss
   verified: true
-  last_error: No valid RSS/Atom feed found
+  last_error: Disallowed by robots.txt (checked 2026-10-18)
 - name: Microsoft Security Blog
+  independence_key: microsoft.com
   url: https://www.microsoft.com/en-us/security/blog/feed/
   tier: vendor
   site: https://www.microsoft.com/en-us/security/blog/feed/
@@ -321,6 +322,7 @@ feeds:
   verified: true
   last_error: ''
 - name: MSRC Update Guide
+  independence_key: microsoft.com
   url: https://api.msrc.microsoft.com/update-guide/rss
   tier: advisory
   site: https://api.msrc.microsoft.com/update-guide/rss
@@ -436,6 +438,104 @@ feeds:
   type: rss
   verified: true
   last_error: ValueError
+- name: Contagio
+  url: https://contagiodump.blogspot.com/feeds/posts/default?alt=rss
+  tier: research
+  site: https://contagiodump.blogspot.com/
+  enabled: true
+  type: rss
+  independence_key: contagiodump.blogspot.com
+  verified: true
+  last_error: ''
+  coverage_note: Feed reachable; newest entry was 2024-11-12 at verification. Summaries only; no sample downloads.
+- name: GitHub Security Blog
+  url: https://github.blog/security/feed/
+  tier: vendor
+  site: https://github.blog/security/
+  enabled: true
+  type: rss
+  independence_key: microsoft.com
+  verified: true
+  last_error: ''
+  coverage_note: Security research and news; not the complete GitHub Advisory Database.
+- name: Google Project Zero
+  url: https://projectzero.google/feed.xml
+  tier: research
+  site: https://projectzero.google/
+  enabled: true
+  type: rss
+  independence_key: google.com
+  verified: true
+  last_error: ''
+  coverage_note: Research posts; the separate 0days-in-the-wild Atom feed had no entries.
+- name: GreyNoise Blog
+  url: https://www.greynoise.io/blog/rss.xml
+  tier: vendor
+  site: https://www.greynoise.io/blog
+  enabled: true
+  type: rss
+  independence_key: greynoise.io
+  verified: true
+  last_error: ''
+- name: GreyNoise Labs
+  url: https://www.labs.greynoise.io/grimoire/index.xml
+  tier: research
+  site: https://www.labs.greynoise.io/grimoire/
+  enabled: true
+  type: rss
+  independence_key: greynoise.io
+  verified: true
+  last_error: ''
+  coverage_note: Newest entry was 2026-03-23 at verification; currently outside retention.
+- name: Metasploit Blog
+  url: https://www.rapid7.com/blog/tag/metasploit/rss/
+  tier: research
+  site: https://www.rapid7.com/blog/tag/metasploit/
+  enabled: true
+  type: rss
+  independence_key: rapid7.com
+  verified: true
+  last_error: ''
+- name: Qualys Vulnerabilities and Threat Research
+  url: https://blog.qualys.com/vulnerabilities-threat-research/feed
+  tier: vendor
+  site: https://blog.qualys.com/category/vulnerabilities-threat-research
+  enabled: true
+  type: rss
+  independence_key: qualys.com
+  entry_url_field: id
+  verified: true
+  last_error: ''
+  coverage_note: Public research; not a Cloud Threat Database export. Verified post GUID URLs avoid repeated category links.
+- name: ReversingLabs Blog
+  url: https://www.reversinglabs.com/blog/rss.xml
+  tier: vendor
+  site: https://www.reversinglabs.com/blog
+  enabled: true
+  type: rss
+  independence_key: reversinglabs.com
+  verified: true
+  last_error: ''
+- name: Qualys ThreatPROTECT
+  url: https://threatprotect.qualys.com/feed/
+  tier: advisory
+  site: https://threatprotect.qualys.com/
+  enabled: true
+  type: rss
+  independence_key: qualys.com
+  verified: true
+  last_error: ''
+  coverage_note: Public threat reports; not the full Qualys Cloud Threat Database.
+- name: Seebug Vulnerabilities
+  url: https://www.seebug.org/rss/new/
+  tier: advisory
+  site: https://www.seebug.org/
+  enabled: true
+  type: rss
+  independence_key: seebug.org
+  verified: true
+  last_error: ''
+  coverage_note: Valid RSS but zero entries at verification; useful publication coverage remains unproven.
 enrichment:
   cisa_kev_json: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
   cisa_kev_fallback_json: https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json
@@ -445,3 +545,4 @@ enrichment:
   mitre_attack_stix: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json
 coverage_notes:
 - 'CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.'
+- 'Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18.'

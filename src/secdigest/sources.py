@@ -134,8 +134,13 @@ def parse_feed(payload, feed, now=None):
         raise ValueError("Source is not an RSS or Atom feed")
     results = []
     for entry in parsed.entries:
-        link = entry.get("link", "")
+        # Some publisher feeds repeat a category URL in every <link>. Opt in
+        # only when their URL-shaped IDs have been verified as article links.
+        url_field = feed.get("entry_url_field", "link")
+        link = entry.get(url_field, "")
         if not safe_url(link):
+            continue
+        if url_field == "id" and urlsplit(link).netloc != urlsplit(feed["url"]).netloc:
             continue
         stamp = entry.get("published_parsed") or entry.get("updated_parsed")
         published = datetime.fromtimestamp(calendar.timegm(stamp), UTC) if stamp else now

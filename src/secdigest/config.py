@@ -80,6 +80,8 @@ class Config:
         if len(set(names)) != len(names):
             raise ValueError("Feed names must be unique")
         for feed in self.feeds:
+            if feed.get("entry_url_field", "link") not in {"link", "id"}:
+                raise ValueError("Feed entry_url_field must be link or id")
             if feed.get("type") == "csaf":
                 prefix = feed.get("document_base_url", "")
                 if not safe_url(prefix) or not prefix.endswith("/") or not feed.get("independence_key"):

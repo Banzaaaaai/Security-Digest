@@ -146,7 +146,7 @@ All files below live in [`config/`](config/). The current configuration defines 
 | File | Controls |
 |---|---|
 | `settings.yaml` | Timezone, file paths, HTTP limits, models, pricing, optional enrichment, email, retention, activation |
-| `feeds.yaml` | All 52 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
+| `feeds.yaml` | All 62 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
 | `regions.yaml` | Region keys, priority-country mappings, country aliases and bonuses |
 | `industries.yaml` | Industry keys, display names and classification signals |
 | `practice_areas.yaml` | Practice keys, display names and classification signals |
@@ -181,7 +181,11 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 
 ## Sources and evidence
 
-`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 24 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
+`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 34 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
+
+The [18 October threat-intelligence source review](THREAT-INTELLIGENCE-SOURCES.md) adds ten public feeds from Contagio, GitHub, Google Project Zero, GreyNoise, Rapid7/Metasploit, Qualys, ReversingLabs and Seebug, and enables FIRST EPSS enrichment. The review documents all 24 requested sources, including commercial services, reference datasets, blocked endpoints and unidentified catalogs. Contagio and GreyNoise Labs are currently stale; Seebug's feed is empty. Vendor blogs do not provide full commercial database coverage. The archived daily run above predates these additions.
+
+For a publisher whose article links are broken but whose URL-shaped entry IDs have been verified, set `entry_url_field: id` on that feed. This option accepts only HTTP(S) IDs on the feed's own host. Qualys research uses it because its feed repeats a category URL in every article link; all other feeds default to `link`.
 
 Routine fetch errors do not permanently disable feeds. Collection uses bounded concurrency, timeouts, response-size limits, conditional ETag/Last-Modified requests, robots policies, crawl delays and HTTP retry/backoff. It collects feed summaries only by default. Publication and collection timestamps are stored separately; missing publication dates are labelled as inferred and future-dated items are excluded.
 
@@ -195,7 +199,7 @@ KEV remains JSON enrichment. The CISA website is primary; the official `cisagov/
 
 GovDelivery email subscription and mailbox ingestion are excluded. Structured advisories and KEV do not cover every broader CISA announcement; live HTML, Markdown and email reports display this coverage note. No CISA subscription credentials are needed. See [CISA subscription research](CISA-SUBSCRIPTIONS-RESEARCH.md) for verified endpoints and the original investigation.
 
-CVEs are checked against CISA KEV. EPSS, NVD and GitHub advisory enrichment are independently optional. NVD calls observe its unauthenticated rate limit. MITRE's enterprise ATT&CK dataset validates technique IDs. Unavailable enrichment is labelled rather than converted to zero or invented. KEV addition dates have day precision, so counts include catalog dates overlapping the report's local date window.
+CVEs are checked against CISA KEV. EPSS is enabled; NVD and per-CVE GitHub advisory enrichment remain disabled and independently optional. GitHub's public security blog is collected separately; enabling the current per-CVE API lookup across retained history could exceed GitHub's unauthenticated REST request budget. NVD calls observe its unauthenticated rate limit. MITRE's enterprise ATT&CK dataset validates technique IDs. Unavailable enrichment is labelled rather than converted to zero or invented. KEV addition dates have day precision, so counts include catalog dates overlapping the report's local date window.
 
 Source CVEs, published detection URLs, regulation dates, case-study references and actor names are validated against available evidence. Reports label detection recommendations as assessments. These checks constrain generated output; they do not independently prove every factual claim or relevance score. Review original sources before operational action.
 

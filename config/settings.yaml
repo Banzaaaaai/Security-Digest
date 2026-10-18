@@ -23,7 +23,7 @@ models:
       output_tokens: 15.00
 enrichment:
   kev_refresh_hours: 6
-  epss: false
+  epss: true
   nvd: false
   github: false
 business_signals:

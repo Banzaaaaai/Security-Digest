@@ -7,7 +7,7 @@ import pytest
 import respx
 
 from secdigest.fixtures import FIXTURE_NOW
-from secdigest.sources import Fetcher, check_feeds, ingest
+from secdigest.sources import Fetcher, check_feeds, ingest, parse_feed
 from secdigest.storage import Store
 
 
@@ -73,3 +73,55 @@ def test_ingest_idempotent_with_live_protocol(config):
     assert first["new"] == 2
     assert second["new"] == 0
     assert len(store.clusters()) == 2
+
+
+def category_feed(ids):
+    items = "".join(
+        f"<item><title>Research {i}</title><link>https://example.test/category/research</link>"
+        f'<guid isPermaLink="false">{ident}</guid><pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>'
+        "</item>"
+        for i, ident in enumerate(ids)
+    )
+    return f'<rss version="2.0"><channel><title>Research</title>{items}</channel></rss>'.encode()
+
+
+@respx.mock
+def test_opt_in_post_ids_preserve_distinct_articles_and_repeat_ingestion(config):
+    config.feeds = [
+        {
+            "name": "Research",
+            "url": "https://example.test/feed",
+            "type": "rss",
+            "enabled": True,
+            "entry_url_field": "id",
+        }
+    ]
+    config.settings["http"]["per_host_delay"] = 0
+    store = Store(":memory:")
+    payload = category_feed(["https://example.test/?p=101", "https://example.test/?p=102"])
+    respx.get("https://example.test/robots.txt").respond(404)
+    respx.get("https://example.test/feed").respond(200, content=payload)
+    first = asyncio.run(ingest(config, store, FIXTURE_NOW))
+    second = asyncio.run(ingest(config, store, FIXTURE_NOW))
+    assert first["new"] == 2
+    assert second["new"] == 0
+    urls = {a["url"] for c in store.clusters() for a in c["articles"]}
+    assert urls == {"https://example.test/?p=101", "https://example.test/?p=102"}
+
+
+@pytest.mark.parametrize("ident", ["not-a-url", "javascript:alert(1)", "https://other.test/?p=1", ""])
+def test_opt_in_post_ids_reject_unusable_or_external_ids(ident):
+    feed = {"name": "Research", "url": "https://example.test/feed", "entry_url_field": "id"}
+    assert parse_feed(category_feed([ident]), feed, FIXTURE_NOW) == []
+
+
+def test_default_feed_url_still_uses_link():
+    feed = {"name": "Research", "url": "https://example.test/feed"}
+    rows = parse_feed(category_feed(["https://example.test/?p=101"]), feed, FIXTURE_NOW)
+    assert rows[0]["url"] == "https://example.test/category/research"
+
+
+def test_unknown_entry_url_field_rejected(config):
+    config.feeds[0]["entry_url_field"] = "summary"
+    with pytest.raises(ValueError, match="entry_url_field"):
+        config.validate()
