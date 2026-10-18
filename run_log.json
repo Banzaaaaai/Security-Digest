@@ -629,5 +629,201 @@
     "estimated_usd": null,
     "email_type": "daily",
     "email_sent": true
+  },
+  {
+    "timestamp": "2026-10-18T07:58:16.799501+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [
+      {
+        "email_type": "daily",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-18T07:58:16.916103+00:00",
+      "enabled": 24,
+      "failures": 1,
+      "new": 269,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 228,
+          "updated": 0,
+          "unchanged": 0,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 38,
+          "updated": 0,
+          "unchanged": 0,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 1,
+          "updated": 0,
+          "unchanged": 3,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "classification": {
+      "classified": 2,
+      "usage": [
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 181,
+          "output_tokens": 893,
+          "cache_read_input_tokens": 8576,
+          "estimated_usd": 0.00479745,
+          "batch": false
+        }
+      ]
+    },
+    "period": "2026-10-18",
+    "counts": {
+      "critical": 1,
+      "high": 3,
+      "medium": 1,
+      "low": 2
+    },
+    "items": 7,
+    "duplicates_removed": 2,
+    "duration_s": 76.36,
+    "usage": [
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 181,
+        "output_tokens": 893,
+        "cache_read_input_tokens": 8576,
+        "estimated_usd": 0.00479745,
+        "batch": false
+      }
+    ],
+    "estimated_usd": 0.00479745,
+    "email_type": "daily",
+    "email_sent": true
   }
 ]

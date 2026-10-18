@@ -1,23 +1,23 @@
 {
   "kind": "daily",
   "period": "2026-10-18",
-  "start": "2026-10-16T22:41:47.003226+00:00",
-  "end": "2026-10-17T22:41:47.003226+00:00",
+  "start": "2026-10-17T07:58:16.916103+00:00",
+  "end": "2026-10-18T07:58:16.916103+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
     {
-      "cluster_id": "614eb364146c341c337919f1",
-      "headline": "Compromised ConnectWise credential used to access Microsoft 365 tenants",
-      "summary": "Attackers are abusing a compromised ConnectWise Cloud Backup credential to sign in to Microsoft 365 tenants. The campaign targets customer environments through a trusted MSP-related account path.",
-      "category": "vulnerability",
+      "cluster_id": "f15f3cdf858354ce656b4b1a",
+      "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
+      "summary": "Attackers abused a ConnectWise cloud backup supply-chain issue to access application identities and compromise Microsoft 365 tenants. Organizations using the service should review identity trust, rotate credentials, and check for unauthorized access paths.",
+      "category": "supply_chain",
       "importance": "critical",
-      "importance_rationale": "This is an active credential-abuse campaign affecting a widely deployed enterprise platform and a managed service provider supply-chain path. It has direct implications for Microsoft 365 tenant security and MSP trust relationships.",
+      "importance_rationale": "A managed service supply-chain compromise affecting Microsoft 365 tenants is a high-impact enterprise incident with broad downstream exposure.",
       "location_relevance": {
-        "US": 50,
-        "Europe": 40,
-        "MEA": 10,
-        "Other": 10
+        "US": 40,
+        "Europe": 50,
+        "MEA": 30,
+        "Other": 30
       },
       "countries_mentioned": [
         "NL"
@@ -29,36 +29,35 @@
         "investment_management": 40,
         "government": 40,
         "retail_banking": 40,
-        "global_it_services": 90,
+        "global_it_services": 80,
         "logistics": 40,
         "industrial_manufacturing": 40,
         "automotive": 40
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 55,
+        "zero_trust_cloud": 80,
         "vuln_exposure_mgmt": 20,
-        "devsecops": 10,
-        "siem_detection": 70,
-        "iam_pam": 95,
-        "email_phishing": 10,
+        "devsecops": 20,
+        "siem_detection": 55,
+        "iam_pam": 85,
+        "email_phishing": 0,
         "data_protection_dlp": 35,
         "ot_ics": 0,
-        "grc_audit": 25,
-        "security_automation": 40,
+        "grc_audit": 20,
+        "security_automation": 20,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "Microsoft 365",
         "ConnectWise Cloud Backup",
-        "managed service provider (MSP) environments",
-        "SkyKick Cloud Backup"
+        "SkyKick Cloud Backup",
+        "Microsoft 365"
       ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Detection should focus on anomalous M365 sign-ins, risky OAuth/session activity, and MSP credential abuse patterns.",
+      "detection_coverage_note": "No detection rules were provided in the source links. Relevant monitoring would focus on application identity misuse, abnormal Microsoft 365 tenant activity, and unexpected consent or token events.",
       "related_case_studies": [
         "audit-ready-by-design"
       ],
@@ -69,15 +68,9 @@
         "region": "US",
         "rationale": ""
       },
-      "recommended_action": "Audit third-party and MSP access paths into Microsoft 365, enforce strong conditional access and MFA protections, and monitor for anomalous sign-ins across customer tenants.",
-      "confidence": 0.98,
+      "recommended_action": "Review connected application identities, revoke suspicious tokens or consents, rotate secrets, and audit Microsoft 365 tenant activity for impacted customers.",
+      "confidence": 0.99,
       "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html",
-          "source": "The Hacker News",
-          "published": "2026-10-17T06:16:46+00:00",
-          "date_inferred": false
-        },
         {
           "url": "https://www.security.nl/posting/958045/Supplychain-aanval+via+ConnectWise+Cloud+Backup+raakt+tal+van+bedrijven?channel=rss",
           "source": "Security.NL",
@@ -104,10 +97,9 @@
         }
       ],
       "cve_details": {},
-      "priority": 87.0,
+      "priority": 83.0,
       "included": true,
       "merged_cluster_ids": [
-        "614eb364146c341c337919f1",
         "622bd951152759335bff398f",
         "f15f3cdf858354ce656b4b1a"
       ]
@@ -270,85 +262,6 @@
       "included": true
     },
     {
-      "cluster_id": "fb152e7d9cd2d8fc80f7f90d",
-      "headline": "US agencies issue voluntary cybersecurity guidance for frontier AI test environments",
-      "summary": "Federal agencies released detailed voluntary guidance for securing sandbox and test environments used with frontier AI systems. It emphasizes independent testing and baseline cyber controls for model development and evaluation workflows.",
-      "category": "regulation_policy",
-      "importance": "medium",
-      "importance_rationale": "This is government guidance rather than a binding rule, but it is a notable policy signal for organizations building or testing frontier AI systems. It is relevant to emerging AI governance and secure development practices.",
-      "location_relevance": {
-        "US": 90,
-        "Europe": 10,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 20,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 70,
-        "retail_banking": 20,
-        "global_it_services": 45,
-        "logistics": 20,
-        "industrial_manufacturing": 20,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 35,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 40,
-        "security_automation": 10,
-        "ai_governance": 85
-      },
-      "affected_technologies": [
-        "AI agents",
-        "frontier AI systems",
-        "sandbox environments"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection rules were provided in the source. Organizations should assess sandbox isolation, logging, and review controls for AI test environments.",
-      "related_case_studies": [
-        "security-in-the-delivery-path",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review AI test and sandbox governance, add independent validation for model evaluation environments, and map controls to internal security and risk requirements.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://cyberscoop.com/federal-ai-agent-sandbox-security-guidance/",
-          "source": "CyberScoop",
-          "published": "2026-10-17T00:34:02+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 67.0,
-      "included": true
-    },
-    {
       "cluster_id": "f55de43848d3b29bb4d16601",
       "headline": "Drupal fixes critical remote code execution flaws",
       "summary": "Drupal released security updates for critical flaws that could let attackers execute code on affected sites. The advisory indicates exploitation may follow soon, so exposed deployments should prioritize patching and validation.",
@@ -503,34 +416,193 @@
       "cve_details": {},
       "priority": 49.0,
       "included": true
+    },
+    {
+      "cluster_id": "ace58ee31866ab85a90642d9",
+      "headline": "Web-edit app release adds remote file editing over Tailscale",
+      "summary": "A small Python web app was released for browsing and editing files in a folder from remote devices, including phones. The posts discuss iterative feature updates and local workflow convenience rather than a security incident. The main security relevance is the general risk of handling credentials and remote file access in custom tooling.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a product/project update, not a vulnerability, breach, exploitation event, or regulation. It has only indirect security relevance through remote file editing and credential handling.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 10,
+        "MEA": 0,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 5,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 0,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 5,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "Tailscale",
+        "Python",
+        "CodeMirror"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were cited. Security teams should review access controls, audit logging, and secrets-handling practices for small remote file-editing tools.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review whether remote editing workflows expose credentials or sensitive files, and ensure strong authentication, least privilege, and logging are in place.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Oct/12/web-edit/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-10-12T15:54:36+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://simonwillison.net/2026/Oct/13/web-edit/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-10-13T01:40:05+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://simonwillison.net/2026/Oct/17/web-edit/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-10-17T13:16:49+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 16.0,
+      "included": false
+    },
+    {
+      "cluster_id": "cc225fa176e6c3eac28c8676",
+      "headline": "JavaScript note shows inline rendering trick with document.currentScript",
+      "summary": "A short technical note describes a JavaScript pattern for replacing inline script tags with generated content using document.currentScript. It is a coding technique article, not a security advisory or incident. Security relevance is limited to general awareness of dynamic inline scripting patterns.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a small frontend programming tip with no disclosed vulnerability, exploit, breach, or policy impact.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 0,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "JavaScript"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided; this is general web development guidance rather than a security event.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Treat this as a development pattern to evaluate for CSP and XSS implications when used in production web applications.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Oct/17/document-currentscript/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-10-17T21:11:12+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 12.0,
+      "included": false
     }
   ],
   "counts": {
     "critical": 1,
     "high": 3,
-    "medium": 2,
-    "low": 0
+    "medium": 1,
+    "low": 2
   },
   "unclassified": 0,
-  "duplicates_removed": 3,
+  "duplicates_removed": 2,
   "new_kev": [],
   "watch_hits": 1,
   "watch": {
     "microsoft": [
       {
         "technology": "Microsoft 365",
-        "headline": "Compromised ConnectWise credential used to access Microsoft 365 tenants",
-        "cluster_id": "614eb364146c341c337919f1"
+        "headline": "ConnectWise supply-chain compromise hits Microsoft 365 tenants",
+        "cluster_id": "f15f3cdf858354ce656b4b1a"
       }
     ]
   },
   "regulations": {},
-  "other_count": 0,
+  "other_count": 2,
   "source_health": {
-    "at": "2026-10-17T22:41:47.003226+00:00",
-    "enabled": 22,
+    "at": "2026-10-18T07:58:16.916103+00:00",
+    "enabled": 24,
     "failures": 1,
-    "new": 0,
+    "new": 269,
+    "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
@@ -603,6 +675,14 @@
         "new": 0
       },
       {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 228,
+        "updated": 0,
+        "unchanged": 0,
+        "failed": 0
+      },
+      {
         "name": "Claroty Team82",
         "ok": true,
         "new": 0
@@ -615,7 +695,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 0
+        "new": 2
       },
       {
         "name": "Socket.dev Blog",
@@ -628,10 +708,29 @@
         "new": 0
       },
       {
-        "name": "CISA Advisories",
+        "name": "CISA IT Advisories",
         "ok": false,
-        "new": 0,
-        "error": "HTTPStatusError"
+        "new": 38,
+        "updated": 0,
+        "unchanged": 0,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 1,
+        "updated": 0,
+        "unchanged": 3,
+        "failed": 0
       },
       {
         "name": "MSRC Update Guide",
@@ -646,14 +745,22 @@
     ]
   },
   "enrichment_warnings": [],
+  "kev_provenance": {
+    "released": "2026-10-16T17:15:48.875200+00:00",
+    "version": "2026.10.16",
+    "count": 1748,
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "checked": "2026-10-18T07:58:16.916103+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent."
+  ],
   "cases": {
     "audit-ready-by-design": [
-      "614eb364146c341c337919f1",
-      "fb152e7d9cd2d8fc80f7f90d"
+      "f15f3cdf858354ce656b4b1a"
     ],
     "security-in-the-delivery-path": [
-      "219fd9eab491daf6e2fa95ed",
-      "fb152e7d9cd2d8fc80f7f90d"
+      "219fd9eab491daf6e2fa95ed"
     ],
     "vendor-release-automation": [
       "219fd9eab491daf6e2fa95ed"
