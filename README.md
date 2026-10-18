@@ -1,8 +1,34 @@
 # SecDigest
 
-Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
+Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories and CISA structured advisories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
 
 The original requirements are in [security-digest-prompt.md](security-digest-prompt.md). All taxonomies and scoring rules are editable YAML. There is no web server or hosted dashboard to operate.
+
+## Current status
+
+As of **18 October 2026**, live daily classification, report generation and SMTP delivery have succeeded with the configured API endpoint. The latest committed run includes incident deduplication, the revised email layout, CISA IT/OT/VA advisory ingestion and KEV provenance.
+
+| Latest archived daily run | Result |
+|---|---|
+| Report | [18 October HTML](output/daily/2026-10-18.html), [Markdown](output/daily/2026-10-18.md), [JSON](output/daily/2026-10-18.json), [CSV](output/daily/2026-10-18.csv) |
+| Coverage | 7 incidents: 1 critical, 3 high, 1 medium, 2 low; 2 duplicate entries removed; 0 unclassified clusters in the report window |
+| Collection | 24 enabled sources out of 52 configured; 269 new articles, including 267 distinct CISA advisories |
+| Source health | 23 sources succeeded; CISA IT reported one missing upstream document while retaining its successfully collected advisories |
+| Delivery | SMTP accepted the daily email with HTML and CSV attachments; inbox receipt and client rendering require recipient review |
+| Runtime and usage | 76.36 seconds; 2 newly classified clusters; $0.00479745 estimated API cost at configured rates, not a measured provider charge |
+| Scheduling | Disabled in `config/settings.yaml`; manual Actions runs remain available |
+
+These figures come from the committed [run log](run_log.json) and daily JSON archive. Earlier validation snapshots have different counts because the report window moves and the ingestion and duplicate checks have changed. Live weekly synthesis, asynchronous Batch API execution and scheduled delivery remain unverified; see [VALIDATION.md](VALIDATION.md) for the earlier checks and remaining client review.
+
+## How it works
+
+1. Collect feed summaries and structured advisory facts into SQLite, retaining source links, publication times and advisory revisions.
+2. Cluster overlapping articles, enrich CVEs with KEV and optional advisory services, and classify new daily-window clusters with `gpt-5.4-mini`.
+3. Validate generated evidence, apply configured relevance and importance rules, and merge matching incidents before calculating report totals.
+4. Render the daily digest or build the weekly report from stored classifications, using `gpt-5.4` for weekly synthesis.
+5. Write the archives and an optional MIME preview, or deliver email and record the report period to suppress repeat sends.
+
+Weekly reports add an executive summary, previous-week comparisons, region and sector views, relevance heatmaps, a regulatory calendar, detection coverage, a watchlist and content outlines. News story details show location, industry and technology relevance on separate lines and omit the former "Relevant to your work" links. Case-study metadata remains available for weekly related-work sections, content outlines and structured exports.
 
 ## Quick start
 
@@ -15,7 +41,7 @@ uv run secdigest --dry-run
 uv run secdigest --dry-run weekly --preview
 ```
 
-You can also use `.venv\Scripts\secdigest.exe` directly. On this Windows workspace, migration checks use `.venv-openai\Scripts\secdigest.exe` because Windows denied removing a package from the older environment. To use that environment with uv, set `$env:UV_PROJECT_ENVIRONMENT = '.venv-openai'` before the commands above.
+Python 3.12 or newer is required. You can also use `.venv\Scripts\secdigest.exe` directly on Windows. This workspace has an alternate `.venv-openai` environment used for validation; to reuse it with uv, set `$env:UV_PROJECT_ENVIRONMENT = '.venv-openai'` before running the commands above.
 
 Dry runs use a fixed clock and 12 synthetic clusters / 14 source items. They make **no network calls and send no email**, even with `--send` or `--force-send`. They use an in-memory database and write only under `output/samples/`:
 
@@ -40,23 +66,34 @@ Set environment variables through your shell/session or secret manager. The appl
 | `SMTP_PASSWORD` | Gmail app password |
 | `EMAIL_TO` | Comma-separated recipient addresses; whitespace and empty entries removed |
 
-The defaults in `config/settings.yaml` are `gpt-5.4-mini` for classification and `gpt-5.4` for weekly synthesis. Both use the OpenAI Responses API with strict function schemas and local evidence validation. Live classification checks model metadata when permitted. If the metadata endpoint returns 403, the requested API operation validates model access instead, since model reading and generation have separate permissions. Generation errors still stop the run; it does not silently choose another model. The model IDs and public rates are documented by OpenAI, but access still depends on your API project. Anthropic credentials are no longer used. The original prompt is preserved as the initial specification; the provider was changed at the user's request.
+The defaults in `config/settings.yaml` are `gpt-5.4-mini` for classification and `gpt-5.4` for weekly synthesis. Both use the OpenAI Responses API with strict function schemas and local evidence validation. Live classification checks model metadata when permitted. If the metadata endpoint returns 403, the requested API operation validates model access instead, since model reading and generation have separate permissions. Generation errors still stop the run; it does not silently choose another model. Access depends on the configured provider and API project. Set `OPENAI_API_KEY` and, if needed, `OPENAI_BASE_URL` for this integration.
 
 For a custom API endpoint, add a GitHub Actions repository secret named **`OPENAI_BASE_URL`**, alongside **`OPENAI_API_KEY`**. Set it to the provider's API base URL, for example `https://gateway.example.com/v1` or `https://resource.openai.azure.com/openai/v1`. Include the provider's required path prefix, but omit operation suffixes such as `/responses` or `/chat/completions`, credentials, query parameters and fragments. The application uses this endpoint for classification, weekly synthesis, model lookup and Batch/Files API calls. The provider must support the Responses API with strict function calls and the configured model IDs; batch backfills also require its Batch/Files APIs. Configure model names and pricing for that provider in `config/settings.yaml`. Do not change the endpoint while a batch job is pending.
 
 The same environment variable works locally. Surrounding whitespace is trimmed; an empty GitHub secret keeps the standard OpenAI endpoint. Fixture mode removes both API settings and stays offline. The endpoint is not printed in application logs.
 
 ```powershell
+# Validate sources, then collect and classify the daily window without sending.
 uv run secdigest feeds check
-uv run secdigest ingest
 uv run secdigest run-daily --no-send --preview
+
+# Re-render stored daily classifications or synthesize a selected week.
 uv run secdigest daily --preview
 uv run secdigest weekly --week 2026-W42 --preview
+```
+
+For collection without classification, use `uv run secdigest ingest`. To test SMTP or deliver a full digest:
+
+```powershell
 uv run secdigest email test
 uv run secdigest run-daily
 ```
 
-The first daily command classifies only the report's 24-hour window. This matters because some feeds, especially MSRC, expose thousands of historical entries. Regular daily runs reuse previously stored classifications. `weekly` and `run-weekly` use stored classifications and synthesize the week's summary; they do not reclassify stories. Reports prominently show the count of unclassified clusters so incomplete collection is not represented as a quiet period.
+`run-daily` classifies only the report's 24-hour window. This matters because some feeds, especially MSRC, expose thousands of historical entries. Regular daily runs reuse previously stored classifications. `weekly` and `run-weekly` use stored classifications and synthesize the week's summary; they do not ingest or reclassify stories. Reports prominently show the count of unclassified clusters so incomplete collection is not represented as a quiet period.
+
+For today's date, the daily window ends at execution time and covers the preceding 24 hours. An explicit historical date ends at the following local midnight and also covers 24 hours. Weekly reports default to the previous Monday-to-Monday calendar week in `Europe/Amsterdam`; `--week` selects an ISO week, and `weekly.window: rolling` selects the preceding seven days when no week is supplied. Regenerating a report uses the current stored classifications and advisory cache, so it is not an immutable historical snapshot.
+
+A local live preview still ingests or synthesizes as requested and writes the local database, archives and run log; `--preview` suppresses email delivery. Use `--dry-run` for the isolated offline demonstration. GitHub Actions preview modes discard database changes after the run.
 
 After classification, a second duplicate check combines matching incident coverage into one report entry with all distinct source links. It compares normalized headlines and summaries, protects differing named subjects, CVEs and regulatory events, and requires every member of a group to match every other member. `scoring.yaml` → `post_dedup` controls the publication window (48 hours by default) and headline/summary similarity thresholds (70/65). This is a conservative text heuristic: ambiguous matches remain separate. It adds no API calls and leaves stored articles and classifications intact.
 
@@ -93,8 +130,6 @@ All report commands accept mutually exclusive `--send` / `--no-send`, plus `--pr
 
 Email story details display **Location relevance**, **Industry relevance** and **Technology relevance** on separate labeled lines in both HTML and plain text. The HTML priority table uses the same layout. Technology relevance shows the existing technical practice-area scores; the labels and line breaks do not change scoring.
 
-News story details omit the "Relevant to your work" line and its linked case studies in HTML, Markdown and email.
-
 Optional full text is available for classification only:
 
 ```powershell
@@ -105,6 +140,8 @@ uv run secdigest classify --fetch-fulltext
 Full text is fetched under the site's robots policy, used transiently as classification context and never archived or republished. Feed summaries remain the audit evidence, so detection links and dates absent from summaries are conservatively omitted. `page_watch` sources remain disabled; the application does not scrape them.
 
 ## Configuration
+
+All files below live in [`config/`](config/). The current configuration defines 4 regions, 10 industries and 11 technical practice areas.
 
 | File | Controls |
 |---|---|
@@ -144,11 +181,13 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 
 ## Sources and evidence
 
-`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source.
+`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 24 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
 
 Routine fetch errors do not permanently disable feeds. Collection uses bounded concurrency, timeouts, response-size limits, conditional ETag/Last-Modified requests, robots policies, crawl delays and HTTP retry/backoff. It collects feed summaries only by default. Publication and collection timestamps are stored separately; missing publication dates are labelled as inferred and future-dated items are excluded.
 
 CISA uses its official `cisagov/CSAF` GitHub repository's ROLIE JSON indexes for IT, OT and VA advisories. The `csaf` source adapter retrieves the referenced CSAF 2.0 documents and extracts publisher-provided summaries, CVEs, affected products, scores, remediation and source links. `feeds check` validates these JSON indexes directly. Documents and redirects are restricted to each feed's configured `document_base_url`. All three feeds share `independence_key: cisa.gov`, so overlapping CISA coverage does not count as independent corroboration.
+
+These structured feeds replace the legacy CISA advisory RSS path. In the latest archived run, they contributed 267 distinct advisories and consolidated three IT/VA overlaps. One CISA IT entry, `VA-26-274-03` (Joyland AI), referenced an upstream document returning HTTP 404. A document failure marks that source as degraded and is retried on subsequent ingestion; successfully collected advisories are retained. Inspect `source_health` in the report JSON for per-source counts and failed advisory IDs.
 
 Advisories are deduplicated by publisher and advisory ID across feeds and runs. A newer release updates the existing article and invalidates its classification; the original release date is retained separately, while the current release date determines report eligibility. Older versions cannot overwrite newer cached releases. Index responses are cached so failed documents can be retried even after an HTTP 304. Initial collection considers the configured database retention window (120 days); daily classification still uses only the daily report window. SQLite schema version 2 adds the advisory identity table automatically.
 
@@ -162,7 +201,7 @@ Source CVEs, published detection URLs, regulation dates, case-study references a
 
 ## Archives and email
 
-Live archives are `output/daily/YYYY-MM-DD.{md,html,json,csv}` and `output/weekly/YYYY-Www.{md,html,json,csv}`. CSV exports retain every regional, industry and practice score, overrides, CVEs and advisory facts, technologies, techniques, regulations, related studies and source URLs. Spreadsheet formula prefixes are escaped.
+Live archives are `output/daily/YYYY-MM-DD.{md,html,json,csv}` and `output/weekly/YYYY-Www.{md,html,json,csv}`. Local email previews are `output/preview/secdigest-daily-YYYY-MM-DD.eml` and `output/preview/secdigest-weekly-YYYY-Www.eml`. CSV exports retain every regional, industry and practice score, overrides, CVEs and advisory facts, technologies, techniques, regulations, related studies and source URLs. Spreadsheet formula prefixes are escaped. JSON also exposes unclassified counts, merged cluster IDs, source health, enrichment warnings, KEV provenance and coverage notes.
 
 Daily emails attach full HTML and CSV. Weekly emails also attach Markdown. MIME structure is mixed → alternative (plain text, HTML) → attachments. HTML email uses inline CSS, table layout, text-labelled importance badges and no external images/fonts/scripts. Feed-derived text is escaped and links are restricted to HTTP/HTTPS.
 
@@ -176,7 +215,7 @@ Daily outputs are retained for 90 days and stored news for 120 days; weekly arch
 
 ## Scheduling
 
-The workflows are ready but `scheduling.enabled` is **false**. Before changing it:
+The workflows support manual preview and delivery; `scheduling.enabled` is **false**. The committed run history confirms successful daily SMTP delivery, but inbox/client review and live weekly validation are still outstanding. Before enabling automatic delivery:
 
 1. Configure `OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, and the email repository secrets listed above, and verify model access at that endpoint.
 2. Generate and review daily/weekly previews, including Gmail desktop and phone presentation.
@@ -185,11 +224,21 @@ The workflows are ready but `scheduling.enabled` is **false**. Before changing i
 
 Daily schedules use `0 5 * * *` and `0 6 * * *` UTC, guarded for 07:00 Europe/Amsterdam. Weekly schedules use `0 6 * * 1` and `0 7 * * 1`, guarded for Monday 08:00. Manual dispatch skips the timing/activation guards and supports `mode`, `force_send` and date/week overrides. GitHub scheduled jobs may start late; the guard accepts the target hour. If you change the configured timezone or target hours, update the workflow's early hour guard and UTC schedules too.
 
-Manual runs default to `mode=preview`: daily runs collect and classify live news; weekly runs summarize stored news. Both generate reports and `.eml` previews without SMTP credentials or delivery. Choose `mode=fixtures` for an offline demonstration requiring no API key. Preview artifacts are downloadable from the Actions run for seven days and are not committed back or saved to the database cache. Failed previews also upload their diagnostic log: check its latest status, since the artifact may contain historical sample reports. API diagnostics retain only the HTTP status and recognized error codes, never raw provider messages. Choose `mode=send` explicitly for email delivery; only that mode honors `force_send`. Enabled scheduled runs use `send`.
+Manual runs default to `mode=preview`:
+
+| Actions mode | Data and credentials | Result |
+|---|---|---|
+| `preview` | Live daily collection/classification or weekly synthesis from stored news; API credentials only | Reports and `.eml` preview; no email or persistent database changes |
+| `fixtures` | Synthetic fixtures; API and SMTP credentials removed | Offline sample reports and `.eml` preview |
+| `send` | Live pipeline; API and SMTP credentials | Email delivery and committed runtime artifacts; database cache saved when enabled |
+
+Preview artifacts are downloadable from the Actions run for seven days and are not committed back or saved to the database cache. Failed previews also upload their diagnostic log: check its latest status, since the artifact may contain historical sample reports. API diagnostics retain only the HTTP status and recognized error codes, never raw provider messages. Only `send` honors `force_send`; enabled scheduled runs also use `send`.
 
 Once a valid `OPENAI_API_KEY` Actions secret and these workflow changes are on the selected GitHub branch, run **Actions → SecDigest daily → Run workflow → mode: preview**. Without a key, choose `fixtures`.
 
-Both workflows serialize on the same concurrency group because they share SQLite and archives. The shared runner uses Python 3.12, pip caching, the locked requirements export, and the existing tracker's `github-actions[bot]` identity. It commits only runtime artifacts when changed, including failure logs. It never force-pushes. A database above 50 MB switches to `actions/cache` and emits a notice; `data/storage-mode.json` records that choice. Keep an independent database backup because Actions caches can be evicted. A missing required database cache stops processing instead of silently rebuilding history.
+Select the branch containing the intended code and configuration when dispatching manually. GitHub scheduled workflows run from the repository's default branch, so those changes must be present there before enabling schedules.
+
+Both workflows serialize within each branch on the same concurrency group because they share SQLite and archives. The [shared runner](.github/workflows/run-digest.yml) uses Python 3.12, pip caching, the locked requirements export, and the `github-actions[bot]` identity. Send mode commits only runtime artifacts when changed, including failure logs. It never force-pushes. A database above 50 MB switches to `actions/cache` and emits a notice; `data/storage-mode.json` records that choice. Keep an independent database backup because Actions caches can be evicted. A missing required database cache stops processing instead of silently rebuilding history.
 
 For a server whose cron supports `CRON_TZ`, provision environment variables through the service's secret management and use:
 
@@ -225,7 +274,9 @@ uv run ruff check src tests scripts
 uv run ruff format --check src tests scripts
 ```
 
-The suite covers dynamic taxonomy schemas, invalid-model retries, claim filtering, batch resumption, URL/indicator normalization, clustering, scoring overrides, country bonuses, watch aliases, date windows, DST, source discovery and caching, idempotent ingestion, Markdown golden files, HTML escaping, 200-item email limits, CSV scores, MIME structure, SMTP retry policy, failure alerts, source-health silence and CLI isolation.
+The suite covers dynamic taxonomy schemas, custom API endpoints, denied model-metadata access, safe API diagnostics, invalid-model retries, claim filtering, batch resumption, URL/indicator normalization, clustering, report-time incident deduplication, scoring overrides, country bonuses, watch aliases, date windows, DST, source discovery and caching, idempotent ingestion, Markdown golden files, HTML escaping, 200-item email limits, CSV scores, MIME structure, SMTP retry policy, failure alerts, source-health silence and CLI/workflow credential isolation. CISA tests cover ROLIE/CSAF parsing, advisory identity and revisions, overlapping feeds, failed-document retries, document URL restrictions, KEV mirror fallback, catalog validation and provenance.
+
+The [CI workflow](.github/workflows/ci.yml) runs Ruff, pytest and offline daily/weekly previews on pushes and pull requests, then uploads the synthetic reports as an artifact.
 
 `scripts/fixture_previews.py` regenerates synthetic report archives. Its `--update-golden` flag deliberately replaces test expectations; review rendered changes before using it. `scripts/seed_config.py` is a one-time importer from the original prompt and refuses to overwrite existing configuration. The running application does not depend on the prompt file.
 
