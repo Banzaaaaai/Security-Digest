@@ -6,6 +6,8 @@ import json
 import sqlite3
 from pathlib import Path
 
+from .normalize import stable_id
+
 
 class Store:
     def __init__(self, path: Path | str):
@@ -28,7 +30,11 @@ class Store:
         CREATE TABLE IF NOT EXISTS deliveries (
           kind TEXT NOT NULL, period TEXT NOT NULL, sent TEXT NOT NULL,
           PRIMARY KEY(kind, period));
-        PRAGMA user_version=1;
+        CREATE TABLE IF NOT EXISTS advisories (
+          source_id TEXT PRIMARY KEY,
+          url TEXT UNIQUE NOT NULL REFERENCES articles(url) ON DELETE CASCADE,
+          index_updated TEXT NOT NULL, released TEXT NOT NULL, version TEXT NOT NULL);
+        PRAGMA user_version=2;
         """)
 
     def close(self):
@@ -54,6 +60,63 @@ class Store:
                 (article["url"], cluster_id, article["published"], json.dumps(article)),
             )
         return cursor.rowcount > 0
+
+    def advisory(self, source_id):
+        row = self.db.execute("SELECT * FROM advisories WHERE source_id=?", (source_id,)).fetchone()
+        return dict(row) if row else None
+
+    def save_advisory(self, source_id, article, index_updated):
+        """One article per publisher/advisory ID; revisions invalidate classification."""
+        existing = self.advisory(source_id)
+        released, version = article["published"], article["advisory_version"]
+        with self.db:
+            if existing:
+                if released < existing["released"]:
+                    return "unchanged"  # A lagging feed must never roll back a revision.
+                self.db.execute(
+                    "UPDATE advisories SET index_updated=max(index_updated,?) WHERE source_id=?",
+                    (index_updated, source_id),
+                )
+                if released == existing["released"] and version == existing["version"]:
+                    return "unchanged"
+                # Keep the stable article URL and cluster even if a revised document moves.
+                article = {**article, "url": existing["url"]}
+                self.db.execute(
+                    "DELETE FROM classifications WHERE cluster_id="
+                    "(SELECT cluster_id FROM articles WHERE url=?)",
+                    (existing["url"],),
+                )
+                self.db.execute(
+                    "UPDATE articles SET published=?,payload=? WHERE url=?",
+                    (released, json.dumps(article), existing["url"]),
+                )
+                self.db.execute(
+                    "UPDATE advisories SET released=?,version=? WHERE source_id=?",
+                    (released, version, source_id),
+                )
+                return "updated"
+            ident = stable_id("csaf:" + source_id)
+            row = self.db.execute("SELECT cluster_id FROM articles WHERE url=?", (article["url"],)).fetchone()
+            if row:
+                if self.db.execute("SELECT 1 FROM advisories WHERE url=?", (article["url"],)).fetchone():
+                    raise ValueError("Different advisory IDs claim the same article URL")
+                ident = row[0]
+                self.db.execute("DELETE FROM classifications WHERE cluster_id=?", (ident,))
+                self.db.execute(
+                    "UPDATE articles SET published=?,payload=? WHERE url=?",
+                    (released, json.dumps(article), article["url"]),
+                )
+            else:
+                self.db.execute("INSERT OR IGNORE INTO clusters VALUES (?,?)", (ident, released))
+                self.db.execute(
+                    "INSERT INTO articles VALUES (?,?,?,?)",
+                    (article["url"], ident, released, json.dumps(article)),
+                )
+            self.db.execute(
+                "INSERT INTO advisories VALUES (?,?,?,?,?)",
+                (source_id, article["url"], index_updated, released, version),
+            )
+            return "new"
 
     def clusters(self, start=None, end=None):
         clauses, args = [], []

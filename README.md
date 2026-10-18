@@ -109,7 +109,7 @@ Full text is fetched under the site's robots policy, used transiently as classif
 | File | Controls |
 |---|---|
 | `settings.yaml` | Timezone, file paths, HTTP limits, models, pricing, optional enrichment, email, retention, activation |
-| `feeds.yaml` | All 51 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
+| `feeds.yaml` | All 52 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
 | `regions.yaml` | Region keys, priority-country mappings, country aliases and bonuses |
 | `industries.yaml` | Industry keys, display names and classification signals |
 | `practice_areas.yaml` | Practice keys, display names and classification signals |
@@ -147,6 +147,14 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 `feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source.
 
 Routine fetch errors do not permanently disable feeds. Collection uses bounded concurrency, timeouts, response-size limits, conditional ETag/Last-Modified requests, robots policies, crawl delays and HTTP retry/backoff. It collects feed summaries only by default. Publication and collection timestamps are stored separately; missing publication dates are labelled as inferred and future-dated items are excluded.
+
+CISA uses its official `cisagov/CSAF` GitHub repository's ROLIE JSON indexes for IT, OT and VA advisories. The `csaf` source adapter retrieves the referenced CSAF 2.0 documents and extracts publisher-provided summaries, CVEs, affected products, scores, remediation and source links. `feeds check` validates these JSON indexes directly. Documents and redirects are restricted to each feed's configured `document_base_url`. All three feeds share `independence_key: cisa.gov`, so overlapping CISA coverage does not count as independent corroboration.
+
+Advisories are deduplicated by publisher and advisory ID across feeds and runs. A newer release updates the existing article and invalidates its classification; the original release date is retained separately, while the current release date determines report eligibility. Older versions cannot overwrite newer cached releases. Index responses are cached so failed documents can be retried even after an HTTP 304. Initial collection considers the configured database retention window (120 days); daily classification still uses only the daily report window. SQLite schema version 2 adds the advisory identity table automatically.
+
+KEV remains JSON enrichment. The CISA website is primary; the official `cisagov/kev-data` GitHub JSON mirror is the fallback on transport or validation failure. `enrichment.kev_refresh_hours` defaults to 6. Both unavailable sources leave existing data intact and produce a warning. Catalog count, CVE identifiers, required fields and dates are validated; older snapshots cannot replace a newer cached release. JSON reports record KEV source URL, catalog version, release time and last successful check in `kev_provenance`.
+
+GovDelivery email subscription and mailbox ingestion are excluded. Structured advisories and KEV do not cover every broader CISA announcement; live HTML, Markdown and email reports display this coverage note. No CISA subscription credentials are needed. See [CISA subscription research](CISA-SUBSCRIPTIONS-RESEARCH.md) for verified endpoints and the original investigation.
 
 CVEs are checked against CISA KEV. EPSS, NVD and GitHub advisory enrichment are independently optional. NVD calls observe its unauthenticated rate limit. MITRE's enterprise ATT&CK dataset validates technique IDs. Unavailable enrichment is labelled rather than converted to zero or invented. KEV addition dates have day precision, so counts include catalog dates overlapping the report's local date window.
 

@@ -126,8 +126,12 @@ def sections(config, report, email=False, item_limit=None, compact=False):
         paragraph(
             f"Source health: {health['enabled']} enabled feeds; {health['failures']} failures; {health['new']} new articles at last ingestion."
         )
+        if health.get("updated"):
+            paragraph(f"Revised advisories at last ingestion: {health['updated']}.")
     for warning in report["enrichment_warnings"]:
         paragraph("Enrichment coverage: " + warning)
+    for note in report.get("coverage_notes", []):
+        paragraph("Coverage note: " + note)
     if report["kind"] == "daily":
         heading("Critical / High: act now")
         important = [i for i in visible if i["importance"] in {"critical", "high"}]

@@ -22,6 +22,17 @@ def test_daily_and_weekly_reports(config, populated, tmp_path):
             assert len(report["synthesis"]["content_ideas"]) == 2
 
 
+def test_live_reports_disclose_cisa_coverage_gap(config, populated):
+    report = build_report(config, populated, "daily", now=FIXTURE_NOW)
+    for rendered in (
+        render_markdown(config, report),
+        render_html(config, report),
+        render_html(config, report, email=True),
+    ):
+        assert "GovDelivery email announcements are not collected" in rendered
+    assert "kev_provenance" in report
+
+
 def test_html_escapes_source_and_rejects_link_schemes(config, populated):
     report = build_report(config, populated, "daily", now=FIXTURE_NOW, dry_run=True)
     item = report["items"][0]

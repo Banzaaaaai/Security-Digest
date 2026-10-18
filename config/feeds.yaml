@@ -207,14 +207,17 @@ feeds:
   type: page_watch
   verified: true
   last_error: No valid RSS/Atom feed found
-- name: CISA ICS Advisories
-  url: TODO_VERIFY
+- name: CISA OT Advisories
+  url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/OT/white/cisa-csaf-ot-feed-tlp-white.json
   tier: advisory
-  site: https://cisa.gov/news-events/ics-advisories
-  enabled: false
-  type: page_watch
+  site: https://github.com/cisagov/CSAF
+  enabled: true
+  type: csaf
+  source_name: CISA
+  independence_key: cisa.gov
+  document_base_url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/
   verified: true
-  last_error: No valid RSS/Atom feed found
+  last_error: ''
 - name: Dragos Blog
   url: TODO_VERIFY
   tier: vendor
@@ -295,12 +298,26 @@ feeds:
   type: rss
   verified: true
   last_error: ''
-- name: CISA Advisories
-  url: https://www.cisa.gov/cybersecurity-advisories/all.xml
+- name: CISA IT Advisories
+  url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/cisa-csaf-it-feed-tlp-white.json
   tier: advisory
-  site: https://www.cisa.gov/cybersecurity-advisories/all.xml
+  site: https://github.com/cisagov/CSAF
   enabled: true
-  type: rss
+  type: csaf
+  source_name: CISA
+  independence_key: cisa.gov
+  document_base_url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/
+  verified: true
+  last_error: ''
+- name: CISA Vulnerability Advisories
+  url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/VA/white/cisa-csaf-va-feed-tlp-white.json
+  tier: advisory
+  site: https://github.com/cisagov/CSAF
+  enabled: true
+  type: csaf
+  source_name: CISA
+  independence_key: cisa.gov
+  document_base_url: https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/
   verified: true
   last_error: ''
 - name: MSRC Update Guide
@@ -421,7 +438,10 @@ feeds:
   last_error: ValueError
 enrichment:
   cisa_kev_json: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+  cisa_kev_fallback_json: https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json
   epss_api: https://api.first.org/data/v1/epss
   nvd_api: https://services.nvd.nist.gov/rest/json/cves/2.0
   github_advisories_api: https://api.github.com/advisories
   mitre_attack_stix: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json
+coverage_notes:
+- 'CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.'

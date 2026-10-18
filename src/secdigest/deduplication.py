@@ -57,6 +57,10 @@ def _names(item):
 
 
 def same_story(left, right, options):
+    ids_a = {a["advisory_id"] for a in left["articles"] if a.get("advisory_id")}
+    ids_b = {a["advisory_id"] for a in right["articles"] if a.get("advisory_id")}
+    if ids_a and ids_b and ids_a.isdisjoint(ids_b):
+        return False
     a, b = left["classification"], right["classification"]
     latest_a = max(datetime.fromisoformat(article["published"]) for article in left["articles"])
     latest_b = max(datetime.fromisoformat(article["published"]) for article in right["articles"])

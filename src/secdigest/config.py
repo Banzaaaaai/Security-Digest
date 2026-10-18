@@ -9,6 +9,8 @@ from zoneinfo import ZoneInfo
 
 import yaml
 
+from .normalize import safe_url
+
 FILES = (
     "settings",
     "feeds",
@@ -77,6 +79,15 @@ class Config:
         names = [f["name"] for f in self.feeds]
         if len(set(names)) != len(names):
             raise ValueError("Feed names must be unique")
+        for feed in self.feeds:
+            if feed.get("type") == "csaf":
+                prefix = feed.get("document_base_url", "")
+                if not safe_url(prefix) or not prefix.endswith("/") or not feed.get("independence_key"):
+                    raise ValueError(
+                        "CSAF feeds need a document directory URL and publisher independence key"
+                    )
+        if not 1 <= self.settings["enrichment"].get("kev_refresh_hours", 6) <= 24:
+            raise ValueError("KEV refresh interval must be between 1 and 24 hours")
         if not 1 <= self.settings["models"]["batch_size"] <= 10:
             raise ValueError("Model batch size must be between 1 and 10")
         if not 1000 <= self.settings["email"]["max_html_bytes"] <= 90000:

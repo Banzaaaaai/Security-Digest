@@ -13,6 +13,7 @@ import feedparser
 import httpx
 
 from .clustering import Clusterer
+from .csaf import CSAFReader, parse_rolie, scoped_url
 from .normalize import SourceHTML, canonical_url, extract_ids, safe_url, source_text
 
 
@@ -72,7 +73,7 @@ class Fetcher:
             self.host_next[origin] = time.monotonic() + delay
             return robot.can_fetch(self.config.settings["http"]["user_agent"], url)
 
-    async def get(self, url, conditional=True, robots=True, max_bytes=None):
+    async def get(self, url, conditional=True, robots=True, max_bytes=None, url_prefix=None):
         if not safe_url(url):
             raise ValueError("Invalid source URL")
         original = url
@@ -84,6 +85,8 @@ class Fetcher:
             headers["If-Modified-Since"] = cache["modified"]
         async with self.semaphore:
             for _ in range(6):
+                if url_prefix and not scoped_url(url, url_prefix):
+                    raise ValueError("Source redirect outside configured publisher directory")
                 if robots and not await self.allowed(url):
                     raise ValueError("Disallowed by robots.txt")
                 for attempt in range(3):
@@ -165,6 +168,19 @@ async def check_feeds(config, store):
         async def check(feed):
             candidates = []
             try:
+                if feed.get("type") == "csaf":
+                    data = await fetcher.get(feed["url"], conditional=False)
+                    entries, errors = parse_rolie(data, feed)
+                    if errors:
+                        raise ValueError("Invalid ROLIE entries")
+                    feed.update(enabled=True, verified=True, last_error="")
+                    return {
+                        "name": feed["name"],
+                        "status": "ok",
+                        "url": feed["url"],
+                        "items": len(entries),
+                        "discovered_urls": [feed["url"]],
+                    }
                 if feed["url"] != "TODO_VERIFY":
                     candidates.append(feed["url"])
                 else:
@@ -193,7 +209,7 @@ async def check_feeds(config, store):
                     type="page_watch" if not candidates else "rss",
                     last_error="No valid RSS/Atom feed found",
                 )
-            except (httpx.HTTPError, ValueError) as exc:
+            except (httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError) as exc:
                 feed.update(enabled=False, verified=True, last_error=type(exc).__name__)
             return {
                 "name": feed["name"],
@@ -211,11 +227,14 @@ async def check_feeds(config, store):
 
 async def ingest(config, store, now=None, fetch_fulltext=False):
     now = now or datetime.now(UTC)
-    enabled = [f for f in config.feeds if f.get("enabled") and f.get("type") == "rss"]
+    enabled = [f for f in config.feeds if f.get("enabled") and f.get("type") in {"rss", "csaf"}]
     clusterer = Clusterer(config, store)
     async with Fetcher(config, store) as fetcher:
+        csaf = CSAFReader(config, store, fetcher, now)
 
         async def collect(feed):
+            if feed["type"] == "csaf":
+                return await csaf.collect(feed)
             try:
                 data = await fetcher.get(feed["url"])
                 items = parse_feed(data, feed, now) if data is not None else []
@@ -235,9 +254,10 @@ async def ingest(config, store, now=None, fetch_fulltext=False):
         "enabled": len(enabled),
         "failures": sum(not r["ok"] for r in results),
         "new": sum(r["new"] for r in results),
+        "updated": sum(r.get("updated", 0) for r in results),
         "sources": results,
     }
-    if health["new"]:
+    if health["new"] or health["updated"]:
         store.put("last_new", now.isoformat())
     store.put("source_health", health)
     return health

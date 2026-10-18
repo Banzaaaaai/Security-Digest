@@ -6,6 +6,7 @@ from datetime import UTC, datetime, timedelta
 
 import httpx
 
+from .kev import refresh_kev
 from .sources import Fetcher
 
 
@@ -17,7 +18,8 @@ async def enrich(config, store, now=None):
         {cve for cluster in store.clusters() for article in cluster["articles"] for cve in article["cves"]}
     )
     async with Fetcher(config, store) as fetcher:
-        for key, url in (("kev", endpoints["cisa_kev_json"]), ("attack", endpoints["mitre_attack_stix"])):
+        warnings.extend(await refresh_kev(config, store, fetcher, now))
+        for key, url in (("attack", endpoints["mitre_attack_stix"]),):
             last = store.get(key + ":checked")
             if last and now - datetime.fromisoformat(last) < timedelta(hours=24):
                 continue
@@ -25,40 +27,21 @@ async def enrich(config, store, now=None):
                 data = await fetcher.get(url, max_bytes=70000000)
                 if data is not None:
                     payload = json.loads(data)
-                    if key == "kev":
-                        store.put(
-                            key,
+                    store.put(
+                        key,
+                        sorted(
                             {
-                                r["cveID"]: {
-                                    k: r.get(k)
-                                    for k in (
-                                        "dateAdded",
-                                        "vendorProject",
-                                        "product",
-                                        "requiredAction",
-                                        "dueDate",
-                                        "knownRansomwareCampaignUse",
-                                    )
-                                }
-                                for r in payload["vulnerabilities"]
-                            },
-                        )
-                    else:
-                        store.put(
-                            key,
-                            sorted(
-                                {
-                                    ref["external_id"]
-                                    for obj in payload["objects"]
-                                    if obj.get("type") == "attack-pattern"
-                                    and not obj.get("revoked")
-                                    and not obj.get("x_mitre_deprecated")
-                                    for ref in obj.get("external_references", [])
-                                    if ref.get("source_name") == "mitre-attack"
-                                    and ref.get("external_id", "").startswith("T")
-                                }
-                            ),
-                        )
+                                ref["external_id"]
+                                for obj in payload["objects"]
+                                if obj.get("type") == "attack-pattern"
+                                and not obj.get("revoked")
+                                and not obj.get("x_mitre_deprecated")
+                                for ref in obj.get("external_references", [])
+                                if ref.get("source_name") == "mitre-attack"
+                                and ref.get("external_id", "").startswith("T")
+                            }
+                        ),
+                    )
                 store.put(key + ":checked", now.isoformat())
             except (httpx.HTTPError, ValueError, KeyError) as exc:
                 warnings.append(f"{key}: {type(exc).__name__}; cached data retained if available")

@@ -123,6 +123,8 @@ def build_report(config, store, kind, period=None, now=None, dry_run=False, synt
         "other_count": sum(not i["included"] for i in items),
         "source_health": store.get("source_health", {}),
         "enrichment_warnings": store.get("enrichment_warnings", []),
+        "kev_provenance": store.get("kev:provenance", {}),
+        "coverage_notes": [] if dry_run else config.raw["feeds"].get("coverage_notes", []),
         "cases": dict(cases),
     }
     if kind == "daily":

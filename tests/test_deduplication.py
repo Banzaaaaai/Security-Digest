@@ -73,6 +73,13 @@ def save(store, config, clusters):
             store.classify(cluster["id"], cluster["classification"], config.fingerprint, "fixture")
 
 
+def test_distinct_advisory_ids_are_not_merged(config, story):
+    left, right = story("left"), story("right")
+    left["articles"][0]["advisory_id"] = "ICSA-26-001-01"
+    right["articles"][0]["advisory_id"] = "ICSA-26-001-02"
+    assert len(deduplicate(config, [left, right])) == 2
+
+
 def test_connectwise_paraphrases_merge_after_classification(config, populated, story):
     clusters = [
         story("thn", category="vulnerability"),
