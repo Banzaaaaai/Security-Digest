@@ -39,7 +39,7 @@ jobs:
           import os
           now = datetime.now(ZoneInfo('Europe/Amsterdam'))
           kind = os.environ['KIND']
-          allowed = os.environ['MANUAL'] == 'true' or (now.hour == (7 if kind == 'daily' else 8) and (kind != 'weekly' or now.weekday() == 0))
+          allowed = os.environ['MANUAL'] == 'true' or (now.hour >= (7 if kind == 'daily' else 8) and (kind != 'weekly' or now.weekday() == 0))
           print('run=' + str(allowed).lower())
           PY
       - uses: actions/setup-python@v6

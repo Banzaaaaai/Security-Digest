@@ -87,6 +87,7 @@ bypassed. A failed lookup does not prove that a source has ceased operation.
   [the verification artifact](docs/threat-source-verification-2026-10-18.json).
 
 The next digest run using this configuration will collect the added feeds and
-use EPSS enrichment. Scheduled execution is still disabled in the existing
-settings. This review does not refresh or resend the previous daily report.
+use EPSS enrichment. Scheduled execution was disabled at the time of this
+review; see the README for current scheduling settings. This review does not
+refresh or resend the previous daily report.
 Public feed availability and licensing/access arrangements can change.

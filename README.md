@@ -181,9 +181,11 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 
 ## Sources and evidence
 
-`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 34 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
+`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 37 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
 
 The [18 October threat-intelligence source review](THREAT-INTELLIGENCE-SOURCES.md) adds ten public feeds from Contagio, GitHub, Google Project Zero, GreyNoise, Rapid7/Metasploit, Qualys, ReversingLabs and Seebug, and enables FIRST EPSS enrichment. The review documents all 24 requested sources, including commercial services, reference datasets, blocked endpoints and unidentified catalogs. Contagio and GreyNoise Labs are currently stale; Seebug's feed is empty. Vendor blogs do not provide full commercial database coverage. The archived daily run above predates these additions.
+
+On 21 October 2026, three more RSS feeds were verified and enabled: [CERT-EU Security Advisories](https://cert.europa.eu/publications/security-advisories-rss), [CERT-EU Threat Intelligence](https://cert.europa.eu/publications/threat-intelligence-rss), and [Ars Technica Security](https://arstechnica.com/security/feed/). Both CERT-EU feeds share `independence_key: cert.europa.eu`. Ars Technica uses its security category feed. [Verification results](docs/cert-eu-ars-technica-verification-2026-10-21.json) record feed parsing and isolated ingestion checks.
 
 For a publisher whose article links are broken but whose URL-shaped entry IDs have been verified, set `entry_url_field: id` on that feed. This option accepts only HTTP(S) IDs on the feed's own host. Qualys research uses it because its feed repeats a category URL in every article link; all other feeds default to `link`.
 
@@ -219,14 +221,11 @@ Daily outputs are retained for 90 days and stored news for 120 days; weekly arch
 
 ## Scheduling
 
-The workflows support manual preview and delivery; `scheduling.enabled` is **false**. The committed run history confirms successful daily SMTP delivery, but inbox/client review and live weekly validation are still outstanding. Before enabling automatic delivery:
+Daily automatic delivery is enabled from **21 October 2026**: `scheduling.enabled: true` and `daily_enabled: true`. Weekly automatic delivery remains disabled with `weekly_enabled: false`. The global switch disables both schedules; per-kind switches default to enabled when omitted for compatibility with older configurations. Manual dispatch remains available regardless of these switches.
 
-1. Configure `OPENAI_API_KEY`, optional `OPENAI_BASE_URL`, and the email repository secrets listed above, and verify model access at that endpoint.
-2. Generate and review daily/weekly previews, including Gmail desktop and phone presentation.
-3. Run `secdigest email test` and confirm receipt.
-4. Run a live daily digest and a weekly preview, verify coverage and usage, then set `scheduling.enabled: true`.
+The 20 October scheduled runs arrived several hours late and skipped collection because the previous guards accepted only the target hour. Automatic delivery was also disabled in the published configuration. Both guards now accept delayed runs later that day. For a new installation, configure the API/email repository secrets and verify previews and SMTP delivery before enabling a schedule. Live weekly synthesis remains unverified.
 
-Daily schedules use `0 5 * * *` and `0 6 * * *` UTC, guarded for 07:00 Europe/Amsterdam. Weekly schedules use `0 6 * * 1` and `0 7 * * 1`, guarded for Monday 08:00. Manual dispatch skips the timing/activation guards and supports `mode`, `force_send` and date/week overrides. GitHub scheduled jobs may start late; the guard accepts the target hour. If you change the configured timezone or target hours, update the workflow's early hour guard and UTC schedules too.
+Daily schedules use `0 5 * * *` and `0 6 * * *` UTC, guarded for 07:00 Europe/Amsterdam or later that day. Weekly schedules use `0 6 * * 1` and `0 7 * * 1`, guarded for Monday 08:00 or later that Monday. Manual dispatch skips the timing/activation guards and supports `mode`, `force_send` and date/week overrides. GitHub scheduled jobs may start hours late; both guards allow same-day catch-up, and recorded successful deliveries suppress repeat emails for the same period. Jobs that arrive before the target hour, disabled schedules and weekly jobs outside Monday remain blocked. If you change the configured timezone or target hours, update the workflow's early hour guard and UTC schedules too.
 
 Manual runs default to `mode=preview`:
 

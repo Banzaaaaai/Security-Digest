@@ -41,6 +41,8 @@ retention:
   daily_days: 90
   database_days: 120
 scheduling:
-  enabled: false
+  enabled: true
+  daily_enabled: true
+  weekly_enabled: false
   daily_hour: 7
   weekly_hour: 8

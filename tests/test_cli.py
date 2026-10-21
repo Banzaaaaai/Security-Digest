@@ -3,6 +3,8 @@ import shutil
 from pathlib import Path
 from unittest.mock import Mock
 
+import yaml
+
 from secdigest.cli import main
 
 
@@ -32,5 +34,9 @@ def test_config_failure_still_records_status(tmp_path):
 
 def test_disabled_schedule_skips(tmp_path, capsys):
     copy_config(tmp_path)
+    settings_path = tmp_path / "config/settings.yaml"
+    settings = yaml.safe_load(settings_path.read_text(encoding="utf-8"))
+    settings["scheduling"]["enabled"] = False
+    settings_path.write_text(yaml.safe_dump(settings), encoding="utf-8")
     assert main(["--root", str(tmp_path), "schedule-guard", "daily"]) == 0
     assert capsys.readouterr().out.strip() == "false"

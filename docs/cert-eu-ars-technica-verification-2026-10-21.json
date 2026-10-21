@@ -1,0 +1,146 @@
+{
+  "verified_on": "2026-10-21",
+  "collection": "Normal SecDigest Fetcher, including robots.txt checks; in-memory database",
+  "retention_days": 120,
+  "classification_run": false,
+  "email_sent": false,
+  "feeds": [
+    {
+      "url": "https://cert.europa.eu/publications/security-advisories-rss",
+      "checked_at": "2026-10-21T08:21:03.427201+00:00",
+      "resolved_url": "https://cert.europa.eu/publications/security-advisories-rss",
+      "bytes": 9853,
+      "format": "rss20",
+      "title": "Latest publications of type Security Advisories",
+      "entries": 10,
+      "parsed_articles": 10,
+      "inferred_dates": 0,
+      "retained_articles": 10,
+      "samples": [
+        {
+          "url": "https://cert.europa.eu/publications/security-advisories/2026-018/",
+          "title": "2026-018: Critical Vulnerabilities in PHP",
+          "published": "2026-10-20T22:33:27+00:00"
+        },
+        {
+          "url": "https://cert.europa.eu/publications/security-advisories/2026-017/",
+          "title": "2026-017: Critical Vulnerability in Cisco Secure Email Gateway",
+          "published": "2026-10-15T11:38:20+00:00"
+        },
+        {
+          "url": "https://cert.europa.eu/publications/security-advisories/2026-016/",
+          "title": "2026-016: Critical Vulnerability in GitLab CE and EE",
+          "published": "2026-10-12T14:57:02+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://cert.europa.eu/publications/threat-intelligence-rss",
+      "checked_at": "2026-10-21T08:21:03.428207+00:00",
+      "resolved_url": "https://cert.europa.eu/publications/threat-intelligence-rss",
+      "bytes": 6894,
+      "format": "rss20",
+      "title": "Latest publications of type Threat Intelligence",
+      "entries": 10,
+      "parsed_articles": 10,
+      "inferred_dates": 0,
+      "retained_articles": 4,
+      "samples": [
+        {
+          "url": "https://cert.europa.eu/publications/threat-intelligence/cb26-10/",
+          "title": "Cyber Brief 26-10 - September 2026",
+          "published": "2026-10-02T17:00:00+00:00"
+        },
+        {
+          "url": "https://cert.europa.eu/publications/threat-intelligence/cb26-09/",
+          "title": "Cyber Brief 26-09 - August 2026",
+          "published": "2026-09-03T14:00:00+00:00"
+        },
+        {
+          "url": "https://cert.europa.eu/publications/threat-intelligence/cb26-08/",
+          "title": "Cyber Brief 26-08 - July 2026",
+          "published": "2026-08-03T17:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "url": "https://arstechnica.com/security/feed/",
+      "checked_at": "2026-10-21T08:21:03.404000+00:00",
+      "resolved_url": "https://arstechnica.com/security/feed/",
+      "bytes": 77437,
+      "format": "rss20",
+      "title": "Security - Ars Technica",
+      "entries": 20,
+      "parsed_articles": 20,
+      "inferred_dates": 0,
+      "retained_articles": 20,
+      "samples": [
+        {
+          "url": "https://arstechnica.com/security/2026/10/php-maintainers-tell-web-devs-to-prepare-themselves-for-critical-security-patches/",
+          "title": "PHP warns it plans to release 2 emergency patches imminently",
+          "published": "2026-10-21T02:12:18+00:00"
+        },
+        {
+          "url": "https://arstechnica.com/security/2026/10/the-internet-goes-on-high-alert-after-discovery-of-8-compromised-tls-certs/",
+          "title": "The Internet goes on high alert after discovery of 8 compromised TLS certs",
+          "published": "2026-10-20T19:47:35+00:00"
+        },
+        {
+          "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
+          "title": "Meta Muse exposes users' personal and business secrets when they share conversations",
+          "published": "2026-10-20T12:33:13+00:00"
+        }
+      ]
+    }
+  ],
+  "ingestion": {
+    "first": {
+      "at": "2026-10-21T08:21:04.423886+00:00",
+      "enabled": 3,
+      "failures": 0,
+      "new": 34,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 20
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 4
+        }
+      ]
+    },
+    "repeat_without_conditional_cache": {
+      "at": "2026-10-21T08:21:05.255376+00:00",
+      "enabled": 3,
+      "failures": 0,
+      "new": 0,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    }
+  }
+}

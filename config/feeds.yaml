@@ -15,6 +15,15 @@ feeds:
   type: rss
   verified: true
   last_error: ''
+- name: Ars Technica Security
+  url: https://arstechnica.com/security/feed/
+  tier: news
+  site: https://arstechnica.com/security/
+  independence_key: arstechnica.com
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
 - name: The Register Security
   url: https://www.theregister.com/security/headlines.atom
   tier: news
@@ -326,6 +335,26 @@ feeds:
   url: https://api.msrc.microsoft.com/update-guide/rss
   tier: advisory
   site: https://api.msrc.microsoft.com/update-guide/rss
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: CERT-EU Security Advisories
+  url: https://cert.europa.eu/publications/security-advisories-rss
+  tier: advisory
+  region: Europe
+  site: https://cert.europa.eu/publications/security-advisories/
+  independence_key: cert.europa.eu
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+- name: CERT-EU Threat Intelligence
+  url: https://cert.europa.eu/publications/threat-intelligence-rss
+  tier: research
+  region: Europe
+  site: https://cert.europa.eu/publications/threat-intelligence/
+  independence_key: cert.europa.eu
   enabled: true
   type: rss
   verified: true

@@ -29,9 +29,12 @@ def window(config, kind, period=None, now=None):
 def schedule_allowed(config, kind, now=None, manual=False):
     if manual:
         return True
-    if not config.settings["scheduling"]["enabled"]:
+    scheduling = config.settings["scheduling"]
+    if not scheduling["enabled"] or not scheduling.get(f"{kind}_enabled", True):
         return False
     local = (now or datetime.now(UTC)).astimezone(ZoneInfo(config.settings["timezone"]))
-    return local.hour == config.settings["scheduling"][f"{kind}_hour"] and (
+    # Actions can queue scheduled jobs for hours. Allow same-day catch-up;
+    # successful delivery records still suppress repeated sends for the period.
+    return local.hour >= config.settings["scheduling"][f"{kind}_hour"] and (
         kind != "weekly" or local.weekday() == 0
     )

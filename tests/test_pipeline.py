@@ -101,8 +101,35 @@ def test_watch_alias_word_boundaries(config):
 def test_dst_guard(config, now):
     config.settings["scheduling"]["enabled"] = True
     assert schedule_allowed(config, "daily", now)
-    assert not schedule_allowed(config, "daily", now + timedelta(hours=1))
-    assert schedule_allowed(config, "daily", now + timedelta(hours=1), manual=True)
+    assert not schedule_allowed(config, "daily", now - timedelta(hours=1))
+    assert schedule_allowed(config, "daily", now + timedelta(hours=5))
+    assert schedule_allowed(config, "daily", now - timedelta(hours=1), manual=True)
+
+
+def test_delayed_schedule_respects_activation_and_weekday(config):
+    delayed = datetime(2026, 10, 20, 9, 48, 57, tzinfo=UTC)
+    config.settings["scheduling"]["weekly_enabled"] = True
+    config.settings["scheduling"]["enabled"] = False
+    assert not schedule_allowed(config, "daily", delayed)
+    config.settings["scheduling"]["enabled"] = True
+    assert schedule_allowed(config, "daily", delayed)
+    assert not schedule_allowed(config, "weekly", delayed)  # Tuesday
+    assert schedule_allowed(config, "weekly", delayed - timedelta(days=1))
+
+
+def test_daily_activation_keeps_weekly_disabled(config):
+    monday = datetime(2026, 10, 19, 10, tzinfo=UTC)
+    config.settings["scheduling"].update(enabled=True, daily_enabled=True, weekly_enabled=False)
+    assert schedule_allowed(config, "daily", monday)
+    assert not schedule_allowed(config, "weekly", monday)
+    assert schedule_allowed(config, "weekly", monday, manual=True)
+    config.settings["scheduling"]["daily_enabled"] = False
+    assert not schedule_allowed(config, "daily", monday)
+    # Older configurations without per-kind switches retain the global behavior.
+    del config.settings["scheduling"]["weekly_enabled"]
+    assert schedule_allowed(config, "weekly", monday)
+    config.settings["scheduling"]["enabled"] = False
+    assert not schedule_allowed(config, "weekly", monday)
 
 
 def test_windows(config):
