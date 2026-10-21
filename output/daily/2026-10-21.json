@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-21",
-  "start": "2026-10-20T09:49:50.353159+00:00",
-  "end": "2026-10-21T09:49:50.353159+00:00",
+  "start": "2026-10-20T10:46:41.132717+00:00",
+  "end": "2026-10-21T10:46:41.132717+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1075,91 +1075,6 @@
         }
       },
       "priority": 81.0,
-      "included": true
-    },
-    {
-      "cluster_id": "11c2af37ed96bd3a87a6d2da",
-      "headline": "Siemens customers warned on ClickFix campaign abusing DLL side loading",
-      "summary": "Siemens said some customers were being targeted by a ClickFix-style campaign that abused DLL side loading. Users of the affected software were advised to update promptly while defenders assess related activity.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "This is active abuse against a widely deployed industrial vendor's customer base, combining a real-world campaign with a software execution trick. It is especially relevant to environments that rely on Siemens tooling and industrial endpoints.",
-      "location_relevance": {
-        "US": 35,
-        "Europe": 80,
-        "MEA": 25,
-        "Other": 45
-      },
-      "countries_mentioned": [
-        "DE"
-      ],
-      "industry_relevance": {
-        "energy_services": 55,
-        "telecommunications": 20,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 20,
-        "retail_banking": 0,
-        "global_it_services": 20,
-        "logistics": 20,
-        "industrial_manufacturing": 95,
-        "automotive": 55
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 45,
-        "devsecops": 10,
-        "siem_detection": 55,
-        "iam_pam": 15,
-        "email_phishing": 30,
-        "data_protection_dlp": 0,
-        "ot_ics": 75,
-        "grc_audit": 10,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Siemens Software Center",
-        "DLL side loading",
-        "ClickFix"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "iec_62443",
-          "nature": "guidance",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked signatures were provided. Detection should focus on suspicious DLL load paths, process ancestry, and unusual installer or updater behavior on Siemens endpoints.",
-      "related_case_studies": [
-        "security-visibility-for-manufacturing",
-        "securing-offshore-operations"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "industrial_manufacturing",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Prioritize the Siemens update, hunt for abnormal DLL loads and ClickFix artifacts, and review exposure of engineering workstations and adjacent OT-connected endpoints.",
-      "confidence": 0.93,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/siemens-clickfix-exploiting-side/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-10-20T10:45:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 80.0,
       "included": true
     },
     {
@@ -2777,6 +2692,80 @@
       "included": true
     },
     {
+      "cluster_id": "0b6122d6d5fa9d837e4157f1",
+      "headline": "Critical PHP flaws disclosed ahead of scheduled patch release",
+      "summary": "Two critical PHP vulnerabilities were reportedly disclosed before their planned patch date. The timing raises the likelihood of rushed defensive action across environments that rely on PHP applications and shared hosting stacks.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "Critical vulnerabilities in a widely deployed language/runtime warrant urgent attention even before exploitation is confirmed. They can affect many internet-facing applications and create immediate patching pressure.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 60,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 55,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection-rule URLs were included. Exposure management and web-layer monitoring should prioritize PHP applications once vendor details are available.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory PHP deployments, apply vendor patches as soon as available, and review externally reachable web applications for compensating controls and abnormal requests.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/critical-php-vulnerabilities-leaked/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-21T10:20:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 69.0,
+      "included": true
+    },
+    {
       "cluster_id": "8231b6f9ea3f8bfffda492a7",
       "headline": "PHP out-of-cycle patch for two critical remote code execution flaws",
       "summary": "PHP is preparing an emergency security release for two critical vulnerabilities rated 9.2 on CVSS v4.0. The advisory indicates the issues are serious enough to warrant immediate patch planning for teams running PHP-based applications.",
@@ -3724,6 +3713,81 @@
       "watch_tech": [],
       "cve_details": {},
       "priority": 63.0,
+      "included": true
+    },
+    {
+      "cluster_id": "021a484c6b81051d12e1a5f3",
+      "headline": "Study finds AI prompts can make contractor code less secure",
+      "summary": "A reported experiment found that a prompt framing a coding task for a US defense contractor led the model to produce more vulnerable code. The result highlights prompt sensitivity in AI-assisted development and the need for stronger review of generated code.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is research on AI-assisted code quality, not an announced breach or vulnerability in a deployed product. It is relevant to secure development and AI governance for enterprises using coding assistants.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 0,
+        "MEA": 0,
+        "Other": 40
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 70,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 70,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 0,
+        "ai_governance": 80
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. Defensive focus should be on code review, testing, policy controls, and governance for AI-generated software.",
+      "related_case_studies": [
+        "secure-development-for-automotive",
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Tighten policies for AI-assisted coding, require human review and security testing for generated code, and set clear guardrails for sensitive development contexts.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/chinese-ai-model-writes-more-hackable-code-when-told-its-for-us-contractor/",
+          "source": "SecurityWeek",
+          "published": "2026-10-21T10:03:24+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 62.0,
       "included": true
     },
     {
@@ -5681,6 +5745,76 @@
       "included": true
     },
     {
+      "cluster_id": "b1018dc882649e8d501116c2",
+      "headline": "Attackers abuse trusted online services as delivery channels",
+      "summary": "Security researchers report that attackers increasingly hide malicious activity inside legitimate online services that organizations already trust. The pattern spans collaboration, file-sharing and payment platforms, making delivery and detection harder across normal business workflows.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is threat research describing a broad attacker technique rather than a specific incident or new vulnerability. It is relevant to enterprise detection and phishing controls, but not an acute exploitation event.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 70,
+        "iam_pam": 30,
+        "email_phishing": 70,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 40,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were provided in the source. Monitoring should focus on anomalous use of trusted cloud and collaboration services, suspicious links or file transfers, and unusual authentication or API activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review controls for trusted-service abuse, strengthen email and collaboration filtering, and add detections for unusual file-sharing, payment-link, and cloud-app activity.",
+      "confidence": 0.78,
+      "sources": [
+        {
+          "url": "https://blog.talosintelligence.com/parasitizing-trust-how-legitimate-infrastructure-becomes-a-delivery-pipeline-for-attackers/",
+          "source": "Cisco Talos",
+          "published": "2026-10-21T10:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 48.0,
+      "included": true
+    },
+    {
       "cluster_id": "de281832e0512dd141b4d723",
       "headline": "Go blocks certificates chained to eight CA intermediate keys",
       "summary": "Go 1.27.3 and 1.26.10 now reject certificate chains that rely on eight intermediate CA keys. The change can break connections to affected sites and services, creating urgent compatibility issues for software built on Go.",
@@ -6473,6 +6607,79 @@
       "included": true
     },
     {
+      "cluster_id": "3433f5846096b827d1007dfa",
+      "headline": "Microsoft says October update did not fully resolve Always On VPN issues",
+      "summary": "Microsoft said a recent Windows 11 update was incorrectly marked as fixing an Always On VPN problem. The issue remains relevant for organizations relying on remote connectivity and endpoint change management.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product update correction affecting a common enterprise platform, but it does not indicate exploitation or a severe security flaw. The operational impact is limited to organizations affected by the VPN bug.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows 11",
+        "Always On VPN"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided. Operational monitoring should verify VPN stability, endpoint update state, and connectivity anomalies after patching.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Validate VPN behavior after Windows updates, confirm endpoint patch status, and communicate any workaround or rollback guidance to remote users.",
+      "confidence": 0.74,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-didnt-actually-fix-vpn-issues-caused-by-windows-updates/",
+          "source": "BleepingComputer",
+          "published": "2026-10-21T10:14:53+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 34.0,
+      "included": true
+    },
+    {
       "cluster_id": "d480ecec697dfbeaf8f7ea27",
       "headline": "Google open-sources TorchTPU for easier PyTorch on TPUs",
       "summary": "Google released TorchTPU and added broader TPU support across several AI tooling ecosystems. The move lowers friction for teams running PyTorch workloads on Google’s custom chips and signals a small shift in the AI infrastructure stack.",
@@ -7037,8 +7244,8 @@
   "counts": {
     "critical": 6,
     "high": 41,
-    "medium": 25,
-    "low": 15
+    "medium": 27,
+    "low": 16
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -7383,21 +7590,6 @@
         ]
       },
       {
-        "key": "iec_62443",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "IEC 62443",
-        "headline": "Siemens customers warned on ClickFix campaign abusing DLL side loading",
-        "sources": [
-          {
-            "url": "https://www.infosecurity-magazine.com/news/siemens-clickfix-exploiting-side/",
-            "source": "Infosecurity Magazine",
-            "published": "2026-10-20T10:45:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
         "key": "iso_27001",
         "nature": "guidance",
         "effective_or_deadline_date": null,
@@ -7643,16 +7835,16 @@
   },
   "other_count": 2,
   "source_health": {
-    "at": "2026-10-21T09:49:50.353159+00:00",
+    "at": "2026-10-21T10:46:41.132717+00:00",
     "enabled": 37,
     "failures": 2,
-    "new": 8,
+    "new": 4,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "BleepingComputer",
@@ -7667,12 +7859,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "Dark Reading",
@@ -7722,7 +7914,7 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "CISA OT Advisories",
@@ -7886,6 +8078,7 @@
       "4257f838c0d22be21be39c1c",
       "c75006974e5b06b195472641",
       "4812bf19ca8ab524b671a8fc",
+      "0b6122d6d5fa9d837e4157f1",
       "8231b6f9ea3f8bfffda492a7",
       "3c30069909e9b9e6b9c5256e",
       "c4d8f27755ed5802ae798f54",
@@ -7907,7 +8100,6 @@
     "security-visibility-for-manufacturing": [
       "37c3e5fa7177b2714e52b34f",
       "cdb08ddee200914fbd6105ab",
-      "11c2af37ed96bd3a87a6d2da",
       "4e8f400967080a988f9c312b",
       "8dbb0ccea4784e45668c15c0"
     ],
@@ -7938,6 +8130,7 @@
       "c75006974e5b06b195472641",
       "3c30069909e9b9e6b9c5256e",
       "4c1ba1c175622d229309a6cb",
+      "021a484c6b81051d12e1a5f3",
       "72a27704b2a4449419d763b3",
       "c1427f40513ae8eda3553da5",
       "de281832e0512dd141b4d723",
@@ -7951,8 +8144,7 @@
       "ea6b3d531b32228e5717b1cf"
     ],
     "securing-offshore-operations": [
-      "cdb08ddee200914fbd6105ab",
-      "11c2af37ed96bd3a87a6d2da"
+      "cdb08ddee200914fbd6105ab"
     ],
     "vendor-release-automation": [
       "6bd61f02e86600c9aec95091",
@@ -7972,6 +8164,7 @@
     "secure-development-for-automotive": [
       "8231b6f9ea3f8bfffda492a7",
       "4e8f400967080a988f9c312b",
+      "021a484c6b81051d12e1a5f3",
       "72a27704b2a4449419d763b3",
       "a866d24369297c62738c3fa0",
       "37c9934b6dc310bb502282e8",
