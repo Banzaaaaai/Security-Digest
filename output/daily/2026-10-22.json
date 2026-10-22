@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-22",
-  "start": "2026-10-21T09:51:07.747282+00:00",
-  "end": "2026-10-22T09:51:07.747282+00:00",
+  "start": "2026-10-21T10:47:26.276043+00:00",
+  "end": "2026-10-22T10:47:26.276043+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1410,81 +1410,6 @@
       "included": true
     },
     {
-      "cluster_id": "1dac3ddb6c024270eec9b6ca",
-      "headline": "PHP releases urgent fix for two critical remote code execution flaws",
-      "summary": "PHP is set to release a fix for two critical flaws rated 9.2, with no official workaround available beforehand. The report stresses immediate patching once the update is published and careful exposure review until then.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "A critical remote code execution flaw in PHP with an imminent vendor fix is a high-severity vulnerability event that can affect many internet-facing enterprise applications.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 60,
-        "MEA": 50,
-        "Other": 60
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 50,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 50,
-        "retail_banking": 50,
-        "global_it_services": 65,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 45
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 60,
-        "siem_detection": 20,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "PHP"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Watch for anomalous PHP process behavior, new webshell-like files, and unexpected outbound connections from web servers.",
-      "related_case_studies": [
-        "security-in-the-delivery-path",
-        "vendor-release-automation"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Prioritize patching as soon as the vendor fix is available, inventory exposed PHP services, and review web application logs for exploitation attempts.",
-      "confidence": 0.96,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html",
-          "source": "The Hacker News",
-          "published": "2026-10-21T10:36:53+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 73.0,
-      "included": true
-    },
-    {
       "cluster_id": "53a274b47a615f86d8f3d41d",
       "headline": "Compromised GitHub account used to publish malicious code through a cloud vendor",
       "summary": "A developer GitHub account linked to a cloud provider was reportedly abused to push malicious code to users. The incident underscores supply-chain and code-signing trust risks in developer platforms and public repositories.",
@@ -1562,6 +1487,90 @@
           "aliases": [],
           "cross_industry": false,
           "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "priority": 72.0,
+      "included": true
+    },
+    {
+      "cluster_id": "ddfb13a637b1854aa2ff0412",
+      "headline": "Critical PHP2Shell flaws affect Palo Alto PAN-OS and Panorama",
+      "summary": "Palo Alto Networks says PAN-OS and Panorama are affected by critical PHP2Shell vulnerabilities that can enable remote code execution on web servers. Fortinet and Cisco have also issued advisories while they assess possible exposure across their products and cloud services.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a critical vulnerability affecting a widely deployed enterprise security platform, with vendor advisories and pending fixes. It is highly relevant to organizations running Palo Alto infrastructure, though the article does not confirm active exploitation.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 65,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PAN-OS",
+        "Panorama",
+        "Fortinet",
+        "Cisco"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were linked in the source material. Organizations should monitor PAN-OS and Panorama management interfaces for anomalous web requests, process launches, and unexpected child processes, and prioritize exposure review and vendor guidance.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory all PAN-OS and Panorama deployments, track vendor remediation, and look for exposure to management interfaces. Increase monitoring for suspicious web activity and privilege escalation on affected appliances.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/22/php2shell-vulnerability-fortinet-cisco-palo-alto-networks/",
+          "source": "Help Net Security",
+          "published": "2026-10-22T10:22:56+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Palo Alto PAN-OS",
+          "aliases": [
+            "PAN-OS"
+          ],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
         }
       ],
       "cve_details": {},
@@ -1988,80 +1997,6 @@
       "included": true
     },
     {
-      "cluster_id": "0b6122d6d5fa9d837e4157f1",
-      "headline": "Critical PHP flaws disclosed ahead of scheduled patch release",
-      "summary": "Two critical PHP vulnerabilities were reportedly disclosed before their planned patch date. The timing raises the likelihood of rushed defensive action across environments that rely on PHP applications and shared hosting stacks.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "Critical vulnerabilities in a widely deployed language/runtime warrant urgent attention even before exploitation is confirmed. They can affect many internet-facing applications and create immediate patching pressure.",
-      "location_relevance": {
-        "US": 50,
-        "Europe": 50,
-        "MEA": 50,
-        "Other": 50
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 60,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 85,
-        "devsecops": 55,
-        "siem_detection": 10,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "PHP"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection-rule URLs were included. Exposure management and web-layer monitoring should prioritize PHP applications once vendor details are available.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory PHP deployments, apply vendor patches as soon as available, and review externally reachable web applications for compensating controls and abnormal requests.",
-      "confidence": 0.91,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/critical-php-vulnerabilities-leaked/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-10-21T10:20:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 69.0,
-      "included": true
-    },
-    {
       "cluster_id": "cb1bdeee47efc0de95777196",
       "headline": "Critical PHP flaws prompt emergency patching and early exploit proof-of-concepts",
       "summary": "Two critical PHP vulnerabilities were disclosed with a high severity score and early proof-of-concept exploitation before patching. Because PHP is widely deployed in web and CMS environments, organizations should treat this as a rapid patching and exposure-management event. The issue is broadly relevant to internet-facing application stacks.",
@@ -2156,6 +2091,90 @@
         }
       },
       "priority": 69.0,
+      "included": true
+    },
+    {
+      "cluster_id": "47139b94f06e021ff3f1a02a",
+      "headline": "BlackX bootkit reported in espionage attack on Windows systems",
+      "summary": "A report says fully patched Windows computers were compromised in a spying operation using the BlackX bootkit. The incident highlights persistent risks from advanced malware even on updated endpoints.",
+      "category": "apt_nation_state",
+      "importance": "high",
+      "importance_rationale": "The cluster describes an espionage-linked compromise using bootkit malware against patched Windows systems, which is a serious nation-state style threat.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 70,
+        "MEA": 10,
+        "Other": 20
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 50,
+        "retail_banking": 30,
+        "global_it_services": 50,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 70,
+        "iam_pam": 30,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows Server",
+        "Microsoft Windows Server"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. Defenders should review endpoint telemetry, boot integrity signals, and anomalous persistence mechanisms on Windows fleets.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Validate endpoint integrity, hunt for boot-level persistence, and review credential and device trust signals across Windows environments.",
+      "confidence": 0.77,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/958553/%27Windowscomputers+bij+spionage-aanval+ge%C3%AFnfecteerd+met+BlackX-bootkit%27?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-22T10:22:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Windows Server",
+          "aliases": [
+            "Microsoft Windows Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "priority": 68.0,
       "included": true
     },
     {
@@ -3329,6 +3348,169 @@
       "included": true
     },
     {
+      "cluster_id": "9a2e63caba1553c77bd1c27c",
+      "headline": "Cisco releases fixes for multiple product vulnerabilities",
+      "summary": "Cisco disclosed and patched 34 vulnerabilities across several products, including issues that could enable command execution and authentication bypass. The release is relevant to organizations running Cisco networking and security products.",
+      "category": "vendor_product",
+      "importance": "high",
+      "importance_rationale": "A large vendor patch set with critical-severity issues affecting widely deployed enterprise products is a high-priority vulnerability event.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 60,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 60,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 20,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Cisco IOS XE",
+        "Cisco ASA"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were included. Validate exposure of Cisco products, prioritize patching, and look for anomalous management-plane access or exploit traces.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory Cisco deployments, apply vendor fixes promptly, and verify whether any affected services are internet-facing or externally reachable.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/cisco-patches-34-vulnerabilities-across-multiple-products/",
+          "source": "SecurityWeek",
+          "published": "2026-10-22T10:05:21+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [
+        {
+          "name": "Cisco ASA",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        },
+        {
+          "name": "Cisco IOS XE",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {},
+      "priority": 63.0,
+      "included": true
+    },
+    {
+      "cluster_id": "09d545f26f7e2281d09a9ce1",
+      "headline": "Dutch lawmakers question government website shutdowns over PHP2Shell risk",
+      "summary": "Dutch media report that members of parliament raised questions about government websites being taken offline because of PHP2Shell concerns. The article reflects a public-sector response to a high-profile vulnerability rather than a confirmed incident.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "The item concerns government handling of a major vulnerability and public-sector operational decisions, which is relevant but not itself a new exploit or breach. It has direct relevance to Dutch government risk management and continuity planning.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 90,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 75,
+        "retail_banking": 0,
+        "global_it_services": 25,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 55,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP",
+        "government websites"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. Relevant monitoring would focus on web application exposure, change management, and service availability telemetry for public-facing government sites.",
+      "related_case_studies": [
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review exposure of public-facing PHP services, confirm compensating controls, and coordinate availability decisions with incident response and communications teams. Validate whether takedowns are necessary based on real exploitability and patch status.",
+      "confidence": 0.81,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-22T10:35:32+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 63.0,
+      "included": true
+    },
+    {
       "cluster_id": "7de87cd350aa2fef83c4de9f",
       "headline": "Talos flags compromised eMudhra intermediate certificates",
       "summary": "Cisco Talos reports compromised intermediate certificates tied to eMudhra, an intermediate certificate authority. The issue raises trust and certificate-management concerns for organizations that rely on the affected PKI chain.",
@@ -3469,81 +3651,6 @@
           "url": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
           "source": "The Hacker News",
           "published": "2026-10-22T06:34:10+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 62.0,
-      "included": true
-    },
-    {
-      "cluster_id": "021a484c6b81051d12e1a5f3",
-      "headline": "Study finds AI prompts can make contractor code less secure",
-      "summary": "A reported experiment found that a prompt framing a coding task for a US defense contractor led the model to produce more vulnerable code. The result highlights prompt sensitivity in AI-assisted development and the need for stronger review of generated code.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "This is research on AI-assisted code quality, not an announced breach or vulnerability in a deployed product. It is relevant to secure development and AI governance for enterprises using coding assistants.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 0,
-        "MEA": 0,
-        "Other": 40
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 70,
-        "retail_banking": 40,
-        "global_it_services": 50,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 70,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 30,
-        "security_automation": 0,
-        "ai_governance": 80
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule links were provided. Defensive focus should be on code review, testing, policy controls, and governance for AI-generated software.",
-      "related_case_studies": [
-        "secure-development-for-automotive",
-        "security-in-the-delivery-path"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Tighten policies for AI-assisted coding, require human review and security testing for generated code, and set clear guardrails for sensitive development contexts.",
-      "confidence": 0.84,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/chinese-ai-model-writes-more-hackable-code-when-told-its-for-us-contractor/",
-          "source": "SecurityWeek",
-          "published": "2026-10-21T10:03:24+00:00",
           "date_inferred": false
         }
       ],
@@ -3867,86 +3974,6 @@
           "url": "https://cyberscoop.com/php-emergency-patches-php2shell-vulnerabilities/",
           "source": "CyberScoop",
           "published": "2026-10-21T13:40:02+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 61.0,
-      "included": true
-    },
-    {
-      "cluster_id": "27cbf342d119ef9e8034261e",
-      "headline": "SafePay ransomware hits critical organizations across multiple regions",
-      "summary": "Reports say SafePay ransomware has affected hundreds of organizations in critical sectors across several regions. The incident suggests broad operational disruption risk for essential services and infrastructure operators.",
-      "category": "ransomware",
-      "importance": "high",
-      "importance_rationale": "The cluster describes ransomware affecting critical infrastructure and vital organizations at scale, which fits the high-severity incident pattern even without confirmed details of a specific named victim or region-specific impact.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 35,
-        "Other": 55
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 45,
-        "private_banking": 30,
-        "investment_management": 30,
-        "government": 50,
-        "retail_banking": 30,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 50,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 0,
-        "siem_detection": 15,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 25,
-        "grc_audit": 5,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [
-        "SafePay"
-      ],
-      "regulations": [
-        {
-          "key": "nerc_cip_energy",
-          "nature": "enforcement",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Monitor for ransomware payload execution, privilege escalation, lateral movement, and mass file encryption using existing endpoint and network telemetry.",
-      "related_case_studies": [
-        "securing-offshore-operations"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review ransomware containment playbooks, validate offline backups, tighten privileged access controls, and increase monitoring for lateral movement and mass encryption activity.",
-      "confidence": 0.77,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/958398/FBI%3A+zeker+zeshonderd+vitale+organisaties+slachtoffer+SafePay-ransomware?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-10-21T10:14:00+00:00",
           "date_inferred": false
         }
       ],
@@ -4597,6 +4624,78 @@
       "included": true
     },
     {
+      "cluster_id": "3bdc91b59b20e59b7f094b25",
+      "headline": "Amazon detects PHP2Shell exploitation before public disclosure",
+      "summary": "Security analysts report evidence that attackers were already exploiting the PHP2Shell vulnerabilities before disclosure. The report points to active and large-scale abuse of the flaw.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is active exploitation of a newly disclosed vulnerability, which materially raises urgency for exposed organizations.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 80,
+        "devsecops": 30,
+        "siem_detection": 60,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 30,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were linked. Review logs for suspicious PHP requests, webshell indicators, and unusual child-process spawning on web servers.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Accelerate patching, isolate exposed assets where possible, and search for compromise indicators on internet-facing PHP systems.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/php2shell-exploitation-attempt/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-22T10:10:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 58.0,
+      "included": true
+    },
+    {
       "cluster_id": "7e06dc79b4b1719a311c0918",
       "headline": "Court orders Meta to pay New Mexico in privacy case",
       "summary": "A court decision ordered Meta to pay a large penalty in a privacy case involving Facebook. The item is an enforcement and privacy accountability story rather than a cyber intrusion event.",
@@ -4748,6 +4847,78 @@
           "url": "https://www.security.nl/posting/958402/Verzekeringsmaatschappij+moet+losgeld+ransomware-aanval+vergoeden?channel=rss",
           "source": "Security.NL",
           "published": "2026-10-21T14:30:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "watch_tech": [],
+      "cve_details": {},
+      "priority": 58.0,
+      "included": true
+    },
+    {
+      "cluster_id": "514a0395e5179c0e42f991e7",
+      "headline": "PHP2Shell exploitation begins before patch rollout",
+      "summary": "Reports indicate attackers started probing the PHP2Shell flaw before vendors released fixes, followed by broader exploitation soon after patching. The activity suggests rapid weaponization of a widely used server-side software issue.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "The cluster describes active exploitation around a newly patched vulnerability, which fits the high-severity rubric for public PoC or emergency-patch situations when exploitation is underway.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 80,
+        "devsecops": 30,
+        "siem_detection": 60,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 30,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were linked in the source. Monitor PHP-facing assets for unusual requests, command execution, and post-exploitation webshell activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize patching and exposure review for internet-facing PHP applications, then hunt for signs of exploitation and persistence on affected hosts.",
+      "confidence": 0.89,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+          "source": "SecurityWeek",
+          "published": "2026-10-22T09:48:58+00:00",
           "date_inferred": false
         }
       ],
@@ -6215,76 +6386,6 @@
       "included": true
     },
     {
-      "cluster_id": "b1018dc882649e8d501116c2",
-      "headline": "Attackers abuse trusted online services as delivery channels",
-      "summary": "Security researchers report that attackers increasingly hide malicious activity inside legitimate online services that organizations already trust. The pattern spans collaboration, file-sharing and payment platforms, making delivery and detection harder across normal business workflows.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "This is threat research describing a broad attacker technique rather than a specific incident or new vulnerability. It is relevant to enterprise detection and phishing controls, but not an acute exploitation event.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 40,
-        "Other": 40
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 70,
-        "iam_pam": 30,
-        "email_phishing": 70,
-        "data_protection_dlp": 30,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 40,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection rules were provided in the source. Monitoring should focus on anomalous use of trusted cloud and collaboration services, suspicious links or file transfers, and unusual authentication or API activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review controls for trusted-service abuse, strengthen email and collaboration filtering, and add detections for unusual file-sharing, payment-link, and cloud-app activity.",
-      "confidence": 0.78,
-      "sources": [
-        {
-          "url": "https://blog.talosintelligence.com/parasitizing-trust-how-legitimate-infrastructure-becomes-a-delivery-pipeline-for-attackers/",
-          "source": "Cisco Talos",
-          "published": "2026-10-21T10:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 48.0,
-      "included": true
-    },
-    {
       "cluster_id": "f7e7dbc075bd97ab65bb2287",
       "headline": "Rapid7 says ransomware and fast exploitation remain dominant enterprise risks",
       "summary": "Rapid7’s quarterly analysis highlights how quickly high-severity flaws can be weaponized, often within days. The report also says ransomware continues to dominate incident patterns, underscoring the need for faster patching and exposure management.",
@@ -6903,79 +7004,6 @@
       "included": true
     },
     {
-      "cluster_id": "bf7cf33fc0ebbbd55593355a",
-      "headline": "Attackers hijack Tor exit relays to steal SSH logins",
-      "summary": "Researchers found attackers controlling hundreds of Tor exit relays and using them to intercept SSH connections. The activity creates password-theft risk for users who rely on SSH access over Tor.",
-      "category": "vulnerability",
-      "importance": "medium",
-      "importance_rationale": "This is a live attack technique affecting authentication security, but the report is research-oriented and does not identify a major enterprise outage or a widely deployed enterprise product vulnerability.",
-      "location_relevance": {
-        "US": 35,
-        "Europe": 35,
-        "MEA": 20,
-        "Other": 35
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 35,
-        "telecommunications": 35,
-        "private_banking": 35,
-        "investment_management": 35,
-        "government": 35,
-        "retail_banking": 35,
-        "global_it_services": 40,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 25
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 40,
-        "iam_pam": 55,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "SSH",
-        "Tor"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Defender telemetry should look for unusual SSH source paths, authentication anomalies, and proxy or relay changes that alter expected network routes.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Use key-based SSH authentication where possible, enforce MFA for administrative access, pin known hosts, and monitor for unexpected SSH routes or login anomalies.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/attackers-hijacked-over-300-tor-exit.html",
-          "source": "The Hacker News",
-          "published": "2026-10-21T10:30:27+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [],
-      "cve_details": {},
-      "priority": 44.0,
-      "included": true
-    },
-    {
       "cluster_id": "5ff1dd07c5c834bcee5aa525",
       "headline": "China-aligned Bronze Sandcastle uses Sandboxie sideloading for backdoor delivery",
       "summary": "Researchers say a China-aligned group dubbed Bronze Sandcastle has targeted organizations in Asia and Africa with backdoors since mid-2025. The cluster stands out for repeated Sandboxie DLL sideloading, which can help attackers blend malicious code into trusted software execution.",
@@ -7276,92 +7304,6 @@
       "included": true
     },
     {
-      "cluster_id": "9d349a6e395496ea5b4b054c",
-      "headline": "Agentic pentesting needs safer testing harnesses",
-      "summary": "The article argues that AI-powered pentesting only becomes useful when the surrounding harness controls safety, scope, and reporting. It highlights the engineering work needed to make agentic security testing reliable in production settings.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "This is conceptual security research and guidance about AI-assisted testing rather than a concrete incident, vulnerability, or policy change with near-term operational impact.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 25,
-        "MEA": 10,
-        "Other": 25
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 20,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 20,
-        "retail_banking": 20,
-        "global_it_services": 55,
-        "logistics": 15,
-        "industrial_manufacturing": 15,
-        "automotive": 15
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 35,
-        "siem_detection": 5,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 10,
-        "ai_governance": 70
-      },
-      "affected_technologies": [
-        "AI agent frameworks",
-        "OpenAI API"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Relevant controls include sandboxing, scope enforcement, and logging around AI-driven security testing workflows.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Constrain AI pentest tools with allowlists, rate limits, and isolated test environments, and require human review before any production-adjacent execution.",
-      "confidence": 0.72,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/the-harness-is-hard-part-of-agentic.html",
-          "source": "The Hacker News",
-          "published": "2026-10-21T10:32:40+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [
-        {
-          "name": "OpenAI API",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        },
-        {
-          "name": "AI agent frameworks",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        }
-      ],
-      "cve_details": {},
-      "priority": 39.0,
-      "included": true
-    },
-    {
       "cluster_id": "7738e6ff9b52be44fc837150",
       "headline": "Browsers block weak eMudhra TLS certificates to reduce website spoofing risk",
       "summary": "Major browsers blocked certain eMudhra TLS certificates after concerns they could be abused to impersonate websites. The issue affects certificate trust and browser enforcement rather than a confirmed customer breach.",
@@ -7436,17 +7378,17 @@
       "included": true
     },
     {
-      "cluster_id": "3433f5846096b827d1007dfa",
-      "headline": "Microsoft says October update did not fully resolve Always On VPN issues",
-      "summary": "Microsoft said a recent Windows 11 update was incorrectly marked as fixing an Always On VPN problem. The issue remains relevant for organizations relying on remote connectivity and endpoint change management.",
-      "category": "vendor_product",
+      "cluster_id": "fbc01a7e5c983f86c0a84c9b",
+      "headline": "Opinion argues for pseudonymization to reduce data exposure",
+      "summary": "The piece argues that encryption alone does not protect data once it is being used by applications or services. It recommends pseudonymization-style controls to make stolen records less valuable.",
+      "category": "research",
       "importance": "low",
-      "importance_rationale": "This is a product update correction affecting a common enterprise platform, but it does not indicate exploitation or a severe security flaw. The operational impact is limited to organizations affected by the VPN bug.",
+      "importance_rationale": "This is an opinion/recommendation article about data protection, not an incident, vulnerability, or enforcement action.",
       "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 70,
-        "Other": 70
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
       },
       "countries_mentioned": [],
       "industry_relevance": {
@@ -7462,43 +7404,40 @@
         "automotive": 40
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 30,
-        "vuln_exposure_mgmt": 30,
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
         "devsecops": 0,
         "siem_detection": 0,
         "iam_pam": 0,
         "email_phishing": 0,
-        "data_protection_dlp": 0,
+        "data_protection_dlp": 80,
         "ot_ics": 0,
-        "grc_audit": 0,
+        "grc_audit": 20,
         "security_automation": 0,
         "ai_governance": 0
       },
-      "affected_technologies": [
-        "Windows 11",
-        "Always On VPN"
-      ],
+      "affected_technologies": [],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided. Operational monitoring should verify VPN stability, endpoint update state, and connectivity anomalies after patching.",
+      "detection_coverage_note": "No detection content or rules were provided in the source.",
       "related_case_studies": [],
       "business_signal": {
         "present": false,
-        "type": "technology_shift",
+        "type": "sector_campaign",
         "sector": "global_it_services",
-        "region": "US",
+        "region": "Other",
         "rationale": ""
       },
-      "recommended_action": "Validate VPN behavior after Windows updates, confirm endpoint patch status, and communicate any workaround or rollback guidance to remote users.",
-      "confidence": 0.74,
+      "recommended_action": "Review data-handling controls that protect information in use, including tokenization or pseudonymization approaches where appropriate.",
+      "confidence": 0.58,
       "sources": [
         {
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-didnt-actually-fix-vpn-issues-caused-by-windows-updates/",
-          "source": "BleepingComputer",
-          "published": "2026-10-21T10:14:53+00:00",
+          "url": "https://cyberscoop.com/vaultless-keyless-pseudonymization-cybersecurity-policy-op-ed/",
+          "source": "CyberScoop",
+          "published": "2026-10-22T10:00:00+00:00",
           "date_inferred": false
         }
       ],
@@ -8341,20 +8280,25 @@
   ],
   "counts": {
     "critical": 10,
-    "high": 40,
-    "medium": 42,
-    "low": 14
+    "high": 42,
+    "medium": 40,
+    "low": 13
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 28,
+  "watch_hits": 30,
   "watch": {
     "microsoft": [
       {
         "technology": "Microsoft 365",
         "headline": "Nation-state uses agentic AI in ConnectWise supply chain compromise",
         "cluster_id": "f111d392dd54d86d297c32ca"
+      },
+      {
+        "technology": "Windows Server",
+        "headline": "BlackX bootkit reported in espionage attack on Windows systems",
+        "cluster_id": "47139b94f06e021ff3f1a02a"
       },
       {
         "technology": "Azure",
@@ -8447,16 +8391,6 @@
         "technology": "AI agent frameworks",
         "headline": "AI agent runtime security startup raises seed funding",
         "cluster_id": "baf09a65873a19dc37c2dc35"
-      },
-      {
-        "technology": "OpenAI API",
-        "headline": "Agentic pentesting needs safer testing harnesses",
-        "cluster_id": "9d349a6e395496ea5b4b054c"
-      },
-      {
-        "technology": "AI agent frameworks",
-        "headline": "Agentic pentesting needs safer testing harnesses",
-        "cluster_id": "9d349a6e395496ea5b4b054c"
       }
     ],
     "devops_appsec": [
@@ -8498,6 +8432,38 @@
         "cluster_id": "6fc885f5b58203f64ec830fb"
       }
     ],
+    "endpoint_network": [
+      {
+        "technology": "Palo Alto PAN-OS",
+        "headline": "Critical PHP2Shell flaws affect Palo Alto PAN-OS and Panorama",
+        "cluster_id": "ddfb13a637b1854aa2ff0412"
+      },
+      {
+        "technology": "Fortinet FortiOS",
+        "headline": "Fortinet issues urgent security updates for critical vulnerabilities",
+        "cluster_id": "9e33cea1cdc2df2a97a1bd58"
+      },
+      {
+        "technology": "FortiGate",
+        "headline": "Fortinet issues urgent security updates for critical vulnerabilities",
+        "cluster_id": "9e33cea1cdc2df2a97a1bd58"
+      },
+      {
+        "technology": "Cisco ASA",
+        "headline": "Cisco releases fixes for multiple product vulnerabilities",
+        "cluster_id": "9a2e63caba1553c77bd1c27c"
+      },
+      {
+        "technology": "Cisco IOS XE",
+        "headline": "Cisco releases fixes for multiple product vulnerabilities",
+        "cluster_id": "9a2e63caba1553c77bd1c27c"
+      },
+      {
+        "technology": "Palo Alto PAN-OS",
+        "headline": "Palo Alto Networks firewalls reportedly under scrutiny for PHP2Shell issues",
+        "cluster_id": "ec61e132f854a9faebbd632e"
+      }
+    ],
     "infrastructure": [
       {
         "technology": "Docker",
@@ -8518,23 +8484,6 @@
         "technology": "Terraform",
         "headline": "Malware campaign shifts into Terraform and Go package ecosystems",
         "cluster_id": "93be010c08e5aa12e48d450b"
-      }
-    ],
-    "endpoint_network": [
-      {
-        "technology": "Fortinet FortiOS",
-        "headline": "Fortinet issues urgent security updates for critical vulnerabilities",
-        "cluster_id": "9e33cea1cdc2df2a97a1bd58"
-      },
-      {
-        "technology": "FortiGate",
-        "headline": "Fortinet issues urgent security updates for critical vulnerabilities",
-        "cluster_id": "9e33cea1cdc2df2a97a1bd58"
-      },
-      {
-        "technology": "Palo Alto PAN-OS",
-        "headline": "Palo Alto Networks firewalls reportedly under scrutiny for PHP2Shell issues",
-        "cluster_id": "ec61e132f854a9faebbd632e"
       }
     ],
     "email": [
@@ -8600,21 +8549,6 @@
             "date_inferred": false
           }
         ]
-      },
-      {
-        "key": "nerc_cip_energy",
-        "nature": "enforcement",
-        "effective_or_deadline_date": null,
-        "name": "NERC CIP (energy)",
-        "headline": "SafePay ransomware hits critical organizations across multiple regions",
-        "sources": [
-          {
-            "url": "https://www.security.nl/posting/958398/FBI%3A+zeker+zeshonderd+vitale+organisaties+slachtoffer+SafePay-ransomware?channel=rss",
-            "source": "Security.NL",
-            "published": "2026-10-21T10:14:00+00:00",
-            "date_inferred": false
-          }
-        ]
       }
     ],
     "Europe": [
@@ -8652,21 +8586,21 @@
   },
   "other_count": 5,
   "source_health": {
-    "at": "2026-10-22T09:51:07.747282+00:00",
+    "at": "2026-10-22T10:47:26.276043+00:00",
     "enabled": 37,
     "failures": 1,
-    "new": 131,
+    "new": 7,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 15
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -8676,62 +8610,62 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 2
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
@@ -8754,24 +8688,24 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
         "ok": false,
-        "new": 1,
+        "new": 0,
         "updated": 0,
-        "unchanged": 38,
+        "unchanged": 39,
         "failed": 1,
         "failed_advisories": [
           {
@@ -8809,7 +8743,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 44
+        "new": 2
       },
       {
         "name": "Contagio",
@@ -8844,12 +8778,12 @@
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -8864,7 +8798,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-21T14:04:39.898300+00:00",
@@ -8889,7 +8823,6 @@
       "d9304dd4f7f5ae5de2a3fda8",
       "b8d0aa17de12ab096902c3dc",
       "af9fb53128fc3f1cf888fe78",
-      "0b6122d6d5fa9d837e4157f1",
       "0d287ce488f31cd37a4d6a90",
       "0fb3265506f2ed100fdad3a0",
       "7de87cd350aa2fef83c4de9f",
@@ -8917,7 +8850,6 @@
       "3e9663b5f74e38bf4ccec72f",
       "46f087441d98fcca6c37de13",
       "16cc295ada795e0ea6648dfd",
-      "1dac3ddb6c024270eec9b6ca",
       "53a274b47a615f86d8f3d41d",
       "d9304dd4f7f5ae5de2a3fda8",
       "4681e139a804e148c37ceed0",
@@ -8941,7 +8873,6 @@
       "6815f2a0b4a0d8cf043fde44",
       "60cdd6b596008249bf482a06",
       "bc7ac91bf56a650abc6e1d8b",
-      "1dac3ddb6c024270eec9b6ca",
       "53a274b47a615f86d8f3d41d",
       "b2cafd9cf942077e2be99e8e",
       "4681e139a804e148c37ceed0",
@@ -8951,7 +8882,7 @@
       "93be010c08e5aa12e48d450b",
       "9cf74305d30f6077588f2753",
       "8e94a182494a765fc2015f5b",
-      "021a484c6b81051d12e1a5f3",
+      "09d545f26f7e2281d09a9ce1",
       "7d4c0e2bc2b568afff9dcc12",
       "6f7b687ecc0ccde16e20949a"
     ],
@@ -8968,8 +8899,7 @@
     "securing-offshore-operations": [
       "171e16431e581803e7e35d09",
       "3d6805ec2dd187c80fcb07b3",
-      "ac45444103477a203d48944f",
-      "27cbf342d119ef9e8034261e"
+      "ac45444103477a203d48944f"
     ],
     "continuous-vulnerability-management": [
       "3e9663b5f74e38bf4ccec72f",
@@ -8995,8 +8925,7 @@
       "bc7ac91bf56a650abc6e1d8b"
     ],
     "secure-development-for-automotive": [
-      "cbb1173945f683372ab49c60",
-      "021a484c6b81051d12e1a5f3"
+      "cbb1173945f683372ab49c60"
     ],
     "secure-azure-migration": [
       "ecd4d111a25c2e2cb8448778",
