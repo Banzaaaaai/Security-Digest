@@ -1,6 +1,14 @@
 # SecDigest validation record
 
-Latest validation: **18 October 2026**, Europe/Paris. Live checks below were performed on 17 October unless stated otherwise.
+Latest validation: **22 October 2026**, Europe/Paris. Earlier sections retain their historical evidence and test counts; live build checks were performed on 17 October unless stated otherwise.
+
+## Scoring and daily operation — 22 October
+
+**178 tests passed**, Ruff lint and formatting passed, and offline daily/weekly CLI previews completed for the revised scoring policy. Tests cover global applicability, severity ordering, negated and predicted exploitation, lab demonstrations, reported attempts, systemic package compromise, old/future KEV dates, source-count corroboration, equal `Other` weighting, exact-CVE consolidation and read-only review snapshots. Windows required execution outside the filesystem sandbox for pytest's temporary directory.
+
+All 106 entries from the supplied 22 October email and seven additional entries from the later archive were reviewed against their stored source evidence. The original window recalculates to 103 entries; the later 105-entry window recalculates to 102. PHP leads both at 96/100 with 95% applicability in each region. [Review details and artifacts](docs/scoring-review-2026-10-22.md) retain every before/after row. Original daily archives, the database and delivery history are unchanged. The offline review made no model calls and sent no email.
+
+GitHub confirms successful scheduled daily runs on 21–22 October. The [22 October 09:51 UTC run](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39758559544) recorded SMTP delivery; the [10:47 UTC run](https://github.com/Banzaaaaai/Security-Digest/actions/runs/39765689017) suppressed a repeat email. Daily scheduling is enabled and weekly scheduling is disabled. The later ingestion used 37 of 65 configured sources and reported one failed CISA advisory (`VA-26-274-03`, HTTP 404); KEV used its official GitHub mirror. These operational checks do not verify inbox placement or email-client rendering.
 
 ## Email relevance layout
 
@@ -96,11 +104,11 @@ Email secrets and working API key/endpoint secrets exist in GitHub Actions. Secr
 - Strict classification schema acceptance and real token usage are verified. Generated summaries and scores still require editorial review; cost calculations use configured rates rather than measured charges.
 - The daily email was accepted by the configured SMTP server. MIME structure, STARTTLS context, recipient parsing, transient retries and authentication-error handling are also covered by mocked SMTP tests; inbox receipt is not independently verified.
 - Gmail/Outlook desktop, phone presentation and forced dark-mode behavior have not been reviewed in those clients.
-- The full daily run, including SMTP delivery, completed in 16.89 seconds for nine clusters, below the five-minute target. Larger workloads have not been timed.
-- EPSS, NVD and GitHub enrichment are optional and disabled by default; these integrations were not exercised against live services during this build.
-- Manual daily fixture, live preview and full email-delivery workflows succeeded. Scheduled delivery and server cron have not been exercised.
+- The initial nine-cluster daily run completed in 16.89 seconds. The 22 October delivery run classified 100 clusters in 301.94 seconds; the later seven-cluster refresh took 61.11 seconds. These are observed runtimes, not a latency guarantee.
+- EPSS enrichment is enabled. NVD and per-CVE GitHub advisory enrichment remain disabled. Unknown enrichment values remain explicitly unavailable.
+- Manual fixture/preview/delivery workflows and scheduled daily delivery succeeded. Server cron and live weekly synthesis remain unverified.
 
-`scheduling.enabled` remains **false**. Confirm inbox receipt and review client rendering before activating schedules. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately.
+Daily scheduling has been enabled since 21 October; weekly scheduling remains disabled. Manual workflow dispatch bypasses timing/activation guards and should be used deliberately. Inbox receipt and client rendering still require recipient review.
 
 ## Operational limits
 

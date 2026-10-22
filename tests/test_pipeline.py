@@ -60,17 +60,19 @@ def test_overrides_country_cross_industry_and_idempotence(config, populated):
     second = score(config, cluster, populated, FIXTURE_NOW)
     assert first == second
     assert first["importance"] == "critical"
-    assert first["location_relevance"]["US"] == 100
+    assert set(first["location_relevance"].values()) == {85}
     assert all(v >= 40 for v in first["industry_relevance"].values())
-    assert first["priority"] == 98
+    assert first["priority"] == 96.5
     assert cluster["classification"]["importance"] == "high"
 
 
-def test_kev_without_watch_is_high_and_old_kev_does_not_raise(config, populated):
+def test_kev_without_watch_is_high_and_old_kev_does_not_mean_new_campaign(config, populated):
     cluster = deepcopy(populated.clusters()[0])
     cluster["classification"].update(affected_technologies=[], importance="low", category="vulnerability")
     assert score(config, cluster, populated, FIXTURE_NOW)["importance"] == "high"
-    assert score(config, cluster, populated, FIXTURE_NOW + timedelta(days=10))["importance"] == "low"
+    for article in cluster["articles"]:
+        article["summary"] = "A historical vulnerability review."
+    assert score(config, cluster, populated, FIXTURE_NOW + timedelta(days=10))["importance"] == "high"
 
 
 def test_exploitation_floor_without_kev(config, populated):
@@ -79,17 +81,22 @@ def test_exploitation_floor_without_kev(config, populated):
 
 
 def test_epss_override(config, populated):
-    result = score(config, populated.clusters()[2], populated, FIXTURE_NOW)
-    assert result["importance"] == "critical"
+    cluster = deepcopy(populated.clusters()[2])
+    cluster["classification"]["importance"] = "medium"
+    result = score(config, cluster, populated, FIXTURE_NOW)
+    assert result["importance"] == "high"
     assert any("EPSS" in reason for reason in result["overrides"])
 
 
 def test_independent_sources_and_window(config, populated):
     cluster = deepcopy(populated.clusters()[1])
     cluster["classification"]["importance"] = "medium"
-    assert score(config, cluster, populated, FIXTURE_NOW)["importance"] == "high"
+    first = score(config, cluster, populated, FIXTURE_NOW)
+    assert first["importance"] == "medium"
+    assert first["independent_sources_24h"] == 3
     cluster["articles"][0]["independence_key"] = cluster["articles"][1]["independence_key"]
     assert score(config, cluster, populated, FIXTURE_NOW)["importance"] == "medium"
+    assert score(config, cluster, populated, FIXTURE_NOW)["independent_sources_24h"] == 2
 
 
 def test_watch_alias_word_boundaries(config):

@@ -6,19 +6,23 @@ The original requirements are in [security-digest-prompt.md](security-digest-pro
 
 ## Current status
 
-As of **18 October 2026**, live daily classification, report generation and SMTP delivery have succeeded with the configured API endpoint. The latest committed run includes incident deduplication, the revised email layout, CISA IT/OT/VA advisory ingestion and KEV provenance.
+As of **22 October 2026**, scheduled daily collection, classification and email delivery are working. The scoring review covers all **106 stories in the supplied daily email**, plus seven additional stories from the later run. **PHP now leads at 96/100**, with **95% relevance in US, Europe, MEA and Other**. Relevance measures applicability to affected environments, not attack probability.
 
-| Latest archived daily run | Result |
+Priority now uses **60% severity, 15% location, 10% industry and 15% technical practice**, bounded by severity bands. Global software issues receive consistent regional relevance, all four regions participate, and source volume no longer raises severity. See the [review and evidence](docs/scoring-review-2026-10-22.md) for the full rationale and limitations.
+
+| Current evidence | Result |
 |---|---|
-| Report | [18 October HTML](output/daily/2026-10-18.html), [Markdown](output/daily/2026-10-18.md), [JSON](output/daily/2026-10-18.json), [CSV](output/daily/2026-10-18.csv) |
-| Coverage | 7 incidents: 1 critical, 3 high, 1 medium, 2 low; 2 duplicate entries removed; 0 unclassified clusters in the report window |
-| Collection | 24 enabled sources out of 52 configured; 269 new articles, including 267 distinct CISA advisories |
-| Source health | 23 sources succeeded; CISA IT reported one missing upstream document while retaining its successfully collected advisories |
-| Delivery | SMTP accepted the daily email with HTML and CSV attachments; inbox receipt and client rendering require recipient review |
-| Runtime and usage | 76.36 seconds; 2 newly classified clusters; $0.00479745 estimated API cost at configured rates, not a measured provider charge |
-| Scheduling | Disabled in `config/settings.yaml`; manual Actions runs remain available |
+| Corrected supplied digest | [HTML](output/review/2026-10-22-original/daily/2026-10-22.html), [Markdown](output/review/2026-10-22-original/daily/2026-10-22.md), [JSON](output/review/2026-10-22-original/daily/2026-10-22.json), [CSV](output/review/2026-10-22-original/daily/2026-10-22.csv); 103 entries after three additional duplicate removals: 14 critical, 35 high, 40 medium, 14 low |
+| Score comparison | [All 106 original stories, before and after](output/review/2026-10-22-original/comparison.csv), with [full score components and source evidence](output/review/2026-10-22-original/comparison.json) |
+| Corrected later run | [HTML](output/review/2026-10-22-latest/daily/2026-10-22.html) and [105-story comparison](output/review/2026-10-22-latest/comparison.csv); 102 entries: 16 critical, 35 high, 38 medium, 13 low |
+| Preserved live archive | [22 October report](output/daily/2026-10-22.md) and [JSON](output/daily/2026-10-22.json), generated before the scoring revision; 105 entries and no unclassified clusters |
+| Sources | 65 definitions; 37 enabled, 28 disabled. The latest ingestion collected seven new articles |
+| Coverage limits | One failed CISA IT advisory (`VA-26-274-03`, HTTP 404); successful advisories retained. KEV uses the official GitHub mirror after primary-source failure |
+| Delivery | The 22 October 09:51 UTC run recorded successful SMTP delivery; the 10:47 UTC run skipped sending because that day's digest had already been sent. The scoring review did not send a replacement |
+| Scheduling | Daily enabled; weekly disabled. Scheduled runs succeeded on 21–22 October; delayed same-day jobs are allowed and duplicate email is suppressed |
+| Validation | **178 tests passed**, Ruff checks and formatting passed, and offline daily/weekly previews completed |
 
-These figures come from the committed [run log](run_log.json) and daily JSON archive. Earlier validation snapshots have different counts because the report window moves and the ingestion and duplicate checks have changed. Live weekly synthesis, asynchronous Batch API execution and scheduled delivery remain unverified; see [VALIDATION.md](VALIDATION.md) for the earlier checks and remaining client review.
+The [run log](run_log.json), archived JSON and separate review artifacts preserve the distinction between the delivered report and recalculated scores. The next daily run uses the updated scoring policy. Live weekly synthesis, asynchronous Batch API execution, inbox receipt and Gmail/Outlook client presentation remain unverified; see [VALIDATION.md](VALIDATION.md).
 
 ## How it works
 
@@ -97,7 +101,7 @@ A local live preview still ingests or synthesizes as requested and writes the lo
 
 After classification, a second duplicate check combines matching incident coverage into one report entry with all distinct source links. It compares normalized headlines and summaries, protects differing named subjects, CVEs and regulatory events, and requires every member of a group to match every other member. `scoring.yaml` → `post_dedup` controls the publication window (48 hours by default) and headline/summary similarity thresholds (70/65). This is a conservative text heuristic: ambiguous matches remain separate. It adds no API calls and leaves stored articles and classifications intact.
 
-The representative is selected by severity, then priority; its prose and relevance scores are retained. Validated CVEs, technologies, actors, techniques, detection links and countries are combined, and scoring overrides are recomputed from the original model values. Deduplication runs before daily and weekly totals, previous-week comparisons, synthesis and every output format, including email. JSON includes `duplicates_removed` and each merged item's `merged_cluster_ids`; the run log also records the removed count.
+The representative is selected by severity, then priority; its prose and original relevance scores are retained before deterministic recalibration. Validated CVEs, technologies, actors, techniques, detection links and countries are combined, and scoring overrides are recomputed from the original model values. An exact CVE set plus a shared affected product can also combine vulnerability disclosures, patch notices and exploitation updates despite different headlines; differing CVE sets, advisory IDs and actors remain protected. Ambiguous coverage without an exact identity remains separate. Deduplication runs before daily and weekly totals, previous-week comparisons, synthesis and every output format, including email. JSON includes `duplicates_removed` and each merged item's `merged_cluster_ids`; the run log also records the removed count.
 
 For an initial backfill, `secdigest classify` processes **all unclassified stored clusters** and can incur substantial API usage. Prefer the asynchronous batch option:
 
@@ -146,7 +150,7 @@ All files below live in [`config/`](config/). The current configuration defines 
 | File | Controls |
 |---|---|
 | `settings.yaml` | Timezone, file paths, HTTP limits, models, pricing, optional enrichment, email, retention, activation |
-| `feeds.yaml` | All 62 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
+| `feeds.yaml` | All 65 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
 | `regions.yaml` | Region keys, priority-country mappings, country aliases and bonuses |
 | `industries.yaml` | Industry keys, display names and classification signals |
 | `practice_areas.yaml` | Practice keys, display names and classification signals |
@@ -154,7 +158,7 @@ All files below live in [`config/`](config/). The current configuration defines 
 | `regulations.yaml` | Regulation keys, jurisdiction, region, relevant industries and milestones |
 | `case_studies.yaml` | Published anonymized studies and sector/practice/country references |
 | `writing.yaml` | Published writing used by content outlines |
-| `scoring.yaml` | Cached importance rubric, categories, weights, deduplication thresholds and inclusion rules |
+| `scoring.yaml` | Importance rubric, weights, severity bands, global deployment profiles, aliases, deduplication thresholds and inclusion rules |
 
 The JSON tool schema and cached system prompt are generated at runtime from these files. Adding an industry or practice requires no Python edits. Existing classifications do not silently acquire scores for new keys: explicitly reclassify affected stored clusters after a taxonomy change. Run `config check` after edits.
 
@@ -164,7 +168,21 @@ To add a technology alias, extend that product's `aliases` list. Matching is cas
 
 Set `independence_key` on related feed definitions when publishers share editorial ownership or syndicated coverage. Otherwise, feed hostnames identify independent sources. Source independence is an approximation; editorial duplication may still need configuration.
 
-The default score is 40% importance plus 20% each for the strongest configured priority region, industry and practice. `Other` is retained in every report but excluded from priority by default. Priority-country aliases normalize UK/GB and UAE/AE. Each distinct directly involved priority country adds its configured bonus once, capped at 100 for that region. Overrides always start from the original saved model output, so reruns do not repeatedly increase scores.
+The default score is **60% importance, 15% location, 10% industry and 15% technical practice**. All four regions, including `Other`, participate equally through the strongest applicable regional score. The result is bounded by severity: critical 85–100, high 65–84.99, medium 35–64.99 and low 0–34.99. A highly relevant product announcement cannot outrank a critical incident. Weights, regions and bands are editable in `scoring.yaml`.
+
+Relevance percentages measure **applicability**, not the probability of attack, the share of victims, or evidence that your organization uses an affected product. Source-supported security issues in common web/OS infrastructure (including PHP and Node.js) receive 95% in every region; enterprise platforms and software distribution infrastructure receive 85%; specialist/consumer software receives 75%. These are configurable calibration anchors, not measured market shares. Deployment profiles require the affected technology in both the classification and source evidence. Regional incidents, regulations, research and ordinary product announcements retain their separate geographic assessment. An advisory issuer's country does not bias a global software issue.
+
+Reported exploitation attempts and actual systemic supply-chain compromise raise urgency. A critical vulnerability with a PoC or emergency patch alone remains high; predictions and lab demonstrations are not treated as active exploitation. EPSS can establish a high floor but cannot by itself establish a critical incident. Older KEV entries retain a high floor without implying a new active campaign. Source counts record corroboration and never raise severity. Source-text recognition is conservative, currently covering English and selected Dutch phrases; an absent signal means it was not established by the available summaries. The classifier still provides assessments for cases outside these rules.
+
+Priority-country aliases normalize UK/GB and UAE/AE. For nonglobal events, the country bonus applies at most once per region, even when several priority countries are mentioned. Global deployment profiles replace geographic estimates consistently and apply cross-industry floors. Technical practice scores remain the saved assessment. Every calculation starts from the original classification, so reruns do not compound adjustments. JSON and CSV expose the weighted components, severity band, source-linked risk signals, deployment scope and independent-source count.
+
+The [22 October scoring review](docs/scoring-review-2026-10-22.md) includes all 106 stories from the supplied email, the exact original window, and a before/after comparison. To repeat a review using an archive and database from the same run:
+
+```powershell
+uv run python scripts/review_scoring.py --report output/daily/2026-10-22.json --database data/secdigest.sqlite --output output/review/2026-10-22
+```
+
+This works offline, copies the database into memory, checks report membership, and writes separate HTML, Markdown, JSON and CSV reports plus a row for every original story. It performs no API calls, email sends or original archive/database writes.
 
 For regional country grouping beyond priority countries, optionally add `country_regions: {DE: Europe, ZA: MEA, ...}` to `regions.yaml`. Unmapped countries use the story's strongest regional score, so this grouping is an assessment rather than a verified geolocation database.
 
@@ -183,7 +201,7 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 
 `feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 37 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
 
-The [18 October threat-intelligence source review](THREAT-INTELLIGENCE-SOURCES.md) adds ten public feeds from Contagio, GitHub, Google Project Zero, GreyNoise, Rapid7/Metasploit, Qualys, ReversingLabs and Seebug, and enables FIRST EPSS enrichment. The review documents all 24 requested sources, including commercial services, reference datasets, blocked endpoints and unidentified catalogs. Contagio and GreyNoise Labs are currently stale; Seebug's feed is empty. Vendor blogs do not provide full commercial database coverage. The archived daily run above predates these additions.
+The [18 October threat-intelligence source review](THREAT-INTELLIGENCE-SOURCES.md) added ten public feeds from Contagio, GitHub, Google Project Zero, GreyNoise, Rapid7/Metasploit, Qualys, ReversingLabs and Seebug, and enabled FIRST EPSS enrichment. The review documents all 24 requested sources, including commercial services, reference datasets, blocked endpoints and unidentified catalogs. At verification, Contagio and GreyNoise Labs had no entries inside retention and Seebug's feed was empty. Vendor blogs do not provide full commercial database coverage. The 22 October archives include the expanded feed configuration.
 
 On 21 October 2026, three more RSS feeds were verified and enabled: [CERT-EU Security Advisories](https://cert.europa.eu/publications/security-advisories-rss), [CERT-EU Threat Intelligence](https://cert.europa.eu/publications/threat-intelligence-rss), and [Ars Technica Security](https://arstechnica.com/security/feed/). Both CERT-EU feeds share `independence_key: cert.europa.eu`. Ars Technica uses its security category feed. [Verification results](docs/cert-eu-ars-technica-verification-2026-10-21.json) record feed parsing and isolated ingestion checks.
 
@@ -193,7 +211,7 @@ Routine fetch errors do not permanently disable feeds. Collection uses bounded c
 
 CISA uses its official `cisagov/CSAF` GitHub repository's ROLIE JSON indexes for IT, OT and VA advisories. The `csaf` source adapter retrieves the referenced CSAF 2.0 documents and extracts publisher-provided summaries, CVEs, affected products, scores, remediation and source links. `feeds check` validates these JSON indexes directly. Documents and redirects are restricted to each feed's configured `document_base_url`. All three feeds share `independence_key: cisa.gov`, so overlapping CISA coverage does not count as independent corroboration.
 
-These structured feeds replace the legacy CISA advisory RSS path. In the latest archived run, they contributed 267 distinct advisories and consolidated three IT/VA overlaps. One CISA IT entry, `VA-26-274-03` (Joyland AI), referenced an upstream document returning HTTP 404. A document failure marks that source as degraded and is retried on subsequent ingestion; successfully collected advisories are retained. Inspect `source_health` in the report JSON for per-source counts and failed advisory IDs.
+These structured feeds replace the legacy CISA advisory RSS path. The initial 18 October collection contributed 267 distinct advisories and consolidated three IT/VA overlaps. The latest 22 October ingestion retained 224 unchanged OT, 39 IT and four vulnerability-advisory entries. CISA IT entry `VA-26-274-03` (Joyland AI) still returned HTTP 404. A document failure marks that source as degraded and is retried on subsequent ingestion; successfully collected advisories are retained. Inspect `source_health` in the report JSON for per-source counts and failed advisory IDs.
 
 Advisories are deduplicated by publisher and advisory ID across feeds and runs. A newer release updates the existing article and invalidates its classification; the original release date is retained separately, while the current release date determines report eligibility. Older versions cannot overwrite newer cached releases. Index responses are cached so failed documents can be retried even after an HTTP 304. Initial collection considers the configured database retention window (120 days); daily classification still uses only the daily report window. SQLite schema version 2 adds the advisory identity table automatically.
 
@@ -278,6 +296,8 @@ uv run ruff format --check src tests scripts
 ```
 
 The suite covers dynamic taxonomy schemas, custom API endpoints, denied model-metadata access, safe API diagnostics, invalid-model retries, claim filtering, batch resumption, URL/indicator normalization, clustering, report-time incident deduplication, scoring overrides, country bonuses, watch aliases, date windows, DST, source discovery and caching, idempotent ingestion, Markdown golden files, HTML escaping, 200-item email limits, CSV scores, MIME structure, SMTP retry policy, failure alerts, source-health silence and CLI/workflow credential isolation. CISA tests cover ROLIE/CSAF parsing, advisory identity and revisions, overlapping feeds, failed-document retries, document URL restrictions, KEV mirror fallback, catalog validation and provenance.
+
+The 22 October scoring revision passed **178 tests**. Added coverage checks global versus local applicability, severity ordering, observed attempts versus predictions/lab work, negated claims, source-backed supply-chain compromise, old/future KEV dates, equal `Other` weighting, exact-CVE consolidation and preservation of read-only review snapshots. Both daily and weekly fixture previews were regenerated.
 
 The [CI workflow](.github/workflows/ci.yml) runs Ruff, pytest and offline daily/weekly previews on pushes and pull requests, then uploads the synthetic reports as an artifact.
 

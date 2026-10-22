@@ -301,23 +301,25 @@ Rules for the model, included in the system prompt:
 | **low** | Opinion pieces, product marketing, funding or M&A news, minor incidents outside the target scope, recap articles |
 
 **Deterministic overrides, applied after the model call:**
-- A CVE in the item that is in CISA KEV and was added in the last 7 days sets the floor at `high`. It becomes `critical` if any `affected_technologies` entry matches `watch_tech`.
-- Confirmed in-the-wild exploitation of a `watch_tech` product (category `exploitation_in_the_wild`) sets the floor at `critical`.
-- EPSS ≥ 0.5 raises importance by one level, up to `critical`.
-- If 3 or more independent sources cover the same cluster within 24 hours, raise importance by one level, up to `critical`.
+- A CVE in the item that is in CISA KEV and was added in the last 7 days sets the floor at `high`. It becomes `critical` when a source-supported deployment profile establishes widespread enterprise exposure, including watch technologies and common runtimes.
+- Source-reported exploitation of a `watch_tech` product or configured widespread enterprise technology sets the floor at `critical`. Predictions, negated claims and lab demonstrations do not establish active exploitation.
+- Source-supported systemic software supply-chain compromise sets the floor at `critical`.
+- EPSS ≥ 0.5 sets a floor of `high`; probability alone does not establish a critical incident. Older KEV entries also retain a high floor.
+- Record independent sources within 24 hours as corroboration; source volume does not change severity.
+- Critical vulnerability assessments without reported exploitation, recent KEV evidence or a systemic compromise are capped at `high`.
 - Log every override with its reason.
 
 ### Location relevance (%), scored separately for each region
 
 | Score | Meaning |
 |---|---|
-| 90–100 | Event directly occurs in or targets organizations in that region, or a regulator or government of that region acts |
-| 60–89 | Strong regional impact: affected technology or vendor is widespread there, or the threat actor actively targets that region |
-| 30–59 | Global or region-agnostic issue that clearly applies there (e.g. a generic CVE in common software) |
+| 90–100 | Direct regional involvement, or pervasive deployment applicability such as a PHP or Node.js security issue |
+| 60–89 | Strong applicability: globally distributed enterprise/specialist technology, or a campaign targeting the region |
+| 30–59 | Applicable general lesson, with limited evidence of direct exposure |
 | 1–29 | Mostly elsewhere, with only indirect relevance |
 | 0 | No connection |
 
-Apply the priority-country bonus from `regions.yaml` after the model call, in code.
+Percentages are independent applicability assessments, not attack probabilities or victim shares. Globally deployed software issues use the same configured relevance in all regions; a publisher, vendor headquarters or advisory issuer does not determine impact geography. Apply the priority-country bonus at most once per region for nonglobal events. Source-supported deployment profiles and cross-industry floors live in `scoring.yaml`.
 
 ### Industry and practice-area relevance (%)
 
@@ -329,12 +331,14 @@ Cross-industry rule: a vulnerability in technology used everywhere (e.g. Windows
 
 ```
 importance_points = {critical: 100, high: 75, medium: 45, low: 15}
-priority = 0.40 * importance_points
-         + 0.20 * max(location_relevance.US, location_relevance.Europe, location_relevance.MEA)
-         + 0.20 * max(industry_relevance.*)
-         + 0.20 * max(practice_area_relevance.*)
+weighted = 0.60 * importance_points
+         + 0.15 * max(location_relevance.*)
+         + 0.10 * max(industry_relevance.*)
+         + 0.15 * max(practice_area_relevance.*)
+priority = clamp(weighted, severity_band)
+severity_bands = {critical: [85, 100], high: [65, 84.99], medium: [35, 64.99], low: [0, 34.99]}
 ```
-Keep the weights in `config/scoring.yaml`. `Other` is stored and shown but excluded from the priority score by default (configurable).
+Keep weights, bands, deployment profiles and participating regions in `config/scoring.yaml`. All four regions, including `Other`, participate by default. Preserve the original classification and record weighted components, evidence URLs and adjustments in the report.
 
 ---
 

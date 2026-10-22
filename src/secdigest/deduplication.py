@@ -74,15 +74,27 @@ def same_story(left, right, options):
     non_incidents = {"regulation_policy", "research", "vendor_product", "law_enforcement"}
     if a["category"] != b["category"] and {a["category"], b["category"]} & non_incidents:
         return False
+    if a["threat_actors"] and b["threat_actors"]:
+        if {_text(x) for x in a["threat_actors"]}.isdisjoint(_text(x) for x in b["threat_actors"]):
+            return False
+    # An exact, source-validated CVE set and matching affected product identify
+    # the same vulnerability even when disclosure/patch/exploitation headlines
+    # differ. Never join a roundup or a separate affected-product advisory.
+    vulnerability_categories = {"vulnerability", "exploitation_in_the_wild"}
+    if (
+        a["category"] in vulnerability_categories
+        and b["category"] in vulnerability_categories
+        and a["cves"]
+        and set(a["cves"]) == set(b["cves"])
+        and {_text(t) for t in a["affected_technologies"]} & {_text(t) for t in b["affected_technologies"]}
+    ):
+        return True
     topics_a, topics_b = _topics(a["headline"]), _topics(b["headline"])
     if not topics_a & topics_b or (topics_a - topics_b and topics_b - topics_a):
         return False
     names_a, names_b = _names(a), _names(b)
     if names_a - names_b and names_b - names_a:
         return False
-    if a["threat_actors"] and b["threat_actors"]:
-        if {_text(x) for x in a["threat_actors"]}.isdisjoint(_text(x) for x in b["threat_actors"]):
-            return False
     return token_set_ratio(_text(a["headline"]), _text(b["headline"])) >= options.get(
         "headline_similarity", 70
     ) and token_set_ratio(_text(a["summary"]), _text(b["summary"])) >= options.get("summary_similarity", 65)

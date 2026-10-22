@@ -103,8 +103,8 @@ def test_connectwise_paraphrases_merge_after_classification(config, populated, s
     assert item["attack_techniques"] == ["T1078"]
     assert len(item["detection_refs"]) == 1
     assert item["detection_coverage_note"] == "Source-linked Sigma rule is available."
-    assert item["importance"] == "critical"  # Recompute the independent-source override.
-    assert item["location_relevance"]["Europe"] == 30 + config.raw["regions"]["country_bonus"]
+    assert item["importance"] == "critical"  # Source-supported systemic compromise.
+    assert item["location_relevance"]["Europe"] == 85
     assert clusters == original
     assert deduplicate(config, merged) == merged
     assert report_items(config, original[::-1], populated, FIXTURE_NOW)[1] == items

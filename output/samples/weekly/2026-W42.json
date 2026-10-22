@@ -80,6 +80,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "GitHub",
@@ -101,7 +103,30 @@
           "cvss": null
         }
       },
-      "priority": 98.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 98.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 98.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
       "included": true
     },
     {
@@ -188,6 +213,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Cisco IOS XE",
@@ -197,36 +224,59 @@
         }
       ],
       "cve_details": {},
-      "priority": 98.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 3,
+      "priority": 98.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 98.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
       "included": true
     },
     {
       "cluster_id": "fixture-00",
       "headline": "Enterprise VPN exploitation requires urgent triage",
-      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident. Fictional source evidence: attackers are actively exploiting Fortinet FortiOS.",
       "category": "exploitation_in_the_wild",
       "importance": "critical",
-      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "importance_rationale": "CISA KEV added within seven days; source-supported widespread technology.",
       "location_relevance": {
-        "US": 100,
-        "Europe": 15,
-        "MEA": 15,
-        "Other": 15
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
       },
       "countries_mentioned": [
         "US"
       ],
       "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
         "global_it_services": 95,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
       },
       "practice_area_relevance": {
         "zero_trust_cloud": 5,
@@ -274,8 +324,11 @@
         }
       ],
       "overrides": [
-        "CISA KEV added within seven days; watch technology match"
+        "CISA KEV added within seven days; source-supported widespread technology",
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
       ],
+      "model_importance": "high",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Fortinet FortiOS",
@@ -298,94 +351,32 @@
           "cvss": null
         }
       },
-      "priority": 98.0,
-      "included": true
-    },
-    {
-      "cluster_id": "fixture-02",
-      "headline": "UAE energy operator reviews industrial gateway patch",
-      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
-      "category": "vulnerability",
-      "importance": "critical",
-      "importance_rationale": "Synthetic classification for acceptance testing.",
-      "location_relevance": {
-        "US": 15,
-        "Europe": 15,
-        "MEA": 100,
-        "Other": 15
+      "risk_evidence": {
+        "exploitation_reported": [
+          "https://source0.example.test/story/0"
+        ],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
       },
-      "countries_mentioned": [
-        "AE"
-      ],
-      "industry_relevance": {
-        "energy_services": 95,
-        "telecommunications": 10,
-        "private_banking": 10,
-        "investment_management": 10,
-        "government": 10,
-        "retail_banking": 10,
-        "global_it_services": 10,
-        "logistics": 10,
-        "industrial_manufacturing": 10,
-        "automotive": 10
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 96.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 96.5,
+        "severity_band": [
+          85,
+          100
+        ]
       },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 5,
-        "siem_detection": 5,
-        "iam_pam": 5,
-        "email_phishing": 5,
-        "data_protection_dlp": 5,
-        "ot_ics": 95,
-        "grc_audit": 5,
-        "security_automation": 5,
-        "ai_governance": 5
-      },
-      "affected_technologies": [
-        "Industrial gateway"
-      ],
-      "cves": [
-        "CVE-2026-99002"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
-      "related_case_studies": [
-        "zero-trust-at-enterprise-scale",
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "energy_services",
-        "region": "MEA",
-        "rationale": ""
-      },
-      "recommended_action": "Use this synthetic item to check report layout and routing.",
-      "confidence": 1.0,
-      "sources": [
-        {
-          "url": "https://source0.example.test/story/2",
-          "source": "Fixture source 1",
-          "published": "2026-10-17T05:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "EPSS meets configured threshold"
-      ],
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-99002": {
-          "kev": null,
-          "epss": 0.6,
-          "cvss": null
-        }
-      },
-      "priority": 98.0,
       "included": true
     },
     {
@@ -459,6 +450,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Microsoft 365",
@@ -471,7 +464,140 @@
         }
       ],
       "cve_details": {},
-      "priority": 88.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 83.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 83.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-02",
+      "headline": "UAE energy operator reviews industrial gateway patch",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 100,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "AE"
+      ],
+      "industry_relevance": {
+        "energy_services": 95,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 95,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Industrial gateway"
+      ],
+      "cves": [
+        "CVE-2026-99002"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "energy_services",
+        "region": "MEA",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/2",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T05:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-99002": {
+          "kev": null,
+          "epss": 0.6,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 83.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 83.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
       "included": true
     },
     {
@@ -546,6 +672,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Qualys",
@@ -555,7 +683,30 @@
         }
       ],
       "cve_details": {},
-      "priority": 76.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
       "included": true
     },
     {
@@ -634,9 +785,34 @@
         }
       ],
       "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [],
       "cve_details": {},
-      "priority": 76.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
       "included": true
     },
     {
@@ -711,6 +887,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Azure",
@@ -720,94 +898,30 @@
         }
       ],
       "cve_details": {},
-      "priority": 76.0,
-      "included": true
-    },
-    {
-      "cluster_id": "fixture-03",
-      "headline": "Swiss private banks examine privileged access controls",
-      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "Synthetic classification for acceptance testing.",
-      "location_relevance": {
-        "US": 15,
-        "Europe": 100,
-        "MEA": 15,
-        "Other": 15
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
       },
-      "countries_mentioned": [
-        "CH"
-      ],
-      "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 10,
-        "private_banking": 95,
-        "investment_management": 10,
-        "government": 10,
-        "retail_banking": 10,
-        "global_it_services": 10,
-        "logistics": 10,
-        "industrial_manufacturing": 10,
-        "automotive": 10
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
       },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 5,
-        "siem_detection": 5,
-        "iam_pam": 95,
-        "email_phishing": 5,
-        "data_protection_dlp": 5,
-        "ot_ics": 5,
-        "grc_audit": 5,
-        "security_automation": 5,
-        "ai_governance": 5
-      },
-      "affected_technologies": [
-        "Entra ID"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
-      "related_case_studies": [
-        "secure-azure-migration",
-        "zero-trust-at-enterprise-scale"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "private_banking",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Use this synthetic item to check report layout and routing.",
-      "confidence": 1.0,
-      "sources": [
-        {
-          "url": "https://source0.example.test/story/3",
-          "source": "Fixture source 1",
-          "published": "2026-10-17T04:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "watch_tech": [
-        {
-          "name": "Entra ID",
-          "aliases": [
-            "Azure AD",
-            "Microsoft Entra"
-          ],
-          "cross_industry": false,
-          "vendor": "microsoft"
-        }
-      ],
-      "cve_details": {},
-      "priority": 76.0,
       "included": true
     },
     {
@@ -882,6 +996,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Wazuh",
@@ -891,7 +1007,30 @@
         }
       ],
       "cve_details": {},
-      "priority": 59.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
       "included": true
     },
     {
@@ -965,6 +1104,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "Model Context Protocol (MCP)",
@@ -977,7 +1118,142 @@
         }
       ],
       "cve_details": {},
-      "priority": 59.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fixture-03",
+      "headline": "Swiss private banks examine privileged access controls",
+      "summary": "Synthetic training scenario for testing digest presentation. It does not describe a real incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Synthetic classification for acceptance testing.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 100,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 95,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 95,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Entra ID"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.",
+      "related_case_studies": [
+        "secure-azure-migration",
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "private_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Use this synthetic item to check report layout and routing.",
+      "confidence": 1.0,
+      "sources": [
+        {
+          "url": "https://source0.example.test/story/3",
+          "source": "Fixture source 1",
+          "published": "2026-10-17T04:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
+      "watch_tech": [
+        {
+          "name": "Entra ID",
+          "aliases": [
+            "Azure AD",
+            "Microsoft Entra"
+          ],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 64.99,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 65.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
       "included": true
     },
     {
@@ -1052,6 +1328,8 @@
         }
       ],
       "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Synthetic classification for acceptance testing.",
       "watch_tech": [
         {
           "name": "AWS",
@@ -1063,17 +1341,41 @@
         }
       ],
       "cve_details": {},
-      "priority": 12.0,
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 13.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 2.25,
+        "industry": 1.0,
+        "practice": 0.75,
+        "weighted_total": 13.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
       "included": false
     }
   ],
   "counts": {
-    "critical": 4,
-    "high": 1,
+    "critical": 3,
+    "high": 2,
     "medium": 6,
     "low": 1
   },
   "unclassified": 0,
+  "duplicates_removed": 0,
   "new_kev": [
     {
       "cve": "CVE-2026-99001",
@@ -1177,6 +1479,8 @@
   "other_count": 1,
   "source_health": {},
   "enrichment_warnings": [],
+  "kev_provenance": {},
+  "coverage_notes": [],
   "cases": {
     "security-in-the-delivery-path": [
       "fixture-06"
@@ -1200,13 +1504,13 @@
       "fixture-02",
       "fixture-10"
     ],
+    "security-services-for-investment-management": [
+      "fixture-07"
+    ],
     "zero-trust-at-enterprise-scale": [
       "fixture-02",
       "fixture-03",
       "fixture-11"
-    ],
-    "security-services-for-investment-management": [
-      "fixture-07"
     ],
     "secure-azure-migration": [
       "fixture-04",
@@ -1227,12 +1531,12 @@
       "name": "Energy services",
       "cells": {
         "critical": {
-          "count": 2,
-          "average": 67.5
+          "count": 1,
+          "average": 50.0
         },
         "high": {
-          "count": 0,
-          "average": 0
+          "count": 1,
+          "average": 95.0
         },
         "medium": {
           "count": 0,
@@ -1250,7 +1554,7 @@
       "cells": {
         "critical": {
           "count": 2,
-          "average": 67.5
+          "average": 72.5
         },
         "high": {
           "count": 0,
@@ -1272,7 +1576,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 0,
@@ -1294,7 +1598,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 1,
@@ -1316,7 +1620,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 0,
@@ -1338,7 +1642,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 0,
@@ -1382,7 +1686,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 0,
@@ -1404,7 +1708,7 @@
       "cells": {
         "critical": {
           "count": 1,
-          "average": 40.0
+          "average": 50.0
         },
         "high": {
           "count": 0,
@@ -1426,7 +1730,7 @@
       "cells": {
         "critical": {
           "count": 2,
-          "average": 67.5
+          "average": 72.5
         },
         "high": {
           "count": 0,
@@ -1603,12 +1907,12 @@
       "name": "OT and industrial control systems",
       "cells": {
         "critical": {
-          "count": 1,
-          "average": 95.0
-        },
-        "high": {
           "count": 0,
           "average": 0
+        },
+        "high": {
+          "count": 1,
+          "average": 95.0
         },
         "medium": {
           "count": 0,
@@ -1704,6 +2008,9 @@
       ],
       "NL": [
         "fixture-01"
+      ],
+      "Regional relevance": [
+        "fixture-00"
       ]
     },
     "MEA": {
@@ -1713,6 +2020,20 @@
       ],
       "SA": [
         "fixture-10"
+      ],
+      "Regional relevance": [
+        "fixture-00"
+      ]
+    },
+    "Other": {
+      "IN": [
+        "fixture-05"
+      ],
+      "KZ": [
+        "fixture-09"
+      ],
+      "Regional relevance": [
+        "fixture-00"
       ]
     }
   },
@@ -1726,8 +2047,8 @@
       "supply_chain": 1,
       "apt_nation_state": 1,
       "exploitation_in_the_wild": 1,
-      "vulnerability": 1,
       "fraud_phishing": 1,
+      "vulnerability": 1,
       "research": 4,
       "regulation_policy": 1,
       "data_breach": 1,
@@ -1818,8 +2139,8 @@
     "fixture-06",
     "fixture-01",
     "fixture-00",
-    "fixture-02",
-    "fixture-07"
+    "fixture-07",
+    "fixture-02"
   ],
   "business_signals": null,
   "watchlist": [

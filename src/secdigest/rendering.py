@@ -116,6 +116,15 @@ def sections(config, report, email=False, item_limit=None, compact=False):
         f"Window: {report['start']} to {report['end']} (end exclusive). Display timezone: {report['timezone']}."
     )
     paragraph(
+        "Relevance percentages measure applicability, not attack probability or victim share. "
+        "Global software issues apply in every region where affected versions are used. "
+        "Priority /100 uses severity bands: "
+        + ", ".join(
+            f"{level} {low}-{high}" for level, (low, high) in config.scoring["priority_bands"].items()
+        )
+        + "."
+    )
+    paragraph(
         " · ".join(f"{level.upper()} {count}" for level, count in report["counts"].items())
         + f" · New KEV entries {len(report['new_kev'])} · Watch technology hits {report['watch_hits']}"
     )
@@ -160,6 +169,7 @@ def sections(config, report, email=False, item_limit=None, compact=False):
             headers = [
                 "Importance",
                 "Headline",
+                "Priority",
                 *[f"{r}%" for r in config.regions],
                 "Top 2 industries",
                 "Top 2 practice areas",
@@ -174,6 +184,7 @@ def sections(config, report, email=False, item_limit=None, compact=False):
                     [
                         i["importance"].upper(),
                         i["headline"],
+                        i["priority"],
                         *i["location_relevance"].values(),
                         "; ".join(
                             f"{config.industries[k]['name']} {v}%"
@@ -426,6 +437,8 @@ def render_markdown(config, report, email=False):
                     "Detection assessment: " + md_value(i["detection_coverage_note"]),
                     "",
                     "Sources: " + md_value(block["sources"]),
+                    "",
+                    "Scoring adjustments: " + md_value("; ".join(i["overrides"]) or "None"),
                 ]
             )
         elif kind in {"table", "heatmap"}:
@@ -470,6 +483,10 @@ def csv_text(config, report):
             case_studies="; ".join(item["related_case_studies"]),
             source_urls="; ".join(s["url"] for s in item["sources"]),
             cve_details=json.dumps(item["cve_details"]),
+            priority_breakdown=json.dumps(item.get("priority_breakdown", {})),
+            risk_evidence=json.dumps(item.get("risk_evidence", {})),
+            exposure_scope=item.get("exposure_scope", ""),
+            independent_sources_24h=item.get("independent_sources_24h", 0),
         )
         rows.append(
             {
@@ -507,6 +524,10 @@ def csv_text(config, report):
             "case_studies",
             "source_urls",
             "cve_details",
+            "priority_breakdown",
+            "risk_evidence",
+            "exposure_scope",
+            "independent_sources_24h",
         ]
     )
     writer = csv.DictWriter(output, fieldnames=fields)

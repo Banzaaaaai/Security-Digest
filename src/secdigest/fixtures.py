@@ -151,6 +151,8 @@ def seed(config, store):
         ident = f"fixture-{index:02}"
         published = FIXTURE_NOW - timedelta(hours=index + 1)
         summary = "Synthetic training scenario for testing digest presentation. It does not describe a real incident."
+        if index == 0:
+            summary += " Fictional source evidence: attackers are actively exploiting Fortinet FortiOS."
         source_count = 3 if index == 1 else 1
         for source in range(source_count):
             article = {

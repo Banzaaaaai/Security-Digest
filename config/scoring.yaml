@@ -4,14 +4,54 @@ importance_points:
   medium: 45
   low: 15
 weights:
-  importance: 0.4
-  location: 0.2
-  industry: 0.2
-  practice: 0.2
+  importance: 0.6
+  location: 0.15
+  industry: 0.1
+  practice: 0.15
+# Bound the weighted score so relevance cannot outrank a higher severity tier.
+priority_bands:
+  critical: [85, 100]
+  high: [65, 84.99]
+  medium: [35, 64.99]
+  low: [0, 34.99]
 priority_regions:
 - US
 - Europe
 - MEA
+- Other
+# Deployment applicability, not the probability or share of victims in a region.
+# Profiles apply only to source-supported product security events.
+exposure:
+  technology_aliases:
+    PHP: [PHP2Shell]
+    eMudhra: [eMuhdra]
+    Fortinet FortiOS: [Fortinet]
+    FortiGate: [Fortinet]
+    Palo Alto PAN-OS: [Palo Alto Networks]
+  watch_default:
+    location_floor: 85
+    industry_floor: 50
+    systemic: true
+  worldwide_campaign:
+    location_floor: 85
+    industry_floor: 40
+    systemic: false
+  profiles:
+  - name: Common web and operating-system infrastructure
+    aliases: [PHP, Node.js, Windows, Windows Server, Google Chrome, Chrome, HTTP/3, QPACK]
+    location_floor: 95
+    industry_floor: 60
+    systemic: true
+  - name: Enterprise software and distribution infrastructure
+    aliases: [ConnectWise, LiteLLM, GitLab, Terraform, Go modules, Oracle, Java SE, GraalVM, eMudhra, eMuhdra, PKI, TLS certificates, intermediate certificates, certificate authorities]
+    location_floor: 85
+    industry_floor: 50
+    systemic: true
+  - name: Globally available specialist and consumer software
+    aliases: [Plex Media Server, Signal, RingRTC, QNAP]
+    location_floor: 75
+    industry_floor: 30
+    systemic: false
 categories:
 - vulnerability
 - exploitation_in_the_wild
@@ -56,6 +96,7 @@ post_dedup:
   headline_similarity: 70
   summary_similarity: 65
 epss_threshold: 0.5
+# Corroboration is recorded for audit; publication volume never raises severity.
 independent_sources: 3
 inclusion:
   min_importance: medium

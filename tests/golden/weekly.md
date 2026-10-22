@@ -4,7 +4,9 @@ SYNTHETIC PREVIEW — these fixture stories are not real news or incidents.
 
 Window: 2026-10-11T22:00:00+00:00 to 2026-10-18T22:00:00+00:00 (end exclusive). Display timezone: Europe/Amsterdam.
 
-CRITICAL 4 · HIGH 1 · MEDIUM 6 · LOW 1 · New KEV entries 1 · Watch technology hits 10
+Relevance percentages measure applicability, not attack probability or victim share. Global software issues apply in every region where affected versions are used. Priority /100 uses severity bands: critical 85-100, high 65-84.99, medium 35-64.99, low 0-34.99.
+
+CRITICAL 3 · HIGH 2 · MEDIUM 6 · LOW 1 · New KEV entries 1 · Watch technology hits 10
 
 ## Executive summary
 
@@ -18,7 +20,7 @@ CRITICAL 4 · HIGH 1 · MEDIUM 6 · LOW 1 · New KEV entries 1 · Watch technolo
 
 ### Build pipeline package compromise affects suppliers
 
-**CRITICAL** · Priority 98.0 · US 100% · Europe 15% · MEA 15% · Other 15% · Automotive 95% · Energy services 10% · Secure software delivery and DevSecOps 95% · Zero Trust and cloud security 5%
+**CRITICAL** · Priority 98.75 · US 100% · Europe 15% · MEA 15% · Other 15% · Automotive 95% · Energy services 10% · Secure software delivery and DevSecOps 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -36,9 +38,11 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/6)
 
+Scoring adjustments: None
+
 ### Dutch carrier strengthens identity monitoring
 
-**CRITICAL** · Priority 98.0 · US 15% · Europe 100% · MEA 15% · Other 15% · Telecommunications 95% · Energy services 10% · SIEM, monitoring and detection engineering 95% · Zero Trust and cloud security 5%
+**CRITICAL** · Priority 98.75 · US 15% · Europe 100% · MEA 15% · Other 15% · Telecommunications 95% · Energy services 10% · SIEM, monitoring and detection engineering 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -56,13 +60,15 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/1); [Fixture source 2](https://source1.example.test/story/1); [Fixture source 3](https://source2.example.test/story/1)
 
+Scoring adjustments: None
+
 ### Enterprise VPN exploitation requires urgent triage
 
-**CRITICAL** · Priority 98.0 · US 100% · Europe 15% · MEA 15% · Other 15% · Global IT services 95% · Energy services 40% · Vulnerability and exposure management 95% · Zero Trust and cloud security 5%
+**CRITICAL** · Priority 96.5 · US 85% · Europe 85% · MEA 85% · Other 85% · Global IT services 95% · Energy services 50% · Vulnerability and exposure management 95% · Zero Trust and cloud security 5%
 
-Synthetic training scenario for testing digest presentation. It does not describe a real incident.
+Synthetic training scenario for testing digest presentation. It does not describe a real incident. Fictional source evidence: attackers are actively exploiting Fortinet FortiOS.
 
-Why it matters: Synthetic classification for acceptance testing.
+Why it matters: CISA KEV added within seven days; source-supported widespread technology.
 
 Action: Use this synthetic item to check report layout and routing.
 
@@ -76,29 +82,11 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/0)
 
-### UAE energy operator reviews industrial gateway patch
-
-**CRITICAL** · Priority 98.0 · US 15% · Europe 15% · MEA 100% · Other 15% · Energy services 95% · Telecommunications 10% · OT and industrial control systems 95% · Zero Trust and cloud security 5%
-
-Synthetic training scenario for testing digest presentation. It does not describe a real incident.
-
-Why it matters: Synthetic classification for acceptance testing.
-
-Action: Use this synthetic item to check report layout and routing.
-
-CVE-2026-99002 \| KEV not listed \| EPSS 0.6 \| CVSS unknown
-
-ATT&CK: 
-
-Detection references: 
-
-Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Sources: [Fixture source 1](https://source0.example.test/story/2)
+Scoring adjustments: CISA KEV added within seven days; source-supported widespread technology; Global deployment applicability: every region 85%; cross-industry relevance at least 50%
 
 ### Investment managers review email fraud safeguards
 
-**HIGH** · Priority 88.0 · US 100% · Europe 15% · MEA 15% · Other 15% · Investment management 95% · Energy services 10% · Email protection and phishing response 95% · Zero Trust and cloud security 5%
+**HIGH** · Priority 83.75 · US 100% · Europe 15% · MEA 15% · Other 15% · Investment management 95% · Energy services 10% · Email protection and phishing response 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -116,9 +104,33 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/7)
 
+Scoring adjustments: None
+
+### UAE energy operator reviews industrial gateway patch
+
+**HIGH** · Priority 83.75 · US 15% · Europe 15% · MEA 100% · Other 15% · Energy services 95% · Telecommunications 10% · OT and industrial control systems 95% · Zero Trust and cloud security 5%
+
+Synthetic training scenario for testing digest presentation. It does not describe a real incident.
+
+Why it matters: Synthetic classification for acceptance testing.
+
+Action: Use this synthetic item to check report layout and routing.
+
+CVE-2026-99002 \| KEV not listed \| EPSS 0.6 \| CVSS unknown
+
+ATT&CK: 
+
+Detection references: 
+
+Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
+
+Sources: [Fixture source 1](https://source0.example.test/story/2)
+
+Scoring adjustments: None
+
 ### Government teams automate exposure reporting
 
-**MEDIUM** · Priority 76.0 · US 15% · Europe 15% · MEA 100% · Other 15% · Government 95% · Energy services 10% · Security automation and reporting 95% · Zero Trust and cloud security 5%
+**MEDIUM** · Priority 64.99 · US 15% · Europe 15% · MEA 100% · Other 15% · Government 95% · Energy services 10% · Security automation and reporting 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -136,9 +148,11 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/10)
 
+Scoring adjustments: None
+
 ### Irish banks receive operational resilience guidance
 
-**MEDIUM** · Priority 76.0 · US 15% · Europe 100% · MEA 15% · Other 15% · Retail banking 95% · Energy services 10% · Audit readiness, governance and risk 95% · Zero Trust and cloud security 5%
+**MEDIUM** · Priority 64.99 · US 15% · Europe 100% · MEA 15% · Other 15% · Retail banking 95% · Energy services 10% · Audit readiness, governance and risk 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -156,9 +170,11 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/4)
 
+Scoring adjustments: None
+
 ### Logistics teams test a data exposure response plan
 
-**MEDIUM** · Priority 76.0 · US 15% · Europe 15% · MEA 100% · Other 15% · Logistics 95% · Energy services 10% · Data protection and DLP 95% · Zero Trust and cloud security 5%
+**MEDIUM** · Priority 64.99 · US 15% · Europe 15% · MEA 100% · Other 15% · Logistics 95% · Energy services 10% · Data protection and DLP 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -176,29 +192,11 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/8)
 
-### Swiss private banks examine privileged access controls
-
-**MEDIUM** · Priority 76.0 · US 15% · Europe 100% · MEA 15% · Other 15% · Private banking 95% · Energy services 10% · Identity and privileged access 95% · Zero Trust and cloud security 5%
-
-Synthetic training scenario for testing digest presentation. It does not describe a real incident.
-
-Why it matters: Synthetic classification for acceptance testing.
-
-Action: Use this synthetic item to check report layout and routing.
-
-
-
-ATT&CK: 
-
-Detection references: 
-
-Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
-
-Sources: [Fixture source 1](https://source0.example.test/story/3)
+Scoring adjustments: None
 
 ### Manufacturing SOC publishes industrial detection notes
 
-**MEDIUM** · Priority 59.0 · US 15% · Europe 15% · MEA 15% · Other 95% · Industrial manufacturing 95% · Energy services 10% · SIEM, monitoring and detection engineering 95% · Zero Trust and cloud security 5%
+**MEDIUM** · Priority 64.99 · US 15% · Europe 15% · MEA 15% · Other 95% · Industrial manufacturing 95% · Energy services 10% · SIEM, monitoring and detection engineering 95% · Zero Trust and cloud security 5%
 
 Synthetic training scenario for testing digest presentation. It does not describe a real incident.
 
@@ -216,22 +214,46 @@ Detection assessment: Assessment: validate the relevant telemetry and escalation
 
 Sources: [Fixture source 1](https://source0.example.test/story/9)
 
+Scoring adjustments: None
+
+### Research demonstrates prompt injection in MCP tools
+
+**MEDIUM** · Priority 64.99 · US 15% · Europe 15% · MEA 15% · Other 95% · Global IT services 95% · Energy services 10% · AI-assisted work and AI governance 95% · Zero Trust and cloud security 5%
+
+Synthetic training scenario for testing digest presentation. It does not describe a real incident.
+
+Why it matters: Synthetic classification for acceptance testing.
+
+Action: Use this synthetic item to check report layout and routing.
+
+
+
+ATT&CK: 
+
+Detection references: 
+
+Detection assessment: Assessment: validate the relevant telemetry and escalation procedure in a controlled exercise.
+
+Sources: [Fixture source 1](https://source0.example.test/story/5)
+
+Scoring adjustments: None
+
 ## Industry heatmap
 
 Count / average relevance; includes scores ≥ 30%.
 
 | Area | CRITICAL | HIGH | MEDIUM | LOW |
 | --- | --- | --- | --- | --- |
-| Energy services | 2 / 67.5% | 0 / 0% | 0 / 0% | 0 / 0% |
-| Telecommunications | 2 / 67.5% | 0 / 0% | 0 / 0% | 0 / 0% |
-| Private banking | 1 / 40.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| Investment management | 1 / 40.0% | 1 / 95.0% | 0 / 0% | 0 / 0% |
-| Government | 1 / 40.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| Retail banking | 1 / 40.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
+| Energy services | 1 / 50.0% | 1 / 95.0% | 0 / 0% | 0 / 0% |
+| Telecommunications | 2 / 72.5% | 0 / 0% | 0 / 0% | 0 / 0% |
+| Private banking | 1 / 50.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
+| Investment management | 1 / 50.0% | 1 / 95.0% | 0 / 0% | 0 / 0% |
+| Government | 1 / 50.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
+| Retail banking | 1 / 50.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
 | Global IT services | 1 / 95.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| Logistics | 1 / 40.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| Industrial manufacturing | 1 / 40.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| Automotive | 2 / 67.5% | 0 / 0% | 0 / 0% | 0 / 0% |
+| Logistics | 1 / 50.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
+| Industrial manufacturing | 1 / 50.0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
+| Automotive | 2 / 72.5% | 0 / 0% | 0 / 0% | 0 / 0% |
 
 ## Practice-area heatmap
 
@@ -246,7 +268,7 @@ Count / average relevance; includes scores ≥ 30%.
 | Identity and privileged access | 0 / 0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
 | Email protection and phishing response | 0 / 0% | 1 / 95.0% | 0 / 0% | 0 / 0% |
 | Data protection and DLP | 0 / 0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
-| OT and industrial control systems | 1 / 95.0% | 0 / 0% | 0 / 0% | 0 / 0% |
+| OT and industrial control systems | 0 / 0% | 1 / 95.0% | 0 / 0% | 0 / 0% |
 | Audit readiness, governance and risk | 0 / 0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
 | Security automation and reporting | 0 / 0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
 | AI-assisted work and AI governance | 0 / 0% | 0 / 0% | 1 / 95.0% | 0 / 0% |
@@ -275,6 +297,10 @@ NL
 
 - [Dutch carrier strengthens identity monitoring](https://source0.example.test/story/1)
 
+Regional relevance
+
+- [Enterprise VPN exploitation requires urgent triage](https://source0.example.test/story/0)
+
 MEA
 
 AE
@@ -285,6 +311,24 @@ AE
 SA
 
 - [Government teams automate exposure reporting](https://source0.example.test/story/10)
+
+Regional relevance
+
+- [Enterprise VPN exploitation requires urgent triage](https://source0.example.test/story/0)
+
+Other
+
+IN
+
+- [Research demonstrates prompt injection in MCP tools](https://source0.example.test/story/5)
+
+KZ
+
+- [Manufacturing SOC publishes industrial detection notes](https://source0.example.test/story/9)
+
+Regional relevance
+
+- [Enterprise VPN exploitation requires urgent triage](https://source0.example.test/story/0)
 
 ## Trends
 
@@ -308,8 +352,8 @@ Previous-week data unavailable; no week-over-week comparison is claimed.
 | supply_chain | 1 | Unavailable |
 | apt_nation_state | 1 | Unavailable |
 | exploitation_in_the_wild | 1 | Unavailable |
-| vulnerability | 1 | Unavailable |
 | fraud_phishing | 1 | Unavailable |
+| vulnerability | 1 | Unavailable |
 | regulation_policy | 1 | Unavailable |
 | data_breach | 1 | Unavailable |
 | vendor_product | 1 | Unavailable |
@@ -345,8 +389,8 @@ Possible coverage gaps: high/critical stories without a published detection refe
 - [Build pipeline package compromise affects suppliers](https://source0.example.test/story/6)
 - [Dutch carrier strengthens identity monitoring](https://source0.example.test/story/1)
 - [Enterprise VPN exploitation requires urgent triage](https://source0.example.test/story/0)
-- [UAE energy operator reviews industrial gateway patch](https://source0.example.test/story/2)
 - [Investment managers review email fraud safeguards](https://source0.example.test/story/7)
+- [UAE energy operator reviews industrial gateway patch](https://source0.example.test/story/2)
 
 ## Case-study relevance
 
@@ -372,13 +416,13 @@ Possible coverage gaps: high/critical stories without a published detection refe
 - [UAE energy operator reviews industrial gateway patch](https://source0.example.test/story/2)
 - [Government teams automate exposure reporting](https://source0.example.test/story/10)
 
+- [Security services for investment management](https://brusiantsou.com/stories/security-services-for-investment-management/)
+- [Investment managers review email fraud safeguards](https://source0.example.test/story/7)
+
 - [Zero trust at enterprise scale](https://brusiantsou.com/stories/zero-trust-at-enterprise-scale/)
 - [UAE energy operator reviews industrial gateway patch](https://source0.example.test/story/2)
 - [Swiss private banks examine privileged access controls](https://source0.example.test/story/3)
 - [Cloud vendors announce a minor dashboard refresh](https://source0.example.test/story/11)
-
-- [Security services for investment management](https://brusiantsou.com/stories/security-services-for-investment-management/)
-- [Investment managers review email fraud safeguards](https://source0.example.test/story/7)
 
 - [Secure azure migration](https://brusiantsou.com/stories/secure-azure-migration/)
 - [Irish banks receive operational resilience guidance](https://source0.example.test/story/4)

@@ -61,6 +61,28 @@ class Config:
             raise ValueError("Scoring weights cannot be negative")
         if set(self.scoring["priority_regions"]) - self.regions.keys():
             raise ValueError("Unknown priority region")
+        if not self.scoring["priority_regions"]:
+            raise ValueError("At least one priority region is required")
+        if set(self.scoring["weights"]) != {"importance", "location", "industry", "practice"}:
+            raise ValueError("Scoring weights require importance, location, industry and practice")
+        bands = self.scoring["priority_bands"]
+        if set(bands) != set(self.scoring["importance_points"]):
+            raise ValueError("Priority bands must cover every importance level")
+        previous = -1
+        for level in sorted(bands, key=self.scoring["importance_points"].get):
+            lower, upper = bands[level]
+            if not (0 <= lower <= upper <= 100 and lower > previous):
+                raise ValueError("Priority bands must be ordered, nonoverlapping and within 0-100")
+            previous = upper
+        exposure = self.scoring["exposure"]
+        for profile in [exposure["watch_default"], exposure["worldwide_campaign"], *exposure["profiles"]]:
+            if any(not 0 <= profile[key] <= 100 for key in ("location_floor", "industry_floor")):
+                raise ValueError("Exposure relevance floors must be within 0-100")
+            if not isinstance(profile["systemic"], bool):
+                raise ValueError("Exposure systemic must be a boolean")
+        for profile in exposure["profiles"]:
+            if not profile["aliases"] or any(not alias.strip() for alias in profile["aliases"]):
+                raise ValueError("Exposure profiles require nonempty aliases")
         for case in self.case_studies.values():
             if (
                 case["industry"] not in self.industries
