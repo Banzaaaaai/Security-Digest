@@ -2743,5 +2743,540 @@
     "estimated_usd": 0.02216925,
     "email_type": null,
     "email_sent": false
+  },
+  {
+    "timestamp": "2026-10-23T09:45:05.267284+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [
+      {
+        "email_type": "daily",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-23T09:45:05.371349+00:00",
+      "enabled": 37,
+      "failures": 1,
+      "new": 108,
+      "updated": 1,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 12
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 8
+        },
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 4
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 19,
+          "updated": 1,
+          "unchanged": 212,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 2,
+          "updated": 0,
+          "unchanged": 39,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 4,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 6
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 13
+        },
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [
+      "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    ],
+    "classification": {
+      "classified": 87,
+      "usage": [
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 8909,
+          "output_tokens": 2464,
+          "cache_read_input_tokens": 0,
+          "estimated_usd": 0.01776975,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2559,
+          "output_tokens": 2262,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01257825,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2633,
+          "output_tokens": 2369,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01311525,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2669,
+          "output_tokens": 2543,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01392525,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2434,
+          "output_tokens": 2401,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01311,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2338,
+          "output_tokens": 2268,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.0124395,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2508,
+          "output_tokens": 2270,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.012576,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2521,
+          "output_tokens": 2239,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01244625,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2549,
+          "output_tokens": 2347,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01295325,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 3567,
+          "output_tokens": 2404,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01397325,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2991,
+          "output_tokens": 2424,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01363125,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2531,
+          "output_tokens": 2634,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01423125,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2600,
+          "output_tokens": 2248,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.012546,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2606,
+          "output_tokens": 2269,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.012645,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 9196,
+          "output_tokens": 2423,
+          "cache_read_input_tokens": 0,
+          "estimated_usd": 0.0178005,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2660,
+          "output_tokens": 2339,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.0130005,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2613,
+          "output_tokens": 2410,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.01328475,
+          "batch": false
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "input_tokens": 2111,
+          "output_tokens": 905,
+          "cache_read_input_tokens": 6400,
+          "estimated_usd": 0.00613575,
+          "batch": false
+        }
+      ]
+    },
+    "period": "2026-10-23",
+    "counts": {
+      "critical": 10,
+      "high": 43,
+      "medium": 26,
+      "low": 15
+    },
+    "items": 94,
+    "duplicates_removed": 1,
+    "duration_s": 214.4,
+    "usage": [
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 8909,
+        "output_tokens": 2464,
+        "cache_read_input_tokens": 0,
+        "estimated_usd": 0.01776975,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2559,
+        "output_tokens": 2262,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01257825,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2633,
+        "output_tokens": 2369,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01311525,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2669,
+        "output_tokens": 2543,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01392525,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2434,
+        "output_tokens": 2401,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01311,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2338,
+        "output_tokens": 2268,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.0124395,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2508,
+        "output_tokens": 2270,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.012576,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2521,
+        "output_tokens": 2239,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01244625,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2549,
+        "output_tokens": 2347,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01295325,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 3567,
+        "output_tokens": 2404,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01397325,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2991,
+        "output_tokens": 2424,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01363125,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2531,
+        "output_tokens": 2634,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01423125,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2600,
+        "output_tokens": 2248,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.012546,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2606,
+        "output_tokens": 2269,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.012645,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 9196,
+        "output_tokens": 2423,
+        "cache_read_input_tokens": 0,
+        "estimated_usd": 0.0178005,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2660,
+        "output_tokens": 2339,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.0130005,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2613,
+        "output_tokens": 2410,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.01328475,
+        "batch": false
+      },
+      {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 2111,
+        "output_tokens": 905,
+        "cache_read_input_tokens": 6400,
+        "estimated_usd": 0.00613575,
+        "batch": false
+      }
+    ],
+    "estimated_usd": 0.23816175,
+    "email_type": "daily",
+    "email_sent": true
   }
 ]
