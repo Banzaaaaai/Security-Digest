@@ -95,6 +95,10 @@ post_dedup:
   window_hours: 48
   headline_similarity: 70
   summary_similarity: 65
+  # Lower thresholds apply only with a source-supported product and compatible
+  # vulnerability context. Named events and supply-chain channels add identity.
+  event_headline_similarity: 55
+  event_summary_similarity: 50
 epss_threshold: 0.5
 # Corroboration is recorded for audit; publication volume never raises severity.
 independent_sources: 3

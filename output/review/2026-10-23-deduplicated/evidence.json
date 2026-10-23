@@ -1,0 +1,160 @@
+{
+  "source_commit": "f1525f578e872c0ed3007b023824c1c21b1a57df",
+  "database_git_blob": "8338ce18b452571a08c66004eede352f4558e3ab",
+  "database_sha256": "239a27edcf257aa36efb2d039c363950d406adefbd5f1c7403dbf71b27e2281c",
+  "start": "2026-10-22T09:45:05.371349+00:00",
+  "end": "2026-10-23T09:45:05.371349+00:00",
+  "original_stories": 94,
+  "revised_stories": 85,
+  "additional_duplicates_removed": 9,
+  "original_source_urls": 97,
+  "revised_source_urls": 97,
+  "original_cluster_ids": 95,
+  "revised_cluster_ids": 95,
+  "counts": {
+    "critical": 6,
+    "high": 38,
+    "medium": 26,
+    "low": 15
+  },
+  "merged_groups": [
+    {
+      "headline": "Amazon says PHP2Shell attacks started before patches were released",
+      "members": [
+        "2ca8afa9f4eaa54bb6ba4cf5",
+        "3bdc91b59b20e59b7f094b25",
+        "514a0395e5179c0e42f991e7",
+        "5c207f7e4a212153b27ffd5f",
+        "76f7352756792a66c61d6f85",
+        "8432ce44e6fee1e83709d62f"
+      ],
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/",
+          "source": "BleepingComputer",
+          "published": "2026-10-22T13:09:12+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.infosecurity-magazine.com/news/php2shell-exploitation-attempt/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-22T10:10:00+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+          "source": "SecurityWeek",
+          "published": "2026-10-22T09:48:58+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
+          "source": "Ars Technica Security",
+          "published": "2026-10-22T15:25:02+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.securityweek.com/tech-and-security-companies-respond-to-php2shell-vulnerabilities/",
+          "source": "SecurityWeek",
+          "published": "2026-10-22T12:20:23+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-22T11:39:20+00:00",
+          "date_inferred": false
+        }
+      ]
+    },
+    {
+      "headline": "LiteLLM supply chain compromise spreads through GitHub token abuse",
+      "members": [
+        "01e5ecb395f55fddfa47703d",
+        "37f56369e2ff40e06833d0b8",
+        "850e6a55bc9d4cafda8c1032"
+      ],
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/litellm-compromised-in-fresh-supply-chain-attack/",
+          "source": "SecurityWeek",
+          "published": "2026-10-23T08:10:46+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
+          "source": "BleepingComputer",
+          "published": "2026-10-22T19:12:51+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/22/litellm-compromised-supply-chain-attack-pypi-docker/",
+          "source": "Help Net Security",
+          "published": "2026-10-22T13:10:28+00:00",
+          "date_inferred": false
+        }
+      ]
+    },
+    {
+      "headline": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
+      "members": [
+        "1ed4b6e940bacb9a350a44c1",
+        "5a34460990741de0ec2f306d",
+        "b7cb9731c5f8ff4bb2f25475"
+      ],
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/",
+          "source": "BleepingComputer",
+          "published": "2026-10-22T17:18:22+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.security.nl/posting/958716/Arista+waarschuwt+voor+misbruikt+SQL+Injection-lek+in+VeloCloud+Orchestrator?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-23T08:19:00+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html",
+          "source": "The Hacker News",
+          "published": "2026-10-22T19:05:17+00:00",
+          "date_inferred": false
+        }
+      ]
+    },
+    {
+      "headline": "Mass PHP2Shell exploitation attempts target systems with Mirai malware",
+      "members": [
+        "9d0cfa945b257eb4fa88e080",
+        "cb1bdeee47efc0de95777196"
+      ],
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html",
+          "source": "The Hacker News",
+          "published": "2026-10-23T07:40:45+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+          "source": "Unit 42",
+          "published": "2026-10-21T16:30:34+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://isc.sans.edu/diary/rss/33440",
+          "source": "SANS ISC",
+          "published": "2026-10-21T21:02:43+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/22/php2shell-scanner-tool/",
+          "source": "Help Net Security",
+          "published": "2026-10-22T12:03:17+00:00",
+          "date_inferred": false
+        }
+      ]
+    }
+  ]
+}

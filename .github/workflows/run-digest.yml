@@ -65,6 +65,10 @@ jobs:
           import os
           print('run=' + str(schedule_allowed(Config(), os.environ['KIND'], manual=os.environ['MANUAL'] == 'true')).lower())
           PY
+      - name: Verify story grouping before report generation
+        if: steps.guard.outputs.run == 'true'
+        id: dedup
+        run: python scripts/check_digest_deduplication.py
       - name: Read database storage mode
         if: steps.guard.outputs.run == 'true'
         id: storage
@@ -77,7 +81,7 @@ jobs:
           key: secdigest-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: secdigest-db-${{ github.ref_name }}-
       - name: Run digest
-        if: steps.guard.outputs.run == 'true'
+        if: steps.guard.outputs.run == 'true' && steps.dedup.outcome == 'success'
         id: digest
         env:
           OPENAI_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_API_KEY || '' }}

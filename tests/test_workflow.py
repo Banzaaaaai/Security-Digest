@@ -1,3 +1,4 @@
+import json
 import runpy
 from datetime import datetime
 from pathlib import Path
@@ -101,3 +102,54 @@ def test_workflow_early_guard_accepts_delayed_jobs(kind, stamp, manual, allowed,
     script = "\n".join(step["run"].splitlines()[1:-1])
     exec(compile(script, "workflow-hour-guard", "exec"), {})
     assert capsys.readouterr().out.strip() == "run=" + str(allowed).lower()
+
+
+def test_shared_workflow_requires_successful_story_grouping_check():
+    root = Path(__file__).resolve().parents[1]
+    workflow = yaml.safe_load((root / ".github/workflows/run-digest.yml").read_text(encoding="utf-8"))
+    steps = workflow["jobs"]["run"]["steps"]
+    guard = next(s for s in steps if s.get("id") == "dedup")
+    digest = next(s for s in steps if s.get("id") == "digest")
+    assert steps.index(guard) < steps.index(digest)
+    assert guard["run"] == "python scripts/check_digest_deduplication.py"
+    assert "steps.dedup.outcome == 'success'" in digest["if"]
+    for kind in ("daily", "weekly"):
+        caller = yaml.safe_load((root / f".github/workflows/{kind}.yml").read_text(encoding="utf-8"))
+        assert caller["jobs"]["digest"]["uses"] == "./.github/workflows/run-digest.yml"
+
+
+@pytest.mark.parametrize("regression", [None, "no_merge", "overmerge", "lost_source", "lost_details"])
+def test_workflow_story_grouping_gate_detects_regressions(config, monkeypatch, regression):
+    root = Path(__file__).resolve().parents[1]
+    verify = runpy.run_path(str(root / "scripts/check_digest_deduplication.py"))["verify"]
+    fixture = json.loads((root / "tests/fixtures/deduplication-2026-10-23.json").read_text(encoding="utf-8"))
+    if regression == "no_merge":
+        monkeypatch.setattr("secdigest.reporting.deduplicate", lambda config, ranked: ranked)
+    elif regression == "overmerge":
+        from secdigest.deduplication import _merge
+
+        monkeypatch.setattr(
+            "secdigest.reporting.deduplicate", lambda config, ranked: [_merge(ranked, config)]
+        )
+    elif regression in {"lost_source", "lost_details"}:
+        original = verify.__globals__["build_report"]
+
+        def broken_report(*args, **kwargs):
+            report = original(*args, **kwargs)
+            if regression == "lost_source":
+                report["items"][0]["sources"].pop()
+            else:
+                for item in report["items"]:
+                    item["summary"] = "Complementary information was discarded."
+            return report
+
+        monkeypatch.setitem(verify.__globals__, "build_report", broken_report)
+    if regression:
+        with pytest.raises(RuntimeError, match="Story grouping regression"):
+            verify(config, fixture)
+    else:
+        result = verify(config, fixture)
+        assert result["status"] == "passed"
+        assert result["input_clusters"] == result["source_urls_preserved"] == 15
+        assert result["output_stories"] == 6
+        assert result["duplicates_removed"] == 9

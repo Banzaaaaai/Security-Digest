@@ -1,5 +1,7 @@
+import json
 from copy import deepcopy
-from datetime import timedelta
+from datetime import datetime, timedelta
+from pathlib import Path
 
 import pytest
 
@@ -249,3 +251,164 @@ def test_weekly_counts_cve_sources_deltas_and_synthesis_are_deduplicated(config,
     assert report["cve_table"][cve]["sources"] == ["a", "b"]
     assert max(cell["count"] for row in report["industry_heatmap"] for cell in row["cells"].values()) == 1
     store.close()
+
+
+def test_october_23_paraphrases_become_one_story_with_all_sources(config):
+    fixture = json.loads(
+        (Path(__file__).parent / "fixtures/deduplication-2026-10-23.json").read_text(encoding="utf-8")
+    )
+    store = Store(":memory:")
+    clusters = fixture["clusters"]
+    save(store, config, clusters)
+    before = store.clusters()
+    end = datetime.fromisoformat(fixture["provenance"]["end"])
+    report = build_report(config, store, "daily", now=end)
+    groups = {
+        "Amazon says PHP2Shell attacks started before patches were released": (6, "SecurityWeek"),
+        "LiteLLM supply chain compromise spreads through GitHub token abuse": (3, "GitHub"),
+        "Arista patches actively exploited VeloCloud Orchestrator zero-day": (3, "SQL injection"),
+    }
+    for headline, (size, detail) in groups.items():
+        item = next(i for i in report["items"] if i["headline"] == headline)
+        assert len(item["merged_cluster_ids"]) == size
+        assert len(item["sources"]) == size
+        assert len(item["source_coverage"]) == size
+        assert item["independent_sources_24h"] == (5 if size == 6 else size)
+        assert detail in item["summary"]
+        assert {c["cluster_id"] for c in item["source_coverage"]} == set(item["merged_cluster_ids"])
+        for rendered in (
+            render_markdown(config, report),
+            render_html(config, report),
+            render_html(config, report, email=True),
+            csv_text(config, report),
+        ):
+            assert rendered.count(item["summary"]) == 1
+            assert all(source["url"] in rendered for source in item["sources"])
+    # Same vulnerability in a separate campaign, different affected vendor, and
+    # parliamentary response do not disappear into the Amazon observation.
+    assert len(report["items"]) == 6
+    assert report["duplicates_removed"] == 9
+    assert any("Mirai" in i["headline"] for i in report["items"])
+    assert any("PAN-OS" in i["headline"] for i in report["items"])
+    assert any("lawmakers" in i["headline"] for i in report["items"])
+    assert report_items(config, clusters[::-1], store, end)[1] == report["items"]
+    assert store.clusters() == before
+    store.close()
+
+
+@pytest.mark.parametrize("name", ["PHP2Shell", "Log4Shell", "Spring4Shell"])
+def test_named_event_without_cves_matches_paraphrases(config, story, name):
+    left = story(
+        "a",
+        (
+            f"Amazon says {name} attacks started before patches were released",
+            f"Researchers at Amazon say attackers began exploiting {name} four days before patches.",
+        ),
+        category="exploitation_in_the_wild",
+        affected_technologies=["Example Server"],
+    )
+    right = story(
+        "b",
+        (
+            f"Amazon detects {name} exploitation before public disclosure",
+            f"Security analysts report evidence that attackers were already exploiting {name} before disclosure.",
+        ),
+        category="vulnerability",
+        affected_technologies=["Example Server"],
+    )
+    assert len(deduplicate(config, [left, right])) == 1
+    right["articles"][0]["title"] = "Unrelated coverage"
+    right["articles"][0]["summary"] = "No supporting event identity in the feed."
+    assert len(deduplicate(config, [left, right])) == 2
+
+
+@pytest.mark.parametrize("difference", ["victim", "product", "cve", "mechanism", "roundup", "old"])
+def test_shared_product_is_not_enough_to_merge_vulnerabilities(config, story, difference):
+    text = (
+        "Arista warns of SQL injection in VeloCloud Orchestrator",
+        "Arista reported SQL injection in VeloCloud Orchestrator, requiring urgent patching.",
+    )
+    left = story("a", text, category="vulnerability", affected_technologies=["VeloCloud Orchestrator"])
+    right = story("b", text, category="vulnerability", affected_technologies=["VeloCloud Orchestrator"])
+    if difference == "victim":
+        for c, victim in ((left, "Northwind"), (right, "Contoso")):
+            c["classification"]["summary"] = f"{victim} reported a breach through VeloCloud Orchestrator."
+    elif difference == "product":
+        right["classification"]["headline"] = "Arista warns of SQL injection in Another Orchestrator"
+        right["classification"]["affected_technologies"] = ["Another Orchestrator"]
+    elif difference == "cve":
+        left["classification"]["cves"] = ["CVE-2026-10001"]
+        right["classification"]["cves"] = ["CVE-2026-10002"]
+    elif difference == "mechanism":
+        for field in ("headline", "summary"):
+            right["classification"][field] = right["classification"][field].replace(
+                "SQL injection", "path traversal"
+            )
+    elif difference == "roundup":
+        right["articles"][0]["title"] = "Weekly roundup: Arista, PHP and GitLab security flaws"
+    else:
+        right["articles"][0]["published"] = (FIXTURE_NOW - timedelta(hours=50)).isoformat()
+    assert len(deduplicate(config, [left, right])) == 2
+
+
+def test_supply_chain_shared_distribution_channels_do_not_hide_different_victims(config, story):
+    clusters = [
+        story(
+            name,
+            (
+                f"{victim} compromised through ExampleSDK supply chain attack",
+                f"{victim} reported malicious ExampleSDK artifacts on PyPI and Docker.",
+            ),
+            affected_technologies=["ExampleSDK", "PyPI", "Docker"],
+        )
+        for name, victim in (("a", "Northwind"), ("b", "Contoso"))
+    ]
+    assert len(deduplicate(config, clusters)) == 2
+
+
+def test_identical_generic_headline_cannot_hide_conflicting_vulnerability_mechanisms(config, story):
+    clusters = [
+        story(
+            name,
+            (
+                "ExampleServer patches critical vulnerability",
+                f"ExampleServer patched a {mechanism} flaw in its administration console.",
+            ),
+            category="vulnerability",
+            affected_technologies=["ExampleServer"],
+        )
+        for name, mechanism in (("a", "SQL injection"), ("b", "path traversal"))
+    ]
+    assert len(deduplicate(config, clusters)) == 2
+
+
+def test_shared_publisher_boilerplate_is_not_supply_chain_identity(config, story):
+    clusters = [
+        story(
+            name,
+            (
+                f"ExampleSDK malicious {component} compromised",
+                "Researchers reported a supply chain compromise.",
+            ),
+            affected_technologies=["ExampleSDK"],
+        )
+        for name, component in (("a", "build pipeline"), ("b", "registry release"))
+    ]
+    for cluster in clusters:
+        article = cluster["articles"][0]
+        article["title"] = article["title"].title()
+        article["summary"] += " The post appeared first on SecurityWeek."
+    assert len(deduplicate(config, clusters)) == 2
+
+
+def test_complementary_details_actions_and_uncertainty_are_retained(config, story):
+    left, right = story("a"), story("b")
+    right["classification"]["summary"] = (
+        left["classification"]["summary"] + " Attempts were unsuccessful. The report indicates 2200 requests."
+    )
+    right["classification"]["recommended_action"] = "Rotate publication tokens and audit registry approvals."
+    item = deduplicate(config, [left, right])[0]["classification"]
+    assert item["summary"].count(left["classification"]["summary"]) == 1
+    assert "b: Attempts were unsuccessful. The report indicates 2200 requests." in item["summary"]
+    assert "b: Rotate publication tokens and audit registry approvals." in item["recommended_action"]
+    assert item["source_coverage"][1]["summary"] == right["classification"]["summary"]
