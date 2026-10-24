@@ -14,6 +14,7 @@ import httpx
 
 from .clustering import Clusterer
 from .csaf import CSAFReader, parse_rolie, scoped_url
+from .html_sources import parse_html_index
 from .normalize import SourceHTML, canonical_url, extract_ids, safe_url, source_text
 
 
@@ -173,6 +174,20 @@ async def check_feeds(config, store):
         async def check(feed):
             candidates = []
             try:
+                if feed.get("type") == "html_index":
+                    data = await fetcher.get(feed["url"], conditional=False, url_prefix=feed["url"])
+                    entries, stats = parse_html_index(data, feed)
+                    if stats["invalid"]:
+                        raise ValueError("Invalid publisher index entries")
+                    feed.update(enabled=True, verified=True, last_error="")
+                    return {
+                        "name": feed["name"],
+                        "status": "ok",
+                        "url": feed["url"],
+                        "items": len(entries),
+                        "discovered_urls": [feed["url"]],
+                        **stats,
+                    }
                 if feed.get("type") == "csaf":
                     data = await fetcher.get(feed["url"], conditional=False)
                     entries, errors = parse_rolie(data, feed)
@@ -232,7 +247,7 @@ async def check_feeds(config, store):
 
 async def ingest(config, store, now=None, fetch_fulltext=False):
     now = now or datetime.now(UTC)
-    enabled = [f for f in config.feeds if f.get("enabled") and f.get("type") in {"rss", "csaf"}]
+    enabled = [f for f in config.feeds if f.get("enabled") and f.get("type") in {"rss", "csaf", "html_index"}]
     clusterer = Clusterer(config, store)
     async with Fetcher(config, store) as fetcher:
         csaf = CSAFReader(config, store, fetcher, now)
@@ -240,17 +255,31 @@ async def ingest(config, store, now=None, fetch_fulltext=False):
         async def collect(feed):
             if feed["type"] == "csaf":
                 return await csaf.collect(feed)
+            html_index = feed["type"] == "html_index"
             try:
-                data = await fetcher.get(feed["url"])
-                items = parse_feed(data, feed, now) if data is not None else []
+                data = await fetcher.get(feed["url"], url_prefix=feed["url"] if html_index else None)
+                stats = {}
+                if html_index and data is not None:
+                    items, stats = parse_html_index(data, feed, now)
+                    if stats["invalid"] or stats["future"]:
+                        store.put(
+                            "http:" + feed["url"], {}
+                        )  # Retry partial/future entries after a cached response.
+                else:
+                    items = parse_feed(data, feed, now) if data is not None else []
                 count = 0
                 for article in items:
                     if datetime.fromisoformat(article["published"]) >= now - timedelta(
                         days=config.settings["retention"]["database_days"]
                     ):
                         count += clusterer.add(article)
-                return {"name": feed["name"], "ok": True, "new": count}
+                result = {"name": feed["name"], "ok": not stats.get("invalid"), "new": count, **stats}
+                if stats.get("invalid"):
+                    result["error"] = "Invalid publisher index entries; valid entries retained"
+                return result
             except (httpx.HTTPError, ValueError) as exc:
+                if html_index:
+                    store.put("http:" + feed["url"], {})
                 return {"name": feed["name"], "ok": False, "new": 0, "error": type(exc).__name__}
 
         results = await asyncio.gather(*(collect(f) for f in enabled))

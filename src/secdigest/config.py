@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 
 import yaml
 
+from .html_sources import HTML_INDEX_PARSERS
 from .normalize import safe_url
 
 FILES = (
@@ -102,6 +103,13 @@ class Config:
         if len(set(names)) != len(names):
             raise ValueError("Feed names must be unique")
         for feed in self.feeds:
+            if feed.get("type") == "html_index":
+                if (
+                    feed.get("parser") not in HTML_INDEX_PARSERS
+                    or feed.get("url") != HTML_INDEX_PARSERS[feed["parser"]]
+                    or not feed.get("independence_key")
+                ):
+                    raise ValueError("HTML indexes require a supported publisher URL, parser and identity")
             if feed.get("entry_url_field", "link") not in {"link", "id"}:
                 raise ValueError("Feed entry_url_field must be link or id")
             if feed.get("type") == "csaf":

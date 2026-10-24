@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import timedelta
 from pathlib import Path
 
 from .normalize import stable_id
@@ -121,8 +122,12 @@ class Store:
     def clusters(self, start=None, end=None):
         clauses, args = [], []
         if start:
-            clauses.append("published >= ?")
-            args.append(start.isoformat())
+            # Date-only indexes describe a whole publication day, not an exact
+            # midnight event. Include that day when it overlaps the report window.
+            clauses.append(
+                "(published >= ? OR (json_extract(payload, '$.date_precision') = 'day' AND published > ?))"
+            )
+            args.extend((start.isoformat(), (start - timedelta(days=1)).isoformat()))
         if end:
             clauses.append("published < ?")
             args.append(end.isoformat())

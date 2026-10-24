@@ -1,6 +1,6 @@
 # SecDigest
 
-Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories and CISA structured advisories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
+Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, supported public-page indexes and CISA structured advisories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
 
 The original requirements are in [security-digest-prompt.md](security-digest-prompt.md). All taxonomies and scoring rules are editable YAML. There is no web server or hosted dashboard to operate.
 
@@ -16,11 +16,11 @@ Priority now uses **60% severity, 15% location, 10% industry and 15% technical p
 | Score comparison | [All 106 original stories, before and after](output/review/2026-10-22-original/comparison.csv), with [full score components and source evidence](output/review/2026-10-22-original/comparison.json) |
 | Corrected later run | [HTML](output/review/2026-10-22-latest/daily/2026-10-22.html) and [105-story comparison](output/review/2026-10-22-latest/comparison.csv); 102 entries: 16 critical, 35 high, 38 medium, 13 low |
 | Preserved live archive | [22 October report](output/daily/2026-10-22.md) and [JSON](output/daily/2026-10-22.json), generated before the scoring revision; 105 entries and no unclassified clusters |
-| Sources | 67 definitions; 39 enabled, 28 disabled as of 24 October. Censys and Shodan blog feeds verified; Shodan currently has no entries inside retention |
+| Sources | 69 definitions; 41 enabled, 28 disabled as of 24 October. Includes Censys/Shodan RSS and verified Amazon Linux/Anthropic public-page collectors |
 | Coverage limits | One failed CISA IT advisory (`VA-26-274-03`, HTTP 404); successful advisories retained. KEV uses the official GitHub mirror after primary-source failure |
 | Delivery | The 22 October 09:51 UTC run recorded successful SMTP delivery; the 10:47 UTC run skipped sending because that day's digest had already been sent. The scoring review did not send a replacement |
 | Scheduling | Daily enabled; weekly disabled. Scheduled runs succeeded on 21–22 October; delayed same-day jobs are allowed and duplicate email is suppressed |
-| Validation | **178 tests passed**, Ruff checks and formatting passed, and offline daily/weekly previews completed |
+| Validation | **231 tests passed** on 24 October, Ruff checks and formatting passed, and offline daily/weekly previews completed |
 
 The [run log](run_log.json), archived JSON and separate review artifacts preserve the distinction between the delivered report and recalculated scores. The next daily run uses the updated scoring policy. Live weekly synthesis, asynchronous Batch API execution, inbox receipt and Gmail/Outlook client presentation remain unverified; see [VALIDATION.md](VALIDATION.md).
 
@@ -145,7 +145,7 @@ uv sync --extra fulltext
 uv run secdigest classify --fetch-fulltext
 ```
 
-Full text is fetched under the site's robots policy, used transiently as classification context and never archived or republished. Feed summaries remain the audit evidence, so detection links and dates absent from summaries are conservatively omitted. `page_watch` sources remain disabled; the application does not scrape them.
+Full text is fetched under the site's robots policy, used transiently as classification context and never archived or republished. Feed and supported index summaries remain the audit evidence, so detection links and dates absent from summaries are conservatively omitted. Generic `page_watch` sources remain disabled. Explicit `html_index` collectors support only the configured Amazon Linux CVE index and Anthropic Research listing; they collect index summaries without crawling article bodies or executing JavaScript.
 
 ## Configuration
 
@@ -154,7 +154,7 @@ All files below live in [`config/`](config/). The current configuration defines 
 | File | Controls |
 |---|---|
 | `settings.yaml` | Timezone, file paths, HTTP limits, models, pricing, optional enrichment, email, retention, activation |
-| `feeds.yaml` | All 67 source definitions, discovered URLs, enabled state, verification status, advisory endpoints |
+| `feeds.yaml` | All 69 source definitions, discovered URLs, enabled state, verification status, advisory endpoints and supported HTML index parsers |
 | `regions.yaml` | Region keys, priority-country mappings, country aliases and bonuses |
 | `industries.yaml` | Industry keys, display names and classification signals |
 | `practice_areas.yaml` | Practice keys, display names and classification signals |
@@ -203,13 +203,17 @@ Unconfirmed dates remain empty and appear in the weekly missing-date list. Busin
 
 ## Sources and evidence
 
-`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly. Failed sources are disabled with a reason. Sources with no discovered feed become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 39 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
+`feeds check` checks the supplied URL or discovers RSS/Atom links from a site's `<link rel="alternate">` metadata; CSAF sources use their configured JSON indexes directly, and explicit `html_index` sources validate their supported publisher layout. Failed sources are disabled with a reason. Sources with no discovered feed or supported collector become disabled `page_watch` entries. The source check report is written to `output/source-check.json`, including discovered candidates. Run the check again after editing a URL to re-enable a recovered source. The checked-in configuration currently enables 41 sources and disables 28; this is a configuration snapshot, not a guarantee that every enabled source will fetch successfully.
 
 The [18 October threat-intelligence source review](THREAT-INTELLIGENCE-SOURCES.md) added ten public feeds from Contagio, GitHub, Google Project Zero, GreyNoise, Rapid7/Metasploit, Qualys, ReversingLabs and Seebug, and enabled FIRST EPSS enrichment. The review documents all 24 requested sources, including commercial services, reference datasets, blocked endpoints and unidentified catalogs. At verification, Contagio and GreyNoise Labs had no entries inside retention and Seebug's feed was empty. Vendor blogs do not provide full commercial database coverage. The 22 October archives include the expanded feed configuration.
 
 On 21 October 2026, three more RSS feeds were verified and enabled: [CERT-EU Security Advisories](https://cert.europa.eu/publications/security-advisories-rss), [CERT-EU Threat Intelligence](https://cert.europa.eu/publications/threat-intelligence-rss), and [Ars Technica Security](https://arstechnica.com/security/feed/). Both CERT-EU feeds share `independence_key: cert.europa.eu`. Ars Technica uses its security category feed. [Verification results](docs/cert-eu-ars-technica-verification-2026-10-21.json) record feed parsing and isolated ingestion checks.
 
 On 24 October 2026, [Censys Blog](https://censys.com/feed/) and [Shodan Blog](https://blog.shodan.io/rss/) were verified and enabled with publisher identities `censys.com` and `shodan.io`. Censys mixes security research and product news; its feed supplied ten articles within 120-day retention. Shodan's latest feed entry was 7 August 2024, so it currently contributes no retained articles and is enabled to collect future posts. Repeat ingestion produced zero duplicates. Both use public RSS without API keys; these feeds do not provide the vendors' scanning databases or complete Censys ARC advisory coverage. See the [source review](docs/censys-shodan-source-review-2026-10-24.md) and [verification evidence](docs/censys-shodan-verification-2026-10-24.json).
+
+Also on 24 October, [Amazon Linux Security Center](https://explore.alas.aws.amazon.com/) and [Anthropic Research](https://www.anthropic.com/research) were enabled as `html_index` sources with publisher identities `amazon.com` and `anthropic.com`. The Amazon Linux collector reads CVE descriptions and public dates; a listing does not establish Amazon Linux affected status or patch availability. The Anthropic collector reads dated research cards, including linked Institute research, from the current rendered index. It does not follow JavaScript pagination. Isolated verification retained 8,835 AWS records and 24 Anthropic posts, with zero repeat duplicates. This historical ingestion does not classify the entire retained catalog: daily classification still selects the report window. [Implementation and coverage limits](docs/aws-anthropic-source-review-2026-10-24.md) and [verification evidence](docs/aws-anthropic-verification-2026-10-24.json) record the checks.
+
+These page sources publish dates without times. Records retain `date_precision: day` and the date's meaning; publication days are included when they overlap a report window, so a morning digest does not silently omit yesterday's posts. A date-only record can overlap adjacent daily windows. Sources with exact timestamps keep their existing window behavior. Unknown dates, off-publisher links, changed layouts and oversized responses are rejected; partial parsing retains valid entries, marks the source degraded and retries the failed content.
 
 For a publisher whose article links are broken but whose URL-shaped entry IDs have been verified, set `entry_url_field: id` on that feed. This option accepts only HTTP(S) IDs on the feed's own host. Qualys research uses it because its feed repeats a category URL in every article link; all other feeds default to `link`.
 

@@ -2,6 +2,12 @@
 
 Latest validation: **24 October 2026**, Europe/Paris. Earlier sections retain their historical evidence and test counts; live build checks were performed on 17 October unless stated otherwise.
 
+## Amazon Linux and Anthropic page collectors — 24 October
+
+Both requested public pages are enabled through explicit publisher-specific `html_index` parsers. Configuration now contains **69 definitions: 41 enabled and 28 disabled**. **231 tests passed**, Ruff lint/format checks passed, the saved incident-grouping check passed, and daily/weekly fixture previews completed without network or email. New regression tests cover publisher layouts, actual publication dates, day-only report eligibility, out-of-scope links, malformed/oversized content, robots denial, redirects, retention, conditional fetching and repeat ingestion.
+
+Final live verification used an in-memory database and the standard fetch policy. Amazon Linux supplied **8,835 retained CVE records**, Anthropic supplied **24 research posts**, and repeat ingestion after clearing conditional HTTP metadata added **zero duplicates**. Both sources had zero parse/fetch failures. The current daily window selected **142 unclassified clusters**, confirming day-only records are eligible without making classification calls. No production data or delivery history changed and no email was sent. The [source review](docs/aws-anthropic-source-review-2026-10-24.md) explains coverage and date precision; [verification evidence](docs/aws-anthropic-verification-2026-10-24.json) records the final observations.
+
 ## Censys and Shodan feeds — 24 October
 
 Both official blog RSS feeds are enabled, bringing the configuration to **67 definitions: 39 enabled and 28 disabled**. The existing source and configuration tests passed (**15 tests**). The final configured feeds were verified with the normal HTTP/robots policy and an in-memory database: Censys supplied ten retained articles, Shodan supplied zero because its newest entry was 7 August 2024, and both feeds fetched successfully. Repeat ingestion after clearing conditional HTTP metadata added zero articles.

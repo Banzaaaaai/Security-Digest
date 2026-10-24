@@ -1,0 +1,153 @@
+{
+  "checked_at": "2026-10-24T10:46:09.925611+00:00",
+  "collection": "SecDigest Fetcher with robots policy and size/redirect limits; in-memory SQLite",
+  "retention_days": 120,
+  "classification_run": false,
+  "email_sent": false,
+  "sources": [
+    {
+      "name": "Amazon Linux Security Center",
+      "url": "https://explore.alas.aws.amazon.com/",
+      "resolved_url": "https://explore.alas.aws.amazon.com/",
+      "parser": "amazon_linux_cves",
+      "bytes": 18567080,
+      "sha256": "546d9c24d20fe7a1b1d4054c98c0d15bc1f20715ba2cd77ca6bdac1afa921950",
+      "parsed_articles": 33938,
+      "retained_articles": 8835,
+      "inferred_dates": 0,
+      "newest_published": "2026-10-23T00:00:00+00:00",
+      "stats": {
+        "entries": 33940,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 2
+      },
+      "samples": [
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-98921.html",
+          "title": "CVE-2026-98921: In the Linux kernel, the following vulnerability has been resolved: ovl: fix UAF in ovl_do_mkdir() debug print",
+          "published": "2026-10-23T00:00:00+00:00",
+          "date_basis": "CVE public date, not Amazon Linux advisory or patch release date",
+          "date_precision": "day"
+        },
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-98971.html",
+          "title": "CVE-2026-98971: In the Linux kernel, the following vulnerability has been resolved: gpio: exar: initialize the ID before registering its cleanup",
+          "published": "2026-10-23T00:00:00+00:00",
+          "date_basis": "CVE public date, not Amazon Linux advisory or patch release date",
+          "date_precision": "day"
+        },
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-99056.html",
+          "title": "CVE-2026-99056: In the Linux kernel, the following vulnerability has been resolved: strparser: make sure __strp_recv isn't running before tearing down the parser",
+          "published": "2026-10-23T00:00:00+00:00",
+          "date_basis": "CVE public date, not Amazon Linux advisory or patch release date",
+          "date_precision": "day"
+        }
+      ]
+    },
+    {
+      "name": "Anthropic Research",
+      "url": "https://www.anthropic.com/research",
+      "resolved_url": "https://www.anthropic.com/research",
+      "parser": "anthropic_research",
+      "bytes": 415916,
+      "sha256": "fe624c20a6e807354a30c9224100104b8e64b58923901bb3104730fe14726ba9",
+      "parsed_articles": 24,
+      "retained_articles": 24,
+      "inferred_dates": 0,
+      "newest_published": "2026-10-23T00:00:00+00:00",
+      "stats": {
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      },
+      "samples": [
+        {
+          "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+          "title": "An alignment assessment of the UK AISI cybertesting incident",
+          "published": "2026-10-23T00:00:00+00:00",
+          "date_basis": "Research publication date",
+          "date_precision": "day"
+        },
+        {
+          "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+          "title": "How Claude designed protein binders against scorpion neurotoxins",
+          "published": "2026-10-20T00:00:00+00:00",
+          "date_basis": "Research publication date",
+          "date_precision": "day"
+        },
+        {
+          "url": "https://www.anthropic.com/research/expectations-for-the-future",
+          "title": "Working at the frontier shapes expectations for the future",
+          "published": "2026-10-16T00:00:00+00:00",
+          "date_basis": "Research publication date",
+          "date_precision": "day"
+        }
+      ]
+    }
+  ],
+  "ingestion": {
+    "first": {
+      "at": "2026-10-24T10:46:09.925611+00:00",
+      "enabled": 2,
+      "failures": 0,
+      "new": 8859,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 8835,
+          "entries": 33940,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 2
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 24,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    },
+    "repeat_without_conditional_cache": {
+      "at": "2026-10-24T10:46:09.925611+00:00",
+      "enabled": 2,
+      "failures": 0,
+      "new": 0,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 0,
+          "entries": 33940,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 2
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 0,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    }
+  },
+  "daily_window": {
+    "start": "2026-10-23T10:46:09.925611+00:00",
+    "end": "2026-10-24T10:46:09.925611+00:00",
+    "unclassified_clusters": 142,
+    "date_policy": "Date-only publication days overlap the report window; exact timestamps are unchanged"
+  }
+}

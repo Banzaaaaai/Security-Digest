@@ -585,6 +585,28 @@ feeds:
   verified: true
   last_error: ''
   coverage_note: Newest entry was 2024-08-07 at verification on 2026-10-24; no entries inside 120-day retention.
+- name: Amazon Linux Security Center
+  url: https://explore.alas.aws.amazon.com/
+  tier: advisory
+  site: https://explore.alas.aws.amazon.com/
+  independence_key: amazon.com
+  enabled: true
+  type: html_index
+  parser: amazon_linux_cves
+  verified: true
+  last_error: ''
+  coverage_note: Public CVE index and public dates; listing alone does not establish Amazon Linux affected status or patch availability. Advisory RSS host robots.txt returned HTTP 403 at verification.
+- name: Anthropic Research
+  url: https://www.anthropic.com/research
+  tier: research
+  site: https://www.anthropic.com/research
+  independence_key: anthropic.com
+  enabled: true
+  type: html_index
+  parser: anthropic_research
+  verified: true
+  last_error: ''
+  coverage_note: Research cards rendered in the public index, with publication dates and publisher summaries; no JavaScript pagination, full article text or news feed.
 enrichment:
   cisa_kev_json: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
   cisa_kev_fallback_json: https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json

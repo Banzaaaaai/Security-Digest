@@ -134,7 +134,10 @@ def classification_params(config, clusters, fulltext=None):
         {
             "cluster_id": c["id"],
             "sources": [
-                {k: a[k] for k in ("title", "summary", "url", "source", "published", "links")}
+                {
+                    **{k: a[k] for k in ("title", "summary", "url", "source", "published", "links")},
+                    **{k: a[k] for k in ("date_precision", "date_basis") if k in a},
+                }
                 for a in c["articles"]
             ],
         }
