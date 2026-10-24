@@ -12,19 +12,19 @@
 <tr><td style="padding:16px 20px;overflow-wrap:anywhere">
 
 
-<p style="margin:10px 0">Window: 2026-10-23T09:18:26.547247+00:00 to 2026-10-24T09:18:26.547247+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
+<p style="margin:10px 0">Window: 2026-10-23T09:57:24.082517+00:00 to 2026-10-24T09:57:24.082517+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
 
 
 <p style="margin:10px 0">Relevance percentages measure applicability, not attack probability or victim share. Global software issues apply in every region where affected versions are used. Priority /100 uses severity bands: critical 85-100, high 65-84.99, medium 35-64.99, low 0-34.99.</p>
 
 
-<p style="margin:10px 0">CRITICAL 4 · HIGH 25 · MEDIUM 14 · LOW 16 · New KEV entries 2 · Watch technology hits 13</p>
+<p style="margin:10px 0">CRITICAL 4 · HIGH 23 · MEDIUM 14 · LOW 15 · New KEV entries 2 · Watch technology hits 13</p>
 
 
-<p style="margin:10px 0">Source health: 37 enabled feeds; 1 failures; 53 new articles at last ingestion.</p>
+<p style="margin:10px 0">Source health: 37 enabled feeds; 1 failures; 0 new articles at last ingestion.</p>
 
 
-<p style="margin:10px 0">Enrichment coverage: KEV: using the official GitHub mirror; primary unavailable or invalid</p>
+<p style="margin:10px 0">Enrichment coverage: KEV: using the official GitHub mirror; primary unavailable at last check</p>
 
 
 <p style="margin:10px 0">Coverage note: CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.</p>
@@ -154,31 +154,6 @@
 </p>
 <p><strong>Detection assessment:</strong> No detection-rule URLs were supplied. Teams should identify affected Node.js versions in build and runtime environments and watch for abnormal process behavior in services that decode untrusted content.</p>
 <p><strong>Sources:</strong> <a href="https://blog.qualys.com/?p=43069" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Qualys Vulnerabilities and Threat Research</a>
-
-</p>
-<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
-
-
-<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
-<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 79.5</span>
-<h3 style="font-size:17px;line-height:1.4;margin:10px 0">Critical Pillow EPS handling flaw can enable command execution</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 95% · Secure software delivery and DevSecOps 70%</p><p>A critical flaw in Python’s Pillow image library can allow command execution when processing crafted EPS files. The issue stems from how Pillow invokes Ghostscript to render EPS content, and it may affect server-side image handling workflows.</p>
-<p><strong>Why it matters:</strong> A critical code execution flaw in widely used Python image-processing software is broadly relevant, but the cluster does not report active exploitation or a confirmed widespread compromise, so high is more appropriate than critical.</p><p><strong>Action:</strong> Identify systems using Pillow for image processing, confirm whether EPS handling is enabled, and prioritize patching or compensating controls. Review any server-side workflows that accept untrusted images and restrict Ghostscript execution paths where possible.</p>
-<p style="font-size:12px">CVE-2026-112900 | KEV not listed | EPSS 0.00431 | CVSS unknown
-</p>
-<p><strong>Detection assessment:</strong> No detection rules were linked in the source. Defenders should focus on exposure inventory, version checks, and monitoring for unexpected Ghostscript invocations from image-processing services.</p>
-<p><strong>Sources:</strong> <a href="https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
-
-</p>
-</td></tr></table>
-
-
-<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
-<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 79.5</span>
-<h3 style="font-size:17px;line-height:1.4;margin:10px 0">PHP flaws disrupt websites, with broader impact still being assessed</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 95% · Secure software delivery and DevSecOps 70%</p><p>Two PHP vulnerabilities reportedly caused many websites to go offline, though the broader societal impact is still unclear. The reporting indicates a significant web-application issue, but the available details remain limited.</p>
-<p><strong>Why it matters:</strong> PHP is common web infrastructure with broad enterprise exposure, and the cluster describes outages tied to multiple vulnerabilities. Even without confirmed exploitation details, the operational impact and platform ubiquity support high importance.</p><p><strong>Action:</strong> Locate externally reachable PHP deployments, verify affected versions, and apply vendor patches or mitigations quickly. Check dependent applications and hosting platforms for outage exposure and rollback risks.</p>
-
-<p><strong>Detection assessment:</strong> No detection rules were linked in the source. Teams should inventory exposed PHP versions, confirm patch status, and watch for anomalous web-server behavior on public-facing applications.</p>
-<p><strong>Sources:</strong> <a href="https://www.security.nl/posting/958740/Minister%3A+maatschappelijke+impact+van+PHP-lekken+nog+onduidelijk?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
 
 </p>
 <p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
@@ -442,16 +417,6 @@
 
 </td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://blog.qualys.com/?p=43069" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Qualys Vulnerabilities and Threat Research</a>
 
-</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Critical Pillow EPS handling flaw can enable command execution</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">79.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 95%; Secure software delivery and DevSecOps 70%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">CVE-2026-112900</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
-<br><a href="https://brusiantsou.com/stories/vendor-release-automation/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Vendor release automation</a>
-
-</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
-
-</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">PHP flaws disrupt websites, with broader impact still being assessed</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">79.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 95%; Secure software delivery and DevSecOps 70%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
-<br><a href="https://brusiantsou.com/stories/vendor-release-automation/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Vendor release automation</a>
-
-</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/958740/Minister%3A+maatschappelijke+impact+van+PHP-lekken+nog+onduidelijk?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
-
 </td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">PHP reports unpatched remote code execution issue with mitigations</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">79.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 95%; Secure software delivery and DevSecOps 40%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
 
 </td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
@@ -707,7 +672,6 @@
 
 <ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0"><a href="https://www.darkreading.com/cyber-risk/cyber-insurances-underwriting-isnt-enough" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Cyber insurance carriers expand into active security services</a>
 </li><li style="margin:6px 0"><a href="https://www.security.nl/posting/958786/OpenSSL+Project+lanceert+OpenSSL+4_1_0%3A+%27Belangrijke+nieuwe+functionaliteit%27?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">OpenSSL 4.1.0 released with major new features</a>
-</li><li style="margin:6px 0"><a href="https://www.security.nl/posting/958728/Onderzoekers+noemen+smart-tv+privacyrisico%3A+%27Blijft+na+opt-out+data+versturen%27?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Research finds some smart TVs keep sending ACR data after opt-out</a>
 </li><li style="margin:6px 0"><a href="https://socket.dev/blog/cloudflare-typescript-rust" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Cloudflare releases faster Rust-based TypeScript compiler</a>
 </li><li style="margin:6px 0"><a href="https://arstechnica.com/tech-policy/2026/10/knicks-sent-employees-fake-offer-of-championship-rings-in-phishing-test-report/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Phishing test sent to Knicks staff uses fake championship ring offer</a>
 </li><li style="margin:6px 0"><a href="https://www.darkreading.com/cyber-risk/why-caribbean-threats-cascade-global-cyber-risk" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Caribbean cyber threats highlight regional resilience gaps</a>

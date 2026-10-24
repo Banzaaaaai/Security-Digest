@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-24",
-  "start": "2026-10-23T09:18:26.547247+00:00",
-  "end": "2026-10-24T09:18:26.547247+00:00",
+  "start": "2026-10-23T09:57:24.082517+00:00",
+  "end": "2026-10-24T09:57:24.082517+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1130,220 +1130,6 @@
         "industry": 7.0,
         "practice": 13.5,
         "weighted_total": 79.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "e21e419ebac57752b2c85850",
-      "headline": "Critical Pillow EPS handling flaw can enable command execution",
-      "summary": "A critical flaw in Python’s Pillow image library can allow command execution when processing crafted EPS files. The issue stems from how Pillow invokes Ghostscript to render EPS content, and it may affect server-side image handling workflows.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "A critical code execution flaw in widely used Python image-processing software is broadly relevant, but the cluster does not report active exploitation or a confirmed widespread compromise, so high is more appropriate than critical.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 30,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 70,
-        "siem_detection": 20,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Python",
-        "Pillow",
-        "Ghostscript"
-      ],
-      "cves": [
-        "CVE-2026-112900"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked in the source. Defenders should focus on exposure inventory, version checks, and monitoring for unexpected Ghostscript invocations from image-processing services.",
-      "related_case_studies": [
-        "continuous-vulnerability-management",
-        "vendor-release-automation"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Identify systems using Pillow for image processing, confirm whether EPS handling is enabled, and prioritize patching or compensating controls. Review any server-side workflows that accept untrusted images and restrict Ghostscript execution paths where possible.",
-      "confidence": 0.97,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html",
-          "source": "The Hacker News",
-          "published": "2026-10-23T09:36:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A critical code execution flaw in widely used Python image-processing software is broadly relevant, but the cluster does not report active exploitation or a confirmed widespread compromise, so high is more appropriate than critical.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-112900": {
-          "kev": null,
-          "epss": 0.00431,
-          "cvss": null
-        }
-      },
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 79.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 14.25,
-        "weighted_total": 79.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "76334edda05f737343c98305",
-      "headline": "PHP flaws disrupt websites, with broader impact still being assessed",
-      "summary": "Two PHP vulnerabilities reportedly caused many websites to go offline, though the broader societal impact is still unclear. The reporting indicates a significant web-application issue, but the available details remain limited.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "PHP is common web infrastructure with broad enterprise exposure, and the cluster describes outages tied to multiple vulnerabilities. Even without confirmed exploitation details, the operational impact and platform ubiquity support high importance.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 70,
-        "siem_detection": 10,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "PHP"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked in the source. Teams should inventory exposed PHP versions, confirm patch status, and watch for anomalous web-server behavior on public-facing applications.",
-      "related_case_studies": [
-        "continuous-vulnerability-management",
-        "vendor-release-automation"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Locate externally reachable PHP deployments, verify affected versions, and apply vendor patches or mitigations quickly. Check dependent applications and hosting platforms for outage exposure and rollback risks.",
-      "confidence": 0.95,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/958740/Minister%3A+maatschappelijke+impact+van+PHP-lekken+nog+onduidelijk?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-10-23T09:51:59+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
-      ],
-      "model_importance": "high",
-      "model_importance_rationale": "PHP is common web infrastructure with broad enterprise exposure, and the cluster describes outages tied to multiple vulnerabilities. Even without confirmed exploitation details, the operational impact and platform ubiquity support high importance.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Common web and operating-system infrastructure",
-      "independent_sources_24h": 1,
-      "priority": 79.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 14.25,
-        "weighted_total": 79.5,
         "severity_band": [
           65,
           84.99
@@ -5484,104 +5270,6 @@
       "included": false
     },
     {
-      "cluster_id": "f0b06073af72dc1a7425274b",
-      "headline": "Research finds some smart TVs keep sending ACR data after opt-out",
-      "summary": "Researchers report that some smart TVs may continue transmitting automatic content recognition data even after users opt out. The finding is a privacy and transparency concern, but the article frames it as research rather than a confirmed breach or active attack.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "The item describes privacy research into consumer smart TVs rather than an enterprise security incident, vulnerability disclosure, or regulatory action. It is relevant mainly as a privacy and device-governance issue.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 15,
-        "Other": 25
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 40,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "smart TVs",
-        "ACR"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided. Possible mitigations are device policy review, network monitoring for telemetry, and privacy control validation.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Validate smart TV privacy settings, restrict unnecessary telemetry where possible, and review vendor data-sharing disclosures.",
-      "confidence": 0.79,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/958728/Onderzoekers+noemen+smart-tv+privacyrisico%3A+%27Blijft+na+opt-out+data+versturen%27?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-10-23T09:27:58+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "The item describes privacy research into consumer smart TVs rather than an enterprise security incident, vulnerability disclosure, or regulatory action. It is relevant mainly as a privacy and device-governance issue.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 18.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.75,
-        "industry": 0.0,
-        "practice": 6.0,
-        "weighted_total": 18.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "65090df5a803006d78c76c68",
       "headline": "Cloudflare releases faster Rust-based TypeScript compiler",
       "summary": "Cloudflare announced tsrs, a Rust implementation of the TypeScript compiler aimed at faster checks and lower memory use. The item is product and engineering news rather than a security incident.",
@@ -6290,9 +5978,9 @@
   ],
   "counts": {
     "critical": 4,
-    "high": 25,
+    "high": 23,
     "medium": 14,
-    "low": 16
+    "low": 15
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -6517,53 +6205,53 @@
       }
     ]
   },
-  "other_count": 10,
+  "other_count": 9,
   "source_health": {
-    "at": "2026-10-24T09:18:26.547247+00:00",
+    "at": "2026-10-24T09:57:24.082517+00:00",
     "enabled": 37,
     "failures": 1,
-    "new": 53,
+    "new": 0,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -6573,22 +6261,22 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -6621,17 +6309,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -6676,7 +6364,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -6706,12 +6394,12 @@
       {
         "name": "Metasploit Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
@@ -6731,7 +6419,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-23T19:30:18.920900+00:00",
@@ -6750,8 +6438,6 @@
       "ad7396463092f2b221e8ab24",
       "d3e6fb1a3911b1e6b90b1f06",
       "a2081f19ae4a0a730d55036c",
-      "e21e419ebac57752b2c85850",
-      "76334edda05f737343c98305",
       "cadd6afddac3d48e5837b9bb",
       "f32271df15f1fe62cb6ec62e",
       "14b4c9cf953f428c07e635f7",
@@ -6789,8 +6475,6 @@
     "continuous-vulnerability-management": [
       "d3e6fb1a3911b1e6b90b1f06",
       "b3406998fb7168cf9a8a1735",
-      "e21e419ebac57752b2c85850",
-      "76334edda05f737343c98305",
       "d32d82b9d6777801ca8f0750",
       "cadd6afddac3d48e5837b9bb",
       "f32271df15f1fe62cb6ec62e",
