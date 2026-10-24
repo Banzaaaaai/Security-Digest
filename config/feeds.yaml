@@ -565,6 +565,26 @@ feeds:
   verified: true
   last_error: ''
   coverage_note: Valid RSS but zero entries at verification; useful publication coverage remains unproven.
+- name: Censys Blog
+  url: https://censys.com/feed/
+  tier: vendor
+  site: https://censys.com/resources/blog/
+  independence_key: censys.com
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+  coverage_note: Public research and product posts; not the Censys database or complete ARC advisory coverage.
+- name: Shodan Blog
+  url: https://blog.shodan.io/rss/
+  tier: vendor
+  site: https://blog.shodan.io/
+  independence_key: shodan.io
+  enabled: true
+  type: rss
+  verified: true
+  last_error: ''
+  coverage_note: Newest entry was 2024-08-07 at verification on 2026-10-24; no entries inside 120-day retention.
 enrichment:
   cisa_kev_json: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
   cisa_kev_fallback_json: https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json

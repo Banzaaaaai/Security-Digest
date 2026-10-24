@@ -1,6 +1,12 @@
 # SecDigest validation record
 
-Latest validation: **22 October 2026**, Europe/Paris. Earlier sections retain their historical evidence and test counts; live build checks were performed on 17 October unless stated otherwise.
+Latest validation: **24 October 2026**, Europe/Paris. Earlier sections retain their historical evidence and test counts; live build checks were performed on 17 October unless stated otherwise.
+
+## Censys and Shodan feeds — 24 October
+
+Both official blog RSS feeds are enabled, bringing the configuration to **67 definitions: 39 enabled and 28 disabled**. The existing source and configuration tests passed (**15 tests**). The final configured feeds were verified with the normal HTTP/robots policy and an in-memory database: Censys supplied ten retained articles, Shodan supplied zero because its newest entry was 7 August 2024, and both feeds fetched successfully. Repeat ingestion after clearing conditional HTTP metadata added zero articles.
+
+The [source review](docs/censys-shodan-source-review-2026-10-24.md) records the enabled configuration and coverage limits; [machine-readable evidence](docs/censys-shodan-verification-2026-10-24.json) records timestamps, response hashes and ingestion results. Verification did not change production data, classify stories or send email. Neither feed had an entry inside the trailing 24 hours at verification, so enabling them does not itself add stories to the current daily report.
 
 ## Scoring and daily operation — 22 October
 

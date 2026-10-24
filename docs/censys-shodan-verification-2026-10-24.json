@@ -1,0 +1,177 @@
+{
+  "checked_at": "2026-10-24T10:34:31.426498+00:00",
+  "collection": "SecDigest Fetcher with robots.txt checks; in-memory database",
+  "retention_days": 120,
+  "classification_run": false,
+  "email_sent": false,
+  "results": [
+    {
+      "url": "https://censys.com/feed/",
+      "checked_at": "2026-10-24T10:34:31.426498+00:00",
+      "resolved_url": "https://censys.com/feed/",
+      "bytes": 230813,
+      "sha256": "94db56c07c1aa9bae968a7c18f35bc77eeda1348b004e19c389b682fbce62bd2",
+      "format": "rss20",
+      "title": "Censys",
+      "site": "https://censys.com/",
+      "description": "The Authority for Internet Intelligence and Insights",
+      "entries": 10,
+      "parsed_articles": 10,
+      "inferred_dates": 0,
+      "retained_articles": 10,
+      "articles_in_last_24_hours": 0,
+      "articles_in_last_7_days": 0,
+      "newest_published": "2026-10-16T18:36:14+00:00",
+      "categories": [
+        "Adversary Infrastructure",
+        "Attack Surface Management",
+        "C2",
+        "Censys Platform",
+        "Critical Infrastructure",
+        "Internet Intelligence",
+        "Product News",
+        "Research",
+        "State of the Internet Report",
+        "Threat Intelligence",
+        "Uncategorized"
+      ],
+      "samples": [
+        {
+          "url": "https://censys.com/blog/web-scanning-in-censys-asm-just-got-deeper/",
+          "title": "Web Scanning in Censys ASM Just Got Deeper",
+          "published": "2026-10-16T18:36:14+00:00",
+          "summary": "When you open your company\u2019s website in a browser, you see the finished product: the navigation, the login form, the interactive widgets. It looks complete because your browser did the heavy lifting to build it. But much of what you see, and a lot of what an attacker can reach, isn\u2019t actually in the raw [\u2026] \n The post  Web Scanning in Censys ASM Just Got Deeper  appeared first on  Censys ."
+        },
+        {
+          "url": "https://censys.com/blog/frostbitten-in-france-a-danfoss-storeview-internet-exposure-report/",
+          "title": "Frostbitten in France: A Danfoss StoreView Internet Exposure Report",
+          "published": "2026-10-14T19:39:35+00:00",
+          "summary": "Executive Summary On the night of 11 October, attackers switched hundreds of French supermarket fridges into defrost mode. If that sounds familiar: in August, the Department of Defense confirmed refrigeration disruptions at US military commissaries, where at least one base reported that all its freezers had gone into defrost mode. The Department has not said [\u2026] \n The post  Frostbitten in France: A Danfoss StoreView Internet Exposure Report  appe"
+        },
+        {
+          "url": "https://censys.com/blog/state-of-the-internet-report-2026/",
+          "title": "5 Key Takeaways From Censys\u2019 State of the Internet Report",
+          "published": "2026-10-14T13:00:00+00:00",
+          "summary": "New research from Censys\u2019 2026 State of the Internet Report challenges familiar assumptions about where Internet infrastructure lives, how it changes, and what\u2019s exposed.\u00a0 The report examines the Internet from five angles: AI exposures, ICS exposures, vulnerability response, threat infrastructure, and the Internet at large. Across these perspectives, one thing remains clear: the Internet is [\u2026] \n The post  5 Key Takeaways From Censys\u2019 State of th"
+        },
+        {
+          "url": "https://censys.com/blog/new-on-the-map-september-2026-22-protocol-and-endpoint-scanners/",
+          "title": "New on the Map \u2014 September 2026: 22 Protocol and Endpoint Scanners",
+          "published": "2026-10-08T14:56:22+00:00",
+          "summary": "Most organizations do not have a complete picture of what is reachable from the Internet. A router, a camera system, a data warehouse, a building access controller \u2014 any one of these could be answering requests from anywhere in the world right now, and your security team might not know. Attackers scan for these services [\u2026] \n The post  New on the Map \u2014 September 2026: 22 Protocol and Endpoint Scanners  appeared first on  Censys ."
+        },
+        {
+          "url": "https://censys.com/blog/the-ultimate-guide-to-brand-protection-with-censys/",
+          "title": "The Ultimate Guide to Brand Protection with Censys",
+          "published": "2026-10-09T19:21:32+00:00",
+          "summary": "On August 23, 2026, a PowerShell dropper reached out to hxxp://binance-idexchange[.]com/333.mp4 for its next stage. Binance, the world\u2019s largest cryptocurrency exchange with hundreds of millions of users, had nothing to do with it \u2014 duh! This mp4 \u201cvideo\u201d file contained an encrypted, compressed 16.8 MB PowerShell script. Censys ARC published the full chain five days [\u2026] \n The post  The Ultimate Guide to Brand Protection with Censys  appeared first"
+        },
+        {
+          "url": "https://censys.com/blog/darksword-coruna-open-directory-finding-report/",
+          "title": "DarkSword/Coruna Open Directory Finding Report",
+          "published": "2026-10-07T16:03:01+00:00",
+          "summary": "Executive summary Key judgments Background: DarkSword and Coruna DarkSword is an exploit chain for iOS that Google Threat Intelligence Group (GTIG) first documented publicly in March 2026. The chain attacks WebKit and JavaScriptCore to gain code execution, escapes the browser sandbox, escalates to kernel privileges, and injects into SpringBoard, the iOS process that manages app [\u2026] \n The post  DarkSword/Coruna Open Directory Finding Report  appea"
+        }
+      ]
+    },
+    {
+      "url": "https://blog.shodan.io/rss/",
+      "checked_at": "2026-10-24T10:34:31.426498+00:00",
+      "resolved_url": "https://blog.shodan.io/rss/",
+      "bytes": 65086,
+      "sha256": "04e04aca86e72e2908d795b1de8d0bb2673f154fc9b4287b6b45390e47fad6ce",
+      "format": "rss20",
+      "title": "Shodan Blog",
+      "site": "https://blog.shodan.io/",
+      "description": "The latest news and developments for Shodan.",
+      "entries": 15,
+      "parsed_articles": 15,
+      "inferred_dates": 0,
+      "retained_articles": 0,
+      "articles_in_last_24_hours": 0,
+      "articles_in_last_7_days": 0,
+      "newest_published": "2024-08-07T20:11:36+00:00",
+      "categories": [
+        "changelog"
+      ],
+      "samples": [
+        {
+          "url": "https://blog.shodan.io/5-free-things-for-everybody/",
+          "title": "5 Free Things for Everybody",
+          "published": "2024-08-07T20:11:36+00:00",
+          "summary": "Here are some of the free services that Shodan provides that don't require any payment, don't require a Shodan account and don't require an API key: \n\n 1. Vulnerability Information \n\n https://cvedb.shodan.io \n\n The CVEDB website lets you explore known vulnerabilities and provides a free API to quickly get vulnerability"
+        },
+        {
+          "url": "https://blog.shodan.io/deep-dive-malware-hunter/",
+          "title": "Deep Dive: Malware Hunter",
+          "published": "2024-01-14T18:28:29+00:00",
+          "summary": "There are many ways to track command & control servers from bad guys but they often rely on looking for indicators in the service metadata (ex. certificate information). Around a decade ago we developed a novel technique to proactively find the infrastructure:  Malware Hunter . Malware Hunter finds command & control"
+        },
+        {
+          "url": "https://blog.shodan.io/deep-dive-http-favicon/",
+          "title": "Deep Dive: http.favicon",
+          "published": "2024-01-10T00:08:16+00:00",
+          "summary": "Favicons  are the small icons that you see in the browser tab next to the website title or in your bookmarks. For example, the Shodan logo on the left side of the browser tab is the favicon: \n\n \n\n They typically contain the logo of the company which gives them 2 functions:"
+        },
+        {
+          "url": "https://blog.shodan.io/changelog-www-shodan-io/",
+          "title": "Changelog: www.shodan.io",
+          "published": "2023-08-30T18:45:56+00:00",
+          "summary": "A few notable usability improvements to the IP information page: \n\n Web Technologies \n\n \n\n Web technologies are now grouped by categories and we show version information (if available). The information was always grouped in the underlying JSON and we now also show it that way on the website. Learn more about the"
+        },
+        {
+          "url": "https://blog.shodan.io/developer-access-to-shodan-trends/",
+          "title": "Developer Access to Shodan Trends",
+          "published": "2023-08-21T02:22:04+00:00",
+          "summary": "As a quick recap,  Shodan Trends  is a website that lets you see how the Internet has changed over time. For example, you can use it to see how exposed industrial control systems have been over the years: \n\n \n\n Up until now, the only option to download the information was to"
+        },
+        {
+          "url": "https://blog.shodan.io/accepting-crypto-a-vendor-perspective/",
+          "title": "Accepting Crypto: A Vendor Perspective",
+          "published": "2022-08-03T00:08:57+00:00",
+          "summary": "We've recently decided to stop accepting cryptocurrency payments (again) and I wanted to share some of the issues we encountered. \n\n Background \n\n Shodan is a website aimed at technical users and organizations. We have nearly 5 million registered users which makes Shodan one of the larger security-related websites. Around 8 years"
+        }
+      ]
+    }
+  ],
+  "ingestion": {
+    "first": {
+      "at": "2026-10-24T10:34:31.426498+00:00",
+      "enabled": 2,
+      "failures": 0,
+      "new": 10,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    },
+    "repeat_without_conditional_cache": {
+      "at": "2026-10-24T10:34:31.426498+00:00",
+      "enabled": 2,
+      "failures": 0,
+      "new": 0,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        }
+      ]
+    }
+  }
+}
