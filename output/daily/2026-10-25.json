@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-25",
-  "start": "2026-10-24T09:34:52.856869+00:00",
-  "end": "2026-10-25T09:34:52.856869+00:00",
+  "start": "2026-10-24T10:19:40.317952+00:00",
+  "end": "2026-10-25T10:19:40.317952+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -733,21 +733,21 @@
   "regulations": {},
   "other_count": 0,
   "source_health": {
-    "at": "2026-10-25T09:34:52.856869+00:00",
+    "at": "2026-10-25T10:19:40.317952+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 8961,
+    "new": 0,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -757,7 +757,7 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SecurityWeek",
@@ -835,7 +835,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -945,7 +945,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -955,16 +955,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 8919,
-        "entries": 34024,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 24,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -973,7 +969,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-23T19:30:18.920900+00:00",

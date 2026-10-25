@@ -4524,5 +4524,270 @@
     "estimated_usd": 0.0222375,
     "email_type": "daily",
     "email_sent": true
+  },
+  {
+    "timestamp": "2026-10-25T10:19:40.215028+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-10-25T10:19:40.317952+00:00",
+      "enabled": 41,
+      "failures": 1,
+      "new": 0,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 232,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 40,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 4,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 0,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [
+      "KEV: using the official GitHub mirror; primary unavailable at last check"
+    ],
+    "classification": {
+      "classified": 0,
+      "usage": []
+    },
+    "period": "2026-10-25",
+    "counts": {
+      "critical": 1,
+      "high": 3,
+      "medium": 1,
+      "low": 1
+    },
+    "items": 6,
+    "duplicates_removed": 0,
+    "delivery_skipped": "Already sent for this period",
+    "duration_s": 78.68,
+    "usage": [],
+    "estimated_usd": null,
+    "email_type": null,
+    "email_sent": false
   }
 ]
