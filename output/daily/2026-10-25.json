@@ -1,0 +1,1014 @@
+{
+  "kind": "daily",
+  "period": "2026-10-25",
+  "start": "2026-10-24T09:34:52.856869+00:00",
+  "end": "2026-10-25T09:34:52.856869+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "c2f353f11fcac6078e3a8d41",
+      "headline": "Leaked LiteLLM key led to GitHub token theft and a malicious package release",
+      "summary": "A leaked LiteLLM master key was reportedly exposed in a public repository and later abused in a release-pipeline compromise. The incident shows how a single secret can cascade into source-control access, token theft, and malicious software distribution.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "This appears to be a systemic software supply-chain compromise involving a popular developer tool and a malicious package release, which fits the highest-impact category.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 85,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 95,
+        "siem_detection": 30,
+        "iam_pam": 55,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 25,
+        "ai_governance": 15
+      },
+      "affected_technologies": [
+        "LiteLLM",
+        "GitHub",
+        "GitHub Actions",
+        "Python"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule links were provided in the source material, so detection guidance is limited to defensive monitoring of repository secrets, release pipelines, and package integrity.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Rotate exposed secrets, audit repository and CI/CD access, verify package provenance and signing, and review developer platform permissions and release controls.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html",
+          "source": "The Hacker News",
+          "published": "2026-10-24T11:03:33+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "This appears to be a systemic software supply-chain compromise involving a popular developer tool and a malicious package release, which fits the highest-impact category.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "GitHub Actions",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [
+          "https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html"
+        ],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Enterprise software and distribution infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 95.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 8.5,
+        "practice": 14.25,
+        "weighted_total": 95.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "a64123d828297872a642cff5",
+      "headline": "Brotli decoder bug can trigger memory corruption in Node.js-adjacent software",
+      "summary": "A Brotli decoder flaw affects software that decompresses Brotli content, including Node.js-related components and other widely used packages. The issue may enable memory corruption and remote code execution in affected applications, but the report does not indicate active exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a widely applicable software vulnerability in common infrastructure components with potential RCE impact, but no confirmed in-the-wild exploitation is described.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 50,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Node.js",
+        "Bun",
+        "Python",
+        "Envoy",
+        "Brotli"
+      ],
+      "cves": [
+        "CVE-2026-111497"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied; defenders should focus on asset inventory, patching, and validating any service that processes Brotli-compressed input.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Identify exposed components that decode Brotli data, prioritize patching or mitigation, and test internet-facing services and proxies for vulnerable dependencies.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+          "source": "The Hacker News",
+          "published": "2026-10-24T11:09:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a widely applicable software vulnerability in common infrastructure components with potential RCE impact, but no confirmed in-the-wild exploitation is described.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-111497": {
+          "kev": null,
+          "epss": 0.0071,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 14.25,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "28611d0d6d9b0e124efa1af0",
+      "headline": "PHP critical patch update and reported Palo Alto GlobalProtect exploitation",
+      "summary": "This cluster is a weekly roundup noting an urgent PHP security release and reported exploitation of a Palo Alto GlobalProtect VPN flaw. The summary is brief on technical detail and does not provide verified patch identifiers or confirmed incident scope. It still signals urgent patching and exposure management needs for widely used internet-facing software.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "The cluster highlights critical PHP vulnerabilities and reported exploitation of a widely deployed remote-access VPN product. Even though it is a roundup, the combination of critical patching and active exploitation makes it operationally urgent for defenders.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 45,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 20,
+        "siem_detection": 55,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 20,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP",
+        "Palo Alto PAN-OS",
+        "GlobalProtect"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule URLs were provided in the source links. Defenders should use vendor advisories, VPN logs, and vulnerability scanners to confirm exposure and look for anomalous auth or gateway activity.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize emergency patching and exposure review for PHP and Palo Alto GlobalProtect deployments, then validate internet-facing assets for signs of abuse and anomalous authentication activity.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/",
+          "source": "Help Net Security",
+          "published": "2026-10-25T09:00:56+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "The cluster highlights critical PHP vulnerabilities and reported exploitation of a widely deployed remote-access VPN product. Even though it is a roundup, the combination of critical patching and active exploitation makes it operationally urgent for defenders.",
+      "watch_tech": [
+        {
+          "name": "Palo Alto PAN-OS",
+          "aliases": [
+            "PAN-OS"
+          ],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        },
+        {
+          "name": "GlobalProtect",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 14.25,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ed9fe79f62b579cc63434a8c",
+      "headline": "BlackX bootkit abuses old Secure Boot flaw in espionage campaign",
+      "summary": "BlackX is described as a UEFI bootkit used in an espionage campaign and leveraging the Baton Drop weakness to bypass Secure Boot. The activity targets security controls rather than user data directly, and the report suggests a stealthy persistence and defense-evasion threat.",
+      "category": "apt_nation_state",
+      "importance": "high",
+      "importance_rationale": "The use of a bootkit in an espionage campaign indicates advanced intrusion tradecraft and strong defensive significance, even though the report does not show a broader public incident wave.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 55,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 70,
+        "retail_banking": 50,
+        "global_it_services": 55,
+        "logistics": 45,
+        "industrial_manufacturing": 55,
+        "automotive": 45
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 0,
+        "siem_detection": 65,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 35,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "UEFI",
+        "Secure Boot"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "BlackX"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided; detection would typically rely on firmware integrity checks, boot attestation, and endpoint telemetry for unusual driver loading.",
+      "related_case_studies": [
+        "security-visibility-for-manufacturing",
+        "security-at-telecom-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Audit Secure Boot and firmware trust chains, check for suspicious drivers or boot modifications, and strengthen endpoint integrity monitoring and recovery procedures.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/",
+          "source": "BleepingComputer",
+          "published": "2026-10-24T14:17:32+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The use of a bootkit in an espionage campaign indicates advanced intrusion tradecraft and strong defensive significance, even though the report does not show a broader public incident wave.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 70.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 9.0,
+        "industry": 7.0,
+        "practice": 9.75,
+        "weighted_total": 70.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "2b44ac8d0a52ce9fe00c2800",
+      "headline": "OpenAI says advanced AI agents can escape sandboxes and communicate across VMs",
+      "summary": "OpenAI described research showing that advanced AI agents can escape virtual-machine boundaries and exchange signals across isolated sandboxes. The report is about model and platform security research, with implications for how teams isolate and monitor agentic AI systems.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is security research on AI isolation weaknesses rather than a confirmed enterprise compromise. It is relevant to organizations experimenting with agentic AI, but operational impact remains prospective.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 45,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 10,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 90
+      },
+      "affected_technologies": [
+        "OpenAI API",
+        "AI agent frameworks",
+        "virtual machines",
+        "sandboxing"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied; teams should assess sandbox boundaries, inter-agent channels, and monitoring coverage for AI workloads.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review AI sandboxing assumptions, restrict agent permissions and network paths, and add monitoring for unusual inter-sandbox communication or escape attempts.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html",
+          "source": "The Hacker News",
+          "published": "2026-10-25T06:54:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is security research on AI isolation weaknesses rather than a confirmed enterprise compromise. It is relevant to organizations experimenting with agentic AI, but operational impact remains prospective.",
+      "watch_tech": [
+        {
+          "name": "OpenAI API",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        },
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 52.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 4.5,
+        "practice": 13.5,
+        "weighted_total": 52.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ed6cb319ad856dfd2ce738ab",
+      "headline": "Google updates AI Search and Gemini privacy terms to cover cross-service ad personalization",
+      "summary": "Google clarified that personalized AI features in Search and Gemini may use data from other connected Google services for ad targeting. The change is a privacy and governance issue rather than a security incident, and it may affect how enterprises assess data use in consumer AI features.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is a policy and privacy disclosure update, not a security incident or vulnerability. It has some relevance to enterprise privacy governance, but no direct operational threat is described.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 10,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 60,
+        "security_automation": 0,
+        "ai_governance": 75
+      },
+      "affected_technologies": [
+        "Google Search",
+        "Gemini",
+        "Google Photos",
+        "Gmail"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content is applicable because this is a privacy policy update rather than an attack or vulnerability advisory.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review how AI-enabled search and assistant features handle connected-service data, update privacy notices and internal approval workflows, and confirm governance controls for employee use of consumer AI tools.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html",
+          "source": "The Hacker News",
+          "published": "2026-10-24T10:36:33+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a policy and privacy disclosure update, not a security incident or vulnerability. It has some relevance to enterprise privacy governance, but no direct operational threat is described.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 28.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 2.5,
+        "practice": 11.25,
+        "weighted_total": 28.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    }
+  ],
+  "counts": {
+    "critical": 1,
+    "high": 3,
+    "medium": 1,
+    "low": 1
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 3,
+  "watch": {
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "Leaked LiteLLM key led to GitHub token theft and a malicious package release",
+        "cluster_id": "c2f353f11fcac6078e3a8d41"
+      },
+      {
+        "technology": "GitHub Actions",
+        "headline": "Leaked LiteLLM key led to GitHub token theft and a malicious package release",
+        "cluster_id": "c2f353f11fcac6078e3a8d41"
+      }
+    ],
+    "endpoint_network": [
+      {
+        "technology": "Palo Alto PAN-OS",
+        "headline": "PHP critical patch update and reported Palo Alto GlobalProtect exploitation",
+        "cluster_id": "28611d0d6d9b0e124efa1af0"
+      },
+      {
+        "technology": "GlobalProtect",
+        "headline": "PHP critical patch update and reported Palo Alto GlobalProtect exploitation",
+        "cluster_id": "28611d0d6d9b0e124efa1af0"
+      }
+    ],
+    "ai": [
+      {
+        "technology": "OpenAI API",
+        "headline": "OpenAI says advanced AI agents can escape sandboxes and communicate across VMs",
+        "cluster_id": "2b44ac8d0a52ce9fe00c2800"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "OpenAI says advanced AI agents can escape sandboxes and communicate across VMs",
+        "cluster_id": "2b44ac8d0a52ce9fe00c2800"
+      }
+    ]
+  },
+  "regulations": {},
+  "other_count": 0,
+  "source_health": {
+    "at": "2026-10-25T09:34:52.856869+00:00",
+    "enabled": 41,
+    "failures": 1,
+    "new": 8961,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 5
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 232,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 4,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 10
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 8919,
+        "entries": 34024,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 2
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 24,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [
+    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+  ],
+  "kev_provenance": {
+    "released": "2026-10-23T19:30:18.920900+00:00",
+    "version": "2026.10.23",
+    "count": 1756,
+    "source": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+    "checked": "2026-10-25T09:34:52.856869+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "vendor-release-automation": [
+      "c2f353f11fcac6078e3a8d41",
+      "a64123d828297872a642cff5"
+    ],
+    "security-in-the-delivery-path": [
+      "c2f353f11fcac6078e3a8d41"
+    ],
+    "audit-ready-by-design": [
+      "a64123d828297872a642cff5",
+      "ed6cb319ad856dfd2ce738ab"
+    ],
+    "continuous-vulnerability-management": [
+      "28611d0d6d9b0e124efa1af0"
+    ],
+    "security-services-for-investment-management": [
+      "28611d0d6d9b0e124efa1af0"
+    ],
+    "security-visibility-for-manufacturing": [
+      "ed9fe79f62b579cc63434a8c"
+    ],
+    "security-at-telecom-scale": [
+      "ed9fe79f62b579cc63434a8c"
+    ]
+  }
+}

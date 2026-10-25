@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>SecDigest daily 2026-10-25</title>
+<style>body{color-scheme:light dark}a{overflow-wrap:anywhere}table{font-variant-numeric:tabular-nums}@media(prefers-color-scheme:dark){body,.paper{background:#111827!important;color:#e5e7eb!important}td,th{border-color:#475569!important}a{color:#93c5fd!important}h2{color:#e5e7eb!important}}</style>
+</head>
+
+<body style="margin:0;padding:0;background:#edf1f6;color:#172033;font-family:Segoe UI,Arial,sans-serif;font-size:14px;line-height:1.6">
+<table role="presentation" style="width:100%;border-collapse:collapse"><tr><td align="center" style="padding:16px 8px">
+<table role="presentation" class="paper" style="width:100%;max-width:1200px;border-collapse:collapse;background:#ffffff"><tr><td style="padding:26px 20px;background:#16263e;color:#ffffff">
+<p style="margin:0;font-size:12px;letter-spacing:2px;color:#b9cee7">SECURITY INTELLIGENCE</p>
+<h1 style="margin:6px 0;font-size:27px;line-height:1.25">SecDigest · Daily</h1><p style="margin:0;color:#d8e4f4">2026-10-25 · Enterprise security architecture</p></td></tr>
+<tr><td style="padding:16px 20px;overflow-wrap:anywhere">
+
+
+<p style="margin:10px 0">Window: 2026-10-24T09:34:52.856869+00:00 to 2026-10-25T09:34:52.856869+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
+
+
+<p style="margin:10px 0">Relevance percentages measure applicability, not attack probability or victim share. Global software issues apply in every region where affected versions are used. Priority /100 uses severity bands: critical 85-100, high 65-84.99, medium 35-64.99, low 0-34.99.</p>
+
+
+<p style="margin:10px 0">CRITICAL 1 · HIGH 3 · MEDIUM 1 · LOW 1 · New KEV entries 0 · Watch technology hits 3</p>
+
+
+<p style="margin:10px 0">Source health: 41 enabled feeds; 1 failures; 8961 new articles at last ingestion.</p>
+
+
+<p style="margin:10px 0">Enrichment coverage: KEV: using the official GitHub mirror; primary unavailable or invalid</p>
+
+
+<p style="margin:10px 0">Coverage note: CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.</p>
+
+
+<p style="margin:10px 0">Coverage note: Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18.</p>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Critical / High: act now</h2>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #991b1b">
+<span style="padding:3px 7px;background:#991b1b;color:#ffffff;font-size:11px;font-weight:bold">CRITICAL</span><span style="font-size:12px"> · Priority 95.5</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">Leaked LiteLLM key led to GitHub token theft and a malicious package release</h3><p style="font-size:12px;margin:8px 0">US 85% · Europe 85% · MEA 85% · Other 85% · Global IT services 85% · Energy services 50% · Secure software delivery and DevSecOps 95% · Identity and privileged access 55%</p><p>A leaked LiteLLM master key was reportedly exposed in a public repository and later abused in a release-pipeline compromise. The incident shows how a single secret can cascade into source-control access, token theft, and malicious software distribution.</p>
+<p><strong>Why it matters:</strong> This appears to be a systemic software supply-chain compromise involving a popular developer tool and a malicious package release, which fits the highest-impact category.</p><p><strong>Action:</strong> Rotate exposed secrets, audit repository and CI/CD access, verify package provenance and signing, and review developer platform permissions and release controls.</p>
+
+<p><strong>Detection assessment:</strong> No specific detection rule links were provided in the source material, so detection guidance is limited to defensive monitoring of repository secrets, release pipelines, and package integrity.</p>
+<p><strong>Sources:</strong> <a href="https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</p>
+<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 85%; cross-industry relevance at least 50%</p></td></tr></table>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
+<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 79.5</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">Brotli decoder bug can trigger memory corruption in Node.js-adjacent software</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 95% · Secure software delivery and DevSecOps 50%</p><p>A Brotli decoder flaw affects software that decompresses Brotli content, including Node.js-related components and other widely used packages. The issue may enable memory corruption and remote code execution in affected applications, but the report does not indicate active exploitation.</p>
+<p><strong>Why it matters:</strong> This is a widely applicable software vulnerability in common infrastructure components with potential RCE impact, but no confirmed in-the-wild exploitation is described.</p><p><strong>Action:</strong> Identify exposed components that decode Brotli data, prioritize patching or mitigation, and test internet-facing services and proxies for vulnerable dependencies.</p>
+<p style="font-size:12px">CVE-2026-111497 | KEV not listed | EPSS 0.0071 | CVSS unknown
+</p>
+<p><strong>Detection assessment:</strong> No detection rules were supplied; defenders should focus on asset inventory, patching, and validating any service that processes Brotli-compressed input.</p>
+<p><strong>Sources:</strong> <a href="https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</p>
+<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
+<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 79.5</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">PHP critical patch update and reported Palo Alto GlobalProtect exploitation</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 95% · SIEM, monitoring and detection engineering 55%</p><p>This cluster is a weekly roundup noting an urgent PHP security release and reported exploitation of a Palo Alto GlobalProtect VPN flaw. The summary is brief on technical detail and does not provide verified patch identifiers or confirmed incident scope. It still signals urgent patching and exposure management needs for widely used internet-facing software.</p>
+<p><strong>Why it matters:</strong> The cluster highlights critical PHP vulnerabilities and reported exploitation of a widely deployed remote-access VPN product. Even though it is a roundup, the combination of critical patching and active exploitation makes it operationally urgent for defenders.</p><p><strong>Action:</strong> Prioritize emergency patching and exposure review for PHP and Palo Alto GlobalProtect deployments, then validate internet-facing assets for signs of abuse and anomalous authentication activity.</p>
+
+<p><strong>Detection assessment:</strong> No detection-rule URLs were provided in the source links. Defenders should use vendor advisories, VPN logs, and vulnerability scanners to confirm exposure and look for anomalous auth or gateway activity.</p>
+<p><strong>Sources:</strong> <a href="https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Help Net Security</a>
+
+</p>
+<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
+<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 70.75</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">BlackX bootkit abuses old Secure Boot flaw in espionage campaign</h3><p style="font-size:12px;margin:8px 0">US 60% · Europe 60% · MEA 50% · Other 50% · Government 70% · Energy services 55% · SIEM, monitoring and detection engineering 65% · Vulnerability and exposure management 40%</p><p>BlackX is described as a UEFI bootkit used in an espionage campaign and leveraging the Baton Drop weakness to bypass Secure Boot. The activity targets security controls rather than user data directly, and the report suggests a stealthy persistence and defense-evasion threat.</p>
+<p><strong>Why it matters:</strong> The use of a bootkit in an espionage campaign indicates advanced intrusion tradecraft and strong defensive significance, even though the report does not show a broader public incident wave.</p><p><strong>Action:</strong> Audit Secure Boot and firmware trust chains, check for suspicious drivers or boot modifications, and strengthen endpoint integrity monitoring and recovery procedures.</p>
+
+<p><strong>Detection assessment:</strong> No detection rule links were provided; detection would typically rely on firmware integrity checks, boot attestation, and endpoint telemetry for unusual driver loading.</p>
+<p><strong>Sources:</strong> <a href="https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</p>
+</td></tr></table>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Priority table</h2>
+
+
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Importance</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Headline</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Priority</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">US%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Europe%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">MEA%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Other%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Top 2 industries</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Top 2 practice areas</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">CVEs</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">KEV</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Case study</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Sources</th></tr></thead><tbody><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">CRITICAL</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Leaked LiteLLM key led to GitHub token theft and a malicious package release</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">85</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">85</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">85</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">85</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Global IT services 85%; Energy services 50%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Secure software delivery and DevSecOps 95%; Identity and privileged access 55%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/vendor-release-automation/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Vendor release automation</a>
+<br><a href="https://brusiantsou.com/stories/security-in-the-delivery-path/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security in the delivery path</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Brotli decoder bug can trigger memory corruption in Node.js-adjacent software</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">79.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 95%; Secure software delivery and DevSecOps 50%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">CVE-2026-111497</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/vendor-release-automation/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Vendor release automation</a>
+<br><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">PHP critical patch update and reported Palo Alto GlobalProtect exploitation</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">79.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 95%; SIEM, monitoring and detection engineering 55%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
+<br><a href="https://brusiantsou.com/stories/security-services-for-investment-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security services for investment management</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Help Net Security</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">BlackX bootkit abuses old Secure Boot flaw in espionage campaign</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">70.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">60</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">60</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Government 70%; Energy services 55%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">SIEM, monitoring and detection engineering 65%; Vulnerability and exposure management 40%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/security-visibility-for-manufacturing/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security visibility for manufacturing</a>
+<br><a href="https://brusiantsou.com/stories/security-at-telecom-scale/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security at telecom scale</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">MEDIUM</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">OpenAI says advanced AI agents can escape sandboxes and communicate across VMs</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">52.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">50</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Global IT services 45%; Energy services 20%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">AI-assisted work and AI governance 90%; Zero Trust and cloud security 30%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">LOW</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Google updates AI Search and Gemini privacy terms to cover cross-service ad personalization</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">28.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">30</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">30</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Global IT services 25%; Private banking 20%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">AI-assisted work and AI governance 75%; Audit readiness, governance and risk 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">The Hacker News</a>
+
+</td></tr></tbody></table></div>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Vulnerability watch</h2>
+
+
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">New KEV</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Vendor / product</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Added</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Due</th></tr></thead><tbody><tr><td colspan="4" style="padding:8px">None recorded.</td></tr></tbody></table></div>
+
+
+<p style="margin:10px 0">devops_appsec</p>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0">GitHub<br><a href="https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Leaked LiteLLM key led to GitHub token theft and a malicious package release</a>
+
+</li><li style="margin:6px 0">GitHub Actions<br><a href="https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Leaked LiteLLM key led to GitHub token theft and a malicious package release</a>
+
+</li></ul>
+
+
+<p style="margin:10px 0">endpoint_network</p>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0">Palo Alto PAN-OS<br><a href="https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">PHP critical patch update and reported Palo Alto GlobalProtect exploitation</a>
+
+</li><li style="margin:6px 0">GlobalProtect<br><a href="https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">PHP critical patch update and reported Palo Alto GlobalProtect exploitation</a>
+
+</li></ul>
+
+
+<p style="margin:10px 0">ai</p>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0">OpenAI API<br><a href="https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">OpenAI says advanced AI agents can escape sandboxes and communicate across VMs</a>
+
+</li><li style="margin:6px 0">AI agent frameworks<br><a href="https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">OpenAI says advanced AI agents can escape sandboxes and communicate across VMs</a>
+
+</li></ul>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Regulation and policy</h2>
+
+
+<p style="margin:10px 0">No regulation or policy items in this window.</p>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Other</h2>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0">None recorded for this window.</li></ul>
+
+
+</td></tr><tr><td style="padding:18px 20px;border-top:1px solid #cbd5e1;font-size:11px">SecDigest · Original-source links accompany each story. Relevance scores are analytical assessments. Case studies are anonymized; no client involvement is implied.</td></tr></table>
+</td></tr></table></body></html>
