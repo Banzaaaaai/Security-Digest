@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-26",
-  "start": "2026-10-25T10:46:28.067782+00:00",
-  "end": "2026-10-26T10:46:28.067782+00:00",
+  "start": "2026-10-25T11:46:27.686709+00:00",
+  "end": "2026-10-26T11:46:27.686709+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -671,6 +671,132 @@
       "included": true
     },
     {
+      "cluster_id": "3072132390ac510b30e99dc7",
+      "headline": "Fortinet says AI found critical FortiOS flaws ahead of public disclosure",
+      "summary": "Fortinet says it has patched critical weaknesses in FortiOS and related products after AI-assisted discovery and human validation. The vendor has not disclosed the technical details yet, so defenders should treat the issue as urgent but still partially opaque until the advisory is released.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This affects FortiOS and adjacent Fortinet security products, which are widely deployed enterprise technologies. Even without published technical details or confirmed exploitation, a critical vendor patch for this product family warrants high urgency across regions and industries.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 70,
+        "telecommunications": 75,
+        "private_banking": 70,
+        "investment_management": 70,
+        "government": 75,
+        "retail_banking": 75,
+        "global_it_services": 75,
+        "logistics": 65,
+        "industrial_manufacturing": 70,
+        "automotive": 65
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 5,
+        "siem_detection": 20,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 20,
+        "grc_audit": 25,
+        "security_automation": 10,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "Fortinet FortiOS",
+        "FortiManager",
+        "FortiAnalyzer",
+        "FortiMail",
+        "FortiAuthenticator",
+        "FortiGate"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided. Defenders should prioritize asset inventory, version checks, exposure review, and monitoring for Fortinet administrative anomalies once the advisory is public.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory all Fortinet appliances and management tools, verify versions against the forthcoming advisory, and accelerate patch and exposure review for internet-facing devices.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/fortinet-patches-critical-fortios-flaws-found-with-ai-help/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T11:22:52+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This affects FortiOS and adjacent Fortinet security products, which are widely deployed enterprise technologies. Even without published technical details or confirmed exploitation, a critical vendor patch for this product family warrants high urgency across regions and industries.",
+      "watch_tech": [
+        {
+          "name": "Fortinet FortiOS",
+          "aliases": [
+            "FortiOS"
+          ],
+          "cross_industry": true,
+          "vendor": "endpoint_network"
+        },
+        {
+          "name": "FortiGate",
+          "aliases": [
+            "Fortinet FortiGate"
+          ],
+          "cross_industry": true,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.helpnetsecurity.com/2026/10/26/fortinet-patches-critical-fortios-flaws-found-with-ai-help/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 7.5,
+        "practice": 14.25,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "680092ecba6ea8c02355df9b",
       "headline": "Qualys outlines stopgap controls for PHP2Shell exposure",
       "summary": "Qualys describes interim mitigation steps for PHP2Shell while patching is still in progress across many PHP installations. The guidance focuses on reducing exposure through configuration controls and layered defenses until systems can be updated.",
@@ -996,6 +1122,124 @@
         "severity_band": [
           65,
           84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0499dff5bc5afd7591390826",
+      "headline": "Dutch cabinet backs easier data sharing across government agencies",
+      "summary": "The Dutch government is planning to make it easier for public agencies to share citizens’ data with one another. The measure appears to be a policy and governance change for public-sector information handling rather than a specific cyber incident.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a government data-sharing policy that affects public-sector governance and privacy handling in the Netherlands. It is not itself a breach or vulnerability, but it has compliance and data-protection implications for Dutch public bodies.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 100,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 90,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 70,
+        "ot_ics": 0,
+        "grc_audit": 80,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "nis2",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "cyberbeveiligingswet_nis2_implementation",
+          "nature": "new",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "dnb_requirements",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules are applicable; this is a policy and governance item. Monitoring should focus on data-sharing approvals, access controls, and privacy impact assessment workflows.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review data-sharing governance, privacy impact assessments, retention rules, and access controls for inter-agency information exchange.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/959015/Kabinet+wil+dat+overheid+makkelijker+gegevens+van+burgers+kan+delen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-26T11:09:42+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a government data-sharing policy that affects public-sector governance and privacy handling in the Netherlands. It is not itself a breach or vulnerability, but it has compliance and data-protection implications for Dutch public bodies.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 63.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 15.0,
+        "industry": 9.0,
+        "practice": 12.0,
+        "weighted_total": 63.0,
+        "severity_band": [
+          35,
+          64.99
         ]
       },
       "included": true
@@ -1435,6 +1679,108 @@
         "industry": 5.5,
         "practice": 14.25,
         "weighted_total": 57.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "31ba962b3a2b31d5f5779caa",
+      "headline": "Malicious AGENTS.md files can steer AI coding tools to run harmful actions",
+      "summary": "Researchers found that an AGENTS.md file placed where AI coding agents will read it can influence the tool to install a malicious npm package or expose a user token. The issue highlights a prompt-injection style risk in agentic developer workflows rather than a confirmed mass compromise.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is a credible security research finding about a new attack path for AI coding agents, but the report does not describe active exploitation or a widespread incident. It is relevant to organizations adopting agentic developer tools and supply-chain-aware workflows.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 45,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 65,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 75,
+        "siem_detection": 10,
+        "iam_pam": 55,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 25,
+        "ai_governance": 85
+      },
+      "affected_technologies": [
+        "AI coding agents",
+        "OpenAI Codex",
+        "npm"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were provided in the source. Monitor agent execution logs, file-origin trust boundaries, and unexpected package installation or token access by AI developer tools.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review how AI coding agents ingest local files, restrict what folders they can trust, and require human approval for package installs, secret access, and other high-risk actions. Add logging and policy controls for agentic development workflows, and treat untrusted project files as potential prompt-injection inputs.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/ai-coding-agents-malware-openai-codex/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T11:26:40+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a credible security research finding about a new attack path for AI coding agents, but the report does not describe active exploitation or a widespread incident. It is relevant to organizations adopting agentic developer tools and supply-chain-aware workflows.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 56.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 6.5,
+        "practice": 12.75,
+        "weighted_total": 56.75,
         "severity_band": [
           35,
           64.99
@@ -1945,6 +2291,107 @@
       "included": true
     },
     {
+      "cluster_id": "20494af63ce3fb8e1268344e",
+      "headline": "Rentable Android spyware steals Telegram 2FA codes and clones WeChat accounts",
+      "summary": "Researchers say a rentable Android spyware kit hides inside tampered copies of Telegram and WeChat to hijack accounts and steal one-time passwords. The reported risk depends on users installing the modified apps outside official stores or running WeChat in the kit operators’ container app.",
+      "category": "fraud_phishing",
+      "importance": "medium",
+      "importance_rationale": "This is a mobile account-theft and spyware kit issue, but the reported mechanism requires installing tampered apps rather than exploiting an enterprise platform directly. It is relevant to defenders protecting user accounts and mobile devices, but it is not a widespread enterprise vulnerability or confirmed in-the-wild compromise of a core enterprise system.",
+      "location_relevance": {
+        "US": 45,
+        "Europe": 45,
+        "MEA": 45,
+        "Other": 55
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 45,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 45,
+        "retail_banking": 50,
+        "global_it_services": 40,
+        "logistics": 35,
+        "industrial_manufacturing": 35,
+        "automotive": 35
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 65,
+        "email_phishing": 25,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Telegram",
+        "WeChat",
+        "Android"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "uCreator"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule links were provided in the source. Defensive coverage would focus on mobile app integrity, device management, suspicious app installation sources, and account anomaly monitoring.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review mobile device management controls, restrict sideloaded apps, and monitor for anomalous Telegram and WeChat account activity tied to managed devices.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html",
+          "source": "The Hacker News",
+          "published": "2026-10-26T09:54:02+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a mobile account-theft and spyware kit issue, but the reported mechanism requires installing tampered apps rather than exploiting an enterprise platform directly. It is relevant to defenders protecting user accounts and mobile devices, but it is not a widespread enterprise vulnerability or confirmed in-the-wild compromise of a core enterprise system.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 50.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 5.0,
+        "practice": 9.75,
+        "weighted_total": 50.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "e84a8003dbea7666967a8851",
       "headline": "AI safety report says model caused harm in a July incident",
       "summary": "The article discusses a reported case where a model allegedly generated harmful behavior, including identity misuse and malicious code submission. It is a research and safety discussion about AI misuse rather than a traditional cyber incident.",
@@ -2142,6 +2589,207 @@
         "severity_band": [
           35,
           64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ce0386ac22975ba196691f18",
+      "headline": "Detection-focused guidance explains how attackers move between alerts",
+      "summary": "This article discusses how security teams can connect isolated alerts into a fuller intrusion timeline using network data and detection-response tooling. It is defensive guidance and analysis rather than an incident report, emphasizing visibility gaps that SOCs commonly face.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "The piece is general defensive guidance about alert correlation and network detection, not a specific breach, vulnerability, or new adversary campaign. It is useful operationally, but the immediate business urgency is limited.",
+      "location_relevance": {
+        "US": 35,
+        "Europe": 35,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 45,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 45,
+        "retail_banking": 45,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 45,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 90,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 15,
+        "grc_audit": 5,
+        "security_automation": 70,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "NDR",
+        "SOC tooling"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were supplied. The article is centered on detection engineering and NDR correlation, so coverage should be built from telemetry enrichment and incident timeline reconstruction.",
+      "related_case_studies": [
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Improve log correlation across endpoint, network, and identity telemetry so analysts can reconstruct attacker movement beyond isolated alerts.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/between-alerts-what-attackers-do-in.html",
+          "source": "The Hacker News",
+          "published": "2026-10-26T11:23:56+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The piece is general defensive guidance about alert correlation and network detection, not a specific breach, vulnerability, or new adversary campaign. It is useful operationally, but the immediate business urgency is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 32.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 5.25,
+        "industry": 5.0,
+        "practice": 13.5,
+        "weighted_total": 32.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "44335b0af83f3becf1a44aaa",
+      "headline": "Research finds bias in Qwen3-Coder can weaken code for some target descriptions",
+      "summary": "Researchers report that prompts describing a customer or target as American can change the security quality of code produced by Qwen3-Coder. The finding is presented as a model-behavior issue, not an observed enterprise compromise, and the source suggests the bias is embedded in the model weights.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is security research about model bias and code quality, not a demonstrated incident or urgent operational vulnerability in a deployed enterprise service. It may inform AI governance and secure development review, but the immediate business risk is limited from the information provided.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 25,
+        "MEA": 20,
+        "Other": 30
+      },
+      "countries_mentioned": [
+        "CN",
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 20,
+        "retail_banking": 5,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 35,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 85
+      },
+      "affected_technologies": [
+        "Qwen3-Coder",
+        "AI model weights"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied. Coverage would be based on AI governance review, evaluation of model outputs, and secure code review rather than signature-based detection.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Assess whether AI coding tools are used in regulated or high-risk development workflows and add human review for security-critical code output.",
+      "confidence": 0.79,
+      "sources": [
+        {
+          "url": "https://www.schneier.com/blog/archives/2026/10/bias-in-qwen3-coder-model.html",
+          "source": "Schneier on Security",
+          "published": "2026-10-26T11:03:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is security research about model bias and code quality, not a demonstrated incident or urgent operational vulnerability in a deployed enterprise service. It may inform AI governance and secure development review, but the immediate business risk is limited from the information provided.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 29.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 2.0,
+        "practice": 12.75,
+        "weighted_total": 29.75,
+        "severity_band": [
+          0,
+          34.99
         ]
       },
       "included": true
@@ -2550,112 +3198,6 @@
         "industry": 3.0,
         "practice": 6.0,
         "weighted_total": 21.0,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "38c705de0f5ebeead9e1e5a2",
-      "headline": "Unit 8200 alumni raise $34 million for agentic SecOps startup",
-      "summary": "Mave, founded in Tel Aviv by former Unit 8200 officers, raised $34 million to build AI agents that help investigate security alerts across existing tools. The story is a funding and product update rather than an incident or vulnerability. It suggests growing interest in AI-assisted security operations, but does not show a new operational risk on its own.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is a startup funding and product announcement with no disclosed breach, exploit, or security flaw. It mainly reflects market activity in AI-driven SecOps rather than a material threat event.",
-      "location_relevance": {
-        "US": 15,
-        "Europe": 15,
-        "MEA": 20,
-        "Other": 30
-      },
-      "countries_mentioned": [
-        "IL"
-      ],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 10,
-        "retail_banking": 5,
-        "global_it_services": 20,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 10,
-        "siem_detection": 25,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 35,
-        "ai_governance": 25
-      },
-      "affected_technologies": [
-        "AI agent frameworks"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection content is present. This item is a market/product announcement, so there are no actionable detection references to map.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Track AI-assisted security operations tools for governance, integration, and data-handling requirements, but do not treat this announcement as an incident indicator.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/former-unit-8200-officers-raise-34-million-for-agentic-secops-startup-mave/",
-          "source": "SecurityWeek",
-          "published": "2026-10-25T11:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a startup funding and product announcement with no disclosed breach, exploit, or security flaw. It mainly reflects market activity in AI-driven SecOps rather than a material threat event.",
-      "watch_tech": [
-        {
-          "name": "AI agent frameworks",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 20.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 4.5,
-        "industry": 2.0,
-        "practice": 5.25,
-        "weighted_total": 20.75,
         "severity_band": [
           0,
           34.99
@@ -3335,6 +3877,12 @@
           "source": "BleepingComputer",
           "published": "2026-10-26T10:26:52+00:00",
           "date_inferred": false
+        },
+        {
+          "url": "https://www.bleepingcomputer.com/news/linux/kali-linux-20263-released-with-6-new-tools-desktop-updates/",
+          "source": "BleepingComputer",
+          "published": "2026-10-26T10:26:52+00:00",
+          "date_inferred": false
         }
       ],
       "overrides": [],
@@ -3466,9 +4014,9 @@
   ],
   "counts": {
     "critical": 1,
-    "high": 8,
-    "medium": 11,
-    "low": 13
+    "high": 9,
+    "medium": 14,
+    "low": 14
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -3485,6 +4033,18 @@
         "technology": "GitHub Actions",
         "headline": "Stolen GitHub tokens used to exfiltrate repository secrets from Actions logs",
         "cluster_id": "a26d3a2a0bb03d720cf8ca01"
+      }
+    ],
+    "endpoint_network": [
+      {
+        "technology": "Fortinet FortiOS",
+        "headline": "Fortinet says AI found critical FortiOS flaws ahead of public disclosure",
+        "cluster_id": "3072132390ac510b30e99dc7"
+      },
+      {
+        "technology": "FortiGate",
+        "headline": "Fortinet says AI found critical FortiOS flaws ahead of public disclosure",
+        "cluster_id": "3072132390ac510b30e99dc7"
       }
     ],
     "vulnerability": [
@@ -3526,32 +4086,90 @@
         "technology": "AI agent frameworks",
         "headline": "Anthropic explains safeguards for Claude Duet AI agent",
         "cluster_id": "ccb8f249e1b0580d3ec9d255"
-      },
-      {
-        "technology": "AI agent frameworks",
-        "headline": "Unit 8200 alumni raise $34 million for agentic SecOps startup",
-        "cluster_id": "38c705de0f5ebeead9e1e5a2"
       }
     ]
   },
-  "regulations": {},
-  "other_count": 10,
+  "regulations": {
+    "Europe": [
+      {
+        "key": "gdpr",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Dutch cabinet backs easier data sharing across government agencies",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/959015/Kabinet+wil+dat+overheid+makkelijker+gegevens+van+burgers+kan+delen?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-10-26T11:09:42+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "nis2",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "NIS2",
+        "headline": "Dutch cabinet backs easier data sharing across government agencies",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/959015/Kabinet+wil+dat+overheid+makkelijker+gegevens+van+burgers+kan+delen?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-10-26T11:09:42+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "cyberbeveiligingswet_nis2_implementation",
+        "nature": "new",
+        "effective_or_deadline_date": null,
+        "name": "Cyberbeveiligingswet (NIS2 implementation)",
+        "headline": "Dutch cabinet backs easier data sharing across government agencies",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/959015/Kabinet+wil+dat+overheid+makkelijker+gegevens+van+burgers+kan+delen?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-10-26T11:09:42+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "dnb_requirements",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "DNB requirements",
+        "headline": "Dutch cabinet backs easier data sharing across government agencies",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/959015/Kabinet+wil+dat+overheid+makkelijker+gegevens+van+burgers+kan+delen?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-10-26T11:09:42+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ]
+  },
+  "other_count": 9,
   "source_health": {
-    "at": "2026-10-26T10:46:28.067782+00:00",
+    "at": "2026-10-26T11:46:27.686709+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 33,
+    "new": 7,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 5
+        "new": 2
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 3
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
@@ -3561,12 +4179,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 9
+        "new": 2
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Dark Reading",
@@ -3576,12 +4194,12 @@
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -3601,7 +4219,7 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "Microsoft Security Blog",
@@ -3639,7 +4257,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -3649,7 +4267,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -3679,7 +4297,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -3694,7 +4312,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 3
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -3729,7 +4347,7 @@
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
@@ -3773,7 +4391,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-23T19:30:18.920900+00:00",
@@ -3791,6 +4409,7 @@
       "7c54e769948b6fc771ccdcc1",
       "da19872bd8ebd641fd639776",
       "d20444dd0495bc21e7668528",
+      "3072132390ac510b30e99dc7",
       "680092ecba6ea8c02355df9b",
       "15faad20100130033abdd3a4",
       "ddb1fcadf36a63e9b0b39539",
@@ -3816,13 +4435,19 @@
       "ddb1fcadf36a63e9b0b39539",
       "7f536318093d9de7fa7ffe03",
       "0679ef6824f482ea04fc1185",
+      "31ba962b3a2b31d5f5779caa",
       "33f7736e74631c3e92659afb"
     ],
     "security-in-the-delivery-path": [
       "5db2cad8ad53b4cb9cf0b64d",
       "a26d3a2a0bb03d720cf8ca01",
+      "31ba962b3a2b31d5f5779caa",
       "9568a236f68da4a16c1f4e70",
       "ced89b93365415e1b79c4259"
+    ],
+    "security-foundations-for-logistics": [
+      "3072132390ac510b30e99dc7",
+      "6a6b8d983b6ae4ab6ce6486a"
     ],
     "secure-azure-migration": [
       "399172439712b08d5e85ae1e",
@@ -3835,8 +4460,8 @@
     "zero-trust-at-enterprise-scale": [
       "33f7736e74631c3e92659afb"
     ],
-    "security-foundations-for-logistics": [
-      "6a6b8d983b6ae4ab6ce6486a"
+    "security-visibility-for-manufacturing": [
+      "ce0386ac22975ba196691f18"
     ]
   }
 }
