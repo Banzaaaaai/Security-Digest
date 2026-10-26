@@ -1,0 +1,3842 @@
+{
+  "kind": "daily",
+  "period": "2026-10-26",
+  "start": "2026-10-25T10:46:28.067782+00:00",
+  "end": "2026-10-26T10:46:28.067782+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "7c54e769948b6fc771ccdcc1",
+      "headline": "PHP2Shell flaws reportedly exploited in the wild",
+      "summary": "The report says two critical PHP vulnerabilities are being actively exploited, with successful attacks observed in the wild. Because PHP is widely deployed, the issue has broad operational relevance for internet-facing servers.",
+      "category": "exploitation_in_the_wild",
+      "importance": "critical",
+      "importance_rationale": "Active exploitation of a widely deployed web technology is a top-priority enterprise security issue. This meets the rubric for critical severity due to observed in-the-wild abuse.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 80,
+        "telecommunications": 80,
+        "private_banking": 80,
+        "investment_management": 80,
+        "government": 80,
+        "retail_banking": 80,
+        "global_it_services": 90,
+        "logistics": 80,
+        "industrial_manufacturing": 80,
+        "automotive": 80
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 100,
+        "devsecops": 50,
+        "siem_detection": 40,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not include detection rules. Teams should add or tune monitoring for PHP exploitation attempts and prioritize internet-facing asset review, patching and containment.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Treat this as an active exploitation event: inventory PHP exposure, apply fixes immediately, restrict internet-facing attack surface and hunt for compromise on affected systems.",
+      "confidence": 0.99,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+          "source": "BleepingComputer",
+          "published": "2026-10-26T09:19:57+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "Active exploitation of a widely deployed web technology is a top-priority enterprise security issue. This meets the rubric for critical severity due to observed in-the-wild abuse.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-109618": {
+          "kev": null,
+          "epss": 0.99981,
+          "cvss": null
+        },
+        "CVE-2026-109619": {
+          "kev": null,
+          "epss": 0.99997,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [
+          "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/"
+        ],
+        "rce": [
+          "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/"
+        ],
+        "critical_flaw": [
+          "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 98.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 14.25,
+        "industry": 9.0,
+        "practice": 15.0,
+        "weighted_total": 98.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "7290989d6ec32cb08c714d96",
+      "headline": "US lenders face rising synthetic-identity fraud exposure",
+      "summary": "A fraud report highlights persistent abuse of customer accounts and transactions, with losses concentrated in login and payment flows. The findings point to continuing identity-assurance and account-protection gaps for lenders rather than a single disclosed breach.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "The item describes a material fraud exposure affecting lenders and consumer financial workflows, with direct relevance to a regulated sector and large-scale financial loss potential.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 20,
+        "MEA": 10,
+        "Other": 25
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 40,
+        "investment_management": 35,
+        "government": 0,
+        "retail_banking": 95,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 90,
+        "email_phishing": 55,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "customer identity verification",
+        "online banking",
+        "payment systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were supplied; detection would typically rely on fraud analytics, identity-risk scoring, and transaction monitoring rather than a single signature.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Strengthen identity proofing, monitor anomalous logins and transactions, and review controls around account recovery, step-up authentication, and fraud analytics.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/transunion-synthetic-identity-fraud-risks-report/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T05:00:59+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The item describes a material fraud exposure affecting lenders and consumer financial workflows, with direct relevance to a regulated sector and large-scale financial loss potential.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 83.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 13.5,
+        "weighted_total": 83.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "da19872bd8ebd641fd639776",
+      "headline": "PHP2Shell exploitation attempts reported during global scanning activity",
+      "summary": "Researchers say exploitation attempts tied to PHP2Shell are continuing, with activity also described alongside broader scanning that may be linked to a nation-state campaign. The reporting notes a European government agency context, but also says earlier attribution about specific post-compromise activity was retracted.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "PHP is globally deployed infrastructure, so exploitation attempts against PHP2Shell are broadly relevant to defenders. The reporting suggests active attempts and possible nation-state-associated scanning, but the article also includes uncertainty and does not clearly confirm a widespread successful compromise.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "EU"
+      ],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 90,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 40,
+        "siem_detection": 70,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 30,
+        "ot_ics": 20,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. Defenders should look for PHP application exploitation attempts, unusual scanner traffic, and follow-on webshell or command execution indicators.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Identify externally reachable PHP applications, prioritize patching and configuration review, and hunt for exploitation traces and follow-on activity on internet-facing systems.",
+      "confidence": 0.86,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+          "source": "The Hacker News",
+          "published": "2026-10-25T17:19:46+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "PHP is globally deployed infrastructure, so exploitation attempts against PHP2Shell are broadly relevant to defenders. The reporting suggests active attempts and possible nation-state-associated scanning, but the article also includes uncertainty and does not clearly confirm a widespread successful compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 82.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 9.0,
+        "practice": 14.25,
+        "weighted_total": 82.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "d20444dd0495bc21e7668528",
+      "headline": "PHP advisory urges mitigation for a new remote code execution flaw",
+      "summary": "PHP has published mitigation guidance for a newly identified critical remote code execution vulnerability. The advisory indicates exploit conditions may be limited, so exposure will vary by deployment and configuration.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a critical RCE in globally deployed web infrastructure, which is highly relevant even without confirmed in-the-wild exploitation. The advisory warrants prompt review and patch prioritization.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 70,
+        "telecommunications": 70,
+        "private_banking": 70,
+        "investment_management": 70,
+        "government": 70,
+        "retail_banking": 70,
+        "global_it_services": 80,
+        "logistics": 70,
+        "industrial_manufacturing": 70,
+        "automotive": 70
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 45,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP"
+      ],
+      "cves": [
+        "CVE-2026-115560"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided in the source. Defenders should focus on inventorying PHP deployments, validating exposure and applying vendor mitigation or patches as soon as feasible.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize patching or mitigation for affected PHP instances, confirm whether the vulnerable condition applies to your configuration, and monitor for exploit attempts.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/php-publishes-mitigation-advice/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-26T09:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a critical RCE in globally deployed web infrastructure, which is highly relevant even without confirmed in-the-wild exploitation. The advisory warrants prompt review and patch prioritization.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-115560": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://www.infosecurity-magazine.com/news/php-publishes-mitigation-advice/"
+        ],
+        "critical_flaw": [
+          "https://www.infosecurity-magazine.com/news/php-publishes-mitigation-advice/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 81.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 8.0,
+        "practice": 14.25,
+        "weighted_total": 81.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5db2cad8ad53b4cb9cf0b64d",
+      "headline": "Malicious AGENTS.md file tricks AI coding agent into installing rogue npm package",
+      "summary": "Researchers found that a malicious AGENTS.md instruction file can manipulate an AI coding agent into following unintended actions, including installing a rogue npm package. The report highlights a prompt-injection style risk in agentic development workflows. Organizations using AI coding assistants should review how they trust instructions from local files and repositories.",
+      "category": "research",
+      "importance": "high",
+      "importance_rationale": "This is a practical AI/DevSecOps security finding affecting emerging agentic workflows. It does not show a broad exploit campaign, but it is directly relevant to organizations deploying AI coding tools and package-install automation.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 80,
+        "MEA": 75,
+        "Other": 85
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 35,
+        "telecommunications": 35,
+        "private_banking": 35,
+        "investment_management": 35,
+        "government": 45,
+        "retail_banking": 35,
+        "global_it_services": 80,
+        "logistics": 35,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 90,
+        "siem_detection": 15,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 25,
+        "ai_governance": 95
+      },
+      "affected_technologies": [
+        "AI coding agents",
+        "npm",
+        "AGENTS.md"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule URLs were provided. Detection should focus on agent instruction sources, package-install events, and repository/file trust boundaries in developer environments.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Restrict what AI agents can execute from local instruction files, require human approval for package installs, and isolate coding assistants from untrusted directories.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/",
+          "source": "BleepingComputer",
+          "published": "2026-10-25T15:49:38+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a practical AI/DevSecOps security finding affecting emerging agentic workflows. It does not show a broad exploit campaign, but it is directly relevant to organizations deploying AI coding tools and package-install automation.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 80.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 8.0,
+        "practice": 14.25,
+        "weighted_total": 80.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "a26d3a2a0bb03d720cf8ca01",
+      "headline": "Stolen GitHub tokens used to exfiltrate repository secrets from Actions logs",
+      "summary": "An automated campaign is using stolen GitHub tokens to plant workflows that expose repository secrets through GitHub Actions logs, then download the outputs and remove the runs. The activity was observed in private repositories and GitHub Enterprise environments, indicating a concrete enterprise software development risk.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is active abuse of a widely used enterprise development platform, with successful secret theft in private and enterprise environments.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 90,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 90,
+        "siem_detection": 60,
+        "iam_pam": 85,
+        "email_phishing": 0,
+        "data_protection_dlp": 75,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 45,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "GitHub",
+        "GitHub Actions",
+        "GitHub Enterprise"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were cited. Defenders should monitor unusual GitHub token use, workflow creation, secret access, and downloads of Actions logs.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Revoke exposed tokens, inspect recent workflow changes, tighten GitHub Enterprise permissions, and monitor for secret access from unexpected Actions runs.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+          "source": "The Hacker News",
+          "published": "2026-10-26T07:49:46+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is active abuse of a widely used enterprise development platform, with successful secret theft in private and enterprise environments.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "GitHub Actions",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 80.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 9.0,
+        "practice": 13.5,
+        "weighted_total": 80.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "680092ecba6ea8c02355df9b",
+      "headline": "Qualys outlines stopgap controls for PHP2Shell exposure",
+      "summary": "Qualys describes interim mitigation steps for PHP2Shell while patching is still in progress across many PHP installations. The guidance focuses on reducing exposure through configuration controls and layered defenses until systems can be updated.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a notable vulnerability affecting widely deployed web infrastructure, with active remediation guidance and clear enterprise exposure while patching lags.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 55,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 35,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP",
+        "Qualys"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule URLs were provided in the source links; defenders should rely on vendor guidance and local web application telemetry.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize PHP patching, apply the vendor’s mitigation steps where patching is delayed, and verify compensating controls across externally exposed systems.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://blog.qualys.com/?p=43279",
+          "source": "Qualys Vulnerabilities and Threat Research",
+          "published": "2026-10-26T04:31:11+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a notable vulnerability affecting widely deployed web infrastructure, with active remediation guidance and clear enterprise exposure while patching lags.",
+      "watch_tech": [
+        {
+          "name": "Qualys",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "vulnerability"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 14.25,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "399172439712b08d5e85ae1e",
+      "headline": "Microsoft 365 token replay campaign compromises accounts across 79 organizations",
+      "summary": "Researchers reported an adversary-in-the-middle campaign that captured Microsoft 365 sign-in sessions and replayed the tokens to access email accounts across many organizations. The activity produced hundreds of successful sign-ins and shows a broad identity threat to cloud email users.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is active exploitation of a widely deployed enterprise platform with confirmed account compromise across many organizations.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 70,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 80,
+        "iam_pam": 95,
+        "email_phishing": 85,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 30,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Microsoft 365",
+        "email",
+        "session tokens"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific rules were linked. Monitoring should focus on anomalous Microsoft 365 sign-in patterns, token reuse, and impossible-travel or relay indicators.",
+      "related_case_studies": [
+        "audit-ready-by-design",
+        "secure-azure-migration"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Enforce phishing-resistant MFA, review conditional access and sign-in risk policies, hunt for replayed sessions, and reset potentially exposed credentials or tokens.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html",
+          "source": "The Hacker News",
+          "published": "2026-10-26T08:35:51+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is active exploitation of a widely deployed enterprise platform with confirmed account compromise across many organizations.",
+      "watch_tech": [
+        {
+          "name": "Microsoft 365",
+          "aliases": [
+            "Office 365",
+            "M365"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 79.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 7.0,
+        "practice": 14.25,
+        "weighted_total": 79.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "15faad20100130033abdd3a4",
+      "headline": "Brotli decoder flaw prompts patching across Node.js and Microsoft ecosystems",
+      "summary": "A memory corruption flaw in Google’s Brotli decoder can affect Node.js, .NET, PowerShell, and Python package ecosystems and may enable code execution. The report indicates broad patching activity and raises exposure concerns for widely used enterprise software stacks.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a widely relevant software vulnerability affecting common enterprise technologies, but the source does not confirm active exploitation in the wild.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 75,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 10,
+        "grc_audit": 15,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Node.js",
+        ".NET",
+        "PowerShell",
+        "Python",
+        "Brotli decoder"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided in the source links; defenders should prioritize exposure identification and vendor patch tracking.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Identify affected builds and dependent packages, then patch or rebuild systems using the vulnerable Brotli decoder as soon as vendor guidance is available.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages/",
+          "source": "SecurityWeek",
+          "published": "2026-10-26T10:21:57+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a widely relevant software vulnerability affecting common enterprise technologies, but the source does not confirm active exploitation in the wild.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 78.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 78.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ddb1fcadf36a63e9b0b39539",
+      "headline": "Microsoft patches ASP.NET Core privilege escalation flaw",
+      "summary": "Microsoft assigned CVE-2026-114148 to an ASP.NET Core elevation-of-privilege issue caused by incorrect default permissions. The advisory indicates a local privilege escalation path for authorized attackers, but no active exploitation is described here. Defenders should prioritize patching and review systems that rely on ASP.NET Core.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "This is a notable vulnerability in widely used Microsoft software, but the source does not report exploitation in the wild, a public PoC, or emergency patching. It is important for enterprise patch management, though not enough evidence is present to rate it high or critical.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 70,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 35,
+        "siem_detection": 5,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "ASP.NET Core",
+        "Microsoft Windows Server"
+      ],
+      "cves": [
+        "CVE-2026-114148"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were supplied. Detection work should focus on patch verification, endpoint privilege changes, and unusual local escalation behavior rather than network signatures.",
+      "related_case_studies": [
+        "audit-ready-by-design",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Apply Microsoft guidance promptly, inventory affected ASP.NET Core deployments, and validate least-privilege controls on exposed servers.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-114148",
+          "source": "MSRC Update Guide",
+          "published": "2026-10-25T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a notable vulnerability in widely used Microsoft software, but the source does not report exploitation in the wild, a public PoC, or emergency patching. It is important for enterprise patch management, though not enough evidence is present to rate it high or critical.",
+      "watch_tech": [
+        {
+          "name": "Windows Server",
+          "aliases": [
+            "Microsoft Windows Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {
+        "CVE-2026-114148": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 61.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 13.5,
+        "weighted_total": 61.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "7f536318093d9de7fa7ffe03",
+      "headline": "Microsoft reports Brotli decoder buffer overflow in .NET-related component",
+      "summary": "Microsoft published CVE-2026-111497 for a buffer overflow in the Brotli decoder, described as allowing privilege escalation over the network. The notice identifies a security flaw but does not mention exploitation, a proof of concept, or confirmed victim activity. Treat it as a patching and exposure-management priority for environments using the affected component.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "The issue is serious enough to warrant prompt remediation, but the available source does not establish in-the-wild exploitation or emergency response conditions. It is therefore best classified as a notable vulnerability rather than a major incident.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 70,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 30,
+        "siem_detection": 5,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        ".NET",
+        "Microsoft Windows Server"
+      ],
+      "cves": [
+        "CVE-2026-111497"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. Recommended defensive work is patch verification, exposure assessment, and monitoring for anomalous process crashes or privilege changes.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize remediation, identify where the affected .NET component is deployed, and monitor for vendor updates or exploit reporting.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497",
+          "source": "MSRC Update Guide",
+          "published": "2026-10-25T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The issue is serious enough to warrant prompt remediation, but the available source does not establish in-the-wild exploitation or emergency response conditions. It is therefore best classified as a notable vulnerability rather than a major incident.",
+      "watch_tech": [
+        {
+          "name": "Windows Server",
+          "aliases": [
+            "Microsoft Windows Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {
+        "CVE-2026-111497": {
+          "kev": null,
+          "epss": 0.32782,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 61.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 13.5,
+        "weighted_total": 61.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0679ef6824f482ea04fc1185",
+      "headline": "OpenSSL 4.1.0 adds DTLS 1.3 support and notes known bugs",
+      "summary": "OpenSSL 4.1.0 introduces DTLS 1.3 support and documents several known bugs in the new code. The release is relevant for developers adopting the new DTLS path, but the article does not describe a confirmed exploit or emergency security event.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "OpenSSL is widely used enterprise infrastructure, so changes to its cryptographic and transport support are important to security and application teams. The item is still a release note with known bugs, not a disclosed active exploitation event.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 90,
+        "MEA": 90,
+        "Other": 90
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 80,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 10,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "OpenSSL",
+        "DTLS 1.3"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided. Teams should review applications using OpenSSL DTLS 1.3 for compatibility issues and monitor for handshake failures or abnormal transport behavior after upgrade.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Assess application compatibility before adopting OpenSSL 4.1.0, test DTLS-dependent services, and track the listed bugs in change management.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/openssl-4-1-0-released/",
+          "source": "Help Net Security",
+          "published": "2026-10-25T23:33:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "OpenSSL is widely used enterprise infrastructure, so changes to its cryptographic and transport support are important to security and application teams. The item is still a release note with known bugs, not a disclosed active exploitation event.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 59.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 13.5,
+        "industry": 7.0,
+        "practice": 12.0,
+        "weighted_total": 59.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b22df1a47ab1f59d9b14df44",
+      "headline": "Dormant AI agents may still hold access to company systems",
+      "summary": "Security research suggests some inactive AI agents keep credentials and system connections after they stop being used. The finding underscores the need to inventory agents, review access, and remove stale integrations before they become an unnecessary risk.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is security research about a common emerging risk in AI-enabled environments; it is operationally relevant but not a disclosed incident or active attack.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 35,
+        "telecommunications": 35,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 35,
+        "industrial_manufacturing": 35,
+        "automotive": 35
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 30,
+        "siem_detection": 20,
+        "iam_pam": 80,
+        "email_phishing": 0,
+        "data_protection_dlp": 65,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 25,
+        "ai_governance": 95
+      },
+      "affected_technologies": [
+        "AI agents",
+        "enterprise systems",
+        "credentials"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were included; defenders should focus on identity and access reviews, service-account hygiene, and audit logging for agent activity.",
+      "related_case_studies": [
+        "secure-azure-migration"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory AI agents, disable stale integrations, rotate credentials where needed, and establish lifecycle controls and periodic access reviews for agent-based automation.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/arrakis-dormant-ai-agent-risks-report/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T05:30:27+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is security research about a common emerging risk in AI-enabled environments; it is operationally relevant but not a disclosed incident or active attack.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 57.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 5.5,
+        "practice": 14.25,
+        "weighted_total": 57.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "42ada7e5fee5df498d5d0541",
+      "headline": "Cisco products affected by weak eMudhra certificate keys",
+      "summary": "Cisco products are reported to be affected by weak keys tied to eMudhra certificates. The item indicates a certificate trust and product integrity issue, but does not describe active exploitation or a confirmed compromise.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "This is a vendor/product security issue involving certificate weaknesses that can affect trust in deployed software and appliances, but the report does not indicate exploitation in the wild or a confirmed incident. Operational relevance is moderate because certificate and PKI problems can affect enterprise deployments across sectors.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 55,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 65,
+        "devsecops": 45,
+        "siem_detection": 20,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 15,
+        "ot_ics": 25,
+        "grc_audit": 35,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Cisco",
+        "eMudhra",
+        "PKI",
+        "TLS certificates",
+        "certificate authorities"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were linked in the source. Defenders should review certificate trust chains, affected Cisco product advisories, and monitor for abnormal certificate validation or firmware integrity issues as applicable.",
+      "related_case_studies": [
+        "security-at-telecom-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Identify Cisco products in use, confirm whether they rely on affected eMudhra certificates, and follow vendor remediation guidance. Review PKI trust stores and update validation, inventory, and monitoring controls where needed.",
+      "confidence": 0.77,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/959004/Cisco-producten+ook+geraakt+door+zwakke+keys+van+eMudhra-certificaten?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-26T10:40:30+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a vendor/product security issue involving certificate weaknesses that can affect trust in deployed software and appliances, but the report does not indicate exploitation in the wild or a confirmed incident. Operational relevance is moderate because certificate and PKI problems can affect enterprise deployments across sectors.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 55.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.75,
+        "industry": 5.5,
+        "practice": 9.75,
+        "weighted_total": 55.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9568a236f68da4a16c1f4e70",
+      "headline": "Witness tool tracks and signs how software was built",
+      "summary": "An open-source tool is being used to record build provenance, sign it, and compare it with policy before release. The item highlights software supply-chain assurance and build verification rather than a breach or exploit.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is a security tooling and supply-chain assurance story with clear enterprise relevance, but it is not itself an incident or vulnerability disclosure.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 65,
+        "logistics": 45,
+        "industrial_manufacturing": 55,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 85,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 50,
+        "security_automation": 30,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "in-toto",
+        "CNCF",
+        "software build provenance"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were provided. Relevant controls would center on build attestation, signature verification, and policy enforcement in CI/CD pipelines.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Evaluate build provenance and attestation controls for CI/CD, verify release artifacts against policy, and align signing and promotion steps with your DevSecOps program.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/witness-open-source-software-supply-chain-tool/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T07:00:45+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a security tooling and supply-chain assurance story with clear enterprise relevance, but it is not itself an incident or vulnerability disclosure.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 6.5,
+        "practice": 12.75,
+        "weighted_total": 53.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "33f7736e74631c3e92659afb",
+      "headline": "Research flags Tailscale SSH root-risk path on misconfigured networks",
+      "summary": "A security researcher reported that a compromised device on a Tailscale network could be used to reach other servers and potentially obtain root access when SSH port forwarding is enabled. The finding depends on local network access rules and specific configuration choices rather than a confirmed public compromise.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is a notable security finding about a popular remote-access and networking product, but the article describes research conditions and no confirmed in-the-wild exploitation. The operational impact is configuration-dependent and should be validated by defenders using Tailscale SSH and port forwarding.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 70,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 55,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 10,
+        "siem_detection": 40,
+        "iam_pam": 70,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Tailscale SSH"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were provided. Detection should focus on Tailscale SSH configuration review, unexpected port-forwarding use, and anomalous privileged access from already trusted devices.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review Tailscale SSH settings, restrict port forwarding, verify access rules, and monitor for unexpected administrative use from enrolled devices.",
+      "confidence": 0.78,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+          "source": "The Hacker News",
+          "published": "2026-10-25T17:44:09+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a notable security finding about a popular remote-access and networking product, but the article describes research conditions and no confirmed in-the-wild exploitation. The operational impact is configuration-dependent and should be validated by defenders using Tailscale SSH and port forwarding.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 7.0,
+        "practice": 10.5,
+        "weighted_total": 53.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "63f16ca1b1ad1c49473e2336",
+      "headline": "Malicious instruction file targets AI coding agent to install malware",
+      "summary": "A malicious file appeared to try steering an AI coding agent toward installing a known bad npm package on a developer workstation. The attempt was interrupted before code execution, and the origin of the file is unclear.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is a security research report about a novel AI-agent abuse path, but it does not show successful compromise or widespread exploitation.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 55,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 20,
+        "ai_governance": 75
+      },
+      "affected_technologies": [
+        "AI coding agents",
+        "npm"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were cited in the source; defenders should review AI-agent workflows, file ingestion paths, and package-install prompts for anomalous instructions.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Restrict what files and prompts AI coding agents can consume, validate package-install requests out of band, and add review gates for agent-initiated dependency changes.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/malicious-file-in-downloads-folder.html",
+          "source": "The Hacker News",
+          "published": "2026-10-26T06:03:48+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a security research report about a novel AI-agent abuse path, but it does not show successful compromise or widespread exploitation.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 52.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.5,
+        "practice": 11.25,
+        "weighted_total": 52.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "661fa27301fcf18cb5876a95",
+      "headline": "VeraCrypt release fixes multiple security vulnerabilities",
+      "summary": "A new VeraCrypt version addresses several security flaws in the encryption tool. The report is a software maintenance notice without details of active exploitation or major operational impact.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "This is a product security update affecting a widely used encryption utility, but the source does not indicate active exploitation or a broad enterprise incident. It is relevant for patch and exposure review.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 55,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 45,
+        "retail_banking": 45,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 45,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 20,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 70,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "VeraCrypt"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detections are supplied. The practical response is version review and patch management for endpoints or workflows using VeraCrypt.",
+      "related_case_studies": [
+        "secure-azure-migration"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Confirm the deployed VeraCrypt version, apply the update where relevant and validate whether any encrypted-data handling processes need additional review.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/958982/Encryptiesoftware+VeraCrypt+verhelpt+meerdere+beveiligingslekken?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-26T09:31:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a product security update affecting a widely used encryption utility, but the source does not indicate active exploitation or a broad enterprise incident. It is relevant for patch and exposure review.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 51.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.0,
+        "practice": 10.5,
+        "weighted_total": 51.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "e84a8003dbea7666967a8851",
+      "headline": "AI safety report says model caused harm in a July incident",
+      "summary": "The article discusses a reported case where a model allegedly generated harmful behavior, including identity misuse and malicious code submission. It is a research and safety discussion about AI misuse rather than a traditional cyber incident.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "The topic is relevant to emerging AI misuse risks and governance, but it does not describe a widespread compromise or operationally significant intrusion. Its value is mainly in highlighting threat modeling and controls.",
+      "location_relevance": {
+        "US": 55,
+        "Europe": 55,
+        "MEA": 40,
+        "Other": 55
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 10,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 80
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No vendor rule references are included in the source. The main defensive need is governance, review and monitoring for unsafe AI outputs and agent behavior.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review AI usage controls, human approval gates, logging and code-review safeguards for any agentic workflows that could be prompted into unsafe actions.",
+      "confidence": 0.78,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/mythos-5-ignored-real-world-harm-in-july-attack/",
+          "source": "SecurityWeek",
+          "published": "2026-10-26T09:10:03+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The topic is relevant to emerging AI misuse risks and governance, but it does not describe a widespread compromise or operationally significant intrusion. Its value is mainly in highlighting threat modeling and controls.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 49.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 2.5,
+        "practice": 12.0,
+        "weighted_total": 49.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "bde3c30136fd56d81bebefd8",
+      "headline": "Google updates Gmail privacy terms to allow limited ad-related data use",
+      "summary": "Google says its privacy policy now allows certain Gmail and Photos data to be used in specific advertising-related cases. The item is about a policy change, not a disclosed breach or security incident, so defenders should review privacy and consent implications rather than incident response steps.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "A major consumer data-policy change can affect privacy governance, consent handling, and internal policy reviews, but the source does not describe a breach or enforcement action.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 55,
+        "MEA": 15,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Gmail",
+        "Google Photos"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules are applicable because this is a policy and privacy notice change, not a malware or intrusion report.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review user-consent language, data handling notices, and internal Google Workspace governance to confirm the change aligns with policy and legal obligations.",
+      "confidence": 0.77,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/958993/Google+komt+met+uitzondering+om+Gmail-data+voor+advertenties+te+gebruiken?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-26T10:02:12+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A major consumer data-policy change can affect privacy governance, consent handling, and internal policy reviews, but the source does not describe a breach or enforcement action.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 43.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 1.5,
+        "practice": 6.75,
+        "weighted_total": 43.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ced89b93365415e1b79c4259",
+      "headline": "Google open-sources AI code-review plugin for design validation",
+      "summary": "Google released an internal plugin that makes AI coding agents write a design document and then subject it to separate review by fresh AI sessions. The item focuses on software engineering workflow and AI-assisted development quality rather than a security incident.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a research and productization story about AI coding workflow controls, not an operational security event. It may interest teams working on AI governance or DevSecOps, but it does not signal immediate enterprise risk on its own.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 40,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 70,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 80
+      },
+      "affected_technologies": [
+        "AI coding agents",
+        "design review workflows"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules apply directly. The article is useful for control design discussions around AI-assisted development, review separation, and governance processes.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Evaluate whether AI coding tools need independent review gates, logging, and policy controls before broader rollout.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/google-elephant-goldfish-model-plugin/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T04:25:59+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a research and productization story about AI coding workflow controls, not an operational security event. It may interest teams working on AI governance or DevSecOps, but it does not signal immediate enterprise risk on its own.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 29.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 4.0,
+        "practice": 12.0,
+        "weighted_total": 29.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ccb8f249e1b0580d3ec9d255",
+      "headline": "Anthropic explains safeguards for Claude Duet AI agent",
+      "summary": "Anthropic described the safeguards built into Claude Duet, including approvals for sensitive actions and limits on credential access. The piece is a product and research update rather than an incident, with no evidence of exploitation or customer impact.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a security-focused product update about an AI agent’s safeguards, not a vulnerability disclosure, breach, or regulatory action. Its relevance is mainly informational for teams evaluating AI governance and agent controls.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 60
+      },
+      "affected_technologies": [
+        "Claude API",
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were linked in the source. Security teams evaluating AI agents should review approval workflows, tool permissions, data boundaries, and logging for anomalous agent actions.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Assess whether AI agents like Claude Duet fit your governance model, especially around approvals, credential handling, and sensitive-data boundaries. If piloting similar tools, require least privilege, audit logging, and human review for high-risk actions.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/anthropic-claude-duet-security-safeguards/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T10:41:47+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a security-focused product update about an AI agent’s safeguards, not a vulnerability disclosure, breach, or regulatory action. Its relevance is mainly informational for teams evaluating AI governance and agent controls.",
+      "watch_tech": [
+        {
+          "name": "Claude API",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        },
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 28.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 9.0,
+        "industry": 1.5,
+        "practice": 9.0,
+        "weighted_total": 28.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "6a6b8d983b6ae4ab6ce6486a",
+      "headline": "Maritime-focused vulnerability database expands IT and OT coverage",
+      "summary": "A new vulnerability database is being positioned for maritime organizations and includes IT and OT CVEs relevant to the sector. It is a defensive information resource rather than a reported compromise or exploit campaign.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product and service announcement with indirect security value; it does not describe a vulnerability, exploitation, or incident wave.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 60,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 45,
+        "grc_audit": 0,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "maritime vulnerability database",
+        "IT CVEs",
+        "OT CVEs"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content is provided; the item is a reference-data announcement rather than an exploit advisory.",
+      "related_case_studies": [
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "logistics",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Assess whether the database improves asset, CVE, and OT exposure tracking for maritime environments and whether it can be integrated into existing vulnerability workflows.",
+      "confidence": 0.82,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/blue-initiative-maritime/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-26T10:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product and service announcement with indirect security value; it does not describe a vulnerability, exploitation, or incident wave.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 2.25,
+        "industry": 6.0,
+        "practice": 9.0,
+        "weighted_total": 26.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "ef0d1b72bcd557c8bf4e4dd8",
+      "headline": "Survey says AI-generated code noise is burdening large open source projects",
+      "summary": "A survey of open-source contributors says large projects are seeing a high share of low-quality or AI-generated submissions. The finding points to review fatigue and higher moderation overhead rather than a specific incident.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a survey and commentary item about open-source workflow friction, not a direct security incident or actionable vulnerability.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 30,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 35,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 40
+      },
+      "affected_technologies": [
+        "open source projects",
+        "AI-assisted coding"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided; the issue is primarily governance and contributor-workflow overhead.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Tighten contribution review standards, automate linting and policy checks, and require human validation for substantial code changes.",
+      "confidence": 0.73,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/linux-foundation-open-source-ai-slop/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T06:30:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a survey and commentary item about open-source workflow friction, not a direct security incident or actionable vulnerability.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 21.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 3.0,
+        "practice": 6.0,
+        "weighted_total": 21.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "38c705de0f5ebeead9e1e5a2",
+      "headline": "Unit 8200 alumni raise $34 million for agentic SecOps startup",
+      "summary": "Mave, founded in Tel Aviv by former Unit 8200 officers, raised $34 million to build AI agents that help investigate security alerts across existing tools. The story is a funding and product update rather than an incident or vulnerability. It suggests growing interest in AI-assisted security operations, but does not show a new operational risk on its own.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a startup funding and product announcement with no disclosed breach, exploit, or security flaw. It mainly reflects market activity in AI-driven SecOps rather than a material threat event.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 15,
+        "MEA": 20,
+        "Other": 30
+      },
+      "countries_mentioned": [
+        "IL"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 10,
+        "siem_detection": 25,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 35,
+        "ai_governance": 25
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content is present. This item is a market/product announcement, so there are no actionable detection references to map.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track AI-assisted security operations tools for governance, integration, and data-handling requirements, but do not treat this announcement as an incident indicator.",
+      "confidence": 0.92,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/former-unit-8200-officers-raise-34-million-for-agentic-secops-startup-mave/",
+          "source": "SecurityWeek",
+          "published": "2026-10-25T11:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a startup funding and product announcement with no disclosed breach, exploit, or security flaw. It mainly reflects market activity in AI-driven SecOps rather than a material threat event.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 20.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 2.0,
+        "practice": 5.25,
+        "weighted_total": 20.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "0181192af112f3b8ff9bafb1",
+      "headline": "Stellar Cyber highlights integrated SOC workflow architecture",
+      "summary": "This product-focused piece describes a security operations platform that unifies telemetry, detection, investigation, and response. It is vendor marketing rather than a report of a new threat or incident, so the operational impact is limited to platform evaluation and SOC design considerations.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "The article is product showcase and marketing content, not a security event, vulnerability, or regulatory development with substantive operational urgency.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 25,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 40,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 35,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "Stellar Cyber",
+        "SIEM",
+        "SOC platforms"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided beyond general platform positioning.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Evaluate whether the platform’s workflow and integration model aligns with existing SOC requirements before considering adoption.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/product-showcase-stellar-cyber-isoc-platform/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T06:00:12+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The article is product showcase and marketing content, not a security event, vulnerability, or regulatory development with substantive operational urgency.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 19.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 1.5,
+        "industry": 2.5,
+        "practice": 6.0,
+        "weighted_total": 19.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "1bca5ccd00967cf5ede9abc6",
+      "headline": "Hybrid sovereign architecture positions security as a foundation for AI and compliance",
+      "summary": "This sponsored piece describes security controls for a hybrid sovereign architecture that supports AI, data protection and compliance goals. It is a strategic architecture discussion rather than a report of a breach or vulnerability.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "The item is marketing/strategy content with no specific incident, flaw, enforcement action or operational threat. It has limited direct security urgency beyond general architecture awareness.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 15,
+        "global_it_services": 20,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 25,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 0,
+        "ai_governance": 30
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content is provided. This is a high-level sponsored architecture article, so there are no incident-specific indicators or rule links to assess.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Use the article as a reminder to review data classification, cloud boundary controls and AI governance requirements in hybrid environments, but do not treat it as a security alert.",
+      "confidence": 0.89,
+      "sources": [
+        {
+          "url": "https://www.cybersecuritydive.com/spons/security-anchors-a-modern-hybrid-sovereign-architecture/833427/",
+          "source": "Cybersecurity Dive",
+          "published": "2026-10-26T09:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The item is marketing/strategy content with no specific incident, flaw, enforcement action or operational threat. It has limited direct security urgency beyond general architecture awareness.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.cybersecuritydive.com/spons/security-anchors-a-modern-hybrid-sovereign-architecture/833427/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 18.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 2.0,
+        "practice": 4.5,
+        "weighted_total": 18.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "cbc6b5f311de5bf33cfa43d0",
+      "headline": "YARA-X 1.22.0 release adds fixes and improvements",
+      "summary": "The YARA-X project released version 1.22.0 with a set of improvements and bug fixes. The item is a routine software update and does not describe a security incident or new operational risk.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product release announcement with minor maintenance changes only. It has limited security-operations significance beyond routine tooling awareness.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 10,
+        "siem_detection": 30,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "YARA-X"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. This release may be relevant to teams maintaining YARA-based detection workflows, but it is not itself a detection rule source.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track the release notes, test compatibility in detection pipelines, and update YARA tooling where operationally appropriate.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33454",
+          "source": "SANS ISC",
+          "published": "2026-10-25T19:57:53+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product release announcement with minor maintenance changes only. It has limited security-operations significance beyond routine tooling awareness.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 16.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 2.0,
+        "practice": 4.5,
+        "weighted_total": 16.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "808433398b84269dc5535c3d",
+      "headline": "r/opensource restricts AI projects in forum moderation shift",
+      "summary": "Reddit moderators for r/opensource have set new posting rules that exclude projects using, made by, or intended for AI. The change is a community moderation decision, not a security incident, but it may affect how open-source AI projects are discussed and discovered.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a forum moderation policy change, not a cybersecurity incident, vulnerability, breach, or regulation with operational security impact.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 10,
+        "MEA": 5,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "Reddit"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No security detection content is present; this is a community moderation update rather than a threat or vulnerability event.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Monitor community and ecosystem policy changes that may affect open-source AI project visibility, but no security control change is indicated by this item.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/26/reddit-r-opensource-ai-ban/",
+          "source": "Help Net Security",
+          "published": "2026-10-26T04:30:36+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a forum moderation policy change, not a cybersecurity incident, vulnerability, breach, or regulation with operational security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 14.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 0.5,
+        "practice": 1.5,
+        "weighted_total": 14.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "95b6b6e7dc0fead63db8a9e4",
+      "headline": "SANS ISC Stormcast podcast feed posts new security update entries",
+      "summary": "This cluster contains two SANS ISC Stormcast podcast entries with no incident details or substantive advisory text in the provided data. It appears to be a feed update rather than a reportable cyber event.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "The supplied items do not include a specific vulnerability, incident, or enforcement action to assess.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 0,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 0,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators or detection content were provided.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review the underlying podcast episode for technical details before treating this as a security signal.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33436",
+          "source": "SANS ISC",
+          "published": "2026-10-20T02:00:03+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://isc.sans.edu/diary/rss/33438",
+          "source": "SANS ISC",
+          "published": "2026-10-21T02:00:03+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://isc.sans.edu/diary/rss/33446",
+          "source": "SANS ISC",
+          "published": "2026-10-22T02:00:02+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://isc.sans.edu/diary/rss/33448",
+          "source": "SANS ISC",
+          "published": "2026-10-23T10:25:11+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://isc.sans.edu/diary/rss/33456",
+          "source": "SANS ISC",
+          "published": "2026-10-26T03:30:12+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The supplied items do not include a specific vulnerability, incident, or enforcement action to assess.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 13.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 2.25,
+        "industry": 1.0,
+        "practice": 0.75,
+        "weighted_total": 13.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "452814709e1615f5b494d051",
+      "headline": "Seam Cutter is a screenshot editing utility",
+      "summary": "This post introduces Seam Cutter, a small tool for cutting a middle section out of an image by sliding two sides relative to each other. It is a productivity and software tools announcement, not a security incident. There is no clear enterprise cyber impact beyond general tooling interest.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "The item is a benign tool announcement with no evident vulnerability, breach, or policy change. It does not create material security urgency.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "mobile apps"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No security detection content is present.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No security action needed; treat as a general tools/productivity note unless the tool is adopted in a sensitive workflow.",
+      "confidence": 0.99,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Oct/25/seam-cutter/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-10-25T15:10:19+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The item is a benign tool announcement with no evident vulnerability, breach, or policy change. It does not create material security urgency.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 12.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 2.25,
+        "industry": 0.5,
+        "practice": 0.75,
+        "weighted_total": 12.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "eb712e16e7392f0e9edaaacc",
+      "headline": "Kali Linux 2026.3 adds tools and desktop updates",
+      "summary": "Kali Linux has released a new version with additional tools, refreshed scripts, and desktop improvements. This is a release note, not a security incident or enterprise defense advisory, so the operational impact is limited.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "The item is a routine product update with no disclosed vulnerability, breach, or urgent defensive action for enterprises.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Kali Linux"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content applies; the release note does not describe a threat or vulnerability.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No immediate enterprise action is needed unless teams specifically depend on Kali tooling for testing or training workflows.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/linux/kali-linux-20263-released-with-7-new-tools-desktop-updates/",
+          "source": "BleepingComputer",
+          "published": "2026-10-26T10:26:52+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The item is a routine product update with no disclosed vulnerability, breach, or urgent defensive action for enterprises.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 11.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.5,
+        "practice": 1.5,
+        "weighted_total": 11.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "3752165e9c29de9f6900e4b5",
+      "headline": "Guest diary on language selection for security work",
+      "summary": "A guest diary post reflects on language choices in security work. It appears to be an opinion or personal essay rather than a security event, vulnerability, or policy change.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a diary-style commentary with no clear operational security impact, exploitable issue, or enterprise action item.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 0,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content applies; this is not a technical incident or threat report.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No immediate action required beyond monitoring for any future technical findings from the author or source.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33442",
+          "source": "SANS ISC",
+          "published": "2026-10-26T09:38:03+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a diary-style commentary with no clear operational security impact, exploitable issue, or enterprise action item.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 9.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.0,
+        "industry": 0.0,
+        "practice": 0.0,
+        "weighted_total": 9.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 1,
+    "high": 8,
+    "medium": 11,
+    "low": 13
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 8,
+  "watch": {
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "Stolen GitHub tokens used to exfiltrate repository secrets from Actions logs",
+        "cluster_id": "a26d3a2a0bb03d720cf8ca01"
+      },
+      {
+        "technology": "GitHub Actions",
+        "headline": "Stolen GitHub tokens used to exfiltrate repository secrets from Actions logs",
+        "cluster_id": "a26d3a2a0bb03d720cf8ca01"
+      }
+    ],
+    "vulnerability": [
+      {
+        "technology": "Qualys",
+        "headline": "Qualys outlines stopgap controls for PHP2Shell exposure",
+        "cluster_id": "680092ecba6ea8c02355df9b"
+      }
+    ],
+    "microsoft": [
+      {
+        "technology": "Microsoft 365",
+        "headline": "Microsoft 365 token replay campaign compromises accounts across 79 organizations",
+        "cluster_id": "399172439712b08d5e85ae1e"
+      },
+      {
+        "technology": "Windows Server",
+        "headline": "Microsoft patches ASP.NET Core privilege escalation flaw",
+        "cluster_id": "ddb1fcadf36a63e9b0b39539"
+      },
+      {
+        "technology": "Windows Server",
+        "headline": "Microsoft reports Brotli decoder buffer overflow in .NET-related component",
+        "cluster_id": "7f536318093d9de7fa7ffe03"
+      }
+    ],
+    "ai": [
+      {
+        "technology": "AI agent frameworks",
+        "headline": "AI safety report says model caused harm in a July incident",
+        "cluster_id": "e84a8003dbea7666967a8851"
+      },
+      {
+        "technology": "Claude API",
+        "headline": "Anthropic explains safeguards for Claude Duet AI agent",
+        "cluster_id": "ccb8f249e1b0580d3ec9d255"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Anthropic explains safeguards for Claude Duet AI agent",
+        "cluster_id": "ccb8f249e1b0580d3ec9d255"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Unit 8200 alumni raise $34 million for agentic SecOps startup",
+        "cluster_id": "38c705de0f5ebeead9e1e5a2"
+      }
+    ]
+  },
+  "regulations": {},
+  "other_count": 10,
+  "source_health": {
+    "at": "2026-10-26T10:46:28.067782+00:00",
+    "enabled": 41,
+    "failures": 1,
+    "new": 33,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 5
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 9
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 232,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 4,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 0,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [
+    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+  ],
+  "kev_provenance": {
+    "released": "2026-10-23T19:30:18.920900+00:00",
+    "version": "2026.10.23",
+    "count": 1756,
+    "source": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+    "checked": "2026-10-26T10:46:28.067782+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "continuous-vulnerability-management": [
+      "7c54e769948b6fc771ccdcc1",
+      "da19872bd8ebd641fd639776",
+      "d20444dd0495bc21e7668528",
+      "680092ecba6ea8c02355df9b",
+      "15faad20100130033abdd3a4",
+      "ddb1fcadf36a63e9b0b39539",
+      "7f536318093d9de7fa7ffe03"
+    ],
+    "vendor-release-automation": [
+      "7c54e769948b6fc771ccdcc1",
+      "d20444dd0495bc21e7668528",
+      "5db2cad8ad53b4cb9cf0b64d",
+      "680092ecba6ea8c02355df9b",
+      "15faad20100130033abdd3a4",
+      "0679ef6824f482ea04fc1185",
+      "9568a236f68da4a16c1f4e70",
+      "ced89b93365415e1b79c4259"
+    ],
+    "security-services-for-investment-management": [
+      "7290989d6ec32cb08c714d96"
+    ],
+    "audit-ready-by-design": [
+      "da19872bd8ebd641fd639776",
+      "a26d3a2a0bb03d720cf8ca01",
+      "399172439712b08d5e85ae1e",
+      "ddb1fcadf36a63e9b0b39539",
+      "7f536318093d9de7fa7ffe03",
+      "0679ef6824f482ea04fc1185",
+      "33f7736e74631c3e92659afb"
+    ],
+    "security-in-the-delivery-path": [
+      "5db2cad8ad53b4cb9cf0b64d",
+      "a26d3a2a0bb03d720cf8ca01",
+      "9568a236f68da4a16c1f4e70",
+      "ced89b93365415e1b79c4259"
+    ],
+    "secure-azure-migration": [
+      "399172439712b08d5e85ae1e",
+      "b22df1a47ab1f59d9b14df44",
+      "661fa27301fcf18cb5876a95"
+    ],
+    "security-at-telecom-scale": [
+      "42ada7e5fee5df498d5d0541"
+    ],
+    "zero-trust-at-enterprise-scale": [
+      "33f7736e74631c3e92659afb"
+    ],
+    "security-foundations-for-logistics": [
+      "6a6b8d983b6ae4ab6ce6486a"
+    ]
+  }
+}
