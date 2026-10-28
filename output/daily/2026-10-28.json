@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-28",
-  "start": "2026-10-27T10:58:32.331747+00:00",
-  "end": "2026-10-28T10:58:32.331747+00:00",
+  "start": "2026-10-27T11:46:49.063057+00:00",
+  "end": "2026-10-28T11:46:49.063057+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -924,6 +924,108 @@
         "industry": 8.0,
         "practice": 14.25,
         "weighted_total": 80.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "eedee772f7fad7f1a853ca00",
+      "headline": "Active exploitation reported for Node2Shell Brotli decoder flaw",
+      "summary": "A vulnerability in the Google Brotli decoder, also referred to as Node2Shell, is reported to be under active attack. The item suggests real-world exploitation against exposed systems, so defenders should treat it as an urgent exposure-management and detection problem.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 35,
+        "siem_detection": 70,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Google Brotli decoder",
+        "Node.js"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. Prioritize exposure mapping, patched runtime validation, and monitoring for abnormal decoder or application crashes consistent with exploitation attempts.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Identify systems using affected Brotli/Node.js components, apply updates or mitigations immediately, and hunt for exploitation indicators.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-28T11:39:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "This is active exploitation of a widely deployed software component, which creates immediate risk across many enterprise environments. The report explicitly indicates attack activity, making it a critical operational issue.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 14.25,
+        "weighted_total": 79.5,
         "severity_band": [
           65,
           84.99
@@ -2017,6 +2119,108 @@
       "included": true
     },
     {
+      "cluster_id": "2e5063d5ddc42334fda588af",
+      "headline": "Device code phishing targets U.S. organizations",
+      "summary": "A phishing campaign is abusing device code authentication flows to target organizations in the United States. The technique can bypass some traditional credential-theft defenses by exploiting trusted login workflows, so defenders should review conditional access, user awareness, and sign-in monitoring.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "This is an active phishing campaign aimed at U.S. organizations, creating immediate account-takeover risk for enterprises. While not a confirmed breach, device-code abuse is a practical and scalable identity attack that warrants urgent defensive attention.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 50,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 45,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 75,
+        "iam_pam": 85,
+        "email_phishing": 90,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 40,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "cloud identity providers",
+        "device code authentication flows"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided in the source material. Monitor identity provider logs for unusual device-code grants, impossible travel, suspicious consent events, and abnormal sign-in patterns.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Audit device-code authentication exposure, tighten conditional access and user consent controls, and alert on anomalous sign-in and token-grant activity.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/american-organizations-under-attack.html",
+          "source": "The Hacker News",
+          "published": "2026-10-28T10:30:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is an active phishing campaign aimed at U.S. organizations, creating immediate account-takeover risk for enterprises. While not a confirmed breach, device-code abuse is a practical and scalable identity attack that warrants urgent defensive attention.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 78.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 5.0,
+        "practice": 13.5,
+        "weighted_total": 78.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "cf9205dbc242abd669b0cc89",
       "headline": "HPE patches multiple critical flaws in networking products",
       "summary": "HPE released patches for dozens of critical vulnerabilities in its networking products, including issues that could enable remote code execution and authentication bypass. The source indicates multiple severe defects, but it does not say they are being actively exploited.",
@@ -2464,6 +2668,115 @@
       "included": true
     },
     {
+      "cluster_id": "d4f5d5baa8252d3b756bc8a9",
+      "headline": "Adobe patches critical flaws in Campaign Classic",
+      "summary": "Adobe released patches for multiple critical vulnerabilities in Campaign Classic, including issues that could allow code execution, security bypass, and privilege escalation. The report does not indicate active exploitation, but affected organizations should prioritize patching and exposure review.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a set of critical vulnerabilities in a widely used enterprise product, with code execution potential. Even without confirmed exploitation, the severity and enterprise reach justify high importance.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 60,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 20,
+        "siem_detection": 20,
+        "iam_pam": 10,
+        "email_phishing": 20,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Adobe Campaign Classic"
+      ],
+      "cves": [
+        "CVE-2026-104351"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. Defenders should inventory exposed instances, apply vendor patches, and monitor for anomalous server-side execution and privilege changes.",
+      "related_case_studies": [
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Patch Adobe Campaign Classic promptly, verify exposure of internet-facing instances, and review logs for suspicious execution or privilege escalation.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+          "source": "The Hacker News",
+          "published": "2026-10-28T11:15:51+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a set of critical vulnerabilities in a widely used enterprise product, with code execution potential. Even without confirmed exploitation, the severity and enterprise reach justify high importance.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-104351": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 76.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 76.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "9634780a377812c7519967ca",
       "headline": "Attackers abuse inbox spam and Microsoft Teams to impersonate IT support",
       "summary": "Threat actors are flooding inboxes with spam and then using Microsoft Teams external chat to pose as IT support. The pattern shows how collaboration tools can be chained into social-engineering workflows that evade some traditional controls.",
@@ -2886,113 +3199,6 @@
         "location": 12.0,
         "industry": 6.0,
         "practice": 12.75,
-        "weighted_total": 75.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "ec135d07195c9493f074ea31",
-      "headline": "University of Copenhagen reports breach affecting more than 520,000 people",
-      "summary": "The University of Copenhagen says attackers stole personal data on more than half a million people. The report suggests a significant privacy and data-protection incident with clear European impact, but it does not provide technical details about the intrusion method.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "This is a large breach involving personal data at a major European university, which creates material privacy, legal, and operational concerns. The source does not identify a CVE or attack chain, but the scale makes it a high-importance incident.",
-      "location_relevance": {
-        "US": 10,
-        "Europe": 95,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [
-        "DK"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 30,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 90,
-        "ot_ics": 0,
-        "grc_audit": 60,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "University systems"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "gdpr",
-          "nature": "enforcement",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No technique-specific rule is available from the source; defenders should rely on breach investigation, identity monitoring, and data-loss detection controls.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Assess exposed data, preserve logs, notify affected stakeholders as required, and review identity, segmentation, and data-protection controls to reduce recurrence.",
-      "confidence": 0.94,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/copenhagen-university-data-breach/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-10-27T11:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a large breach involving personal data at a major European university, which creates material privacy, legal, and operational concerns. The source does not identify a CVE or attack chain, but the scale makes it a high-importance incident.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 75.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 3.0,
-        "practice": 13.5,
         "weighted_total": 75.75,
         "severity_band": [
           65,
@@ -3557,6 +3763,113 @@
       "included": true
     },
     {
+      "cluster_id": "4d358129673fb72b6f4f3b16",
+      "headline": "FBI seizes bulletproof hosting domain used to shield criminal activity",
+      "summary": "The FBI seized the domain of a bulletproof hosting provider accused of supporting criminal activity and ignoring repeated warnings. The action involved US authorities and international law enforcement partners, indicating a disruption of infrastructure used to enable abuse and concealment online.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "A cross-border law-enforcement seizure of hosting infrastructure is a significant disruption to criminal enablement services and is relevant to defenders monitoring abuse infrastructure and takedowns.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 90,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [
+        "DE",
+        "GB",
+        "NL",
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 25,
+        "private_banking": 15,
+        "investment_management": 10,
+        "government": 60,
+        "retail_banking": 10,
+        "global_it_services": 55,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 25,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "bulletproof hosting",
+        "hosting infrastructure",
+        "domains"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were present in the source links, so no rule references are included. Defenders can monitor for abuse patterns tied to hosting providers, suspicious domain infrastructure, and associated account activity.",
+      "related_case_studies": [
+        "audit-ready-by-design",
+        "security-at-telecom-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review monitoring for abusive hosting, suspicious domain registrations, and infrastructure reuse patterns; coordinate with abuse desks and law enforcement as needed.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/28/fbi-seizure-virtualine-bulletproof-hosting-domain/",
+          "source": "Help Net Security",
+          "published": "2026-10-28T11:41:01+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A cross-border law-enforcement seizure of hosting infrastructure is a significant disruption to criminal enablement services and is relevant to defenders monitoring abuse infrastructure and takedowns.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 71.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 6.0,
+        "practice": 5.25,
+        "weighted_total": 71.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "ebe6130a3b49d0f809dafaef",
       "headline": "GMO Group warns customers to power down PCs after ransomware threat",
       "summary": "GMO Group told customers to disconnect systems and shut down PCs after a threat actor claimed access through its Onamae Desktop Cloud and threatened ransomware activity. The report suggests a service-provider incident with possible customer impact, but the scope and final impact are not fully established.",
@@ -3847,109 +4160,6 @@
         "industry": 3.0,
         "practice": 10.5,
         "weighted_total": 68.25,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "b434e7ad4a7b0ac31514c152",
-      "headline": "Lazarus targets South Korean organizations with espionage malware",
-      "summary": "A North Korea-linked campaign attributed to Lazarus is reported against organizations in South Korea across construction, software, and communications equipment manufacturing. The activity is described as espionage-oriented and has been active since at least July 2025. ",
-      "category": "apt_nation_state",
-      "importance": "high",
-      "importance_rationale": "A nation-state campaign is directed at organizations in South Korea and touches multiple commercial sectors. It indicates ongoing operational risk, though the source describes espionage rather than destructive activity or widespread compromise.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 15,
-        "Other": 75
-      },
-      "countries_mentioned": [
-        "KR"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 60,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 40,
-        "logistics": 0,
-        "industrial_manufacturing": 55,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 35,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "South Korean security software"
-      ],
-      "cves": [],
-      "threat_actors": [
-        "Lazarus Group"
-      ],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Defenders should review endpoint, network, and application logs for anomalous use of security software and post-exploitation activity.",
-      "related_case_studies": [
-        "security-at-telecom-scale"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "telecommunications",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review endpoints and security tooling for suspicious use of legitimate security software, lateral movement, and post-exploitation artifacts; prioritize monitoring of South Korea-linked suppliers and software environments.",
-      "confidence": 0.91,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/lazarus-abuses-south-korean-security.html",
-          "source": "The Hacker News",
-          "published": "2026-10-27T11:32:31+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A nation-state campaign is directed at organizations in South Korea and touches multiple commercial sectors. It indicates ongoing operational risk, though the source describes espionage rather than destructive activity or widespread compromise.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 67.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 11.25,
-        "industry": 6.0,
-        "practice": 5.25,
-        "weighted_total": 67.5,
         "severity_band": [
           65,
           84.99
@@ -4263,6 +4473,133 @@
         "severity_band": [
           65,
           84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "485385543e2f98ab4e7d9973",
+      "headline": "Dutch energy suppliers face heavy reliance on U.S. cloud providers",
+      "summary": "A Dutch regulator’s analysis highlights that energy suppliers in the Netherlands depend heavily on a small set of U.S.-based cloud providers. The finding points to concentration and resilience risk rather than a direct compromise, with implications for continuity planning and vendor oversight.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a policy and dependency-risk story affecting a critical sector in the Netherlands. It is important for governance and resilience planning, but it does not describe an active incident or enforcement action.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 95,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "NL",
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 90,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 20,
+        "retail_banking": 10,
+        "global_it_services": 40,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 80,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 20,
+        "grc_audit": 85,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Amazon Web Services",
+        "Microsoft Azure",
+        "Google Cloud"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided and this item is not an incident. Useful monitoring would focus on cloud dependency inventories, resilience controls, and third-party risk evidence.",
+      "related_case_studies": [
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "energy_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review cloud concentration risk, map critical dependencies, and validate continuity and exit plans for essential energy workloads.",
+      "confidence": 0.74,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/959378/ACM%3A+Nederlandse+energieleveranciers+sterk+afhankelijk+van+Amerikaanse+cloud?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-10-28T10:58:47+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a policy and dependency-risk story affecting a critical sector in the Netherlands. It is important for governance and resilience planning, but it does not describe an active incident or enforcement action.",
+      "watch_tech": [
+        {
+          "name": "Azure",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        },
+        {
+          "name": "AWS",
+          "aliases": [
+            "Amazon Web Services"
+          ],
+          "cross_industry": false,
+          "vendor": "infrastructure"
+        },
+        {
+          "name": "Google Cloud",
+          "aliases": [
+            "GCP"
+          ],
+          "cross_industry": false,
+          "vendor": "infrastructure"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 63.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 9.0,
+        "practice": 12.75,
+        "weighted_total": 63.0,
+        "severity_band": [
+          35,
+          64.99
         ]
       },
       "included": true
@@ -5630,105 +5967,6 @@
       "included": true
     },
     {
-      "cluster_id": "ee7d5cd794be00773ca8cb1c",
-      "headline": "AI-generated fake login pages make account takeover easier",
-      "summary": "Security research highlights how generative AI can help attackers create more convincing fake login pages and targeted phishing lures. The main risk is easier credential theft and session hijacking for organizations and employees.",
-      "category": "fraud_phishing",
-      "importance": "medium",
-      "importance_rationale": "This is a broad phishing and account takeover risk enabled by AI-assisted content generation. It is operationally relevant, but the source describes technique acceleration rather than a specific major incident or exploit wave.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 70,
-        "Other": 70
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 25,
-        "iam_pam": 60,
-        "email_phishing": 85,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 10,
-        "ai_governance": 75
-      },
-      "affected_technologies": [
-        "login portals",
-        "MFA",
-        "session tokens"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Relevant defenses include phishing-resistant MFA, brand spoofing monitoring, and session anomaly detection.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Strengthen phishing-resistant MFA, session protection, domain monitoring, and employee reporting workflows; train staff to verify login pages and reduce trust in AI-generated lures.",
-      "confidence": 0.86,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/ai-generated-fake-login-pages-are.html",
-          "source": "The Hacker News",
-          "published": "2026-10-27T11:32:46+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a broad phishing and account takeover risk enabled by AI-assisted content generation. It is operationally relevant, but the source describes technique acceleration rather than a specific major incident or exploit wave.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 54.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 10.5,
-        "industry": 4.0,
-        "practice": 12.75,
-        "weighted_total": 54.25,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "7c53fd735d31077de67ebe80",
       "headline": "Warp says third-party vendor breach exposed AI agent logs and telemetry",
       "summary": "Warp disclosed that an attack on a third-party vendor exposed AI agent decision logs and user telemetry tied to its development environment. The incident appears to involve vendor infrastructure rather than a confirmed compromise of customer systems.",
@@ -6754,105 +6992,6 @@
       "included": true
     },
     {
-      "cluster_id": "e2abc5ac1ebf4661a33a14f4",
-      "headline": "Research shows AI models can conceal capabilities behind secret triggers",
-      "summary": "Researchers describe a method for hiding arbitrary model capabilities so they remain difficult to uncover through standard evaluation. The work is relevant to AI safety, model assurance, and governance, but it is presented as research rather than a reported incident or product flaw. It underscores limits in capability audits and the need for stronger evaluation methods.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "The report introduces a notable AI security research result with implications for model evaluation and governance. It does not describe a live compromise or urgent enterprise deployment issue, so medium is appropriate.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 40,
-        "Other": 40
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 20,
-        "retail_banking": 0,
-        "global_it_services": 20,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 10,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 0,
-        "ai_governance": 95
-      },
-      "affected_technologies": [
-        "AI models"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule applies directly; this is research on adversarial model behavior and audit limitations rather than an operational compromise.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Update AI assurance processes to include adversarial evaluation, hidden-capability testing, and governance review before deployment.",
-      "confidence": 0.89,
-      "sources": [
-        {
-          "url": "https://www.schneier.com/blog/archives/2026/10/hiding-capabilities-in-ai-models.html",
-          "source": "Schneier on Security",
-          "published": "2026-10-27T11:01:26+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "The report introduces a notable AI security research result with implications for model evaluation and governance. It does not describe a live compromise or urgent enterprise deployment issue, so medium is appropriate.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [
-          "https://www.schneier.com/blog/archives/2026/10/hiding-capabilities-in-ai-models.html"
-        ],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 49.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 6.0,
-        "industry": 2.0,
-        "practice": 14.25,
-        "weighted_total": 49.25,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "53193531b6455db3250b5d4f",
       "headline": "Interpol reports widespread arrests in Serengeti cybercrime operation",
       "summary": "Interpol says its latest Serengeti operation produced more than 1,400 arrests across African countries and the US and recovered stolen funds. The action reflects a broad law-enforcement effort against cyber-enabled crime, but the source does not attribute the arrests to a single campaign or threat group.",
@@ -7450,105 +7589,6 @@
         "industry": 3.5,
         "practice": 3.0,
         "weighted_total": 45.5,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "c4255691bc04847be987b7b9",
-      "headline": "Keystone will destroy wallets after verification key theft",
-      "summary": "Keystone says an attacker obtained a website key used to verify hardware wallets, forcing it to invalidate affected devices. The company says counterfeit units could have passed the online authenticity check, but the incident did not involve stolen customer funds according to the source.",
-      "category": "supply_chain",
-      "importance": "medium",
-      "importance_rationale": "This is a product integrity incident affecting a hardware wallet vendor and its verification process. It matters for trust and device authenticity, but the source does not describe a broader enterprise compromise or a mass exploitation wave.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 25,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 30,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 45,
-        "siem_detection": 10,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "hardware wallets",
-        "device verification systems",
-        "website authenticity checks"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Monitoring should focus on website integrity, certificate or signing material access, and anomalous device-verification activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "investment_management",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Validate device authenticity controls, rotate exposed verification material, and review website integrity and signing workflows for tampering.",
-      "confidence": 0.82,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
-          "source": "The Hacker News",
-          "published": "2026-10-27T11:46:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a product integrity incident affecting a hardware wallet vendor and its verification process. It matters for trust and device authenticity, but the source does not describe a broader enterprise compromise or a mass exploitation wave.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 39.75,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 3.0,
-        "industry": 3.0,
-        "practice": 6.75,
-        "weighted_total": 39.75,
         "severity_band": [
           35,
           64.99
@@ -9221,6 +9261,105 @@
       "included": false
     },
     {
+      "cluster_id": "93216fb0c47523fd9c361ff1",
+      "headline": "Research examines fraudulent North Korean IT worker schemes",
+      "summary": "Researchers describe a controlled setup used to study fraudulent North Korean IT worker operations. The piece is research-oriented and focuses on tactics and tradecraft rather than a new intrusion campaign or confirmed victim compromise.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is security research about fraudulent hiring and infiltration tactics, not a new exploit or confirmed breach. It may inform screening and insider-risk controls, but the immediate operational risk is limited.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 30,
+        "MEA": 20,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 30,
+        "retail_banking": 20,
+        "global_it_services": 40,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 20,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "remote work hiring processes"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "North Korea"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. Relevant controls would include hiring verification, identity proofing, access reviews, and insider-risk monitoring.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Strengthen recruiter verification, identity proofing, and insider-risk controls for remote hiring and contractor onboarding.",
+      "confidence": 0.72,
+      "sources": [
+        {
+          "url": "https://www.schneier.com/blog/archives/2026/10/studying-fraudulent-north-korean-it-workers.html",
+          "source": "Schneier on Security",
+          "published": "2026-10-28T11:05:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is security research about fraudulent hiring and infiltration tactics, not a new exploit or confirmed breach. It may inform screening and insider-risk controls, but the immediate operational risk is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 22.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 4.0,
+        "practice": 3.75,
+        "weighted_total": 22.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "dcad83d827337ce853e769bf",
       "headline": "Anthropic reports early AI-assisted drug discovery work with Claude",
       "summary": "Anthropic says it is exploring drug-development workflows with Claude and several research partners. The item is a research update about AI-enabled scientific work, not a cybersecurity incident or control advisory.",
@@ -9933,9 +10072,9 @@
   ],
   "counts": {
     "critical": 2,
-    "high": 37,
-    "medium": 32,
-    "low": 23
+    "high": 39,
+    "medium": 30,
+    "low": 24
   },
   "unclassified": 0,
   "duplicates_removed": 2,
@@ -9959,7 +10098,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 20,
+  "watch_hits": 21,
   "watch": {
     "enterprise_apps": [
       {
@@ -10017,12 +10156,34 @@
         "cluster_id": "536e322981d163baad47e019"
       },
       {
+        "technology": "Azure",
+        "headline": "Dutch energy suppliers face heavy reliance on U.S. cloud providers",
+        "cluster_id": "485385543e2f98ab4e7d9973"
+      },
+      {
         "technology": "Microsoft 365",
         "headline": "Huntress highlights top business attack patterns abusing Teams and Microsoft 365",
         "cluster_id": "11f0e618d0252f2c50cb0ca5"
       },
       {
         "technology": "Microsoft 365",
+        "headline": "CISA refreshes Microsoft 365 and Google Workspace baseline checking tools",
+        "cluster_id": "979dfb1d8737c8dcacf70c2f"
+      }
+    ],
+    "infrastructure": [
+      {
+        "technology": "AWS",
+        "headline": "Dutch energy suppliers face heavy reliance on U.S. cloud providers",
+        "cluster_id": "485385543e2f98ab4e7d9973"
+      },
+      {
+        "technology": "Google Cloud",
+        "headline": "Dutch energy suppliers face heavy reliance on U.S. cloud providers",
+        "cluster_id": "485385543e2f98ab4e7d9973"
+      },
+      {
+        "technology": "Google Cloud",
         "headline": "CISA refreshes Microsoft 365 and Google Workspace baseline checking tools",
         "cluster_id": "979dfb1d8737c8dcacf70c2f"
       }
@@ -10084,13 +10245,6 @@
         "cluster_id": "2cf23206607f40daee574c46"
       }
     ],
-    "infrastructure": [
-      {
-        "technology": "Google Cloud",
-        "headline": "CISA refreshes Microsoft 365 and Google Workspace baseline checking tools",
-        "cluster_id": "979dfb1d8737c8dcacf70c2f"
-      }
-    ],
     "devops_appsec": [
       {
         "technology": "GitHub",
@@ -10127,21 +10281,6 @@
             "url": "https://therecord.media/uk-police-data-breached-from-suppliers-watchdog-report",
             "source": "The Record",
             "published": "2026-10-27T15:07:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
-        "key": "gdpr",
-        "nature": "enforcement",
-        "effective_or_deadline_date": null,
-        "name": "GDPR",
-        "headline": "University of Copenhagen reports breach affecting more than 520,000 people",
-        "sources": [
-          {
-            "url": "https://www.infosecurity-magazine.com/news/copenhagen-university-data-breach/",
-            "source": "Infosecurity Magazine",
-            "published": "2026-10-27T11:00:00+00:00",
             "date_inferred": false
           }
         ]
@@ -10302,43 +10441,43 @@
       }
     ]
   },
-  "other_count": 9,
+  "other_count": 10,
   "source_health": {
-    "at": "2026-10-28T10:58:32.331747+00:00",
+    "at": "2026-10-28T11:46:49.063057+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 155,
+    "new": 6,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 13
+        "new": 2
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
@@ -10349,7 +10488,7 @@
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -10359,17 +10498,17 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "Microsoft Security Blog",
@@ -10407,17 +10546,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -10447,7 +10586,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -10462,7 +10601,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 16
+        "new": 2
       },
       {
         "name": "Contagio",
@@ -10477,7 +10616,7 @@
       {
         "name": "Google Project Zero",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "GreyNoise Blog",
@@ -10497,12 +10636,12 @@
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -10517,7 +10656,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -10527,16 +10666,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 64,
-        "entries": 34105,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 2,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -10545,7 +10680,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-27T19:00:02.230700+00:00",
@@ -10566,6 +10701,7 @@
       "ae14845e8338304bd943d6e5",
       "4f6340514a992c9b950614cd",
       "1417a62a4b3735eae2997d18",
+      "d4f5d5baa8252d3b756bc8a9",
       "21d6c984daaa682c10fc4c22",
       "02aa5589116e9160e37e11ee",
       "6d6915cc374791a2d4d87353"
@@ -10579,10 +10715,11 @@
       "7d1b73f733462b51c5d0a97a",
       "8816f06283041a0ccd4d1110",
       "ae14845e8338304bd943d6e5",
+      "2e5063d5ddc42334fda588af",
       "21d6c984daaa682c10fc4c22",
       "d80a19c6eb408dc9a9f7c206",
-      "ec135d07195c9493f074ea31",
       "536e322981d163baad47e019",
+      "4d358129673fb72b6f4f3b16",
       "aa1b703eefa0d201e0183f0e",
       "87f824a23efb7f4bd577a841",
       "6d6915cc374791a2d4d87353",
@@ -10619,6 +10756,7 @@
       "e6d5bd3826a79e92114bdbe3",
       "5977b4ad9b070e952ba55c08",
       "dfcccddd5281b01bc25a06ed",
+      "eedee772f7fad7f1a853ca00",
       "799d8e6e8cdc9dbf4487bc3b",
       "cf9205dbc242abd669b0cc89",
       "4f6340514a992c9b950614cd",
@@ -10639,10 +10777,13 @@
       "0bec1d5fabeaf22c0eddfdfe",
       "cf9205dbc242abd669b0cc89",
       "d80a19c6eb408dc9a9f7c206",
-      "b434e7ad4a7b0ac31514c152",
+      "4d358129673fb72b6f4f3b16",
       "dd9aab4f2b42a45e9cb61d1c",
       "36d508c572853a65d852cb2d",
       "000a208f44bb7c95a5f55c06"
+    ],
+    "security-foundations-for-logistics": [
+      "485385543e2f98ab4e7d9973"
     ],
     "security-visibility-for-manufacturing": [
       "62664df332c546b668d963fa"
