@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-29",
-  "start": "2026-10-28T11:18:35.366259+00:00",
-  "end": "2026-10-29T11:18:35.366259+00:00",
+  "start": "2026-10-28T11:55:09.110171+00:00",
+  "end": "2026-10-29T11:55:09.110171+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1886,111 +1886,6 @@
       "included": true
     },
     {
-      "cluster_id": "9590ed7a40f8b7a4cf3f4901",
-      "headline": "Critical EDK II UEFI flaw can enable pre-boot code execution on network-boot servers",
-      "summary": "A critical weakness in EDK II may let an attacker execute code before the operating system starts on systems using network boot. The issue affects firmware used by many hardware makers, but the article does not indicate confirmed exploitation. Defenders should treat this as a high-priority exposure review for affected server fleets.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "Critical pre-boot code execution in widely used firmware is highly relevant to enterprise defenders, especially where network boot is used. The report describes a serious vulnerability but does not establish active exploitation, keeping it below critical in this rubric.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 65,
-        "telecommunications": 65,
-        "private_banking": 65,
-        "investment_management": 65,
-        "government": 65,
-        "retail_banking": 65,
-        "global_it_services": 65,
-        "logistics": 65,
-        "industrial_manufacturing": 70,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 10,
-        "siem_detection": 10,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 35,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "EDK II",
-        "UEFI firmware",
-        "Secure Boot",
-        "network boot"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule URLs were provided. Firmware and boot-chain validation, asset inventory, and boot configuration review are the primary defensive actions.",
-      "related_case_studies": [
-        "audit-ready-by-design",
-        "security-visibility-for-manufacturing"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory systems that use network boot and confirm firmware, Secure Boot, and boot-chain protections are current. Prioritize exposure assessment and vendor guidance for affected hardware before the issue is used in an attack.",
-      "confidence": 0.97,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html",
-          "source": "The Hacker News",
-          "published": "2026-10-28T11:50:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "Critical pre-boot code execution in widely used firmware is highly relevant to enterprise defenders, especially where network boot is used. The report describes a serious vulnerability but does not establish active exploitation, keeping it below critical in this rubric.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 79.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 7.0,
-        "practice": 13.5,
-        "weighted_total": 79.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "1a5f540fb967436fd2a483bc",
       "headline": "Stolen school staff credentials are being reused across K-12 districts",
       "summary": "MS-ISAC reports that stolen staff logins from one K-12 district are being reused to attack other districts. The activity shows credential theft and lateral reuse across a shared sector, though the excerpt does not indicate a single widespread malware family or major breach.",
@@ -2085,108 +1980,6 @@
         "industry": 7.0,
         "practice": 12.75,
         "weighted_total": 79.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "eedee772f7fad7f1a853ca00",
-      "headline": "Active exploitation reported for Node2Shell Brotli decoder flaw",
-      "summary": "A vulnerability in the Google Brotli decoder, also referred to as Node2Shell, is reported to be under active attack. The item suggests real-world exploitation against exposed systems, so defenders should treat it as an urgent exposure-management and detection problem.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 35,
-        "siem_detection": 70,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 25,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Google Brotli decoder",
-        "Node.js"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule links were provided. Prioritize exposure mapping, patched runtime validation, and monitoring for abnormal decoder or application crashes consistent with exploitation attempts.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Identify systems using affected Brotli/Node.js components, apply updates or mitigations immediately, and hunt for exploitation indicators.",
-      "confidence": 0.98,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-10-28T11:39:20+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "This is active exploitation of a widely deployed software component, which creates immediate risk across many enterprise environments. The report explicitly indicates attack activity, making it a critical operational issue.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 79.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 14.25,
-        "weighted_total": 79.5,
         "severity_band": [
           65,
           84.99
@@ -3951,113 +3744,6 @@
         "location": 10.5,
         "industry": 6.0,
         "practice": 9.75,
-        "weighted_total": 71.25,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "4d358129673fb72b6f4f3b16",
-      "headline": "FBI seizes bulletproof hosting domain used to shield criminal activity",
-      "summary": "The FBI seized the domain of a bulletproof hosting provider accused of supporting criminal activity and ignoring repeated warnings. The action involved US authorities and international law enforcement partners, indicating a disruption of infrastructure used to enable abuse and concealment online.",
-      "category": "law_enforcement",
-      "importance": "high",
-      "importance_rationale": "A cross-border law-enforcement seizure of hosting infrastructure is a significant disruption to criminal enablement services and is relevant to defenders monitoring abuse infrastructure and takedowns.",
-      "location_relevance": {
-        "US": 100,
-        "Europe": 90,
-        "MEA": 35,
-        "Other": 35
-      },
-      "countries_mentioned": [
-        "DE",
-        "GB",
-        "NL",
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 25,
-        "private_banking": 15,
-        "investment_management": 10,
-        "government": 60,
-        "retail_banking": 10,
-        "global_it_services": 55,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 35,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 25,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "bulletproof hosting",
-        "hosting infrastructure",
-        "domains"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule URLs were present in the source links, so no rule references are included. Defenders can monitor for abuse patterns tied to hosting providers, suspicious domain infrastructure, and associated account activity.",
-      "related_case_studies": [
-        "audit-ready-by-design",
-        "security-at-telecom-scale"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review monitoring for abusive hosting, suspicious domain registrations, and infrastructure reuse patterns; coordinate with abuse desks and law enforcement as needed.",
-      "confidence": 0.91,
-      "sources": [
-        {
-          "url": "https://www.helpnetsecurity.com/2026/10/28/fbi-seizure-virtualine-bulletproof-hosting-domain/",
-          "source": "Help Net Security",
-          "published": "2026-10-28T11:41:01+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A cross-border law-enforcement seizure of hosting infrastructure is a significant disruption to criminal enablement services and is relevant to defenders monitoring abuse infrastructure and takedowns.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 71.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 15.0,
-        "industry": 6.0,
-        "practice": 5.25,
         "weighted_total": 71.25,
         "severity_band": [
           65,
@@ -15635,111 +15321,6 @@
       "included": false
     },
     {
-      "cluster_id": "be06f9a5da472d1cbaf7f548",
-      "headline": "Wazuh adds AI features for SOC workflow support",
-      "summary": "This cluster discusses the use of AI to support security operations workflows in Wazuh. It is a technology and product-oriented item rather than a report of a vulnerability, breach, or active attack. The operational relevance is mainly in SOC process improvement and AI-governance considerations.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "Product and workflow commentary without a reported security incident, vulnerability, or regulatory change. It may interest SOC teams, but it does not indicate elevated immediate risk.",
-      "location_relevance": {
-        "US": 10,
-        "Europe": 10,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 10,
-        "private_banking": 10,
-        "investment_management": 10,
-        "government": 10,
-        "retail_banking": 10,
-        "global_it_services": 20,
-        "logistics": 10,
-        "industrial_manufacturing": 10,
-        "automotive": 10
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 40,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 35,
-        "ai_governance": 30
-      },
-      "affected_technologies": [
-        "Wazuh",
-        "AI"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were cited in the source material. The main relevance is process and monitoring workflow evaluation, not a specific attack pattern.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review whether AI-assisted SOC features align with your logging, approval, and data handling requirements before adoption. Validate output quality, guardrails, and analyst oversight for any automation introduced.",
-      "confidence": 0.82,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/wazuh-and-ai-for-enhanced-soc-workflows.html",
-          "source": "The Hacker News",
-          "published": "2026-10-28T11:30:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "Product and workflow commentary without a reported security incident, vulnerability, or regulatory change. It may interest SOC teams, but it does not indicate elevated immediate risk.",
-      "watch_tech": [
-        {
-          "name": "Wazuh",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "siem"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 18.5,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 1.5,
-        "industry": 2.0,
-        "practice": 6.0,
-        "weighted_total": 18.5,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "49e8e9c207a58455c0c540c7",
       "headline": "Upwind Security secures $400 million funding round",
       "summary": "Security vendor Upwind reportedly raised a large new funding round at a $3.8 billion valuation. This is a financing and market news item about a cybersecurity company, with no indicated operational security event.",
@@ -16163,9 +15744,9 @@
   ],
   "counts": {
     "critical": 8,
-    "high": 30,
+    "high": 27,
     "medium": 86,
-    "low": 27
+    "low": 26
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -16189,7 +15770,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 30,
+  "watch_hits": 29,
   "watch": {
     "infrastructure": [
       {
@@ -16441,13 +16022,6 @@
         "headline": "Qualys CISO discusses exposure management amid rising exploit campaigns",
         "cluster_id": "3bdeb1831cea592d98fd4f4c"
       }
-    ],
-    "siem": [
-      {
-        "technology": "Wazuh",
-        "headline": "Wazuh adds AI features for SOC workflow support",
-        "cluster_id": "be06f9a5da472d1cbaf7f548"
-      }
     ]
   },
   "regulations": {
@@ -16606,23 +16180,23 @@
       }
     ]
   },
-  "other_count": 10,
+  "other_count": 9,
   "source_health": {
-    "at": "2026-10-29T11:18:35.366259+00:00",
+    "at": "2026-10-29T11:55:09.110171+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 164,
-    "updated": 1,
+    "new": 0,
+    "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -16632,27 +16206,27 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -16662,12 +16236,12 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -16677,24 +16251,24 @@
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
         "ok": true,
-        "new": 2,
-        "updated": 1,
-        "unchanged": 224,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 227,
         "failed": 0
       },
       {
@@ -16710,17 +16284,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -16750,7 +16324,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -16765,7 +16339,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -16830,11 +16404,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 65,
-        "entries": 34170,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -16848,7 +16418,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-28T19:00:04.807700+00:00",
@@ -16868,7 +16438,6 @@
       "4da8cc37abe9c889ca179186",
       "fc010fa782c73dbaad818db0",
       "4665f17a8f062865003b59a1",
-      "9590ed7a40f8b7a4cf3f4901",
       "1a5f540fb967436fd2a483bc",
       "cc84d8476e5ff18d61a22822",
       "f83598082f121f26e38f677f",
@@ -16876,7 +16445,6 @@
       "62e358f0783bbcc3869e8a25",
       "d0be5c8747113e91b13cb91c",
       "ecdeba7c7ff461fccf26d30e",
-      "4d358129673fb72b6f4f3b16",
       "72f210b22e0782a07aad7d1b",
       "678a09c592c5871f195031fe",
       "6b7425d66e68e628fdf56909",
@@ -16912,7 +16480,6 @@
       "2169d8af20d44c53821750e3",
       "0b33a76a486a83fb49955546",
       "12d9b8223a9161ef5095c723",
-      "9590ed7a40f8b7a4cf3f4901",
       "96402b0bba36a5534299f8cf",
       "6fa958c054e03af64d72c3b0",
       "196cb48efaf989d2df70f70c",
@@ -16933,7 +16500,6 @@
       "196cb48efaf989d2df70f70c",
       "cfdef39189ea2bb23f951414",
       "ecdeba7c7ff461fccf26d30e",
-      "4d358129673fb72b6f4f3b16",
       "93515a2826137875afd9a5ab",
       "6a79ba8a4f3d294f88ad6502",
       "4749992fd1b5901e0f0ba3da"
@@ -16942,7 +16508,6 @@
       "f2c961bbdd371d7eaeb1a01b",
       "e704fd27b154b049352c1dcc",
       "c5592c7a9044125b1a7cd4b5",
-      "eedee772f7fad7f1a853ca00",
       "6fa958c054e03af64d72c3b0",
       "4f6340514a992c9b950614cd",
       "304fae7ca8758b43f048d9b2",
