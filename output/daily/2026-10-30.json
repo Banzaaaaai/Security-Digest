@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-30",
-  "start": "2026-10-29T11:11:18.809545+00:00",
-  "end": "2026-10-30T11:11:18.809545+00:00",
+  "start": "2026-10-29T11:48:15.792186+00:00",
+  "end": "2026-10-30T11:48:15.792186+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -984,6 +984,130 @@
         "location": 14.25,
         "industry": 4.0,
         "practice": 14.25,
+        "weighted_total": 92.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "2d80a0a180e4861eae7951e4",
+      "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
+      "summary": "A compromised Claude Code extension package for VS Code-compatible editors was published through Open VSX and included a persistent SSH backdoor. The issue appears to affect developers using that extension, while Microsoft’s own marketplace did not carry the malicious build.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "Source-reported compromise of widely distributed software or supplier infrastructure.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 70,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 85,
+        "siem_detection": 20,
+        "iam_pam": 30,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 30,
+        "ai_governance": 35
+      },
+      "affected_technologies": [
+        "Claude Code",
+        "Model Context Protocol (MCP)",
+        "VS Code-compatible editors",
+        "Open VSX"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule links were provided in the source material. Defenders should review extension provenance, package integrity, and anomalous SSH persistence on developer systems.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Audit extension sources, verify package signatures or hashes where possible, and review developer endpoints for unexpected SSH keys, services, or persistence mechanisms. Restrict approved extension repositories and monitor build and developer workstations for supply-chain tampering.",
+      "confidence": 0.92,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/",
+          "source": "Help Net Security",
+          "published": "2026-10-30T11:15:26+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Source-reported compromise of widely distributed software or supplier infrastructure",
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "A tampered extension package is a software supply-chain compromise affecting developer tooling. It is serious because it implants a persistent backdoor, but the available report does not show a broad systemic compromise of a major vendor ecosystem.",
+      "watch_tech": [
+        {
+          "name": "Claude Code",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        },
+        {
+          "name": "Model Context Protocol (MCP)",
+          "aliases": [
+            "Model Context Protocol",
+            "MCP"
+          ],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [
+          "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/"
+        ],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 92.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 7.0,
+        "practice": 12.75,
         "weighted_total": 92.5,
         "severity_band": [
           85,
@@ -2928,110 +3052,6 @@
       "included": true
     },
     {
-      "cluster_id": "026f7c77fb5eab48a643baaa",
-      "headline": "Public Gitee repositories exposed working cloud and AI credentials",
-      "summary": "A researcher found 26,400 valid credentials in public Gitee repositories after scanning millions of repos. The issue appears to be exposed secrets in source code rather than a platform compromise, but the working keys could enable unauthorized access if reused.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "This is a large-scale exposed-secrets event with validated working credentials, creating immediate account-takeover and cloud exposure risk. It is not a confirmed compromise of a vendor platform, but the volume and validity make it operationally significant.",
-      "location_relevance": {
-        "US": 55,
-        "Europe": 55,
-        "MEA": 55,
-        "Other": 75
-      },
-      "countries_mentioned": [
-        "CN"
-      ],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 50,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 50,
-        "retail_banking": 50,
-        "global_it_services": 65,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 70,
-        "vuln_exposure_mgmt": 75,
-        "devsecops": 85,
-        "siem_detection": 35,
-        "iam_pam": 80,
-        "email_phishing": 10,
-        "data_protection_dlp": 65,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 25,
-        "ai_governance": 55
-      },
-      "affected_technologies": [
-        "Gitee",
-        "cloud services",
-        "AI services"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No reusable detection rule links were provided in the source. Defenders should search code repositories and secret-scanning results for exposed API keys, tokens, and service credentials.",
-      "related_case_studies": [
-        "vendor-release-automation",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory public-code exposure, rotate any credentials that were committed, revoke unused tokens, and expand secret scanning in repositories and CI/CD workflows. Review cloud and AI service accounts for anomalous use and strengthen pre-commit, build-time, and repository scanning controls.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
-          "source": "The Hacker News",
-          "published": "2026-10-29T11:33:15+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a large-scale exposed-secrets event with validated working credentials, creating immediate account-takeover and cloud exposure risk. It is not a confirmed compromise of a vendor platform, but the volume and validity make it operationally significant.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 75.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 11.25,
-        "industry": 6.5,
-        "practice": 12.75,
-        "weighted_total": 75.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "a173c7429370150e29613737",
       "headline": "Binance says crypto theft tied to compromised DevOps laptop",
       "summary": "Binance linked a large cryptocurrency theft to a compromised laptop used by a DevOps engineer. The report points to endpoint compromise and internal access abuse, but the available summary does not describe the full intrusion chain or whether additional systems were affected.",
@@ -3234,6 +3254,115 @@
         "industry": 6.0,
         "practice": 12.75,
         "weighted_total": 75.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5007ba6e30b0c58793dd37e6",
+      "headline": "Binance reports massive crypto theft attributed to North Korean hackers",
+      "summary": "A report says Binance suffered a very large cryptocurrency theft, with analysts attributing the operation to a North Korean-linked hacking unit. The summary suggests a major financial crime event, but the available details are limited.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "A large-scale theft against a major financial platform indicates serious financial crime and likely enterprise risk for crypto and payments ecosystems. The report is thin on technical detail, so the classification remains high rather than critical.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 80,
+        "investment_management": 85,
+        "government": 20,
+        "retail_banking": 75,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 70,
+        "email_phishing": 0,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "cryptocurrency exchange platforms"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule links were provided. Monitoring should focus on account takeover signals, privileged access anomalies, and unusual asset movement on exchange and wallet infrastructure.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "investment_management",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review wallet custody controls, transaction approval workflows, and privileged access telemetry. Strengthen anomaly detection for transfers, key management, and account takeover attempts across exchange and treasury systems.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/binance-record-hack-crypto-heist/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-10-30T11:25:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A large-scale theft against a major financial platform indicates serious financial crime and likely enterprise risk for crypto and payments ecosystems. The report is thin on technical detail, so the classification remains high rather than critical.",
+      "watch_tech": [
+        {
+          "name": "Exchange",
+          "aliases": [
+            "Microsoft Exchange",
+            "Exchange Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 74.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 8.5,
+        "practice": 10.5,
+        "weighted_total": 74.5,
         "severity_band": [
           65,
           84.99
@@ -5785,72 +5914,77 @@
       "included": true
     },
     {
-      "cluster_id": "af69c1984521927fcef1b737",
-      "headline": "Scam detections overtake phishing in Akamai Q2 2026 research",
-      "summary": "Akamai research indicates scam detections exceeded phishing in Q2 2026, suggesting a broader shift in social-engineering volume. The item is research-based and does not by itself show a specific victim or exploit campaign.",
-      "category": "fraud_phishing",
+      "cluster_id": "6f01fab6c69abc2b9a4cc961",
+      "headline": "Polymarket outage tied to third-party provider compromise",
+      "summary": "Polymarket said outages were caused by a cyberattack involving an unnamed third-party provider. The report points to an external dependency issue, but does not identify the provider or detail the compromise.",
+      "category": "supply_chain",
       "importance": "medium",
-      "importance_rationale": "This is security research showing a trend in scam activity. It is relevant to enterprise fraud defenses, but the source does not report a specific incident, exploit, or regulated breach.",
+      "importance_rationale": "A third-party compromise causing outages is operationally important and relevant to vendor risk management. The report lacks evidence of broad systemic compromise or a major breach, so medium is appropriate.",
       "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 40,
-        "Other": 40
+        "US": 55,
+        "Europe": 55,
+        "MEA": 55,
+        "Other": 55
       },
       "countries_mentioned": [],
       "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
+        "energy_services": 0,
+        "telecommunications": 0,
         "private_banking": 50,
-        "investment_management": 45,
-        "government": 45,
-        "retail_banking": 60,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 35,
-        "automotive": 35
+        "investment_management": 65,
+        "government": 0,
+        "retail_banking": 50,
+        "global_it_services": 45,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 0,
+        "zero_trust_cloud": 40,
         "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 35,
+        "devsecops": 35,
+        "siem_detection": 25,
         "iam_pam": 20,
-        "email_phishing": 80,
-        "data_protection_dlp": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
         "ot_ics": 0,
-        "grc_audit": 0,
+        "grc_audit": 50,
         "security_automation": 25,
         "ai_governance": 0
       },
-      "affected_technologies": [],
+      "affected_technologies": [
+        "third-party provider",
+        "online trading platform"
+      ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. The report suggests monitoring for scam and phishing indicators, but does not include a specific rule or playbook.",
-      "related_case_studies": [],
+      "detection_coverage_note": "No rule links were supplied. Defenders should validate third-party access paths, service dependencies, and alerting around external-provider failures.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
       "business_signal": {
         "present": false,
-        "type": "sector_campaign",
-        "sector": "retail_banking",
-        "region": "US",
+        "type": "technology_shift",
+        "sector": "investment_management",
+        "region": "Other",
         "rationale": ""
       },
-      "recommended_action": "Review scam and phishing control coverage, including user reporting, email filtering, and fraud-response workflows. Validate SOC playbooks for impersonation and account-takeover indicators.",
-      "confidence": 0.71,
+      "recommended_action": "Inventory critical vendors and dependencies, enforce stronger supplier assurance, and test fallback procedures for external service outages. Review monitoring on provider integrations and isolate partner access where feasible.",
+      "confidence": 0.86,
       "sources": [
         {
-          "url": "https://www.infosecurity-magazine.com/news/online-scam-volumes-double/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-10-29T11:15:00+00:00",
+          "url": "https://therecord.media/polymarket-confirms-cyberattack-third-party",
+          "source": "The Record",
+          "published": "2026-10-30T11:33:00+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "medium",
-      "model_importance_rationale": "This is security research showing a trend in scam activity. It is relevant to enterprise fraud defenses, but the source does not report a specific incident, exploit, or regulated breach.",
+      "model_importance_rationale": "A third-party compromise causing outages is operationally important and relevant to vendor risk management. The report lacks evidence of broad systemic compromise or a major breach, so medium is appropriate.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
@@ -5865,13 +5999,13 @@
       },
       "exposure_scope": "Source-specific or unestablished",
       "independent_sources_24h": 1,
-      "priority": 51.0,
+      "priority": 49.25,
       "priority_breakdown": {
         "importance": 27.0,
-        "location": 6.0,
-        "industry": 6.0,
-        "practice": 12.0,
-        "weighted_total": 51.0,
+        "location": 8.25,
+        "industry": 6.5,
+        "practice": 7.5,
+        "weighted_total": 49.25,
         "severity_band": [
           35,
           64.99
@@ -5880,75 +6014,78 @@
       "included": true
     },
     {
-      "cluster_id": "b35772fb4a04069806c0762a",
-      "headline": "Telegram Android flaw could enable code execution after a voice call",
-      "summary": "A reported Telegram Android flaw could be chained with additional bugs to achieve code execution on a victim phone after an answered voice call. The report says Telegram fixed the issue in a late-September Android release, but the article does not indicate widespread exploitation.",
+      "cluster_id": "026636c4d055123d0b1cc0e3",
+      "headline": "Russian home goods retailer faces days of cyberattack disruption",
+      "summary": "A Russian home goods chain reported website, app, and in-store service outages following a cyberattack. The outage appears operationally significant for the retailer, but the report does not name a threat actor or describe the attack method.",
       "category": "vulnerability",
       "importance": "medium",
-      "importance_rationale": "This is a mobile application vulnerability with potential code execution, but the source does not report active exploitation or broad enterprise impact. It is relevant to mobile security programs, especially where Telegram use is permitted.",
+      "importance_rationale": "This is a real cyber incident causing business disruption, but the available reporting is limited and the affected organization is outside the primary target geographies in the rubric. The incident is noteworthy operationally rather than globally urgent.",
       "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
+        "US": 10,
+        "Europe": 15,
+        "MEA": 10,
+        "Other": 55
       },
-      "countries_mentioned": [],
+      "countries_mentioned": [
+        "RU"
+      ],
       "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 10,
-        "private_banking": 10,
-        "investment_management": 10,
-        "government": 20,
-        "retail_banking": 10,
-        "global_it_services": 15,
-        "logistics": 10,
-        "industrial_manufacturing": 10,
-        "automotive": 10
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 45,
+        "industrial_manufacturing": 20,
+        "automotive": 0
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 65,
-        "devsecops": 5,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 25,
-        "data_protection_dlp": 15,
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
         "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "Telegram for Android",
-        "Android"
+        "retail systems",
+        "website",
+        "mobile app"
       ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided. Mobile fleet monitoring should confirm Telegram Android versions and watch for suspicious call-triggered app behavior.",
+      "detection_coverage_note": "No detection guidance was linked. Retail defenders should watch for service outages, web-application anomalies, and downstream POS or store-connectivity failures during incident response.",
       "related_case_studies": [],
       "business_signal": {
         "present": false,
-        "type": "sector_campaign",
-        "sector": "government",
+        "type": "major_incident_wave",
+        "sector": "logistics",
         "region": "Other",
         "rationale": ""
       },
-      "recommended_action": "Update Telegram on managed Android devices, restrict unapproved messaging apps on corporate phones where appropriate, and monitor for anomalous mobile behavior after voice-call interactions.",
-      "confidence": 0.83,
+      "recommended_action": "Validate segmentation and recovery plans for customer-facing and store operations systems, and review incident-response procedures for rapid service restoration. If applicable, check whether third-party hosting or identity services were involved in the outage.",
+      "confidence": 0.74,
       "sources": [
         {
-          "url": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
-          "source": "The Hacker News",
-          "published": "2026-10-29T11:39:18+00:00",
+          "url": "https://therecord.media/russian-home-goods-chain-faces-disruptions",
+          "source": "The Record",
+          "published": "2026-10-30T11:30:00+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "medium",
-      "model_importance_rationale": "This is a mobile application vulnerability with potential code execution, but the source does not report active exploitation or broad enterprise impact. It is relevant to mobile security programs, especially where Telegram use is permitted.",
+      "model_importance_rationale": "This is a real cyber incident causing business disruption, but the available reporting is limited and the affected organization is outside the primary target geographies in the rubric. The incident is noteworthy operationally rather than globally urgent.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
@@ -5963,13 +6100,13 @@
       },
       "exposure_scope": "Source-specific or unestablished",
       "independent_sources_24h": 1,
-      "priority": 41.75,
+      "priority": 42.75,
       "priority_breakdown": {
         "importance": 27.0,
-        "location": 3.0,
-        "industry": 2.0,
-        "practice": 9.75,
-        "weighted_total": 41.75,
+        "location": 8.25,
+        "industry": 4.5,
+        "practice": 3.0,
+        "weighted_total": 42.75,
         "severity_band": [
           35,
           64.99
@@ -6573,107 +6710,6 @@
       "included": true
     },
     {
-      "cluster_id": "ff04f1caf15467beeb1ba229",
-      "headline": "AI is reshaping security operations workflows and analyst roles",
-      "summary": "This is a forward-looking discussion of how AI can take over alert investigation, evidence gathering, and response steps in SOC workflows. It is primarily a market and operating-model piece, not an incident or product vulnerability report.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "The article describes an expected shift in security operations rather than a concrete incident, vulnerability, or regulatory deadline. Operational relevance exists, but urgency is limited.",
-      "location_relevance": {
-        "US": 30,
-        "Europe": 30,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 30,
-        "telecommunications": 30,
-        "private_banking": 30,
-        "investment_management": 30,
-        "government": 30,
-        "retail_banking": 30,
-        "global_it_services": 40,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 10,
-        "siem_detection": 70,
-        "iam_pam": 5,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 80,
-        "ai_governance": 85
-      },
-      "affected_technologies": [
-        "SIEM",
-        "security operations",
-        "AI models"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided. Relevant monitoring content would focus on AI-assisted SOC workflows, automated response approvals, and quality controls for analyst actions.",
-      "related_case_studies": [
-        "security-services-for-investment-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Assess where AI can safely assist triage and response, define human approval points for high-impact actions, and update playbooks, metrics, and governance for AI-assisted operations.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/the-rise-of-threat-operator-how-ai-will.html",
-          "source": "The Hacker News",
-          "published": "2026-10-29T11:33:41+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "The article describes an expected shift in security operations rather than a concrete incident, vulnerability, or regulatory deadline. Operational relevance exists, but urgency is limited.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 30.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 4.5,
-        "industry": 4.0,
-        "practice": 12.75,
-        "weighted_total": 30.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "a41c6b1e5e903c631014638b",
       "headline": "AI agentic game development experiment highlights risks and limits of autonomous coding",
       "summary": "The piece describes a game company using autonomous AI agents for continuous development, debugging, and live code changes. It is a technology and workflow exploration, with some implicit security lessons around automated change control and review.",
@@ -6777,104 +6813,6 @@
         "industry": 3.5,
         "practice": 12.0,
         "weighted_total": 27.5,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "89ba8a41a1ee0be07879dd6b",
-      "headline": "AI threat-readiness webinar highlights faster attacker use of AI",
-      "summary": "The article is promotional and discusses how AI may help attackers find vulnerabilities, generate exploit code, and move faster than traditional defenses. It does not report a specific incident or new technical flaw.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "This is marketing and thought leadership rather than a concrete security event. It may inform planning, but it does not materially change immediate operational risk on its own.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 20,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 20,
-        "retail_banking": 20,
-        "global_it_services": 35,
-        "logistics": 20,
-        "industrial_manufacturing": 20,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 20,
-        "devsecops": 15,
-        "siem_detection": 35,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 65,
-        "ai_governance": 75
-      },
-      "affected_technologies": [
-        "AI models",
-        "security operations"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided. The most relevant controls are governance for AI-assisted security workflows and oversight of automated response actions.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Use the topic as input for SOC and governance planning: define where AI can assist defenders, where human review remains mandatory, and how to measure error and escalation quality.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/08/learn-how-to-build-security-operations.html",
-          "source": "The Hacker News",
-          "published": "2026-10-29T11:39:41+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is marketing and thought leadership rather than a concrete security event. It may inform planning, but it does not materially change immediate operational risk on its own.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 26.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.0,
-        "industry": 3.5,
-        "practice": 11.25,
-        "weighted_total": 26.75,
         "severity_band": [
           0,
           34.99
@@ -7594,6 +7532,104 @@
         ]
       },
       "included": true
+    },
+    {
+      "cluster_id": "aef9e5e4ac67519985412989",
+      "headline": "Microsoft resolves Windows 11 VPN failures after September updates",
+      "summary": "Microsoft says it has fixed a VPN connectivity problem tied to September 2026 Windows 11 security updates. The report describes a product issue rather than an attack, with the impact centered on affected Windows users.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a vendor fix for a software issue, not a security incident or exploitation event. It may matter operationally for endpoint administrators, but it does not meet the threshold for higher urgency.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 30,
+        "global_it_services": 35,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 25,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows 11",
+        "Always On VPN"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was included. Administrators should validate VPN client behavior after patching and review endpoint connectivity logs if failures persist.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Confirm Windows 11 devices are fully updated and test Always On VPN connectivity after the fix. If issues remain, compare client configuration, routing, and security policy changes introduced by the September updates.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-finally-fixes-vpn-issues-caused-by-september-updates/",
+          "source": "BleepingComputer",
+          "published": "2026-10-30T11:20:26+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a vendor fix for a software issue, not a security incident or exploitation event. It may matter operationally for endpoint administrators, but it does not meet the threshold for higher urgency.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 23.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 3.5,
+        "practice": 3.75,
+        "weighted_total": 23.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
     },
     {
       "cluster_id": "7f056f665bfe428e129ca46d",
@@ -8804,10 +8840,10 @@
     }
   ],
   "counts": {
-    "critical": 9,
+    "critical": 10,
     "high": 26,
     "medium": 21,
-    "low": 27
+    "low": 26
   },
   "unclassified": 0,
   "duplicates_removed": 2,
@@ -8831,7 +8867,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 23,
+  "watch_hits": 25,
   "watch": {
     "infrastructure": [
       {
@@ -8894,6 +8930,16 @@
         "technology": "Claude Code",
         "headline": "Compromised Claude Code extension installs persistent SSH backdoor",
         "cluster_id": "4b53227f9f3bab6085748e01"
+      },
+      {
+        "technology": "Claude Code",
+        "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
+        "cluster_id": "2d80a0a180e4861eae7951e4"
+      },
+      {
+        "technology": "Model Context Protocol (MCP)",
+        "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
+        "cluster_id": "2d80a0a180e4861eae7951e4"
       },
       {
         "technology": "AI agent frameworks",
@@ -8999,6 +9045,11 @@
       },
       {
         "technology": "Exchange",
+        "headline": "Binance reports massive crypto theft attributed to North Korean hackers",
+        "cluster_id": "5007ba6e30b0c58793dd37e6"
+      },
+      {
+        "technology": "Exchange",
         "headline": "Binance reports major crypto theft tied to suspected engineer laptop compromise",
         "cluster_id": "01798ba548c023042c50ab26"
       }
@@ -9053,53 +9104,53 @@
       }
     ]
   },
-  "other_count": 13,
+  "other_count": 14,
   "source_health": {
-    "at": "2026-10-30T11:11:18.809545+00:00",
+    "at": "2026-10-30T11:48:15.792186+00:00",
     "enabled": 41,
-    "failures": 2,
-    "new": 91,
-    "updated": 1,
+    "failures": 1,
+    "new": 5,
+    "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 12
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 14
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -9109,12 +9160,12 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 2
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -9124,7 +9175,7 @@
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -9134,23 +9185,15 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
-        "ok": false,
-        "new": 5,
-        "updated": 1,
-        "unchanged": 217,
-        "failed": 1,
-        "failed_advisories": [
-          {
-            "status": "failed",
-            "advisory_id": "ICSA-26-300-02",
-            "error": "ReadError"
-          }
-        ],
-        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 224,
+        "failed": 0
       },
       {
         "name": "Claroty Team82",
@@ -9165,17 +9208,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -9220,7 +9263,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -9275,7 +9318,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -9285,11 +9328,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 2,
-        "entries": 34172,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -9303,7 +9342,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-29T19:09:34.400300+00:00",
@@ -9333,11 +9372,11 @@
       "1007fbe23763f6278b4e7116",
       "8927f234f52baad7df3c11d2",
       "fac7f49a836ce2206cd73e32",
-      "026f7c77fb5eab48a643baaa",
       "fb84d7cc6b94e7f77c8e9569"
     ],
     "audit-ready-by-design": [
       "28a276f6e91692074ffd4ec5",
+      "2d80a0a180e4861eae7951e4",
       "84f3cbb9776b6ff82e8277fb",
       "16c4d4b00ee0a754a6452444",
       "f1447a32b330ac84751097c7",
@@ -9346,7 +9385,6 @@
       "2602dfd8795f57de2e0a0a43",
       "a1ae70d96eb78ee4cb9d00ae",
       "1fbde4e891bf3f1c1e78e0c1",
-      "026f7c77fb5eab48a643baaa",
       "5c811c7ede0831cfb8f31cc6",
       "1ef1575d27b0637af955964f",
       "e1215293558dcf351d0462fd",
@@ -9357,6 +9395,7 @@
     ],
     "security-in-the-delivery-path": [
       "4b53227f9f3bab6085748e01",
+      "2d80a0a180e4861eae7951e4",
       "2602dfd8795f57de2e0a0a43",
       "4c6b4e125bfec6ea80a1c1b8",
       "e84b32ce551432ea490824b1",
@@ -9377,12 +9416,13 @@
       "f1447a32b330ac84751097c7",
       "a173c7429370150e29613737",
       "c57f0aaab059961568a59ed8",
+      "5007ba6e30b0c58793dd37e6",
       "97107a38c6db032e430d6de8",
       "01798ba548c023042c50ab26",
       "5c714b64e3217d32cb5f2a7c",
+      "6f01fab6c69abc2b9a4cc961",
       "965aba3acba1285703999e23",
-      "0e6adba54c02009ca8375582",
-      "ff04f1caf15467beeb1ba229"
+      "0e6adba54c02009ca8375582"
     ],
     "secure-development-for-automotive": [
       "4ff93a68188321ebd13fb915",
