@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-10-31",
-  "start": "2026-10-30T10:44:14.144655+00:00",
-  "end": "2026-10-31T10:44:14.144655+00:00",
+  "start": "2026-10-30T11:22:16.848408+00:00",
+  "end": "2026-10-31T11:22:16.848408+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -561,231 +561,6 @@
         "industry": 7.5,
         "practice": 12.75,
         "weighted_total": 93.0,
-        "severity_band": [
-          85,
-          100
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "647aee262a362841031bf677",
-      "headline": "Drupal Commerce vulnerability exploited against online stores",
-      "summary": "Drupal says a critical Commerce Core access-bypass flaw is being exploited in the wild. Online stores should check for unauthorized order changes and review exposure to the affected component.",
-      "category": "exploitation_in_the_wild",
-      "importance": "critical",
-      "importance_rationale": "The source reports active exploitation of a widely used web application component, which meets the critical criterion for in-the-wild exploitation of enterprise-facing software.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 20,
-        "siem_detection": 30,
-        "iam_pam": 20,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Drupal Commerce Core"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule URLs were provided in the source link set. Defenders should look for anomalous Commerce Core requests, unexpected order modifications, and authentication/authorization failures around storefront workflows.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Patch or mitigate the affected Drupal Commerce Core release immediately, review storefront and order logs for unauthorized changes, and validate administrative access paths and monitoring alerts.",
-      "confidence": 0.97,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/",
-          "source": "SecurityWeek",
-          "published": "2026-10-30T11:07:11+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "critical",
-      "model_importance_rationale": "The source reports active exploitation of a widely used web application component, which meets the critical criterion for in-the-wild exploitation of enterprise-facing software.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [
-          "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/"
-        ],
-        "rce": [],
-        "critical_flaw": [
-          "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 92.5,
-      "priority_breakdown": {
-        "importance": 60.0,
-        "location": 14.25,
-        "industry": 4.0,
-        "practice": 14.25,
-        "weighted_total": 92.5,
-        "severity_band": [
-          85,
-          100
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "2d80a0a180e4861eae7951e4",
-      "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
-      "summary": "A compromised Claude Code extension package for VS Code-compatible editors was published through Open VSX and included a persistent SSH backdoor. The issue appears to affect developers using that extension, while Microsoft’s own marketplace did not carry the malicious build.",
-      "category": "supply_chain",
-      "importance": "critical",
-      "importance_rationale": "Source-reported compromise of widely distributed software or supplier infrastructure.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 50,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 50,
-        "retail_banking": 50,
-        "global_it_services": 70,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 20,
-        "devsecops": 85,
-        "siem_detection": 20,
-        "iam_pam": 30,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 30,
-        "ai_governance": 35
-      },
-      "affected_technologies": [
-        "Claude Code",
-        "Model Context Protocol (MCP)",
-        "VS Code-compatible editors",
-        "Open VSX"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection rule links were provided in the source material. Defenders should review extension provenance, package integrity, and anomalous SSH persistence on developer systems.",
-      "related_case_studies": [
-        "security-in-the-delivery-path",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Audit extension sources, verify package signatures or hashes where possible, and review developer endpoints for unexpected SSH keys, services, or persistence mechanisms. Restrict approved extension repositories and monitor build and developer workstations for supply-chain tampering.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/",
-          "source": "Help Net Security",
-          "published": "2026-10-30T11:15:26+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "Source-reported compromise of widely distributed software or supplier infrastructure",
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
-      "model_importance": "high",
-      "model_importance_rationale": "A tampered extension package is a software supply-chain compromise affecting developer tooling. It is serious because it implants a persistent backdoor, but the available report does not show a broad systemic compromise of a major vendor ecosystem.",
-      "watch_tech": [
-        {
-          "name": "Claude Code",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        },
-        {
-          "name": "Model Context Protocol (MCP)",
-          "aliases": [
-            "Model Context Protocol",
-            "MCP"
-          ],
-          "cross_industry": false,
-          "vendor": "ai"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [
-          "https://www.helpnetsecurity.com/2026/10/30/claude-code-extension-ssh-backdoor/"
-        ],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Globally deployed watch technology",
-      "independent_sources_24h": 1,
-      "priority": 92.5,
-      "priority_breakdown": {
-        "importance": 60.0,
-        "location": 12.75,
-        "industry": 7.0,
-        "practice": 12.75,
-        "weighted_total": 92.5,
         "severity_band": [
           85,
           100
@@ -1761,121 +1536,6 @@
         "industry": 8.0,
         "practice": 13.5,
         "weighted_total": 78.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "4c6b4e125bfec6ea80a1c1b8",
-      "headline": "Backdoored Claude Code extension affects thousands of users",
-      "summary": "Attackers compromised an official Anthropic Claude Code extension and inserted a backdoor, affecting thousands of users according to the report. This is a software supply-chain incident with direct relevance to organizations using AI developer tooling and extension ecosystems.",
-      "category": "supply_chain",
-      "importance": "high",
-      "importance_rationale": "A backdoored official extension represents a meaningful supply-chain compromise, but the report does not describe a broader systemic compromise of the underlying platform or a confirmed enterprise-wide impact.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 50,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 50,
-        "retail_banking": 50,
-        "global_it_services": 70,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 15,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 65,
-        "siem_detection": 40,
-        "iam_pam": 20,
-        "email_phishing": 0,
-        "data_protection_dlp": 15,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 15,
-        "ai_governance": 90
-      },
-      "affected_technologies": [
-        "Anthropic Claude Code",
-        "AI agent frameworks"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule URLs were included. Review extension provenance, code-signing or package integrity, and unusual network or filesystem activity from developer workstations.",
-      "related_case_studies": [
-        "security-in-the-delivery-path"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Remove the affected extension, validate the integrity of AI coding tools and add-ons, rotate any exposed credentials, and review developer endpoints for post-installation activity.",
-      "confidence": 0.93,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/959754/Backdoor+in+Anthropic+Claude+Code-extensie+raakt+duizenden+gebruikers?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-10-30T10:52:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
-      "model_importance": "high",
-      "model_importance_rationale": "A backdoored official extension represents a meaningful supply-chain compromise, but the report does not describe a broader systemic compromise of the underlying platform or a confirmed enterprise-wide impact.",
-      "watch_tech": [
-        {
-          "name": "Claude Code",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        },
-        {
-          "name": "AI agent frameworks",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "ai"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Globally deployed watch technology",
-      "independent_sources_24h": 1,
-      "priority": 78.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 7.0,
-        "practice": 13.5,
-        "weighted_total": 78.25,
         "severity_band": [
           65,
           84.99
@@ -6968,6 +6628,106 @@
       "included": true
     },
     {
+      "cluster_id": "9e07f828cbbb7522dbae735e",
+      "headline": "Syrian hacker sentenced in US for pro-Assad cyberattacks",
+      "summary": "A US court sentenced Ahmad Umar Agha to prison for a long-running campaign tied to pro-Assad activity. The case involved attacks against media, businesses, and government targets.",
+      "category": "law_enforcement",
+      "importance": "medium",
+      "importance_rationale": "This is a law-enforcement outcome tied to earlier malicious activity, but the article describes sentencing rather than a current live campaign or new technical threat.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 20,
+        "MEA": 30,
+        "Other": 25
+      },
+      "countries_mentioned": [
+        "SY",
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 35,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [
+        "Ahmad Umar Agha"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The article is retrospective and does not provide rule-ready indicators or a fresh detection opportunity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Use the case as awareness that ideologically motivated intrusions can target media, businesses, and public-sector organizations; reinforce monitoring and incident response readiness.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/syrian-hacker-gets-prison-time-in-us-after-over-a-decade-on-the-run/",
+          "source": "SecurityWeek",
+          "published": "2026-10-31T11:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a law-enforcement outcome tied to earlier malicious activity, but the article describes sentencing rather than a current live campaign or new technical threat.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 45.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 13.5,
+        "industry": 3.5,
+        "practice": 1.5,
+        "weighted_total": 45.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "3d118d0806dc766bf3a7c5bd",
       "headline": "Eye of GNOME PNG parsing flaw can crash desktops",
       "summary": "A vulnerability in Eye of GNOME can be triggered by a specially crafted PNG image with malformed metadata. Opening a malicious image may cause a crash and could expose memory contents, so this is mainly a user-driven desktop risk rather than a server-side issue.",
@@ -7889,104 +7649,6 @@
       "included": true
     },
     {
-      "cluster_id": "aef9e5e4ac67519985412989",
-      "headline": "Microsoft resolves Windows 11 VPN failures after September updates",
-      "summary": "Microsoft says it has fixed a VPN connectivity problem tied to September 2026 Windows 11 security updates. The report describes a product issue rather than an attack, with the impact centered on affected Windows users.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is a vendor fix for a software issue, not a security incident or exploitation event. It may matter operationally for endpoint administrators, but it does not meet the threshold for higher urgency.",
-      "location_relevance": {
-        "US": 50,
-        "Europe": 50,
-        "MEA": 50,
-        "Other": 50
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 30,
-        "telecommunications": 30,
-        "private_banking": 30,
-        "investment_management": 30,
-        "government": 30,
-        "retail_banking": 30,
-        "global_it_services": 35,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 25,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Windows 11",
-        "Always On VPN"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection content was included. Administrators should validate VPN client behavior after patching and review endpoint connectivity logs if failures persist.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Confirm Windows 11 devices are fully updated and test Always On VPN connectivity after the fix. If issues remain, compare client configuration, routing, and security policy changes introduced by the September updates.",
-      "confidence": 0.83,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-finally-fixes-vpn-issues-caused-by-september-updates/",
-          "source": "BleepingComputer",
-          "published": "2026-10-30T11:20:26+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a vendor fix for a software issue, not a security incident or exploitation event. It may matter operationally for endpoint administrators, but it does not meet the threshold for higher urgency.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 23.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 7.5,
-        "industry": 3.5,
-        "practice": 3.75,
-        "weighted_total": 23.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "6c0b2c1b6f553b7a8c102415",
       "headline": "Censys changes Starter subscription pricing and usage model",
       "summary": "Censys says its Starter subscription will let users perform more lookups with fewer credits than before. The update is a product and pricing change for internet-exposure search customers rather than a security incident.",
@@ -8887,6 +8549,200 @@
       "included": false
     },
     {
+      "cluster_id": "00cf2808d9fbe3f6f2e49b73",
+      "headline": "YARA-X 1.22.1 bugfix release published",
+      "summary": "YARA-X 1.22.1 is a small maintenance update with two bug fixes. The release note does not describe new security impact or active exploitation.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "A routine bugfix release without reported vulnerability, exploitation, or material operational risk. This is useful for tooling awareness but does not rise to a security event.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 15,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "YARA-X"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided and the release note does not describe an adversary technique to hunt for.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track the YARA-X release for fix details and update internal tooling only if the patched defects affect your workflow.",
+      "confidence": 0.87,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33474",
+          "source": "SANS ISC",
+          "published": "2026-10-31T10:48:17+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "A routine bugfix release without reported vulnerability, exploitation, or material operational risk. This is useful for tooling awareness but does not rise to a security event.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 15.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 1.5,
+        "industry": 1.5,
+        "practice": 3.0,
+        "weighted_total": 15.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "1ee24f3ddee579a88fc16897",
+      "headline": "Wireshark 5.0.0 release candidate issued",
+      "summary": "Wireshark 5.0.0rc1 has been published as a release candidate for the next major version. The notice signals upcoming product change, but it does not identify a vulnerability or incident.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product release announcement rather than a security event. It may matter for tooling lifecycle planning, but there is no reported exploit or defensive action requirement.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Wireshark"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules apply because the item is a software release announcement, not an attack advisory.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review the release notes and plan validation of any Wireshark-dependent workflows before upgrading.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33476",
+          "source": "SANS ISC",
+          "published": "2026-10-31T10:52:53+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product release announcement rather than a security event. It may matter for tooling lifecycle planning, but there is no reported exploit or defensive action requirement.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 13.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 1.5,
+        "industry": 1.0,
+        "practice": 1.5,
+        "weighted_total": 13.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "c55c9b4e0e8f9c3da418e71a",
       "headline": "Cybersecurity conferences in 2027 focus on AI, conflict and supply chain risk",
       "summary": "A conference roundup highlights themes expected to dominate cybersecurity events in 2027. It is a trend piece about industry priorities rather than a specific incident, vulnerability or policy change.",
@@ -9080,10 +8936,10 @@
     }
   ],
   "counts": {
-    "critical": 8,
-    "high": 27,
-    "medium": 35,
-    "low": 17
+    "critical": 6,
+    "high": 26,
+    "medium": 36,
+    "low": 18
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -9107,7 +8963,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 19,
+  "watch_hits": 17,
   "watch": {
     "endpoint_network": [
       {
@@ -9172,29 +9028,9 @@
         "cluster_id": "c1aa108c641e73b748086c7e"
       },
       {
-        "technology": "Claude Code",
-        "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
-        "cluster_id": "2d80a0a180e4861eae7951e4"
-      },
-      {
-        "technology": "Model Context Protocol (MCP)",
-        "headline": "Tampered Claude Code extension adds persistent SSH backdoor",
-        "cluster_id": "2d80a0a180e4861eae7951e4"
-      },
-      {
         "technology": "AI agent frameworks",
         "headline": "Northflank says customer data was stolen in platform compromise",
         "cluster_id": "cb741c2ec55a5c759188baf4"
-      },
-      {
-        "technology": "Claude Code",
-        "headline": "Backdoored Claude Code extension affects thousands of users",
-        "cluster_id": "4c6b4e125bfec6ea80a1c1b8"
-      },
-      {
-        "technology": "AI agent frameworks",
-        "headline": "Backdoored Claude Code extension affects thousands of users",
-        "cluster_id": "4c6b4e125bfec6ea80a1c1b8"
       },
       {
         "technology": "Claude Code",
@@ -9286,53 +9122,53 @@
       }
     ]
   },
-  "other_count": 13,
+  "other_count": 14,
   "source_health": {
-    "at": "2026-10-31T10:44:14.144655+00:00",
+    "at": "2026-10-31T11:22:16.848408+00:00",
     "enabled": 41,
-    "failures": 1,
-    "new": 303,
+    "failures": 2,
+    "new": 3,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -9342,22 +9178,22 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -9390,7 +9226,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -9400,7 +9236,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 0
+        "new": 2
       },
       {
         "name": "CISA IT Advisories",
@@ -9430,7 +9266,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -9445,7 +9281,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -9485,7 +9321,7 @@
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -9494,13 +9330,14 @@
       },
       {
         "name": "Seebug Vulnerabilities",
-        "ok": true,
-        "new": 0
+        "ok": false,
+        "new": 0,
+        "error": "ReadTimeout"
       },
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -9510,11 +9347,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 241,
-        "entries": 34413,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -9528,7 +9361,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-30T17:02:45.366500+00:00",
@@ -9555,11 +9388,9 @@
     "security-in-the-delivery-path": [
       "651570ec01bc8df7e06d6a04",
       "c1aa108c641e73b748086c7e",
-      "2d80a0a180e4861eae7951e4",
       "8fc971e55b17c65a2d3492eb",
       "e26238c5b4c5c7e76f4f896f",
       "b0d9b518e1b4ff65758e8a95",
-      "4c6b4e125bfec6ea80a1c1b8",
       "945365cb3f18e63b26ba83af",
       "c81162a603729696df8bf419",
       "5509d5bc60bcd6c3aa54b259"
@@ -9567,7 +9398,6 @@
     "audit-ready-by-design": [
       "c305d693e177d5ef64daf367",
       "c1aa108c641e73b748086c7e",
-      "2d80a0a180e4861eae7951e4",
       "d327dc1f3bfb8a948c62773f",
       "508fabecec8a845d90ad120a",
       "e26238c5b4c5c7e76f4f896f",
