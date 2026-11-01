@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-01",
-  "start": "2026-10-31T11:41:04.245601+00:00",
-  "end": "2026-11-01T11:41:04.245601+00:00",
+  "start": "2026-10-31T12:13:40.272050+00:00",
+  "end": "2026-11-01T12:13:40.272050+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -6513,207 +6513,6 @@
       "included": true
     },
     {
-      "cluster_id": "b84dfe472134279a715b0b44",
-      "headline": "Chainalysis says attacker accessed internal tools and some customer identity data",
-      "summary": "Chainalysis disclosed an intrusion involving internal tools and exposure of some customer identity data. The company said investigation content, credentials, and session tokens were not accessed in the incident as described in the source material.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "This is a confirmed breach affecting a security-related service provider, but the reported scope is limited to non-sensitive customer data and does not indicate a large-scale systemic compromise. It is relevant for exposure management and data protection, yet the source does not support a higher severity rating.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 25,
-        "MEA": 15,
-        "Other": 20
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 30,
-        "investment_management": 70,
-        "government": 20,
-        "retail_banking": 20,
-        "global_it_services": 60,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 0,
-        "siem_detection": 20,
-        "iam_pam": 30,
-        "email_phishing": 0,
-        "data_protection_dlp": 80,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 0,
-        "ai_governance": 20
-      },
-      "affected_technologies": [
-        "internal tools"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. Relevant monitoring would center on anomalous access to internal tooling, identity telemetry, and unusual data export activity.",
-      "related_case_studies": [
-        "security-services-for-investment-management",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "investment_management",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Validate access controls around internal tooling, review identity and session telemetry, and assess what customer data may have been exposed. Strengthen DLP and logging around admin systems and service accounts.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/10/chainalysis-confirms-intrusion-into.html",
-          "source": "The Hacker News",
-          "published": "2026-10-31T12:01:56+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a confirmed breach affecting a security-related service provider, but the reported scope is limited to non-sensitive customer data and does not indicate a large-scale systemic compromise. It is relevant for exposure management and data protection, yet the source does not support a higher severity rating.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 56.5,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 10.5,
-        "industry": 7.0,
-        "practice": 12.0,
-        "weighted_total": 56.5,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "ef006b6d1900eae33747e3a0",
-      "headline": "VOLTA infostealer uses AI to rank stolen victim assets",
-      "summary": "Cisco Talos reports that VOLTA steals credentials, sessions, and cryptocurrency wallets, then uses LLMs to profile victims and rank the most valuable assets. The reporting highlights AI-assisted malware tradecraft, but does not show a confirmed compromise of a specific enterprise sector in the source material.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "This is security research describing a new malware technique rather than confirmed widespread exploitation or a major breach. It is operationally relevant because it shows AI-assisted victim prioritization, but the source does not establish active enterprise impact at critical scale.",
-      "location_relevance": {
-        "US": 30,
-        "Europe": 30,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 20,
-        "iam_pam": 30,
-        "email_phishing": 20,
-        "data_protection_dlp": 40,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 20,
-        "ai_governance": 80
-      },
-      "affected_technologies": [
-        "LLMs",
-        "infostealer malware",
-        "cryptocurrency wallets"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source links. Defenders can look for infostealer behaviors, suspicious token theft, and unusual local AI or API activity associated with malware execution.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review controls for infostealer delivery, credential and session-token theft, and anomalous AI-assisted post-compromise activity. Prioritize identity protection, DLP, and endpoint telemetry that can surface suspicious asset discovery or exfiltration behavior.",
-      "confidence": 0.83,
-      "sources": [
-        {
-          "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
-          "source": "Cisco Talos",
-          "published": "2026-10-31T12:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is security research describing a new malware technique rather than confirmed widespread exploitation or a major breach. It is operationally relevant because it shows AI-assisted victim prioritization, but the source does not establish active enterprise impact at critical scale.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 47.5,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 4.5,
-        "industry": 4.0,
-        "practice": 12.0,
-        "weighted_total": 47.5,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "20e411a0cb2bc19ecffc1bba",
       "headline": "Northstar Security emerges from stealth with $7M funding for risk-combination analysis",
       "summary": "Northstar Security has launched publicly after raising $7 million to analyze how identities, assets and vulnerabilities combine into higher-risk exposures. The company says its AI agents help teams identify and remediate risky combinations across enterprise environments. This is a product and funding announcement rather than evidence of a new attack or breach.",
@@ -7301,7 +7100,7 @@
   "counts": {
     "critical": 1,
     "high": 13,
-    "medium": 49,
+    "medium": 47,
     "low": 6
   },
   "unclassified": 0,
@@ -7320,21 +7119,21 @@
   "regulations": {},
   "other_count": 5,
   "source_health": {
-    "at": "2026-11-01T11:41:04.245601+00:00",
+    "at": "2026-11-01T12:13:40.272050+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 66,
+    "new": 0,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -7344,12 +7143,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Dark Reading",
@@ -7399,7 +7198,7 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
@@ -7422,7 +7221,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -7432,7 +7231,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -7462,7 +7261,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 50
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -7556,7 +7355,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-30T17:02:45.366500+00:00",
@@ -7578,8 +7377,7 @@
       "52422b50da6529d29581192b",
       "4e8eb4f12d8995143ce9d072",
       "1d3906fd8a79ca16a880a3c9",
-      "41cdd41993708079e5a5be12",
-      "b84dfe472134279a715b0b44"
+      "41cdd41993708079e5a5be12"
     ],
     "secure-azure-migration": [
       "47c9e2c2f127bea1bcf0c5f4"
@@ -7610,8 +7408,7 @@
       "4e8eb4f12d8995143ce9d072",
       "1d3906fd8a79ca16a880a3c9",
       "8b9baf870db62ae47593f03c",
-      "41cdd41993708079e5a5be12",
-      "b84dfe472134279a715b0b44"
+      "41cdd41993708079e5a5be12"
     ],
     "vendor-release-automation": [
       "415c2f39b679a509692c5600",
