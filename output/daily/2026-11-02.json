@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-02",
-  "start": "2026-11-01T13:06:24.874165+00:00",
-  "end": "2026-11-02T13:06:24.874165+00:00",
+  "start": "2026-11-01T14:03:29.069284+00:00",
+  "end": "2026-11-02T14:03:29.069284+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1051,6 +1051,218 @@
       "included": true
     },
     {
+      "cluster_id": "0bed561f10e179cb3266f608",
+      "headline": "Critical Langflow flaws can allow unauthenticated code execution",
+      "summary": "Two critical Langflow vulnerabilities may let an unauthenticated attacker bypass authentication or execute arbitrary code on affected servers. Affected releases reportedly span 1.0.0 through 1.12.8, with 1.13.0 as the fix.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a critical vulnerability affecting an open-source AI workflow tool with remote code execution potential. There is no report here of in-the-wild exploitation, so it fits high rather than critical.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 55,
+        "siem_detection": 25,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 75
+      },
+      "affected_technologies": [
+        "Langflow",
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided. Monitoring should focus on Langflow versions, exposed services, anomalous authentication events, and unexpected code execution on hosts running the application.",
+      "related_case_studies": [
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Patch to Langflow 1.13.0 or later, restrict exposure, and review any internet-facing deployments for unauthorized access or code execution.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+          "source": "The Hacker News",
+          "published": "2026-11-02T11:50:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a critical vulnerability affecting an open-source AI workflow tool with remote code execution potential. There is no report here of in-the-wild exploitation, so it fits high rather than critical.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 79.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 13.5,
+        "weighted_total": 79.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "244d2399e74a168ed81c6848",
+      "headline": "European supermarket cooling systems reportedly hit with default-password attacks",
+      "summary": "Reports from the Netherlands and other countries say supermarket cooling systems have again been targeted, with default passwords cited as an apparent access path. The incident details remain limited, but the operational impact appears similar to the broader European refrigeration wave.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a follow-on report in the same active incident pattern affecting supermarket cooling systems in Europe. The repeated operational disruption makes it highly relevant for defenders in the region.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 100,
+        "MEA": 20,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 70,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 30,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 75,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "refrigeration controllers",
+        "building management systems",
+        "IoT controllers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection content was provided. Defenders should monitor for default credential use, unauthorized remote administration, and abnormal refrigeration setpoint changes.",
+      "related_case_studies": [
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Remove default credentials, isolate controller networks, enforce unique access accounts, and monitor for abnormal configuration changes on cooling systems.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/959992/Koelsystemen+supermarkten+via+standaard+wachtwoord+gehackt?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-02T13:12:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a follow-on report in the same active incident pattern affecting supermarket cooling systems in Europe. The repeated operational disruption makes it highly relevant for defenders in the region.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 78.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 7.0,
+        "practice": 11.25,
+        "weighted_total": 78.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "f801cd5ccac777b3305e9e61",
       "headline": "Microsoft Teams impersonation and weak AD CS enable data theft in intrusions",
       "summary": "Microsoft reported intrusions where attackers posed as IT support in Teams and convinced employees to grant remote access. The attackers then abused insecure Active Directory Certificate Services settings to obtain certificates for privileged access.",
@@ -1288,6 +1500,109 @@
         "industry": 7.5,
         "practice": 12.75,
         "weighted_total": 78.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9c2c028f86d1d955579f861c",
+      "headline": "Suspected attacks disrupt supermarket freezer controls across Europe",
+      "summary": "Multiple reports indicate supermarket refrigeration systems across Europe were disrupted, causing temperature manipulation and spoilage concerns. The available reporting suggests a second wave of suspected attacks, but the exact access method and full scope remain unclear.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This appears to be an active incident wave affecting a critical retail supply-chain function across Europe. Even with some uncertainty, the operational impact and sector relevance make it high priority.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 90,
+        "MEA": 20,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "Europe"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 70,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 0,
+        "siem_detection": 30,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 75,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "refrigeration controllers",
+        "building management systems",
+        "IoT controllers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied. Defenders should look for default credential use, unusual remote access to refrigeration or building-control networks, and unexpected setpoint changes.",
+      "related_case_studies": [
+        "security-foundations-for-logistics"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory refrigeration and building-control assets, eliminate default passwords, segment OT networks, and alert on unauthorized setpoint changes or remote access.",
+      "confidence": 0.94,
+      "sources": [
+        {
+          "url": "https://therecord.media/cyberattack-grocery-freezers-europe",
+          "source": "The Record",
+          "published": "2026-11-02T13:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This appears to be an active incident wave affecting a critical retail supply-chain function across Europe. Even with some uncertainty, the operational impact and sector relevance make it high priority.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 76.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 7.0,
+        "practice": 11.25,
+        "weighted_total": 76.75,
         "severity_band": [
           65,
           84.99
@@ -1590,6 +1905,106 @@
         "industry": 8.0,
         "practice": 9.0,
         "weighted_total": 75.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f57d673568c8e3259011dfff",
+      "headline": "Revolve reports customer data and card information breach",
+      "summary": "Revolve said attackers accessed its online shopping platform and stole customer personal information and payment card data. The reporting indicates a retail-facing breach affecting at least 180,000 people, but details on the intrusion method remain limited.",
+      "category": "data_breach",
+      "importance": "high",
+      "importance_rationale": "This is a confirmed breach involving personal and payment card data at a consumer commerce platform, creating significant privacy, fraud, and response implications. The scale and payment data exposure make it operationally important even without evidence of broader compromise.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 25,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 40,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 20,
+        "data_protection_dlp": 85,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Online shopping platform",
+        "Payment card systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided; defenders should focus on web application logs, account activity, card fraud monitoring, and exfiltration indicators.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review web application access logs, reset exposed credentials where applicable, coordinate card monitoring, and assess notification and containment obligations.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/revolve-data-breach-impacts-at-least-180000-people/",
+          "source": "SecurityWeek",
+          "published": "2026-11-02T13:35:21+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a confirmed breach involving personal and payment card data at a consumer commerce platform, creating significant privacy, fraud, and response implications. The scale and payment data exposure make it operationally important even without evidence of broader compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 4.0,
+        "practice": 12.75,
+        "weighted_total": 75.25,
         "severity_band": [
           65,
           84.99
@@ -1994,6 +2409,106 @@
         "industry": 7.5,
         "practice": 8.25,
         "weighted_total": 72.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "a1638d444d9b7e5d6491afde",
+      "headline": "Bitter uses PapRAT in cyber-espionage campaigns targeting South and Southeast Asia",
+      "summary": "Reporting says Bitter ran multiple infection chains against targets in South and Southeast Asia, including one chain without a malware executable. The campaign is framed as espionage activity, but the article provides limited technical detail.",
+      "category": "apt_nation_state",
+      "importance": "high",
+      "importance_rationale": "This is a targeted cyber-espionage campaign against organizations in Asia, indicating active threat actor activity with regional strategic relevance. While the technical detail is limited, the campaign focus and multi-chain delivery make it operationally important.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 80
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 30,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 60,
+        "retail_banking": 10,
+        "global_it_services": 20,
+        "logistics": 10,
+        "industrial_manufacturing": 20,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 60,
+        "iam_pam": 20,
+        "email_phishing": 50,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PapRAT",
+        "Windows"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "Bitter"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided; detection should emphasize phishing telemetry, endpoint process lineage, and suspicious script or payload execution.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Harden email and endpoint detection for spearphishing and staged payload delivery, and review telemetry for unusual script execution and lateral movement indicators.",
+      "confidence": 0.82,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/paprat-bitter-cyberespionage/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-02T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a targeted cyber-espionage campaign against organizations in Asia, indicating active threat actor activity with regional strategic relevance. While the technical detail is limited, the campaign focus and multi-chain delivery make it operationally important.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 72.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.0,
+        "industry": 6.0,
+        "practice": 9.0,
+        "weighted_total": 72.0,
         "severity_band": [
           65,
           84.99
@@ -2924,6 +3439,114 @@
       "included": true
     },
     {
+      "cluster_id": "e50b4e0ead31b3efe28df1bb",
+      "headline": "Google raises bug bounty for root access in cloud services to $250,000",
+      "summary": "Google announced a higher top payout for research that demonstrates full administrative control in its cloud environment. The change is a bounty-program update and does not by itself indicate a vulnerability or active attack.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product and program update about research incentives, not a confirmed vulnerability, incident, or regulatory requirement. It may interest cloud security researchers, but operational urgency is limited.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 40,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 70,
+        "vuln_exposure_mgmt": 25,
+        "devsecops": 20,
+        "siem_detection": 0,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Google Cloud"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided. The article is about bounty incentives, so there is no specific defensive telemetry to link from the source material.",
+      "related_case_studies": [
+        "secure-azure-migration"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track cloud hardening research outcomes, validate administrative boundary controls, and review cloud privilege escalation paths in your own environment.",
+      "confidence": 0.73,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/google-introduces-250000-root-in-cloud-bug-bounty-reward/",
+          "source": "SecurityWeek",
+          "published": "2026-11-02T13:25:11+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product and program update about research incentives, not a confirmed vulnerability, incident, or regulatory requirement. It may interest cloud security researchers, but operational urgency is limited.",
+      "watch_tech": [
+        {
+          "name": "Google Cloud",
+          "aliases": [
+            "GCP"
+          ],
+          "cross_industry": false,
+          "vendor": "infrastructure"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 29.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 4.0,
+        "practice": 10.5,
+        "weighted_total": 29.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "36e4230c3db053b6ba825a20",
       "headline": "Article asks how to secure AI agents and reduce data leakage",
       "summary": "A sponsored piece poses questions about whether AI agents are leaking sensitive data and how to secure them. It is a general awareness and governance article, not an account of a specific compromise.",
@@ -3013,6 +3636,212 @@
         "industry": 3.0,
         "practice": 12.0,
         "weighted_total": 27.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "bfff44c21cc75a582d8e2d6d",
+      "headline": "AI agent readiness survey highlights SOC preparation gaps",
+      "summary": "A survey of security leaders suggests many teams are already using or testing AI in security operations, with readiness becoming the next question. The piece is primarily about operational planning for AI-assisted SOC work rather than a specific incident or vulnerability.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is survey-based research and commentary on SOC readiness, not an incident, exploit, or regulatory action. It may inform security automation planning, but it does not indicate immediate operational risk.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 30,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 45,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 55,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "AI agent frameworks",
+        "SIEM",
+        "SOC platforms"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided in the source, so no specific detection content can be referenced. The article is advisory and survey-oriented rather than an observed attack.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Assess whether AI-assisted SOC workflows have guardrails for approval, logging, data handling, and human review before wider deployment.",
+      "confidence": 0.87,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/is-your-soc-ready-for-ai-agents.html",
+          "source": "The Hacker News",
+          "published": "2026-11-02T11:30:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is survey-based research and commentary on SOC readiness, not an incident, exploit, or regulatory action. It may inform security automation planning, but it does not indicate immediate operational risk.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 3.0,
+        "practice": 9.75,
+        "weighted_total": 26.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "93776c9c2a6b392fe84f2651",
+      "headline": "U.S. Census updates business AI survey wording under executive order",
+      "summary": "The U.S. Census Bureau changed BTOS wording from asking about AI in producing goods or services to AI in any business function, and later renamed AI as \"Super Intelligence\" in the survey text. The post questions how the wording shift may affect trend comparability and response behavior, but it is not a security incident.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a policy-and-survey wording change with AI branding implications, not a cyber incident, vulnerability, breach, or exploit. It may be useful for AI governance awareness, but operational security risk is limited.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 20,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 0,
+        "ai_governance": 70
+      },
+      "affected_technologies": [
+        "Artificial Intelligence",
+        "Survey systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content applies; this is a research/policy item rather than an observed threat activity report.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Track the wording change for AI governance and reporting consistency, and avoid comparing pre- and post-change survey results without adjusting methodology.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-02T13:31:26+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a policy-and-survey wording change with AI branding implications, not a cyber incident, vulnerability, breach, or exploit. It may be useful for AI governance awareness, but operational security risk is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 2.0,
+        "practice": 10.5,
+        "weighted_total": 26.0,
         "severity_band": [
           0,
           34.99
@@ -3948,104 +4777,6 @@
       "included": false
     },
     {
-      "cluster_id": "a45c5035f5e72c953394baf4",
-      "headline": "OpenAI expands ChatGPT work features and usage limits",
-      "summary": "OpenAI is rolling out Work capabilities into standard Chat and increasing Pro usage limits across ChatGPT and Codex. The change appears to be a product update rather than a security incident, with no direct defensive action implied.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is a product and pricing/update announcement without a described security impact, incident, or regulatory issue.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 10,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 20
-      },
-      "affected_technologies": [
-        "ChatGPT",
-        "OpenAI Codex"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection content is indicated by the source because this is a product announcement, not an attack or advisory.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Monitor OpenAI product changes for any new enterprise controls, data handling options, or policy impacts before enabling them broadly.",
-      "confidence": 0.94,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/",
-          "source": "BleepingComputer",
-          "published": "2026-11-01T13:53:11+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a product and pricing/update announcement without a described security impact, incident, or regulatory issue.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 16.0,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.0,
-        "industry": 1.0,
-        "practice": 3.0,
-        "weighted_total": 16.0,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "ba013b14a8bc9a30aa750a68",
       "headline": "SANS ISC publishes daily security podcast update",
       "summary": "This cluster contains only a routine podcast listing from SANS ISC and no substantive incident, advisory, or research detail. The source material does not describe a distinct cyber event to classify.",
@@ -4143,14 +4874,14 @@
   ],
   "counts": {
     "critical": 6,
-    "high": 15,
+    "high": 20,
     "medium": 4,
-    "low": 14
+    "low": 16
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 13,
+  "watch_hits": 16,
   "watch": {
     "endpoint_network": [
       {
@@ -4214,6 +4945,16 @@
       },
       {
         "technology": "AI agent frameworks",
+        "headline": "Critical Langflow flaws can allow unauthenticated code execution",
+        "cluster_id": "0bed561f10e179cb3266f608"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "AI agent readiness survey highlights SOC preparation gaps",
+        "cluster_id": "bfff44c21cc75a582d8e2d6d"
+      },
+      {
+        "technology": "AI agent frameworks",
         "headline": "DeepSeek releases research coding agent with team-chat triggers",
         "cluster_id": "ff6192d209a7a25f52108e9f"
       },
@@ -4248,6 +4989,13 @@
         "technology": "Windows Server",
         "headline": "Microsoft Teams impersonation and weak AD CS enable data theft in intrusions",
         "cluster_id": "f801cd5ccac777b3305e9e61"
+      }
+    ],
+    "infrastructure": [
+      {
+        "technology": "Google Cloud",
+        "headline": "Google raises bug bounty for root access in cloud services to $250,000",
+        "cluster_id": "e50b4e0ead31b3efe28df1bb"
       }
     ]
   },
@@ -4362,23 +5110,23 @@
       }
     ]
   },
-  "other_count": 7,
+  "other_count": 6,
   "source_health": {
-    "at": "2026-11-02T13:06:24.874165+00:00",
+    "at": "2026-11-02T14:03:29.069284+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 50,
+    "new": 8,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 3
+        "new": 2
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -4388,12 +5136,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 5
+        "new": 2
       },
       {
         "name": "Dark Reading",
@@ -4403,12 +5151,12 @@
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -4423,12 +5171,12 @@
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -4466,7 +5214,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Socket.dev Blog",
@@ -4476,7 +5224,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -4521,7 +5269,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -4586,11 +5334,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 11,
-        "entries": 34424,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -4604,7 +5348,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-30T17:02:45.366500+00:00",
@@ -4627,6 +5371,7 @@
     "security-in-the-delivery-path": [
       "ce0102be3fc9459f4890b3b3",
       "48035fae1822c712d213d122",
+      "0bed561f10e179cb3266f608",
       "d6448e6ee754fd41b678b17d"
     ],
     "secure-development-for-automotive": [
@@ -4643,6 +5388,10 @@
       "5e8329ffb080f6f42ca61d84",
       "3b54dc7270092e8521a49309"
     ],
+    "security-foundations-for-logistics": [
+      "244d2399e74a168ed81c6848",
+      "9c2c028f86d1d955579f861c"
+    ],
     "audit-ready-by-design": [
       "f801cd5ccac777b3305e9e61",
       "3b54dc7270092e8521a49309",
@@ -4654,7 +5403,8 @@
       "4d3ae10f15bdbcdcf3603471"
     ],
     "secure-azure-migration": [
-      "f12bb17f40c9b1cf1c5b30ef"
+      "f12bb17f40c9b1cf1c5b30ef",
+      "e50b4e0ead31b3efe28df1bb"
     ],
     "continuous-vulnerability-management": [
       "0f81648bf5c6b7071f3199db"
