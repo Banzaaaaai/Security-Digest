@@ -1,124 +1,11 @@
 {
   "kind": "daily",
   "period": "2026-11-03",
-  "start": "2026-11-02T12:37:55.746784+00:00",
-  "end": "2026-11-03T12:37:55.746784+00:00",
+  "start": "2026-11-02T13:11:14.266732+00:00",
+  "end": "2026-11-03T13:11:14.266732+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
-    {
-      "cluster_id": "ce0102be3fc9459f4890b3b3",
-      "headline": "Active attacks target unpatched GitLab servers with severe RCE flaw",
-      "summary": "More than 1,000 internet-facing GitLab servers remain unpatched while attackers are reportedly exploiting a maximum-severity remote code execution issue. The report indicates ongoing exploitation against exposed enterprise software and suggests urgent patching and exposure review.",
-      "category": "exploitation_in_the_wild",
-      "importance": "critical",
-      "importance_rationale": "This is active in-the-wild exploitation of widely deployed enterprise software with remote code execution impact. That combination meets the critical rubric for systemic enterprise risk.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 95,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 95,
-        "siem_detection": 35,
-        "iam_pam": 20,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 30,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "GitLab"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No rule URLs were supplied in the source. Detection efforts should focus on GitLab exposure, patch state, and indicators of post-exploitation on internet-facing instances.",
-      "related_case_studies": [
-        "vendor-release-automation",
-        "security-in-the-delivery-path"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Patch GitLab immediately, inventory internet-facing instances, look for compromise indicators, and validate secrets, tokens, and CI/CD integrity on affected hosts.",
-      "confidence": 0.98,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
-          "source": "BleepingComputer",
-          "published": "2026-11-02T12:47:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "This is active in-the-wild exploitation of widely deployed enterprise software with remote code execution impact. That combination meets the critical rubric for systemic enterprise risk.",
-      "watch_tech": [
-        {
-          "name": "GitLab",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "devops_appsec"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [
-          "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/"
-        ],
-        "rce": [
-          "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/"
-        ],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Enterprise software and distribution infrastructure",
-      "independent_sources_24h": 1,
-      "priority": 96.5,
-      "priority_breakdown": {
-        "importance": 60.0,
-        "location": 12.75,
-        "industry": 9.5,
-        "practice": 14.25,
-        "weighted_total": 96.5,
-        "severity_band": [
-          85,
-          100
-        ]
-      },
-      "included": true
-    },
     {
       "cluster_id": "8f1272d76f47f1a740b006ed",
       "headline": "Critical Node.js-related RCE flaw prompts virtual patching guidance",
@@ -319,6 +206,12 @@
           "source": "The Hacker News",
           "published": "2026-11-03T05:34:41+00:00",
           "date_inferred": false
+        },
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/",
+          "source": "Help Net Security",
+          "published": "2026-11-03T12:59:51+00:00",
+          "date_inferred": false
         }
       ],
       "overrides": [
@@ -338,7 +231,8 @@
         "exploitation_reported": [],
         "rce": [],
         "critical_flaw": [
-          "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html"
+          "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
+          "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/"
         ],
         "emergency_patch": [],
         "public_poc": [],
@@ -347,7 +241,7 @@
         "worldwide": []
       },
       "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
+      "independent_sources_24h": 2,
       "priority": 83.0,
       "priority_breakdown": {
         "importance": 45.0,
@@ -464,6 +358,118 @@
         "location": 15.0,
         "industry": 8.5,
         "practice": 13.5,
+        "weighted_total": 82.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b84cad2a2e67203e1c8e6fda",
+      "headline": "Red Hat patches critical Linux TCP remote code execution flaw",
+      "summary": "Red Hat has released fixes for a critical Linux kernel TCP use-after-free issue affecting RHEL 8, 9, and 10. Ubuntu also has fixes in a testing channel for newer long-term-support releases, with regular availability not yet announced.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A critical remote code execution flaw in the Linux kernel affects widely deployed enterprise systems, making patching urgent even without confirmed in-the-wild exploitation.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 75,
+        "telecommunications": 75,
+        "private_banking": 75,
+        "investment_management": 75,
+        "government": 75,
+        "retail_banking": 75,
+        "global_it_services": 85,
+        "logistics": 75,
+        "industrial_manufacturing": 75,
+        "automotive": 75
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 30,
+        "siem_detection": 10,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 20,
+        "grc_audit": 5,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Linux kernel",
+        "Red Hat Enterprise Linux",
+        "Ubuntu"
+      ],
+      "cves": [
+        "CVE-2026-98432"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule URLs were supplied. Focus on exposure confirmation, asset inventory, and patch verification for affected kernel builds.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize patching affected kernel versions, verify fleet exposure, and monitor for any vendor follow-up on exploitation or backported fixes.",
+      "confidence": 0.98,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
+          "source": "The Hacker News",
+          "published": "2026-11-03T11:23:53+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A critical remote code execution flaw in the Linux kernel affects widely deployed enterprise systems, making patching urgent even without confirmed in-the-wild exploitation.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-98432": {
+          "kev": null,
+          "epss": 0.00457,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 82.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 8.5,
+        "practice": 14.25,
         "weighted_total": 82.0,
         "severity_band": [
           65,
@@ -883,6 +889,109 @@
         "location": 14.25,
         "industry": 6.0,
         "practice": 14.25,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "c0fad55d0fd86fbacde41e11",
+      "headline": "Critical Android flaw enables remote code execution on phones",
+      "summary": "A Dutch-language report says a critical vulnerability in Android can allow remote code execution on phones with no user interaction. The article does not identify a CVE or confirm exploitation, but it indicates potentially broad device exposure.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A critical unauthenticated RCE in a widely deployed mobile platform is operationally important even without confirmed exploitation, because it can affect large numbers of enterprise-managed devices.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 100,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 55,
+        "private_banking": 55,
+        "investment_management": 55,
+        "government": 55,
+        "retail_banking": 55,
+        "global_it_services": 60,
+        "logistics": 55,
+        "industrial_manufacturing": 55,
+        "automotive": 55
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided. Defenders should rely on mobile fleet inventory, patch compliance checks, and device telemetry for unusual app or process behavior.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Check Android patch levels across managed devices, isolate high-risk endpoints if needed, and track vendor advisories for exploit details or mitigation guidance.",
+      "confidence": 0.89,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960200/Kritiek+lek+in+Androidtelefoons+maakt+remote+code+execution+mogelijk?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-03T12:34:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A critical unauthenticated RCE in a widely deployed mobile platform is operationally important even without confirmed exploitation, because it can affect large numbers of enterprise-managed devices.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://www.security.nl/posting/960200/Kritiek+lek+in+Androidtelefoons+maakt+remote+code+execution+mogelijk?channel=rss"
+        ],
+        "critical_flaw": [
+          "https://www.security.nl/posting/960200/Kritiek+lek+in+Androidtelefoons+maakt+remote+code+execution+mogelijk?channel=rss"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 6.0,
+        "practice": 13.5,
         "weighted_total": 79.5,
         "severity_band": [
           65,
@@ -1518,80 +1627,80 @@
       "included": true
     },
     {
-      "cluster_id": "9c2c028f86d1d955579f861c",
-      "headline": "Suspected attacks disrupt supermarket freezer controls across Europe",
-      "summary": "Multiple reports indicate supermarket refrigeration systems across Europe were disrupted, causing temperature manipulation and spoilage concerns. The available reporting suggests a second wave of suspected attacks, but the exact access method and full scope remain unclear.",
+      "cluster_id": "9dcda68ffbe9857071e8d87f",
+      "headline": "Russia-aligned hackers use WinRAR flaw to install data-stealing malware",
+      "summary": "Researchers report that a Russia-aligned group is using a WinRAR vulnerability to deliver information-stealing malware. The reported activity is focused on Ukrainian organizations, especially public-sector and defense-related targets.",
       "category": "vulnerability",
       "importance": "high",
-      "importance_rationale": "This appears to be an active incident wave affecting a critical retail supply-chain function across Europe. Even with some uncertainty, the operational impact and sector relevance make it high priority.",
+      "importance_rationale": "This is reported active exploitation of widely used enterprise software against a targeted public-sector and defense population, which raises operational urgency even though the campaign appears geographically focused.",
       "location_relevance": {
-        "US": 15,
-        "Europe": 90,
-        "MEA": 20,
-        "Other": 15
+        "US": 25,
+        "Europe": 80,
+        "MEA": 10,
+        "Other": 20
       },
       "countries_mentioned": [
-        "Europe"
+        "UA"
       ],
       "industry_relevance": {
         "energy_services": 0,
         "telecommunications": 0,
         "private_banking": 0,
         "investment_management": 0,
-        "government": 0,
+        "government": 85,
         "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 70,
+        "global_it_services": 20,
+        "logistics": 0,
         "industrial_manufacturing": 0,
         "automotive": 0
       },
       "practice_area_relevance": {
         "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 15,
+        "vuln_exposure_mgmt": 60,
         "devsecops": 0,
-        "siem_detection": 30,
+        "siem_detection": 55,
         "iam_pam": 0,
         "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 75,
-        "grc_audit": 20,
+        "data_protection_dlp": 75,
+        "ot_ics": 0,
+        "grc_audit": 0,
         "security_automation": 10,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "refrigeration controllers",
-        "building management systems",
-        "IoT controllers"
+        "WinRAR"
       ],
       "cves": [],
-      "threat_actors": [],
+      "threat_actors": [
+        "Gorbag"
+      ],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection rules were supplied. Defenders should look for default credential use, unusual remote access to refrigeration or building-control networks, and unexpected setpoint changes.",
+      "detection_coverage_note": "No detection-rule URLs were provided in the source links. Defenders can look for archive-based payload delivery, suspicious child processes from archive utilities, and unexpected outbound data movement after archive extraction.",
       "related_case_studies": [
-        "security-foundations-for-logistics"
+        "security-at-telecom-scale"
       ],
       "business_signal": {
         "present": false,
         "type": "major_incident_wave",
-        "sector": "logistics",
+        "sector": "government",
         "region": "Europe",
         "rationale": ""
       },
-      "recommended_action": "Inventory refrigeration and building-control assets, eliminate default passwords, segment OT networks, and alert on unauthorized setpoint changes or remote access.",
-      "confidence": 0.94,
+      "recommended_action": "Verify WinRAR patch status, hunt for archive-triggered malware execution, and review endpoint telemetry for post-extraction process spawning and data theft indicators.",
+      "confidence": 0.92,
       "sources": [
         {
-          "url": "https://therecord.media/cyberattack-grocery-freezers-europe",
-          "source": "The Record",
-          "published": "2026-11-02T13:00:00+00:00",
+          "url": "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+          "source": "The Hacker News",
+          "published": "2026-11-03T11:00:45+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "high",
-      "model_importance_rationale": "This appears to be an active incident wave affecting a critical retail supply-chain function across Europe. Even with some uncertainty, the operational impact and sector relevance make it high priority.",
+      "model_importance_rationale": "This is reported active exploitation of widely used enterprise software against a targeted public-sector and defense population, which raises operational urgency even though the campaign appears geographically focused.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
@@ -1609,8 +1718,8 @@
       "priority": 76.75,
       "priority_breakdown": {
         "importance": 45.0,
-        "location": 13.5,
-        "industry": 7.0,
+        "location": 12.0,
+        "industry": 8.5,
         "practice": 11.25,
         "weighted_total": 76.75,
         "severity_band": [
@@ -2545,109 +2654,6 @@
         "industry": 7.0,
         "practice": 6.0,
         "weighted_total": 73.0,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "f12bb17f40c9b1cf1c5b30ef",
-      "headline": "Trezor warns of possible seed-stealing implant in reseller-supplied wallets",
-      "summary": "Trezor says some wallets sold through a reseller may contain a hidden implant that could steal recovery phrases. The issue appears tied to a supply-chain tampering concern affecting hardware wallets rather than the vendor’s standard retail channel.",
-      "category": "supply_chain",
-      "importance": "high",
-      "importance_rationale": "A hardware-wallet tampering warning affects a security-sensitive product and raises direct theft risk for buyers. It is significant, but the report is limited to a reseller-linked issue rather than a systemic compromise of the entire vendor ecosystem.",
-      "location_relevance": {
-        "US": 35,
-        "Europe": 80,
-        "MEA": 25,
-        "Other": 45
-      },
-      "countries_mentioned": [
-        "CZ"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 75,
-        "investment_management": 70,
-        "government": 20,
-        "retail_banking": 35,
-        "global_it_services": 20,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 35,
-        "email_phishing": 0,
-        "data_protection_dlp": 55,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "hardware wallets",
-        "Trezor"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided. The practical response is supply-chain validation and wallet integrity checks rather than traditional endpoint detection.",
-      "related_case_studies": [
-        "secure-azure-migration",
-        "security-services-for-investment-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "private_banking",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Verify wallet provenance, replace any potentially tampered devices, move funds to a known-good wallet, and review custody controls and procurement checks for hardware security products.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://www.helpnetsecurity.com/2026/11/02/trezor-hardware-wallet-implant-cryptobilis/",
-          "source": "Help Net Security",
-          "published": "2026-11-02T12:48:04+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A hardware-wallet tampering warning affects a security-sensitive product and raises direct theft risk for buyers. It is significant, but the report is limited to a reseller-linked issue rather than a systemic compromise of the entire vendor ecosystem.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 72.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.0,
-        "industry": 7.5,
-        "practice": 8.25,
-        "weighted_total": 72.75,
         "severity_band": [
           65,
           84.99
@@ -4145,107 +4151,6 @@
         "exploitation_reported": [],
         "rce": [],
         "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 59.5,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 14.25,
-        "industry": 7.0,
-        "practice": 11.25,
-        "weighted_total": 59.5,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "232a52ef7fff908c3e17fd33",
-      "headline": "White House AI task force formed without CISA involvement",
-      "summary": "A new White House AI task force is drawing scrutiny because CISA is not included, even though the group is expected to engage critical infrastructure operators on AI security. The piece frames this as a coordination gap rather than a specific incident or technical flaw.",
-      "category": "regulation_policy",
-      "importance": "medium",
-      "importance_rationale": "This is a policy and governance development affecting how AI security coordination may be organized for critical infrastructure, but it does not describe a breach, exploit, or binding near-term rule.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 20,
-        "MEA": 15,
-        "Other": 15
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 45,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 70,
-        "retail_banking": 40,
-        "global_it_services": 35,
-        "logistics": 35,
-        "industrial_manufacturing": 45,
-        "automotive": 35
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 20,
-        "grc_audit": 55,
-        "security_automation": 10,
-        "ai_governance": 75
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection content is provided. This is a governance and coordination item, so operational detection guidance is not applicable.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review AI governance responsibilities, escalation paths, and critical-infrastructure coordination plans; ensure security teams can engage policy discussions on AI risk management.",
-      "confidence": 0.82,
-      "sources": [
-        {
-          "url": "https://www.cybersecuritydive.com/news/cisa-white-house-ai-task-force-missing-trump/873338/",
-          "source": "Cybersecurity Dive",
-          "published": "2026-11-02T13:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a policy and governance development affecting how AI security coordination may be organized for critical infrastructure, but it does not describe a breach, exploit, or binding near-term rule.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://www.cybersecuritydive.com/news/cisa-white-house-ai-task-force-missing-trump/873338/"
-        ],
         "emergency_patch": [],
         "public_poc": [],
         "supply_chain_compromise": [],
@@ -6742,6 +6647,103 @@
       "included": true
     },
     {
+      "cluster_id": "e168d5f8ea0683e50921d04b",
+      "headline": "Gartner-style exposure prioritization guidance highlights how to reduce vulnerability backlog noise",
+      "summary": "This commentary argues that many vulnerabilities are treated as urgent even when they are unlikely to be exploited. It emphasizes prioritization methods rather than reporting a new incident or product issue.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "The piece is advisory commentary about vulnerability prioritization and does not describe a new exploit, breach, regulation, or vendor event.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 10,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection content was provided; this item is best treated as process guidance for exposure management programs.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Use exposure prioritization to separate reachable, exploited, and business-critical issues from low-value backlog noise, then tune remediation queues accordingly.",
+      "confidence": 0.74,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/the-4-elements-of-exposure.html",
+          "source": "The Hacker News",
+          "published": "2026-11-03T11:18:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The piece is advisory commentary about vulnerability prioritization and does not describe a new exploit, breach, regulation, or vendor event.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 30.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 4.0,
+        "practice": 12.75,
+        "weighted_total": 30.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "e50b4e0ead31b3efe28df1bb",
       "headline": "Google raises bug bounty for root access in cloud services to $250,000",
       "summary": "Google announced a higher top payout for research that demonstrates full administrative control in its cloud environment. The change is a bounty-program update and does not by itself indicate a vulnerability or active attack.",
@@ -8453,28 +8455,16 @@
     }
   ],
   "counts": {
-    "critical": 2,
-    "high": 34,
-    "medium": 24,
-    "low": 22
+    "critical": 1,
+    "high": 35,
+    "medium": 23,
+    "low": 23
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 8,
+  "watch_hits": 7,
   "watch": {
-    "devops_appsec": [
-      {
-        "technology": "GitLab",
-        "headline": "Active attacks target unpatched GitLab servers with severe RCE flaw",
-        "cluster_id": "ce0102be3fc9459f4890b3b3"
-      },
-      {
-        "technology": "GitHub",
-        "headline": "AI coding agents install outdated MCP servers that may remain unpatched",
-        "cluster_id": "a5b17ea944f28d53aaccd6b5"
-      }
-    ],
     "microsoft": [
       {
         "technology": "Exchange",
@@ -8534,6 +8524,13 @@
         "cluster_id": "8fbbc27028afdfad518c4152"
       }
     ],
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "AI coding agents install outdated MCP servers that may remain unpatched",
+        "cluster_id": "a5b17ea944f28d53aaccd6b5"
+      }
+    ],
     "infrastructure": [
       {
         "technology": "Google Cloud",
@@ -8560,6 +8557,12 @@
             "url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
             "source": "The Hacker News",
             "published": "2026-11-03T05:34:41+00:00",
+            "date_inferred": false
+          },
+          {
+            "url": "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/",
+            "source": "Help Net Security",
+            "published": "2026-11-03T12:59:51+00:00",
             "date_inferred": false
           }
         ]
@@ -8707,21 +8710,21 @@
   },
   "other_count": 10,
   "source_health": {
-    "at": "2026-11-03T12:37:55.746784+00:00",
+    "at": "2026-11-03T13:11:14.266732+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 91,
+    "new": 5,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 8
+        "new": 3
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -8731,57 +8734,57 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Cisco Talos",
@@ -8809,7 +8812,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -8819,7 +8822,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -8864,7 +8867,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -8904,7 +8907,7 @@
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -8919,7 +8922,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -8929,16 +8932,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 16,
-        "entries": 34440,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -8947,7 +8946,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-10-30T17:02:45.366500+00:00",
@@ -8961,8 +8960,19 @@
     "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
   ],
   "cases": {
+    "continuous-vulnerability-management": [
+      "8f1272d76f47f1a740b006ed",
+      "b84cad2a2e67203e1c8e6fda",
+      "283335e142ed8b82ec0f4a96",
+      "9c59a38943c4d0ce11a585b6",
+      "ab6c034f8492b0e366fffccd",
+      "384a558dfb89f692a7588135",
+      "d4a79711cc128fce5d4f2aa0",
+      "c0f7bb248783de51430d2526",
+      "e168d5f8ea0683e50921d04b",
+      "cb08be643a74ec0f7e315762"
+    ],
     "vendor-release-automation": [
-      "ce0102be3fc9459f4890b3b3",
       "8f1272d76f47f1a740b006ed",
       "d80473442c7abc7649d7fdd4",
       "8c4edece9bdb261607bb67b7",
@@ -8970,24 +8980,9 @@
       "d4a79711cc128fce5d4f2aa0",
       "cb08be643a74ec0f7e315762"
     ],
-    "security-in-the-delivery-path": [
-      "ce0102be3fc9459f4890b3b3",
-      "5b048075492d5c7632a5730a",
-      "6c6aea21f91dfc2c962a7284",
-      "a5b17ea944f28d53aaccd6b5"
-    ],
-    "continuous-vulnerability-management": [
-      "8f1272d76f47f1a740b006ed",
-      "283335e142ed8b82ec0f4a96",
-      "9c59a38943c4d0ce11a585b6",
-      "ab6c034f8492b0e366fffccd",
-      "384a558dfb89f692a7588135",
-      "d4a79711cc128fce5d4f2aa0",
-      "c0f7bb248783de51430d2526",
-      "cb08be643a74ec0f7e315762"
-    ],
     "security-visibility-for-manufacturing": [
       "b9ba4e436fc8e927c57d6687",
+      "b84cad2a2e67203e1c8e6fda",
       "de47e38e53d0372c88cfcc4a",
       "a3db8e1f2b4d2576eceac6f8",
       "e6aaea818998f1af65b38c2a",
@@ -9009,7 +9004,6 @@
       "39f18e50f5740c0aec388786",
       "5210c188a15c824545df25c1",
       "384a558dfb89f692a7588135",
-      "232a52ef7fff908c3e17fd33",
       "b728804dc951fc98b3590dbc"
     ],
     "security-services-for-investment-management": [
@@ -9018,7 +9012,6 @@
       "1d69d105499b8fef3bf938b1",
       "790f1db371db373b8f23ef2c",
       "39f18e50f5740c0aec388786",
-      "f12bb17f40c9b1cf1c5b30ef",
       "7687771085e490d3a5654d12",
       "b728804dc951fc98b3590dbc",
       "7d461fad5857dccb078dd384"
@@ -9030,17 +9023,21 @@
     "security-foundations-for-logistics": [
       "772d27d38d32d9015ad1b31c",
       "244d2399e74a168ed81c6848",
-      "9c2c028f86d1d955579f861c",
       "41b4e0ff89f957fa023153ac"
+    ],
+    "security-in-the-delivery-path": [
+      "5b048075492d5c7632a5730a",
+      "6c6aea21f91dfc2c962a7284",
+      "a5b17ea944f28d53aaccd6b5"
+    ],
+    "security-at-telecom-scale": [
+      "9dcda68ffbe9857071e8d87f",
+      "1fba9f134c1046f427628880",
+      "1a6bbb312ff8ea1cf0853092"
     ],
     "secure-azure-migration": [
       "1d69d105499b8fef3bf938b1",
-      "f12bb17f40c9b1cf1c5b30ef",
       "e50b4e0ead31b3efe28df1bb"
-    ],
-    "security-at-telecom-scale": [
-      "1fba9f134c1046f427628880",
-      "1a6bbb312ff8ea1cf0853092"
     ]
   }
 }
