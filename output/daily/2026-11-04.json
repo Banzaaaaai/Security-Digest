@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-04",
-  "start": "2026-11-03T12:47:28.660302+00:00",
-  "end": "2026-11-04T12:47:28.660302+00:00",
+  "start": "2026-11-03T13:25:55.430593+00:00",
+  "end": "2026-11-04T13:25:55.430593+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -750,131 +750,6 @@
         "severity_band": [
           85,
           100
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "b9ba4e436fc8e927c57d6687",
-      "headline": "Critical Siemens SIMATIC IoT2050 flaw is being actively exploited",
-      "summary": "A maximum-severity vulnerability in Siemens SIMATIC IoT2050 Advanced devices is reported under active exploitation. The issue can allow unauthenticated remote code execution, creating immediate risk for organizations running this OT/edge equipment.",
-      "category": "exploitation_in_the_wild",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 90,
-        "Europe": 90,
-        "MEA": 90,
-        "Other": 90
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 90,
-        "telecommunications": 30,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 30,
-        "retail_banking": 0,
-        "global_it_services": 20,
-        "logistics": 20,
-        "industrial_manufacturing": 95,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 80,
-        "devsecops": 0,
-        "siem_detection": 35,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 100,
-        "grc_audit": 20,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Siemens SIMATIC IoT2050 Advanced"
-      ],
-      "cves": [
-        "CVE-2026-58115"
-      ],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "iec_62443",
-          "nature": "new",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule URLs were included. Defenders should monitor OT edge-device management interfaces, unexpected process launches, and configuration changes on Siemens IoT2050 systems.",
-      "related_case_studies": [
-        "security-visibility-for-manufacturing",
-        "securing-offshore-operations"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "industrial_manufacturing",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Identify exposed IoT2050 devices, apply vendor remediation immediately, restrict management access, and hunt for signs of unauthorized code execution or persistence.",
-      "confidence": 0.99,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
-          "source": "The Hacker News",
-          "published": "2026-11-03T05:34:41+00:00",
-          "date_inferred": false
-        },
-        {
-          "url": "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/",
-          "source": "Help Net Security",
-          "published": "2026-11-03T12:59:51+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "Active exploitation of a critical flaw in widely used industrial equipment is an urgent operational risk for OT and manufacturing environments.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-58115": {
-          "kev": null,
-          "epss": 0.0089,
-          "cvss": null
-        }
-      },
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
-          "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 2,
-      "priority": 83.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 13.5,
-        "industry": 9.5,
-        "practice": 15.0,
-        "weighted_total": 83.0,
-        "severity_band": [
-          65,
-          84.99
         ]
       },
       "included": true
@@ -3064,6 +2939,108 @@
       "included": true
     },
     {
+      "cluster_id": "0e5ae8a01e16dcedba0266dd",
+      "headline": "Debian APT flaw can let a man-in-the-middle gain root access",
+      "summary": "A vulnerability in Debian's APT package manager can let a man-in-the-middle attacker execute code with root privileges. The report describes a local software supply-chain and package integrity risk for Debian users, but it does not indicate active exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A root-level package manager flaw in a foundational Linux component is a serious enterprise vulnerability. Even without confirmed exploitation, the attack surface is broad and the impact can be severe for Debian-based fleets.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 70,
+        "siem_detection": 10,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 30,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Debian",
+        "APT package manager",
+        "Linux"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule references were provided in the source material. Monitoring should focus on package source integrity, TLS/transport anomalies, and unexpected repository changes during updates.",
+      "related_case_studies": [
+        "vendor-release-automation",
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Patch Debian systems as soon as fixed packages are available and verify repository integrity controls. Use trusted mirrors, transport protection, and configuration management to reduce package tampering risk.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960385/Lek+in+Debian+APT+package+manager+laat+aanvaller+code+als+root+uitvoeren?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-04T13:18:01+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A root-level package manager flaw in a foundational Linux component is a serious enterprise vulnerability. Even without confirmed exploitation, the attack surface is broad and the impact can be severe for Debian-based fleets.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 76.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 76.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "49acf98068f7a42dd82c734d",
       "headline": "Chainstack says customer data exposed in production systems intrusion",
       "summary": "Chainstack said an attacker gained unauthorized access to part of its infrastructure and exposed some customer data, including password hashes. The disclosure frames the incident as part of a broader AI-assisted attack campaign, but the available report does not confirm the full scope or specific compromise path.",
@@ -4797,6 +4774,109 @@
       "included": true
     },
     {
+      "cluster_id": "d92267ddec9a3b3883c3910d",
+      "headline": "Two Canadians charged in US university hacking and cryptomining case",
+      "summary": "US authorities indicted two Canadian nationals in connection with intrusions against multiple US universities. The case alleges unauthorized access and cryptocurrency mining on compromised systems, but the report is a law-enforcement action rather than a new campaign advisory.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "A federal indictment tied to intrusions at multiple US universities is a material law-enforcement action affecting a major target sector. The incident scope is US-focused and involves higher-education systems, though the article does not indicate a new technique.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 25
+      },
+      "countries_mentioned": [
+        "CA",
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 35,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "university systems",
+        "cryptomining"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule references were provided in the source material. Defenders should watch for unusual compute usage, unauthorized account activity, and lateral movement across campus networks.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Hunt for unauthorized compute workloads and review identity, remote access, and privileged account monitoring across university environments. Prioritize incident-response lessons around detection of cryptomining and post-compromise persistence.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/us-charges-two-canadians-accused-of-hacking-us-universities/",
+          "source": "BleepingComputer",
+          "published": "2026-11-04T13:13:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A federal indictment tied to intrusions at multiple US universities is a material law-enforcement action affecting a major target sector. The incident scope is US-focused and involves higher-education systems, though the article does not indicate a new technique.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 67.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 3.5,
+        "practice": 5.25,
+        "weighted_total": 67.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "41a04d52dead81f5d660a2c2",
       "headline": "Attackers exploit BTCPay Server flaw to drain cryptocurrency wallets",
       "summary": "Attackers reportedly abused an outdated BTCPay Server flaw to steal cryptocurrency from hot wallets, with losses traced to at least $1.63 million. The report indicates active exploitation of exposed payment infrastructure, though the exact flaw is not named in the source snippet.",
@@ -4886,6 +4966,106 @@
         "industry": 3.5,
         "practice": 9.0,
         "weighted_total": 66.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f8bd91a9f445bfbf3b5f18cf",
+      "headline": "Cyberattack disrupts French blood service supplier cold storage",
+      "summary": "A supplier to France's national blood service was hit by a cyberattack that affected cold-room controls for blood sample storage. The report indicates an operational disruption in a regulated health-related supply chain, but it does not identify the attacker or confirm broader compromise.",
+      "category": "other",
+      "importance": "high",
+      "importance_rationale": "This is a significant operational incident affecting a supplier to a national blood service, with potential patient-safety and service-continuity impact. The affected geography is clearly France, and the incident is material even though attacker details are sparse.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 90,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "FR"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 10,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 20,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 35,
+        "grc_audit": 20,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "cold room controls",
+        "industrial control systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule references were provided in the source material. Facilities should monitor OT and building-control telemetry, alarm states, and out-of-range temperature events.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review segmentation and monitoring for supplier-managed environmental controls, and validate manual fallback procedures for temperature-sensitive assets. Increase OT and facilities telemetry coverage for critical storage environments.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/france-blood-service-cyberattack/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-04T12:52:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a significant operational incident affecting a supplier to a national blood service, with potential patient-safety and service-continuity impact. The affected geography is clearly France, and the incident is material even though attacker details are sparse.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 65.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 2.0,
+        "practice": 5.25,
+        "weighted_total": 65.75,
         "severity_band": [
           65,
           84.99
@@ -8062,6 +8242,105 @@
       "included": true
     },
     {
+      "cluster_id": "c5b16dd55051118bac4c7d1b",
+      "headline": "Impart launches AI-assisted virtual patching harness for new flaws",
+      "summary": "Impart Security announced a runtime defense harness that uses AI agents to draft and test virtual patches in a controlled environment. The release is positioned as a way to speed mitigation while engineers approve deterministic protections before enforcement.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product launch and workflow announcement, not evidence of a new exploit, breach, or material vulnerability. The risk signal is indirect and centers on security operations tooling.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 40,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 65,
+        "devsecops": 40,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 60,
+        "ai_governance": 35
+      },
+      "affected_technologies": [
+        "AI agents"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule references were provided in the source material. Relevant monitoring would focus on change control, approval workflows, and validation logs for virtual patch deployment.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Assess whether AI-assisted patch generation can be integrated safely into existing vulnerability management and change-control processes. Keep human approval, testing, and rollback controls before enforcing any virtual patch.",
+      "confidence": 0.72,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/04/impart-security-runtime-defense-harness/",
+          "source": "Help Net Security",
+          "published": "2026-11-04T12:48:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product launch and workflow announcement, not evidence of a new exploit, breach, or material vulnerability. The risk signal is indirect and centers on security operations tooling.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 25.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 4.0,
+        "practice": 9.75,
+        "weighted_total": 25.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "f1a111e72742f0df3d871707",
       "headline": "Blog post reviews LLMs reading and editing neural network weights",
       "summary": "This is a research discussion about whether large language models can interpret raw model weights and make limited edits to them. It does not describe a security incident, exploit, or enterprise control failure.",
@@ -8356,6 +8635,112 @@
       "included": true
     },
     {
+      "cluster_id": "a560b2ea40ec874096829499",
+      "headline": "Old CGI email script flaws still highlight common web security risks",
+      "summary": "Security researchers revisited legacy CGI email scripts that can leak environment data, let attackers alter message recipients, or in some cases enable code execution when input reaches sendmail unsafely. The item is a reminder that older web interfaces and mail-handling code can still create exposure if they remain deployed or are copied into modern systems.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a retrospective security discussion about long-known web and mail script weaknesses, not a new vulnerability disclosure, active exploitation report, or urgent vendor action. It may inform hardening and code review, but the operational urgency is limited.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 40,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 55,
+        "devsecops": 45,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 30,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "CGI scripts",
+        "sendmail"
+      ],
+      "cves": [
+        "CVE-2000-0411"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided. Defenders should review legacy CGI mail handlers for unsafe parameter handling and direct sendmail invocation.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory any remaining CGI-based mail forms or helper scripts, verify how user input reaches mail delivery, and remove or replace legacy code that leaks environment data or constructs shell calls unsafely.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33488",
+          "source": "SANS ISC",
+          "published": "2026-11-04T13:24:13+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a retrospective security discussion about long-known web and mail script weaknesses, not a new vulnerability disclosure, active exploitation report, or urgent vendor action. It may inform hardening and code review, but the operational urgency is limited.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2000-0411": {
+          "kev": null,
+          "epss": 0.07501,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 24.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 4.0,
+        "practice": 8.25,
+        "weighted_total": 24.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "34bc44cd300765b138659c2f",
       "headline": "Mozilla says AI is helping uncover more Firefox security flaws",
       "summary": "Mozilla says AI-assisted analysis helped it identify and patch Firefox security issues faster this year. The item is about security research and product maintenance, not an active attack or breach.",
@@ -8545,6 +8930,104 @@
         "industry": 3.5,
         "practice": 8.25,
         "weighted_total": 23.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "c8e5e05cfbad0528784ce99f",
+      "headline": "Yubico adds identity verification to enrollment and recovery",
+      "summary": "Yubico is introducing a service meant to strengthen identity verification during credential enrollment and recovery in existing identity platforms. The announcement also mentions a post-quantum YubiKey beta, but this is a product update rather than an incident or vulnerability disclosure.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a vendor product announcement about identity workflow improvements and a beta feature. It does not report exploitation, a vulnerability, or a regulatory change, so operational urgency is limited.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 20,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 55,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "YubiKey",
+        "identity platforms"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule references were provided in the source material. Monitor identity enrollment and recovery workflows for abnormal changes and unauthorized account recovery activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Review identity recovery and enrollment controls, especially step-up verification, help-desk procedures, and privileged account recovery paths. Validate whether the new service changes any existing IAM workflows before adoption.",
+      "confidence": 0.77,
+      "sources": [
+        {
+          "url": "https://www.darkreading.com/identity-access-management-security/beyond-phishing-resistant-yubico-identity-verification-gap",
+          "source": "Dark Reading",
+          "published": "2026-11-04T01:05:40+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a vendor product announcement about identity workflow improvements and a beta feature. It does not report exploitation, a vulnerability, or a regulatory change, so operational urgency is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 22.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 2.0,
+        "practice": 8.25,
+        "weighted_total": 22.25,
         "severity_band": [
           0,
           34.99
@@ -9149,9 +9632,9 @@
   ],
   "counts": {
     "critical": 7,
-    "high": 40,
+    "high": 42,
     "medium": 24,
-    "low": 18
+    "low": 21
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -9238,74 +9721,6 @@
     ]
   },
   "regulations": {
-    "all": [
-      {
-        "key": "iec_62443",
-        "nature": "new",
-        "effective_or_deadline_date": null,
-        "name": "IEC 62443",
-        "headline": "Critical Siemens SIMATIC IoT2050 flaw is being actively exploited",
-        "sources": [
-          {
-            "url": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
-            "source": "The Hacker News",
-            "published": "2026-11-03T05:34:41+00:00",
-            "date_inferred": false
-          },
-          {
-            "url": "https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/",
-            "source": "Help Net Security",
-            "published": "2026-11-03T12:59:51+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
-        "key": "iec_62443",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "IEC 62443",
-        "headline": "Europe-wide supermarket fridge sabotage hits British businesses",
-        "sources": [
-          {
-            "url": "https://therecord.media/british-businesses-caught-in-europe-wide-supermarket-fridge-attacks",
-            "source": "The Record",
-            "published": "2026-11-03T17:43:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
-        "key": "iec_62443",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "IEC 62443",
-        "headline": "Reported cyberattack disrupts supermarket refrigeration systems across Europe",
-        "sources": [
-          {
-            "url": "https://www.infosecurity-magazine.com/news/cyber-refrigeration-supermarkets/",
-            "source": "Infosecurity Magazine",
-            "published": "2026-11-03T13:45:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
-        "key": "nist_csf_2_0",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "NIST CSF 2.0",
-        "headline": "NIST issues basic cybersecurity guidance for microbusinesses without IT staff",
-        "sources": [
-          {
-            "url": "https://www.helpnetsecurity.com/2026/11/04/nist-small-business-cybersecurity-guide/",
-            "source": "Help Net Security",
-            "published": "2026-11-04T05:00:23+00:00",
-            "date_inferred": false
-          }
-        ]
-      }
-    ],
     "Europe": [
       {
         "key": "gdpr",
@@ -9383,6 +9798,53 @@
         ]
       }
     ],
+    "all": [
+      {
+        "key": "iec_62443",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "IEC 62443",
+        "headline": "Europe-wide supermarket fridge sabotage hits British businesses",
+        "sources": [
+          {
+            "url": "https://therecord.media/british-businesses-caught-in-europe-wide-supermarket-fridge-attacks",
+            "source": "The Record",
+            "published": "2026-11-03T17:43:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "iec_62443",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "IEC 62443",
+        "headline": "Reported cyberattack disrupts supermarket refrigeration systems across Europe",
+        "sources": [
+          {
+            "url": "https://www.infosecurity-magazine.com/news/cyber-refrigeration-supermarkets/",
+            "source": "Infosecurity Magazine",
+            "published": "2026-11-03T13:45:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "nist_csf_2_0",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "NIST CSF 2.0",
+        "headline": "NIST issues basic cybersecurity guidance for microbusinesses without IT staff",
+        "sources": [
+          {
+            "url": "https://www.helpnetsecurity.com/2026/11/04/nist-small-business-cybersecurity-guide/",
+            "source": "Help Net Security",
+            "published": "2026-11-04T05:00:23+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ],
     "US": [
       {
         "key": "state_privacy_laws",
@@ -9416,53 +9878,53 @@
       }
     ]
   },
-  "other_count": 7,
+  "other_count": 9,
   "source_health": {
-    "at": "2026-11-04T12:47:28.660302+00:00",
+    "at": "2026-11-04T13:25:55.430593+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 90,
+    "new": 6,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -9472,12 +9934,12 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -9487,7 +9949,7 @@
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -9502,9 +9964,9 @@
       {
         "name": "CISA OT Advisories",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "updated": 0,
-        "unchanged": 214,
+        "unchanged": 215,
         "failed": 0
       },
       {
@@ -9520,12 +9982,12 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SANS ISC",
@@ -9575,7 +10037,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 14
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -9620,7 +10082,7 @@
       {
         "name": "Qualys ThreatPROTECT",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Seebug Vulnerabilities",
@@ -9640,11 +10102,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 0,
-        "entries": 34441,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -9658,7 +10116,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-11-03T20:00:24.874100+00:00",
@@ -9685,6 +10143,7 @@
       "43ae5a82ae14f01234dc3a7b",
       "0f2962e63e0897034eaf95c5",
       "5350cf64f29cdc8ac80e555f",
+      "0e5ae8a01e16dcedba0266dd",
       "4aaaceaecb4f90852b2bfd1f",
       "e3626c78b944f4864c1d8ff6",
       "730a9b44a129b8b7b68c8bd6",
@@ -9720,6 +10179,7 @@
       "4aaaceaecb4f90852b2bfd1f",
       "345b215bc3cfa4391938b37f",
       "e3626c78b944f4864c1d8ff6",
+      "d92267ddec9a3b3883c3910d",
       "b8c402c06c47275eedb83fc5",
       "cf2ea752df828dbad21136bf",
       "50b981f8b72331270fbc18d9",
@@ -9729,23 +10189,18 @@
       "5999b804d5e9b7cd3643ff2d",
       "51bacd2ded2d949771443956"
     ],
-    "security-visibility-for-manufacturing": [
-      "b9ba4e436fc8e927c57d6687",
-      "ff51b02dd265ead37d6ce323",
-      "f831f45dc02ebbc60ae3ca44",
-      "0b5316a73348d849f4615dd5"
-    ],
-    "securing-offshore-operations": [
-      "b9ba4e436fc8e927c57d6687",
-      "f831f45dc02ebbc60ae3ca44",
-      "0b5316a73348d849f4615dd5",
-      "e0e6fbcf10b3fbc3d1508a78"
-    ],
     "continuous-vulnerability-management": [
       "ff51b02dd265ead37d6ce323",
       "ec6f4fb7e7bbd8520e1ff25b",
+      "0e5ae8a01e16dcedba0266dd",
       "cd3e7a4a35c26cc89906f491",
-      "d98717745e693a692c7fe4c6"
+      "d98717745e693a692c7fe4c6",
+      "c5b16dd55051118bac4c7d1b"
+    ],
+    "security-visibility-for-manufacturing": [
+      "ff51b02dd265ead37d6ce323",
+      "f831f45dc02ebbc60ae3ca44",
+      "0b5316a73348d849f4615dd5"
     ],
     "secure-azure-migration": [
       "bcfb2e41fbecf9d29cac7433",
@@ -9753,6 +10208,11 @@
       "32216ae45992315e02efa467",
       "49acf98068f7a42dd82c734d",
       "d0aa100202ad13dcbe2bb1f2"
+    ],
+    "securing-offshore-operations": [
+      "f831f45dc02ebbc60ae3ca44",
+      "0b5316a73348d849f4615dd5",
+      "e0e6fbcf10b3fbc3d1508a78"
     ],
     "secure-development-for-automotive": [
       "910ebbfa62fe03cf4e4b6187"
