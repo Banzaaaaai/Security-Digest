@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-05",
-  "start": "2026-11-04T12:56:28.575717+00:00",
-  "end": "2026-11-05T12:56:28.575717+00:00",
+  "start": "2026-11-04T13:39:43.849244+00:00",
+  "end": "2026-11-05T13:39:43.849244+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -660,6 +660,101 @@
         "industry": 8.5,
         "practice": 13.5,
         "weighted_total": 80.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9d4ea0f6cb7b108ca9efdfa7",
+      "headline": "Bank phishing pages hide content from repeat visitors to evade takedowns",
+      "summary": "Security researchers observed more than 200 phishing sites that show fake suspension pages to first-time visitors while hiding phishing content from return visits. The behavior appears designed to slow detection and takedown efforts.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "The cluster describes a large phishing operation targeting banks, which is directly relevant to financial institutions and phishing defense. The scale and evasive behavior make it operationally significant even without a named victim list.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 70,
+        "investment_management": 55,
+        "government": 0,
+        "retail_banking": 95,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 30,
+        "iam_pam": 20,
+        "email_phishing": 100,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were supplied. Defensive coverage should focus on phishing URL reputation, page-content analysis and repeat-visit cloaking heuristics.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Monitor for cloaked phishing pages, correlate first-seen and repeat-visit behavior, and accelerate takedown and user-blocking workflows.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/bank-phishing-sites-show-fake-suspended-pages-to-evade-takedowns/",
+          "source": "SecurityWeek",
+          "published": "2026-11-05T13:22:12+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The cluster describes a large phishing operation targeting banks, which is directly relevant to financial institutions and phishing defense. The scale and evasive behavior make it operationally significant even without a named victim list.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 80.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 9.5,
+        "practice": 15.0,
+        "weighted_total": 80.0,
         "severity_band": [
           65,
           84.99
@@ -2555,108 +2650,6 @@
       "included": true
     },
     {
-      "cluster_id": "0e5ae8a01e16dcedba0266dd",
-      "headline": "Debian APT flaw can let a man-in-the-middle gain root access",
-      "summary": "A vulnerability in Debian's APT package manager can let a man-in-the-middle attacker execute code with root privileges. The report describes a local software supply-chain and package integrity risk for Debian users, but it does not indicate active exploitation.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "A root-level package manager flaw in a foundational Linux component is a serious enterprise vulnerability. Even without confirmed exploitation, the attack surface is broad and the impact can be severe for Debian-based fleets.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 85,
-        "devsecops": 70,
-        "siem_detection": 10,
-        "iam_pam": 20,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 30,
-        "grc_audit": 10,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Debian",
-        "APT package manager",
-        "Linux"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule references were provided in the source material. Monitoring should focus on package source integrity, TLS/transport anomalies, and unexpected repository changes during updates.",
-      "related_case_studies": [
-        "vendor-release-automation",
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Patch Debian systems as soon as fixed packages are available and verify repository integrity controls. Use trusted mirrors, transport protection, and configuration management to reduce package tampering risk.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/960385/Lek+in+Debian+APT+package+manager+laat+aanvaller+code+als+root+uitvoeren?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-04T13:18:01+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A root-level package manager flaw in a foundational Linux component is a serious enterprise vulnerability. Even without confirmed exploitation, the attack surface is broad and the impact can be severe for Debian-based fleets.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 76.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 6.0,
-        "practice": 12.75,
-        "weighted_total": 76.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "626be5da2d3a74b9fb62c15a",
       "headline": "Zyxel GS1900 switches remain exposed to an actively exploited flaw",
       "summary": "Binarly says Zyxel GS1900 switches still appear vulnerable to the exploit used in the wild because the earlier patch addressed a different bug. The report centers on a network-switch vulnerability and the risk of incomplete remediation.",
@@ -4230,80 +4223,80 @@
       "included": true
     },
     {
-      "cluster_id": "d92267ddec9a3b3883c3910d",
-      "headline": "Two Canadians charged in US university hacking and cryptomining case",
-      "summary": "US authorities indicted two Canadian nationals in connection with intrusions against multiple US universities. The case alleges unauthorized access and cryptocurrency mining on compromised systems, but the report is a law-enforcement action rather than a new campaign advisory.",
-      "category": "law_enforcement",
+      "cluster_id": "ec5f13678a7fd76e5b9dd00e",
+      "headline": "Cyberattack disrupts French blood bank website without affecting blood products",
+      "summary": "A French blood bank website was hit in a cyberattack, but reported operations for blood products were not compromised. The incident appears limited to the website rather than the underlying supply of blood products, though details remain sparse.",
+      "category": "data_breach",
       "importance": "high",
-      "importance_rationale": "A federal indictment tied to intrusions at multiple US universities is a material law-enforcement action affecting a major target sector. The incident scope is US-focused and involves higher-education systems, though the article does not indicate a new technique.",
+      "importance_rationale": "This is a cyberattack against a healthcare-related organization in Europe. Even without evidence of product compromise, it is an operational incident with potential service and trust impact for a regulated sector.",
       "location_relevance": {
-        "US": 90,
-        "Europe": 15,
-        "MEA": 15,
-        "Other": 25
+        "US": 20,
+        "Europe": 90,
+        "MEA": 10,
+        "Other": 10
       },
       "countries_mentioned": [
-        "CA",
-        "US"
+        "FR"
       ],
       "industry_relevance": {
         "energy_services": 0,
         "telecommunications": 0,
         "private_banking": 0,
         "investment_management": 0,
-        "government": 35,
+        "government": 0,
         "retail_banking": 0,
-        "global_it_services": 20,
+        "global_it_services": 0,
         "logistics": 0,
         "industrial_manufacturing": 0,
         "automotive": 0
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 20,
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
         "devsecops": 0,
-        "siem_detection": 35,
-        "iam_pam": 10,
+        "siem_detection": 20,
+        "iam_pam": 0,
         "email_phishing": 0,
-        "data_protection_dlp": 10,
+        "data_protection_dlp": 25,
         "ot_ics": 0,
-        "grc_audit": 15,
+        "grc_audit": 20,
         "security_automation": 0,
         "ai_governance": 0
       },
-      "affected_technologies": [
-        "university systems",
-        "cryptomining"
-      ],
+      "affected_technologies": [],
       "cves": [],
       "threat_actors": [],
-      "regulations": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection rule references were provided in the source material. Defenders should watch for unusual compute usage, unauthorized account activity, and lateral movement across campus networks.",
-      "related_case_studies": [
-        "audit-ready-by-design"
-      ],
+      "detection_coverage_note": "No detection-rule URLs were provided. The source does not describe specific malware or TTPs, so only generic monitoring and incident-response coverage is implied.",
+      "related_case_studies": [],
       "business_signal": {
         "present": false,
         "type": "major_incident_wave",
         "sector": "government",
-        "region": "US",
+        "region": "Europe",
         "rationale": ""
       },
-      "recommended_action": "Hunt for unauthorized compute workloads and review identity, remote access, and privileged account monitoring across university environments. Prioritize incident-response lessons around detection of cryptomining and post-compromise persistence.",
-      "confidence": 0.84,
+      "recommended_action": "Confirm whether the website incident affected any connected systems, preserve logs, and assess notification obligations if personal data or regulated operations were involved.",
+      "confidence": 0.86,
       "sources": [
         {
-          "url": "https://www.bleepingcomputer.com/news/security/us-charges-two-canadians-accused-of-hacking-us-universities/",
-          "source": "BleepingComputer",
-          "published": "2026-11-04T13:13:20+00:00",
+          "url": "https://www.securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised/",
+          "source": "SecurityWeek",
+          "published": "2026-11-05T12:58:32+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "high",
-      "model_importance_rationale": "A federal indictment tied to intrusions at multiple US universities is a material law-enforcement action affecting a major target sector. The incident scope is US-focused and involves higher-education systems, though the article does not indicate a new technique.",
+      "model_importance_rationale": "This is a cyberattack against a healthcare-related organization in Europe. Even without evidence of product compromise, it is an operational incident with potential service and trust impact for a regulated sector.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
@@ -4318,13 +4311,13 @@
       },
       "exposure_scope": "Source-specific or unestablished",
       "independent_sources_24h": 1,
-      "priority": 67.25,
+      "priority": 65,
       "priority_breakdown": {
         "importance": 45.0,
         "location": 13.5,
-        "industry": 3.5,
-        "practice": 5.25,
-        "weighted_total": 67.25,
+        "industry": 0.0,
+        "practice": 3.75,
+        "weighted_total": 62.25,
         "severity_band": [
           65,
           84.99
@@ -5174,6 +5167,106 @@
         "location": 14.25,
         "industry": 6.0,
         "practice": 12.75,
+        "weighted_total": 60.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "1bd927d85a48e504f33cd65a",
+      "headline": "Exposure management test checklist for closed-loop remediation",
+      "summary": "This piece argues that exposure platforms can still leave organizations exposed when ownership, reachability, compensating controls and business context are missing. It is a practitioner-oriented discussion of how to validate whether findings actually drive remediation.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is security research and operational guidance about exposure management effectiveness, not a new exploit or urgent incident. It is relevant to vulnerability management programs but does not indicate active compromise.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 20,
+        "siem_detection": 20,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 10,
+        "grc_audit": 35,
+        "security_automation": 55,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were provided. The article is about exposure-management process gaps rather than a specific attack pattern, so there is no direct detection content to map.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review whether exposure-management workflows capture asset ownership, exploitability, reachability and business criticality, then verify that tickets result in tracked remediation.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/is-your-exposure-management-platform.html",
+          "source": "The Hacker News",
+          "published": "2026-11-05T12:25:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is security research and operational guidance about exposure management effectiveness, not a new exploit or urgent incident. It is relevant to vulnerability management programs but does not indicate active compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://thehackernews.com/2026/11/is-your-exposure-management-platform.html"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 60.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.75,
+        "industry": 6.0,
+        "practice": 14.25,
         "weighted_total": 60.0,
         "severity_band": [
           35,
@@ -6774,6 +6867,105 @@
       "included": true
     },
     {
+      "cluster_id": "937d8db75a9b5c35031d94ab",
+      "headline": "Sysdig AI Defense adds runtime controls for AI agents",
+      "summary": "Sysdig announced general availability of AI Defense, a product for monitoring and controlling AI agent actions across endpoints and cloud environments. It records policy decisions and can allow, hold or block actions based on company rules, highlighting governance needs around fast AI adoption.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "This is a vendor product announcement about AI governance and runtime controls. It is relevant to enterprises adopting AI agents, but it does not describe a vulnerability or incident.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 30,
+        "global_it_services": 55,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 20,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 35,
+        "ai_governance": 95
+      },
+      "affected_technologies": [
+        "Sysdig",
+        "AI agents",
+        "cloud environments"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were provided. The story is about governance tooling, so defensive value is in policy design, audit logging and control validation rather than signature-based detection.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Evaluate whether AI agents are covered by policy, audit logging and approval workflows, and define block/approve rules for high-risk actions.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/05/sysdig-ai-defense/",
+          "source": "Help Net Security",
+          "published": "2026-11-05T13:29:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a vendor product announcement about AI governance and runtime controls. It is relevant to enterprises adopting AI agents, but it does not describe a vulnerability or incident.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 55.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.5,
+        "practice": 14.25,
+        "weighted_total": 55.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "fa171f2093da9a4b673da085",
       "headline": "Survey finds AI governance gaps persist despite higher security spending",
       "summary": "A report says organizations are still struggling to oversee shadow AI even as cybersecurity budgets rise. The item is primarily about governance maturity and operating model challenges rather than a specific incident.",
@@ -7088,6 +7280,103 @@
         "industry": 5.5,
         "practice": 11.25,
         "weighted_total": 52.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "1d3bba69be648bfb8d0d1cc0",
+      "headline": "Google ads abused to promote Binance-themed scams, Homebrew says",
+      "summary": "The item reports criticism of Google over malicious advertisements tied to a Binance-related scam. It is framed as a phishing and brand-abuse issue rather than a technical compromise of the package manager itself.",
+      "category": "fraud_phishing",
+      "importance": "medium",
+      "importance_rationale": "This is a phishing and ad-abuse story that may affect users and brands, but it is not a novel exploit or large-scale breach. The operational relevance is primarily awareness and anti-fraud controls.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 55,
+        "investment_management": 45,
+        "government": 0,
+        "retail_banking": 55,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 15,
+        "iam_pam": 0,
+        "email_phishing": 90,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Google"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule URLs were provided. Relevant defensive work would center on phishing monitoring, brand-abuse takedowns and user reporting rather than exploit signatures.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Warn users about sponsored-search and ad-led scams, tighten brand-monitoring and takedown workflows, and reinforce phishing reporting channels.",
+      "confidence": 0.78,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960517/HomeBrew+hekelt+Google+over+malafide+advertenties+gebruikt+bij+Binance-hack?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-05T13:20:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a phishing and ad-abuse story that may affect users and brands, but it is not a novel exploit or large-scale breach. The operational relevance is primarily awareness and anti-fraud controls.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 52.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 6.0,
+        "industry": 5.5,
+        "practice": 13.5,
+        "weighted_total": 52.0,
         "severity_band": [
           35,
           64.99
@@ -9487,112 +9776,6 @@
       "included": false
     },
     {
-      "cluster_id": "a560b2ea40ec874096829499",
-      "headline": "Old CGI email script flaws still highlight common web security risks",
-      "summary": "Security researchers revisited legacy CGI email scripts that can leak environment data, let attackers alter message recipients, or in some cases enable code execution when input reaches sendmail unsafely. The item is a reminder that older web interfaces and mail-handling code can still create exposure if they remain deployed or are copied into modern systems.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "This is a retrospective security discussion about long-known web and mail script weaknesses, not a new vulnerability disclosure, active exploitation report, or urgent vendor action. It may inform hardening and code review, but the operational urgency is limited.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 55,
-        "devsecops": 45,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 30,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "CGI scripts",
-        "sendmail"
-      ],
-      "cves": [
-        "CVE-2000-0411"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rules were provided. Defenders should review legacy CGI mail handlers for unsafe parameter handling and direct sendmail invocation.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory any remaining CGI-based mail forms or helper scripts, verify how user input reaches mail delivery, and remove or replace legacy code that leaks environment data or constructs shell calls unsafely.",
-      "confidence": 0.91,
-      "sources": [
-        {
-          "url": "https://isc.sans.edu/diary/rss/33488",
-          "source": "SANS ISC",
-          "published": "2026-11-04T13:24:13+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a retrospective security discussion about long-known web and mail script weaknesses, not a new vulnerability disclosure, active exploitation report, or urgent vendor action. It may inform hardening and code review, but the operational urgency is limited.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2000-0411": {
-          "kev": null,
-          "epss": 0.07501,
-          "cvss": null
-        }
-      },
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 24.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.0,
-        "industry": 4.0,
-        "practice": 8.25,
-        "weighted_total": 24.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "d0d52a0171f40b79b602aa1d",
       "headline": "Google criticized over AI policy for schools",
       "summary": "American politicians and DuckDuckGo criticized Google’s approach to AI in schools. The item is policy commentary rather than a security incident, and it does not describe a concrete cyber event.",
@@ -10528,8 +10711,8 @@
   "counts": {
     "critical": 0,
     "high": 41,
-    "medium": 40,
-    "low": 20
+    "medium": 43,
+    "low": 19
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -10733,6 +10916,21 @@
         ]
       },
       {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Cyberattack disrupts French blood bank website without affecting blood products",
+        "sources": [
+          {
+            "url": "https://www.securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised/",
+            "source": "SecurityWeek",
+            "published": "2026-11-05T12:58:32+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
         "key": "fca_operational_resilience",
         "nature": "guidance",
         "effective_or_deadline_date": null,
@@ -10781,68 +10979,68 @@
       }
     ]
   },
-  "other_count": 11,
+  "other_count": 10,
   "source_health": {
-    "at": "2026-11-05T12:56:28.575717+00:00",
+    "at": "2026-11-05T13:39:43.849244+00:00",
     "enabled": 41,
-    "failures": 2,
-    "new": 145,
+    "failures": 1,
+    "new": 5,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 9
+        "new": 2
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -10885,7 +11083,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -10895,7 +11093,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -10925,7 +11123,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 24
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -10940,7 +11138,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -10980,7 +11178,7 @@
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -10989,9 +11187,8 @@
       },
       {
         "name": "Seebug Vulnerabilities",
-        "ok": false,
-        "new": 0,
-        "error": "ReadTimeout"
+        "ok": true,
+        "new": 0
       },
       {
         "name": "Censys Blog",
@@ -11006,16 +11203,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 47,
-        "entries": 34497,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -11024,7 +11217,7 @@
     ]
   },
   "enrichment_warnings": [
-    "KEV: using the official GitHub mirror; primary unavailable or invalid"
+    "KEV: using the official GitHub mirror; primary unavailable at last check"
   ],
   "kev_provenance": {
     "released": "2026-11-04T20:00:05.774000+00:00",
@@ -11056,8 +11249,8 @@
       "9a528f4e2d896b5704440834",
       "28cc7a562c85ad38a67f6487",
       "44bf9ca7bef218d45ed90100",
-      "d92267ddec9a3b3883c3910d",
       "8fb49d059eed5b98ca12d154",
+      "1bd927d85a48e504f33cd65a",
       "2bb4ac9a5970c14ec95c680d",
       "e5838da8e52e7046a05b357e",
       "866dec351e2d646593ad0de1",
@@ -11068,7 +11261,6 @@
       "3b8dc39ac1d2782a76d63473",
       "9fb3d806b5214e2e6b9d7b63",
       "9a528f4e2d896b5704440834",
-      "0e5ae8a01e16dcedba0266dd",
       "94833255da64ec919226ced6",
       "daf3a48822a02cae468de1f7",
       "866dec351e2d646593ad0de1"
@@ -11092,9 +11284,9 @@
       "44bf9ca7bef218d45ed90100"
     ],
     "continuous-vulnerability-management": [
-      "0e5ae8a01e16dcedba0266dd",
       "626be5da2d3a74b9fb62c15a",
       "28cc7a562c85ad38a67f6487",
+      "1bd927d85a48e504f33cd65a",
       "2bb4ac9a5970c14ec95c680d"
     ],
     "security-visibility-for-manufacturing": [
