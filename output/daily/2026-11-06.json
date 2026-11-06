@@ -1,11 +1,156 @@
 {
   "kind": "daily",
   "period": "2026-11-06",
-  "start": "2026-11-05T12:43:05.971018+00:00",
-  "end": "2026-11-06T12:43:05.971018+00:00",
+  "start": "2026-11-05T13:24:16.124363+00:00",
+  "end": "2026-11-06T13:24:16.124363+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
+    {
+      "cluster_id": "39e696f5e50c323e2d16adbd",
+      "headline": "OpenSSH vulnerability exploited shortly after disclosure on musl-based systems",
+      "summary": "Help Net Security: A newly disclosed OpenSSH flaw affecting passwordless logins on Alpine Linux and other musl-based systems is reported to be under active exploitation. The report says the issue was fixed in OpenSSH 10.6p2 and allows remote login without a password when the SSH port is reachable. Amazon Linux Security Center: Amazon Linux Security Center published a record for CVE-2026-123158 affecting sshd in OpenSSH before 10.6p2 on Linux when musl libc is used without PAM. The flaw can allow certain long passwords to authenticate successfully in some configurations, with Alpine Linux cited as an example platform using the affected library stack.",
+      "category": "exploitation_in_the_wild",
+      "importance": "critical",
+      "importance_rationale": "This is reported active exploitation of a widely deployed enterprise access technology with direct remote-login impact. Exploitation of SSH infrastructure can enable immediate unauthorized access across many environments and warrants urgent remediation.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 0,
+        "siem_detection": 40,
+        "iam_pam": 85,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 20,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "OpenSSH",
+        "Alpine Linux",
+        "musl-based systems",
+        "sshd",
+        "musl libc"
+      ],
+      "cves": [
+        "CVE-2026-123158"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. SSH exposure, authentication logs, and unusual successful logins from external sources should be prioritized for review.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Patch OpenSSH immediately where fixed builds are available, restrict exposure of SSH services, and hunt for unexpected successful logins on Alpine Linux and other affected systems. Rotate credentials and review privileged-access paths on internet-reachable hosts. Amazon Linux Security Center: Inventory Linux systems using OpenSSH with musl and no PAM, patch to a fixed release, and review authentication controls and logs for any suspicious successful logins.",
+      "confidence": 0.98,
+      "source_coverage": [
+        {
+          "cluster_id": "39e696f5e50c323e2d16adbd",
+          "summary": "A newly disclosed OpenSSH flaw affecting passwordless logins on Alpine Linux and other musl-based systems is reported to be under active exploitation. The report says the issue was fixed in OpenSSH 10.6p2 and allows remote login without a password when the SSH port is reachable.",
+          "recommended_action": "Patch OpenSSH immediately where fixed builds are available, restrict exposure of SSH services, and hunt for unexpected successful logins on Alpine Linux and other affected systems. Rotate credentials and review privileged-access paths on internet-reachable hosts.",
+          "sources": [
+            {
+              "source": "Help Net Security",
+              "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/"
+            }
+          ]
+        },
+        {
+          "cluster_id": "55674a9c93848f91f3a5b9e8",
+          "summary": "Amazon Linux Security Center published a record for CVE-2026-123158 affecting sshd in OpenSSH before 10.6p2 on Linux when musl libc is used without PAM. The flaw can allow certain long passwords to authenticate successfully in some configurations, with Alpine Linux cited as an example platform using the affected library stack.",
+          "recommended_action": "Inventory Linux systems using OpenSSH with musl and no PAM, patch to a fixed release, and review authentication controls and logs for any suspicious successful logins.",
+          "sources": [
+            {
+              "source": "Amazon Linux Security Center",
+              "url": "https://explore.alas.aws.amazon.com/CVE-2026-123158.html"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/",
+          "source": "Help Net Security",
+          "published": "2026-11-06T12:49:41+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-123158.html",
+          "source": "Amazon Linux Security Center",
+          "published": "2026-11-05T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "This is reported active exploitation of a widely deployed enterprise access technology with direct remote-login impact. Exploitation of SSH infrastructure can enable immediate unauthorized access across many environments and warrants urgent remediation.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-123158": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [
+          "https://www.helpnetsecurity.com/2026/11/06/openssh-sshole-cve-2026-123158-exploitation/"
+        ],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 93.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 93.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true,
+      "merged_cluster_ids": [
+        "39e696f5e50c323e2d16adbd",
+        "55674a9c93848f91f3a5b9e8"
+      ]
+    },
     {
       "cluster_id": "6dfbaa2902017e343f2cfe8f",
       "headline": "US charges trio over AI-assisted CEO and attorney impersonation scam",
@@ -517,101 +662,6 @@
       "included": true
     },
     {
-      "cluster_id": "9d4ea0f6cb7b108ca9efdfa7",
-      "headline": "Bank phishing pages hide content from repeat visitors to evade takedowns",
-      "summary": "Security researchers observed more than 200 phishing sites that show fake suspension pages to first-time visitors while hiding phishing content from return visits. The behavior appears designed to slow detection and takedown efforts.",
-      "category": "fraud_phishing",
-      "importance": "high",
-      "importance_rationale": "The cluster describes a large phishing operation targeting banks, which is directly relevant to financial institutions and phishing defense. The scale and evasive behavior make it operationally significant even without a named victim list.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 70,
-        "Other": 70
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 70,
-        "investment_management": 55,
-        "government": 0,
-        "retail_banking": 95,
-        "global_it_services": 20,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 30,
-        "iam_pam": 20,
-        "email_phishing": 100,
-        "data_protection_dlp": 15,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 25,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No rule URLs were supplied. Defensive coverage should focus on phishing URL reputation, page-content analysis and repeat-visit cloaking heuristics.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Monitor for cloaked phishing pages, correlate first-seen and repeat-visit behavior, and accelerate takedown and user-blocking workflows.",
-      "confidence": 0.91,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/bank-phishing-sites-show-fake-suspended-pages-to-evade-takedowns/",
-          "source": "SecurityWeek",
-          "published": "2026-11-05T13:22:12+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "The cluster describes a large phishing operation targeting banks, which is directly relevant to financial institutions and phishing defense. The scale and evasive behavior make it operationally significant even without a named victim list.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 80.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 10.5,
-        "industry": 9.5,
-        "practice": 15.0,
-        "weighted_total": 80.0,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "bdfce63afd43219450496398",
       "headline": "FBI and CISA warn of attacks on refrigeration control systems",
       "summary": "US agencies warn that attackers are targeting industrial refrigeration and cold-chain monitoring systems and that disruption can affect safety and operations. The alert is relevant to defenders protecting connected OT and industrial monitoring environments.",
@@ -899,117 +949,6 @@
       "model_importance_rationale": "The cluster describes reported active abuse of a broadly deployed enterprise technology, which raises urgency for exposure management and monitoring. The source is not fully specific about the vulnerability identifier, so confidence is moderate rather than critical.",
       "watch_tech": [],
       "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 79.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 14.25,
-        "weighted_total": 79.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "55674a9c93848f91f3a5b9e8",
-      "headline": "OpenSSH password bypass reported on musl-based Linux systems",
-      "summary": "Amazon Linux Security Center published a record for CVE-2026-123158 affecting sshd in OpenSSH before 10.6p2 on Linux when musl libc is used without PAM. The flaw can allow certain long passwords to authenticate successfully in some configurations, with Alpine Linux cited as an example platform using the affected library stack.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "This is a concrete authentication-bypass vulnerability in widely used SSH software, and the affected deployment pattern is common enough to warrant rapid review. The source does not claim active exploitation, so it remains high rather than critical.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 0,
-        "siem_detection": 20,
-        "iam_pam": 40,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 20,
-        "grc_audit": 0,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "OpenSSH",
-        "sshd",
-        "musl libc",
-        "Alpine Linux"
-      ],
-      "cves": [
-        "CVE-2026-123158"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked in the source. Defenders should inspect authentication logs for suspicious successful logins using unusually long passwords and review affected Linux builds.",
-      "related_case_studies": [
-        "continuous-vulnerability-management",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory Linux systems using OpenSSH with musl and no PAM, patch to a fixed release, and review authentication controls and logs for any suspicious successful logins.",
-      "confidence": 0.97,
-      "sources": [
-        {
-          "url": "https://explore.alas.aws.amazon.com/CVE-2026-123158.html",
-          "source": "Amazon Linux Security Center",
-          "published": "2026-11-05T00:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a concrete authentication-bypass vulnerability in widely used SSH software, and the affected deployment pattern is common enough to warrant rapid review. The source does not claim active exploitation, so it remains high rather than critical.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-123158": {
-          "kev": null,
-          "epss": null,
-          "cvss": null
-        }
-      },
       "risk_evidence": {
         "exploitation_reported": [],
         "rce": [],
@@ -1547,6 +1486,117 @@
         "industry": 7.0,
         "practice": 12.0,
         "weighted_total": 78.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0b7161df55d908beddbef13b",
+      "headline": "Microsoft Paint RCE patch requires Store update, not Windows Update",
+      "summary": "Microsoft has released a fix for a remote code execution flaw in Windows Paint through the Microsoft Store rather than through Windows Update. The report suggests affected systems may stay exposed until the Store-delivered update is installed, but it does not describe in-the-wild exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A remotely exploitable flaw in a widely used Windows component is operationally important, especially because remediation depends on a separate Store update path. Even without reported exploitation, the exposure is relevant to many enterprises because patching can be missed or delayed.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 0,
+        "siem_detection": 15,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows",
+        "Microsoft Paint",
+        "Microsoft Store"
+      ],
+      "cves": [
+        "CVE-2026-83844"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. Exposure management should confirm version status for Paint across fleets and verify that Store-based patching is enabled where applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Check whether Microsoft Paint is updated through the Store on managed Windows endpoints and confirm the fixed build is installed. Prioritize remediation for internet-facing or high-risk endpoints and verify update governance for Store-delivered patches.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
+          "source": "The Hacker News",
+          "published": "2026-11-06T12:06:43+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "A remotely exploitable flaw in a widely used Windows component is operationally important, especially because remediation depends on a separate Store update path. Even without reported exploitation, the exposure is relevant to many enterprises because patching can be missed or delayed.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-83844": {
+          "kev": null,
+          "epss": 0.00734,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 78.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 78.0,
         "severity_band": [
           65,
           84.99
@@ -2491,6 +2541,104 @@
       "included": true
     },
     {
+      "cluster_id": "d4186f7d38991efa86ca50f2",
+      "headline": "Ahold Delhaize estimates major financial impact from October cyberattack",
+      "summary": "Ahold Delhaize said the October cyberattack could reduce fourth-quarter sales by as much as €250 million and has lowered its 2026 outlook. The report indicates a substantial business impact, but it does not name the intrusion method or provide details on data theft or ransomware.",
+      "category": "data_breach",
+      "importance": "high",
+      "importance_rationale": "This is a major cyber incident at a large retailer with clear financial impact, which is operationally relevant even though the reporting does not identify the technical root cause or confirm theft details. A significant incident at a major enterprise can signal sector-wide response needs for retail and logistics-adjacent organizations.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 95,
+        "MEA": 40,
+        "Other": 50
+      },
+      "countries_mentioned": [
+        "BE",
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 30,
+        "logistics": 55,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 25,
+        "iam_pam": 15,
+        "email_phishing": 10,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 40,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. Defenders in retail environments should use the incident as a prompt to review logging, exfiltration controls, and crisis-response readiness.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review incident-response readiness, third-party exposure, and data-exfiltration monitoring across retail and supply-chain environments. Validate backup, continuity, and communications plans for prolonged operational disruption.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/grocery-giant-ahold-delhaize-estimates-financial-toll-of-october-cyberattack/",
+          "source": "SecurityWeek",
+          "published": "2026-11-06T12:47:55+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a major cyber incident at a large retailer with clear financial impact, which is operationally relevant even though the reporting does not identify the technical root cause or confirm theft details. A significant incident at a major enterprise can signal sector-wide response needs for retail and logistics-adjacent organizations.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 73.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 5.5,
+        "practice": 9.0,
+        "weighted_total": 73.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "2daf0a4edc67769c55d909fa",
       "headline": "U.S. warns critical infrastructure operators to secure cooling systems after reported attacks",
       "summary": "U.S. agencies are urging critical infrastructure operators to harden cooling systems following reported attacks tied to European supermarket disruptions. The item points to an operational risk for facilities that depend on building and refrigeration controls. It does not describe a specific vendor flaw or confirm a broader intrusion campaign.",
@@ -2890,109 +3038,6 @@
         "industry": 7.5,
         "practice": 6.0,
         "weighted_total": 72.0,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "ec5f13678a7fd76e5b9dd00e",
-      "headline": "Cyberattack disrupts French blood bank website without affecting blood products",
-      "summary": "A French blood bank website was hit in a cyberattack, but reported operations for blood products were not compromised. The incident appears limited to the website rather than the underlying supply of blood products, though details remain sparse.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "This is a cyberattack against a healthcare-related organization in Europe. Even without evidence of product compromise, it is an operational incident with potential service and trust impact for a regulated sector.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 90,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [
-        "FR"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 20,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 25,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "gdpr",
-          "nature": "enforcement",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection-rule URLs were provided. The source does not describe specific malware or TTPs, so only generic monitoring and incident-response coverage is implied.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Confirm whether the website incident affected any connected systems, preserve logs, and assess notification obligations if personal data or regulated operations were involved.",
-      "confidence": 0.86,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised/",
-          "source": "SecurityWeek",
-          "published": "2026-11-05T12:58:32+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a cyberattack against a healthcare-related organization in Europe. Even without evidence of product compromise, it is an operational incident with potential service and trust impact for a regulated sector.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 65,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 13.5,
-        "industry": 0.0,
-        "practice": 3.75,
-        "weighted_total": 62.25,
         "severity_band": [
           65,
           84.99
@@ -5032,6 +5077,106 @@
       "included": true
     },
     {
+      "cluster_id": "bf3ff9f08f48ce8744ddb262",
+      "headline": "Claude Dispatch abused through malicious browser extensions to run code locally",
+      "summary": "Researchers found a path where a malicious browser extension interacting with Claude.ai could cause Claude Desktop to execute code on a user’s computer through the Dispatch feature. The issue appears tied to how the workflow bridges browser and desktop contexts, and the summary does not indicate a confirmed product fix or observed large-scale compromise.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is a security research finding about a local code-execution path in an AI desktop workflow. It is important for defenders evaluating browser-extension and AI assistant risk, but the report does not describe active exploitation, a widespread enterprise product compromise, or a vendor emergency response.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 20,
+        "siem_detection": 25,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 20,
+        "ai_governance": 80
+      },
+      "affected_technologies": [
+        "Claude Desktop",
+        "Claude.ai",
+        "browser extensions",
+        "Claude Dispatch"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. Defenders should review browser-extension inventory, AI desktop integration settings, and endpoint telemetry for unexpected child processes or command execution from assistant workflows.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Restrict or review browser extensions used with AI desktop assistants, validate Dispatch-like workflows, and monitor endpoints for unexpected code execution triggered from assistant integrations. Update AI governance and acceptable-use controls for browser-to-desktop automation.",
+      "confidence": 0.86,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html",
+          "source": "The Hacker News",
+          "published": "2026-11-06T12:06:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a security research finding about a local code-execution path in an AI desktop workflow. It is important for defenders evaluating browser-extension and AI assistant risk, but the report does not describe active exploitation, a widespread enterprise product compromise, or a vendor emergency response.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.0,
+        "practice": 12.0,
+        "weighted_total": 53.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "39870f6b5f5abbcdfec3707c",
       "headline": "Claude Code AI agent exposed user email addresses to websites",
       "summary": "Reports indicate the Claude Code AI agent sent users’ email addresses to websites without consent, creating an avoidable privacy exposure. The incident appears tied to product behavior rather than a confirmed breach, but it can still affect trust and data handling controls.",
@@ -5753,74 +5898,81 @@
       "included": true
     },
     {
-      "cluster_id": "1d3bba69be648bfb8d0d1cc0",
-      "headline": "Google ads abused to promote Binance-themed scams, Homebrew says",
-      "summary": "The item reports criticism of Google over malicious advertisements tied to a Binance-related scam. It is framed as a phishing and brand-abuse issue rather than a technical compromise of the package manager itself.",
-      "category": "fraud_phishing",
+      "cluster_id": "ab422881ff17da5ac16aca7f",
+      "headline": "US agencies advise securing refrigeration controllers after European targeting",
+      "summary": "US agencies are urging organizations to harden refrigeration controllers and related systems. The advisory follows reported attacks against fridges and freezers used by supermarkets and blood banks in Europe, but the source does not indicate a confirmed US incident.",
+      "category": "vulnerability",
       "importance": "medium",
-      "importance_rationale": "This is a phishing and ad-abuse story that may affect users and brands, but it is not a novel exploit or large-scale breach. The operational relevance is primarily awareness and anti-fraud controls.",
+      "importance_rationale": "This is defensive guidance tied to reported targeting of a niche OT-adjacent device class. It is relevant to enterprises that rely on refrigerated supply chains, but the available reporting does not show a new exploit, widespread compromise, or a major domestic incident.",
       "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 40,
-        "Other": 40
+        "US": 65,
+        "Europe": 70,
+        "MEA": 35,
+        "Other": 35
       },
-      "countries_mentioned": [],
+      "countries_mentioned": [
+        "EU",
+        "US"
+      ],
       "industry_relevance": {
-        "energy_services": 0,
+        "energy_services": 15,
         "telecommunications": 0,
-        "private_banking": 55,
-        "investment_management": 45,
-        "government": 0,
-        "retail_banking": 55,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 35,
+        "retail_banking": 0,
         "global_it_services": 20,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
+        "logistics": 55,
+        "industrial_manufacturing": 25,
         "automotive": 0
       },
       "practice_area_relevance": {
         "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
+        "vuln_exposure_mgmt": 35,
         "devsecops": 0,
-        "siem_detection": 15,
+        "siem_detection": 20,
         "iam_pam": 0,
-        "email_phishing": 90,
+        "email_phishing": 0,
         "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 0,
+        "ot_ics": 60,
+        "grc_audit": 15,
+        "security_automation": 10,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "Google"
+        "refrigeration controllers",
+        "supermarket refrigeration systems",
+        "blood bank refrigeration systems"
       ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "No detection-rule URLs were provided. Relevant defensive work would center on phishing monitoring, brand-abuse takedowns and user reporting rather than exploit signatures.",
-      "related_case_studies": [],
+      "detection_coverage_note": "No detection rule links were present in the source material. Defensive monitoring should focus on controller authentication, remote access paths, configuration changes, and unusual temperature or availability anomalies.",
+      "related_case_studies": [
+        "securing-offshore-operations"
+      ],
       "business_signal": {
         "present": false,
         "type": "sector_campaign",
-        "sector": "retail_banking",
-        "region": "Other",
+        "sector": "logistics",
+        "region": "Europe",
         "rationale": ""
       },
-      "recommended_action": "Warn users about sponsored-search and ad-led scams, tighten brand-monitoring and takedown workflows, and reinforce phishing reporting channels.",
-      "confidence": 0.78,
+      "recommended_action": "Inventory refrigeration controllers and remote management paths, disable unnecessary remote access, enforce strong authentication, segment these systems, and monitor for configuration changes or abnormal sensor behavior.",
+      "confidence": 0.71,
       "sources": [
         {
-          "url": "https://www.security.nl/posting/960517/HomeBrew+hekelt+Google+over+malafide+advertenties+gebruikt+bij+Binance-hack?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-05T13:20:28+00:00",
+          "url": "https://www.securityweek.com/us-agencies-urge-organizations-to-harden-refrigeration-controllers/",
+          "source": "SecurityWeek",
+          "published": "2026-11-06T13:02:26+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "medium",
-      "model_importance_rationale": "This is a phishing and ad-abuse story that may affect users and brands, but it is not a novel exploit or large-scale breach. The operational relevance is primarily awareness and anti-fraud controls.",
+      "model_importance_rationale": "This is defensive guidance tied to reported targeting of a niche OT-adjacent device class. It is relevant to enterprises that rely on refrigerated supply chains, but the available reporting does not show a new exploit, widespread compromise, or a major domestic incident.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
@@ -5838,9 +5990,9 @@
       "priority": 52.0,
       "priority_breakdown": {
         "importance": 27.0,
-        "location": 6.0,
+        "location": 10.5,
         "industry": 5.5,
-        "practice": 13.5,
+        "practice": 9.0,
         "weighted_total": 52.0,
         "severity_band": [
           35,
@@ -6052,6 +6204,103 @@
         "industry": 4.5,
         "practice": 12.0,
         "weighted_total": 51.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "e492621a2e4c4bf9c3dd2582",
+      "headline": "Censys says ARTEX offensive AI activity is broader than reported",
+      "summary": "Censys reported that observed use of the ARTEX offensive AI tool appears to extend beyond the campaigns previously described. The story is framed as threat research and does not confirm a specific breach, victim set, or new exploit.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is research on an offensive AI-enabled tool and its apparent spread, which is relevant to defenders tracking adversary workflow changes. It does not by itself establish active compromise of enterprise targets or a specific campaign against a named sector.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 30,
+        "global_it_services": 40,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 35,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "ARTEX"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were provided in the source. Teams should monitor for AI-assisted reconnaissance patterns, unusual automation, and abuse of security testing tooling in their environments.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track evolving attacker use of offensive AI tools and update detections for automated reconnaissance and abuse of dual-use tooling. Strengthen governance around approved security testing tools and AI-assisted workflows.",
+      "confidence": 0.73,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/artex-activity-exceeds-reported/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-06T13:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is research on an offensive AI-enabled tool and its apparent spread, which is relevant to defenders tracking adversary workflow changes. It does not by itself establish active compromise of enterprise targets or a specific campaign against a named sector.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 4.0,
+        "practice": 9.75,
+        "weighted_total": 48.25,
         "severity_band": [
           35,
           64.99
@@ -6975,6 +7224,123 @@
         "location": 5.25,
         "industry": 4.5,
         "practice": 9.0,
+        "weighted_total": 27.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "e3a0ea2279e9c4cb60df3da4",
+      "headline": "OpenAI promotes GPT-6 cyber model for safer vulnerability discovery",
+      "summary": "OpenAI says its new GPT-6 cyber model improves flaw hunting while staying within safer operational boundaries. The item is a product and capability announcement, not evidence of a security incident or exploited weakness.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is primarily a product announcement about AI-assisted security work. It may interest teams evaluating AI tooling, but it does not by itself indicate a breach, vulnerability, or regulatory obligation.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 40,
+        "MEA": 25,
+        "Other": 40
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 15,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 10,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "OpenAI API",
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied. Teams evaluating similar tooling should focus on governance, access controls, logging, and human review for agentic actions.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Assess governance, access controls, logging, and review processes before adopting AI-assisted security tooling, and validate that model use stays within approved operational boundaries.",
+      "confidence": 0.86,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/openai-says-new-gpt-6-cyber-model-hunts-flaws-without-crossing-the-line/",
+          "source": "SecurityWeek",
+          "published": "2026-11-06T13:19:52+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is primarily a product announcement about AI-assisted security work. It may interest teams evaluating AI tooling, but it does not by itself indicate a breach, vulnerability, or regulatory obligation.",
+      "watch_tech": [
+        {
+          "name": "OpenAI API",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        },
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.securityweek.com/openai-says-new-gpt-6-cyber-model-hunts-flaws-without-crossing-the-line/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 27.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 1.5,
+        "practice": 9.75,
         "weighted_total": 27.75,
         "severity_band": [
           0,
@@ -8375,15 +8741,15 @@
     }
   ],
   "counts": {
-    "critical": 0,
-    "high": 29,
-    "medium": 30,
-    "low": 21
+    "critical": 1,
+    "high": 28,
+    "medium": 32,
+    "low": 22
   },
   "unclassified": 0,
-  "duplicates_removed": 0,
+  "duplicates_removed": 1,
   "new_kev": [],
-  "watch_hits": 14,
+  "watch_hits": 15,
   "watch": {
     "microsoft": [
       {
@@ -8538,6 +8904,16 @@
         "cluster_id": "634e89d30b4687cff0453ec3"
       },
       {
+        "technology": "OpenAI API",
+        "headline": "OpenAI promotes GPT-6 cyber model for safer vulnerability discovery",
+        "cluster_id": "e3a0ea2279e9c4cb60df3da4"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "OpenAI promotes GPT-6 cyber model for safer vulnerability discovery",
+        "cluster_id": "e3a0ea2279e9c4cb60df3da4"
+      },
+      {
         "technology": "Claude API",
         "headline": "Anthropic publishes study of Claude use in scientific research",
         "cluster_id": "7951c5b8003d194fd80a2c2a"
@@ -8613,21 +8989,6 @@
       }
     ],
     "Europe": [
-      {
-        "key": "gdpr",
-        "nature": "enforcement",
-        "effective_or_deadline_date": null,
-        "name": "GDPR",
-        "headline": "Cyberattack disrupts French blood bank website without affecting blood products",
-        "sources": [
-          {
-            "url": "https://www.securityweek.com/cyberattack-hits-french-blood-bank-site-but-no-blood-products-are-compromised/",
-            "source": "SecurityWeek",
-            "published": "2026-11-05T12:58:32+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
       {
         "key": "dnb_requirements",
         "nature": "guidance",
@@ -8707,51 +9068,51 @@
   },
   "other_count": 12,
   "source_health": {
-    "at": "2026-11-06T12:43:05.971018+00:00",
+    "at": "2026-11-06T13:24:16.124363+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 139,
-    "updated": 1,
+    "new": 7,
+    "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 7
+        "new": 2
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 5
+        "new": 3
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -8761,12 +9122,12 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -8776,7 +9137,7 @@
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -8786,14 +9147,14 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
         "ok": true,
         "new": 0,
-        "updated": 1,
-        "unchanged": 207,
+        "updated": 0,
+        "unchanged": 208,
         "failed": 0
       },
       {
@@ -8809,17 +9170,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -8864,7 +9225,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 11
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -8919,7 +9280,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -8929,7 +9290,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 64,
+        "new": 0,
         "entries": 34561,
         "invalid": 0,
         "future": 0,
@@ -8938,7 +9299,7 @@
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -8962,7 +9323,6 @@
     "audit-ready-by-design": [
       "6dfbaa2902017e343f2cfe8f",
       "b6cc61adf7e9fb2bd3e3104f",
-      "55674a9c93848f91f3a5b9e8",
       "5e2fc48f6d81ec154ab184ff",
       "a3b94f1fb170a2b69842d6df",
       "44e00261d353277cc1528087",
@@ -8978,6 +9338,7 @@
       "45e1c2a1adf6245475a7afcb",
       "d54642e1a2b86f98c352a309",
       "01cd71a942eaa67d04a19fbd",
+      "e3a0ea2279e9c4cb60df3da4",
       "c18c1c6a5af447db14c9408e"
     ],
     "security-services-for-investment-management": [
@@ -8999,11 +9360,11 @@
       "bdfce63afd43219450496398",
       "2b108f45457522ccad4c8274",
       "2daf0a4edc67769c55d909fa",
-      "e70260744c73d1f7d31eb26c"
+      "e70260744c73d1f7d31eb26c",
+      "ab422881ff17da5ac16aca7f"
     ],
     "continuous-vulnerability-management": [
       "c82b0fa8efcaeb8c9d6e661a",
-      "55674a9c93848f91f3a5b9e8",
       "0104ffe0a06b05b6345105f5",
       "5f870823d1e992d9f5ac6154",
       "5e2fc48f6d81ec154ab184ff",
