@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-07",
-  "start": "2026-11-06T11:31:51.825546+00:00",
-  "end": "2026-11-07T11:31:51.825546+00:00",
+  "start": "2026-11-06T12:02:00.665825+00:00",
+  "end": "2026-11-07T12:02:00.665825+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -838,115 +838,6 @@
       "included": true
     },
     {
-      "cluster_id": "2b108f45457522ccad4c8274",
-      "headline": "CISA and FBI warn on attacks against internet-exposed refrigeration networks",
-      "summary": "CISA and the FBI are warning defenders after attacks targeted internet-exposed industrial refrigeration systems, including temperature tampering. The advisory points to an operational technology issue affecting exposed industrial equipment and supermarket environments.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "This is a timely OT/ICS defensive advisory tied to real attacks on exposed industrial refrigeration networks. It has direct relevance for operators managing internet-facing industrial systems, especially in energy-adjacent and manufacturing-like environments.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 75,
-        "MEA": 65,
-        "Other": 75
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 55,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 25,
-        "retail_banking": 0,
-        "global_it_services": 20,
-        "logistics": 35,
-        "industrial_manufacturing": 70,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 45,
-        "devsecops": 0,
-        "siem_detection": 35,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 90,
-        "grc_audit": 20,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "industrial refrigeration systems",
-        "internet-exposed OT/ICS devices"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "iec_62443",
-          "nature": "guidance",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection content was included in the source links. Defenders should monitor external exposure, remote access paths, and control changes on refrigeration and adjacent OT assets.",
-      "related_case_studies": [
-        "security-visibility-for-manufacturing",
-        "securing-offshore-operations"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "industrial_manufacturing",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory internet-exposed refrigeration and OT assets, remove unnecessary exposure, and verify alarms for unauthorized setpoint or temperature changes. Review remote access, logging, and incident response procedures for OT environments.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/cisa-protect-refrigeration-networks/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-11-06T11:50:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a timely OT/ICS defensive advisory tied to real attacks on exposed industrial refrigeration networks. It has direct relevance for operators managing internet-facing industrial systems, especially in energy-adjacent and manufacturing-like environments.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 79.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 7.0,
-        "practice": 13.5,
-        "weighted_total": 79.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "c82b0fa8efcaeb8c9d6e661a",
       "headline": "OpenSSH flaw reported as exploited for botnets and cryptominers",
       "summary": "Reports say attackers are abusing an OpenSSH weakness to deploy botnets and cryptominers. The source does not provide a confirmed CVE in the headline material, but it indicates active abuse of a widely deployed SSH service.",
@@ -1467,6 +1358,108 @@
         "industry": 7.0,
         "practice": 12.75,
         "weighted_total": 79.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "88df1915a2f34656715dcd31",
+      "headline": "Microsoft patches Windows Paint remote code execution flaw",
+      "summary": "Microsoft released an updated version of Windows Paint to address a remote code execution issue. The report indicates a security fix, but does not provide enough detail to confirm active exploitation or affected versions.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows",
+        "Microsoft Paint"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided in the source material. Defenders should prioritize patch validation, exposure review, and endpoint monitoring for unusual Paint process behavior.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Apply the Microsoft update for Windows Paint promptly, verify endpoint patch status, and monitor for anomalous execution patterns on Windows systems.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-07T11:49:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 78.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 78.75,
         "severity_band": [
           65,
           84.99
@@ -4120,116 +4113,6 @@
         "severity_band": [
           65,
           84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "12b6706a17b95258322bfab0",
-      "headline": "Dutch banking complaints body updates standard for unauthorized payment liability",
-      "summary": "Kifid has issued a new standard for deciding when a bank customer’s conduct may be considered grossly negligent in an unauthorized payment case. The update is a consumer finance and complaints-handling development rather than a technical security incident.",
-      "category": "regulation_policy",
-      "importance": "medium",
-      "importance_rationale": "This is a policy and disputes-handling update affecting retail banking in the Netherlands. It is relevant to fraud handling and customer liability practices, but it is not a broad binding security regulation with immediate systemwide technical impact.",
-      "location_relevance": {
-        "US": 0,
-        "Europe": 95,
-        "MEA": 0,
-        "Other": 0
-      },
-      "countries_mentioned": [
-        "NL"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 15,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 90,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 20,
-        "email_phishing": 65,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 80,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "dnb_requirements",
-          "nature": "guidance",
-          "effective_or_deadline_date": null
-        },
-        {
-          "key": "gdpr",
-          "nature": "guidance",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No technical detections were supplied. Fraud controls, customer authentication, and case review workflows are the relevant safeguards here.",
-      "related_case_studies": [
-        "vendor-release-automation"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "regulatory_deadline",
-        "sector": "retail_banking",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Review unauthorized payment handling criteria, fraud investigation workflows, and customer-authentication controls. Ensure complaint handling and evidence retention practices are consistent and well documented.",
-      "confidence": 0.86,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/960622/Nieuwe+maatstaf+voor+%27grof+nalatig%E2%80%99+handelen+bankklant+bij+niet-toegestane+betaling?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-06T12:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a policy and disputes-handling update affecting retail banking in the Netherlands. It is relevant to fraud handling and customer liability practices, but it is not a broad binding security regulation with immediate systemwide technical impact.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 62.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 14.25,
-        "industry": 9.0,
-        "practice": 12.0,
-        "weighted_total": 62.25,
-        "severity_band": [
-          35,
-          64.99
         ]
       },
       "included": true
@@ -7533,7 +7416,7 @@
   "counts": {
     "critical": 1,
     "high": 37,
-    "medium": 21,
+    "medium": 20,
     "low": 12
   },
   "unclassified": 0,
@@ -7649,54 +7532,9 @@
             "date_inferred": false
           }
         ]
-      },
-      {
-        "key": "iec_62443",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "IEC 62443",
-        "headline": "CISA and FBI warn on attacks against internet-exposed refrigeration networks",
-        "sources": [
-          {
-            "url": "https://www.infosecurity-magazine.com/news/cisa-protect-refrigeration-networks/",
-            "source": "Infosecurity Magazine",
-            "published": "2026-11-06T11:50:00+00:00",
-            "date_inferred": false
-          }
-        ]
       }
     ],
     "Europe": [
-      {
-        "key": "dnb_requirements",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "DNB requirements",
-        "headline": "Dutch banking complaints body updates standard for unauthorized payment liability",
-        "sources": [
-          {
-            "url": "https://www.security.nl/posting/960622/Nieuwe+maatstaf+voor+%27grof+nalatig%E2%80%99+handelen+bankklant+bij+niet-toegestane+betaling?channel=rss",
-            "source": "Security.NL",
-            "published": "2026-11-06T12:00:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
-      {
-        "key": "gdpr",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "GDPR",
-        "headline": "Dutch banking complaints body updates standard for unauthorized payment liability",
-        "sources": [
-          {
-            "url": "https://www.security.nl/posting/960622/Nieuwe+maatstaf+voor+%27grof+nalatig%E2%80%99+handelen+bankklant+bij+niet-toegestane+betaling?channel=rss",
-            "source": "Security.NL",
-            "published": "2026-11-06T12:00:00+00:00",
-            "date_inferred": false
-          }
-        ]
-      },
       {
         "key": "cyberbeveiligingswet_nis2_implementation",
         "nature": "guidance",
@@ -7733,26 +7571,26 @@
   },
   "other_count": 9,
   "source_health": {
-    "at": "2026-11-07T11:31:51.825546+00:00",
+    "at": "2026-11-07T12:02:00.665825+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 135,
+    "new": 1,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Help Net Security",
@@ -7762,12 +7600,12 @@
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
@@ -7777,7 +7615,7 @@
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -7787,27 +7625,27 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Cisco Talos",
@@ -7835,12 +7673,12 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SANS ISC",
@@ -7885,12 +7723,12 @@
       {
         "name": "CERT-EU Threat Intelligence",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 4
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -7920,7 +7758,7 @@
       {
         "name": "Metasploit Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys Vulnerabilities and Threat Research",
@@ -7945,7 +7783,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -7955,7 +7793,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 90,
+        "new": 0,
         "entries": 34651,
         "invalid": 0,
         "future": 0,
@@ -7964,7 +7802,7 @@
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 2,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -8010,18 +7848,15 @@
       "8d5133e833d1a37e79d7cd19",
       "c0d4da2260bb8eb88b5aca49",
       "b432728a569b5bf473fdea5a",
-      "12b6706a17b95258322bfab0",
       "875649889069711a27f83a97"
     ],
     "security-visibility-for-manufacturing": [
       "4d5985549f1ffc7c5ac7db3f",
-      "2b108f45457522ccad4c8274",
       "c82b0fa8efcaeb8c9d6e661a",
       "6804901d3214cc27e4d46388"
     ],
     "securing-offshore-operations": [
       "4d5985549f1ffc7c5ac7db3f",
-      "2b108f45457522ccad4c8274",
       "ab422881ff17da5ac16aca7f"
     ],
     "security-in-the-delivery-path": [
