@@ -12,16 +12,16 @@
 <tr><td style="padding:16px 20px;overflow-wrap:anywhere">
 
 
-<p style="margin:10px 0">Window: 2026-11-07T11:41:46.941433+00:00 to 2026-11-08T11:41:46.941433+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
+<p style="margin:10px 0">Window: 2026-11-07T12:22:30.135507+00:00 to 2026-11-08T12:22:30.135507+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
 
 
 <p style="margin:10px 0">Relevance percentages measure applicability, not attack probability or victim share. Global software issues apply in every region where affected versions are used. Priority /100 uses severity bands: critical 85-100, high 65-84.99, medium 35-64.99, low 0-34.99.</p>
 
 
-<p style="margin:10px 0">CRITICAL 1 · HIGH 2 · MEDIUM 2 · LOW 2 · New KEV entries 0 · Watch technology hits 0</p>
+<p style="margin:10px 0">CRITICAL 1 · HIGH 0 · MEDIUM 2 · LOW 3 · New KEV entries 0 · Watch technology hits 1</p>
 
 
-<p style="margin:10px 0">Source health: 41 enabled feeds; 1 failures; 6 new articles at last ingestion.</p>
+<p style="margin:10px 0">Source health: 41 enabled feeds; 1 failures; 1 new articles at last ingestion.</p>
 
 
 <p style="margin:10px 0">Coverage note: CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.</p>
@@ -45,30 +45,6 @@
 </td></tr></table>
 
 
-<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
-<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 78.75</span>
-<h3 style="font-size:17px;line-height:1.4;margin:10px 0">Microsoft patches Windows Paint remote code execution flaw</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 90% · Zero Trust and cloud security 0%</p><p>Microsoft released an updated version of Windows Paint to address a remote code execution issue. The report indicates a security fix, but does not provide enough detail to confirm active exploitation or affected versions.</p>
-<p><strong>Why it matters:</strong> A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.</p><p><strong>Action:</strong> Apply the Microsoft update for Windows Paint promptly, verify endpoint patch status, and monitor for anomalous execution patterns on Windows systems.</p>
-
-<p><strong>Detection assessment:</strong> No detection rules were provided in the source material. Defenders should prioritize patch validation, exposure review, and endpoint monitoring for unusual Paint process behavior.</p>
-<p><strong>Sources:</strong> <a href="https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
-
-</p>
-<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
-
-
-<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
-<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 78.75</span>
-<h3 style="font-size:17px;line-height:1.4;margin:10px 0">SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 90% · Identity and privileged access 80%</p><p>SonicWall says a vulnerability in SonicOS can let attackers bypass MFA protections on SSL VPN access. The advisory appears to concern firewall users and defenders should treat it as an exposure-management priority until patching details are confirmed.</p>
-<p><strong>Why it matters:</strong> A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.</p><p><strong>Action:</strong> Prioritize SonicOS version verification, apply vendor guidance, and review SSL VPN access logs for suspicious authentication activity or anomalous session creation.</p>
-
-<p><strong>Detection assessment:</strong> No specific detection rule links were provided in the source material. Defenders should review VPN authentication logs, MFA events, and firewall exposure for abnormal access patterns.</p>
-<p><strong>Sources:</strong> <a href="https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
-
-</p>
-</td></tr></table>
-
-
 <h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Priority table</h2>
 
 
@@ -76,14 +52,6 @@
 <br><a href="https://brusiantsou.com/stories/secure-azure-migration/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Secure azure migration</a>
 
 </td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
-
-</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Microsoft patches Windows Paint remote code execution flaw</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">78.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 90%; Zero Trust and cloud security 0%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">
-</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
-
-</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">78.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 90%; Identity and privileged access 80%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/security-at-telecom-scale/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security at telecom scale</a>
-<br><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
-
-</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
 
 </td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">MEDIUM</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Dutch government plans NCSC vulnerability scanning platform</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">59.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">90</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Government 70%; Global IT services 30%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 80%; Audit readiness, governance and risk 75%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
 <br><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
@@ -105,6 +73,14 @@
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">New KEV</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Vendor / product</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Added</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Due</th></tr></thead><tbody><tr><td colspan="4" style="padding:8px">None recorded.</td></tr></tbody></table></div>
 
 
+<p style="margin:10px 0">ai</p>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0">AI agent frameworks<br><a href="https://www.securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Brava Security launches from stealth with $15 million funding</a>
+
+</li></ul>
+
+
 <h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Regulation and policy</h2>
 
 
@@ -123,7 +99,8 @@
 <h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Other</h2>
 
 
-<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0"><a href="https://simonwillison.net/2026/Nov/7/link-rel-next/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Datasette note says Firefox prefetches next-page links from HTTP headers</a>
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0"><a href="https://www.securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Brava Security launches from stealth with $15 million funding</a>
+</li><li style="margin:6px 0"><a href="https://simonwillison.net/2026/Nov/7/link-rel-next/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Datasette note says Firefox prefetches next-page links from HTTP headers</a>
 </li></ul>
 
 

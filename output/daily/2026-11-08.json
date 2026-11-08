@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-08",
-  "start": "2026-11-07T11:41:46.941433+00:00",
-  "end": "2026-11-08T11:41:46.941433+00:00",
+  "start": "2026-11-07T12:22:30.135507+00:00",
+  "end": "2026-11-08T12:22:30.135507+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -116,210 +116,6 @@
         "severity_band": [
           85,
           100
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "88df1915a2f34656715dcd31",
-      "headline": "Microsoft patches Windows Paint remote code execution flaw",
-      "summary": "Microsoft released an updated version of Windows Paint to address a remote code execution issue. The report indicates a security fix, but does not provide enough detail to confirm active exploitation or affected versions.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Windows",
-        "Microsoft Paint"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were provided in the source material. Defenders should prioritize patch validation, exposure review, and endpoint monitoring for unusual Paint process behavior.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Apply the Microsoft update for Windows Paint promptly, verify endpoint patch status, and monitor for anomalous execution patterns on Windows systems.",
-      "confidence": 0.84,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-07T11:49:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
-      ],
-      "model_importance": "high",
-      "model_importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [
-          "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss"
-        ],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Common web and operating-system infrastructure",
-      "independent_sources_24h": 1,
-      "priority": 78.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 13.5,
-        "weighted_total": 78.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "38e3b63506867c8f882b049e",
-      "headline": "SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS",
-      "summary": "SonicWall says a vulnerability in SonicOS can let attackers bypass MFA protections on SSL VPN access. The advisory appears to concern firewall users and defenders should treat it as an exposure-management priority until patching details are confirmed.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 60,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 60,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 30,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 0,
-        "siem_detection": 25,
-        "iam_pam": 80,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 25,
-        "grc_audit": 15,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "SonicWall SonicOS",
-        "SSL VPN",
-        "firewalls"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detection rule links were provided in the source material. Defenders should review VPN authentication logs, MFA events, and firewall exposure for abnormal access patterns.",
-      "related_case_studies": [
-        "security-at-telecom-scale",
-        "audit-ready-by-design"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Prioritize SonicOS version verification, apply vendor guidance, and review SSL VPN access logs for suspicious authentication activity or anomalous session creation.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-07T12:05:09+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 78.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.0,
-        "practice": 13.5,
-        "weighted_total": 78.75,
-        "severity_band": [
-          65,
-          84.99
         ]
       },
       "included": true
@@ -630,6 +426,110 @@
       "included": true
     },
     {
+      "cluster_id": "50b863715297ad555f5a0f6c",
+      "headline": "Brava Security launches from stealth with $15 million funding",
+      "summary": "Brava Security said it has emerged from stealth with $15 million in funding for an AI platform aimed at generating attack-like telemetry to improve enterprise defenses. The announcement is product and funding news rather than an incident or vulnerability, so operational risk appears limited. ",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a funding and product-launch announcement without evidence of a security incident, vulnerability, or exploitation. It may be of strategic interest to security teams exploring AI-driven detection tooling, but it does not indicate immediate defensive urgency.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 10,
+        "siem_detection": 25,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 25,
+        "ai_governance": 40
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content is provided or implied by the source. The article is a funding and product announcement, so there are no actionable detection rules to reference.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Track the vendor's technical claims and validate any future product security or detection efficacy disclosures before adoption. No immediate incident response action is indicated.",
+      "confidence": 0.93,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding/",
+          "source": "SecurityWeek",
+          "published": "2026-11-08T12:14:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a funding and product-launch announcement without evidence of a security incident, vulnerability, or exploitation. It may be of strategic interest to security teams exploring AI-driven detection tooling, but it does not indicate immediate defensive urgency.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 19.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 1.5,
+        "practice": 6.0,
+        "weighted_total": 19.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "fe1f6a98c50b61102525fdc5",
       "headline": "Datasette note says Firefox prefetches next-page links from HTTP headers",
       "summary": "A blog post describes how Firefox may prefetch a next-page URL advertised in Datasette HTTP headers, creating avoidable background requests. This is a product and browser-behavior discussion, not a security incident, though it may matter for performance and data-access patterns.",
@@ -731,15 +631,23 @@
   ],
   "counts": {
     "critical": 1,
-    "high": 2,
+    "high": 0,
     "medium": 2,
-    "low": 2
+    "low": 3
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 0,
-  "watch": {},
+  "watch_hits": 1,
+  "watch": {
+    "ai": [
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Brava Security launches from stealth with $15 million funding",
+        "cluster_id": "50b863715297ad555f5a0f6c"
+      }
+    ]
+  },
   "regulations": {
     "Europe": [
       {
@@ -789,12 +697,12 @@
       }
     ]
   },
-  "other_count": 1,
+  "other_count": 2,
   "source_health": {
-    "at": "2026-11-08T11:41:46.941433+00:00",
+    "at": "2026-11-08T12:22:30.135507+00:00",
     "enabled": 41,
     "failures": 1,
-    "new": 6,
+    "new": 1,
     "updated": 0,
     "sources": [
       {
@@ -805,7 +713,7 @@
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -815,12 +723,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "Dark Reading",
@@ -893,7 +801,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -948,7 +856,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -1013,11 +921,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 0,
-        "entries": 34651,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -1049,14 +953,10 @@
     "secure-azure-migration": [
       "afb29613d255441e0b9301d3"
     ],
-    "security-at-telecom-scale": [
-      "38e3b63506867c8f882b049e"
-    ],
-    "audit-ready-by-design": [
-      "38e3b63506867c8f882b049e",
+    "continuous-vulnerability-management": [
       "2dadb7eef6f9698d594d1a97"
     ],
-    "continuous-vulnerability-management": [
+    "audit-ready-by-design": [
       "2dadb7eef6f9698d594d1a97"
     ]
   }
