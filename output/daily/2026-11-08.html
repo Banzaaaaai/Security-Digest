@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>SecDigest daily 2026-11-08</title>
+<style>body{color-scheme:light dark}a{overflow-wrap:anywhere}table{font-variant-numeric:tabular-nums}@media(prefers-color-scheme:dark){body,.paper{background:#111827!important;color:#e5e7eb!important}td,th{border-color:#475569!important}a{color:#93c5fd!important}h2{color:#e5e7eb!important}}</style>
+</head>
+
+<body style="margin:0;padding:0;background:#edf1f6;color:#172033;font-family:Segoe UI,Arial,sans-serif;font-size:14px;line-height:1.6">
+<table role="presentation" style="width:100%;border-collapse:collapse"><tr><td align="center" style="padding:16px 8px">
+<table role="presentation" class="paper" style="width:100%;max-width:1200px;border-collapse:collapse;background:#ffffff"><tr><td style="padding:26px 20px;background:#16263e;color:#ffffff">
+<p style="margin:0;font-size:12px;letter-spacing:2px;color:#b9cee7">SECURITY INTELLIGENCE</p>
+<h1 style="margin:6px 0;font-size:27px;line-height:1.25">SecDigest · Daily</h1><p style="margin:0;color:#d8e4f4">2026-11-08 · Enterprise security architecture</p></td></tr>
+<tr><td style="padding:16px 20px;overflow-wrap:anywhere">
+
+
+<p style="margin:10px 0">Window: 2026-11-07T11:41:46.941433+00:00 to 2026-11-08T11:41:46.941433+00:00 (end exclusive). Display timezone: Europe/Amsterdam.</p>
+
+
+<p style="margin:10px 0">Relevance percentages measure applicability, not attack probability or victim share. Global software issues apply in every region where affected versions are used. Priority /100 uses severity bands: critical 85-100, high 65-84.99, medium 35-64.99, low 0-34.99.</p>
+
+
+<p style="margin:10px 0">CRITICAL 1 · HIGH 2 · MEDIUM 2 · LOW 2 · New KEV entries 0 · Watch technology hits 0</p>
+
+
+<p style="margin:10px 0">Source health: 41 enabled feeds; 1 failures; 6 new articles at last ingestion.</p>
+
+
+<p style="margin:10px 0">Coverage note: CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.</p>
+
+
+<p style="margin:10px 0">Coverage note: Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18.</p>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Critical / High: act now</h2>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #991b1b">
+<span style="padding:3px 7px;background:#991b1b;color:#ffffff;font-size:11px;font-weight:bold">CRITICAL</span><span style="font-size:12px"> · Priority 97.25</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">French cooperative bank hit by $133 million fraud via service provider</h3><p style="font-size:12px;margin:8px 0">US 25% · Europe 95% · MEA 10% · Other 10% · Retail banking 95% · Private banking 40% · Identity and privileged access 90% · Audit readiness, governance and risk 75%</p><p>A cyberattack against Crédit Mutuel Arkéa allegedly enabled fraudulent transactions totaling up to $133 million and disrupted some systems. The incident appears to involve a service-provider path and is significant because it affected a regulated bank in France.</p>
+<p><strong>Why it matters:</strong> A major fraud incident at a regulated financial institution in Europe is high impact, and the reported scale is large enough to warrant urgent review. Even though the exact intrusion chain is unclear, the financial and operational consequences make this a critical incident for defenders in the sector.</p><p><strong>Action:</strong> Investigate third-party access paths, validate transaction controls, and review fraud detection and privileged access monitoring for gaps exposed by the incident.</p>
+
+<p><strong>Detection assessment:</strong> No specific detection-rule URLs were included. Financial institutions should review payment anomalies, privileged access, third-party connectivity, and fraud monitoring coverage.</p>
+<p><strong>Sources:</strong> <a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</p>
+</td></tr></table>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
+<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 78.75</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">Microsoft patches Windows Paint remote code execution flaw</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 90% · Zero Trust and cloud security 0%</p><p>Microsoft released an updated version of Windows Paint to address a remote code execution issue. The report indicates a security fix, but does not provide enough detail to confirm active exploitation or affected versions.</p>
+<p><strong>Why it matters:</strong> A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.</p><p><strong>Action:</strong> Apply the Microsoft update for Windows Paint promptly, verify endpoint patch status, and monitor for anomalous execution patterns on Windows systems.</p>
+
+<p><strong>Detection assessment:</strong> No detection rules were provided in the source material. Defenders should prioritize patch validation, exposure review, and endpoint monitoring for unusual Paint process behavior.</p>
+<p><strong>Sources:</strong> <a href="https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</p>
+<p style="font-size:11px">Scoring overrides: Global deployment applicability: every region 95%; cross-industry relevance at least 60%</p></td></tr></table>
+
+
+<table role="presentation" style="width:100%;border-collapse:collapse;margin:14px 0"><tr><td style="padding:14px;border:1px solid #cbd5e1;border-left:5px solid #92400e">
+<span style="padding:3px 7px;background:#92400e;color:#ffffff;font-size:11px;font-weight:bold">HIGH</span><span style="font-size:12px"> · Priority 78.75</span>
+<h3 style="font-size:17px;line-height:1.4;margin:10px 0">SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS</h3><p style="font-size:12px;margin:8px 0">US 95% · Europe 95% · MEA 95% · Other 95% · Energy services 60% · Telecommunications 60% · Vulnerability and exposure management 90% · Identity and privileged access 80%</p><p>SonicWall says a vulnerability in SonicOS can let attackers bypass MFA protections on SSL VPN access. The advisory appears to concern firewall users and defenders should treat it as an exposure-management priority until patching details are confirmed.</p>
+<p><strong>Why it matters:</strong> A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.</p><p><strong>Action:</strong> Prioritize SonicOS version verification, apply vendor guidance, and review SSL VPN access logs for suspicious authentication activity or anomalous session creation.</p>
+
+<p><strong>Detection assessment:</strong> No specific detection rule links were provided in the source material. Defenders should review VPN authentication logs, MFA events, and firewall exposure for abnormal access patterns.</p>
+<p><strong>Sources:</strong> <a href="https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</p>
+</td></tr></table>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Priority table</h2>
+
+
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Importance</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Headline</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Priority</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">US%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Europe%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">MEA%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Other%</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Top 2 industries</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Top 2 practice areas</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">CVEs</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">KEV</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Case study</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Sources</th></tr></thead><tbody><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">CRITICAL</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">French cooperative bank hit by $133 million fraud via service provider</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">97.25</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">25</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Retail banking 95%; Private banking 40%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Identity and privileged access 90%; Audit readiness, governance and risk 75%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/security-services-for-investment-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security services for investment management</a>
+<br><a href="https://brusiantsou.com/stories/secure-azure-migration/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Secure azure migration</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Microsoft patches Windows Paint remote code execution flaw</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">78.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 90%; Zero Trust and cloud security 0%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">HIGH</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">78.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">95</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Energy services 60%; Telecommunications 60%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 90%; Identity and privileged access 80%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/security-at-telecom-scale/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security at telecom scale</a>
+<br><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">MEDIUM</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Dutch government plans NCSC vulnerability scanning platform</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">59.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">90</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Government 70%; Global IT services 30%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Vulnerability and exposure management 80%; Audit readiness, governance and risk 75%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://brusiantsou.com/stories/continuous-vulnerability-management/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Continuous vulnerability management</a>
+<br><a href="https://brusiantsou.com/stories/audit-ready-by-design/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Audit ready by design</a>
+
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960765/Kabinet+wil+dat+NCSC+scanplatform+ontwikkelt+voor+vinden+van+kwetsbaarheden?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">MEDIUM</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">European retailers see another refrigeration-linked cyberattack wave</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">45.5</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">15</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">10</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Logistics 20%; Global IT services 10%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">OT and industrial control systems 35%; SIEM, monitoring and detection engineering 20%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Help Net Security</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">LOW</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">CTM360 reports fake gift card scams abusing trusted brands</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">28.75</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">40</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Government 10%; Retail banking 10%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Email protection and phishing response 85%; Data protection and DLP 10%</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"></td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">No</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">
+</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</td></tr></tbody></table></div>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Vulnerability watch</h2>
+
+
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">New KEV</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Vendor / product</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Added</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Due</th></tr></thead><tbody><tr><td colspan="4" style="padding:8px">None recorded.</td></tr></tbody></table></div>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Regulation and policy</h2>
+
+
+<p style="margin:10px 0">Europe</p>
+
+
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Regulation</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Nature</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Reported date</th><th style="text-align:left;padding:8px;border-bottom:2px solid #64748b">Sources</th></tr></thead><tbody><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">DORA</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">enforcement</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Not stated</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">GDPR</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">enforcement</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Not stated</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">BleepingComputer</a>
+
+</td></tr><tr><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Cyberbeveiligingswet (NIS2 implementation)</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">guidance</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere">Not stated</td><td style="vertical-align:top;padding:8px;border-bottom:1px solid #cbd5e1;overflow-wrap:anywhere"><a href="https://www.security.nl/posting/960765/Kabinet+wil+dat+NCSC+scanplatform+ontwikkelt+voor+vinden+van+kwetsbaarheden?channel=rss" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Security.NL</a>
+
+</td></tr></tbody></table></div>
+
+
+<h2 style="font-size:19px;color:#203758;border-bottom:2px solid #94a3b8;padding-bottom:7px;margin-top:28px">Other</h2>
+
+
+<ul style="padding-left:20px;margin:10px 0"><li style="margin:6px 0"><a href="https://simonwillison.net/2026/Nov/7/link-rel-next/" style="color:#1d4ed8;text-decoration:underline;overflow-wrap:anywhere">Datasette note says Firefox prefetches next-page links from HTTP headers</a>
+</li></ul>
+
+
+</td></tr><tr><td style="padding:18px 20px;border-top:1px solid #cbd5e1;font-size:11px">SecDigest · Original-source links accompany each story. Relevance scores are analytical assessments. Case studies are anonymized; no client involvement is implied.</td></tr></table>
+</td></tr></table></body></html>

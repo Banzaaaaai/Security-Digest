@@ -1,0 +1,1063 @@
+{
+  "kind": "daily",
+  "period": "2026-11-08",
+  "start": "2026-11-07T11:41:46.941433+00:00",
+  "end": "2026-11-08T11:41:46.941433+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "afb29613d255441e0b9301d3",
+      "headline": "French cooperative bank hit by $133 million fraud via service provider",
+      "summary": "A cyberattack against Crédit Mutuel Arkéa allegedly enabled fraudulent transactions totaling up to $133 million and disrupted some systems. The incident appears to involve a service-provider path and is significant because it affected a regulated bank in France.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A major fraud incident at a regulated financial institution in Europe is high impact, and the reported scale is large enough to warrant urgent review. Even though the exact intrusion chain is unclear, the financial and operational consequences make this a critical incident for defenders in the sector.",
+      "location_relevance": {
+        "US": 25,
+        "Europe": 95,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "FR"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 40,
+        "investment_management": 35,
+        "government": 10,
+        "retail_banking": 95,
+        "global_it_services": 40,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 40,
+        "iam_pam": 90,
+        "email_phishing": 35,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 75,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "service providers",
+        "banking systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "dora",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection-rule URLs were included. Financial institutions should review payment anomalies, privileged access, third-party connectivity, and fraud monitoring coverage.",
+      "related_case_studies": [
+        "security-services-for-investment-management",
+        "secure-azure-migration"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Investigate third-party access paths, validate transaction controls, and review fraud detection and privileged access monitoring for gaps exposed by the incident.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/",
+          "source": "BleepingComputer",
+          "published": "2026-11-07T15:25:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A major fraud incident at a regulated financial institution in Europe is high impact, and the reported scale is large enough to warrant urgent review. Even though the exact intrusion chain is unclear, the financial and operational consequences make this a critical incident for defenders in the sector.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 97.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 13.5,
+        "weighted_total": 97.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "88df1915a2f34656715dcd31",
+      "headline": "Microsoft patches Windows Paint remote code execution flaw",
+      "summary": "Microsoft released an updated version of Windows Paint to address a remote code execution issue. The report indicates a security fix, but does not provide enough detail to confirm active exploitation or affected versions.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows",
+        "Microsoft Paint"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided in the source material. Defenders should prioritize patch validation, exposure review, and endpoint monitoring for unusual Paint process behavior.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Apply the Microsoft update for Windows Paint promptly, verify endpoint patch status, and monitor for anomalous execution patterns on Windows systems.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-07T11:49:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "A remote code execution flaw in a widely deployed Windows component is operationally important for most enterprises. Even without confirmed in-the-wild exploitation, the exposure is broad and patching is time-sensitive.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://www.security.nl/posting/960761/Microsoft+publiceert+wegens+RCE-lek+nieuwe+versie+Windows+Paint?channel=rss"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 78.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 78.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "38e3b63506867c8f882b049e",
+      "headline": "SonicWall warns of SSL VPN MFA-bypass flaw in SonicOS",
+      "summary": "SonicWall says a vulnerability in SonicOS can let attackers bypass MFA protections on SSL VPN access. The advisory appears to concern firewall users and defenders should treat it as an exposure-management priority until patching details are confirmed.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 0,
+        "siem_detection": 25,
+        "iam_pam": 80,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 25,
+        "grc_audit": 15,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "SonicWall SonicOS",
+        "SSL VPN",
+        "firewalls"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule links were provided in the source material. Defenders should review VPN authentication logs, MFA events, and firewall exposure for abnormal access patterns.",
+      "related_case_studies": [
+        "security-at-telecom-scale",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize SonicOS version verification, apply vendor guidance, and review SSL VPN access logs for suspicious authentication activity or anomalous session creation.",
+      "confidence": 0.92,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960763/SonicWall+waarschuwt+voor+lek+waarmee+aanvallers+MFA+van+SSL-VPN+omzeilen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-07T12:05:09+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A vendor-disclosed authentication-bypass flaw in widely deployed firewall software can materially affect perimeter security even without confirmed exploitation. It is operationally important for enterprise defenders, but there is no evidence here of active in-the-wild abuse.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 78.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 78.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "2dadb7eef6f9698d594d1a97",
+      "headline": "Dutch government plans NCSC vulnerability scanning platform",
+      "summary": "The Dutch cabinet wants the NCSC to build its own platform for finding vulnerabilities. The item is policy-oriented and suggests a state-backed scanning capability, but it does not describe a new regulatory obligation or deadline.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a government cybersecurity capability announcement with potential downstream impact on defensive scanning and coordination, but it is not yet a binding rule or enforcement action. The operational impact is indirect and remains limited by the lack of implementation detail.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 90,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 70,
+        "retail_banking": 20,
+        "global_it_services": 30,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 80,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 75,
+        "security_automation": 55,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "vulnerability scanning platforms"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "cyberbeveiligingswet_nis2_implementation",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules are relevant because this is a policy and capability-planning announcement rather than a technical exploit report.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Track the Dutch implementation approach, map likely reporting and scanning requirements, and prepare to align exposure-management processes with NIS2-related public-sector expectations.",
+      "confidence": 0.84,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/960765/Kabinet+wil+dat+NCSC+scanplatform+ontwikkelt+voor+vinden+van+kwetsbaarheden?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-07T12:37:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a government cybersecurity capability announcement with potential downstream impact on defensive scanning and coordination, but it is not yet a binding rule or enforcement action. The operational impact is indirect and remains limited by the lack of implementation detail.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 59.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 13.5,
+        "industry": 7.0,
+        "practice": 12.0,
+        "weighted_total": 59.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "7ba1c2f8153eaaaa3c92e1e8",
+      "headline": "European retailers see another refrigeration-linked cyberattack wave",
+      "summary": "This cluster points to repeat cyberattacks affecting European retailers, with the reporting suggesting refrigeration systems are part of the incident pattern. The item is a brief roundup and does not provide enough technical detail to confirm specific actors, malware, or whether the attacks were successful in each case.",
+      "category": "other",
+      "importance": "medium",
+      "importance_rationale": "The report suggests a recurring incident pattern affecting a retail sector in Europe, but it is a roundup item with limited technical detail and no confirmed large-scale breach or specific exploit disclosed.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 75,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "Europe"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 20,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 35,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "refrigeration systems"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rules were cited in the source. Defenders should correlate building-management, OT, and network telemetry for unusual remote access and command activity around refrigeration or facility systems.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "logistics",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review segmentation and remote-access controls for refrigeration and building-management systems, and ensure logging is available for OT-adjacent assets. Validate incident response playbooks for operational technology disruption in retail environments.",
+      "confidence": 0.56,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/",
+          "source": "Help Net Security",
+          "published": "2026-11-08T09:00:21+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The report suggests a recurring incident pattern affecting a retail sector in Europe, but it is a roundup item with limited technical detail and no confirmed large-scale breach or specific exploit disclosed.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 45.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 11.25,
+        "industry": 2.0,
+        "practice": 5.25,
+        "weighted_total": 45.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5a763049bef06bb3ec3f0798",
+      "headline": "CTM360 reports fake gift card scams abusing trusted brands",
+      "summary": "CTM360 describes consumer scams that imitate well-known brands and celebrities to promote fake gift card giveaways. The campaigns rely on deceptive verification steps and affiliate monetization, but the report does not indicate a direct enterprise breach.",
+      "category": "fraud_phishing",
+      "importance": "low",
+      "importance_rationale": "This is a consumer scam report rather than a targeted enterprise incident or a new technical intrusion method. It is relevant to phishing awareness, but the operational risk to enterprise defenders is indirect.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 5,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 85,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "social media",
+        "gift card scams"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were provided. Awareness content should be paired with email, web, and brand-impersonation monitoring where applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Reinforce user awareness on impersonation scams, monitor for brand-abuse reporting, and tune fraud and phishing controls where consumer-facing channels are exposed.",
+      "confidence": 0.76,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/",
+          "source": "BleepingComputer",
+          "published": "2026-11-07T14:10:19+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a consumer scam report rather than a targeted enterprise incident or a new technical intrusion method. It is relevant to phishing awareness, but the operational risk to enterprise defenders is indirect.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 28.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 1.0,
+        "practice": 12.75,
+        "weighted_total": 28.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fe1f6a98c50b61102525fdc5",
+      "headline": "Datasette note says Firefox prefetches next-page links from HTTP headers",
+      "summary": "A blog post describes how Firefox may prefetch a next-page URL advertised in Datasette HTTP headers, creating avoidable background requests. This is a product and browser-behavior discussion, not a security incident, though it may matter for performance and data-access patterns.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "The item is a niche technical observation about browser prefetch behavior and server efficiency. It does not describe a vulnerability, exploit, or material enterprise risk.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Firefox",
+        "Datasette",
+        "HTTP headers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content applies; this is not a security event report.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Note the browser/server behavior for web application tuning, but no security response is required unless local testing shows unintended data exposure or performance impact.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-07T23:57:46+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The item is a niche technical observation about browser prefetch behavior and server efficiency. It does not describe a vulnerability, exploit, or material enterprise risk.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 14.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 2.0,
+        "practice": 3.0,
+        "weighted_total": 14.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 1,
+    "high": 2,
+    "medium": 2,
+    "low": 2
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 0,
+  "watch": {},
+  "regulations": {
+    "Europe": [
+      {
+        "key": "dora",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "DORA",
+        "headline": "French cooperative bank hit by $133 million fraud via service provider",
+        "sources": [
+          {
+            "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/",
+            "source": "BleepingComputer",
+            "published": "2026-11-07T15:25:35+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "French cooperative bank hit by $133 million fraud via service provider",
+        "sources": [
+          {
+            "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/",
+            "source": "BleepingComputer",
+            "published": "2026-11-07T15:25:35+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "cyberbeveiligingswet_nis2_implementation",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "Cyberbeveiligingswet (NIS2 implementation)",
+        "headline": "Dutch government plans NCSC vulnerability scanning platform",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/960765/Kabinet+wil+dat+NCSC+scanplatform+ontwikkelt+voor+vinden+van+kwetsbaarheden?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-11-07T12:37:31+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ]
+  },
+  "other_count": 1,
+  "source_health": {
+    "at": "2026-11-08T11:41:46.941433+00:00",
+    "enabled": 41,
+    "failures": 1,
+    "new": 6,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 208,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 36,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 4,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 0,
+        "entries": 34651,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 2
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 0,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [],
+  "kev_provenance": {
+    "released": "2026-11-06T19:44:45.179700+00:00",
+    "version": "2026.11.06",
+    "count": 1769,
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "checked": "2026-11-08T11:41:46.941433+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "security-services-for-investment-management": [
+      "afb29613d255441e0b9301d3"
+    ],
+    "secure-azure-migration": [
+      "afb29613d255441e0b9301d3"
+    ],
+    "security-at-telecom-scale": [
+      "38e3b63506867c8f882b049e"
+    ],
+    "audit-ready-by-design": [
+      "38e3b63506867c8f882b049e",
+      "2dadb7eef6f9698d594d1a97"
+    ],
+    "continuous-vulnerability-management": [
+      "2dadb7eef6f9698d594d1a97"
+    ]
+  }
+}
