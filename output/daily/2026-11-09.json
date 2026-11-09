@@ -1,11 +1,142 @@
 {
   "kind": "daily",
   "period": "2026-11-09",
-  "start": "2026-11-08T13:37:30.224524+00:00",
-  "end": "2026-11-09T13:37:30.224524+00:00",
+  "start": "2026-11-08T14:36:18.562582+00:00",
+  "end": "2026-11-09T14:36:18.562582+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
+    {
+      "cluster_id": "dc5614f2b12e88df71d65252",
+      "headline": "Malicious GitHub workflow reportedly hit tens of thousands of repositories",
+      "summary": "Researchers report a malicious workflow that affected a very large number of GitHub repositories, including some tied to Uber. The source indicates a broad software supply-chain issue, but it does not provide technical detail on the exact payload or persistence method.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A malicious workflow affecting tens of thousands of repositories is consistent with a systemic supply-chain compromise in a widely used development platform. Even without full technical detail, the scale and enterprise software-development impact make this critical.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 95,
+        "logistics": 50,
+        "industrial_manufacturing": 55,
+        "automotive": 55
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 100,
+        "siem_detection": 45,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 10,
+        "grc_audit": 25,
+        "security_automation": 35,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "GitHub",
+        "GitHub Actions"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "nist_ssdf",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "soc_2",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule URLs were included. Defenders should audit GitHub Actions usage, workflow integrity, secret exposure, and unexpected outbound activity from build jobs.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Audit repository workflows, pinned actions, secrets, and recent workflow changes across all development repos. Rotate exposed credentials, review build logs for unexpected network access, and tighten permissions for automation tokens.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/supply-chain-attack-thousands/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-09T14:30:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A malicious workflow affecting tens of thousands of repositories is consistent with a systemic supply-chain compromise in a widely used development platform. Even without full technical detail, the scale and enterprise software-development impact make this critical.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "GitHub Actions",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [
+          "https://www.infosecurity-magazine.com/news/supply-chain-attack-thousands/"
+        ],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 97.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 9.5,
+        "practice": 15.0,
+        "weighted_total": 97.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
     {
       "cluster_id": "4d02c260bfd3474beac1944c",
       "headline": "CISA adds SonicWall SonicOS MFA bypass flaw to exploited vulnerabilities list",
@@ -1737,6 +1868,111 @@
       "included": true
     },
     {
+      "cluster_id": "97dd5a720922c10c00764667",
+      "headline": "Revolve says September breach affected more than 1.5 million people",
+      "summary": "The retailer told regulators the September cyberattack affected over 1.5 million individuals. The report does not indicate the attack method, but the scale makes it a significant data breach for defenders tracking retail incidents and notification risk.",
+      "category": "data_breach",
+      "importance": "high",
+      "importance_rationale": "A breach affecting more than 1.5 million people is a significant incident even without technical detail. Retail-facing organizations should treat it as a material breach and disclosure benchmark.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 35,
+        "MEA": 20,
+        "Other": 30
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 10,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 10,
+        "email_phishing": 10,
+        "data_protection_dlp": 70,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "state_privacy_laws",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were included. Monitoring should focus on account compromise indicators, unusual data access, and outbound transfer anomalies.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Treat the incident as a reminder to validate breach response, logging, and notification workflows. Strengthen monitoring for unauthorized access and large-scale data movement, and confirm retention of evidence needed for regulatory review.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/revolve-puts-data-breach-victim-count-at-1-5-million/",
+          "source": "SecurityWeek",
+          "published": "2026-11-09T14:08:08+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A breach affecting more than 1.5 million people is a significant incident even without technical detail. Retail-facing organizations should treat it as a material breach and disclosure benchmark.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 70.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 1.0,
+        "practice": 10.5,
+        "weighted_total": 70.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "5f33f93916033478181eb861",
       "headline": "Sega says vendor breach exposed customer email addresses",
       "summary": "Sega said a compromise at its email delivery vendor exposed customer email addresses tied to about 2.2 million accounts. The incident highlights third-party breach risk and the need for prompt phishing awareness when vendor-held data is exposed.",
@@ -2133,6 +2369,126 @@
         "industry": 8.5,
         "practice": 9.0,
         "weighted_total": 57.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fee675b27caf7a6b9a30332e",
+      "headline": "AI-assisted attack reportedly abused hosting provider assistant interface in Germany",
+      "summary": "A German web hosting provider said attackers allegedly used an AI-related account interface to gain access. The report suggests a novel abuse path, but it remains a disclosed incident with limited technical detail and unconfirmed attribution.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "The incident is security-relevant because it involves a novel AI-enabled access path at a hosting provider, but the source gives limited technical specifics and does not confirm widespread impact. It is most important as an emerging pattern for defenders of SaaS and hosting platforms.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 80,
+        "MEA": 20,
+        "Other": 25
+      },
+      "countries_mentioned": [
+        "DE"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 75,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 50,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 35,
+        "iam_pam": 55,
+        "email_phishing": 0,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "Model Context Protocol (MCP)"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "eu_ai_act",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were supplied. Relevant monitoring would include anomalous assistant-to-account linkage, unusual API authorization events, and unexpected administrative actions.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review any AI-connected account or assistant interfaces for authorization gaps, token abuse, and excessive privileges. Add logging and approval controls around AI integrations, and treat hosting-platform identity paths as part of the attack surface.",
+      "confidence": 0.82,
+      "sources": [
+        {
+          "url": "https://therecord.media/cyberattack-germany-ai-mittwald",
+          "source": "The Record",
+          "published": "2026-11-09T14:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The incident is security-relevant because it involves a novel AI-enabled access path at a hosting provider, but the source gives limited technical specifics and does not confirm widespread impact. It is most important as an emerging pattern for defenders of SaaS and hosting platforms.",
+      "watch_tech": [
+        {
+          "name": "Model Context Protocol (MCP)",
+          "aliases": [
+            "Model Context Protocol",
+            "MCP"
+          ],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 56.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.0,
+        "industry": 7.5,
+        "practice": 9.75,
+        "weighted_total": 56.25,
         "severity_band": [
           35,
           64.99
@@ -2542,6 +2898,103 @@
       "included": true
     },
     {
+      "cluster_id": "dca9748487c3dfb8451ed81d",
+      "headline": "Weekly recap highlights active exploitation, exposed devices, and broader attack activity",
+      "summary": "This recap points to multiple ongoing security issues, including exploitation of a simple authentication flaw and attacks that blend into normal web traffic. It also mentions credential theft from network devices and abuse of tools used to keep systems updated or managed. The source is a roundup, so some details remain broad rather than fully attributed.",
+      "category": "other",
+      "importance": "medium",
+      "importance_rationale": "The item is a recap rather than a single confirmed incident, but it references active exploitation and several enterprise-relevant attack themes. That makes it useful for defenders, though the source does not provide enough detail to rate it as high or critical.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 50,
+        "devsecops": 35,
+        "siem_detection": 55,
+        "iam_pam": 50,
+        "email_phishing": 15,
+        "data_protection_dlp": 15,
+        "ot_ics": 20,
+        "grc_audit": 10,
+        "security_automation": 30,
+        "ai_governance": 10
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No rule URLs were present in the source. Defenders should look for unusual authentication patterns, management-plane access, and anomalous outbound traffic tied to device administration.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review exposed management services, enforce strong authentication, and inspect logs for unusual access to admin or update tooling. Prioritize monitoring for anomalous web and device traffic tied to account access and credential use.",
+      "confidence": 0.74,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html",
+          "source": "The Hacker News",
+          "published": "2026-11-09T13:28:25+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The item is a recap rather than a single confirmed incident, but it references active exploitation and several enterprise-relevant attack themes. That makes it useful for defenders, though the source does not provide enough detail to rate it as high or critical.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 51.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 5.5,
+        "practice": 8.25,
+        "weighted_total": 51.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "a056dca3d65e3a5678f79e05",
       "headline": "Dutch retailer reports theft of customer data, breach size still unclear",
       "summary": "Topgeschenken says customer data was stolen, but the company has not yet confirmed how many records were affected. The incident appears to involve a Dutch consumer-facing business and should be treated as a potentially material privacy event.",
@@ -2637,6 +3090,107 @@
         "industry": 0.0,
         "practice": 10.5,
         "weighted_total": 50.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b3baae1d096d17a2a90679e5",
+      "headline": "Former FBI agent pleads guilty to stealing crypto from investigated hackers",
+      "summary": "A former FBI agent pleaded guilty to stealing nearly $2.5 million in cryptocurrency from wallets linked to victims and subjects under investigation. The case is a law-enforcement corruption matter rather than a cyber intrusion campaign, but it involves theft of digital assets.",
+      "category": "law_enforcement",
+      "importance": "medium",
+      "importance_rationale": "The story is important from an accountability and legal standpoint, but it is not a defensive security campaign or technical vulnerability. Its operational impact for enterprise defenders is limited.",
+      "location_relevance": {
+        "US": 80,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 30,
+        "investment_management": 10,
+        "government": 55,
+        "retail_banking": 15,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [
+        "former FBI agent"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided. This case is primarily a legal matter rather than a technical detection use case.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Track the legal outcome as a governance and trust issue, and review internal controls around privileged access and asset handling where relevant. It is not a direct indicator of a broader enterprise threat campaign.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/",
+          "source": "BleepingComputer",
+          "published": "2026-11-09T14:34:03+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The story is important from an accountability and legal standpoint, but it is not a defensive security campaign or technical vulnerability. Its operational impact for enterprise defenders is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.0,
+        "industry": 5.5,
+        "practice": 3.75,
+        "weighted_total": 48.25,
         "severity_band": [
           35,
           64.99
@@ -4874,16 +5428,33 @@
     }
   ],
   "counts": {
-    "critical": 1,
-    "high": 17,
-    "medium": 9,
+    "critical": 2,
+    "high": 18,
+    "medium": 12,
     "low": 20
   },
   "unclassified": 0,
   "duplicates_removed": 1,
   "new_kev": [],
-  "watch_hits": 6,
+  "watch_hits": 8,
   "watch": {
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "Malicious GitHub workflow reportedly hit tens of thousands of repositories",
+        "cluster_id": "dc5614f2b12e88df71d65252"
+      },
+      {
+        "technology": "GitHub Actions",
+        "headline": "Malicious GitHub workflow reportedly hit tens of thousands of repositories",
+        "cluster_id": "dc5614f2b12e88df71d65252"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "AI-assisted pull request descriptions can be hidden under details-summary tags",
+        "cluster_id": "cfd192eda4f22e6c6e731ed7"
+      }
+    ],
     "microsoft": [
       {
         "technology": "Exchange",
@@ -4892,6 +5463,11 @@
       }
     ],
     "ai": [
+      {
+        "technology": "Model Context Protocol (MCP)",
+        "headline": "AI-assisted attack reportedly abused hosting provider assistant interface in Germany",
+        "cluster_id": "fee675b27caf7a6b9a30332e"
+      },
       {
         "technology": "AI agent frameworks",
         "headline": "Practical guidance urges tighter controls for AI security",
@@ -4922,17 +5498,40 @@
         "headline": "AI-assisted pull request descriptions can be hidden under details-summary tags",
         "cluster_id": "cfd192eda4f22e6c6e731ed7"
       }
-    ],
-    "devops_appsec": [
-      {
-        "technology": "GitHub",
-        "headline": "AI-assisted pull request descriptions can be hidden under details-summary tags",
-        "cluster_id": "cfd192eda4f22e6c6e731ed7"
-      }
     ]
   },
   "regulations": {
     "all": [
+      {
+        "key": "nist_ssdf",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "NIST SSDF",
+        "headline": "Malicious GitHub workflow reportedly hit tens of thousands of repositories",
+        "sources": [
+          {
+            "url": "https://www.infosecurity-magazine.com/news/supply-chain-attack-thousands/",
+            "source": "Infosecurity Magazine",
+            "published": "2026-11-09T14:30:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "soc_2",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "SOC 2",
+        "headline": "Malicious GitHub workflow reportedly hit tens of thousands of repositories",
+        "sources": [
+          {
+            "url": "https://www.infosecurity-magazine.com/news/supply-chain-attack-thousands/",
+            "source": "Infosecurity Magazine",
+            "published": "2026-11-09T14:30:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
       {
         "key": "pci_dss",
         "nature": "guidance",
@@ -5087,6 +5686,36 @@
       },
       {
         "key": "gdpr",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "AI-assisted attack reportedly abused hosting provider assistant interface in Germany",
+        "sources": [
+          {
+            "url": "https://therecord.media/cyberattack-germany-ai-mittwald",
+            "source": "The Record",
+            "published": "2026-11-09T14:15:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "eu_ai_act",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "EU AI Act",
+        "headline": "AI-assisted attack reportedly abused hosting provider assistant interface in Germany",
+        "sources": [
+          {
+            "url": "https://therecord.media/cyberattack-germany-ai-mittwald",
+            "source": "The Record",
+            "published": "2026-11-09T14:15:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
         "nature": "enforcement",
         "effective_or_deadline_date": null,
         "name": "GDPR",
@@ -5161,26 +5790,41 @@
             "date_inferred": false
           }
         ]
+      },
+      {
+        "key": "state_privacy_laws",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "state privacy laws",
+        "headline": "Revolve says September breach affected more than 1.5 million people",
+        "sources": [
+          {
+            "url": "https://www.securityweek.com/revolve-puts-data-breach-victim-count-at-1-5-million/",
+            "source": "SecurityWeek",
+            "published": "2026-11-09T14:08:08+00:00",
+            "date_inferred": false
+          }
+        ]
       }
     ]
   },
   "other_count": 11,
   "source_health": {
-    "at": "2026-11-09T13:37:30.224524+00:00",
+    "at": "2026-11-09T14:36:18.562582+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 127,
+    "new": 5,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 7
+        "new": 1
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 3
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
@@ -5190,12 +5834,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 7
+        "new": 1
       },
       {
         "name": "Dark Reading",
@@ -5205,12 +5849,12 @@
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 3
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -5225,12 +5869,12 @@
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -5268,7 +5912,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -5278,7 +5922,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -5323,7 +5967,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -5389,11 +6033,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 77,
-        "entries": 34728,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -5419,11 +6059,21 @@
     "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
   ],
   "cases": {
+    "security-in-the-delivery-path": [
+      "dc5614f2b12e88df71d65252",
+      "b6da29b835091ff58f55ac3c"
+    ],
+    "vendor-release-automation": [
+      "dc5614f2b12e88df71d65252",
+      "4cf8ced66f8a8e1b333037dc",
+      "4f6092e3051fc0bba34ad92c"
+    ],
     "audit-ready-by-design": [
       "4d02c260bfd3474beac1944c",
       "c0a75f523c1f1c3a1545cf43",
       "52cb491a464080ba8805c5e2",
       "f776bd5e9fd822fddca3b2a3",
+      "b3baae1d096d17a2a90679e5",
       "f6b62171372ecf854c7ef0b0"
     ],
     "continuous-vulnerability-management": [
@@ -5447,17 +6097,11 @@
       "4ed525acbf3dc9585431b8dd",
       "1fded00034c4e2c1b6de31a3",
       "3128db2ea78627fe5e9756f5",
-      "7f7d898c5eefed4c747ac485"
+      "7f7d898c5eefed4c747ac485",
+      "97dd5a720922c10c00764667"
     ],
     "secure-development-for-automotive": [
       "3b71139034dea3967b03e2c0"
-    ],
-    "security-in-the-delivery-path": [
-      "b6da29b835091ff58f55ac3c"
-    ],
-    "vendor-release-automation": [
-      "4cf8ced66f8a8e1b333037dc",
-      "4f6092e3051fc0bba34ad92c"
     ],
     "security-at-telecom-scale": [
       "f6b62171372ecf854c7ef0b0"
