@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-10",
-  "start": "2026-11-09T13:16:01.855813+00:00",
-  "end": "2026-11-10T13:16:01.855813+00:00",
+  "start": "2026-11-09T13:54:27.395090+00:00",
+  "end": "2026-11-10T13:54:27.395090+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -3570,6 +3570,110 @@
       "included": true
     },
     {
+      "cluster_id": "40742b5d92962519607469e8",
+      "headline": "Qubole supply chain compromise exposes customer data and secrets",
+      "summary": "Attackers reportedly used compromised Qubole IAM credentials to access customer files and secrets, including keys, environment variables, and credentials. The report points to a supply-chain compromise affecting multiple downstream organizations. Defenders should review cloud IAM hardening, credential hygiene, and third-party access paths.",
+      "category": "supply_chain",
+      "importance": "high",
+      "importance_rationale": "This describes a vendor-related compromise with direct downstream customer impact and theft of sensitive secrets. Supply-chain incidents involving credentials and customer data are operationally significant even when the full scope is still emerging.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 65,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 80,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 75,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 35,
+        "siem_detection": 30,
+        "iam_pam": 80,
+        "email_phishing": 0,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Qubole",
+        "cloud IAM",
+        "customer secrets",
+        "environment variables"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detection rule was provided in the source. Relevant monitoring would focus on cloud IAM anomalies, unusual secret access, and downstream credential misuse.",
+      "related_case_studies": [
+        "security-services-for-investment-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review Qubole-related identities, rotate exposed secrets, inspect downstream access logs, and validate third-party cloud access controls and blast-radius containment.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/over-a-dozen-organizations-hit-in-qubole-supply-chain-attack/",
+          "source": "SecurityWeek",
+          "published": "2026-11-10T13:27:44+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This describes a vendor-related compromise with direct downstream customer impact and theft of sensitive secrets. Supply-chain incidents involving credentials and customer data are operationally significant even when the full scope is still emerging.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [
+          "https://www.securityweek.com/over-a-dozen-organizations-hit-in-qubole-supply-chain-attack/"
+        ],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 8.0,
+        "practice": 12.0,
+        "weighted_total": 75.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "878c1fcf85ee5c0fddb674cf",
       "headline": "Danfoss refrigeration systems remain exposed on the internet",
       "summary": "A report says hundreds of Danfoss refrigeration installations are still reachable online despite recent attacks on supermarket cooling systems. The item highlights exposure risk rather than confirming a new compromise.",
@@ -3981,118 +4085,6 @@
       "included": true
     },
     {
-      "cluster_id": "7f7d898c5eefed4c747ac485",
-      "headline": "US Treasury restricts MEXC over sanctions evasion and cybercrime ties",
-      "summary": "The US Treasury has taken action against MEXC Global, cutting off access to the US financial system over sanctions evasion concerns and reported cybercrime links. The move is a regulatory and law-enforcement action affecting a crypto exchange with US relevance.",
-      "category": "law_enforcement",
-      "importance": "high",
-      "importance_rationale": "This is a significant US enforcement action against a financial platform tied to sanctions and cybercrime concerns, which is important for compliance and financial risk monitoring.",
-      "location_relevance": {
-        "US": 100,
-        "Europe": 35,
-        "MEA": 20,
-        "Other": 25
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 15,
-        "investment_management": 25,
-        "government": 40,
-        "retail_banking": 35,
-        "global_it_services": 10,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 50,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "cryptocurrency exchange",
-        "financial sanctions compliance"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No direct detection-rule citation is warranted from the source; this is primarily a compliance and law-enforcement development rather than a technical intrusion pattern.",
-      "related_case_studies": [
-        "security-services-for-investment-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "investment_management",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Review sanctions-screening, third-party risk, and transaction monitoring controls for crypto-exchange exposure and related counterparties.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/us-bans-mexc-crypto-exchange-over-sanctions-evasion-cybercrime-links/",
-          "source": "BleepingComputer",
-          "published": "2026-11-09T13:28:56+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a significant US enforcement action against a financial platform tied to sanctions and cybercrime concerns, which is important for compliance and financial risk monitoring.",
-      "watch_tech": [
-        {
-          "name": "Exchange",
-          "aliases": [
-            "Microsoft Exchange",
-            "Exchange Server"
-          ],
-          "cross_industry": true,
-          "vendor": "microsoft"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 71.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 15.0,
-        "industry": 4.0,
-        "practice": 7.5,
-        "weighted_total": 71.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "99ca2ce9ce5fc1e7f33e8d0b",
       "headline": "Bitter targets South Asian organizations with new PapRAT backdoor",
       "summary": "Researchers observed the Bitter espionage group using a previously unreported backdoor called PapRAT against South Asian organizations. The report highlights a targeted cyberespionage campaign with new malware capabilities, but it does not indicate public exploitation of a common enterprise product.",
@@ -4294,106 +4286,6 @@
         "location": 14.25,
         "industry": 1.0,
         "practice": 10.5,
-        "weighted_total": 70.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "5f33f93916033478181eb861",
-      "headline": "Sega says vendor breach exposed customer email addresses",
-      "summary": "Sega said a compromise at its email delivery vendor exposed customer email addresses tied to about 2.2 million accounts. The incident highlights third-party breach risk and the need for prompt phishing awareness when vendor-held data is exposed.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "A vendor compromise affecting a large customer set is a significant data-breach event, especially because exposed contact data can support follow-on phishing and fraud.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 80
-      },
-      "countries_mentioned": [
-        "JP"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 25,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 75,
-        "data_protection_dlp": 70,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "email delivery provider",
-        "customer contact data"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No source-linked detection rule is available; defenders should focus on vendor risk monitoring, unusual mail-sending activity, and phishing response workflows.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Notify affected users, validate vendor security controls, and heighten monitoring for phishing that abuses the exposed email addresses.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/email-sega-customers-vendor-breach/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-11-09T13:31:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "A vendor compromise affecting a large customer set is a significant data-breach event, especially because exposed contact data can support follow-on phishing and fraud.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 70.75,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.0,
-        "industry": 2.5,
-        "practice": 11.25,
         "weighted_total": 70.75,
         "severity_band": [
           65,
@@ -5140,6 +5032,108 @@
         "industry": 7.5,
         "practice": 11.25,
         "weighted_total": 60.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5d459d19d74417033033c435",
+      "headline": "Dutch cabinet proposes law to formalize biometric scan use for identity cards",
+      "summary": "The Dutch government wants to codify the use of biometric scans by municipalities when issuing identity documents. The proposal concerns legal authorization for a public-sector identity process, not a cybersecurity incident. Organizations should treat it as a governance and privacy-policy development.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a national policy proposal affecting identity issuance and personal data handling in the Netherlands. It has compliance and privacy implications, but the operational security impact is indirect unless and until the law is enacted and implemented.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 95,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 80,
+        "retail_banking": 0,
+        "global_it_services": 20,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 75,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "biometric identity systems",
+        "municipal identity issuance"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. The main relevance is governance, privacy, and identity-data handling rather than threat detection.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Track the legislative process, assess privacy and retention requirements, and update identity-issuance governance and records-handling controls if the proposal advances.",
+      "confidence": 0.91,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961075/Kabinet+wil+biometrische+scan+bij+uitgifte+identiteitsbewijs+wettelijk+vastleggen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-10T13:37:13+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a national policy proposal affecting identity issuance and personal data handling in the Netherlands. It has compliance and privacy implications, but the operational security impact is indirect unless and until the law is enacted and implemented.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 60.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 8.0,
+        "practice": 11.25,
+        "weighted_total": 60.5,
         "severity_band": [
           35,
           64.99
@@ -6325,103 +6319,6 @@
       "included": true
     },
     {
-      "cluster_id": "dca9748487c3dfb8451ed81d",
-      "headline": "Weekly recap highlights active exploitation, exposed devices, and broader attack activity",
-      "summary": "This recap points to multiple ongoing security issues, including exploitation of a simple authentication flaw and attacks that blend into normal web traffic. It also mentions credential theft from network devices and abuse of tools used to keep systems updated or managed. The source is a roundup, so some details remain broad rather than fully attributed.",
-      "category": "other",
-      "importance": "medium",
-      "importance_rationale": "The item is a recap rather than a single confirmed incident, but it references active exploitation and several enterprise-relevant attack themes. That makes it useful for defenders, though the source does not provide enough detail to rate it as high or critical.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 70,
-        "Other": 70
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 55,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 35,
-        "vuln_exposure_mgmt": 50,
-        "devsecops": 35,
-        "siem_detection": 55,
-        "iam_pam": 50,
-        "email_phishing": 15,
-        "data_protection_dlp": 15,
-        "ot_ics": 20,
-        "grc_audit": 10,
-        "security_automation": 30,
-        "ai_governance": 10
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No rule URLs were present in the source. Defenders should look for unusual authentication patterns, management-plane access, and anomalous outbound traffic tied to device administration.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review exposed management services, enforce strong authentication, and inspect logs for unusual access to admin or update tooling. Prioritize monitoring for anomalous web and device traffic tied to account access and credential use.",
-      "confidence": 0.74,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html",
-          "source": "The Hacker News",
-          "published": "2026-11-09T13:28:25+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "The item is a recap rather than a single confirmed incident, but it references active exploitation and several enterprise-relevant attack themes. That makes it useful for defenders, though the source does not provide enough detail to rate it as high or critical.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [
-          "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html"
-        ],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 51.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 10.5,
-        "industry": 5.5,
-        "practice": 8.25,
-        "weighted_total": 51.25,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "e409f643c4f2cc8a9977f68a",
       "headline": "Amplifon U.S. notifies customers after medical-data breach",
       "summary": "Amplifon’s U.S. business says it is notifying customers after a breach that exposed personal information and medical data. The incident appears limited to the company’s U.S. operations based on the source. No technical details or attacker attribution were provided.",
@@ -7330,6 +7227,108 @@
         "industry": 6.0,
         "practice": 9.0,
         "weighted_total": 33.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "3d92a42ac7f76306182b96f0",
+      "headline": "CISA updates cyber incident form to better identify linked attacks",
+      "summary": "CISA revised its online incident reporting form to help analysts recognize when multiple reported incidents may be part of the same campaign. The update adds more specific questions and uses MITRE ATT&CK language to standardize reporting. It is a reporting-process change rather than a new security incident or advisory.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is a U.S. government reporting-process update with no new enforcement action, deadline, or technical control change. It may improve incident correlation, but it does not materially increase near-term operational risk on its own.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 40,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "CISA incident reporting forms",
+        "MITRE ATT&CK"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. The update may help defenders normalize incident intake, but it does not supply a new rule or telemetry source.",
+      "related_case_studies": [
+        "audit-ready-by-design"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Update incident intake workflows and reporting templates to align with the revised CISA questionnaire and ATT&CK-style terminology.",
+      "confidence": 0.83,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/10/cisa-incident-reporting-form-update/",
+          "source": "Help Net Security",
+          "published": "2026-11-10T13:17:50+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a U.S. government reporting-process update with no new enforcement action, deadline, or technical control change. It may improve incident correlation, but it does not materially increase near-term operational risk on its own.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 31.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 13.5,
+        "industry": 4.0,
+        "practice": 5.25,
+        "weighted_total": 31.75,
         "severity_band": [
           0,
           34.99
@@ -8567,105 +8566,6 @@
       "included": false
     },
     {
-      "cluster_id": "5193ddc0bdfac1161b4394b7",
-      "headline": "EFF criticizes Google's AI rollout in schools",
-      "summary": "The EFF criticized Google over pushing AI products into schools. This is a policy and product-adoption debate, not a cybersecurity incident, and the report does not describe a security flaw or breach.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "The item concerns AI adoption criticism and education policy, with no direct security event or enterprise cyber risk described.",
-      "location_relevance": {
-        "US": 50,
-        "Europe": 10,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 20,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 25
-      },
-      "affected_technologies": [
-        "Google AI products"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules apply based on the source.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Track the governance discussion separately from security operations; assess any school AI rollout against policy, privacy, and procurement requirements.",
-      "confidence": 0.96,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/960915/EFF+hekelt+Google+over+het+opdringen+van+AI+aan+scholen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-09T13:17:34+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "The item concerns AI adoption criticism and education policy, with no direct security event or enterprise cyber risk described.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 22.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 7.5,
-        "industry": 2.0,
-        "practice": 3.75,
-        "weighted_total": 22.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "f932ce86887297f16c587a02",
       "headline": "Anthropic prompt-engineering guidance explores ownership cues in Claude Fable 5.2",
       "summary": "An article discusses Anthropic documentation on how prompt wording can influence coding behavior in Claude Fable 5.2. It is a product and research discussion about model prompting rather than a security incident. The security relevance is mainly around AI governance and safe development practices.",
@@ -9060,105 +8960,6 @@
         "industry": 2.0,
         "practice": 6.0,
         "weighted_total": 21.5,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "770852eaa9080b43a3e6930e",
-      "headline": "PyPI adds security tab to surface release attestations",
-      "summary": "PyPI has added a security tab to project pages so developers can more easily review release provenance. The update helps users see whether files have digital attestations and whether a release has full provenance. This is a product and security-transparency change rather than an incident.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is a product/UI improvement that may help developers verify package provenance, but it does not describe a vulnerability, exploit, or operational incident.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 10,
-        "government": 5,
-        "retail_banking": 5,
-        "global_it_services": 25,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 45,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "PyPI",
-        "Python package releases",
-        "software provenance attestations"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule linkage is appropriate; this is a platform feature announcement, not an attack pattern or product flaw.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Review how your software delivery process records and verifies package provenance, and consider whether attestation checks belong in your build and release workflow.",
-      "confidence": 0.93,
-      "sources": [
-        {
-          "url": "https://www.helpnetsecurity.com/2026/11/09/pypi-security-tab-release-attestations/",
-          "source": "Help Net Security",
-          "published": "2026-11-09T13:23:29+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a product/UI improvement that may help developers verify package provenance, but it does not describe a vulnerability, exploit, or operational incident.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 21.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.0,
-        "industry": 2.5,
-        "practice": 6.75,
-        "weighted_total": 21.25,
         "severity_band": [
           0,
           34.99
@@ -10169,9 +9970,9 @@
   ],
   "counts": {
     "critical": 10,
-    "high": 35,
+    "high": 34,
     "medium": 22,
-    "low": 30
+    "low": 29
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -10213,7 +10014,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 19,
+  "watch_hits": 18,
   "watch": {
     "devops_appsec": [
       {
@@ -10274,11 +10075,6 @@
         "technology": "Exchange",
         "headline": "Turla uses new Cereal malware to target Microsoft Exchange email servers",
         "cluster_id": "f91af9aa9454d040d24b0d91"
-      },
-      {
-        "technology": "Exchange",
-        "headline": "US Treasury restricts MEXC over sanctions evasion and cybercrime ties",
-        "cluster_id": "7f7d898c5eefed4c747ac485"
       }
     ],
     "infrastructure": [
@@ -10734,53 +10530,53 @@
       }
     ]
   },
-  "other_count": 16,
+  "other_count": 14,
   "source_health": {
-    "at": "2026-11-10T13:16:01.855813+00:00",
+    "at": "2026-11-10T13:54:27.395090+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 122,
+    "new": 3,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 14
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -10790,22 +10586,22 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -10838,17 +10634,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -10893,7 +10689,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -10933,7 +10729,7 @@
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -10959,16 +10755,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 34,
-        "entries": 34762,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -11021,10 +10813,12 @@
       "da213ac7842f9a508a124b26",
       "a01d90aa282cdf3c758b08cf",
       "0c23714afd5f8eb0f3181ed0",
+      "5d459d19d74417033033c435",
       "3d19a4956da4f279fd844889",
       "dcde3d2c46f168c18caa12e8",
       "b3baae1d096d17a2a90679e5",
       "f49c60207292a0382467afa0",
+      "3d92a42ac7f76306182b96f0",
       "d472411a080efc8c2a26cd72",
       "e4a775a9243fe404836e1df5",
       "0be68fdf961f2945d3aaa84b"
@@ -11058,7 +10852,7 @@
       "46ceca42091fd2ff814dd5ae",
       "4864fb36b4782d0a5b79ee40",
       "ee5e2ceda03abe1e3e50107e",
-      "7f7d898c5eefed4c747ac485",
+      "40742b5d92962519607469e8",
       "97dd5a720922c10c00764667",
       "b87eb43aa2dd7303267bcd67",
       "e409f643c4f2cc8a9977f68a",
