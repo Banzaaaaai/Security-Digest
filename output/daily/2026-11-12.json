@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-12",
-  "start": "2026-11-11T13:32:13.021187+00:00",
-  "end": "2026-11-12T13:32:13.021187+00:00",
+  "start": "2026-11-11T14:10:33.385088+00:00",
+  "end": "2026-11-12T14:10:33.385088+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1532,6 +1532,123 @@
         "industry": 8.0,
         "practice": 13.5,
         "weighted_total": 80.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "92fa12803ef3e7a7b0edaffd",
+      "headline": "Campaign hijacks GitHub repositories to steal CI secrets",
+      "summary": "Attackers used hijacked accounts to plant a secret-stealing workflow in thousands of GitHub repositories. The campaign is relevant to software delivery teams because it targets CI secrets and repository trust relationships at scale.",
+      "category": "supply_chain",
+      "importance": "high",
+      "importance_rationale": "This is a broad compromise of the software delivery ecosystem, involving GitHub repositories and CI secret theft at scale. It directly affects DevSecOps and downstream credential protection, making it operationally important for enterprise developers and platform teams.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 85,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 95,
+        "siem_detection": 25,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "GitHub",
+        "CI secrets",
+        "GitHub Actions"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were included. Detection should prioritize repository workflow changes, suspicious action runs, and unexpected secret access in CI systems.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Audit GitHub organizations for rogue workflows, compromised accounts, and exposed CI secrets, and rotate any credentials that may have been accessible to workflow runners.",
+      "confidence": 0.96,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/attacker-targets-60000-github-repositories-in-credential-theft-campaign/",
+          "source": "SecurityWeek",
+          "published": "2026-11-12T13:39:03+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a broad compromise of the software delivery ecosystem, involving GitHub repositories and CI secret theft at scale. It directly affects DevSecOps and downstream credential protection, making it operationally important for enterprise developers and platform teams.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "GitHub Actions",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 80.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 8.5,
+        "practice": 14.25,
+        "weighted_total": 80.5,
         "severity_band": [
           65,
           84.99
@@ -3842,6 +3959,208 @@
       "included": true
     },
     {
+      "cluster_id": "96ca286e5feea1d79884dd2a",
+      "headline": "Romania disrupts alleged Russian cyberespionage against government email systems",
+      "summary": "Romanian authorities said they disrupted a Russian state-linked cyber-espionage campaign aimed at government email accounts before data was exfiltrated. The report suggests a targeted public-sector incident, but the outcome described is interruption rather than confirmed theft.",
+      "category": "apt_nation_state",
+      "importance": "high",
+      "importance_rationale": "A state-linked campaign against government email systems is material for public-sector defenders and fits the rubric for nation-state activity in a target region. The article describes disruption before exfiltration, so it is important but not a confirmed breach.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 90,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [
+        "RO"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 20,
+        "email_phishing": 65,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "government email systems",
+        "email accounts"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "Russian state-linked hackers"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No source-linked detection rules were provided. Relevant monitoring would focus on suspicious email access, anomalous logins, and exfiltration attempts in government mail systems.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Hunt for suspicious mailbox access, impossible travel, and unusual data-access patterns in government email environments, and review identity protections for admin and privileged accounts.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://therecord.media/romania-russia-cyberattack-emails",
+          "source": "The Record",
+          "published": "2026-11-12T13:30:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A state-linked campaign against government email systems is material for public-sector defenders and fits the rubric for nation-state activity in a target region. The article describes disruption before exfiltration, so it is important but not a confirmed breach.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 77.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 9.5,
+        "practice": 9.75,
+        "weighted_total": 77.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "c51672e26ab267d475648694",
+      "headline": "Dutch police seize malware infrastructure tied to stolen personal data",
+      "summary": "Dutch police say they took servers and domains used by the Gootloader and CastleRAT malware offline in an international operation. The action also uncovered millions of stolen personal records, indicating a broad criminal infrastructure and data-theft impact. ",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "This is a law-enforcement disruption of malware infrastructure with reported theft of millions of personal records. It signals material enterprise exposure to credential theft and data loss, but the article does not indicate a major confirmed breach of a target-sector enterprise or active exploitation of a watch-listed product.",
+      "location_relevance": {
+        "US": 55,
+        "Europe": 95,
+        "MEA": 35,
+        "Other": 45
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 35,
+        "telecommunications": 35,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 70,
+        "retail_banking": 55,
+        "global_it_services": 55,
+        "logistics": 35,
+        "industrial_manufacturing": 35,
+        "automotive": 35
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 10,
+        "siem_detection": 35,
+        "iam_pam": 30,
+        "email_phishing": 60,
+        "data_protection_dlp": 75,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Gootloader",
+        "CastleRAT"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided in the source, so no direct sigma/KQL/Splunk references can be attached. Defenders should look for downloader and RAT activity, unusual domain lookups, outbound beaconing, and signs of stolen-data exfiltration.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review telemetry for downloader and RAT behavior, domain-resolution anomalies, and outbound exfiltration patterns; validate endpoint isolation, phishing controls, and incident-response playbooks for credential and personal-data theft.",
+      "confidence": 0.88,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961420/Politie+haalt+malware-servers+offline%2C+vindt+miljoenen+gestolen+persoonsgegevens?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-12T13:50:15+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a law-enforcement disruption of malware infrastructure with reported theft of millions of personal records. It signals material enterprise exposure to credential theft and data loss, but the article does not indicate a major confirmed breach of a target-sector enterprise or active exploitation of a watch-listed product.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 77.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 11.25,
+        "weighted_total": 77.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "135b730abd34f5ffaf86b09e",
       "headline": "xfsprogs xfs_admin command injection can enable local code execution",
       "summary": "Amazon Linux Security Center lists a CVE in xfs_admin from xfsprogs where user-supplied arguments are not validated correctly. A local attacker may be able to trigger command execution and possibly privilege escalation depending on how the utility is used. The report is a vulnerability disclosure and does not indicate active exploitation or confirmed Amazon Linux patch status.",
@@ -3941,127 +4260,6 @@
         "industry": 7.0,
         "practice": 12.75,
         "weighted_total": 77.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "84cdfac250c3be22ebab2e4c",
-      "headline": "Citrix and Ivanti release patches for critical and high-severity flaws",
-      "summary": "Citrix and Ivanti have issued security updates for multiple serious vulnerabilities in their products. The issues could enable certificate tampering, remote code execution, or host compromise, but no active exploitation is described in the source.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "The cluster concerns critical and high-severity vulnerabilities in widely used enterprise products. Even without reported exploitation, the potential for remote code execution and host compromise makes it operationally important.",
-      "location_relevance": {
-        "US": 90,
-        "Europe": 90,
-        "MEA": 90,
-        "Other": 90
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 55,
-        "telecommunications": 55,
-        "private_banking": 55,
-        "investment_management": 55,
-        "government": 55,
-        "retail_banking": 55,
-        "global_it_services": 60,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 85,
-        "devsecops": 5,
-        "siem_detection": 10,
-        "iam_pam": 15,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 5,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Citrix NetScaler",
-        "Ivanti Connect Secure"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Defenders should prioritize patching, exposure review, and checks for abnormal administrative or certificate-related changes.",
-      "related_case_studies": [
-        "vendor-release-automation",
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Apply vendor patches promptly, review internet-facing Citrix and Ivanti appliances, and validate that certificate stores and admin activity show no signs of tampering.",
-      "confidence": 0.95,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/",
-          "source": "SecurityWeek",
-          "published": "2026-11-11T13:37:19+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "The cluster concerns critical and high-severity vulnerabilities in widely used enterprise products. Even without reported exploitation, the potential for remote code execution and host compromise makes it operationally important.",
-      "watch_tech": [
-        {
-          "name": "Citrix NetScaler",
-          "aliases": [
-            "NetScaler",
-            "Citrix ADC"
-          ],
-          "cross_industry": true,
-          "vendor": "endpoint_network"
-        },
-        {
-          "name": "Ivanti Connect Secure",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "endpoint_network"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [
-          "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/"
-        ],
-        "critical_flaw": [
-          "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 77.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 13.5,
-        "industry": 6.0,
-        "practice": 12.75,
-        "weighted_total": 77.25,
         "severity_band": [
           65,
           84.99
@@ -4715,110 +4913,6 @@
       "included": true
     },
     {
-      "cluster_id": "d8637e378806af0b60638192",
-      "headline": "Observed attempts to abuse Qlik Sense servers with shell payloads",
-      "summary": "Researchers observed suspicious activity against Qlik Sense servers, including failed attempts to deliver reverse shell commands and stage additional exploits. The activity was seen against several EU-based customers, but the source does not confirm a successful compromise.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "This is observed in-the-wild targeting of an enterprise application, with attempted shell delivery and follow-on exploitation behavior. Even though compromise was not confirmed, the activity raises immediate defensive urgency for exposed Qlik Sense deployments.",
-      "location_relevance": {
-        "US": 55,
-        "Europe": 90,
-        "MEA": 45,
-        "Other": 55
-      },
-      "countries_mentioned": [
-        "EU"
-      ],
-      "industry_relevance": {
-        "energy_services": 35,
-        "telecommunications": 35,
-        "private_banking": 35,
-        "investment_management": 45,
-        "government": 40,
-        "retail_banking": 35,
-        "global_it_services": 55,
-        "logistics": 30,
-        "industrial_manufacturing": 35,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 65,
-        "devsecops": 0,
-        "siem_detection": 70,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Qlik Sense",
-        "PowerShell",
-        "ActiveMQ",
-        "Veeam"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Detection teams should hunt for Qlik Sense anomalies, unexpected PowerShell use, and adjacent exploitation activity on internet-facing servers.",
-      "related_case_studies": [
-        "vendor-release-automation"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Hunt for suspicious Qlik Sense activity, review external exposure, and correlate server logs for PowerShell, reverse shell, and exploit staging indicators.",
-      "confidence": 0.92,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/11/hackers-target-qlik-sense-servers-with.html",
-          "source": "The Hacker News",
-          "published": "2026-11-11T14:01:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is observed in-the-wild targeting of an enterprise application, with attempted shell delivery and follow-on exploitation behavior. Even though compromise was not confirmed, the activity raises immediate defensive urgency for exposed Qlik Sense deployments.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 74.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 13.5,
-        "industry": 5.5,
-        "practice": 10.5,
-        "weighted_total": 74.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "0a7fd303a43b8569f851a7ca",
       "headline": "ConnectWise ScreenConnect partner environments hit by rogue client activity",
       "summary": "ConnectWise says it disabled several third-party extensions after reports of unauthorized access in partner environments. The company says there is no evidence of a compromise in its infrastructure or a ScreenConnect software vulnerability, and the public details point to suspicious client activity rather than a confirmed platform breach. The incident is relevant to remote management ecosystems and supply-chain trust.",
@@ -5349,6 +5443,105 @@
       "included": true
     },
     {
+      "cluster_id": "486a19d67897cad04d5d6cba",
+      "headline": "Europol-led takedown disrupts malware infrastructure and reveals stolen logins",
+      "summary": "An international law-enforcement action disrupted infrastructure used by malware operations and reportedly recovered millions of stolen credentials. The piece highlights a broad enforcement effort against credential theft and malware distribution rather than a single victim breach.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "The takedown targets malware infrastructure and credential theft at scale across multiple countries, which is material to defenders because it affects a broad criminal ecosystem used for follow-on intrusion and ransomware activity. It is an enforcement event with clear enterprise security relevance, but the article does not describe a new live exploit.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 90,
+        "MEA": 40,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 30,
+        "retail_banking": 25,
+        "global_it_services": 35,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 25,
+        "iam_pam": 60,
+        "email_phishing": 55,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "credential theft",
+        "malware infrastructure",
+        "stolen logins"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No direct detection-rule URLs were provided. Defenders should focus on compromised credential use, suspicious authentication patterns, and malware-delivery telemetry.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Check for reuse of compromised credentials, strengthen MFA and password hygiene, and review detections for malware delivery and credential-harvesting activity.",
+      "confidence": 0.89,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/12/europol-operation-endgame-malware-takedown/",
+          "source": "Help Net Security",
+          "published": "2026-11-12T13:34:14+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The takedown targets malware infrastructure and credential theft at scale across multiple countries, which is material to defenders because it affects a broad criminal ecosystem used for follow-on intrusion and ransomware activity. It is an enforcement event with clear enterprise security relevance, but the article does not describe a new live exploit.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 71.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 3.5,
+        "practice": 9.0,
+        "weighted_total": 71.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "2fa347656b166d5774882a4b",
       "headline": "Baker Tilly clients notified after third-party provider data breach",
       "summary": "Baker Tilly says a third-party provider suffered a breach that exposed personal information for some clients and dependents. The reporting indicates a downstream vendor incident rather than a direct compromise of Baker Tilly systems. Defenders should assess third-party exposure and notification obligations.",
@@ -5868,6 +6061,104 @@
         "industry": 7.0,
         "practice": 12.75,
         "weighted_total": 61.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "16dd8d34e480eb666ea02b8f",
+      "headline": "Chrome and Firefox release patches for more than 180 vulnerabilities",
+      "summary": "Google and Mozilla released browser updates that collectively address a large number of flaws. The article is a patch roundup, so the main value is exposure management rather than a specific exploit disclosure.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "Browser patch roundups are operationally relevant because Chrome and Firefox are widely used enterprise software, but the article does not identify a specific exploited flaw or emergency condition. The risk is common and timely, not exceptional.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 60,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 20,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Chrome",
+        "Firefox"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection-rule links were provided. The relevant control is rapid browser patching and exposure tracking for end-user devices and managed workstations.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Prioritize browser patch deployment and verify that managed endpoints update Chrome and Firefox promptly, especially on systems used for access to sensitive internal apps.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/chrome-firefox-updates-patch-180-vulnerabilities/",
+          "source": "SecurityWeek",
+          "published": "2026-11-12T13:42:09+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Browser patch roundups are operationally relevant because Chrome and Firefox are widely used enterprise software, but the article does not identify a specific exploited flaw or emergency condition. The risk is common and timely, not exceptional.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 60.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 6.0,
+        "practice": 13.5,
+        "weighted_total": 60.75,
         "severity_band": [
           35,
           64.99
@@ -6759,106 +7050,6 @@
         "industry": 5.5,
         "practice": 11.25,
         "weighted_total": 55.75,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "9f6bff35230855835cfd3b73",
-      "headline": "Asus and Zoom ship security fixes for privilege and code-execution flaws",
-      "summary": "Asus and Zoom have released patches for vulnerabilities that could allow command execution, memory overwrites, or privilege escalation. The source does not report exploitation in the wild or specific CVEs.",
-      "category": "vendor_product",
-      "importance": "medium",
-      "importance_rationale": "This is a vendor patch advisory affecting broadly used products, but the source does not describe active exploitation or a large-scale incident. It is relevant for routine exposure management and patch prioritization.",
-      "location_relevance": {
-        "US": 80,
-        "Europe": 80,
-        "MEA": 80,
-        "Other": 80
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 45,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 80,
-        "devsecops": 5,
-        "siem_detection": 5,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 5,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Zoom"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided in the source material. Review patch levels and monitor for abnormal Zoom or Asus application behavior on exposed systems.",
-      "related_case_studies": [
-        "vendor-release-automation",
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Deploy the available fixes, inventory affected Zoom and Asus installations, and verify whether any vulnerable versions are exposed externally or widely deployed internally.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/asus-zoom-release-security-patches/",
-          "source": "SecurityWeek",
-          "published": "2026-11-11T13:58:38+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a vendor patch advisory affecting broadly used products, but the source does not describe active exploitation or a large-scale incident. It is relevant for routine exposure management and patch prioritization.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 55.5,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 12.0,
-        "industry": 4.5,
-        "practice": 12.0,
-        "weighted_total": 55.5,
         "severity_band": [
           35,
           64.99
@@ -9132,6 +9323,106 @@
       "included": true
     },
     {
+      "cluster_id": "a937b4bc4180627d228bfefb",
+      "headline": "GreyNoise benchmarks AI models on defensive security tasks",
+      "summary": "GreyNoise evaluated 46 AI models on defensive security work such as network detection, file analysis, and attack forensics. The results are meant to show which systems are more useful to defenders, but the piece is research rather than an incident or product vulnerability.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a benchmark and research write-up about AI defensive capability, not a security incident, exploit, or regulatory change. It may interest teams exploring AI-assisted security workflows, but it does not indicate immediate operational risk.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 20,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 25,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 15,
+        "ai_governance": 80
+      },
+      "affected_technologies": [
+        "AI models",
+        "network detections",
+        "file detections",
+        "attack forensics"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rule links were provided in the source material. The article is research-oriented, so any detection relevance is limited to analytical use cases rather than actionable alert content.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review whether AI tools can assist with detection triage or forensics, and validate outputs against your own telemetry before operational use.",
+      "confidence": 0.89,
+      "sources": [
+        {
+          "url": "https://www.greynoise.io/blog/ai-cyber-index-benchmarking-defensive-capabilities",
+          "source": "GreyNoise Blog",
+          "published": "2026-11-12T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a benchmark and research write-up about AI defensive capability, not a security incident, exploit, or regulatory change. It may interest teams exploring AI-assisted security workflows, but it does not indicate immediate operational risk.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 2.0,
+        "practice": 12.0,
+        "weighted_total": 26.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "db4f413a0b8644b794ba1e7e",
       "headline": "Researcher says Anthropic security project fixed few reported flaws",
       "summary": "A researcher claims Anthropic's Project Glasswing led to relatively few fixes compared with the number of vulnerabilities reported. This is a research and program-effectiveness discussion, not evidence of a specific exploited product issue.",
@@ -9228,104 +9519,6 @@
         ]
       },
       "included": true
-    },
-    {
-      "cluster_id": "b5b225f8da047fd6d2e7b401",
-      "headline": "Google DeepMind formally verifies parts of Signal's encryption",
-      "summary": "Google DeepMind reported a mathematical verification project involving portions of Signal's encryption design. The article frames this as a research and assurance advance rather than a vulnerability or incident.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "This is security research about formal verification, not an operational incident or disclosed flaw. It may interest cryptography and assurance teams, but it does not create immediate defensive urgency.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 40,
-        "MEA": 40,
-        "Other": 40
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 20,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 10,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 0,
-        "ai_governance": 55
-      },
-      "affected_technologies": [
-        "Signal",
-        "Google DeepMind"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rule links were provided and the item is research-focused rather than incident-driven.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Treat this as a research signal for cryptographic assurance and AI-assisted verification, not as a deployment or incident response trigger.",
-      "confidence": 0.88,
-      "sources": [
-        {
-          "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
-          "source": "Ars Technica Security",
-          "published": "2026-11-11T14:08:57+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is security research about formal verification, not an operational incident or disclosed flaw. It may interest cryptography and assurance teams, but it does not create immediate defensive urgency.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 25.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 6.0,
-        "industry": 2.0,
-        "practice": 8.25,
-        "weighted_total": 25.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
     },
     {
       "cluster_id": "089a25d350503cb34fd35ef9",
@@ -9540,6 +9733,105 @@
         ]
       },
       "included": true
+    },
+    {
+      "cluster_id": "eeddb13d05c2e069e6ba1fda",
+      "headline": "Lego shuts down BrickLink marketplace during investigation",
+      "summary": "Lego says it took the BrickLink marketplace offline after spotting unusual activity and is investigating what happened. The report does not confirm compromise or data loss, so the operational impact remains uncertain.",
+      "category": "data_breach",
+      "importance": "low",
+      "importance_rationale": "The item describes a precautionary shutdown during an investigation with no confirmed breach, attacker, or data-loss details. That makes it a limited, uncertain incident rather than a high-confidence enterprise risk event.",
+      "location_relevance": {
+        "US": 35,
+        "Europe": 45,
+        "MEA": 25,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 35,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 25,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "BrickLink"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were supplied. Monitoring should focus on account misuse, transaction anomalies, and access logs around the marketplace environment.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Confirm whether any accounts, integrations, or customer data were affected; review logs for unauthorized actions and restore service only after root-cause analysis and containment are complete.",
+      "confidence": 0.72,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/lego-takes-bricklink-marketplace/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-12T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The item describes a precautionary shutdown during an investigation with no confirmed breach, attacker, or data-loss details. That makes it a limited, uncertain incident rather than a high-confidence enterprise risk event.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [
+          "https://www.infosecurity-magazine.com/news/lego-takes-bricklink-marketplace/"
+        ],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 23.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.75,
+        "industry": 3.5,
+        "practice": 3.75,
+        "weighted_total": 23.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
     },
     {
       "cluster_id": "914bfa13aeb7e72a69e784b6",
@@ -10375,103 +10667,6 @@
       "included": false
     },
     {
-      "cluster_id": "602cdb9c2539a61a1427e6f6",
-      "headline": "Utrecht studies possible ban on wearable camera glasses",
-      "summary": "The municipality of Utrecht is examining whether wearing camera glasses should be prohibited. The item is a local policy discussion and does not describe a cybersecurity incident.",
-      "category": "regulation_policy",
-      "importance": "low",
-      "importance_rationale": "This is a local public-policy discussion with no direct cybersecurity control, incident, or enforcement detail. Its operational impact for enterprise defenders is limited.",
-      "location_relevance": {
-        "US": 0,
-        "Europe": 35,
-        "MEA": 0,
-        "Other": 0
-      },
-      "countries_mentioned": [
-        "NL"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 20,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 5,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection content is present in the source material.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Track the policy review for any privacy or compliance implications, but no immediate security action is indicated from this article.",
-      "confidence": 0.78,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/961248/Gemeente+Utrecht+onderzoekt+verbod+op+dragen+van+camerabrillen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-11T14:07:21+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a local public-policy discussion with no direct cybersecurity control, incident, or enforcement detail. Its operational impact for enterprise defenders is limited.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 17.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 5.25,
-        "industry": 2.0,
-        "practice": 1.5,
-        "weighted_total": 17.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "b111380ace3390dcf84089a2",
       "headline": "AI era puts cyber resilience planning under greater pressure",
       "summary": "The item argues that AI is increasing both business dependency on digital systems and the stakes of disruption recovery. It is a strategic commentary on resilience rather than a specific incident or new control requirement.",
@@ -10875,7 +11070,7 @@
   ],
   "counts": {
     "critical": 2,
-    "high": 48,
+    "high": 50,
     "medium": 29,
     "low": 23
   },
@@ -10894,6 +11089,16 @@
         "technology": "GitHub Actions",
         "headline": "Hijacked GitHub accounts used to plant a CI secret-stealing workflow at scale",
         "cluster_id": "b1fc427f51ef7a02649c1c79"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "Campaign hijacks GitHub repositories to steal CI secrets",
+        "cluster_id": "92fa12803ef3e7a7b0edaffd"
+      },
+      {
+        "technology": "GitHub Actions",
+        "headline": "Campaign hijacks GitHub repositories to steal CI secrets",
+        "cluster_id": "92fa12803ef3e7a7b0edaffd"
       },
       {
         "technology": "GitHub",
@@ -11027,18 +11232,6 @@
         "cluster_id": "967141e571a3a88a0b6520bf"
       }
     ],
-    "endpoint_network": [
-      {
-        "technology": "Citrix NetScaler",
-        "headline": "Citrix and Ivanti release patches for critical and high-severity flaws",
-        "cluster_id": "84cdfac250c3be22ebab2e4c"
-      },
-      {
-        "technology": "Ivanti Connect Secure",
-        "headline": "Citrix and Ivanti release patches for critical and high-severity flaws",
-        "cluster_id": "84cdfac250c3be22ebab2e4c"
-      }
-    ],
     "email": [
       {
         "technology": "Proofpoint",
@@ -11158,63 +11351,63 @@
       }
     ]
   },
-  "other_count": 13,
+  "other_count": 12,
   "source_health": {
-    "at": "2026-11-12T13:32:13.021187+00:00",
+    "at": "2026-11-12T14:10:33.385088+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 167,
+    "new": 10,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 13
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 2
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "The Record",
         "ok": true,
-        "new": 4
+        "new": 1
       },
       {
         "name": "CyberScoop",
@@ -11224,17 +11417,17 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Cisco Talos",
@@ -11262,7 +11455,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -11272,12 +11465,12 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
         "ok": false,
-        "new": 0,
+        "new": 3,
         "updated": 0,
         "unchanged": 36,
         "failed": 1,
@@ -11317,7 +11510,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 11
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -11337,7 +11530,7 @@
       {
         "name": "GreyNoise Blog",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "GreyNoise Labs",
@@ -11383,11 +11576,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 80,
-        "entries": 34885,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -11420,6 +11609,7 @@
       "96aa7ffbd04adf13c081edc6",
       "2bbdeb1a542277679f3b4687",
       "0a8851c68d8ec91bfef50b51",
+      "92fa12803ef3e7a7b0edaffd",
       "855e218236dff36c53e585d6",
       "6ee015b627a80bcd5eb6daa2",
       "95bc7c63c87673bf5406f856",
@@ -11433,19 +11623,17 @@
       "fc4026aafbc76ba3ec4e5443",
       "8a29fffc30a153e6da75499c",
       "c98556488e14455d8e02ab53",
-      "84cdfac250c3be22ebab2e4c",
       "1a1b12ab1fd2f3b961a3c516",
-      "d8637e378806af0b60638192",
       "c13c660071cbc757b8089684",
       "9d3ef4f593d83a731539e353",
       "9e16513d165496bbb431d378",
       "814bb238497df035e7f9e4d7",
-      "9f6bff35230855835cfd3b73",
       "56bf5f6cdef50405dfa09c71",
       "c706ca91594a45d9d4253f77"
     ],
     "security-in-the-delivery-path": [
       "b1fc427f51ef7a02649c1c79",
+      "92fa12803ef3e7a7b0edaffd",
       "d60106982525013dc1cf8374",
       "855e218236dff36c53e585d6",
       "a84ff71208fbfdbb9a9ebaa1",
@@ -11533,10 +11721,8 @@
     ],
     "continuous-vulnerability-management": [
       "b440ed68e6ceed8b962c6f5c",
-      "84cdfac250c3be22ebab2e4c",
       "c776eb51cbacc6fa91c682a9",
       "22f809a4ffdc5d07cd850d66",
-      "9f6bff35230855835cfd3b73",
       "37d27702f36416e0f5785579",
       "0784452f97d5a909763a166c"
     ],
