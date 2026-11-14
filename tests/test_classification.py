@@ -6,7 +6,7 @@ from unittest.mock import Mock
 import httpx2
 import pytest
 from anthropic import DefaultHttpxClient, PermissionDeniedError
-from anthropic.types.beta import BetaMessage
+from anthropic.types.beta import BetaMessage, BetaToolUseBlock
 
 from secdigest.classification import (
     FALLBACK_BETA,
@@ -43,8 +43,14 @@ def message(payload, model="claude-opus-5-5", stop_reason="end_turn"):
     )
 
 
-def classified(items, **kwargs):
-    return message({"items": items}, **kwargs)
+def classified(items, model="claude-opus-5-5", stop_reason="tool_use"):
+    """A response with one record_classification call per item, as Claude returns them."""
+    response = message({}, model=model, stop_reason=stop_reason)
+    response.content = response.content[:1] + [
+        BetaToolUseBlock(type="tool_use", id=f"toolu_{i}", name="record_classification", input=item)
+        for i, item in enumerate(items)
+    ]
+    return response
 
 
 def mocked(client, handler):
@@ -120,12 +126,15 @@ def test_messages_sdk_request_and_persistence(config, populated, monkeypatch, en
     assert body["model"] == model
     assert body["fallbacks"] == "default"
     assert body["output_config"]["effort"] == config.settings["models"]["classification_effort"]
-    assert body["output_config"]["format"]["type"] == "json_schema"
+    # One strict call per cluster; a whole-batch response schema is too large to compile.
+    assert "format" not in body["output_config"]
+    [tool] = body["tools"]
+    assert tool["name"] == "record_classification" and tool["strict"] is True
+    assert "tool_choice" not in body  # Forced tool use is rejected on current models.
     # Constraints the API does not enforce move into descriptions; Pydantic still checks them.
-    headline = body["output_config"]["format"]["schema"]["$defs"]["Classification"]["properties"]["headline"]
+    headline = tool["input_schema"]["properties"]["headline"]
     assert "maxLength" not in headline and "maxLength: 120" in headline["description"]
     assert body["system"][0]["cache_control"] == {"type": "ephemeral"}
-    assert "tools" not in body and "tool_choice" not in body
     assert populated.clusters()[0]["classification"]["headline"] == valid["headline"]
 
 
@@ -265,7 +274,7 @@ def test_batch_resume_without_resubmission(config, populated):
     assert submitted["status"] == "pending"
     [request] = client.messages.batches.create.call_args.kwargs["requests"]
     assert request["custom_id"] == "group-0"
-    assert request["params"]["output_config"]["format"]["type"] == "json_schema"
+    assert request["params"]["tools"][0]["strict"] is True
     assert "fallbacks" not in request["params"]  # The Batches API rejects it.
     assert populated.get("batch_job")["provider"] == "anthropic"
     client.messages.batches.retrieve.return_value = SimpleNamespace(processing_status="in_progress")
@@ -336,7 +345,7 @@ def test_answer_after_server_side_fallback_is_parsed():
     assert response_json(response) == {"items": []}
 
 
-@pytest.mark.parametrize("failure", ["max_tokens", "refusal", "no_text", "bad_json"])
+@pytest.mark.parametrize("failure", ["max_tokens", "refusal", "no_call", "duplicate", "other_tool"])
 def test_rejects_unusable_model_output(config, populated, failure):
     cluster = populated.clusters()[0]
     output = classified([cluster["classification"]])
@@ -345,10 +354,12 @@ def test_rejects_unusable_model_output(config, populated, failure):
     elif failure == "refusal":
         output.stop_reason = "refusal"
         output.content = []
-    elif failure == "no_text":
+    elif failure == "no_call":
         output.content = output.content[:1]
+    elif failure == "duplicate":
+        output.content = output.content + output.content[1:]
     else:
-        output.content[1].text = "truncated {"
+        output.content[1].name = "other_tool"
     with pytest.raises(ValueError):
         parse_response(config, output, [cluster], populated)
 
