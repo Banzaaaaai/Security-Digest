@@ -1,4 +1,4 @@
-"""Claude strict tool calls and structured outputs, evidence filtering and resumable Message Batches jobs."""
+"""Claude tool calls and structured outputs, evidence filtering and resumable Message Batches jobs."""
 
 from __future__ import annotations
 
@@ -174,16 +174,17 @@ def classification_params(config, clusters, fulltext=None):
         models["max_tokens"],
         models["classification_effort"],
     )
-    # One strict tool call per cluster: a single response schema covering the whole
-    # batch compiles to a grammar larger than the API accepts. Forced tool_choice is
-    # rejected on current models, so the system prompt asks for the calls.
+    # One tool call per cluster. The API rejects grammar-constrained output for this
+    # schema ("compiled grammar is too large") as a five-cluster response format and
+    # as a strict tool, so the tool is not strict: it carries the full schema, length
+    # and range limits included, and Pydantic validation plus one retry enforce it.
+    # Forced tool_choice is rejected on current models; the system prompt asks for the calls.
     params["tools"] = [
         {
             "name": CLASSIFY_TOOL,
             "description": "Record the classification of one supplied news cluster. "
             "Call once for every supplied cluster_id.",
-            "strict": True,
-            "input_schema": transform_schema(classification_model(config)),
+            "input_schema": classification_model(config).model_json_schema(),
         }
     ]
     return params

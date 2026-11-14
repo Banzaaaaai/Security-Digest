@@ -126,14 +126,13 @@ def test_messages_sdk_request_and_persistence(config, populated, monkeypatch, en
     assert body["model"] == model
     assert body["fallbacks"] == "default"
     assert body["output_config"]["effort"] == config.settings["models"]["classification_effort"]
-    # One strict call per cluster; a whole-batch response schema is too large to compile.
+    # One call per cluster; the API rejects this schema as a compiled grammar, so the
+    # tool is not strict and carries the full schema for Pydantic to enforce.
     assert "format" not in body["output_config"]
     [tool] = body["tools"]
-    assert tool["name"] == "record_classification" and tool["strict"] is True
+    assert tool["name"] == "record_classification" and "strict" not in tool
     assert "tool_choice" not in body  # Forced tool use is rejected on current models.
-    # Constraints the API does not enforce move into descriptions; Pydantic still checks them.
-    headline = tool["input_schema"]["properties"]["headline"]
-    assert "maxLength" not in headline and "maxLength: 120" in headline["description"]
+    assert tool["input_schema"]["properties"]["headline"]["maxLength"] == 120
     assert body["system"][0]["cache_control"] == {"type": "ephemeral"}
     assert populated.clusters()[0]["classification"]["headline"] == valid["headline"]
 
@@ -274,7 +273,7 @@ def test_batch_resume_without_resubmission(config, populated):
     assert submitted["status"] == "pending"
     [request] = client.messages.batches.create.call_args.kwargs["requests"]
     assert request["custom_id"] == "group-0"
-    assert request["params"]["tools"][0]["strict"] is True
+    assert request["params"]["tools"][0]["name"] == "record_classification"
     assert "fallbacks" not in request["params"]  # The Batches API rejects it.
     assert populated.get("batch_job")["provider"] == "anthropic"
     client.messages.batches.retrieve.return_value = SimpleNamespace(processing_status="in_progress")
