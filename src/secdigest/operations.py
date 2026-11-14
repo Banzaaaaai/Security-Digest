@@ -19,6 +19,27 @@ KNOWN_ERROR_TYPES = {
     "api_error",
     "overloaded_error",
 }
+# A 400 carries its cause only in the message. Log which of these fixed words it
+# contains, never the message itself: Actions logs of a public repository are public.
+MESSAGE_HINTS = (
+    "anthropic-beta",
+    "fallback",
+    "output_config",
+    "json_schema",
+    "schema",
+    "effort",
+    "thinking",
+    "cache_control",
+    "max_tokens",
+    "model",
+    "system",
+    "messages",
+    "credit",
+    "billing",
+    "too long",
+    "too complex",
+    "not supported",
+)
 
 
 def api_error_details(exc):
@@ -35,7 +56,10 @@ def api_error_details(exc):
     # Low credit arrives as a 400 or 402 and spend limits as a 400, so the message
     # decides. Inspect it in memory and emit only our fixed labels, never provider text.
     message = str(body.get("message", "")).lower()
-    if kind == "billing_error" or "credit balance" in message:
+    hints = [hint for hint in MESSAGE_HINTS if hint in message]
+    if hints:
+        details["hints"] = hints
+    if kind == "billing_error" or "credit" in message:
         details["category"] = "quota_exhausted"
     elif any(phrase in message for phrase in ("usage limit", "spend limit", "spending limit")):
         details["category"] = "billing_limit"

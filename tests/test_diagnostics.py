@@ -29,6 +29,16 @@ def test_api_diagnostic_never_exposes_provider_message_or_unknown_type(kind):
     assert "private-placeholder" not in json.dumps(details) + safe_trace(error)
 
 
+def test_bad_request_hints_come_only_from_fixed_vocabulary():
+    message = "Unexpected value(s) `private-placeholder` for the `anthropic-beta` header (fallback)."
+    error = APIStatusError(
+        "private-placeholder", response=failed(400), body=body("invalid_request_error", message)
+    )
+    details = api_error_details(error)
+    assert details["hints"] == ["anthropic-beta", "fallback"]
+    assert "private-placeholder" not in json.dumps(details)
+
+
 @pytest.mark.parametrize(
     "status,kind,message,category",
     [
