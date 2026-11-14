@@ -18,8 +18,8 @@ def test_workflow_delivery_modes(kind, mode):
         "KIND": kind,
         "MODE": mode,
         "FORCE_SEND": "true",
-        "OPENAI_API_KEY": "test-placeholder",
-        "OPENAI_BASE_URL": "https://gateway.example.test/openai/v1",
+        "ANTHROPIC_API_KEY": "test-placeholder",
+        "ANTHROPIC_BASE_URL": "https://gateway.example.test/anthropic",
         "SMTP_HOST": "smtp.example.test",
         "SMTP_PORT": "587",
         "SMTP_USER": "sender@example.test",
@@ -32,7 +32,7 @@ def test_workflow_delivery_modes(kind, mode):
     if mode == "send":
         assert "--force-send" in command
         assert child["SMTP_PASSWORD"] == "test-placeholder"
-        assert child["OPENAI_BASE_URL"] == env["OPENAI_BASE_URL"]
+        assert child["ANTHROPIC_BASE_URL"] == env["ANTHROPIC_BASE_URL"]
     else:
         assert "--force-send" not in command
         assert "--preview" in command
@@ -40,15 +40,15 @@ def test_workflow_delivery_modes(kind, mode):
             key in child for key in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "EMAIL_TO")
         )
         assert ("--dry-run" in command) == (mode == "fixtures")
-        assert ("OPENAI_API_KEY" in child) == (mode == "preview")
-        assert ("OPENAI_BASE_URL" in child) == (mode == "preview")
+        assert ("ANTHROPIC_API_KEY" in child) == (mode == "preview")
+        assert ("ANTHROPIC_BASE_URL" in child) == (mode == "preview")
         if mode == "preview":
-            assert child["OPENAI_BASE_URL"] == env["OPENAI_BASE_URL"]
+            assert child["ANTHROPIC_BASE_URL"] == env["ANTHROPIC_BASE_URL"]
     assert "SMTP_PASSWORD" in env  # Do not mutate the parent environment.
 
 
 def test_live_workflow_requires_key_but_fixtures_do_not():
-    with pytest.raises(ValueError, match="OPENAI_API_KEY"):
+    with pytest.raises(ValueError, match="ANTHROPIC_API_KEY"):
         invocation({"KIND": "daily", "MODE": "preview"})
     assert "--dry-run" in invocation({"KIND": "daily", "MODE": "fixtures"})[0]
 
@@ -59,16 +59,16 @@ def test_workflow_rejects_unknown_modes():
 
 
 def test_workflow_trims_surrounding_key_whitespace():
-    _, child = invocation({"KIND": "daily", "MODE": "preview", "OPENAI_API_KEY": "  test-placeholder\n"})
-    assert child["OPENAI_API_KEY"] == "test-placeholder"
+    _, child = invocation({"KIND": "daily", "MODE": "preview", "ANTHROPIC_API_KEY": "  test-placeholder\n"})
+    assert child["ANTHROPIC_API_KEY"] == "test-placeholder"
 
 
 @pytest.mark.parametrize(
-    "key", ['"private-placeholder"', "OPENAI_API_KEY=private-placeholder", "private placeholder", "  "]
+    "key", ['"private-placeholder"', "ANTHROPIC_API_KEY=private-placeholder", "private placeholder", "  "]
 )
 def test_workflow_rejects_malformed_key_without_exposing_it(key):
     with pytest.raises(ValueError) as error:
-        invocation({"KIND": "daily", "MODE": "preview", "OPENAI_API_KEY": key})
+        invocation({"KIND": "daily", "MODE": "preview", "ANTHROPIC_API_KEY": key})
     assert "private" not in str(error.value)
     assert "invalid formatting" in str(error.value)
 

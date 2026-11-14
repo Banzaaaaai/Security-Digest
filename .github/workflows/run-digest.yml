@@ -22,7 +22,8 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Claude thinks before answering; a busy day makes about 20 sequential classification calls.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v5
         with:
@@ -84,8 +85,8 @@ jobs:
         if: steps.guard.outputs.run == 'true' && steps.dedup.outcome == 'success'
         id: digest
         env:
-          OPENAI_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_API_KEY || '' }}
-          OPENAI_BASE_URL: ${{ inputs.mode != 'fixtures' && secrets.OPENAI_BASE_URL || '' }}
+          ANTHROPIC_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.ANTHROPIC_API_KEY || '' }}
+          ANTHROPIC_BASE_URL: ${{ inputs.mode != 'fixtures' && secrets.ANTHROPIC_BASE_URL || '' }}
           SMTP_HOST: ${{ inputs.mode == 'send' && secrets.SMTP_HOST || '' }}
           SMTP_PORT: ${{ inputs.mode == 'send' && secrets.SMTP_PORT || '' }}
           SMTP_USER: ${{ inputs.mode == 'send' && secrets.SMTP_USER || '' }}

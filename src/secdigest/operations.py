@@ -5,67 +5,44 @@ import traceback
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
-from openai import APIStatusError
+from anthropic import APIStatusError
+
+# Error types documented by the Claude API; anything else is not logged.
+KNOWN_ERROR_TYPES = {
+    "invalid_request_error",
+    "authentication_error",
+    "billing_error",
+    "permission_error",
+    "not_found_error",
+    "request_too_large",
+    "rate_limit_error",
+    "api_error",
+    "overloaded_error",
+}
 
 
 def api_error_details(exc):
     """Allowlist API metadata; error messages and arbitrary provider values stay private."""
     if not isinstance(exc, APIStatusError):
         return {}
-    details = {"provider": "openai", "status_code": exc.status_code}
-    known_codes = {
-        "invalid_api_key",
-        "insufficient_quota",
-        "rate_limit_exceeded",
-        "model_not_found",
-        "billing_hard_limit_reached",
-        "billing_not_active",
-        "quota_exceeded",
-    }
-    if isinstance(exc.code, str) and exc.code in known_codes:
-        details["code"] = exc.code
-    # Responses may supply the cause in `type` or message while leaving `code` empty.
-    # Inspect in memory and emit only our fixed labels, never provider text.
+    details = {"provider": "anthropic", "status_code": exc.status_code}
     body = exc.body if isinstance(exc.body, dict) else {}
     if isinstance(body.get("error"), dict):
         body = body["error"]
-    reason = " ".join(str(body.get(key, "")) for key in ("code", "type", "message")).lower()
-    if exc.status_code == 429:
-        if any(
-            phrase in reason
-            for phrase in (
-                "insufficient_quota",
-                "quota_exceeded",
-                "current quota",
-                "billing quota",
-                "run out of credits",
-                "insufficient credits",
-                "no balance left",
-                "credit balance",
-            )
-        ):
-            details["category"] = "quota_exhausted"
-        elif any(
-            phrase in reason
-            for phrase in (
-                "billing_hard_limit_reached",
-                "billing_not_active",
-                "spend limit",
-                "spending limit",
-            )
-        ):
-            details["category"] = "billing_limit"
-        elif any(
-            phrase in reason
-            for phrase in (
-                "rate limit",
-                "rate_limit",
-                "tokens per min",
-                "requests per min",
-                "request too large",
-            )
-        ):
-            details["category"] = "rate_limit"
+    kind = body.get("type")
+    if isinstance(kind, str) and kind in KNOWN_ERROR_TYPES:
+        details["code"] = kind
+    # Low credit arrives as a 400 or 402 and spend limits as a 400, so the message
+    # decides. Inspect it in memory and emit only our fixed labels, never provider text.
+    message = str(body.get("message", "")).lower()
+    if kind == "billing_error" or "credit balance" in message:
+        details["category"] = "quota_exhausted"
+    elif any(phrase in message for phrase in ("usage limit", "spend limit", "spending limit")):
+        details["category"] = "billing_limit"
+    elif exc.status_code == 429 or kind == "rate_limit_error":
+        details["category"] = "rate_limit"
+    elif exc.status_code == 529 or kind == "overloaded_error":
+        details["category"] = "overloaded"
     return details
 
 

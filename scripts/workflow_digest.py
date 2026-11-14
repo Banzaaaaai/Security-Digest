@@ -14,15 +14,15 @@ def invocation(environ):
     command = [sys.executable, "-m", "secdigest"]
     if mode == "fixtures":
         command += ["--dry-run", kind, "--preview"]
-        env.pop("OPENAI_API_KEY", None)
-        env.pop("OPENAI_BASE_URL", None)
+        env.pop("ANTHROPIC_API_KEY", None)
+        env.pop("ANTHROPIC_BASE_URL", None)
     else:
-        if not env.get("OPENAI_API_KEY"):
-            raise ValueError("Set the OPENAI_API_KEY Actions secret, or use mode=fixtures")
-        key = env["OPENAI_API_KEY"].strip()
-        if not key or any(char.isspace() for char in key) or key.startswith(("'", '"', "OPENAI_API_KEY=")):
-            raise ValueError("OPENAI_API_KEY has invalid formatting; store only the API key in the secret")
-        env["OPENAI_API_KEY"] = key
+        if not env.get("ANTHROPIC_API_KEY"):
+            raise ValueError("Set the ANTHROPIC_API_KEY Actions secret, or use mode=fixtures")
+        key = env["ANTHROPIC_API_KEY"].strip()
+        if not key or any(char.isspace() for char in key) or key.startswith(("'", '"', "ANTHROPIC_API_KEY=")):
+            raise ValueError("ANTHROPIC_API_KEY has invalid formatting; store only the API key in the secret")
+        env["ANTHROPIC_API_KEY"] = key
         command += ["run-" + kind]
         if mode == "preview":
             command += ["--no-send", "--preview"]

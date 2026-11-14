@@ -7,20 +7,44 @@ http:
   user_agent: SecDigest/0.1 (+https://brusiantsou.com)
   max_bytes: 20000000
 models:
-  classification: gpt-5.4-mini
-  synthesis: gpt-5.4
+  classification: claude-opus-5-5
+  synthesis: claude-opus-5-5
+  # Reasoning depth per request: low | medium | high | xhigh | max. Higher effort
+  # uses more (billed) thinking tokens and time.
+  classification_effort: low
+  synthesis_effort: medium
   batch_size: 5
+  # Includes thinking tokens.
   max_tokens: 16000
-  # Standard API rates checked against official model pages on 2026-10-17.
+  # Anthropic standard API rates checked against platform.claude.com pricing on 2026-11-14.
+  # cache_creation is the 5-minute cache write rate. claude-opus-5 and claude-opus-4-8
+  # are the server-side fallback models for requests Opus 5.5 declines.
   prices_per_million:
-    gpt-5.4-mini:
-      input_tokens: 0.75
-      cache_read_input_tokens: 0.075
-      output_tokens: 4.50
-    gpt-5.4:
-      input_tokens: 2.50
-      cache_read_input_tokens: 0.25
-      output_tokens: 15.00
+    claude-opus-5-5:
+      input_tokens: 4.00
+      cache_creation_input_tokens: 5.00
+      cache_read_input_tokens: 0.20
+      output_tokens: 20.00
+    claude-opus-5:
+      input_tokens: 5.00
+      cache_creation_input_tokens: 6.25
+      cache_read_input_tokens: 0.50
+      output_tokens: 25.00
+    claude-opus-4-8:
+      input_tokens: 5.00
+      cache_creation_input_tokens: 6.25
+      cache_read_input_tokens: 0.50
+      output_tokens: 25.00
+    claude-sonnet-5-5:
+      input_tokens: 2.00
+      cache_creation_input_tokens: 2.50
+      cache_read_input_tokens: 0.10
+      output_tokens: 10.00
+    claude-haiku-5-5:
+      input_tokens: 0.10
+      cache_creation_input_tokens: 0.125
+      cache_read_input_tokens: 0.01
+      output_tokens: 0.50
 enrichment:
   kev_refresh_hours: 6
   epss: true

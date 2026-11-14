@@ -3,43 +3,56 @@ from copy import deepcopy
 from types import SimpleNamespace
 from unittest.mock import Mock
 
-import httpx
+import httpx2
 import pytest
-from openai import PermissionDeniedError
-from openai.types.responses import Response
+from anthropic import DefaultHttpxClient, PermissionDeniedError
+from anthropic.types.beta import BetaMessage
 
-from secdigest.classification import batch_classify, classify, client_from_env, parse_response, usage_record
+from secdigest.classification import (
+    FALLBACK_BETA,
+    batch_classify,
+    classify,
+    client_from_env,
+    parse_response,
+    response_json,
+    usage_record,
+)
 from secdigest.evidence import validate_claims
 
 
-def response(items, name="classify_clusters"):
-    return Response.model_validate(
+def message(payload, model="claude-opus-5-5", stop_reason="end_turn"):
+    return BetaMessage.model_validate(
         {
-            "id": "resp-test",
-            "object": "response",
-            "created_at": 1,
-            "model": "gpt-5.4-mini",
-            "status": "completed",
-            "parallel_tool_calls": False,
-            "tools": [],
-            "tool_choice": "required",
-            "output": [
-                {
-                    "type": "function_call",
-                    "name": name,
-                    "call_id": "call-test",
-                    "arguments": json.dumps({"items": items} if name == "classify_clusters" else items),
-                }
+            "id": "msg_test",
+            "type": "message",
+            "role": "assistant",
+            "model": model,
+            "content": [
+                {"type": "thinking", "thinking": "", "signature": "signature-test"},
+                {"type": "text", "text": json.dumps(payload)},
             ],
+            "stop_reason": stop_reason,
+            "stop_sequence": None,
             "usage": {
                 "input_tokens": 10,
                 "output_tokens": 20,
-                "total_tokens": 30,
-                "input_tokens_details": {"cached_tokens": 4, "cache_write_tokens": 0},
-                "output_tokens_details": {"reasoning_tokens": 0},
+                "cache_read_input_tokens": 4,
+                "cache_creation_input_tokens": 2,
             },
         }
     )
+
+
+def classified(items, **kwargs):
+    return message({"items": items}, **kwargs)
+
+
+def mocked(client, handler):
+    return client.with_options(http_client=DefaultHttpxClient(transport=httpx2.MockTransport(handler)))
+
+
+def error(status, kind, text):
+    return httpx2.Response(status, json={"type": "error", "error": {"type": kind, "message": text}})
 
 
 def test_invalid_output_retried_once(config, populated):
@@ -50,86 +63,106 @@ def test_invalid_output_retried_once(config, populated):
     invalid = deepcopy(valid)
     invalid["industry_relevance"] = {}
     client = Mock()
-    client.responses.create.side_effect = [response([invalid]), response([valid])]
+    client.beta.messages.create.side_effect = [classified([invalid]), classified([valid])]
     result = classify(config, populated, client=client)
     assert result["classified"] == 1
-    assert client.responses.create.call_count == 2
+    assert client.beta.messages.create.call_count == 2
     assert classify(config, populated, client=client)["classified"] == 0
-    assert client.responses.create.call_count == 2
+    assert client.beta.messages.create.call_count == 2
 
 
 def test_second_invalid_output_fails(config, populated):
     with populated.db:
         populated.db.execute("DELETE FROM classifications")
     client = Mock()
-    client.responses.create.return_value = response([])
+    client.beta.messages.create.return_value = classified([])
     with pytest.raises(ValueError, match="twice"):
         classify(config, populated, client=client)
-    assert client.responses.create.call_count == 2
+    assert client.beta.messages.create.call_count == 2
 
 
-@pytest.mark.parametrize("endpoint", ["https://api.openai.com/v1", "https://gateway.example.test/openai/v1"])
+@pytest.mark.parametrize("endpoint", ["https://api.anthropic.com", "https://gateway.example.test/anthropic"])
 @pytest.mark.parametrize("metadata_status", [200, 403])
-def test_responses_sdk_request_and_persistence(
-    config, populated, respx_mock, monkeypatch, endpoint, metadata_status
-):
-    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
-    monkeypatch.setenv("OPENAI_BASE_URL", "  " + endpoint + "/  ")
+def test_messages_sdk_request_and_persistence(config, populated, monkeypatch, endpoint, metadata_status):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
+    monkeypatch.setenv("ANTHROPIC_BASE_URL", "  " + endpoint + "/  ")
     cluster = populated.clusters()[0]
     valid = deepcopy(cluster["classification"])
     with populated.db:
         populated.db.execute("DELETE FROM classifications WHERE cluster_id=?", (cluster["id"],))
     model = config.settings["models"]["classification"]
-    respx_mock.get(endpoint + "/models/" + model).mock(
-        return_value=httpx.Response(
-            metadata_status,
-            json={"id": model, "object": "model", "created": 1, "owned_by": "openai"}
-            if metadata_status == 200
-            else {"error": {"message": "Model metadata access denied"}},
-        )
-    )
-    route = respx_mock.post(endpoint + "/responses").mock(
-        return_value=httpx.Response(200, json=response([valid]).model_dump())
-    )
-    with client_from_env() as client:
-        result = classify(config, populated, client=client)
+    requests = []
+
+    def handler(request):
+        requests.append(request)
+        if request.method == "GET":
+            assert request.url.path.endswith("/v1/models/" + model)
+            if metadata_status == 403:
+                return error(403, "permission_error", "Model metadata access denied")
+            return httpx2.Response(
+                200,
+                json={
+                    "id": model,
+                    "type": "model",
+                    "display_name": "Claude",
+                    "created_at": "2026-01-01T00:00:00Z",
+                },
+            )
+        return httpx2.Response(200, json=classified([valid]).model_dump(mode="json"))
+
+    with client_from_env() as base:
+        result = classify(config, populated, client=mocked(base, handler))
     assert result["classified"] == 1
-    body = json.loads(route.calls[0].request.content)
-    assert body["store"] is False
-    assert body["parallel_tool_calls"] is False
-    assert body["tool_choice"] == {"type": "function", "name": "classify_clusters"}
-    assert body["tools"][0]["strict"] is True
-    assert body["tools"][0]["parameters"]["additionalProperties"] is False
-    assert "max_output_tokens" in body
+    post = requests[-1]
+    assert str(post.url).startswith(endpoint + "/v1/messages")
+    assert FALLBACK_BETA in post.headers["anthropic-beta"]
+    body = json.loads(post.content)
+    assert body["model"] == model
+    assert body["fallbacks"] == "default"
+    assert body["output_config"]["effort"] == config.settings["models"]["classification_effort"]
+    assert body["output_config"]["format"]["type"] == "json_schema"
+    # Constraints the API does not enforce move into descriptions; Pydantic still checks them.
+    headline = body["output_config"]["format"]["schema"]["$defs"]["Classification"]["properties"]["headline"]
+    assert "maxLength" not in headline and "maxLength: 120" in headline["description"]
+    assert body["system"][0]["cache_control"] == {"type": "ephemeral"}
+    assert "tools" not in body and "tool_choice" not in body
     assert populated.clusters()[0]["classification"]["headline"] == valid["headline"]
 
 
-def test_generation_permission_denial_still_stops_classification(config, populated, respx_mock, monkeypatch):
-    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
-    monkeypatch.setenv("OPENAI_BASE_URL", "https://gateway.example.test/v1")
+def test_generation_permission_denial_still_stops_classification(config, populated, monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
+    monkeypatch.setenv("ANTHROPIC_BASE_URL", "https://gateway.example.test/anthropic")
     with populated.db:
         populated.db.execute("DELETE FROM classifications")
-    respx_mock.get(
-        "https://gateway.example.test/v1/models/" + config.settings["models"]["classification"]
-    ).mock(return_value=httpx.Response(403, json={"error": {"message": "Metadata denied"}}))
-    route = respx_mock.post("https://gateway.example.test/v1/responses").mock(
-        return_value=httpx.Response(403, json={"error": {"message": "Generation denied"}})
-    )
-    with client_from_env() as client, pytest.raises(PermissionDeniedError):
-        classify(config, populated, client=client)
-    assert route.call_count == 1
+    posts = []
+
+    def handler(request):
+        if request.method == "POST":
+            posts.append(request)
+            return error(403, "permission_error", "Generation denied")
+        return error(403, "permission_error", "Metadata denied")
+
+    with client_from_env() as base, pytest.raises(PermissionDeniedError):
+        classify(config, populated, client=mocked(base, handler))
+    assert len(posts) == 1
     assert all(cluster["classification"] is None for cluster in populated.clusters())
 
 
 @pytest.mark.parametrize("endpoint", [None, "", "  "])
-def test_missing_or_blank_endpoint_uses_openai_default(monkeypatch, endpoint):
-    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
+def test_missing_or_blank_endpoint_uses_anthropic_default(monkeypatch, endpoint):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
     if endpoint is None:
-        monkeypatch.delenv("OPENAI_BASE_URL", raising=False)
+        monkeypatch.delenv("ANTHROPIC_BASE_URL", raising=False)
     else:
-        monkeypatch.setenv("OPENAI_BASE_URL", endpoint)
+        monkeypatch.setenv("ANTHROPIC_BASE_URL", endpoint)
     with client_from_env() as client:
-        assert str(client.base_url) == "https://api.openai.com/v1/"
+        assert str(client.base_url).rstrip("/") == "https://api.anthropic.com"
+
+
+def test_missing_key_points_to_offline_mode(monkeypatch):
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    with pytest.raises(RuntimeError, match="ANTHROPIC_API_KEY.*--dry-run"):
+        client_from_env()
 
 
 @pytest.mark.parametrize(
@@ -143,11 +176,11 @@ def test_missing_or_blank_endpoint_uses_openai_default(monkeypatch, endpoint):
     ],
 )
 def test_invalid_endpoint_errors_do_not_expose_its_value(monkeypatch, endpoint):
-    monkeypatch.setenv("OPENAI_API_KEY", "test-placeholder")
-    monkeypatch.setenv("OPENAI_BASE_URL", endpoint)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
+    monkeypatch.setenv("ANTHROPIC_BASE_URL", endpoint)
     with pytest.raises(ValueError) as error:
         client_from_env()
-    assert "OPENAI_BASE_URL" in str(error.value)
+    assert "ANTHROPIC_BASE_URL" in str(error.value)
     assert "private-placeholder" not in str(error.value)
 
 
@@ -185,54 +218,49 @@ def test_unsupported_regulation_date_is_removed(config, populated):
     assert result["regulations"][0]["effective_or_deadline_date"] is None
 
 
-def test_openai_batch_resume_without_resubmission(config, populated):
+def test_batch_resume_without_resubmission(config, populated):
     cluster = populated.clusters()[0]
     valid = deepcopy(cluster["classification"])
     with populated.db:
         populated.db.execute("DELETE FROM classifications WHERE cluster_id=?", (cluster["id"],))
     client = Mock()
-    client.files.create.return_value = SimpleNamespace(id="file-test")
-    client.batches.create.return_value = SimpleNamespace(id="batch-test")
+    client.messages.batches.create.return_value = SimpleNamespace(id="msgbatch-test")
     submitted = batch_classify(config, populated, client=client)
     assert submitted["status"] == "pending"
-    upload = client.files.create.call_args.kwargs
-    request = json.loads(upload["file"][1].decode())
-    assert request["url"] == "/v1/responses"
-    assert request["body"]["tools"][0]["strict"] is True
-    assert upload["purpose"] == "batch"
-    client.batches.retrieve.return_value = SimpleNamespace(status="in_progress")
+    [request] = client.messages.batches.create.call_args.kwargs["requests"]
+    assert request["custom_id"] == "group-0"
+    assert request["params"]["output_config"]["format"]["type"] == "json_schema"
+    assert "fallbacks" not in request["params"]  # The Batches API rejects it.
+    assert populated.get("batch_job")["provider"] == "anthropic"
+    client.messages.batches.retrieve.return_value = SimpleNamespace(processing_status="in_progress")
     assert batch_classify(config, populated, client=client)["status"] == "pending"
-    assert client.batches.create.call_count == 1
-    assert client.files.create.call_count == 1
-    client.batches.retrieve.return_value = SimpleNamespace(
-        status="completed", output_file_id="file-output", error_file_id=None
-    )
-    client.files.content.return_value = SimpleNamespace(
-        text=json.dumps(
-            {
-                "custom_id": "group-0",
-                "error": None,
-                "response": {"status_code": 200, "body": response([valid]).model_dump()},
-            }
+    assert client.messages.batches.create.call_count == 1
+    client.messages.batches.retrieve.return_value = SimpleNamespace(processing_status="ended")
+    client.messages.batches.results.return_value = [
+        SimpleNamespace(
+            custom_id="group-0", result=SimpleNamespace(type="succeeded", message=classified([valid]))
         )
-    )
+    ]
     finished = batch_classify(config, populated, client=client)
     assert finished["status"] == "complete"
     assert finished["classified"] == 1
     assert finished["usage"][0]["batch"] is True
-    client.responses.create.assert_not_called()
+    client.beta.messages.create.assert_not_called()
 
 
-@pytest.mark.parametrize("status", ["failed", "expired", "cancelled"])
-def test_failed_batches_leave_clusters_pending(config, populated, status):
+@pytest.mark.parametrize("outcome", ["errored", "expired", "canceled", "missing"])
+def test_unsuccessful_batch_requests_leave_clusters_pending(config, populated, outcome):
     with populated.db:
         populated.db.execute("DELETE FROM classifications")
     client = Mock()
-    client.files.create.return_value = SimpleNamespace(id="file-test")
-    client.batches.create.return_value = SimpleNamespace(id="batch-test")
+    client.messages.batches.create.return_value = SimpleNamespace(id="msgbatch-test")
     batch_classify(config, populated, client=client)
-    client.batches.retrieve.return_value = SimpleNamespace(
-        status=status, output_file_id=None, error_file_id=None
+    keys = [r["custom_id"] for r in client.messages.batches.create.call_args.kwargs["requests"]]
+    client.messages.batches.retrieve.return_value = SimpleNamespace(processing_status="ended")
+    client.messages.batches.results.return_value = (
+        []
+        if outcome == "missing"
+        else [SimpleNamespace(custom_id=key, result=SimpleNamespace(type=outcome)) for key in keys]
     )
     result = batch_classify(config, populated, client=client)
     assert result["status"] == "partial"
@@ -240,27 +268,51 @@ def test_failed_batches_leave_clusters_pending(config, populated, status):
     assert result["classified"] == 0
 
 
-def test_usage_does_not_double_count_cached_tokens(config):
-    actual = usage_record(config, response([]), "gpt-5.4-mini")
-    assert actual["input_tokens"] == 6
+def test_pending_openai_batch_must_be_resolved_before_migration(config, populated):
+    populated.put("batch_job", {"id": "batch-old", "provider": "openai", "status": "pending"})
+    client = Mock()
+    with pytest.raises(ValueError, match="another provider"):
+        batch_classify(config, populated, client=client)
+    client.messages.batches.retrieve.assert_not_called()
+
+
+def test_usage_prices_each_input_token_class_once(config):
+    actual = usage_record(config, classified([]), "claude-opus-5-5")
+    assert actual["input_tokens"] == 10
     assert actual["cache_read_input_tokens"] == 4
-    assert actual["estimated_usd"] == pytest.approx((6 * 0.75 + 4 * 0.075 + 20 * 4.5) / 1e6)
-    batch = usage_record(config, response([]), "gpt-5.4-mini", batch=True)
+    assert actual["cache_creation_input_tokens"] == 2
+    assert actual["estimated_usd"] == pytest.approx((10 * 4 + 4 * 0.2 + 2 * 5 + 20 * 20) / 1e6)
+    batch = usage_record(config, classified([]), "claude-opus-5-5", batch=True)
     assert batch["estimated_usd"] == actual["estimated_usd"] / 2
 
 
-@pytest.mark.parametrize("failure", ["incomplete", "refusal", "duplicate", "bad_json"])
-def test_rejects_unusable_openai_output(config, populated, failure):
+def test_usage_is_priced_at_the_fallback_model_that_answered(config):
+    actual = usage_record(config, classified([], model="claude-opus-4-8"), "claude-opus-5-5")
+    assert actual["model"] == "claude-opus-4-8"
+    assert actual["estimated_usd"] == pytest.approx((10 * 5 + 4 * 0.5 + 2 * 6.25 + 20 * 25) / 1e6)
+
+
+def test_answer_after_server_side_fallback_is_parsed():
+    response = SimpleNamespace(
+        stop_reason="end_turn",
+        content=[SimpleNamespace(type="fallback"), SimpleNamespace(type="text", text='{"items": []}')],
+    )
+    assert response_json(response) == {"items": []}
+
+
+@pytest.mark.parametrize("failure", ["max_tokens", "refusal", "no_text", "bad_json"])
+def test_rejects_unusable_model_output(config, populated, failure):
     cluster = populated.clusters()[0]
-    output = response([cluster["classification"]])
-    if failure == "incomplete":
-        output.status = "incomplete"
+    output = classified([cluster["classification"]])
+    if failure == "max_tokens":
+        output.stop_reason = "max_tokens"
     elif failure == "refusal":
-        output.output = []
-    elif failure == "duplicate":
-        output.output *= 2
+        output.stop_reason = "refusal"
+        output.content = []
+    elif failure == "no_text":
+        output.content = output.content[:1]
     else:
-        output.output[0].arguments = "truncated {"
+        output.content[1].text = "truncated {"
     with pytest.raises(ValueError):
         parse_response(config, output, [cluster], populated)
 
@@ -274,12 +326,10 @@ def test_weekly_synthesis_validates_references_and_reuses_cache(config, populate
     invalid = deepcopy(valid)
     invalid["content_ideas"][0]["story_ids"] = ["invented"]
     client = Mock()
-    client.responses.create.side_effect = [
-        response(invalid, "weekly_synthesis"),
-        response(valid, "weekly_synthesis"),
-    ]
+    client.beta.messages.create.side_effect = [message(invalid), message(valid)]
     result = synthesize(config, populated, items, "2026-W42", client=client)
-    assert result["mode"] == "openai"
-    assert client.responses.create.call_count == 2
+    assert result["mode"] == "claude"
+    assert client.beta.messages.create.call_count == 2
+    assert client.beta.messages.create.call_args.kwargs["fallbacks"] == "default"
     assert synthesize(config, populated, items, "2026-W42", client=client)["usage"] == []
-    assert client.responses.create.call_count == 2
+    assert client.beta.messages.create.call_count == 2

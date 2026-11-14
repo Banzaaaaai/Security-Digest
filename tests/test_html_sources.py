@@ -205,7 +205,7 @@ def test_date_only_records_overlap_daily_window_without_changing_timestamped_sou
         assert not store.clusters(FIXTURE_NOW.replace(hour=0), end)
         assert not store.clusters(start - timedelta(days=1), start.replace(hour=0))
         params = classification_params(config, candidates)
-        documents = json.loads(params["input"][0]["content"])
+        documents = json.loads(params["messages"][0]["content"])
         assert documents[0]["sources"][0]["date_precision"] == "day"
         assert documents[0]["sources"][0]["date_basis"] == source["date_basis"]
     finally:

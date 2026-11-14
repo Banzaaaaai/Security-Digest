@@ -201,8 +201,10 @@ def main():
                 "max_bytes": 20000000,
             },
             "models": {
-                "classification": "gpt-5.4-mini",
-                "synthesis": "gpt-5.4",
+                "classification": "claude-opus-5-5",
+                "synthesis": "claude-opus-5-5",
+                "classification_effort": "low",
+                "synthesis_effort": "medium",
                 "batch_size": 5,
                 "max_tokens": 16000,
                 "prices_per_million": {},

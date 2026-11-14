@@ -1,6 +1,6 @@
 # SecDigest
 
-Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, supported public-page indexes and CISA structured advisories, cluster duplicate coverage, enrich CVEs, classify with OpenAI, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
+Daily and weekly security intelligence for enterprise security architecture. Collect RSS/Atom stories, supported public-page indexes and CISA structured advisories, cluster duplicate coverage, enrich CVEs, classify with Claude, and generate Markdown, HTML, JSON, CSV and Gmail-ready email.
 
 The original requirements are in [security-digest-prompt.md](security-digest-prompt.md). All taxonomies and scoring rules are editable YAML. There is no web server or hosted dashboard to operate.
 
@@ -62,19 +62,21 @@ Set environment variables through your shell/session or secret manager. The appl
 
 | Variable | Use |
 |---|---|
-| `OPENAI_API_KEY` | OpenAI classification and weekly synthesis |
-| `OPENAI_BASE_URL` | Optional API endpoint/base URL; defaults to `https://api.openai.com/v1` when omitted or blank |
+| `ANTHROPIC_API_KEY` | Claude API key for classification and weekly synthesis |
+| `ANTHROPIC_BASE_URL` | Optional API base URL; defaults to `https://api.anthropic.com` when omitted or blank |
 | `SMTP_HOST` | SMTP server; defaults to `smtp.gmail.com` |
 | `SMTP_PORT` | STARTTLS port; defaults to `587` |
 | `SMTP_USER` | Gmail sender address |
 | `SMTP_PASSWORD` | Gmail app password |
 | `EMAIL_TO` | Comma-separated recipient addresses; whitespace and empty entries removed |
 
-The defaults in `config/settings.yaml` are `gpt-5.4-mini` for classification and `gpt-5.4` for weekly synthesis. Both use the OpenAI Responses API with strict function schemas and local evidence validation. Live classification checks model metadata when permitted. If the metadata endpoint returns 403, the requested API operation validates model access instead, since model reading and generation have separate permissions. Generation errors still stop the run; it does not silently choose another model. Access depends on the configured provider and API project. Set `OPENAI_API_KEY` and, if needed, `OPENAI_BASE_URL` for this integration.
+The defaults in `config/settings.yaml` use `claude-opus-5-5` for both classification and weekly synthesis, with `classification_effort: low` and `synthesis_effort: medium`. Both use the Claude Messages API with structured outputs (`output_config.format`) generated from the Pydantic schemas, followed by local schema and evidence validation. Length, range and item-count constraints that the API does not enforce are moved into field descriptions by the SDK and still checked locally; invalid output gets one retry. Live classification checks model metadata when permitted. If the metadata endpoint returns 403, the requested API operation validates model access instead, since model reading and generation have separate permissions. Generation errors still stop the run.
 
-For a custom API endpoint, add a GitHub Actions repository secret named **`OPENAI_BASE_URL`**, alongside **`OPENAI_API_KEY`**. Set it to the provider's API base URL, for example `https://gateway.example.com/v1` or `https://resource.openai.azure.com/openai/v1`. Include the provider's required path prefix, but omit operation suffixes such as `/responses` or `/chat/completions`, credentials, query parameters and fragments. The application uses this endpoint for classification, weekly synthesis, model lookup and Batch/Files API calls. The provider must support the Responses API with strict function calls and the configured model IDs; batch backfills also require its Batch/Files APIs. Configure model names and pricing for that provider in `config/settings.yaml`. Do not change the endpoint while a batch job is pending.
+Claude's safety classifiers can occasionally decline security content. Live requests therefore opt into server-side fallback (`fallbacks: "default"`, beta `server-side-fallback-2026-07-01`): a declined request is re-run on Anthropic's recommended fallback model within the same call, and usage is priced at the model that answered. Batch requests cannot use fallbacks; a declined batch item gets one ordinary retry with fallback. Set `ANTHROPIC_API_KEY` and, if needed, `ANTHROPIC_BASE_URL` for this integration.
 
-The same environment variable works locally. Surrounding whitespace is trimmed; an empty GitHub secret keeps the standard OpenAI endpoint. Fixture mode removes both API settings and stays offline. The endpoint is not printed in application logs.
+To route through a gateway, add a GitHub Actions repository secret named **`ANTHROPIC_BASE_URL`**, alongside **`ANTHROPIC_API_KEY`**. Set it to a base URL that serves the Claude API paths (`/v1/messages`, `/v1/models`, `/v1/messages/batches`), for example `https://gateway.example.com/anthropic`. Omit `/v1`, operation suffixes, credentials, query parameters and fragments. Configure model names and pricing in `config/settings.yaml`. Do not change the endpoint while a batch job is pending.
+
+The same environment variable works locally. Surrounding whitespace is trimmed; an empty GitHub secret keeps the standard Anthropic endpoint. Fixture mode removes both API settings and stays offline. The endpoint is not printed in application logs.
 
 ```powershell
 # Validate sources, then collect and classify the daily window without sending.
@@ -116,7 +118,7 @@ uv run secdigest classify --batch-api
 uv run secdigest weekly --week 2026-W42 --preview
 ```
 
-OpenAI Batch API input file IDs, job IDs and memberships are persisted in SQLite. Jobs target `/v1/responses` with a 24-hour completion window. A pending batch is logged as pending, does not produce a success digest, and is resumed without resubmission. Keep configuration unchanged while a batch is pending. Failed or missing requests remain unclassified for a subsequent run. A pending job from another provider must be resolved before migration. `--reclassify` explicitly replaces saved classifications.
+Claude Message Batches job IDs and group memberships are persisted in SQLite. Batches complete within 24 hours, usually within one. A pending batch is logged as pending, does not produce a success digest, and is resumed without resubmission. Keep configuration unchanged while a batch is pending. Errored, expired, canceled or missing requests remain unclassified for a subsequent run. A pending job from another provider, such as an earlier OpenAI batch, must be resolved before migration. `--reclassify` explicitly replaces saved classifications.
 
 ## Commands
 
@@ -265,7 +267,7 @@ Manual runs default to `mode=preview`:
 
 Preview artifacts are downloadable from the Actions run for seven days and are not committed back or saved to the database cache. Failed previews also upload their diagnostic log: check its latest status, since the artifact may contain historical sample reports. API diagnostics retain only the HTTP status and recognized error codes, never raw provider messages. Only `send` honors `force_send`; enabled scheduled runs also use `send`.
 
-Once a valid `OPENAI_API_KEY` Actions secret and these workflow changes are on the selected GitHub branch, run **Actions → SecDigest daily → Run workflow → mode: preview**. Without a key, choose `fixtures`.
+Once a valid `ANTHROPIC_API_KEY` Actions secret and these workflow changes are on the selected GitHub branch, run **Actions → SecDigest daily → Run workflow → mode: preview**. Without a key, choose `fixtures`.
 
 Select the branch containing the intended code and configuration when dispatching manually. GitHub scheduled workflows run from the repository's default branch, so those changes must be present there before enabling schedules.
 
@@ -283,17 +285,18 @@ On cron implementations without `CRON_TZ`, use equivalent UTC schedules with `se
 
 ## Model usage and cost
 
-Each run records uncached input, cached input and output tokens (including reasoning tokens). OpenAI prompt caching is automatic for eligible repeated prefixes; the shared rubric and schemas precede story data. Requests set `store=false`. Configure `models.prices_per_million` for your chosen model IDs:
+Each run records uncached input, cache-read input, cache-write input and output tokens (output includes thinking tokens). The shared rubric and taxonomy system prompt is marked for prompt caching, so calls after the first in a run read it from cache. Configure `models.prices_per_million` for your chosen model IDs:
 
 ```yaml
 prices_per_million:
   your-verified-model-id:
     input_tokens: 0.0
-    output_tokens: 0.0
+    cache_creation_input_tokens: 0.0
     cache_read_input_tokens: 0.0
+    output_tokens: 0.0
 ```
 
-The zeroes above are placeholders. The shipped configuration uses public standard rates checked on 2026-10-17: [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini) costs $0.75 / $0.075 / $4.50 per million uncached input / cached input / output tokens; [GPT-5.4](https://developers.openai.com/api/docs/models/gpt-5.4) costs $2.50 / $0.25 / $15.00 respectively. Cached input is subtracted from the API's input total before pricing, so it is not counted twice. Missing rates produce an unknown estimate. Batch estimates apply the standard 50% discount; synchronous validation retries use standard rates. Weekly usage is recorded separately. Estimates exclude regional/long-context surcharges and contractual differences; recheck rates for your account.
+The zeroes above are placeholders. The shipped configuration uses [Anthropic standard rates](https://platform.claude.com/docs/en/about-claude/pricing) checked on 2026-11-14: Claude Opus 5.5 costs $4 / $5 / $0.20 / $20 per million uncached input / 5-minute cache write / cache read / output tokens. Rates are also listed for the fallback models (Claude Opus 5 and Claude Opus 4.8) and for Claude Sonnet 5.5 and Claude Haiku 5.5, so switching `models.classification` keeps estimates working. Claude reports each input token class separately, so none is counted twice. Missing rates produce an unknown estimate. Batch estimates apply the standard 50% discount; synchronous validation retries use standard rates. Weekly usage is recorded separately. Estimates exclude regional/long-context surcharges and contractual differences; recheck rates for your account.
 
 Daily budget planning: for `N` new daily clusters and batch size 5, expect `ceil(N / 5)` classification calls plus at most one validation retry per call. A weekly run adds one synthesis call and at most one retry, reusing daily classifications. As a token-volume example, 100 daily clusters at 1,000 source tokens and 800 output tokens each imply roughly 100,000 source-input and 80,000 output tokens per day, plus cached rubric/schema overhead; a seven-day week is roughly seven times that plus synthesis. Actual usage appears after a successful live call. Initial historical backfills are additional usage.
 
