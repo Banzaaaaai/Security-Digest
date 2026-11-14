@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 from datetime import UTC, datetime
 
 import httpx
@@ -70,9 +71,14 @@ def client_from_env():
         raise ValueError(
             "ANTHROPIC_BASE_URL must be an HTTP(S) API base URL without credentials, query or fragment"
         )
+    # A key that is not scoped to a workspace must name one on every request.
+    workspace = (os.getenv("ANTHROPIC_WORKSPACE_ID") or "").strip()
+    if workspace and not re.fullmatch(r"wrkspc_[A-Za-z0-9]+", workspace):
+        raise ValueError("ANTHROPIC_WORKSPACE_ID must be a workspace ID starting with wrkspc_")
+    headers = {"anthropic-workspace-id": workspace} if workspace else None
     # Pass the endpoint explicitly: the SDK would use a blank ANTHROPIC_BASE_URL as-is.
     # Thinking models need more than a minute for a five-cluster request.
-    return Anthropic(base_url=endpoint, timeout=300, max_retries=2)
+    return Anthropic(base_url=endpoint, timeout=300, max_retries=2, default_headers=headers)
 
 
 def verify_model(client, name):

@@ -87,6 +87,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ inputs.mode != 'fixtures' && secrets.ANTHROPIC_API_KEY || '' }}
           ANTHROPIC_BASE_URL: ${{ inputs.mode != 'fixtures' && secrets.ANTHROPIC_BASE_URL || '' }}
+          ANTHROPIC_WORKSPACE_ID: ${{ inputs.mode != 'fixtures' && secrets.ANTHROPIC_WORKSPACE_ID || '' }}
           SMTP_HOST: ${{ inputs.mode == 'send' && secrets.SMTP_HOST || '' }}
           SMTP_PORT: ${{ inputs.mode == 'send' && secrets.SMTP_PORT || '' }}
           SMTP_USER: ${{ inputs.mode == 'send' && secrets.SMTP_USER || '' }}

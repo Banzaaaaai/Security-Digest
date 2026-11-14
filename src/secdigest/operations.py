@@ -36,6 +36,7 @@ MESSAGE_HINTS = (
     "messages",
     "credit",
     "billing",
+    "workspace",
     "too long",
     "too complex",
     "not supported",

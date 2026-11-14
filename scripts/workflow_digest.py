@@ -16,6 +16,7 @@ def invocation(environ):
         command += ["--dry-run", kind, "--preview"]
         env.pop("ANTHROPIC_API_KEY", None)
         env.pop("ANTHROPIC_BASE_URL", None)
+        env.pop("ANTHROPIC_WORKSPACE_ID", None)
     else:
         if not env.get("ANTHROPIC_API_KEY"):
             raise ValueError("Set the ANTHROPIC_API_KEY Actions secret, or use mode=fixtures")

@@ -20,6 +20,7 @@ def test_workflow_delivery_modes(kind, mode):
         "FORCE_SEND": "true",
         "ANTHROPIC_API_KEY": "test-placeholder",
         "ANTHROPIC_BASE_URL": "https://gateway.example.test/anthropic",
+        "ANTHROPIC_WORKSPACE_ID": "wrkspc_01TestWorkspace",
         "SMTP_HOST": "smtp.example.test",
         "SMTP_PORT": "587",
         "SMTP_USER": "sender@example.test",
@@ -42,6 +43,7 @@ def test_workflow_delivery_modes(kind, mode):
         assert ("--dry-run" in command) == (mode == "fixtures")
         assert ("ANTHROPIC_API_KEY" in child) == (mode == "preview")
         assert ("ANTHROPIC_BASE_URL" in child) == (mode == "preview")
+        assert ("ANTHROPIC_WORKSPACE_ID" in child) == (mode == "preview")
         if mode == "preview":
             assert child["ANTHROPIC_BASE_URL"] == env["ANTHROPIC_BASE_URL"]
     assert "SMTP_PASSWORD" in env  # Do not mutate the parent environment.

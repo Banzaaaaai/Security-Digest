@@ -64,6 +64,7 @@ Set environment variables through your shell/session or secret manager. The appl
 |---|---|
 | `ANTHROPIC_API_KEY` | Claude API key for classification and weekly synthesis |
 | `ANTHROPIC_BASE_URL` | Optional API base URL; defaults to `https://api.anthropic.com` when omitted or blank |
+| `ANTHROPIC_WORKSPACE_ID` | Optional `wrkspc_…` workspace ID, sent as the `anthropic-workspace-id` header. Required only for an API key that is not scoped to a workspace |
 | `SMTP_HOST` | SMTP server; defaults to `smtp.gmail.com` |
 | `SMTP_PORT` | STARTTLS port; defaults to `587` |
 | `SMTP_USER` | Gmail sender address |

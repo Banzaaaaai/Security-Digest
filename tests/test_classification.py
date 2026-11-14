@@ -165,6 +165,42 @@ def test_missing_key_points_to_offline_mode(monkeypatch):
         client_from_env()
 
 
+@pytest.mark.parametrize("workspace", [None, "", "  wrkspc_01TestWorkspace  "])
+def test_workspace_header_is_sent_only_when_configured(config, populated, monkeypatch, workspace):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
+    monkeypatch.delenv("ANTHROPIC_BASE_URL", raising=False)
+    if workspace is None:
+        monkeypatch.delenv("ANTHROPIC_WORKSPACE_ID", raising=False)
+    else:
+        monkeypatch.setenv("ANTHROPIC_WORKSPACE_ID", workspace)
+    cluster = populated.clusters()[0]
+    valid = deepcopy(cluster["classification"])
+    with populated.db:
+        populated.db.execute("DELETE FROM classifications WHERE cluster_id=?", (cluster["id"],))
+    sent = []
+
+    def handler(request):
+        sent.append(request.headers.get("anthropic-workspace-id"))
+        if request.method == "GET":
+            return error(403, "permission_error", "Model metadata access denied")
+        return httpx2.Response(200, json=classified([valid]).model_dump(mode="json"))
+
+    with client_from_env() as base:
+        classify(config, populated, client=mocked(base, handler))
+    expected = workspace.strip() if workspace and workspace.strip() else None
+    assert sent and all(value == expected for value in sent)
+
+
+@pytest.mark.parametrize("workspace", ["private-placeholder", "wrkspc_private placeholder", "'wrkspc_x'"])
+def test_invalid_workspace_id_is_rejected_without_exposing_it(monkeypatch, workspace):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-placeholder")
+    monkeypatch.setenv("ANTHROPIC_WORKSPACE_ID", workspace)
+    with pytest.raises(ValueError) as error:
+        client_from_env()
+    assert "ANTHROPIC_WORKSPACE_ID" in str(error.value)
+    assert "private" not in str(error.value) and "'wrkspc_x'" not in str(error.value)
+
+
 @pytest.mark.parametrize(
     "endpoint",
     [
