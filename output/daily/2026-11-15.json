@@ -1,0 +1,2008 @@
+{
+  "kind": "daily",
+  "period": "2026-11-15",
+  "start": "2026-11-14T12:30:17.308027+00:00",
+  "end": "2026-11-15T12:30:17.308027+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "d5585df40181d87d8a2f8949",
+      "headline": "Cursor links trojanized Claude Code extension on its marketplace to key stolen in Fireworks AI breach",
+      "summary": "Cursor says an attacker used an access key issued to Fireworks AI, which was exposed in a breach at Fireworks. The incident ended with a trojanized version of the Claude Code extension on Cursor's extension marketplace. The full scope and number of affected users are not clear from the source.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A popular developer extension was compromised and distributed through a marketplace, which is a supply-chain compromise involving the Claude Code watch technology.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 80,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 90,
+        "siem_detection": 55,
+        "iam_pam": 65,
+        "email_phishing": 0,
+        "data_protection_dlp": 40,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 85
+      },
+      "affected_technologies": [
+        "Claude Code",
+        "Cursor",
+        "Fireworks AI"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is that monitoring which IDE extensions are installed and where developer endpoints connect would help, but the source gives no indicators.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "secure-development-for-automotive"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "List the Cursor and Claude Code extensions installed across your developer machines, then compare them with vendor guidance. Rotate any credentials exposed on endpoints that ran a suspect version.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html",
+          "source": "The Hacker News",
+          "published": "2026-11-15T08:22:04+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A popular developer extension was compromised and distributed through a marketplace, which is a supply-chain compromise involving the Claude Code watch technology.",
+      "watch_tech": [
+        {
+          "name": "Claude Code",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 94.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 8.0,
+        "practice": 13.5,
+        "weighted_total": 94.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "2396f465be9396c94b74ec08",
+      "headline": "Cursor confirms breach enabled distribution of malicious Claude Code extension via its marketplace",
+      "summary": "Cursor confirmed a security breach in which attackers distributed a malicious Claude Code extension through its extension marketplace. According to the report, the attackers got in using credentials stolen from AI infrastructure provider Fireworks AI. The source does not say how many users installed the extension or what it did.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A popular developer-tool marketplace was compromised to push a malicious extension. This counts as a supply-chain compromise affecting developers worldwide.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 75,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 90,
+        "siem_detection": 50,
+        "iam_pam": 55,
+        "email_phishing": 5,
+        "data_protection_dlp": 40,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 85
+      },
+      "affected_technologies": [
+        "Cursor",
+        "Claude Code",
+        "Fireworks AI"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided. Our assessment: check developer endpoints for unexpected extension installs and unusual outbound connections or credential access from IDE processes.",
+      "related_case_studies": [
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "List the Cursor and Claude Code extensions installed across your organisation and remove any that look suspicious. Rotate secrets that are reachable from affected developer machines. Watch for vendor IOCs, since the full scope is still unclear.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+          "source": "BleepingComputer",
+          "published": "2026-11-14T17:27:25+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A popular developer-tool marketplace was compromised to push a malicious extension. This counts as a supply-chain compromise affecting developers worldwide.",
+      "watch_tech": [
+        {
+          "name": "Claude Code",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 93.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 7.5,
+        "practice": 13.5,
+        "weighted_total": 93.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0eb645ca70f53d6af8968203",
+      "headline": "US disrupts North Korean 'FaceStealer' social engineering campaign tied to $400M crypto theft",
+      "summary": "The US government says it has disrupted 'FaceStealer', a North Korean social engineering campaign blamed for stealing more than $400 million in cryptocurrency. The source does not detail the specific techniques used or who the victims were.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "A major government disruption of a large-scale nation-state theft campaign.",
+      "location_relevance": {
+        "US": 80,
+        "Europe": 50,
+        "MEA": 45,
+        "Other": 50
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 45,
+        "investment_management": 50,
+        "government": 20,
+        "retail_banking": 40,
+        "global_it_services": 25,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 15,
+        "siem_detection": 40,
+        "iam_pam": 35,
+        "email_phishing": 55,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 10,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Cryptocurrency"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source provides no technical indicators. Assessment: rely on social engineering awareness and controls on high-risk staff.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "investment_management",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for published indicators of compromise. Brief staff who handle crypto or finance on North Korean social engineering lures.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft/",
+          "source": "BleepingComputer",
+          "published": "2026-11-14T15:15:49+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A major government disruption of a large-scale nation-state theft campaign.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 70.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.0,
+        "industry": 5.0,
+        "practice": 8.25,
+        "weighted_total": 70.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "e577b898eca3316fd935fc7a",
+      "headline": "CISA adds actively exploited UnrealIRCd command injection flaw CVE-2026-114713 to KEV",
+      "summary": "CISA has added CVE-2026-114713 (CVSS 8.6) to its Known Exploited Vulnerabilities catalog after reports that attackers are exploiting it. The flaw affects UnrealIRCd, an open-source IRC server, and comes from improper neutralization of delimiters, which allows command injection at the server level. UnrealIRCd is a niche product in enterprise environments.",
+      "category": "exploitation_in_the_wild",
+      "importance": "high",
+      "importance_rationale": "The flaw is in CISA KEV and is being actively exploited. UnrealIRCd is not widely deployed enterprise software, so this rates high rather than critical.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 55,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 35,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 40,
+        "retail_banking": 15,
+        "global_it_services": 35,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 80,
+        "devsecops": 10,
+        "siem_detection": 50,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "UnrealIRCd"
+      ],
+      "cves": [
+        "CVE-2026-114713"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source links no detection rules. Assessment: watch IRC server hosts for unexpected child processes and outbound connections.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Check whether any UnrealIRCd instances are running, including shadow IT. Patch them per vendor guidance and review the hosts for signs of compromise.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html",
+          "source": "The Hacker News",
+          "published": "2026-11-14T12:38:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The flaw is in CISA KEV and is being actively exploited. UnrealIRCd is not widely deployed enterprise software, so this rates high rather than critical.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-114713": {
+          "kev": {
+            "dateAdded": "2026-11-13",
+            "vendorProject": "UnrealIRCd",
+            "product": "UnrealIRCd",
+            "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+            "dueDate": "2026-11-16",
+            "knownRansomwareCampaignUse": "Unknown"
+          },
+          "epss": 0.00508,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 70.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 9.0,
+        "industry": 4.0,
+        "practice": 12.0,
+        "weighted_total": 70.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b74ef35475d456ce8c97ebc0",
+      "headline": "Grafana Recorded Queries flaw (CVE-2026-12933) lets editors send requests to data source hosts",
+      "summary": "CVE-2026-12933 is a flaw in Grafana. Its Recorded Queries remote-write endpoint tests connections with elevated credentials before checking whether the caller has permission. An attacker with organization editor rights could send authenticated requests to a data source host and infer sensitive data from the replies.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "The flaw requires authentication and has no reported exploitation or PoC.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 65,
+        "Other": 65
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 45,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 75,
+        "devsecops": 30,
+        "siem_detection": 40,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 30,
+        "ot_ics": 5,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Grafana"
+      ],
+      "cves": [
+        "CVE-2026-12933"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is that you should review Grafana audit logs for unexpected creation of Recorded Queries remote-write targets.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Look up which Grafana versions are affected in vendor advisories, as the Amazon Linux record does not confirm affected status or patches. Patch when fixes are available, and limit who holds editor roles.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-12933.html",
+          "source": "Amazon Linux Security Center",
+          "published": "2026-11-14T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The flaw requires authentication and has no reported exploitation or PoC.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-12933": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 54.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 5.5,
+        "practice": 11.25,
+        "weighted_total": 54.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "3fff5fecff5f2279ee41d4ab",
+      "headline": "Italian regulator fines Meta €805 million over Facebook Android gallery access",
+      "summary": "Italy's data protection authority (Garante/GPDP) fined Meta €805 million. It found that a Facebook for Android feature accessed users' photos and videos without valid consent.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a large GDPR enforcement action, but the company fined is not in a target industry. It is useful as a privacy-consent precedent.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 80,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "IT"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 30,
+        "private_banking": 20,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 25,
+        "global_it_services": 30,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 0,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 70,
+        "ot_ics": 0,
+        "grc_audit": 75,
+        "security_automation": 0,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Facebook for Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "This is a regulatory action, so detection does not apply.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Check that mobile app features which access personal data are turned off by default and only run after explicit consent.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961758/Meta+krijgt+805+miljoen+euro+boete+voor+illegale+toegang+tot+foto%27s+Androidgebruikers?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-15T08:19:52+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a large GDPR enforcement action, but the company fined is not in a target industry. It is useful as a privacy-consent precedent.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.0,
+        "industry": 3.0,
+        "practice": 11.25,
+        "weighted_total": 53.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "dabf7b9c559f7a5e27a391e8",
+      "headline": "Italy's Garante fines Meta €805M for default-on Facebook Android gallery access without consent",
+      "summary": "The Garante found that a Facebook for Android photo-suggestion feature was switched on by default. It says the feature accessed Italian users' photos, videos and metadata without explicit consent. Meta reportedly has 60 days to respond or comply.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a large GDPR fine against a company outside the target industries.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 80,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "IT"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 30,
+        "private_banking": 20,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 25,
+        "global_it_services": 30,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 20,
+        "siem_detection": 0,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 70,
+        "ot_ics": 0,
+        "grc_audit": 75,
+        "security_automation": 0,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Facebook for Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "This is a regulatory action, so detection does not apply.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Check consent defaults in mobile apps that access device media.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/italy-fines-meta-805-million-over.html",
+          "source": "The Hacker News",
+          "published": "2026-11-15T11:27:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a large GDPR fine against a company outside the target industries.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.0,
+        "industry": 3.0,
+        "practice": 11.25,
+        "weighted_total": 53.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "d8bfb436b899fcd559ed97ed",
+      "headline": "GNU cpio through 2.15 has an out-of-bounds read when parsing newc/crc archive headers",
+      "summary": "GNU cpio through version 2.15 has an out-of-bounds stack read in from_ascii() when it parses newc and crc archive headers. If the checksum field contains only spaces, the parser reads past the header buffer and may decode nearby stack bytes as header values. The Amazon Linux record does not say whether Amazon Linux is affected or whether a patch is available, and no exploitation is reported.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "The flaw is a memory-safety bug in a common Linux utility, but it is an out-of-bounds read with limited impact. The source gives no CVSS score, proof of concept or reported exploitation.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 45,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 65,
+        "devsecops": 35,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "GNU cpio"
+      ],
+      "cves": [
+        "CVE-2026-126820"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source has no detection rules. Network or SIEM detection is likely to have limited value here, so finding vulnerable versions through package inventory is the practical control.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find systems running GNU cpio 2.15 or earlier and track distribution advisories for fixed packages, since patch status is not yet confirmed. Until then, avoid processing untrusted cpio archives in automated pipelines.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-126820.html",
+          "source": "Amazon Linux Security Center",
+          "published": "2026-11-14T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "The flaw is a memory-safety bug in a common Linux utility, but it is an out-of-bounds read with limited impact. The source gives no CVSS score, proof of concept or reported exploitation.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-126820": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 50.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 4.5,
+        "practice": 9.75,
+        "weighted_total": 50.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "70459a203654cc6400e3b5af",
+      "headline": "Italian authority fines Meta $887 million over Facebook access to Android gallery content",
+      "summary": "An Italian authority fined Meta about $887 million over Facebook's access to photos and videos in Android device galleries. The authority said the relevant directive treats smartphones as part of a person's private sphere and requires free and informed consent for such access.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is a large privacy enforcement action in Europe, but it targets a consumer platform rather than a target industry.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 70,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "IT"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 20,
+        "private_banking": 10,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 15,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 10,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 60,
+        "security_automation": 0,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "Facebook",
+        "Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review how your mobile apps ask for consent before accessing device data in the EU.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/meta-fined-887-million-in-italy-over-android-gallery-photos-and-videos-on-facebook/",
+          "source": "SecurityWeek",
+          "published": "2026-11-14T19:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a large privacy enforcement action in Europe, but it targets a consumer platform rather than a target industry.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 2.0,
+        "practice": 9.0,
+        "weighted_total": 48.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5b48062b6737a09b2e7639d2",
+      "headline": "Malvertising on Dutch news sites tried to infect iPhones with malware",
+      "summary": "Attackers used the ad system on several Dutch websites, including VI, Autoblog and GeenStijl, to serve code that tried to infect iPhones with malware. The source does not say whether any devices were successfully compromised.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "A regional malvertising campaign against consumer iPhones. There is no evidence of enterprise impact or confirmed compromise.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 70,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 15,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 15,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 5,
+        "email_phishing": 10,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "iPhone",
+        "iOS"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were provided. Our assessment: mobile threat defence and DNS filtering logs may show visits to the malicious ad domains.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Make sure managed iPhones are running the latest iOS version. Keep watching for IOCs, because whether any infections succeeded is still unconfirmed.",
+      "confidence": 0.55,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961749/Code+op+VI%2C+Autoblog%2C+GeenStijl+en+andere+sites+probeerde+iPhones+met+malware+te+infecteren?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-15T07:52:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A regional malvertising campaign against consumer iPhones. There is no evidence of enterprise impact or confirmed compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 45.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 2.0,
+        "practice": 6.0,
+        "weighted_total": 45.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "82bfdc687bb628781b649528",
+      "headline": "Weekly recap: GitHub secret stealer and Claude Code abused as remote implant",
+      "summary": "Help Net Security's weekly recap mentions a secret-stealing campaign against GitHub repositories and research on turning Claude Code into a remote-controlled implant. The source gives only brief detail.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a recap article.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 40,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 50,
+        "siem_detection": 20,
+        "iam_pam": 30,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 5,
+        "ai_governance": 40
+      },
+      "affected_technologies": [
+        "GitHub",
+        "Claude Code"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The recap gives no technical detail.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Read the original coverage of each story before acting.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/15/week-in-review-secret-stealer-hits-github-repos-claude-code-turned-into-remote-controlled-implant/",
+          "source": "Help Net Security",
+          "published": "2026-11-15T09:00:37+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a recap article.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "Claude Code",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 4.0,
+        "practice": 7.5,
+        "weighted_total": 26.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "968a44871ee439a1a102546c",
+      "headline": "ESLint ends paid contributor program as AI-generated code strains open-source maintainers",
+      "summary": "ESLint has ended its paid contributor program. Several open-source projects, including Rust, Godot and curl, are tightening contribution rules because AI-generated submissions are putting pressure on maintainers.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is ecosystem and governance news with no direct security incident.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 25,
+        "Other": 25
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 5,
+        "retail_banking": 5,
+        "global_it_services": 30,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 40,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 0,
+        "ai_governance": 40
+      },
+      "affected_technologies": [
+        "ESLint"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Monitor the health of open-source projects you depend on as part of software composition analysis governance.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://socket.dev/blog/eslint-ends-paid-contributor-program",
+          "source": "Socket.dev Blog",
+          "published": "2026-11-14T17:27:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is ecosystem and governance news with no direct security incident.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 22.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 3.0,
+        "practice": 6.0,
+        "weighted_total": 22.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "f8b55e53d88a81420516acb6",
+      "headline": "Opinion: Overreliance on AI may erode security teams' critical skills",
+      "summary": "This SecurityWeek opinion piece argues that leaning too heavily on AI could weaken the creativity, communication and critical thinking that security teams need when no playbook applies. It reports no incident or vulnerability.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is an opinion piece.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 15,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 40
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action required. Optionally include skills retention in your AI usage policy.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/is-ai-making-us-worse-at-cybersecurity/",
+          "source": "SecurityWeek",
+          "published": "2026-11-14T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is an opinion piece.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.securityweek.com/is-ai-making-us-worse-at-cybersecurity/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 19.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 1.5,
+        "practice": 6.0,
+        "weighted_total": 19.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "e9477865501b0215260c38f8",
+      "headline": "datasette-llm 0.1a11 adds support for OpenAI-compatible endpoints and local models",
+      "summary": "The datasette-llm plugin release 0.1a11 can now connect to any OpenAI-compatible endpoint. This lets Datasette Agent run with local models through tools such as LM Studio, Ollama or llama.cpp.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a minor open-source feature release with no security impact.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 2,
+        "telecommunications": 2,
+        "private_banking": 2,
+        "investment_management": 2,
+        "government": 2,
+        "retail_banking": 2,
+        "global_it_services": 10,
+        "logistics": 2,
+        "industrial_manufacturing": 2,
+        "automotive": 2
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 20
+      },
+      "affected_technologies": [
+        "Datasette",
+        "datasette-llm",
+        "OpenAI API"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-14T23:59:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a minor open-source feature release with no security impact.",
+      "watch_tech": [
+        {
+          "name": "OpenAI API",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 14.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 1.5,
+        "industry": 1.0,
+        "practice": 3.0,
+        "weighted_total": 14.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "d6d9935ddab60f0df933c42b",
+      "headline": "Schneier lists upcoming November 2026 speaking engagements in Canada",
+      "summary": "Bruce Schneier lists two upcoming talks, both in Ontario, Canada, on November 18 and 19, 2026. The post contains no security news.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Event listing only.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 0,
+        "MEA": 0,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "CA"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "None.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.schneier.com/blog/archives/2026/11/upcoming-speaking-engagements-62.html",
+          "source": "Schneier on Security",
+          "published": "2026-11-14T17:02:39+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Event listing only.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 9.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.0,
+        "practice": 0.0,
+        "weighted_total": 9.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "4f7f1f7fcbbee0ff7587fce5",
+      "headline": "datasette-vega 0.7 charting plugin released with Datasette Lite support",
+      "summary": "A new release of the datasette-vega charting plugin, its first since 2018, adds compatibility with the latest Datasette alphas and with Datasette Lite. The release has no security content.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "A software release with no security impact.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 0,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Datasette"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "None.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-14T17:09:09+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "A software release with no security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 9.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.0,
+        "industry": 0.0,
+        "practice": 0.0,
+        "weighted_total": 9.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 2,
+    "high": 2,
+    "medium": 6,
+    "low": 6
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 4,
+  "watch": {
+    "ai": [
+      {
+        "technology": "Claude Code",
+        "headline": "Cursor links trojanized Claude Code extension on its marketplace to key stolen in Fireworks AI breach",
+        "cluster_id": "d5585df40181d87d8a2f8949"
+      },
+      {
+        "technology": "Claude Code",
+        "headline": "Cursor confirms breach enabled distribution of malicious Claude Code extension via its marketplace",
+        "cluster_id": "2396f465be9396c94b74ec08"
+      },
+      {
+        "technology": "Claude Code",
+        "headline": "Weekly recap: GitHub secret stealer and Claude Code abused as remote implant",
+        "cluster_id": "82bfdc687bb628781b649528"
+      },
+      {
+        "technology": "OpenAI API",
+        "headline": "datasette-llm 0.1a11 adds support for OpenAI-compatible endpoints and local models",
+        "cluster_id": "e9477865501b0215260c38f8"
+      }
+    ],
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "Weekly recap: GitHub secret stealer and Claude Code abused as remote implant",
+        "cluster_id": "82bfdc687bb628781b649528"
+      }
+    ]
+  },
+  "regulations": {
+    "Europe": [
+      {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Italian regulator fines Meta €805 million over Facebook Android gallery access",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/961758/Meta+krijgt+805+miljoen+euro+boete+voor+illegale+toegang+tot+foto%27s+Androidgebruikers?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-11-15T08:19:52+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Italy's Garante fines Meta €805M for default-on Facebook Android gallery access without consent",
+        "sources": [
+          {
+            "url": "https://thehackernews.com/2026/11/italy-fines-meta-805-million-over.html",
+            "source": "The Hacker News",
+            "published": "2026-11-15T11:27:31+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ]
+  },
+  "other_count": 6,
+  "source_health": {
+    "at": "2026-11-15T12:30:17.308027+00:00",
+    "enabled": 41,
+    "failures": 1,
+    "new": 14,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 201,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 41,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 7,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 0,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [],
+  "kev_provenance": {
+    "released": "2026-11-13T20:24:18.300800+00:00",
+    "version": "2026.11.13",
+    "count": 1781,
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "checked": "2026-11-15T12:30:17.308027+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "security-in-the-delivery-path": [
+      "d5585df40181d87d8a2f8949",
+      "2396f465be9396c94b74ec08"
+    ],
+    "secure-development-for-automotive": [
+      "d5585df40181d87d8a2f8949"
+    ],
+    "continuous-vulnerability-management": [
+      "e577b898eca3316fd935fc7a",
+      "d8bfb436b899fcd559ed97ed"
+    ]
+  }
+}
