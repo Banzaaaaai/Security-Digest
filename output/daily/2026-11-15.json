@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-15",
-  "start": "2026-11-14T12:30:17.308027+00:00",
-  "end": "2026-11-15T12:30:17.308027+00:00",
+  "start": "2026-11-14T13:05:55.247856+00:00",
+  "end": "2026-11-15T13:05:55.247856+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -319,120 +319,6 @@
         "industry": 5.0,
         "practice": 8.25,
         "weighted_total": 70.25,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "e577b898eca3316fd935fc7a",
-      "headline": "CISA adds actively exploited UnrealIRCd command injection flaw CVE-2026-114713 to KEV",
-      "summary": "CISA has added CVE-2026-114713 (CVSS 8.6) to its Known Exploited Vulnerabilities catalog after reports that attackers are exploiting it. The flaw affects UnrealIRCd, an open-source IRC server, and comes from improper neutralization of delimiters, which allows command injection at the server level. UnrealIRCd is a niche product in enterprise environments.",
-      "category": "exploitation_in_the_wild",
-      "importance": "high",
-      "importance_rationale": "The flaw is in CISA KEV and is being actively exploited. UnrealIRCd is not widely deployed enterprise software, so this rates high rather than critical.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 55,
-        "MEA": 50,
-        "Other": 50
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 35,
-        "private_banking": 15,
-        "investment_management": 15,
-        "government": 40,
-        "retail_banking": 15,
-        "global_it_services": 35,
-        "logistics": 15,
-        "industrial_manufacturing": 15,
-        "automotive": 15
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 80,
-        "devsecops": 10,
-        "siem_detection": 50,
-        "iam_pam": 5,
-        "email_phishing": 0,
-        "data_protection_dlp": 5,
-        "ot_ics": 0,
-        "grc_audit": 20,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "UnrealIRCd"
-      ],
-      "cves": [
-        "CVE-2026-114713"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source links no detection rules. Assessment: watch IRC server hosts for unexpected child processes and outbound connections.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Check whether any UnrealIRCd instances are running, including shadow IT. Patch them per vendor guidance and review the hosts for signs of compromise.",
-      "confidence": 0.85,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html",
-          "source": "The Hacker News",
-          "published": "2026-11-14T12:38:35+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "The flaw is in CISA KEV and is being actively exploited. UnrealIRCd is not widely deployed enterprise software, so this rates high rather than critical.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-114713": {
-          "kev": {
-            "dateAdded": "2026-11-13",
-            "vendorProject": "UnrealIRCd",
-            "product": "UnrealIRCd",
-            "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-            "dueDate": "2026-11-16",
-            "knownRansomwareCampaignUse": "Unknown"
-          },
-          "epss": 0.00508,
-          "cvss": null
-        }
-      },
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 70.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 9.0,
-        "industry": 4.0,
-        "practice": 12.0,
-        "weighted_total": 70.0,
         "severity_band": [
           65,
           84.99
@@ -1271,6 +1157,103 @@
       "included": false
     },
     {
+      "cluster_id": "04cc2ecb3f01d7498618208f",
+      "headline": "Pentagon renames its Chief Digital and AI Office the 'Super Intelligence Office'",
+      "summary": "SecurityWeek reports that the US Department of Defense has renamed its Chief Digital and Artificial Intelligence Office (CDAO) the \"Super Intelligence Office.\" The change follows a presidential order to say \"super intelligence\" instead of \"artificial intelligence\" in executive branch communications. The source does not describe any change to security requirements or operations.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is a naming change inside the US government. It has no reported effect on security, regulation or operations.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 2,
+        "MEA": 2,
+        "Other": 2
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 30,
+        "retail_banking": 0,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 0,
+        "ai_governance": 20
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. This is not a threat or vulnerability.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. Teams working with US defense agencies may want to note the new office name for AI governance correspondence.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/pentagon-renames-cdao-super-intelligence-office/",
+          "source": "SecurityWeek",
+          "published": "2026-11-15T12:51:33+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a naming change inside the US government. It has no reported effect on security, regulation or operations.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 21.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 3.0,
+        "practice": 3.0,
+        "weighted_total": 21.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "f8b55e53d88a81420516acb6",
       "headline": "Opinion: Overreliance on AI may erode security teams' critical skills",
       "summary": "This SecurityWeek opinion piece argues that leaning too heavily on AI could weaken the creativity, communication and critical thinking that security teams need when no playbook applies. It reports no incident or vulnerability.",
@@ -1670,9 +1653,9 @@
   ],
   "counts": {
     "critical": 2,
-    "high": 2,
+    "high": 1,
     "medium": 6,
-    "low": 6
+    "low": 7
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -1743,23 +1726,23 @@
       }
     ]
   },
-  "other_count": 6,
+  "other_count": 7,
   "source_health": {
-    "at": "2026-11-15T12:30:17.308027+00:00",
+    "at": "2026-11-15T13:05:55.247856+00:00",
     "enabled": 41,
-    "failures": 1,
-    "new": 14,
+    "failures": 2,
+    "new": 1,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -1769,12 +1752,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Dark Reading",
@@ -1809,7 +1792,7 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -1847,12 +1830,12 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
@@ -1902,7 +1885,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -1951,8 +1934,9 @@
       },
       {
         "name": "Seebug Vulnerabilities",
-        "ok": true,
-        "new": 0
+        "ok": false,
+        "new": 0,
+        "error": "ReadTimeout"
       },
       {
         "name": "Censys Blog",
@@ -2001,7 +1985,6 @@
       "d5585df40181d87d8a2f8949"
     ],
     "continuous-vulnerability-management": [
-      "e577b898eca3316fd935fc7a",
       "d8bfb436b899fcd559ed97ed"
     ]
   }
