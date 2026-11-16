@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-16",
-  "start": "2026-11-15T13:21:47.979150+00:00",
-  "end": "2026-11-16T13:21:47.979150+00:00",
+  "start": "2026-11-15T14:12:19.021556+00:00",
+  "end": "2026-11-16T14:12:19.021556+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -1002,6 +1002,107 @@
         "industry": 8.5,
         "practice": 10.5,
         "weighted_total": 76.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "8827ed6b203a7da1462ee7c5",
+      "headline": "Critical flaws in Copeland refrigeration controllers allow remote takeover",
+      "summary": "Researchers found several vulnerabilities in Copeland refrigeration systems that could let attackers take control of the devices remotely. The source does not report any exploitation in the wild. It also gives no CVE identifiers or affected model details.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "The source describes a critical, remotely exploitable flaw in OT/building-control equipment used in cold-chain and industrial settings. No exploitation has been reported.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 25,
+        "retail_banking": 5,
+        "global_it_services": 20,
+        "logistics": 65,
+        "industrial_manufacturing": 60,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 75,
+        "devsecops": 5,
+        "siem_detection": 35,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 85,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Copeland refrigeration controllers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: OT network monitoring for unexpected remote access to refrigeration controllers may help. The source gives no detection rules.",
+      "related_case_studies": [
+        "securing-offshore-operations"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "logistics",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find any Copeland controllers you run and make sure they are not reachable from the internet. Check the vendor's advisories for fixes and apply them once you confirm the affected models.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961900/Copeland-koelsystemen+via+kritiek+lek+op+afstand+over+te+nemen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-16T13:26:51+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "The source describes a critical, remotely exploitable flaw in OT/building-control equipment used in cold-chain and industrial settings. No exploitation has been reported.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.security.nl/posting/961900/Copeland-koelsystemen+via+kritiek+lek+op+afstand+over+te+nemen?channel=rss"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 74.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 6.5,
+        "practice": 12.75,
+        "weighted_total": 74.75,
         "severity_band": [
           65,
           84.99
@@ -2336,6 +2437,112 @@
       "included": true
     },
     {
+      "cluster_id": "9b1f22329875fb27660e03d8",
+      "headline": "Google warns attackers are moving toward fully automated AI-driven exploitation",
+      "summary": "Google reports that threat actors are using agentic AI frameworks to automate finding and exploiting vulnerabilities. It warns that fully automated attacks running at machine speed are coming soon.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is threat research on a developing trend in attacker tactics. It names no specific campaign or vulnerability.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 55,
+        "Other": 55
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 45,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 35,
+        "siem_detection": 55,
+        "iam_pam": 20,
+        "email_phishing": 10,
+        "data_protection_dlp": 15,
+        "ot_ics": 15,
+        "grc_audit": 25,
+        "security_automation": 55,
+        "ai_governance": 70
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: faster exploitation shortens the time defenders have to patch. Automated detection and response becomes more valuable as a result.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review how quickly you patch systems exposed to the internet, and look at automating detection and response. Treat the timeline as a forecast that still needs to be confirmed.",
+      "confidence": 0.65,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/google-warns-that-fully-automated-ai-attacks-are-coming-soon/",
+          "source": "BleepingComputer",
+          "published": "2026-11-16T14:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is threat research on a developing trend in attacker tactics. It names no specific campaign or vulnerability.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 51.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.0,
+        "practice": 10.5,
+        "weighted_total": 51.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "5ceeaae8e26f5eb828b8ffe1",
       "headline": "REF3364 cryptomining operation uses SANSAR toolkit and modified NVIDIA library to hide GPU use",
       "summary": "A financially motivated activity cluster tracked as REF3364 runs a Linux cryptomining operation that tampers with the GPU readings defenders use to spot heavy workloads. Its Rust-based SANSAR orchestrator receives commands over Tor and manages both CPU and GPU miners.",
@@ -3522,6 +3729,103 @@
         "severity_band": [
           35,
           64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "924b7b62bd9ecdf7db1c5013",
+      "headline": "Dutch MPs urge next cabinet to create a Ministry of Digital Affairs",
+      "summary": "Several members of the Dutch House of Representatives want the next government to set up a Ministry of Digital Affairs. This is a political proposal, not a binding measure.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is a non-binding political proposal with no immediate security effect.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 50,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 60,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 0,
+        "ai_governance": 15
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. Watch how the Dutch cabinet formation develops.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/961920/Kamerleden+willen+dat+volgend+kabinet+ministerie+van+Digitale+Zaken+opzet?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-16T14:03:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a non-binding political proposal with no immediate security effect.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 27.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 6.0,
+        "practice": 5.25,
+        "weighted_total": 27.75,
+        "severity_band": [
+          0,
+          34.99
         ]
       },
       "included": true
@@ -4828,14 +5132,14 @@
   ],
   "counts": {
     "critical": 1,
-    "high": 11,
-    "medium": 22,
-    "low": 13
+    "high": 12,
+    "medium": 23,
+    "low": 14
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 11,
+  "watch_hits": 12,
   "watch": {
     "microsoft": [
       {
@@ -4891,6 +5195,11 @@
         "cluster_id": "1742a693aba8e2002103c362"
       },
       {
+        "technology": "AI agent frameworks",
+        "headline": "Google warns attackers are moving toward fully automated AI-driven exploitation",
+        "cluster_id": "9b1f22329875fb27660e03d8"
+      },
+      {
         "technology": "Claude API",
         "headline": "Anthropic Claude 5.2 models change handling of security tasks and bug-finding capability",
         "cluster_id": "d3122e6e57b4157091e726b5"
@@ -4937,21 +5246,21 @@
   },
   "other_count": 13,
   "source_health": {
-    "at": "2026-11-16T13:21:47.979150+00:00",
+    "at": "2026-11-16T14:12:19.021556+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 49,
+    "new": 3,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 7
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
@@ -4961,12 +5270,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Dark Reading",
@@ -4976,12 +5285,12 @@
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -5001,7 +5310,7 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -5039,7 +5348,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -5049,7 +5358,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -5094,7 +5403,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 6
+        "new": 2
       },
       {
         "name": "Contagio",
@@ -5203,10 +5512,14 @@
       "b6b55ddeaf88c0182f35ee2e",
       "71db9eda9bdedcdd98175958",
       "d31790162a86fecd7491df79",
+      "9b1f22329875fb27660e03d8",
       "83d5f53cdd7d78ea7e8e45f6"
     ],
     "security-in-the-delivery-path": [
       "1abe8912cb223ae43799b6e4"
+    ],
+    "securing-offshore-operations": [
+      "8827ed6b203a7da1462ee7c5"
     ],
     "vendor-release-automation": [
       "80b2a63d906f3f94027aea5a"
