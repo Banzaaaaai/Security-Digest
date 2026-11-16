@@ -20450,5 +20450,473 @@
     "estimated_usd": 0.092946,
     "email_type": null,
     "email_sent": false
+  },
+  {
+    "timestamp": "2026-11-16T13:21:47.817470+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [
+      {
+        "email_type": "daily",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-11-16T13:21:47.979150+00:00",
+      "enabled": 41,
+      "failures": 2,
+      "new": 49,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 7
+        },
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 9
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 6
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 4
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 201,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 3
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 41,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 7,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 6
+        },
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": false,
+          "new": 0,
+          "error": "ReadTimeout"
+        },
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 0,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "classification": {
+      "classified": 46,
+      "usage": [
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 2615,
+          "output_tokens": 5370,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 13990,
+          "estimated_usd": 0.18781,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 3004,
+          "output_tokens": 5186,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.118534,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1622,
+          "output_tokens": 5421,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.117706,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1457,
+          "output_tokens": 5281,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.114246,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1252,
+          "output_tokens": 5255,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112906,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1384,
+          "output_tokens": 5090,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.110134,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1446,
+          "output_tokens": 5171,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112002,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1500,
+          "output_tokens": 5203,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112858,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1553,
+          "output_tokens": 5306,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.11513,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1658,
+          "output_tokens": 5636,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.12215,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 349,
+          "output_tokens": 1349,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.031174,
+          "batch": false
+        }
+      ]
+    },
+    "period": "2026-11-16",
+    "counts": {
+      "critical": 1,
+      "high": 11,
+      "medium": 22,
+      "low": 13
+    },
+    "items": 47,
+    "duplicates_removed": 0,
+    "duration_s": 504.28,
+    "usage": [
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 2615,
+        "output_tokens": 5370,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 13990,
+        "estimated_usd": 0.18781,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 3004,
+        "output_tokens": 5186,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.118534,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1622,
+        "output_tokens": 5421,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.117706,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1457,
+        "output_tokens": 5281,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.114246,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1252,
+        "output_tokens": 5255,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112906,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1384,
+        "output_tokens": 5090,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.110134,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1446,
+        "output_tokens": 5171,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112002,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1500,
+        "output_tokens": 5203,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112858,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1553,
+        "output_tokens": 5306,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.11513,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1658,
+        "output_tokens": 5636,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.12215,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 349,
+        "output_tokens": 1349,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.031174,
+        "batch": false
+      }
+    ],
+    "estimated_usd": 1.25465,
+    "email_type": "daily",
+    "email_sent": true
   }
 ]
