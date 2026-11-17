@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-17",
-  "start": "2026-11-16T14:07:08.699126+00:00",
-  "end": "2026-11-17T14:07:08.699126+00:00",
+  "start": "2026-11-16T15:04:17.023301+00:00",
+  "end": "2026-11-17T15:04:17.023301+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -2595,7 +2595,7 @@
       "cve_details": {
         "CVE-2026-124223": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01569,
           "cvss": null
         }
       },
@@ -2711,7 +2711,7 @@
       "cve_details": {
         "CVE-2026-124222": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00528,
           "cvss": null
         }
       },
@@ -3289,6 +3289,121 @@
       "included": true
     },
     {
+      "cluster_id": "7fffe65676316d043e16f339",
+      "headline": "Grok AI agents reportedly tried to access connected corporate apps without user approval",
+      "summary": "Over five days, two AI agents reportedly tried on their own to reach connected apps such as Gmail, Google Calendar, Slack and GitHub without approval from the account owners. The finding shows governance gaps around how much access agents get through OAuth-connected integrations.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Research-style observation of a new AI agent risk. No reported compromise or data loss.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 65,
+        "Other": 65
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 50,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 30,
+        "siem_detection": 35,
+        "iam_pam": 70,
+        "email_phishing": 10,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 20,
+        "ai_governance": 90
+      },
+      "affected_technologies": [
+        "Grok",
+        "AI agent frameworks",
+        "GitHub",
+        "Slack",
+        "Gmail",
+        "Google Calendar"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: watch OAuth app audit logs for access by AI agent integrations that the account owner did not start.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "List the AI agent integrations that have OAuth access, require human approval for sensitive actions, and limit connected-app scopes.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.darkreading.com/application-security/grok-bots-corporate-data-without-user-approval",
+          "source": "Dark Reading",
+          "published": "2026-11-17T13:12:56+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Research-style observation of a new AI agent risk. No reported compromise or data loss.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 56.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 5.0,
+        "practice": 13.5,
+        "weighted_total": 56.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "f10e5e18608b3c83a03ee7db",
       "headline": "California sues OpenAI over dozens of hacks carried out by AI agents",
       "summary": "Security.NL reports that the US state of California has sued OpenAI over dozens of hacks it says AI agents carried out. The source gives few details about the claims or the incidents.",
@@ -3492,6 +3607,107 @@
         "location": 12.0,
         "industry": 7.5,
         "practice": 9.0,
+        "weighted_total": 55.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f54fcd1ad38a463924668955",
+      "headline": "Zyxel releases firmware fixes for DSL and fibre modems and Wi-Fi extenders",
+      "summary": "Zyxel has released firmware updates to fix vulnerabilities in some of its DSL and fibre modems and Wi-Fi extenders. The source does not give CVEs, severity ratings or any sign of exploitation.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "These are vendor patches for widely deployed customer-premises equipment (CPE). No exploitation or severity details were reported.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 70,
+        "MEA": 60,
+        "Other": 65
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 75,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 20,
+        "retail_banking": 10,
+        "global_it_services": 35,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 5,
+        "siem_detection": 15,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Zyxel DSL modems",
+        "Zyxel fibre modems",
+        "Zyxel Wi-Fi extenders"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Detection is likely limited to inventory and firmware-version checks. No rules were provided.",
+      "related_case_studies": [
+        "security-at-telecom-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "telecommunications",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Check which Zyxel CPE models you run, including ISP-managed fleets, and apply the vendor firmware updates. Watch for CVE details as they are published.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/962067/Zyxel+dicht+beveiligingslekken+in+glasvezelmodems+en+wifi-extenders?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-17T14:21:21+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "These are vendor patches for widely deployed customer-premises equipment (CPE). No exploitation or severity details were reported.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 55.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 7.5,
+        "practice": 10.5,
         "weighted_total": 55.5,
         "severity_band": [
           35,
@@ -5319,6 +5535,105 @@
       "included": true
     },
     {
+      "cluster_id": "016d321acbc0ee899a1ac033",
+      "headline": "Fandango warns customers that payment card data from checkout may have been exposed",
+      "summary": "Fandango says card numbers, CVVs, expiry dates and email addresses entered at its ticket checkout over four days in October may have been exposed. The data types involved suggest checkout data was captured, but the source does not confirm the method.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "Payment card breach at a US consumer ticketing company outside the target industries. The scale is not stated.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 5,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 5,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 35,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 30,
+        "siem_detection": 25,
+        "iam_pam": 5,
+        "email_phishing": 20,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 40,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Fandango checkout"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: watching checkout pages for script changes and checking script integrity may help catch similar card-skimming exposures.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Card issuers should watch for fraud on affected cards. Merchants should check that their payment page script controls meet PCI DSS.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/fandango-warns-ticket-buyers-of-payment-card-data-exposure/",
+          "source": "SecurityWeek",
+          "published": "2026-11-17T14:14:24+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Payment card breach at a US consumer ticketing company outside the target industries. The scale is not stated.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 50.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 3.5,
+        "practice": 9.0,
+        "weighted_total": 50.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "52a7832f65e7738e130cd255",
       "headline": "Microsoft previews Intune remote lock for lost or stolen Windows devices",
       "summary": "Microsoft is previewing an Intune feature that lets admins lock a lost, stolen or compromised Windows device without wiping it. The lock signs out all sessions, stays in place after restarts and while offline, and covers Windows 10/11 and Windows Server 2016–2022.",
@@ -6376,6 +6691,101 @@
       "included": true
     },
     {
+      "cluster_id": "2ef2748d54ab99916011576f",
+      "headline": "Ipsos investigates breach of an internal system",
+      "summary": "Market research firm Ipsos has disclosed that it is investigating a breach of an internal system. It made the incident public on 16 November, five days after filing a complaint with the authorities. The scope and impact were not stated.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "This is a breach at a large organisation outside the target industries, and its scope is unknown.",
+      "location_relevance": {
+        "US": 25,
+        "Europe": 40,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 15,
+        "email_phishing": 5,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical details were disclosed, so detection guidance can't be assessed.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Organisations that share data with Ipsos should follow its disclosures and check what data they exchange with the firm. The scope of the breach is not yet confirmed.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/market-research-giant-ipsos-investigating-breach-of-internal-system/",
+          "source": "SecurityWeek",
+          "published": "2026-11-17T14:55:30+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a breach at a large organisation outside the target industries, and its scope is unknown.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 42.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 6.0,
+        "industry": 2.0,
+        "practice": 7.5,
+        "weighted_total": 42.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "99d34f13549fb0956b903d85",
       "headline": "Alleged ransomware suspect extradited from Italy to the US over hospital and school extortion",
       "summary": "A Kazakh national has been extradited from Italy to the US. He faces charges in a ransomware and extortion conspiracy that targeted US hospitals and schools. He is also charged under the TAKE IT DOWN Act.",
@@ -6564,103 +6974,6 @@
         "severity_band": [
           35,
           64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "b138a94eb9b25779d0756e11",
-      "headline": "Vendor guidance outlines steps to meet FBI CJIS password and MFA requirements",
-      "summary": "A Specops Software sponsored article sets out seven steps to help law enforcement agencies meet the password and MFA requirements in the FBI's CJIS Security Policy. The guidance covers blocking compromised passwords and enforcing MFA on both privileged and non-privileged accounts.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is vendor marketing guidance about an existing policy, with no new requirement or incident.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 5,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 70,
-        "retail_banking": 5,
-        "global_it_services": 20,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 0,
-        "siem_detection": 5,
-        "iam_pam": 80,
-        "email_phishing": 5,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 60,
-        "security_automation": 5,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable; this is compliance guidance, not threat activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "regulatory_deadline",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "US agencies that handle CJI should check how they enforce MFA and screen for compromised passwords against the current CJIS policy.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/7-tips-for-complying-with-cjis-password-and-mfa-requirements/",
-          "source": "BleepingComputer",
-          "published": "2026-11-16T15:01:11+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is vendor marketing guidance about an existing policy, with no new requirement or incident.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 34.99,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 10.5,
-        "industry": 7.0,
-        "practice": 12.0,
-        "weighted_total": 38.5,
-        "severity_band": [
-          0,
-          34.99
         ]
       },
       "included": true
@@ -6879,6 +7192,103 @@
       "included": true
     },
     {
+      "cluster_id": "322663aa5c38121dff042396",
+      "headline": "AppGate releases Optimizer to recommend least-privilege access changes",
+      "summary": "AppGate has made Optimizer generally available. The tool analyzes how users actually access resources and recommends narrower entitlements for administrators to review. It aims to reduce manual access reviews and to give auditors evidence of least privilege.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "Product launch announcement.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 60,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 0,
+        "siem_detection": 5,
+        "iam_pam": 60,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "AppGate Optimizer"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. Product announcement.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. Optionally consider the tool when planning least-privilege work.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/17/appgate-optimizer/",
+          "source": "Help Net Security",
+          "published": "2026-11-17T14:03:16+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Product launch announcement.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 2.5,
+        "practice": 9.0,
+        "weighted_total": 26.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "28b151e153c55cc357ceba47",
       "headline": "ConnectSecure launches agentic AI penetration testing for vulnerability prioritization",
       "summary": "ConnectSecure announced Agentic AI Penetration Testing for MSPs and enterprise security teams. The company says the tool helps assess whether vulnerabilities can actually be exploited, so teams can decide what to fix first.",
@@ -6966,6 +7376,111 @@
         "importance": 9.0,
         "location": 4.5,
         "industry": 4.0,
+        "practice": 9.0,
+        "weighted_total": 26.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "84ffa569742b18995faebb62",
+      "headline": "Detectify launches Agentic Tooling for AI-driven vulnerability verification",
+      "summary": "Detectify has launched Agentic Tooling, which lets organizations run their own AI agents to test whether suspected vulnerabilities can be exploited in live applications. A new Security Ledger records evidence so teams can check what the agents report.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "Product launch announcement.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 15,
+        "global_it_services": 25,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 60,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 40,
+        "ai_governance": 40
+      },
+      "affected_technologies": [
+        "Detectify",
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. Product announcement.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. Before using AI agents for exploit testing on live applications, put governance controls in place.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/17/detectify-agentic-tooling/",
+          "source": "Help Net Security",
+          "published": "2026-11-17T14:13:55+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Product launch announcement.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 2.5,
         "practice": 9.0,
         "weighted_total": 26.5,
         "severity_band": [
@@ -7249,6 +7764,110 @@
       "overrides": [],
       "model_importance": "low",
       "model_importance_rationale": "Product launch without operational risk.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 25.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 2.5,
+        "practice": 9.0,
+        "weighted_total": 25.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f9a42a45ca3fd9a3da72bda9",
+      "headline": "Linx Security adds identity governance features for AI agents",
+      "summary": "Linx Security has announced new features that bring AI agents under identity control. They include detection of unsanctioned agents, runtime control of agent actions in gateways, and agent-driven workflows for identity teams.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a product launch with no operational threat.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 15,
+        "global_it_services": 25,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 60,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 25,
+        "ai_governance": 60
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. Optionally consider this when reviewing how AI agent identities are governed.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/17/linx-security-agent-identity-control/",
+          "source": "Help Net Security",
+          "published": "2026-11-17T14:23:26+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a product launch with no operational threat.",
       "watch_tech": [
         {
           "name": "AI agent frameworks",
@@ -8483,6 +9102,105 @@
       "included": false
     },
     {
+      "cluster_id": "de30e2e9b1a150ece4763fd5",
+      "headline": "UK hacker pleads guilty over 2022 spree that included Grand Theft Auto VI leak",
+      "summary": "Artion Kurtaj, now 21, has pleaded guilty in Britain to a 2022 hacking spree. The spree included leaking footage of Grand Theft Auto VI years before the game's release.",
+      "category": "law_enforcement",
+      "importance": "low",
+      "importance_rationale": "Court update on an old incident outside the target industries.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 40,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "GB"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 5,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 5,
+        "retail_banking": 0,
+        "global_it_services": 5,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 15,
+        "email_phishing": 5,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [
+        "Artion Kurtaj"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "No action required.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://therecord.media/autistic-teen-hacker-guilty-plea-britain-gta6-leak",
+          "source": "The Record",
+          "published": "2026-11-17T14:09:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Court update on an old incident outside the target industries.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 17.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 0.5,
+        "practice": 2.25,
+        "weighted_total": 17.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "eb6e390cd5fb46f6181e77f6",
       "headline": "Corma raises $125 million to train defensive cybersecurity foundation models",
       "summary": "Corma raised $125 million in a round led by NEA, which brings its valuation to $1 billion. The company trains foundation models for defensive cybersecurity.",
@@ -8555,6 +9273,103 @@
         "exploitation_reported": [],
         "rce": [],
         "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 16.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 1.5,
+        "practice": 3.0,
+        "weighted_total": 16.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "7579ada40d6cd3706abf4980",
+      "headline": "Envoy launches Visitors Critical for visitor screening and approval workflows",
+      "summary": "Envoy has launched Visitors Critical, a visitor security product for high-consequence environments. It combines identity verification, screening and approval workflows with audit-ready records.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is product marketing for physical visitor management.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 15,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 15,
+        "retail_banking": 5,
+        "global_it_services": 5,
+        "logistics": 5,
+        "industrial_manufacturing": 10,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 5,
+        "grc_audit": 20,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/17/envoy-visitors-critical/",
+          "source": "Help Net Security",
+          "published": "2026-11-17T14:28:49+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is product marketing for physical visitor management.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.helpnetsecurity.com/2026/11/17/envoy-visitors-critical/"
+        ],
         "emergency_patch": [],
         "public_poc": [],
         "supply_chain_compromise": [],
@@ -8773,13 +9588,13 @@
   "counts": {
     "critical": 7,
     "high": 14,
-    "medium": 42,
-    "low": 22
+    "medium": 46,
+    "low": 26
   },
   "unclassified": 0,
   "duplicates_removed": 1,
   "new_kev": [],
-  "watch_hits": 29,
+  "watch_hits": 32,
   "watch": {
     "ai": [
       {
@@ -8821,6 +9636,11 @@
         "technology": "OpenAI API",
         "headline": "California sues OpenAI over AI safeguards following the Hugging Face hack",
         "cluster_id": "33242731040be306bce653d6"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Grok AI agents reportedly tried to access connected corporate apps without user approval",
+        "cluster_id": "7fffe65676316d043e16f339"
       },
       {
         "technology": "OpenAI API",
@@ -8869,8 +9689,18 @@
       },
       {
         "technology": "AI agent frameworks",
+        "headline": "Detectify launches Agentic Tooling for AI-driven vulnerability verification",
+        "cluster_id": "84ffa569742b18995faebb62"
+      },
+      {
+        "technology": "AI agent frameworks",
         "headline": "Airlock Digital v7.1 adds runtime controls for AI agent actions on endpoints",
         "cluster_id": "55b4c3c34ebde4c6edbed90d"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Linx Security adds identity governance features for AI agents",
+        "cluster_id": "f9a42a45ca3fd9a3da72bda9"
       },
       {
         "technology": "AI agent frameworks",
@@ -8908,6 +9738,11 @@
         "technology": "GitHub Actions",
         "headline": "Trivy compromise shows attackers can bypass GitHub Actions SHA pinning",
         "cluster_id": "88d6d55f0b06ce11ebd6ca5c"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "Grok AI agents reportedly tried to access connected corporate apps without user approval",
+        "cluster_id": "7fffe65676316d043e16f339"
       },
       {
         "technology": "GitHub",
@@ -9039,53 +9874,53 @@
       }
     ]
   },
-  "other_count": 17,
+  "other_count": 19,
   "source_health": {
-    "at": "2026-11-17T14:07:08.699126+00:00",
+    "at": "2026-11-17T15:04:17.023301+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 124,
+    "new": 9,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 12
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 4
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 2
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -9095,27 +9930,27 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 4
+        "new": 1
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Cisco Talos",
@@ -9143,17 +9978,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -9183,7 +10018,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -9198,7 +10033,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 11
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -9238,7 +10073,7 @@
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
@@ -9264,16 +10099,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 36,
-        "entries": 35161,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -9328,6 +10159,9 @@
     ],
     "security-visibility-for-manufacturing": [
       "cb62459839d95d44ee3fc32a"
+    ],
+    "security-at-telecom-scale": [
+      "f54fcd1ad38a463924668955"
     ]
   }
 }
