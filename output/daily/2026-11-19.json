@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-19",
-  "start": "2026-11-18T14:08:09.216835+00:00",
-  "end": "2026-11-19T14:08:09.216835+00:00",
+  "start": "2026-11-18T14:51:13.637765+00:00",
+  "end": "2026-11-19T14:51:13.637765+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -714,6 +714,103 @@
       "included": true
     },
     {
+      "cluster_id": "60421590ddab06b282f12407",
+      "headline": "European Commission confirms reportedly AI-driven cyberattack took some systems offline",
+      "summary": "The European Commission has confirmed a cyberattack that targeted \"individual systems\" and took some of them offline. According to reports, the attackers used a tool called ARTEX, but the details have not been confirmed.",
+      "category": "apt_nation_state",
+      "importance": "critical",
+      "importance_rationale": "This is a confirmed attack that caused an outage at a major European government body.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 95,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 25,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 5,
+        "siem_detection": 50,
+        "iam_pam": 30,
+        "email_phishing": 20,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 50
+      },
+      "affected_technologies": [
+        "ARTEX"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules, and no technical details have been published yet.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Monitor official Commission updates for indicators. Treat the reported AI and ARTEX details as unconfirmed for now.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/commission-ai-attack-systems/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-19T14:45:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "This is a confirmed attack that caused an outage at a major European government body.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 91.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 7.5,
+        "weighted_total": 91.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "c398191b925eebd9ac896ae9",
       "headline": "Equinor investigates cyberattack affecting IT systems; production reportedly unaffected",
       "summary": "Norwegian oil and gas company Equinor is investigating a cyberattack that disrupted its IT systems. The company says production was not disrupted, but it has given no timeline for full recovery. Attribution and the attack type have not been disclosed.",
@@ -989,7 +1086,7 @@
       "cve_details": {
         "CVE-2026-129448": {
           "kev": null,
-          "epss": 0.0164,
+          "epss": 0.01191,
           "cvss": null
         }
       },
@@ -1151,7 +1248,7 @@
       "cve_details": {
         "CVE-2026-123007": {
           "kev": null,
-          "epss": null,
+          "epss": 0.06358,
           "cvss": null
         }
       },
@@ -2172,6 +2269,109 @@
       "included": true
     },
     {
+      "cluster_id": "45f4f2200a0045216692b47f",
+      "headline": "COLD RELIC (Star Blizzard) poses as staff of breached organizations to phish new targets",
+      "summary": "Google Threat Intelligence Group (GTIG) reports that COLD RELIC, also known as Star Blizzard, Callisto and Gossamer Bear, impersonates employees of organizations it has already breached to phish new victims. The US Department of Justice has assessed that the group operates within Russia's FSB. Its targets are government officials, defense contractors and NGOs in Europe and North America.",
+      "category": "apt_nation_state",
+      "importance": "high",
+      "importance_rationale": "This is new research on the tactics of an active nation-state phishing campaign against government targets in the US and Europe.",
+      "location_relevance": {
+        "US": 80,
+        "Europe": 85,
+        "MEA": 20,
+        "Other": 15
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 90,
+        "retail_banking": 10,
+        "global_it_services": 30,
+        "logistics": 10,
+        "industrial_manufacturing": 25,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 60,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 60,
+        "iam_pam": 70,
+        "email_phishing": 85,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [
+        "COLD RELIC",
+        "Star Blizzard",
+        "Callisto",
+        "Gossamer Bear"
+      ],
+      "regulations": [],
+      "attack_techniques": [
+        "T1078",
+        "T1566"
+      ],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules. Our assessment is that the most useful signals are mail from trusted partner domains with unusual characteristics and anomalous cloud account sign-ins.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Warn high-risk staff about phishing that appears to come from trusted contacts. Enforce phishing-resistant MFA and review the GTIG indicators.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/19/russian-spies-impersonation-cloud-breach/",
+          "source": "Help Net Security",
+          "published": "2026-11-19T14:42:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is new research on the tactics of an active nation-state phishing campaign against government targets in the US and Europe.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 79.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 9.0,
+        "practice": 12.75,
+        "weighted_total": 79.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "4372ca7f9d92316fe35dadd5",
       "headline": "Dutch NCSC warns it expects large-scale exploitation of an NGINX vulnerability",
       "summary": "The Dutch National Cyber Security Centre says it is preparing for large-scale abuse of a vulnerability in NGINX. The source gives no CVE or confirmed successful compromises.",
@@ -2444,7 +2644,7 @@
       "cve_details": {
         "CVE-2026-123007": {
           "kev": null,
-          "epss": null,
+          "epss": 0.06358,
           "cvss": null
         }
       },
@@ -2658,7 +2858,7 @@
       "cve_details": {
         "CVE-2026-121810": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01751,
           "cvss": null
         }
       },
@@ -2982,27 +3182,27 @@
       "cve_details": {
         "CVE-2026-113425": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01582,
           "cvss": null
         },
         "CVE-2026-121810": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01751,
           "cvss": null
         },
         "CVE-2026-123007": {
           "kev": null,
-          "epss": null,
+          "epss": 0.06358,
           "cvss": null
         },
         "CVE-2026-123633": {
           "kev": null,
-          "epss": null,
+          "epss": 0.06532,
           "cvss": null
         },
         "CVE-2026-123634": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01591,
           "cvss": null
         }
       },
@@ -3900,100 +4100,85 @@
       "included": true
     },
     {
-      "cluster_id": "eeacf32197a63f608dcd71a2",
-      "headline": "Oracle November 2026 Critical Patch Update fixes 655 vulnerabilities across product families",
-      "summary": "Oracle's November 2026 Critical Security Patch Update includes 655 security patches across many product families, some covering third-party components. Qualys's summary points to a subset of 62 vulnerabilities (9.5%) but is cut off before it says what defines that subset. The sources do not report any exploitation in the wild.",
+      "cluster_id": "3451d1cf87f82192d2dd6f37",
+      "headline": "Drupal warns of critical flaw allowing unauthenticated website takeover",
+      "summary": "Drupal's maintainers have warned about a critical vulnerability that could let unauthenticated attackers take over sites built on the CMS. The source does not mention a CVE identifier or any active exploitation.",
       "category": "vulnerability",
       "importance": "high",
-      "importance_rationale": "This is a large vendor patch release for widely deployed enterprise software and likely includes critical flaws, but no exploitation has been reported.",
+      "importance_rationale": "This is a critical unauthenticated takeover flaw in a widely used CMS, and the vendor has issued a warning. No exploitation has been reported.",
       "location_relevance": {
-        "US": 85,
+        "US": 80,
         "Europe": 85,
-        "MEA": 85,
-        "Other": 85
+        "MEA": 75,
+        "Other": 75
       },
       "countries_mentioned": [],
       "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 55,
-        "private_banking": 55,
-        "investment_management": 55,
-        "government": 55,
-        "retail_banking": 60,
-        "global_it_services": 60,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 60,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 20,
+        "zero_trust_cloud": 10,
         "vuln_exposure_mgmt": 90,
-        "devsecops": 25,
-        "siem_detection": 25,
-        "iam_pam": 15,
+        "devsecops": 40,
+        "siem_detection": 40,
+        "iam_pam": 10,
         "email_phishing": 0,
         "data_protection_dlp": 20,
-        "ot_ics": 5,
-        "grc_audit": 30,
-        "security_automation": 30,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 20,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "Oracle"
+        "Drupal"
       ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
-      "attack_techniques": [],
+      "attack_techniques": [
+        "T1190"
+      ],
       "detection_refs": [],
-      "detection_coverage_note": "Our assessment: vulnerability scanner checks should cover these patches. The sources do not link any detection rules.",
+      "detection_coverage_note": "The source does not link any detection rules. Our assessment is that web server and WAF logs from Drupal sites should be monitored for unusual unauthenticated requests.",
       "related_case_studies": [
-        "continuous-vulnerability-management",
-        "vendor-release-automation"
+        "continuous-vulnerability-management"
       ],
       "business_signal": {
         "present": false,
         "type": "technology_shift",
-        "sector": "global_it_services",
+        "sector": "government",
         "region": "Other",
         "rationale": ""
       },
-      "recommended_action": "Find which Oracle products you run and patch the critical, remotely exploitable flaws in internet-facing systems first. Then check the third-party components covered by the update.",
-      "confidence": 0.75,
+      "recommended_action": "Find all Drupal instances and apply the vendor's security release as soon as possible. Keep an eye out for any exploitation reports.",
+      "confidence": 0.7,
       "sources": [
         {
-          "url": "https://threatprotect.qualys.com/2026/11/18/oracle-critical-security-patch-update-november-2026-review/",
-          "source": "Qualys ThreatPROTECT",
-          "published": "2026-11-18T14:21:20+00:00",
-          "date_inferred": false
-        },
-        {
-          "url": "https://blog.qualys.com/?p=43974",
-          "source": "Qualys Vulnerabilities and Threat Research",
-          "published": "2026-11-18T14:21:51+00:00",
+          "url": "https://www.security.nl/posting/962342/Drupal+waarschuwt+voor+kritiek+lek+dat+aanvaller+websites+laat+overnemen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-19T14:11:03+00:00",
           "date_inferred": false
         }
       ],
-      "overrides": [
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
+      "overrides": [],
       "model_importance": "high",
-      "model_importance_rationale": "This is a large vendor patch release for widely deployed enterprise software and likely includes critical flaws, but no exploitation has been reported.",
-      "watch_tech": [
-        {
-          "name": "Oracle",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "enterprise_apps"
-        }
-      ],
+      "model_importance_rationale": "This is a critical unauthenticated takeover flaw in a widely used CMS, and the vendor has issued a warning. No exploitation has been reported.",
+      "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
         "exploitation_reported": [],
         "rce": [],
         "critical_flaw": [
-          "https://blog.qualys.com/?p=43974",
-          "https://threatprotect.qualys.com/2026/11/18/oracle-critical-security-patch-update-november-2026-review/"
+          "https://www.security.nl/posting/962342/Drupal+waarschuwt+voor+kritiek+lek+dat+aanvaller+websites+laat+overnemen?channel=rss"
         ],
         "emergency_patch": [],
         "public_poc": [],
@@ -4001,7 +4186,7 @@
         "certificate_compromise": [],
         "worldwide": []
       },
-      "exposure_scope": "Enterprise software and distribution infrastructure",
+      "exposure_scope": "Source-specific or unestablished",
       "independent_sources_24h": 1,
       "priority": 77.25,
       "priority_breakdown": {
@@ -4320,7 +4505,7 @@
       "cve_details": {
         "CVE-2026-123633": {
           "kev": null,
-          "epss": null,
+          "epss": 0.06532,
           "cvss": null
         }
       },
@@ -4426,7 +4611,7 @@
       "cve_details": {
         "CVE-2026-123634": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01591,
           "cvss": null
         }
       },
@@ -4969,7 +5154,7 @@
       "cve_details": {
         "CVE-2026-113425": {
           "kev": null,
-          "epss": null,
+          "epss": 0.01582,
           "cvss": null
         }
       },
@@ -5665,105 +5850,6 @@
       "included": true
     },
     {
-      "cluster_id": "16d1e418da7ea1b76c1da0a8",
-      "headline": "Suspected Chinese APT rebuilds EggStreme malware toolkit to keep targeting Philippine government",
-      "summary": "Bitdefender reports that the suspected Chinese APT group behind the EggStreme malware has rebuilt its toolkit after public exposure. The group is still targeting government organizations in the Philippines. According to the report, the group made deeper changes to evade security tools instead of only rotating hashes and domains.",
-      "category": "apt_nation_state",
-      "importance": "medium",
-      "importance_rationale": "The report describes new evasion TTPs from a nation-state espionage group, but the evidenced targets are government bodies in APAC, outside the core target regions.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 90
-      },
-      "countries_mentioned": [
-        "PH"
-      ],
-      "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 15,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 90,
-        "retail_banking": 5,
-        "global_it_services": 15,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 5,
-        "siem_detection": 70,
-        "iam_pam": 15,
-        "email_phishing": 10,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 5,
-        "security_automation": 15,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "EggStreme"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: detections based on hashes or domains are probably not enough because the actor retooled. Behavior-based endpoint detection is more likely to hold up.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Government SOCs should review the Bitdefender report and focus on behavioral detections for EggStreme instead of relying only on IOCs.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://thehackernews.com/2026/11/eggstreme-hackers-rebuild-malware-with.html",
-          "source": "The Hacker News",
-          "published": "2026-11-18T14:11:28+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "The report describes new evasion TTPs from a nation-state espionage group, but the evidenced targets are government bodies in APAC, outside the core target regions.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 60.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 13.5,
-        "industry": 9.0,
-        "practice": 10.5,
-        "weighted_total": 60.0,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "e47efa16875866f62b91a52c",
       "headline": "CISA republishes Hitachi Energy MicroSCADA SYS600 advisory on legacy ActiveX code execution flaw",
       "summary": "CISA has issued version 2 of a Hitachi Energy advisory for MicroSCADA Pro/X SYS600. The legacy ActiveBar ActiveX control (CVE-2011-1207, CVSS 6.7) could allow arbitrary code execution. Hitachi Energy recommends upgrading to SYS600 10.2 or applying its general mitigations. The advisory does not report any exploitation.",
@@ -6065,7 +6151,7 @@
       "cve_details": {
         "CVE-2026-118899": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00927,
           "cvss": null
         }
       },
@@ -6171,7 +6257,7 @@
       "cve_details": {
         "CVE-2026-123640": {
           "kev": null,
-          "epss": null,
+          "epss": 0.0038,
           "cvss": null
         }
       },
@@ -6942,7 +7028,7 @@
       "cve_details": {
         "CVE-2026-130644": {
           "kev": null,
-          "epss": 0.00453,
+          "epss": 0.0028,
           "cvss": null
         }
       },
@@ -7050,7 +7136,7 @@
       "cve_details": {
         "CVE-2026-120967": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00193,
           "cvss": null
         }
       },
@@ -7257,7 +7343,7 @@
       "cve_details": {
         "CVE-2026-125283": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00444,
           "cvss": null
         }
       },
@@ -7768,7 +7854,7 @@
       "cve_details": {
         "CVE-2026-120993": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00568,
           "cvss": null
         }
       },
@@ -10075,7 +10161,7 @@
       "cve_details": {
         "CVE-2026-129829": {
           "kev": null,
-          "epss": null,
+          "epss": 0.0016,
           "cvss": null
         }
       },
@@ -10857,7 +10943,7 @@
       "cve_details": {
         "CVE-2026-109908": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00153,
           "cvss": null
         }
       },
@@ -11068,7 +11154,7 @@
       "cve_details": {
         "CVE-2026-109909": {
           "kev": null,
-          "epss": null,
+          "epss": 0.00197,
           "cvss": null
         }
       },
@@ -11379,6 +11465,105 @@
         "location": 6.75,
         "industry": 4.0,
         "practice": 5.25,
+        "weighted_total": 43.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "99484983430e63d2a03ce22c",
+      "headline": "Nvidia says it found no sign of compromise after Gentlemen ransomware listed it as a victim",
+      "summary": "The Gentlemen ransomware group has named Nvidia as a victim on its leak site. Nvidia says it has found no indication that its systems were compromised, so the claim is unverified.",
+      "category": "ransomware",
+      "importance": "medium",
+      "importance_rationale": "This is an unverified claim against a company outside the target industries, and the company denies being compromised.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 15,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 5,
+        "retail_banking": 5,
+        "global_it_services": 25,
+        "logistics": 5,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 20,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [
+        "Gentlemen"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Treat the claim as unverified. If you are an Nvidia supplier or partner, watch for updates from the company.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/nvidia-responds-to-gentlemen-ransomware-claim/",
+          "source": "SecurityWeek",
+          "published": "2026-11-19T14:17:32+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is an unverified claim against a company outside the target industries, and the company denies being compromised.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 43.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 2.5,
+        "practice": 4.5,
         "weighted_total": 43.0,
         "severity_band": [
           35,
@@ -12977,7 +13162,7 @@
       "cve_details": {
         "CVE-2026-130888": {
           "kev": null,
-          "epss": null,
+          "epss": 0.0012,
           "cvss": null
         }
       },
@@ -14623,104 +14808,6 @@
       "included": false
     },
     {
-      "cluster_id": "d6b88907cbdaa3084d0368cf",
-      "headline": "Python Software Foundation launches end-of-year fundraiser",
-      "summary": "The Python Software Foundation (PSF) has launched its annual fundraiser. The PSF runs PyPI and funds Developers in Residence, including three security developers focused on Python, PyPI and the wider ecosystem.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "This is a fundraising announcement with no direct security impact.",
-      "location_relevance": {
-        "US": 10,
-        "Europe": 10,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 2,
-        "telecommunications": 2,
-        "private_banking": 2,
-        "investment_management": 2,
-        "government": 2,
-        "retail_banking": 2,
-        "global_it_services": 10,
-        "logistics": 2,
-        "industrial_manufacturing": 2,
-        "automotive": 2
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 15,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Python",
-        "PyPI"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No security action is required.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://simonwillison.net/2026/Nov/18/psf-end-of-year-fundraiser/",
-          "source": "Simon Willison (prompt injection)",
-          "published": "2026-11-18T14:44:48+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a fundraising announcement with no direct security impact.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 13.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 1.5,
-        "industry": 1.0,
-        "practice": 2.25,
-        "weighted_total": 13.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "02f125d9c6cc44016cdd5863",
       "headline": "llm-gemini 0.38 adds support for Google's new Gemini 4 Neon model",
       "summary": "Simon Willison released llm-gemini 0.38 to support Google's newly announced Gemini 4 Neon model. The post covers confusing pricing across the Gemini 4 lineup and informal output comparisons between models. It has no security content.",
@@ -15024,10 +15111,10 @@
     }
   ],
   "counts": {
-    "critical": 9,
-    "high": 42,
+    "critical": 10,
+    "high": 43,
     "medium": 52,
-    "low": 36
+    "low": 35
   },
   "unclassified": 0,
   "duplicates_removed": 3,
@@ -15069,7 +15156,7 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 15,
+  "watch_hits": 14,
   "watch": {
     "microsoft": [
       {
@@ -15186,11 +15273,6 @@
         "technology": "Oracle",
         "headline": "Researcher publishes low-privilege RCE proofs of concept for PostgreSQL, MySQL, ClickHouse and Oracle",
         "cluster_id": "3914c4d93285bf9341fb41ea"
-      },
-      {
-        "technology": "Oracle",
-        "headline": "Oracle November 2026 Critical Patch Update fixes 655 vulnerabilities across product families",
-        "cluster_id": "eeacf32197a63f608dcd71a2"
       }
     ]
   },
@@ -15288,53 +15370,53 @@
       }
     ]
   },
-  "other_count": 25,
+  "other_count": 24,
   "source_health": {
-    "at": "2026-11-19T14:08:09.216835+00:00",
+    "at": "2026-11-19T14:51:13.637765+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 187,
+    "new": 4,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -15344,12 +15426,12 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Schneier on Security",
@@ -15374,9 +15456,9 @@
       {
         "name": "CISA OT Advisories",
         "ok": true,
-        "new": 25,
+        "new": 0,
         "updated": 0,
-        "unchanged": 210,
+        "unchanged": 235,
         "failed": 0
       },
       {
@@ -15392,17 +15474,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -15437,7 +15519,7 @@
       {
         "name": "CERT-EU Security Advisories",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CERT-EU Threat Intelligence",
@@ -15447,7 +15529,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 13
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -15482,17 +15564,17 @@
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Seebug Vulnerabilities",
@@ -15503,7 +15585,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -15513,7 +15595,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 72,
+        "new": 0,
         "entries": 35250,
         "invalid": 0,
         "future": 0,
@@ -15522,7 +15604,7 @@
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -15548,7 +15630,6 @@
       "30e3fc959dd5093e6f4388c7",
       "75b5f95941280ec24fc1cc15",
       "d6ab8cd954955ced3f8c6806",
-      "eeacf32197a63f608dcd71a2",
       "29eb33240b0fe5717515a5b0"
     ],
     "continuous-vulnerability-management": [
@@ -15574,7 +15655,7 @@
       "4ab4f5e03685767a0a27b7d9",
       "3914c4d93285bf9341fb41ea",
       "9ca9ce7f9de58cb64d6a0209",
-      "eeacf32197a63f608dcd71a2",
+      "3451d1cf87f82192d2dd6f37",
       "0fa9e8709c8616cd82655c30",
       "0065b2261e50470adb72f606",
       "639fcd2e038a5f34b872606d",
