@@ -24140,5 +24140,729 @@
     "estimated_usd": 0.159514,
     "email_type": null,
     "email_sent": false
+  },
+  {
+    "timestamp": "2026-11-20T13:50:35.867288+00:00",
+    "status": "success",
+    "stage": "retention",
+    "emails": [
+      {
+        "email_type": "daily",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-11-20T13:50:36.140733+00:00",
+      "enabled": 41,
+      "failures": 2,
+      "new": 207,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 12
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 11
+        },
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 8
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 4
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 4
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 3,
+          "updated": 0,
+          "unchanged": 229,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 37,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 7,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 11
+        },
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": false,
+          "new": 0,
+          "error": "ValueError"
+        },
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 119,
+          "entries": 35369,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 2
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 0,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "classification": {
+      "classified": 115,
+      "usage": [
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1402,
+          "output_tokens": 5478,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 13990,
+          "estimated_usd": 0.185118,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1370,
+          "output_tokens": 5321,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.114698,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1172,
+          "output_tokens": 5214,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.111766,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1239,
+          "output_tokens": 5232,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112394,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1301,
+          "output_tokens": 5202,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112042,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1541,
+          "output_tokens": 5175,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112462,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 2304,
+          "output_tokens": 5138,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.114774,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1205,
+          "output_tokens": 5504,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.117698,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1938,
+          "output_tokens": 5120,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.11295,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1920,
+          "output_tokens": 5112,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112718,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1617,
+          "output_tokens": 5311,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.115486,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1078,
+          "output_tokens": 5387,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.11485,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 6203,
+          "output_tokens": 5822,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.14405,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1506,
+          "output_tokens": 5263,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.114082,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1237,
+          "output_tokens": 5259,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.112926,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1427,
+          "output_tokens": 5272,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.113946,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1785,
+          "output_tokens": 5503,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.119998,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1965,
+          "output_tokens": 5347,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.117598,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 2018,
+          "output_tokens": 5324,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.11735,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 2238,
+          "output_tokens": 5501,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.12177,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1937,
+          "output_tokens": 5607,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.122686,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1930,
+          "output_tokens": 5203,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.114578,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 2153,
+          "output_tokens": 5705,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.12551,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1805,
+          "output_tokens": 5182,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.113658,
+          "batch": false
+        },
+        {
+          "model": "claude-opus-5-5",
+          "input_tokens": 1858,
+          "output_tokens": 5236,
+          "cache_read_input_tokens": 13990,
+          "cache_creation_input_tokens": 0,
+          "estimated_usd": 0.11495,
+          "batch": false
+        }
+      ]
+    },
+    "period": "2026-11-20",
+    "counts": {
+      "critical": 9,
+      "high": 33,
+      "medium": 39,
+      "low": 39
+    },
+    "items": 120,
+    "duplicates_removed": 2,
+    "duration_s": 1060.26,
+    "usage": [
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1402,
+        "output_tokens": 5478,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 13990,
+        "estimated_usd": 0.185118,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1370,
+        "output_tokens": 5321,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.114698,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1172,
+        "output_tokens": 5214,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.111766,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1239,
+        "output_tokens": 5232,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112394,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1301,
+        "output_tokens": 5202,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112042,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1541,
+        "output_tokens": 5175,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112462,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 2304,
+        "output_tokens": 5138,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.114774,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1205,
+        "output_tokens": 5504,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.117698,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1938,
+        "output_tokens": 5120,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.11295,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1920,
+        "output_tokens": 5112,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112718,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1617,
+        "output_tokens": 5311,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.115486,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1078,
+        "output_tokens": 5387,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.11485,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 6203,
+        "output_tokens": 5822,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.14405,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1506,
+        "output_tokens": 5263,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.114082,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1237,
+        "output_tokens": 5259,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.112926,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1427,
+        "output_tokens": 5272,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.113946,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1785,
+        "output_tokens": 5503,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.119998,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1965,
+        "output_tokens": 5347,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.117598,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 2018,
+        "output_tokens": 5324,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.11735,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 2238,
+        "output_tokens": 5501,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.12177,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1937,
+        "output_tokens": 5607,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.122686,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1930,
+        "output_tokens": 5203,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.114578,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 2153,
+        "output_tokens": 5705,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.12551,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1805,
+        "output_tokens": 5182,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.113658,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1858,
+        "output_tokens": 5236,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.11495,
+        "batch": false
+      }
+    ],
+    "estimated_usd": 2.990058,
+    "email_type": "daily",
+    "email_sent": true
   }
 ]
