@@ -1,11 +1,122 @@
 {
   "kind": "daily",
   "period": "2026-11-20",
-  "start": "2026-11-19T13:50:36.140733+00:00",
-  "end": "2026-11-20T13:50:36.140733+00:00",
+  "start": "2026-11-19T14:32:28.461362+00:00",
+  "end": "2026-11-20T14:32:28.461362+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
+    {
+      "cluster_id": "f97364a67202f6348dde230e",
+      "headline": "Breach at Belfast-based supplier affects dozens of Irish credit unions and went unnoticed for six weeks",
+      "summary": "Ireland's Data Protection Commission says it has received more than 40 breach notifications from credit unions. They used a Belfast-based company as a data processor, and that company suffered a breach. The breach reportedly went undetected for about six weeks.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A third-party breach has affected many regulated retail financial institutions in Europe. That fits the rubric's 'major breach in a target industry in Europe'.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 100,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "GB",
+        "IE"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 40,
+        "investment_management": 30,
+        "government": 15,
+        "retail_banking": 95,
+        "global_it_services": 60,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 5,
+        "siem_detection": 50,
+        "iam_pam": 20,
+        "email_phishing": 20,
+        "data_protection_dlp": 85,
+        "ot_ics": 0,
+        "grc_audit": 80,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        },
+        {
+          "key": "central_bank_of_ireland_cross_industry_guidance_on_operational_resilience_and_outsourcing",
+          "nature": "guidance",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: the six weeks without detection suggests the supplier's monitoring was weak. Customers should review the visibility and breach-notification terms they have with their suppliers.",
+      "related_case_studies": [
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "retail_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review the security controls and breach-notification SLAs of data processors. Check which third parties hold member data. Prepare for possible phishing aimed at affected members.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
+          "source": "The Record",
+          "published": "2026-11-20T14:24:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A third-party breach has affected many regulated retail financial institutions in Europe. That fits the rubric's 'major breach in a target industry in Europe'.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 97.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 12.75,
+        "weighted_total": 97.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
     {
       "cluster_id": "918dec555b95572aacde829a",
       "headline": "Data of thousands of Visa, Mastercard and JPMorgan Chase customers reported stolen",
@@ -1175,6 +1286,113 @@
         ],
         "critical_flaw": [
           "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Common web and operating-system infrastructure",
+      "independent_sources_24h": 1,
+      "priority": 80.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 14.25,
+        "weighted_total": 80.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "01c16941bd423c92c2c992a1",
+      "headline": "PHP releases fixes for 18 vulnerabilities including critical remote code execution flaws",
+      "summary": "The PHP project has released security updates that fix 18 vulnerabilities. They affect the core engine, session handling, PHP-FPM, CGI and other components. Some flaws are critical and could allow remote code execution. The source does not report active exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "PHP is widely deployed and some of the fixed flaws are critical RCE issues. No exploitation in the wild is reported, so this is high rather than critical.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 95,
+        "devsecops": 60,
+        "siem_detection": 40,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 20,
+        "ot_ics": 5,
+        "grc_audit": 15,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "PHP",
+        "PHP-FPM",
+        "PHP CGI"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: no detection rules are linked in the source. Patching and version inventory are the main controls. Web server and PHP-FPM anomaly monitoring may help.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find all PHP installations, including PHP-FPM and CGI deployments. Upgrade to the fixed releases, starting with internet-facing servers. Exploitation is not confirmed, so check vendor advisories for updates.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://threatprotect.qualys.com/2026/11/20/php-security-updates-address-multiple-vulnerabilities/",
+          "source": "Qualys ThreatPROTECT",
+          "published": "2026-11-20T13:48:29+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "PHP is widely deployed and some of the fixed flaws are critical RCE issues. No exploitation in the wild is reported, so this is high rather than critical.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://threatprotect.qualys.com/2026/11/20/php-security-updates-address-multiple-vulnerabilities/"
+        ],
+        "critical_flaw": [
+          "https://threatprotect.qualys.com/2026/11/20/php-security-updates-address-multiple-vulnerabilities/"
         ],
         "emergency_patch": [],
         "public_poc": [],
@@ -3401,109 +3619,6 @@
         "industry": 8.5,
         "practice": 10.5,
         "weighted_total": 77.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "3451d1cf87f82192d2dd6f37",
-      "headline": "Drupal warns of critical flaw allowing unauthenticated website takeover",
-      "summary": "Drupal's maintainers have warned about a critical vulnerability that could let unauthenticated attackers take over sites built on the CMS. The source does not mention a CVE identifier or any active exploitation.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "This is a critical unauthenticated takeover flaw in a widely used CMS, and the vendor has issued a warning. No exploitation has been reported.",
-      "location_relevance": {
-        "US": 80,
-        "Europe": 85,
-        "MEA": 75,
-        "Other": 75
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 60,
-        "retail_banking": 40,
-        "global_it_services": 55,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 40,
-        "siem_detection": 40,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Drupal"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [
-        "T1190"
-      ],
-      "detection_refs": [],
-      "detection_coverage_note": "The source does not link any detection rules. Our assessment is that web server and WAF logs from Drupal sites should be monitored for unusual unauthenticated requests.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Find all Drupal instances and apply the vendor's security release as soon as possible. Keep an eye out for any exploitation reports.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/962342/Drupal+waarschuwt+voor+kritiek+lek+dat+aanvaller+websites+laat+overnemen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-19T14:11:03+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "This is a critical unauthenticated takeover flaw in a widely used CMS, and the vendor has issued a warning. No exploitation has been reported.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://www.security.nl/posting/962342/Drupal+waarschuwt+voor+kritiek+lek+dat+aanvaller+websites+laat+overnemen?channel=rss"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 77.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 6.0,
-        "practice": 13.5,
-        "weighted_total": 77.25,
         "severity_band": [
           65,
           84.99
@@ -6997,105 +7112,6 @@
       "included": true
     },
     {
-      "cluster_id": "25b85c863408fc6e0efdd3aa",
-      "headline": "Arriva investigates possible data leak in Xbike bike-share app",
-      "summary": "Arriva is investigating a possible data leak involving the Xbike bike-share app. The app has been taken offline as a precaution. It is not yet confirmed what data, if any, was exposed.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "This is a possible breach at a mid-size consumer mobility service and has not been confirmed.",
-      "location_relevance": {
-        "US": 0,
-        "Europe": 80,
-        "MEA": 0,
-        "Other": 0
-      },
-      "countries_mentioned": [
-        "NL"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 5,
-        "retail_banking": 0,
-        "global_it_services": 10,
-        "logistics": 40,
-        "industrial_manufacturing": 0,
-        "automotive": 10
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 15,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 25,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 5,
-        "data_protection_dlp": 60,
-        "ot_ics": 0,
-        "grc_audit": 30,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Xbike app"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source contains no technical details.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "logistics",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Xbike users should watch for phishing. Mobility operators should review data protection at their app vendors.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/962337/Arriva+onderzoekt+mogelijk+datalek+met+deelfietsapp+Xbike?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-19T13:52:22+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a possible breach at a mid-size consumer mobility service and has not been confirmed.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 52.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 12.0,
-        "industry": 4.0,
-        "practice": 9.0,
-        "weighted_total": 52.0,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "398b929e6e83ba519c2274c7",
       "headline": "DOJ and DHS launch Threat Disruption Center to tackle scams and cybercrime",
       "summary": "The US Justice Department and Department of Homeland Security have created a joint Threat Disruption Center. The unit will triage victim complaints, map cybercriminal networks and give private-sector organizations that work with victims a direct channel to the government.",
@@ -8522,105 +8538,6 @@
       "included": true
     },
     {
-      "cluster_id": "99484983430e63d2a03ce22c",
-      "headline": "Nvidia says it found no sign of compromise after Gentlemen ransomware listed it as a victim",
-      "summary": "The Gentlemen ransomware group has named Nvidia as a victim on its leak site. Nvidia says it has found no indication that its systems were compromised, so the claim is unverified.",
-      "category": "ransomware",
-      "importance": "medium",
-      "importance_rationale": "This is an unverified claim against a company outside the target industries, and the company denies being compromised.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 15,
-        "MEA": 10,
-        "Other": 10
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 5,
-        "retail_banking": 5,
-        "global_it_services": 25,
-        "logistics": 5,
-        "industrial_manufacturing": 15,
-        "automotive": 15
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 5,
-        "siem_detection": 20,
-        "iam_pam": 5,
-        "email_phishing": 5,
-        "data_protection_dlp": 30,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 5,
-        "ai_governance": 5
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [
-        "Gentlemen"
-      ],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source does not link any detection rules.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Treat the claim as unverified. If you are an Nvidia supplier or partner, watch for updates from the company.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/nvidia-responds-to-gentlemen-ransomware-claim/",
-          "source": "SecurityWeek",
-          "published": "2026-11-19T14:17:32+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is an unverified claim against a company outside the target industries, and the company denies being compromised.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 43.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 9.0,
-        "industry": 2.5,
-        "practice": 4.5,
-        "weighted_total": 43.0,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "44cb6d5b419bb100043487ce",
       "headline": "Guide to hardening GitHub Actions pipelines against insider threats and stolen credentials",
       "summary": "Socket published practical guidance on protecting CI/CD pipelines from misuse of stolen credentials. It covers GitHub Actions configuration, trusted publishing, release approvals and credential revocation.",
@@ -9731,6 +9648,109 @@
       "included": true
     },
     {
+      "cluster_id": "7208ba9e543363cde2302e1a",
+      "headline": "Dutch data protection authority fines company On That Ass €90,000 for GDPR breach",
+      "summary": "The Dutch Data Protection Authority (Autoriteit Persoonsgegevens) has fined the company On That Ass €90,000 for breaking the GDPR. The source summary does not give details of the violation.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is a small enforcement action against a company outside the target industries.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 60,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 5,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 50,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. This is a regulatory enforcement item.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Note this as a Dutch GDPR enforcement precedent. Check whether your data processing practices meet GDPR requirements.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/962492/Autoriteit+Persoonsgegevens+geeft+On+That+Ass+boete+van+90_000+euro?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-20T13:49:01+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a small enforcement action against a company outside the target industries.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 26.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 9.0,
+        "industry": 1.0,
+        "practice": 7.5,
+        "weighted_total": 26.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "6b5e0af047defbdedc68a1bd",
       "headline": "Opinion: retire vanity security dashboards and fix recurring IT/OT alert noise",
       "summary": "An OT security architect argues in a video that security teams should drop vanity dashboard metrics. His example is a manufacturing site where approved maintenance work triggers the same alert every week. He recommends that SOC and control-engineering teams review these patterns together and tune detections.",
@@ -9818,101 +9838,6 @@
         "industry": 4.5,
         "practice": 8.25,
         "weighted_total": 26.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "d6e8912274166c5d38428e2a",
-      "headline": "Holiday-season bot fraud and social engineering span weeks beyond Black Friday",
-      "summary": "An opinion piece argues that bot-driven fraud and holiday-themed social engineering run for many weeks, not just around Black Friday. It says this puts pressure on security teams and small businesses.",
-      "category": "fraud_phishing",
-      "importance": "low",
-      "importance_rationale": "This is a general opinion piece with no new campaign or indicators.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 35,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 10,
-        "private_banking": 15,
-        "investment_management": 10,
-        "government": 5,
-        "retail_banking": 35,
-        "global_it_services": 10,
-        "logistics": 25,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 5,
-        "siem_detection": 20,
-        "iam_pam": 20,
-        "email_phishing": 50,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 5,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Our assessment: bot management and phishing controls are the relevant defenses.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Keep fraud and phishing monitoring at heightened levels throughout the holiday period.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.darkreading.com/cybersecurity-operations/why-holiday-security-cant-wait-black-friday",
-          "source": "Dark Reading",
-          "published": "2026-11-19T14:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a general opinion piece with no new campaign or indicators.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 26.0,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 6.0,
-        "industry": 3.5,
-        "practice": 7.5,
-        "weighted_total": 26.0,
         "severity_band": [
           0,
           34.99
@@ -10606,6 +10531,101 @@
         "importance": 9.0,
         "location": 7.5,
         "industry": 1.5,
+        "practice": 6.0,
+        "weighted_total": 24.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "a868dafeec7796eed4ecd41e",
+      "headline": "Rubrik report puts median ransomware recovery time at 20 days",
+      "summary": "A Rubrik report finds that ransomware victims take a median of 20 days to recover. It says 28% of recovery cases take more than six weeks.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a vendor report with statistics only. It describes no new threat or TTPs.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 30,
+        "global_it_services": 30,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 0,
+        "siem_detection": 20,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 40,
+        "ot_ics": 10,
+        "grc_audit": 40,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. This is statistical research.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Use these figures to check whether your recovery-time objectives and backup restore tests are realistic.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/ransomware-recovery-20-days/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-20T14:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a vendor report with statistics only. It describes no new threat or TTPs.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 24.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 3.0,
         "practice": 6.0,
         "weighted_total": 24.0,
         "severity_band": [
@@ -12553,10 +12573,10 @@
     }
   ],
   "counts": {
-    "critical": 9,
+    "critical": 10,
     "high": 33,
-    "medium": 39,
-    "low": 39
+    "medium": 37,
+    "low": 40
   },
   "unclassified": 0,
   "duplicates_removed": 2,
@@ -12664,6 +12684,36 @@
   "regulations": {
     "Europe": [
       {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Breach at Belfast-based supplier affects dozens of Irish credit unions and went unnoticed for six weeks",
+        "sources": [
+          {
+            "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
+            "source": "The Record",
+            "published": "2026-11-20T14:24:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "central_bank_of_ireland_cross_industry_guidance_on_operational_resilience_and_outsourcing",
+        "nature": "guidance",
+        "effective_or_deadline_date": null,
+        "name": "Central Bank of Ireland cross-industry guidance on operational resilience and outsourcing",
+        "headline": "Breach at Belfast-based supplier affects dozens of Irish credit unions and went unnoticed for six weeks",
+        "sources": [
+          {
+            "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
+            "source": "The Record",
+            "published": "2026-11-20T14:24:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
         "key": "uk_gdpr",
         "nature": "enforcement",
         "effective_or_deadline_date": null,
@@ -12710,6 +12760,21 @@
       },
       {
         "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Dutch data protection authority fines company On That Ass €90,000 for GDPR breach",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/962492/Autoriteit+Persoonsgegevens+geeft+On+That+Ass+boete+van+90_000+euro?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-11-20T13:49:01+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
         "nature": "guidance",
         "effective_or_deadline_date": null,
         "name": "GDPR",
@@ -12744,51 +12809,51 @@
   },
   "other_count": 28,
   "source_health": {
-    "at": "2026-11-20T13:50:36.140733+00:00",
+    "at": "2026-11-20T14:32:28.461362+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 207,
+    "new": 4,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 12
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 11
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -12798,17 +12863,17 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -12823,14 +12888,14 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
         "ok": true,
-        "new": 3,
+        "new": 0,
         "updated": 0,
-        "unchanged": 229,
+        "unchanged": 232,
         "failed": 0
       },
       {
@@ -12846,17 +12911,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -12886,7 +12951,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -12901,7 +12966,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 11
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -12931,22 +12996,22 @@
       {
         "name": "Metasploit Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys Vulnerabilities and Threat Research",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "ReversingLabs Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Qualys ThreatPROTECT",
         "ok": true,
-        "new": 0
+        "new": 1
       },
       {
         "name": "Seebug Vulnerabilities",
@@ -12957,7 +13022,7 @@
       {
         "name": "Censys Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Shodan Blog",
@@ -12967,11 +13032,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 119,
-        "entries": 35369,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -12998,6 +13059,7 @@
   ],
   "cases": {
     "vendor-release-automation": [
+      "f97364a67202f6348dde230e",
       "de41546c42d81083279a0842",
       "8e443c2964ac625708f2e93b",
       "aa9a0ee7df8df35987de4a55",
@@ -13010,6 +13072,7 @@
       "13f70c40072aac4d677be37c",
       "2dc071d96de7b84409a66f6e",
       "dcfa8134ceac9ad36d391ec7",
+      "01c16941bd423c92c2c992a1",
       "21d1b69b7e1197136b1cf5de",
       "8e443c2964ac625708f2e93b",
       "bbc89a2472ca1e82408709f2",
@@ -13027,7 +13090,6 @@
       "63edce0941e0edb0a008ee05",
       "e8477db5f48b057dbc73a40d",
       "6008bba5a1273aa9ecbcd613",
-      "3451d1cf87f82192d2dd6f37",
       "823ccfebdf7ab435a089b021",
       "c7b209f2aed89407eb0e30e5",
       "88c544823e0d1532883cb2e9",
