@@ -1,0 +1,1217 @@
+{
+  "kind": "daily",
+  "period": "2026-11-22",
+  "start": "2026-11-21T13:04:21.993374+00:00",
+  "end": "2026-11-22T13:04:21.993374+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "1fa3870c33e20a339984d0d1",
+      "headline": "Rackspace Spot breach via compromised credentials exposed customer Kubernetes secrets",
+      "summary": "Rackspace says attackers used compromised credentials to breach its Rackspace Spot cloud platform. They deployed unauthorized workloads and accessed Kubernetes secrets in customer clusters.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A major breach at a US cloud and managed-services provider (a target industry), with possible downstream exposure of customer secrets.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 60,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 95,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 85,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 60,
+        "siem_detection": 55,
+        "iam_pam": 75,
+        "email_phishing": 5,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Rackspace Spot",
+        "Kubernetes"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "As an assessment, Kubernetes audit logs covering secret reads and unexpected pods, plus monitoring of how exposed credentials are used, are the key ways to detect related activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Rackspace Spot customers should rotate every Kubernetes secret and credential stored in their clusters. They should also audit for unauthorized workloads and check downstream systems for misuse of those secrets.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/",
+          "source": "BleepingComputer",
+          "published": "2026-11-21T22:59:58+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A major breach at a US cloud and managed-services provider (a target industry), with possible downstream exposure of customer secrets.",
+      "watch_tech": [
+        {
+          "name": "Kubernetes",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "infrastructure"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 95.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 9.5,
+        "practice": 12.75,
+        "weighted_total": 95.0,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "eb89847b683b3c00f3611f70",
+      "headline": "FBI investigates apparent breach of national criminal justice database",
+      "summary": "The FBI is looking into what appears to be a hack of a national law enforcement database that it runs. A single source, citing AP, reported the investigation. The source does not give details on scope, the actor or the method.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "An apparent major breach at a US federal government body, which is a target industry. Details are still unconfirmed.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 15,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 25,
+        "devsecops": 5,
+        "siem_detection": 40,
+        "iam_pam": 45,
+        "email_phishing": 10,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators have been disclosed, so specific detection cannot be assessed.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for official FBI disclosures. Agencies that connect to the database should review access logs and credentials as a precaution while details are still unconfirmed.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/fbi-investigating-apparent-hack-of-its-key-national-criminal-justice-database-ap-source-says/",
+          "source": "SecurityWeek",
+          "published": "2026-11-22T00:53:02+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "An apparent major breach at a US federal government body, which is a target industry. Details are still unconfirmed.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 93.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 9.0,
+        "weighted_total": 93.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "6eaabec128466878a46e05ae",
+      "headline": "FBI reportedly suffers second breach in two months, this time involving NCIC police database",
+      "summary": "Reports say FBI systems were breached again, less than two months after an earlier incident. This time the reported target is the National Crime Information Center (NCIC), which local, state and federal law enforcement use to share information. The source does not confirm the scope, the method or who is responsible.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A major reported breach at a US federal government agency (a target industry and region) involving a nationwide law-enforcement data system. The breach is reported but not yet confirmed.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 20,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 25,
+        "devsecops": 5,
+        "siem_detection": 40,
+        "iam_pam": 45,
+        "email_phishing": 15,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "National Crime Information Center (NCIC)"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The attack method was not disclosed, so no specific detections can be recommended. As a general assessment, agencies should watch for unusual access to shared criminal-justice systems and for credential misuse.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Agencies connected to NCIC should review access logs and account privileges for this system and follow any official FBI or CJIS guidance. Treat the breach details as unconfirmed until officials disclose more.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/",
+          "source": "BleepingComputer",
+          "published": "2026-11-21T14:26:04+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A major reported breach at a US federal government agency (a target industry and region) involving a nationwide law-enforcement data system. The breach is reported but not yet confirmed.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 93.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 9.0,
+        "weighted_total": 93.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "c4e8b5247de9dbed878ad6af",
+      "headline": "Weekly recap: Optimizely platform abused to plant malware on 178 orgs; OpenJDK Java4Shell flaw hard to exploit",
+      "summary": "An attacker exploited a vulnerability in Optimizely's web experimentation platform to inject malicious JavaScript into customer websites, affecting 178 organisations including BBC, CNN and Zoom, according to the company. The recap also covers CVE-2026-114938, an OpenJDK Base64 decoder memory-corruption flaw whose exploitation reportedly depends on specific CPUs.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A confirmed compromise of a widely used SaaS vendor that pushed malicious JavaScript to downstream customers, which counts as a systemic supply-chain incident.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 45,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 45,
+        "retail_banking": 55,
+        "global_it_services": 65,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 75,
+        "siem_detection": 45,
+        "iam_pam": 10,
+        "email_phishing": 5,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Optimizely",
+        "OpenJDK",
+        "Java SE"
+      ],
+      "cves": [
+        "CVE-2026-114938"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: CSP violation reports and integrity monitoring of client-side scripts can help detect injected third-party JavaScript.",
+      "related_case_studies": [
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Optimizely customers should review the scripts served on their sites and check the vendor's guidance. Patch OpenJDK, noting that exploitation is reportedly difficult.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/22/week-in-review-java4shell-proves-tricky-to-exploit-malware-planted-via-optimizely-hits-178-orgs/",
+          "source": "Help Net Security",
+          "published": "2026-11-22T09:00:25+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A confirmed compromise of a widely used SaaS vendor that pushed malicious JavaScript to downstream customers, which counts as a systemic supply-chain incident.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-114938": {
+          "kev": null,
+          "epss": 0.45636,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 90.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 6.5,
+        "practice": 11.25,
+        "weighted_total": 90.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "cd00c38abb0c60dda61dae29",
+      "headline": "Microsoft reports breach after flaw in Entra Connect Health exploited to access tenant data",
+      "summary": "Microsoft says it suffered a data breach after attackers exploited a vulnerability in its Entra Connect Health service. The attackers got unauthorized access to customers' administrator email addresses and tenant configuration information. No CVE, scope or attribution was given in the source.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 90,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 55,
+        "private_banking": 55,
+        "investment_management": 55,
+        "government": 60,
+        "retail_banking": 55,
+        "global_it_services": 70,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 85,
+        "vuln_exposure_mgmt": 50,
+        "devsecops": 5,
+        "siem_detection": 60,
+        "iam_pam": 90,
+        "email_phishing": 55,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 40,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Entra ID",
+        "Entra Connect Health"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "This was exploited on Microsoft's side, so customers likely have little visibility. As an assessment, the leaked admin emails make targeted phishing likely, so tune detection for phishing against admins.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Check Microsoft notifications to see whether your tenant was affected. Warn administrators about targeted phishing, enforce phishing-resistant MFA for admin accounts, and review tenant configuration for exposed details.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
+          "source": "BleepingComputer",
+          "published": "2026-11-21T18:01:58+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "Active exploitation of a flaw in a watched Microsoft identity service (Entra ID) used by enterprises worldwide, exposing customer tenant data.",
+      "watch_tech": [
+        {
+          "name": "Entra ID",
+          "aliases": [
+            "Azure AD",
+            "Microsoft Entra"
+          ],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 79.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 7.0,
+        "practice": 13.5,
+        "weighted_total": 79.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "a3c63e958cb92eef3df0aa51",
+      "headline": "Researchers show Ghostscript sandbox escape enabling RCE through crafted file uploads",
+      "summary": "pwn.ai showed that a now-patched Ghostscript flaw lets a crafted file escape the sandbox and run commands on servers that process uploads. Many Linux applications call Ghostscript indirectly to convert PDFs, PostScript files and images. No in-the-wild exploitation was reported.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A remote code execution flaw in widely used server-side software, with a public demonstration and a patch available. No exploitation has been reported.",
+      "location_relevance": {
+        "US": 80,
+        "Europe": 80,
+        "MEA": 80,
+        "Other": 80
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 45,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 50,
+        "retail_banking": 45,
+        "global_it_services": 60,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 65,
+        "siem_detection": 40,
+        "iam_pam": 0,
+        "email_phishing": 10,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Ghostscript",
+        "Linux"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: watch for unexpected child processes started by gs or by image and document conversion workers.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find Ghostscript in your environment, including where it is pulled in indirectly, and apply the patched version. Isolate file-conversion services.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html",
+          "source": "The Hacker News",
+          "published": "2026-11-22T05:03:41+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A remote code execution flaw in widely used server-side software, with a public demonstration and a patch available. No exploitation has been reported.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.0,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 75.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "6d087c898942cc0c2503082a",
+      "headline": "Months-long prompt theft found at three AI inference providers; OpenRouter drops them",
+      "summary": "Dragos reported that attackers stole data from inside three AI inference providers for months without the providers noticing. Some of the stolen requests were marked Zero Data Retention. OpenRouter removed the three providers from its routing pool.",
+      "category": "data_breach",
+      "importance": "high",
+      "importance_rationale": "A significant supply-chain data exposure in AI services that undermines assurances about zero data retention.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 65,
+        "MEA": 55,
+        "Other": 55
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 35,
+        "retail_banking": 35,
+        "global_it_services": 65,
+        "logistics": 25,
+        "industrial_manufacturing": 25,
+        "automotive": 25
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 30,
+        "siem_detection": 25,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 80,
+        "ot_ics": 0,
+        "grc_audit": 55,
+        "security_automation": 10,
+        "ai_governance": 90
+      },
+      "affected_technologies": [
+        "OpenRouter",
+        "AI inference providers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: customers have limited visibility into provider-side theft, so detection depends on vendor assurance.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review which AI routing services and inference providers you use. Assume sensitive prompts may have been exposed, and rotate any secrets included in prompts.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html",
+          "source": "The Hacker News",
+          "published": "2026-11-22T05:06:55+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A significant supply-chain data exposure in AI services that undermines assurances about zero data retention.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 6.5,
+        "practice": 13.5,
+        "weighted_total": 75.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9c3f2473640f00b5e047f57f",
+      "headline": "BADBOX botnet on Android TV boxes resumes large-scale ad fraud after last year's disruptions",
+      "summary": "BADBOX malware, found on many generic Android TV boxes, is again running large-scale ad fraud after being disrupted last year. Its traffic reportedly peaks at around 40 billion ad requests a day.",
+      "category": "fraud_phishing",
+      "importance": "medium",
+      "importance_rationale": "A worldwide consumer-device botnet focused on ad fraud. It is not targeting enterprise sectors directly, but such infected devices can end up on corporate networks.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 55,
+        "MEA": 50,
+        "Other": 65
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 45,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 20,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 5,
+        "siem_detection": 40,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 10,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Android TV boxes",
+        "Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules or indicators were provided. As an assessment, network monitoring for unmanaged IoT devices and their connections to known command servers would help.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "telecommunications",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Keep generic Android TV boxes off corporate networks, or isolate them in a separate segment. ISPs should watch for botnet traffic coming from customer equipment.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/badbox-30-botnet-returns-with-record-breaking-40-billion-daily-ad-requests/",
+          "source": "BleepingComputer",
+          "published": "2026-11-21T15:17:27+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A worldwide consumer-device botnet focused on ad fraud. It is not targeting enterprise sectors directly, but such infected devices can end up on corporate networks.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 47.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.75,
+        "industry": 4.5,
+        "practice": 6.0,
+        "weighted_total": 47.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "dc9b4a0c426ddc42fdcf787a",
+      "headline": "mod_wsgi creator builds Muru, an AI-assisted Rust server for Python web apps",
+      "summary": "Graham Dumpleton, who created mod_wsgi, is building Muru, a Rust-based server for running WSGI and ASGI Python apps, with AI assistance. He is documenting the design in detail in a public blog series. This is a development project, not a security incident.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "A blog post about an open-source project, with no security impact.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 10,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 15,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 15
+      },
+      "affected_technologies": [
+        "Muru",
+        "Python",
+        "mod_wsgi"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/21/muru/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-21T23:56:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "A blog post about an open-source project, with no security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 13.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 1.0,
+        "practice": 2.25,
+        "weighted_total": 13.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 4,
+    "high": 3,
+    "medium": 1,
+    "low": 1
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 2,
+  "watch": {
+    "infrastructure": [
+      {
+        "technology": "Kubernetes",
+        "headline": "Rackspace Spot breach via compromised credentials exposed customer Kubernetes secrets",
+        "cluster_id": "1fa3870c33e20a339984d0d1"
+      }
+    ],
+    "microsoft": [
+      {
+        "technology": "Entra ID",
+        "headline": "Microsoft reports breach after flaw in Entra Connect Health exploited to access tenant data",
+        "cluster_id": "cd00c38abb0c60dda61dae29"
+      }
+    ]
+  },
+  "regulations": {},
+  "other_count": 1,
+  "source_health": {
+    "at": "2026-11-22T13:04:21.993374+00:00",
+    "enabled": 41,
+    "failures": 2,
+    "new": 11,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 4
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 232,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 2
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 38,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 7,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": false,
+        "new": 0,
+        "error": "ValueError"
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 0,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [],
+  "kev_provenance": {
+    "released": "2026-11-20T17:48:39.151600+00:00",
+    "version": "2026.11.20",
+    "count": 1790,
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "checked": "2026-11-22T13:04:21.993374+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "vendor-release-automation": [
+      "c4e8b5247de9dbed878ad6af"
+    ],
+    "zero-trust-at-enterprise-scale": [
+      "cd00c38abb0c60dda61dae29"
+    ],
+    "continuous-vulnerability-management": [
+      "a3c63e958cb92eef3df0aa51"
+    ]
+  }
+}
