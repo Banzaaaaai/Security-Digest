@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-23",
-  "start": "2026-11-22T15:41:26.770480+00:00",
-  "end": "2026-11-23T15:41:26.770480+00:00",
+  "start": "2026-11-22T16:44:26.435902+00:00",
+  "end": "2026-11-23T16:44:26.435902+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -586,6 +586,228 @@
         "severity_band": [
           85,
           100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "331c740fc703a8c3838f50c0",
+      "headline": "Norway says Microsoft cloud flaw was exploited against energy firms Equinor and Skagerak Energi",
+      "summary": "Norway's cybersecurity authorities say attackers exploited a vulnerability in Microsoft's cloud to go after sensitive credentials. Energy companies Equinor and Skagerak Energi were affected.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 95,
+        "MEA": 65,
+        "Other": 60
+      },
+      "countries_mentioned": [
+        "NO"
+      ],
+      "industry_relevance": {
+        "energy_services": 95,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 55,
+        "retail_banking": 50,
+        "global_it_services": 65,
+        "logistics": 45,
+        "industrial_manufacturing": 50,
+        "automotive": 45
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 90,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 30,
+        "siem_detection": 65,
+        "iam_pam": 75,
+        "email_phishing": 0,
+        "data_protection_dlp": 40,
+        "ot_ics": 20,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Azure"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is that reviewing Azure activity logs for unusual access to secrets and credentials is the most useful step.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "energy_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Confirm Microsoft's fix has been applied. Rotate secrets held in affected Azure services and review logs for unauthorized access.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://therecord.media/norway-microsoft-cyberattack-equinor",
+          "source": "The Record",
+          "published": "2026-11-23T15:45:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A widely deployed Microsoft cloud service was actively exploited against energy companies in Europe.",
+      "watch_tech": [
+        {
+          "name": "Azure",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 82.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 13.5,
+        "weighted_total": 82.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "2486c32c8ff2033b0e23b1e1",
+      "headline": "Azure API Management flaw exploited to target secrets at Norwegian energy firms",
+      "summary": "Microsoft has fixed a flaw in Azure API Management that attackers exploited to go after secrets at Norwegian energy companies. Organizations in other sectors were reportedly affected as well.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [
+        "NO"
+      ],
+      "industry_relevance": {
+        "energy_services": 95,
+        "telecommunications": 55,
+        "private_banking": 55,
+        "investment_management": 55,
+        "government": 55,
+        "retail_banking": 55,
+        "global_it_services": 70,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 95,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 40,
+        "siem_detection": 65,
+        "iam_pam": 75,
+        "email_phishing": 0,
+        "data_protection_dlp": 40,
+        "ot_ics": 15,
+        "grc_audit": 30,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Azure",
+        "Azure API Management"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is to review API Management and Key Vault access logs for unusual retrieval of secrets.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "energy_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Rotate secrets used by Azure API Management and audit access logs for misuse.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/",
+          "source": "SecurityWeek",
+          "published": "2026-11-23T15:47:40+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high",
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "An Azure service was actively exploited against energy and other sectors.",
+      "watch_tech": [
+        {
+          "name": "Azure",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 81.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 9.5,
+        "practice": 14.25,
+        "weighted_total": 81.5,
+        "severity_band": [
+          65,
+          84.99
         ]
       },
       "included": true
@@ -2291,109 +2513,6 @@
       "included": true
     },
     {
-      "cluster_id": "c75a4d0a4b580d8c62083be4",
-      "headline": "Cleverbridge discloses breach exposing customer payment card numbers and CVVs",
-      "summary": "E-commerce platform Cleverbridge says attackers breached its systems and stole customer payment card data, including card numbers and CVV codes. The source does not give the scale of the breach or how the attackers got in.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "The breach exposed regulated payment card data including CVVs, which puts it in scope for PCI DSS. The number of affected customers is not stated.",
-      "location_relevance": {
-        "US": 50,
-        "Europe": 50,
-        "MEA": 15,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 20,
-        "investment_management": 10,
-        "government": 5,
-        "retail_banking": 55,
-        "global_it_services": 30,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 25,
-        "devsecops": 30,
-        "siem_detection": 35,
-        "iam_pam": 15,
-        "email_phishing": 20,
-        "data_protection_dlp": 75,
-        "ot_ics": 0,
-        "grc_audit": 60,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Cleverbridge e-commerce platform"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "pci_dss",
-          "nature": "guidance",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source includes no detection content. Teams could check checkout pages and scripts for changes as a precaution.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Organisations that sell through Cleverbridge should ask the vendor how far the breach reached. Card issuers should watch for fraud on cards that may be affected.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/",
-          "source": "BleepingComputer",
-          "published": "2026-11-22T15:43:04+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "The breach exposed regulated payment card data including CVVs, which puts it in scope for PCI DSS. The number of affected customers is not stated.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 69.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 7.5,
-        "industry": 5.5,
-        "practice": 11.25,
-        "weighted_total": 69.25,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "9490d196348d30cc64e033cb",
       "headline": "BadBox 3.0 ad fraud and residential proxy operation on backdoored consumer devices disrupted",
       "summary": "The BadBox 3.0 operation used backdoors on low-cost consumer devices to deliver modules for ad fraud and to turn the devices into residential proxies. At its peak it generated about 40 billion bid requests a day before being disrupted. The source excerpt does not say who carried out the disruption.",
@@ -2974,6 +3093,110 @@
         "industry": 4.0,
         "practice": 10.5,
         "weighted_total": 52.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "3c7d8be7f3072db93f02aa80",
+      "headline": "Bots impersonate AI agent identities to probe for exposed secrets, Cequence reports",
+      "summary": "Cequence reports that automated bots are using AI agent names, such as user-agent identifiers, to hide while they probe for secrets. The finding comes as AI agents move from reading data to taking actions. The source summary does not name victims, specific targets or regions.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "This is threat research describing a new evasion technique. The source reports no specific compromise or vulnerability.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 35,
+        "private_banking": 35,
+        "investment_management": 35,
+        "government": 35,
+        "retail_banking": 35,
+        "global_it_services": 45,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 45,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 45,
+        "siem_detection": 55,
+        "iam_pam": 50,
+        "email_phishing": 0,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 30,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: allowlists based only on AI agent user-agent strings can likely be bypassed. Correlating request behaviour with verified agent identity may help detect this activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Do not trust self-declared AI agent user-agents. Review API and web logs for probing for secrets, and make sure secrets are not exposed in endpoints or repositories.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/secrethunting-trafficai-agent/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-23T16:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is threat research describing a new evasion technique. The source reports no specific compromise or vulnerability.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 4.5,
+        "practice": 9.75,
+        "weighted_total": 48.75,
         "severity_band": [
           35,
           64.99
@@ -3701,7 +3924,7 @@
     {
       "cluster_id": "02207daefe6b99993bcd578f",
       "headline": "CrowdStrike agrees to acquire Zscaler in all-stock deal valued near $43.9 billion",
-      "summary": "CrowdStrike has agreed to buy Zscaler in an all-stock deal valued at about $43.9 billion. Zscaler shareholders will receive 1.135 CrowdStrike shares per share. The deal would combine endpoint and network security platforms.",
+      "summary": "SecurityWeek, Help Net Security, Infosecurity Magazine: CrowdStrike has agreed to buy Zscaler in an all-stock deal valued at about $43.9 billion. Zscaler shareholders will receive 1.135 CrowdStrike shares per share. The deal would combine endpoint and network security platforms. CyberScoop: The deal would combine endpoint protection and network access controls, and CrowdStrike is presenting it as part of a push to secure AI agents. The report does not describe any immediate security risk.",
       "category": "vendor_product",
       "importance": "low",
       "importance_rationale": "This is M&A news with no direct operational risk.",
@@ -3757,8 +3980,40 @@
         "region": "US",
         "rationale": ""
       },
-      "recommended_action": "Customers of either vendor should watch the roadmap and contract implications as the deal progresses.",
+      "recommended_action": "Customers of either vendor should watch the roadmap and contract implications as the deal progresses. CyberScoop: Organizations that use CrowdStrike or Zscaler should watch for roadmap, licensing and contract changes, and review their vendor concentration risk.",
       "confidence": 0.9,
+      "source_coverage": [
+        {
+          "cluster_id": "02207daefe6b99993bcd578f",
+          "summary": "CrowdStrike has agreed to buy Zscaler in an all-stock deal valued at about $43.9 billion. Zscaler shareholders will receive 1.135 CrowdStrike shares per share. The deal would combine endpoint and network security platforms.",
+          "recommended_action": "Customers of either vendor should watch the roadmap and contract implications as the deal progresses.",
+          "sources": [
+            {
+              "source": "SecurityWeek",
+              "url": "https://www.securityweek.com/crowdstrike-to-acquire-zscaler-in-43-9-billion-deal/"
+            },
+            {
+              "source": "Help Net Security",
+              "url": "https://www.helpnetsecurity.com/2026/11/23/crowdstrike-zscaler-43-9-billion-acquisition/"
+            },
+            {
+              "source": "Infosecurity Magazine",
+              "url": "https://www.infosecurity-magazine.com/news/crowdstrike-to-acquire-zscaler/"
+            }
+          ]
+        },
+        {
+          "cluster_id": "788cc442b9cf1f0605a12303",
+          "summary": "CrowdStrike has agreed to buy Zscaler for $43.9 billion, according to the report. The deal would combine endpoint protection and network access controls, and CrowdStrike is presenting it as part of a push to secure AI agents. The report does not describe any immediate security risk.",
+          "recommended_action": "Organizations that use CrowdStrike or Zscaler should watch for roadmap, licensing and contract changes, and review their vendor concentration risk.",
+          "sources": [
+            {
+              "source": "CyberScoop",
+              "url": "https://cyberscoop.com/crowdstrike-to-acquire-zscaler/"
+            }
+          ]
+        }
+      ],
       "sources": [
         {
           "url": "https://www.securityweek.com/crowdstrike-to-acquire-zscaler-in-43-9-billion-deal/",
@@ -3776,6 +4031,12 @@
           "url": "https://www.infosecurity-magazine.com/news/crowdstrike-to-acquire-zscaler/",
           "source": "Infosecurity Magazine",
           "published": "2026-11-23T15:15:00+00:00",
+          "date_inferred": false
+        },
+        {
+          "url": "https://cyberscoop.com/crowdstrike-to-acquire-zscaler/",
+          "source": "CyberScoop",
+          "published": "2026-11-23T16:15:50+00:00",
           "date_inferred": false
         }
       ],
@@ -3808,7 +4069,7 @@
         "worldwide": []
       },
       "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 3,
+      "independent_sources_24h": 4,
       "priority": 27.0,
       "priority_breakdown": {
         "importance": 9.0,
@@ -3821,7 +4082,11 @@
           34.99
         ]
       },
-      "included": false
+      "included": false,
+      "merged_cluster_ids": [
+        "02207daefe6b99993bcd578f",
+        "788cc442b9cf1f0605a12303"
+      ]
     },
     {
       "cluster_id": "05afbc9d98d56524e37727d8",
@@ -4124,6 +4389,117 @@
         "industry": 2.5,
         "practice": 7.5,
         "weighted_total": 25.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "719875846f3fdf293dbbd0dd",
+      "headline": "CrowdStrike to acquire Zscaler for $43.9 billion",
+      "summary": "CrowdStrike plans to buy Zscaler for $43.9 billion, bringing together two long-time partners. The deal is aimed at buyers who want to consolidate security vendors.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is M&A news with no operational risk attached.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 35,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 15,
+        "global_it_services": 30,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 45,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 0,
+        "siem_detection": 25,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "CrowdStrike Falcon",
+        "Zscaler"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Customers of either vendor should follow the product roadmap and any contract implications.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.cybersecuritydive.com/news/crowdstrike-acquire-zscaler-439-billion-turbulent-threat/875477/",
+          "source": "Cybersecurity Dive",
+          "published": "2026-11-23T15:51:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is M&A news with no operational risk attached.",
+      "watch_tech": [
+        {
+          "name": "CrowdStrike Falcon",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        },
+        {
+          "name": "Zscaler",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "endpoint_network"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 24.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 3.0,
+        "practice": 6.75,
+        "weighted_total": 24.75,
         "severity_band": [
           0,
           34.99
@@ -4620,6 +4996,106 @@
       "included": true
     },
     {
+      "cluster_id": "a75fd36abba0068884a2947b",
+      "headline": "Weekly recap: VMware zero-day and several shell-access flaws in Java, NGINX and Ruby",
+      "summary": "A weekly roundup from The Hacker News mentions a VMware zero-day and remote shell problems labelled Java4Shell, NGINX2Root and Ruby2Shell. The excerpt doesn't give CVEs, affected versions or confirmed details for any of them.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a recap article, and the excerpt doesn't substantiate any of the issues it names.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 15,
+        "siem_detection": 15,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "VMware",
+        "Java",
+        "NGINX",
+        "Ruby"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Detection depends on the underlying advisories, which the recap doesn't include. This is an assessment.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find and triage the original advisories for the VMware, Java, NGINX and Ruby issues.",
+      "confidence": 0.4,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html",
+          "source": "The Hacker News",
+          "published": "2026-11-23T15:10:48+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a recap article, and the excerpt doesn't substantiate any of the issues it names.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 22.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 2.5,
+        "practice": 6.0,
+        "weighted_total": 22.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "f07fbb88addfe7b2b3f84809",
       "headline": "Bits of Freedom calls Dutch DPA warning on camera glasses insufficient",
       "summary": "Dutch civil-rights group Bits of Freedom says the Dutch Data Protection Authority's (Autoriteit Persoonsgegevens) warning about camera glasses does not go far enough. The dispute is about privacy risks from wearable recording devices.",
@@ -4909,6 +5385,111 @@
         "industry": 2.0,
         "practice": 3.75,
         "weighted_total": 20.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "a0c7c3b629c69f96e29d9095",
+      "headline": "CVE-2026-129975: double free in status line read code listed by Amazon Linux",
+      "summary": "Amazon Linux Security Center lists CVE-2026-129975, a double-free bug in status line read code. The record doesn't name the affected component and doesn't confirm whether Amazon Linux is affected or whether a patch exists.",
+      "category": "vulnerability",
+      "importance": "low",
+      "importance_rationale": "The record is sparse. It names no product, gives no severity and reports no exploitation.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 5,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Amazon Linux (status unconfirmed)"
+      ],
+      "cves": [
+        "CVE-2026-129975"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not enough detail to suggest a detection approach. This is an assessment.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for a vendor advisory that confirms the affected package and the fixed versions.",
+      "confidence": 0.5,
+      "sources": [
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-129975.html",
+          "source": "Amazon Linux Security Center",
+          "published": "2026-11-23T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "The record is sparse. It names no product, gives no severity and reports no exploitation.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-129975": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 18.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 1.5,
+        "practice": 5.25,
+        "weighted_total": 18.75,
         "severity_band": [
           0,
           34.99
@@ -5593,14 +6174,14 @@
   ],
   "counts": {
     "critical": 5,
-    "high": 18,
-    "medium": 10,
-    "low": 21
+    "high": 19,
+    "medium": 11,
+    "low": 24
   },
   "unclassified": 0,
-  "duplicates_removed": 0,
+  "duplicates_removed": 1,
   "new_kev": [],
-  "watch_hits": 8,
+  "watch_hits": 12,
   "watch": {
     "infrastructure": [
       {
@@ -5610,6 +6191,16 @@
       }
     ],
     "microsoft": [
+      {
+        "technology": "Azure",
+        "headline": "Norway says Microsoft cloud flaw was exploited against energy firms Equinor and Skagerak Energi",
+        "cluster_id": "331c740fc703a8c3838f50c0"
+      },
+      {
+        "technology": "Azure",
+        "headline": "Azure API Management flaw exploited to target secrets at Norwegian energy firms",
+        "cluster_id": "2486c32c8ff2033b0e23b1e1"
+      },
       {
         "technology": "Entra ID",
         "headline": "Microsoft confirms attackers exploited flaw in Entra Connect Health, leading to data exposure",
@@ -5629,6 +6220,11 @@
       }
     ],
     "ai": [
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Bots impersonate AI agent identities to probe for exposed secrets, Cequence reports",
+        "cluster_id": "3c7d8be7f3072db93f02aa80"
+      },
       {
         "technology": "AI agent frameworks",
         "headline": "Amazon: China-nexus actor used Cairn AI agents to exploit a zero-day in a medical imaging AI app",
@@ -5660,6 +6256,16 @@
         "technology": "Zscaler",
         "headline": "CrowdStrike announces acquisition of Zscaler for about $43.9 billion",
         "cluster_id": "9f5e8840012f52d417c0e2cf"
+      },
+      {
+        "technology": "CrowdStrike Falcon",
+        "headline": "CrowdStrike to acquire Zscaler for $43.9 billion",
+        "cluster_id": "719875846f3fdf293dbbd0dd"
+      },
+      {
+        "technology": "Zscaler",
+        "headline": "CrowdStrike to acquire Zscaler for $43.9 billion",
+        "cluster_id": "719875846f3fdf293dbbd0dd"
       }
     ]
   },
@@ -5709,21 +6315,6 @@
             "date_inferred": false
           }
         ]
-      },
-      {
-        "key": "pci_dss",
-        "nature": "guidance",
-        "effective_or_deadline_date": null,
-        "name": "PCI DSS",
-        "headline": "Cleverbridge discloses breach exposing customer payment card numbers and CVVs",
-        "sources": [
-          {
-            "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/",
-            "source": "BleepingComputer",
-            "published": "2026-11-22T15:43:04+00:00",
-            "date_inferred": false
-          }
-        ]
       }
     ],
     "Europe": [
@@ -5759,23 +6350,23 @@
       }
     ]
   },
-  "other_count": 17,
+  "other_count": 20,
   "source_health": {
-    "at": "2026-11-23T15:41:26.770480+00:00",
+    "at": "2026-11-23T16:44:26.435902+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 59,
+    "new": 56,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 8
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -5785,27 +6376,27 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 7
+        "new": 1
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 6
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 3
+        "new": 1
       },
       {
         "name": "KrebsOnSecurity",
@@ -5820,12 +6411,12 @@
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 2
+        "new": 1
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -5863,7 +6454,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -5873,7 +6464,7 @@
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -5918,7 +6509,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -5938,7 +6529,7 @@
       {
         "name": "GreyNoise Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "GreyNoise Labs",
@@ -5984,8 +6575,8 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 0,
-        "entries": 35497,
+        "new": 50,
+        "entries": 35547,
         "invalid": 0,
         "future": 0,
         "ignored": 2
@@ -6027,6 +6618,8 @@
       "89ef724f9ef49976c42f721d"
     ],
     "zero-trust-at-enterprise-scale": [
+      "331c740fc703a8c3838f50c0",
+      "2486c32c8ff2033b0e23b1e1",
       "b703824d22fb2bad3235fb6c",
       "3496608f8e6f759b29605975",
       "52eb9c59258a6af3d5f2eee9"
