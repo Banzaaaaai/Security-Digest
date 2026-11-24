@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "secdigest",
-  "message": "failure · 2026-11-24",
-  "color": "red",
+  "message": "success · 2026-11-24",
+  "color": "brightgreen",
   "namedLogo": "github-actions"
 }
