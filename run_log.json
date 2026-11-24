@@ -27268,5 +27268,320 @@
     "estimated_usd": 0.22994799999999999,
     "email_type": null,
     "email_sent": false
+  },
+  {
+    "timestamp": "2026-11-24T15:32:07.142484+00:00",
+    "status": "failure",
+    "stage": "classification",
+    "emails": [
+      {
+        "email_type": "failure",
+        "email_sent": true
+      }
+    ],
+    "synthetic": false,
+    "ingestion": {
+      "at": "2026-11-24T15:32:07.433739+00:00",
+      "enabled": 41,
+      "failures": 2,
+      "new": 84,
+      "updated": 0,
+      "sources": [
+        {
+          "name": "The Hacker News",
+          "ok": true,
+          "new": 9
+        },
+        {
+          "name": "BleepingComputer",
+          "ok": true,
+          "new": 9
+        },
+        {
+          "name": "Ars Technica Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Help Net Security",
+          "ok": true,
+          "new": 10
+        },
+        {
+          "name": "SecurityWeek",
+          "ok": true,
+          "new": 7
+        },
+        {
+          "name": "Dark Reading",
+          "ok": true,
+          "new": 6
+        },
+        {
+          "name": "Infosecurity Magazine",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "Cybersecurity Dive",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "KrebsOnSecurity",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "The Record",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "CyberScoop",
+          "ok": true,
+          "new": 4
+        },
+        {
+          "name": "Schneier on Security",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Microsoft Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Unit 42",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Cisco Talos",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CISA OT Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 232,
+          "failed": 0
+        },
+        {
+          "name": "Claroty Team82",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "OWASP GenAI Security Project",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Simon Willison (prompt injection)",
+          "ok": true,
+          "new": 5
+        },
+        {
+          "name": "Socket.dev Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "SANS ISC",
+          "ok": true,
+          "new": 2
+        },
+        {
+          "name": "CISA IT Advisories",
+          "ok": false,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 38,
+          "failed": 1,
+          "failed_advisories": [
+            {
+              "status": "failed",
+              "advisory_id": "VA-26-274-03",
+              "error": "HTTPStatusError",
+              "http_status": 404
+            }
+          ],
+          "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+        },
+        {
+          "name": "CISA Vulnerability Advisories",
+          "ok": true,
+          "new": 0,
+          "updated": 0,
+          "unchanged": 7,
+          "failed": 0
+        },
+        {
+          "name": "MSRC Update Guide",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Security Advisories",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "CERT-EU Threat Intelligence",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Security.NL",
+          "ok": true,
+          "new": 12
+        },
+        {
+          "name": "Contagio",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GitHub Security Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Google Project Zero",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "GreyNoise Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "GreyNoise Labs",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Metasploit Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Qualys Vulnerabilities and Threat Research",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "ReversingLabs Blog",
+          "ok": true,
+          "new": 1
+        },
+        {
+          "name": "Qualys ThreatPROTECT",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Seebug Vulnerabilities",
+          "ok": false,
+          "new": 0,
+          "error": "ValueError"
+        },
+        {
+          "name": "Censys Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Shodan Blog",
+          "ok": true,
+          "new": 0
+        },
+        {
+          "name": "Amazon Linux Security Center",
+          "ok": true,
+          "new": 1,
+          "entries": 35549,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 2
+        },
+        {
+          "name": "Anthropic Research",
+          "ok": true,
+          "new": 1,
+          "entries": 24,
+          "invalid": 0,
+          "future": 0,
+          "ignored": 0
+        }
+      ]
+    },
+    "enrichment_warnings": [],
+    "error": "ValueError\ncli.py:244 in main\ncli.py:136 in run\nclassification.py:235 in classify",
+    "duration_s": 311.0,
+    "usage": [
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1229,
+        "output_tokens": 5150,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 13990,
+        "estimated_usd": 0.177866,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1251,
+        "output_tokens": 5149,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.110782,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 1169,
+        "output_tokens": 5166,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.110794,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 5171,
+        "output_tokens": 5045,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.124382,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 3134,
+        "output_tokens": 5029,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.115914,
+        "batch": false
+      },
+      {
+        "model": "claude-opus-5-5",
+        "input_tokens": 3187,
+        "output_tokens": 5092,
+        "cache_read_input_tokens": 13990,
+        "cache_creation_input_tokens": 0,
+        "estimated_usd": 0.117386,
+        "batch": false
+      }
+    ],
+    "estimated_usd": 0.757124,
+    "email_type": "failure",
+    "email_sent": true
   }
 ]
