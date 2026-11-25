@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-25",
-  "start": "2026-11-24T15:18:44.621075+00:00",
-  "end": "2026-11-25T15:18:44.621075+00:00",
+  "start": "2026-11-24T16:23:16.462070+00:00",
+  "end": "2026-11-25T16:23:16.462070+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -2907,101 +2907,6 @@
       "included": true
     },
     {
-      "cluster_id": "0ddde081cc792cb26377f6a1",
-      "headline": "European Commission confirms user data stolen in EU Academy platform breach",
-      "summary": "The European Commission confirmed that attackers breached its EU Academy online learning platform. Personal data belonging to an undisclosed number of users was stolen.",
-      "category": "data_breach",
-      "importance": "high",
-      "importance_rationale": "The breach hit a major European government body, but the affected system is a learning portal and its scale is unknown.",
-      "location_relevance": {
-        "US": 10,
-        "Europe": 85,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 90,
-        "retail_banking": 5,
-        "global_it_services": 15,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 25,
-        "devsecops": 10,
-        "siem_detection": 25,
-        "iam_pam": 20,
-        "email_phishing": 30,
-        "data_protection_dlp": 75,
-        "ot_ics": 0,
-        "grc_audit": 50,
-        "security_automation": 5,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No technical details were published, so detection guidance cannot be assessed.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "EU Academy users should watch for targeted phishing. Public bodies should review the security of their externally hosted learning platforms.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/",
-          "source": "BleepingComputer",
-          "published": "2026-11-24T16:22:44+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "The breach hit a major European government body, but the affected system is a learning portal and its scale is unknown.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 78.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 9.0,
-        "practice": 11.25,
-        "weighted_total": 78.0,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "cbd825ca533eb80e837ab4b3",
       "headline": "VMware patches critical ESX code-execution and vCenter authentication-bypass flaws",
       "summary": "VMware has released updates fixing critical vulnerabilities, including an authentication bypass in vCenter and flaws that could allow code execution on ESX hosts. The source does not report any exploitation in the wild.",
@@ -3109,210 +3014,6 @@
         "industry": 6.5,
         "practice": 13.5,
         "weighted_total": 77.75,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "3220445c6fd2901ff6988a42",
-      "headline": "AI-enabled campaign exploits critical flaws in Check Point Security Management servers",
-      "summary": "A campaign described as AI-enabled has exploited critical vulnerabilities in Check Point Security Management servers. At least 22 organizations were compromised. The source does not name the CVEs, the actors or the affected sectors.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 55,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 55,
-        "retail_banking": 50,
-        "global_it_services": 60,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 5,
-        "siem_detection": 75,
-        "iam_pam": 45,
-        "email_phishing": 5,
-        "data_protection_dlp": 30,
-        "ot_ics": 10,
-        "grc_audit": 25,
-        "security_automation": 30,
-        "ai_governance": 35
-      },
-      "affected_technologies": [
-        "Check Point Security Management"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: watch management-server logs for unusual admin logins and policy changes. The source does not supply any detection rules.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Apply Check Point's fixes right away and restrict management interface exposure. Then hunt for signs of compromise, because the specific CVEs have not been confirmed in the source.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.cybersecuritydive.com/news/ai-enabled-campaign-targets-check-point-security-management-servers/875622/",
-          "source": "Cybersecurity Dive",
-          "published": "2026-11-24T15:50:20+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "Critical flaws in widely deployed enterprise security management infrastructure are being actively exploited, with confirmed compromises.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://www.cybersecuritydive.com/news/ai-enabled-campaign-targets-check-point-security-management-servers/875622/"
-        ],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 77.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 6.0,
-        "practice": 13.5,
-        "weighted_total": 77.25,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "53f2a1acf59665bb0e1ff5a9",
-      "headline": "Attackers exploit vulnerabilities to compromise Check Point management servers at 22 organizations",
-      "summary": "An ongoing campaign has used multiple vulnerabilities to compromise Check Point Security management servers at 22 organizations. The source does not name the vulnerabilities, the affected sectors or the victims' locations. Because these servers control firewall policy, a compromise could weaken network defenses.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 80
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 55,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 55,
-        "retail_banking": 50,
-        "global_it_services": 60,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 90,
-        "devsecops": 5,
-        "siem_detection": 75,
-        "iam_pam": 45,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 15,
-        "grc_audit": 20,
-        "security_automation": 25,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Check Point Security Management Server"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were supplied. Our assessment is that teams should review management-server logs for unexpected admin logins and policy changes.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Apply Check Point's latest fixes, limit access to the management interface, and hunt for signs of compromise. Check vendor advisories for the specific CVEs, because the source does not name them.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/",
-          "source": "BleepingComputer",
-          "published": "2026-11-24T16:15:23+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "Check Point security management is widely deployed in enterprises, and successful in-the-wild compromises have been reported.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 77.25,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 6.0,
-        "practice": 13.5,
-        "weighted_total": 77.25,
         "severity_band": [
           65,
           84.99
@@ -3551,84 +3252,84 @@
       "included": true
     },
     {
-      "cluster_id": "8a65e074a78acd535ca86169",
-      "headline": "Critical flaw lets attackers remotely take over Danfoss refrigeration systems",
-      "summary": "A critical vulnerability lets attackers take remote control of Danfoss refrigeration systems. A security update has been released. The source reports no active exploitation.",
+      "cluster_id": "a14e0b8f3e82a832af28a86c",
+      "headline": "Attackers probe GeoServer for two newly disclosed high-severity flaws that can be chained for RCE",
+      "summary": "Attackers are scanning GeoServer instances for two newly disclosed high-severity flaws. According to the report, the flaws can be chained with other bugs to achieve unauthenticated remote code execution. The source describes probing activity; it does not confirm any successful compromises.",
       "category": "vulnerability",
       "importance": "high",
-      "importance_rationale": "A critical remote-takeover flaw in industrial refrigeration control equipment has a vendor patch, but no exploitation is reported.",
+      "importance_rationale": "These are high-severity flaws in widely used geospatial software with observed attack attempts. Successful compromise is not confirmed, and the product is not on the watch list.",
       "location_relevance": {
-        "US": 65,
-        "Europe": 70,
-        "MEA": 65,
-        "Other": 65
+        "US": 75,
+        "Europe": 75,
+        "MEA": 75,
+        "Other": 75
       },
       "countries_mentioned": [],
       "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 10,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 20,
-        "retail_banking": 5,
-        "global_it_services": 15,
-        "logistics": 65,
-        "industrial_manufacturing": 70,
-        "automotive": 20
+        "energy_services": 60,
+        "telecommunications": 50,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 70,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 55,
+        "industrial_manufacturing": 40,
+        "automotive": 40
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 75,
-        "devsecops": 0,
-        "siem_detection": 30,
-        "iam_pam": 15,
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 15,
+        "siem_detection": 55,
+        "iam_pam": 5,
         "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 90,
-        "grc_audit": 15,
-        "security_automation": 5,
+        "data_protection_dlp": 15,
+        "ot_ics": 20,
+        "grc_audit": 10,
+        "security_automation": 20,
         "ai_governance": 0
       },
       "affected_technologies": [
-        "Danfoss refrigeration systems"
+        "GeoServer"
       ],
       "cves": [],
       "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "Assessment: OT network monitoring can flag unexpected remote access to refrigeration controllers.",
+      "detection_coverage_note": "No detection rules were linked. As an assessment, monitoring GeoServer web logs for unusual requests should help catch probing.",
       "related_case_studies": [
-        "security-visibility-for-manufacturing"
+        "continuous-vulnerability-management"
       ],
       "business_signal": {
         "present": false,
-        "type": "technology_shift",
-        "sector": "industrial_manufacturing",
-        "region": "Other",
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
         "rationale": ""
       },
-      "recommended_action": "Find any Danfoss refrigeration controllers, take them off the internet and apply the vendor's update.",
-      "confidence": 0.7,
+      "recommended_action": "Find any internet-facing GeoServer instances, apply the vendor fixes, and limit exposure. The report confirms probing only, not successful compromises.",
+      "confidence": 0.65,
       "sources": [
         {
-          "url": "https://www.security.nl/posting/962992/Danfoss-koelsystemen+via+kritiek+lek+op+afstand+over+te+nemen?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-24T16:09:00+00:00",
+          "url": "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/",
+          "source": "SecurityWeek",
+          "published": "2026-11-25T15:27:36+00:00",
           "date_inferred": false
         }
       ],
       "overrides": [],
       "model_importance": "high",
-      "model_importance_rationale": "A critical remote-takeover flaw in industrial refrigeration control equipment has a vendor patch, but no exploitation is reported.",
+      "model_importance_rationale": "These are high-severity flaws in widely used geospatial software with observed attack attempts. Successful compromise is not confirmed, and the product is not on the watch list.",
       "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
         "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [
-          "https://www.security.nl/posting/962992/Danfoss-koelsystemen+via+kritiek+lek+op+afstand+over+te+nemen?channel=rss"
+        "rce": [
+          "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/"
         ],
+        "critical_flaw": [],
         "emergency_patch": [],
         "public_poc": [],
         "supply_chain_compromise": [],
@@ -3640,9 +3341,9 @@
       "priority": 76.0,
       "priority_breakdown": {
         "importance": 45.0,
-        "location": 10.5,
+        "location": 11.25,
         "industry": 7.0,
-        "practice": 13.5,
+        "practice": 12.75,
         "weighted_total": 76.0,
         "severity_band": [
           65,
@@ -3962,6 +3663,208 @@
       "included": true
     },
     {
+      "cluster_id": "820a6be24763a5428c472775",
+      "headline": "CISA warns of critical unpatched flaw in Danfoss AK-SM 8xxA refrigeration controllers",
+      "summary": "CISA has warned of a critical vulnerability in Danfoss AK-SM 8xxA Series controllers. Food retailers use these controllers to manage refrigeration, HVAC and lighting. Reports describe the flaw as unpatched, and the summary does not mention any active exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "A critical, unpatched ICS vulnerability covered by a CISA advisory, with no reported exploitation.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 70,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 25,
+        "telecommunications": 5,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 15,
+        "retail_banking": 0,
+        "global_it_services": 15,
+        "logistics": 45,
+        "industrial_manufacturing": 45,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 0,
+        "siem_detection": 25,
+        "iam_pam": 15,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 90,
+        "grc_audit": 15,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Danfoss AK-SM 8xxA Series"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: monitor network access to these controllers' management interfaces and alert on connections from the internet.",
+      "related_case_studies": [
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "industrial_manufacturing",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Make an inventory of AK-SM controllers, take them off the internet, restrict access through segmentation, and follow CISA's mitigations until a fix is available.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
+          "source": "BleepingComputer",
+          "published": "2026-11-25T16:13:40+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A critical, unpatched ICS vulnerability covered by a CISA advisory, with no reported exploitation.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 74.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 11.25,
+        "industry": 4.5,
+        "practice": 13.5,
+        "weighted_total": 74.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9aea632362aa41cec1fdd234",
+      "headline": "Critical vulnerability in Copeland refrigeration systems exploited in attacks",
+      "summary": "Attackers are reported to be exploiting a critical vulnerability in Copeland refrigeration systems. The source summary is cut off, so the exact impact, the affected models and any CVE identifier are not confirmed.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "Exploitation of a critical OT flaw is reported, but the product is specialist rather than widely deployed enterprise technology.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 65,
+        "MEA": 55,
+        "Other": 55
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 25,
+        "telecommunications": 5,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 15,
+        "retail_banking": 0,
+        "global_it_services": 15,
+        "logistics": 50,
+        "industrial_manufacturing": 45,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 75,
+        "devsecops": 0,
+        "siem_detection": 35,
+        "iam_pam": 10,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 90,
+        "grc_audit": 15,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Copeland refrigeration controllers"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: review controller access logs and network flows for unexpected remote access.",
+      "related_case_studies": [
+        "security-visibility-for-manufacturing"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find any Copeland controllers, remove internet exposure, and apply the vendor's fixes. Treat any exposed device as possibly compromised until checked.",
+      "confidence": 0.55,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963152/Kritiek+beveiligingslek+in+koelsystemen+Copeland+misbruikt+bij+aanvallen?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-25T16:19:35+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "Exploitation of a critical OT flaw is reported, but the product is specialist rather than widely deployed enterprise technology.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.security.nl/posting/963152/Kritiek+beveiligingslek+in+koelsystemen+Copeland+misbruikt+bij+aanvallen?channel=rss"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 74.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 5.0,
+        "practice": 13.5,
+        "weighted_total": 74.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "a251bdbac4c3ddf91ec7b15c",
       "headline": "Radware breach exposes customer account details and cloud access keys through unsecured WAF API",
       "summary": "Security vendor Radware says attackers reached some customers' account details and cloud access keys. They got in through an internal Cloud WAF management API that had been left exposed online. The source does not say how many customers were affected.",
@@ -4162,6 +4065,103 @@
         "location": 12.0,
         "industry": 3.0,
         "practice": 11.25,
+        "weighted_total": 71.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "47c6cc4cf2b109f4f87b8ed1",
+      "headline": "US DOJ anti-scam surge charges over 800 defendants as FBI targets 29 scam compounds",
+      "summary": "The US Justice Department reports that its anti-scam surge has targeted more than 800 defendants. The FBI says it has acted against more than 29 scam compounds. The summary gives no further detail on where the compounds are or what types of fraud were involved.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "A large-scale law-enforcement action against organized scam operations, which the rubric rates as a major law-enforcement takedown.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 25,
+        "MEA": 20,
+        "Other": 40
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 25,
+        "private_banking": 45,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 60,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 15,
+        "email_phishing": 45,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "This is a law-enforcement action and includes no detection content.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Banks should check that their fraud teams are using current scam typologies, and keep customer awareness efforts going.",
+      "confidence": 0.65,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/doj-anti-scam-surge-800-defendants/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-25T16:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A large-scale law-enforcement action against organized scam operations, which the rubric rates as a major law-enforcement takedown.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 71.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 6.0,
+        "practice": 6.75,
         "weighted_total": 71.25,
         "severity_band": [
           65,
@@ -4898,6 +4898,106 @@
         "industry": 5.0,
         "practice": 9.75,
         "weighted_total": 55.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f30f7b2280e93ffe991309f7",
+      "headline": "Fake job assessments push 13 malicious NuGet packages to .NET developers",
+      "summary": "Researchers found 13 malicious NuGet packages used in a fake recruitment campaign aimed at .NET developers. The packages install malware that gives attackers access to developers' machines.",
+      "category": "supply_chain",
+      "importance": "medium",
+      "importance_rationale": "This is threat research on a targeted package campaign. There is no evidence of a systemic compromise of a popular package.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 60,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 35,
+        "government": 30,
+        "retail_banking": 30,
+        "global_it_services": 60,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 85,
+        "siem_detection": 45,
+        "iam_pam": 15,
+        "email_phishing": 35,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "NuGet",
+        ".NET"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection rules were linked. As an assessment, monitoring developer endpoints for unusual child processes started by build tools should help.",
+      "related_case_studies": [
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Warn developers about coding tests sent through recruitment approaches, and run untrusted projects only in isolated environments.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.darkreading.com/threat-intelligence/attackers-net-developers-poisoned-job-assessments",
+          "source": "Dark Reading",
+          "published": "2026-11-25T15:48:04+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is threat research on a targeted package campaign. There is no evidence of a systemic compromise of a popular package.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 54.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 54.75,
         "severity_band": [
           35,
           64.99
@@ -7149,105 +7249,6 @@
       "included": true
     },
     {
-      "cluster_id": "2d05398863cecdd2ed252c19",
-      "headline": "Mozilla Firefox update fixes over 100 security vulnerabilities and adds per-site VPN option",
-      "summary": "Mozilla has released a new Firefox version that fixes more than one hundred security vulnerabilities. The release also adds a VPN option that can be set per website. The source does not report any of these flaws being exploited.",
-      "category": "vulnerability",
-      "importance": "medium",
-      "importance_rationale": "This is a large patch release for a widely used browser. No exploitation or specific critical CVEs are reported.",
-      "location_relevance": {
-        "US": 75,
-        "Europe": 75,
-        "MEA": 75,
-        "Other": 75
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 15,
-        "vuln_exposure_mgmt": 70,
-        "devsecops": 5,
-        "siem_detection": 10,
-        "iam_pam": 5,
-        "email_phishing": 10,
-        "data_protection_dlp": 5,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Mozilla Firefox"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: tracking browser versions across endpoints is the most practical way to confirm coverage.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Roll out the latest Firefox version through your normal patch cycle and check endpoint compliance.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/962987/Mozilla+dicht+ruimt+honderd+Firefox-lekken%2C+biedt+vpn-optie+per+website?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-24T15:40:39+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a large patch release for a widely used browser. No exploitation or specific critical CVEs are reported.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 52.75,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 11.25,
-        "industry": 4.0,
-        "practice": 10.5,
-        "weighted_total": 52.75,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "7f47360138688cab7d52d1ce",
       "headline": "Valkey 9.1 Lua debugger use-after-free may allow authenticated RCE (CVE-2026-136155)",
       "summary": "In Valkey 9.1.0 and 9.1.1, running SCRIPT FLUSH ASYNC leaves a stale Lua interpreter pointer in the debugger. An authenticated user who can run scripting commands can reliably crash the server and may achieve remote code execution. Valkey 8.0.x and 8.1.x are not affected, and no exploitation is reported.",
@@ -9449,115 +9450,6 @@
       "risk_evidence": {
         "exploitation_reported": [],
         "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 52.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 10.5,
-        "industry": 4.0,
-        "practice": 10.5,
-        "weighted_total": 52.0,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "4cb11ce00bb429933131ff41",
-      "headline": "Microsoft adds a Visio RCE CVE that was fixed in November 2026 but left out of the release notes",
-      "summary": "Microsoft has published CVE-2026-112732, a remote code execution flaw in Office Visio. The November 2026 security updates already fixed it, but the CVE was left out of that month's release notes. Microsoft says this is an informational change only, and systems with the November updates need no further action.",
-      "category": "vulnerability",
-      "importance": "medium",
-      "importance_rationale": "An Office RCE that is already patched, with no reported exploitation and an informational-only advisory update.",
-      "location_relevance": {
-        "US": 70,
-        "Europe": 70,
-        "MEA": 70,
-        "Other": 70
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 40,
-        "retail_banking": 40,
-        "global_it_services": 40,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 70,
-        "devsecops": 0,
-        "siem_detection": 15,
-        "iam_pam": 0,
-        "email_phishing": 20,
-        "data_protection_dlp": 5,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 15,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Microsoft Office Visio"
-      ],
-      "cves": [
-        "CVE-2026-112732"
-      ],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: endpoint monitoring for Office applications starting child processes should give general coverage. No specific detections were published.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Check that the November 2026 Office/Visio updates are installed everywhere, and add the CVE to vulnerability tracking.",
-      "confidence": 0.85,
-      "sources": [
-        {
-          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-112732",
-          "source": "MSRC Update Guide",
-          "published": "2026-11-24T16:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "An Office RCE that is already patched, with no reported exploitation and an informational-only advisory update.",
-      "watch_tech": [],
-      "cve_details": {
-        "CVE-2026-112732": {
-          "kev": null,
-          "epss": 0.01342,
-          "cvss": null
-        }
-      },
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-112732"
-        ],
         "critical_flaw": [],
         "emergency_patch": [],
         "public_poc": [],
@@ -12350,105 +12242,6 @@
       "included": true
     },
     {
-      "cluster_id": "4282ded47b497e1f8f60d1ce",
-      "headline": "Carnegie Endowment donor data exposed in breach at vendor Soapbox Engage",
-      "summary": "The Carnegie Endowment for International Peace says some donor information was leaked. The leak came from a cyberattack on its third-party vendor, Soapbox Engage. The source does not give the scope of the exposure.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "This is a third-party breach at a non-profit outside the target industries, and its scope is limited.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 10,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 15,
-        "investment_management": 10,
-        "government": 15,
-        "retail_banking": 5,
-        "global_it_services": 20,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 5,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 25,
-        "data_protection_dlp": 65,
-        "ot_ics": 0,
-        "grc_audit": 45,
-        "security_automation": 5,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Soapbox Engage"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: vendor-side breaches usually happen outside internal monitoring, so third-party risk controls matter more here.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "If you use Soapbox Engage, check with the vendor whether your data was exposed. Also review the data shared with fundraising and CRM vendors.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://therecord.media/carnegie-endowment-data-breach",
-          "source": "The Record",
-          "published": "2026-11-24T16:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a third-party breach at a non-profit outside the target industries, and its scope is limited.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 47.75,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 9.0,
-        "industry": 2.0,
-        "practice": 9.75,
-        "weighted_total": 47.75,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "180954418834122bda66ea44",
       "headline": "NCC Group reports 23% rise in ransomware attacks in October after a record quarter",
       "summary": "NCC Group researchers report that ransomware attacks rose 23% in October, following a record quarter. They suggest the continued increase may reflect a new threat environment.",
@@ -12537,6 +12330,103 @@
         "location": 9.0,
         "industry": 4.5,
         "practice": 6.75,
+        "weighted_total": 47.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "c282822334e56f2fd12c39d6",
+      "headline": "Todoist breach exposes user password hashes, tokens and email addresses",
+      "summary": "An attacker reached production systems at the task-management app Todoist. Reports say password hashes, tokens and user email addresses were exposed. The number of affected users and how the attacker got in were not stated in the summary.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "A credential-related breach at a widely used SaaS productivity app that is outside the target industries. Its scale is not stated.",
+      "location_relevance": {
+        "US": 55,
+        "Europe": 55,
+        "MEA": 45,
+        "Other": 45
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 30,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 15,
+        "siem_detection": 20,
+        "iam_pam": 60,
+        "email_phishing": 40,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Todoist"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: watch for suspicious logins and token reuse involving Todoist integrations connected to corporate accounts.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find out whether staff use Todoist. Revoke and reissue its API tokens and integrations, require password resets where passwords may have been reused, and watch for follow-on phishing.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963142/Todoist+lekt+wachtwoordhashes%2C+tokens+en+e-mailadressen+gebruikers?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-25T15:52:08+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A credential-related breach at a widely used SaaS productivity app that is outside the target industries. Its scale is not stated.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 47.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 3.0,
+        "practice": 9.0,
         "weighted_total": 47.25,
         "severity_band": [
           35,
@@ -12750,6 +12640,109 @@
         "industry": 3.0,
         "practice": 9.0,
         "weighted_total": 46.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "5a0f45faa1200bb4dea26fab",
+      "headline": "Dutch shoe retailer vanHaren warns customers of data breach involving personal data",
+      "summary": "Dutch shoe retailer vanHaren has told customers that personal data was stolen in a data breach. The source does not say how many people were affected or how the attackers got in.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "This is a breach at a retailer outside the target industries.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 60,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 10,
+        "global_it_services": 5,
+        "logistics": 5,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 5,
+        "email_phishing": 30,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source gives no technical details.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for phishing that uses the stolen customer data.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963145/Schoenenwinkel+vanHaren+waarschuwt+klanten+voor+datalek?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-25T15:24:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a breach at a retailer outside the target industries.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 46.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 1.0,
+        "practice": 9.0,
+        "weighted_total": 46.0,
         "severity_band": [
           35,
           64.99
@@ -13252,6 +13245,101 @@
       "included": true
     },
     {
+      "cluster_id": "4f33aa269d4ba97216b9d5fe",
+      "headline": "Infrastructure security alliance urges CEOs to prioritize assets and test response and recovery",
+      "summary": "An industry group representing infrastructure operators issued guidance telling executives to set asset priorities and to rehearse incident response and recovery. The group pointed to recent technology outages as a sign of more disruptive events to come.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is non-binding guidance from an industry body, with no new threat or vulnerability.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 25
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 45,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 40,
+        "retail_banking": 25,
+        "global_it_services": 30,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 5,
+        "siem_detection": 15,
+        "iam_pam": 10,
+        "email_phishing": 5,
+        "data_protection_dlp": 10,
+        "ot_ics": 35,
+        "grc_audit": 60,
+        "security_automation": 10,
+        "ai_governance": 25
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "This is governance guidance, so no detection content applies.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "energy_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Check that crown-jewel assets are prioritized and that recovery exercises are scheduled and reported to the board.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.cybersecuritydive.com/news/alliance-critical-infrastructure-guidance-cybersecurity-ai/875741/",
+          "source": "Cybersecurity Dive",
+          "published": "2026-11-25T14:56:47+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is non-binding guidance from an industry body, with no new threat or vulnerability.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 31.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 5.5,
+        "practice": 9.0,
+        "weighted_total": 31.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
       "cluster_id": "37c39cee83ca0fc96656086e",
       "headline": "Unspecified Internationalization issue fixed in Firefox and Thunderbird",
       "summary": "CVE-2026-135603 is an unspecified issue in the Internationalization component of Firefox and Thunderbird. It is fixed in Firefox 161, Firefox ESR 153.8, Thunderbird 161 and Thunderbird 153.8. Its impact is not described and no exploitation has been reported.",
@@ -13456,6 +13544,101 @@
         "industry": 3.0,
         "practice": 8.25,
         "weighted_total": 29.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "60b6b3868921780c26b63249",
+      "headline": "Opinion: bot detection is failing, so limit privileged access for humans and machine identities alike",
+      "summary": "This opinion piece argues that bot detection is becoming ineffective. It recommends applying the same privileged-access limits to machine identities as to human users.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is an opinion piece with no new incident or vulnerability.",
+      "location_relevance": {
+        "US": 35,
+        "Europe": 35,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 35,
+        "global_it_services": 35,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 10,
+        "siem_detection": 20,
+        "iam_pam": 70,
+        "email_phishing": 5,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 15,
+        "ai_governance": 40
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No specific detections are described.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Inventory non-human identities and apply least privilege to them.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.darkreading.com/cyber-risk/bot-world-just-living",
+          "source": "Dark Reading",
+          "published": "2026-11-25T15:20:27+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is an opinion piece with no new incident or vulnerability.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 28.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 5.25,
+        "industry": 3.5,
+        "practice": 10.5,
+        "weighted_total": 28.25,
         "severity_band": [
           0,
           34.99
@@ -13856,105 +14039,6 @@
         "importance": 9.0,
         "location": 4.5,
         "industry": 3.0,
-        "practice": 9.0,
-        "weighted_total": 25.5,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "25b3992c050fc9a6bed2ebe4",
-      "headline": "University uses DSPM to discover sensitive data and tighten access ahead of AI adoption",
-      "summary": "Southeastern University used data security posture management to locate sensitive information and tighten access controls. The work is described as groundwork for safer AI adoption. This is a vendor-style case study, not a security incident.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "Customer case-study content with no threat, vulnerability or regulatory event.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [
-        "US"
-      ],
-      "industry_relevance": {
-        "energy_services": 10,
-        "telecommunications": 10,
-        "private_banking": 15,
-        "investment_management": 15,
-        "government": 15,
-        "retail_banking": 15,
-        "global_it_services": 15,
-        "logistics": 10,
-        "industrial_manufacturing": 10,
-        "automotive": 10
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 25,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 0,
-        "siem_detection": 5,
-        "iam_pam": 30,
-        "email_phishing": 0,
-        "data_protection_dlp": 60,
-        "ot_ics": 0,
-        "grc_audit": 25,
-        "security_automation": 10,
-        "ai_governance": 35
-      },
-      "affected_technologies": [
-        "DSPM"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable; this story contains no threat activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Optional reading for teams that are planning data discovery and access cleanup before rolling out AI.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://www.darkreading.com/cybersecurity-operations/how-southeastern-university-handle-data",
-          "source": "Dark Reading",
-          "published": "2026-11-24T15:46:46+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "Customer case-study content with no threat, vulnerability or regulatory event.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 25.5,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 6.0,
-        "industry": 1.5,
         "practice": 9.0,
         "weighted_total": 25.5,
         "severity_band": [
@@ -16359,7 +16443,7 @@
     "critical": 19,
     "high": 21,
     "medium": 85,
-    "low": 31
+    "low": 32
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -16580,6 +16664,21 @@
       },
       {
         "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Dutch shoe retailer vanHaren warns customers of data breach involving personal data",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/963145/Schoenenwinkel+vanHaren+waarschuwt+klanten+voor+datalek?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-11-25T15:24:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
         "nature": "guidance",
         "effective_or_deadline_date": null,
         "name": "GDPR",
@@ -16644,46 +16743,46 @@
   },
   "other_count": 26,
   "source_health": {
-    "at": "2026-11-25T15:18:44.621075+00:00",
+    "at": "2026-11-25T16:23:16.462070+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 215,
+    "new": 8,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 10
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 10
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 8
+        "new": 1
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 7
+        "new": 1
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "Cybersecurity Dive",
@@ -16698,17 +16797,17 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -16718,12 +16817,12 @@
       {
         "name": "Unit 42",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
@@ -16746,17 +16845,17 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "SANS ISC",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA IT Advisories",
@@ -16786,7 +16885,7 @@
       {
         "name": "MSRC Update Guide",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CERT-EU Security Advisories",
@@ -16801,7 +16900,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 11
+        "new": 3
       },
       {
         "name": "Contagio",
@@ -16846,7 +16945,7 @@
       {
         "name": "Qualys ThreatPROTECT",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Seebug Vulnerabilities",
@@ -16867,11 +16966,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 132,
-        "entries": 35681,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -16914,18 +17009,15 @@
       "7b5db5adb0f681b9c3d25898",
       "d5f3ce6a4d9a56a9ddbb16bc",
       "cbd825ca533eb80e837ab4b3",
-      "3220445c6fd2901ff6988a42",
-      "53f2a1acf59665bb0e1ff5a9",
       "58bdf7de597f4766869b6b1c",
       "8fd919e6709590e778ff6263",
+      "a14e0b8f3e82a832af28a86c",
       "6825214eace7025f23b6173a",
       "4687b81a2c14a62043bddfbb",
       "fe0c5f233a992dbe8e69c680",
       "9c245e8319d26e7233cda038",
       "3339dfd76457df734ca7322f",
-      "2d05398863cecdd2ed252c19",
-      "918f8236c2b641c6e4b63133",
-      "4cb11ce00bb429933131ff41"
+      "918f8236c2b641c6e4b63133"
     ],
     "security-at-telecom-scale": [
       "9582e29a3fdc5bee41c2e6a9",
@@ -16939,6 +17031,7 @@
     "security-in-the-delivery-path": [
       "c4aa0fb847865c57486cfdbf",
       "4e8cd9bc55226683858c6ec3",
+      "f30f7b2280e93ffe991309f7",
       "716dc2a9a70db27428c9d096",
       "2d3fe69c638a5cdab3fe18a8"
     ],
@@ -16947,12 +17040,13 @@
       "97b4a8e5dcc5ee8838c2a954",
       "347042e7abf2992ce7da56f5"
     ],
-    "security-visibility-for-manufacturing": [
-      "8a65e074a78acd535ca86169"
-    ],
     "securing-offshore-operations": [
       "1a604d5c888534c5e5cec4f3",
       "1ccaa1266b3e8eb3339c6559"
+    ],
+    "security-visibility-for-manufacturing": [
+      "820a6be24763a5428c472775",
+      "9aea632362aa41cec1fdd234"
     ],
     "security-foundations-for-logistics": [
       "1ccaa1266b3e8eb3339c6559"
