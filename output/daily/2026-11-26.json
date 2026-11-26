@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-26",
-  "start": "2026-11-25T14:43:57.201438+00:00",
-  "end": "2026-11-26T14:43:57.201438+00:00",
+  "start": "2026-11-25T15:57:23.020556+00:00",
+  "end": "2026-11-26T15:57:23.020556+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -126,6 +126,118 @@
         "industry": 8.0,
         "practice": 14.25,
         "weighted_total": 95.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0574110d7d17666e48071c3c",
+      "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
+      "summary": "SafeDep reports that the PolinRider campaign has hidden a Python loader in thousands of GitHub repositories, inside small utils packages or conftest.py files. The loader runs when the file is imported. It reportedly gets its next step from blockchain transaction data. The activity has been linked to North Korea and may date back to February 2025.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 80,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 95,
+        "siem_detection": 60,
+        "iam_pam": 25,
+        "email_phishing": 5,
+        "data_protection_dlp": 30,
+        "ot_ics": 5,
+        "grc_audit": 25,
+        "security_automation": 30,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "GitHub",
+        "Python"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "PolinRider"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: scan repositories for unexpected conftest.py or utils loaders. Watch developer endpoints for Python processes querying blockchain APIs. No rules were provided in the source.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "secure-development-for-automotive"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Check cloned or vendored GitHub code for suspicious conftest.py and utils modules. Pin dependencies and review them before use. Run untrusted code in sandboxes, and check the scope against SafeDep's indicators.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+          "source": "The Hacker News",
+          "published": "2026-11-26T15:13:41+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 95.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 8.0,
+        "practice": 14.25,
+        "weighted_total": 95.0,
         "severity_band": [
           85,
           100
@@ -674,117 +786,6 @@
       "included": true
     },
     {
-      "cluster_id": "49ce69661c7266e77dd48ebd",
-      "headline": "Microsoft patches Azure flaw after attacks on Norwegian energy companies; credential rotation advised",
-      "summary": "Microsoft has released a fix for an Azure vulnerability that was reportedly linked to attacks on major Norwegian energy companies. Even with the patch, Microsoft still recommends that customers rotate credentials and secrets. The source does not give a CVE, an attacker attribution or full technical details.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
-      },
-      "countries_mentioned": [
-        "NO"
-      ],
-      "industry_relevance": {
-        "energy_services": 95,
-        "telecommunications": 55,
-        "private_banking": 55,
-        "investment_management": 55,
-        "government": 60,
-        "retail_banking": 55,
-        "global_it_services": 70,
-        "logistics": 50,
-        "industrial_manufacturing": 55,
-        "automotive": 50
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 95,
-        "vuln_exposure_mgmt": 80,
-        "devsecops": 30,
-        "siem_detection": 70,
-        "iam_pam": 85,
-        "email_phishing": 5,
-        "data_protection_dlp": 50,
-        "ot_ics": 40,
-        "grc_audit": 35,
-        "security_automation": 30,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Azure"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source does not link any detection rules. Our assessment is that teams should review Azure activity and sign-in logs for unusual use of service principals and secrets.",
-      "related_case_studies": [
-        "zero-trust-at-enterprise-scale"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "energy_services",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Confirm the Azure fix applies to your tenants, follow Microsoft's advice to rotate credentials and secrets, and review logs for suspicious access. Full technical details have not been published yet.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.cybersecuritydive.com/news/microsoft-remediates-azure-flaw-following-attacks-against-norwegian-energy/875755/",
-          "source": "Cybersecurity Dive",
-          "published": "2026-11-25T15:36:37+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high",
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "Attacks on energy organizations in Europe are reported to involve a flaw in Azure, a widely deployed watch_tech cloud platform. The vendor's advice to rotate credentials suggests that secrets may have been exposed.",
-      "watch_tech": [
-        {
-          "name": "Azure",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "microsoft"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Globally deployed watch technology",
-      "independent_sources_24h": 1,
-      "priority": 81.5,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 12.75,
-        "industry": 9.5,
-        "practice": 14.25,
-        "weighted_total": 81.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "85d71203b57ce129093e26ee",
       "headline": "Attackers chain PHP2Shell and Fragnesia flaws against internet-exposed PAN-OS management interfaces",
       "summary": "Palo Alto Networks warns that threat actors are chaining the PHP2Shell and Fragnesia vulnerabilities to attack PAN-OS devices whose management interfaces are exposed to the internet. The source gives no CVE identifiers, victim counts or attribution.",
@@ -889,118 +890,6 @@
         "industry": 7.5,
         "practice": 14.25,
         "weighted_total": 81.0,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "651d4dc2a539860b3f5b5df2",
-      "headline": "Palo Alto patches Fragnesia kernel flaw chained with PHP2Shell to gain root on firewalls",
-      "summary": "Palo Alto Networks has fixed a kernel vulnerability called Fragnesia. According to the report, attackers chained it with the PHP2Shell flaw to get root access on firewalls. The source does not list CVE identifiers or say which versions are affected.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
-      "location_relevance": {
-        "US": 95,
-        "Europe": 95,
-        "MEA": 95,
-        "Other": 95
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 65,
-        "private_banking": 60,
-        "investment_management": 60,
-        "government": 65,
-        "retail_banking": 60,
-        "global_it_services": 65,
-        "logistics": 60,
-        "industrial_manufacturing": 60,
-        "automotive": 60
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 50,
-        "vuln_exposure_mgmt": 95,
-        "devsecops": 5,
-        "siem_detection": 70,
-        "iam_pam": 30,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 15,
-        "grc_audit": 15,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Palo Alto PAN-OS",
-        "PHP"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source links no detection rules. Teams could check firewall management-plane logs for unusual PHP requests and unexpected root-level processes. This is an assessment, not an observed finding.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Apply Palo Alto's fixes, restrict management interface exposure, and check firewalls for signs of compromise. Confirm affected versions in the vendor advisory.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.infosecurity-magazine.com/news/palo-alto-fragnesia-php2shell-fix/",
-          "source": "Infosecurity Magazine",
-          "published": "2026-11-25T15:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [
-        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high",
-        "Global deployment applicability: every region 95%; cross-industry relevance at least 60%"
-      ],
-      "model_importance": "critical",
-      "model_importance_rationale": "The report says attackers are actively exploiting PAN-OS firewalls, which is a watched technology deployed widely in enterprises.",
-      "watch_tech": [
-        {
-          "name": "Palo Alto PAN-OS",
-          "aliases": [
-            "PAN-OS"
-          ],
-          "cross_industry": false,
-          "vendor": "endpoint_network"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Common web and operating-system infrastructure",
-      "independent_sources_24h": 1,
-      "priority": 80.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 14.25,
-        "industry": 6.5,
-        "practice": 14.25,
-        "weighted_total": 80.0,
         "severity_band": [
           65,
           84.99
@@ -1518,107 +1407,6 @@
         "industry": 6.0,
         "practice": 13.5,
         "weighted_total": 76.5,
-        "severity_band": [
-          65,
-          84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "a14e0b8f3e82a832af28a86c",
-      "headline": "Attackers probe GeoServer for two newly disclosed high-severity flaws that can be chained for RCE",
-      "summary": "Attackers are scanning GeoServer instances for two newly disclosed high-severity flaws. According to the report, the flaws can be chained with other bugs to achieve unauthenticated remote code execution. The source describes probing activity; it does not confirm any successful compromises.",
-      "category": "vulnerability",
-      "importance": "high",
-      "importance_rationale": "These are high-severity flaws in widely used geospatial software with observed attack attempts. Successful compromise is not confirmed, and the product is not on the watch list.",
-      "location_relevance": {
-        "US": 75,
-        "Europe": 75,
-        "MEA": 75,
-        "Other": 75
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 60,
-        "telecommunications": 50,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 70,
-        "retail_banking": 40,
-        "global_it_services": 50,
-        "logistics": 55,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 85,
-        "devsecops": 15,
-        "siem_detection": 55,
-        "iam_pam": 5,
-        "email_phishing": 0,
-        "data_protection_dlp": 15,
-        "ot_ics": 20,
-        "grc_audit": 10,
-        "security_automation": 20,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "GeoServer"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked. As an assessment, monitoring GeoServer web logs for unusual requests should help catch probing.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Find any internet-facing GeoServer instances, apply the vendor fixes, and limit exposure. The report confirms probing only, not successful compromises.",
-      "confidence": 0.65,
-      "sources": [
-        {
-          "url": "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/",
-          "source": "SecurityWeek",
-          "published": "2026-11-25T15:27:36+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "high",
-      "model_importance_rationale": "These are high-severity flaws in widely used geospatial software with observed attack attempts. Successful compromise is not confirmed, and the product is not on the watch list.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [
-          "https://www.securityweek.com/two-newly-disclosed-geoserver-vulnerabilities-under-attack/"
-        ],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 76.0,
-      "priority_breakdown": {
-        "importance": 45.0,
-        "location": 11.25,
-        "industry": 7.0,
-        "practice": 12.75,
-        "weighted_total": 76.0,
         "severity_band": [
           65,
           84.99
@@ -2991,106 +2779,6 @@
       "included": true
     },
     {
-      "cluster_id": "f30f7b2280e93ffe991309f7",
-      "headline": "Fake job assessments push 13 malicious NuGet packages to .NET developers",
-      "summary": "Researchers found 13 malicious NuGet packages used in a fake recruitment campaign aimed at .NET developers. The packages install malware that gives attackers access to developers' machines.",
-      "category": "supply_chain",
-      "importance": "medium",
-      "importance_rationale": "This is threat research on a targeted package campaign. There is no evidence of a systemic compromise of a popular package.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 60,
-        "MEA": 60,
-        "Other": 60
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 30,
-        "telecommunications": 30,
-        "private_banking": 30,
-        "investment_management": 35,
-        "government": 30,
-        "retail_banking": 30,
-        "global_it_services": 60,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 85,
-        "siem_detection": 45,
-        "iam_pam": 15,
-        "email_phishing": 35,
-        "data_protection_dlp": 15,
-        "ot_ics": 0,
-        "grc_audit": 5,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "NuGet",
-        ".NET"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked. As an assessment, monitoring developer endpoints for unusual child processes started by build tools should help.",
-      "related_case_studies": [
-        "security-in-the-delivery-path"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Warn developers about coding tests sent through recruitment approaches, and run untrusted projects only in isolated environments.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.darkreading.com/threat-intelligence/attackers-net-developers-poisoned-job-assessments",
-          "source": "Dark Reading",
-          "published": "2026-11-25T15:48:04+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is threat research on a targeted package campaign. There is no evidence of a systemic compromise of a popular package.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 54.75,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 9.0,
-        "industry": 6.0,
-        "practice": 12.75,
-        "weighted_total": 54.75,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "318243fd3323f274fb5f8e3d",
       "headline": "Microsoft says multiple state-linked actors abuse the ARTEX agentic AI pentest framework",
       "summary": "Microsoft reports that several threat actors, including state-linked groups, have abused ARTEX, an AI-powered penetration testing framework. Named groups include Onyx Sleet, Pearl Sleet and Salt Typhoon. According to Microsoft, the tool helps them speed up existing reconnaissance, credential attacks and web application exploitation.",
@@ -3731,105 +3419,6 @@
       "included": true
     },
     {
-      "cluster_id": "918f8236c2b641c6e4b63133",
-      "headline": "Eclypsium report: exploited network appliance flaws mostly in bundled third-party components",
-      "summary": "Eclypsium's November InfraTrust report finds that most recent advisories for exploited infrastructure vulnerabilities involved bundled third-party software rather than vendor-written code. This highlights supply-chain risk in network appliances. The summary does not name specific products.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "This is a trend report on research. It names no specific new exploitation.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 60,
-        "MEA": 60,
-        "Other": 60
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 40,
-        "telecommunications": 50,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 45,
-        "retail_banking": 40,
-        "global_it_services": 50,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 40
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 25,
-        "vuln_exposure_mgmt": 75,
-        "devsecops": 40,
-        "siem_detection": 30,
-        "iam_pam": 10,
-        "email_phishing": 0,
-        "data_protection_dlp": 5,
-        "ot_ics": 20,
-        "grc_audit": 25,
-        "security_automation": 15,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "network appliances"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No detection rules were linked. Our assessment is that this calls for firmware and SBOM visibility on edge devices.",
-      "related_case_studies": [
-        "continuous-vulnerability-management"
-      ],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Request SBOMs from appliance vendors. Track third-party component advisories alongside vendor patches.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/",
-          "source": "BleepingComputer",
-          "published": "2026-11-25T15:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a trend report on research. It names no specific new exploitation.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 52.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 9.0,
-        "industry": 5.0,
-        "practice": 11.25,
-        "weighted_total": 52.25,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "e0b1372fd1811e7a69fb52b3",
       "headline": "Florida ransomware recovery firm CEO indicted over alleged hidden ransom payments to hackers",
       "summary": "A federal grand jury has indicted the CEO of a ransomware recovery firm. He is accused of misrepresenting the firm's services and secretly paying ransoms to cybercriminals. These are allegations only, and the case has not been decided.",
@@ -4219,6 +3808,104 @@
         "location": 9.0,
         "industry": 5.0,
         "practice": 9.75,
+        "weighted_total": 50.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "57d73d788295d6a09683ff8b",
+      "headline": "Remus infostealer uses fake Google Sheets Chrome extension to steal Gmail messages",
+      "summary": "The Remus infostealer uses a malicious Chrome extension that poses as Google Sheets to steal Gmail messages. Its operators advertised this as a Gmail zero-day, but the report describes it as extension abuse rather than a flaw in Gmail.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 75,
+        "MEA": 75,
+        "Other": 75
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 35,
+        "investment_management": 35,
+        "government": 35,
+        "retail_banking": 35,
+        "global_it_services": 35,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 55,
+        "iam_pam": 40,
+        "email_phishing": 50,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Google Chrome",
+        "Gmail"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: inventory and allow-list Chrome extensions, and monitor for unknown extensions that ask for Gmail or Google Sheets access. No rules were provided in the source.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Enforce allow-lists for browser extensions through managed Chrome policies. Review installed extensions for fake Google Sheets add-ons.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+          "source": "BleepingComputer",
+          "published": "2026-11-26T15:23:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 50.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 11.25,
+        "industry": 3.5,
+        "practice": 9.0,
         "weighted_total": 50.75,
         "severity_band": [
           35,
@@ -5568,103 +5255,6 @@
       "included": true
     },
     {
-      "cluster_id": "c282822334e56f2fd12c39d6",
-      "headline": "Todoist breach exposes user password hashes, tokens and email addresses",
-      "summary": "An attacker reached production systems at the task-management app Todoist. Reports say password hashes, tokens and user email addresses were exposed. The number of affected users and how the attacker got in were not stated in the summary.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "A credential-related breach at a widely used SaaS productivity app that is outside the target industries. Its scale is not stated.",
-      "location_relevance": {
-        "US": 55,
-        "Europe": 55,
-        "MEA": 45,
-        "Other": 45
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 20,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 20,
-        "retail_banking": 20,
-        "global_it_services": 30,
-        "logistics": 20,
-        "industrial_manufacturing": 20,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 35,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 15,
-        "siem_detection": 20,
-        "iam_pam": 60,
-        "email_phishing": 40,
-        "data_protection_dlp": 60,
-        "ot_ics": 0,
-        "grc_audit": 30,
-        "security_automation": 10,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Todoist"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: watch for suspicious logins and token reuse involving Todoist integrations connected to corporate accounts.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Find out whether staff use Todoist. Revoke and reissue its API tokens and integrations, require password resets where passwords may have been reused, and watch for follow-on phishing.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/963142/Todoist+lekt+wachtwoordhashes%2C+tokens+en+e-mailadressen+gebruikers?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-25T15:52:08+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "A credential-related breach at a widely used SaaS productivity app that is outside the target industries. Its scale is not stated.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 47.25,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 8.25,
-        "industry": 3.0,
-        "practice": 9.0,
-        "weighted_total": 47.25,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "8b55b3d45478cbaca3d6c6e2",
       "headline": "Flatpak portal flaw CVE-2026-133845 could expose file descriptors to a subsandbox",
       "summary": "An unprivileged Flatpak app could trick flatpak-portal into giving a subsandbox access to one of the app's own file descriptors. The CVE record does not confirm whether Amazon Linux is affected or whether a patch is available. No exploitation is reported.",
@@ -5869,109 +5459,6 @@
         "industry": 3.0,
         "practice": 9.0,
         "weighted_total": 46.5,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "5a0f45faa1200bb4dea26fab",
-      "headline": "Dutch shoe retailer vanHaren warns customers of data breach involving personal data",
-      "summary": "Dutch shoe retailer vanHaren has told customers that personal data was stolen in a data breach. The source does not say how many people were affected or how the attackers got in.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "This is a breach at a retailer outside the target industries.",
-      "location_relevance": {
-        "US": 0,
-        "Europe": 60,
-        "MEA": 0,
-        "Other": 0
-      },
-      "countries_mentioned": [
-        "NL"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 10,
-        "global_it_services": 5,
-        "logistics": 5,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 0,
-        "siem_detection": 10,
-        "iam_pam": 5,
-        "email_phishing": 30,
-        "data_protection_dlp": 60,
-        "ot_ics": 0,
-        "grc_audit": 30,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [
-        {
-          "key": "gdpr",
-          "nature": "enforcement",
-          "effective_or_deadline_date": null
-        }
-      ],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The source gives no technical details.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "logistics",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Watch for phishing that uses the stolen customer data.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/963145/Schoenenwinkel+vanHaren+waarschuwt+klanten+voor+datalek?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-25T15:24:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "This is a breach at a retailer outside the target industries.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 46.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 9.0,
-        "industry": 1.0,
-        "practice": 9.0,
-        "weighted_total": 46.0,
         "severity_band": [
           35,
           64.99
@@ -6374,196 +5861,6 @@
       "included": true
     },
     {
-      "cluster_id": "4f33aa269d4ba97216b9d5fe",
-      "headline": "Infrastructure security alliance urges CEOs to prioritize assets and test response and recovery",
-      "summary": "An industry group representing infrastructure operators issued guidance telling executives to set asset priorities and to rehearse incident response and recovery. The group pointed to recent technology outages as a sign of more disruptive events to come.",
-      "category": "regulation_policy",
-      "importance": "low",
-      "importance_rationale": "This is non-binding guidance from an industry body, with no new threat or vulnerability.",
-      "location_relevance": {
-        "US": 50,
-        "Europe": 30,
-        "MEA": 30,
-        "Other": 25
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 55,
-        "telecommunications": 45,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 40,
-        "retail_banking": 25,
-        "global_it_services": 30,
-        "logistics": 40,
-        "industrial_manufacturing": 40,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 5,
-        "siem_detection": 15,
-        "iam_pam": 10,
-        "email_phishing": 5,
-        "data_protection_dlp": 10,
-        "ot_ics": 35,
-        "grc_audit": 60,
-        "security_automation": 10,
-        "ai_governance": 25
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "This is governance guidance, so no detection content applies.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "sector_campaign",
-        "sector": "energy_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Check that crown-jewel assets are prioritized and that recovery exercises are scheduled and reported to the board.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.cybersecuritydive.com/news/alliance-critical-infrastructure-guidance-cybersecurity-ai/875741/",
-          "source": "Cybersecurity Dive",
-          "published": "2026-11-25T14:56:47+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is non-binding guidance from an industry body, with no new threat or vulnerability.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 31.0,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 7.5,
-        "industry": 5.5,
-        "practice": 9.0,
-        "weighted_total": 31.0,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "60b6b3868921780c26b63249",
-      "headline": "Opinion: bot detection is failing, so limit privileged access for humans and machine identities alike",
-      "summary": "This opinion piece argues that bot detection is becoming ineffective. It recommends applying the same privileged-access limits to machine identities as to human users.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "This is an opinion piece with no new incident or vulnerability.",
-      "location_relevance": {
-        "US": 35,
-        "Europe": 35,
-        "MEA": 35,
-        "Other": 35
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 30,
-        "telecommunications": 30,
-        "private_banking": 30,
-        "investment_management": 30,
-        "government": 30,
-        "retail_banking": 35,
-        "global_it_services": 35,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 5,
-        "devsecops": 10,
-        "siem_detection": 20,
-        "iam_pam": 70,
-        "email_phishing": 5,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 15,
-        "ai_governance": 40
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No specific detections are described.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "US",
-        "rationale": ""
-      },
-      "recommended_action": "Inventory non-human identities and apply least privilege to them.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.darkreading.com/cyber-risk/bot-world-just-living",
-          "source": "Dark Reading",
-          "published": "2026-11-25T15:20:27+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is an opinion piece with no new incident or vulnerability.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 28.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 5.25,
-        "industry": 3.5,
-        "practice": 10.5,
-        "weighted_total": 28.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "ffd7445ac86af322ab9886fa",
       "headline": "Socket CEO discusses fixing open-source vulnerabilities without upgrading dependencies",
       "summary": "Socket CEO Feross Aboukhadijeh appeared on the Risky Business podcast to discuss fixing open-source vulnerabilities at scale without upgrading dependencies. The piece is vendor commentary and reports no new vulnerability or incident.",
@@ -6659,101 +5956,6 @@
       "included": true
     },
     {
-      "cluster_id": "191a79620025470facbeb1e7",
-      "headline": "Unit 42 outlines defensive strategies against AI-driven cyberattacks",
-      "summary": "Unit 42 looks at how AI-enabled attacks are evolving. It recommends speed, edge AI and behavioural baselines as defences.",
-      "category": "research",
-      "importance": "low",
-      "importance_rationale": "This is a general strategy piece with no new specific attack techniques or incidents.",
-      "location_relevance": {
-        "US": 35,
-        "Europe": 35,
-        "MEA": 35,
-        "Other": 35
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 20,
-        "telecommunications": 20,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 20,
-        "retail_banking": 20,
-        "global_it_services": 25,
-        "logistics": 20,
-        "industrial_manufacturing": 20,
-        "automotive": 20
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 15,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 5,
-        "siem_detection": 40,
-        "iam_pam": 10,
-        "email_phishing": 10,
-        "data_protection_dlp": 10,
-        "ot_ics": 5,
-        "grc_audit": 10,
-        "security_automation": 35,
-        "ai_governance": 50
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "The piece provides no specific detection content.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Optional reading for SOC strategy planning.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://unit42.paloaltonetworks.com/ai-threat-horizon/",
-          "source": "Unit 42",
-          "published": "2026-11-25T15:00:09+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a general strategy piece with no new specific attack techniques or incidents.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 24.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 5.25,
-        "industry": 2.5,
-        "practice": 7.5,
-        "weighted_total": 24.25,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "5e8fd9b5c4d5e81efcee8b74",
       "headline": "CBS: AI use by Dutch businesses more than doubles in a year",
       "summary": "Statistics Netherlands (CBS) reports that AI use by Dutch companies more than doubled within one year.",
@@ -6843,196 +6045,6 @@
         "industry": 1.5,
         "practice": 6.0,
         "weighted_total": 24.0,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "45ee7c2e482d64d396cdb6d7",
-      "headline": "Cyber insurers describe a growing divide between organisations with and without AI defences",
-      "summary": "In a podcast episode, cyber insurers discuss how AI is changing the threat landscape. They argue that pressure on both insurers and policyholders is making the current insurance model unsustainable.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "This is an opinion and discussion piece with no specific incident.",
-      "location_relevance": {
-        "US": 40,
-        "Europe": 30,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 15,
-        "telecommunications": 15,
-        "private_banking": 20,
-        "investment_management": 20,
-        "government": 15,
-        "retail_banking": 20,
-        "global_it_services": 20,
-        "logistics": 15,
-        "industrial_manufacturing": 15,
-        "automotive": 15
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 10,
-        "vuln_exposure_mgmt": 10,
-        "devsecops": 5,
-        "siem_detection": 10,
-        "iam_pam": 10,
-        "email_phishing": 10,
-        "data_protection_dlp": 10,
-        "ot_ics": 5,
-        "grc_audit": 45,
-        "security_automation": 15,
-        "ai_governance": 40
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No immediate action is needed. Risk teams may want to check how insurers are now assessing security controls.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://www.darkreading.com/cybersecurity-operations/cyber-insurers-see-new-ai-divide",
-          "source": "Dark Reading",
-          "published": "2026-11-25T15:00:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is an opinion and discussion piece with no specific incident.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 23.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 6.0,
-        "industry": 2.0,
-        "practice": 6.75,
-        "weighted_total": 23.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "68cfe4117553ced3db48d594",
-      "headline": "Shufti launches Fraud Hub to link identity, device and behavioural fraud signals",
-      "summary": "Shufti has launched Fraud Hub, a product that correlates identity, device, biometric and behavioural signals. It is designed to detect coordinated fraud networks across the user lifecycle.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is a product launch and carries no operational risk.",
-      "location_relevance": {
-        "US": 30,
-        "Europe": 30,
-        "MEA": 30,
-        "Other": 30
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 20,
-        "private_banking": 35,
-        "investment_management": 30,
-        "government": 10,
-        "retail_banking": 45,
-        "global_it_services": 15,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 15,
-        "iam_pam": 35,
-        "email_phishing": 5,
-        "data_protection_dlp": 10,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 15,
-        "ai_governance": 5
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "retail_banking",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No action is required. Note this for fraud tooling evaluations.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://www.helpnetsecurity.com/2026/11/25/shufti-fraud-hub/",
-          "source": "Help Net Security",
-          "published": "2026-11-25T14:45:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is a product launch and carries no operational risk.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 23.25,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 4.5,
-        "industry": 4.5,
-        "practice": 5.25,
-        "weighted_total": 23.25,
         "severity_band": [
           0,
           34.99
@@ -7763,200 +6775,6 @@
       "included": false
     },
     {
-      "cluster_id": "571e665497ad37fe12a4552e",
-      "headline": "Vendor article: AI may reduce reporting workload for penetration testers",
-      "summary": "PentestPad describes how AI can take over documentation and reporting work in penetration tests. It says this can be done while keeping client data on the testing team's own infrastructure.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is sponsored vendor content.",
-      "location_relevance": {
-        "US": 20,
-        "Europe": 20,
-        "MEA": 20,
-        "Other": 20
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 5,
-        "private_banking": 5,
-        "investment_management": 5,
-        "government": 5,
-        "retail_banking": 5,
-        "global_it_services": 25,
-        "logistics": 5,
-        "industrial_manufacturing": 5,
-        "automotive": 5
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 30,
-        "devsecops": 15,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 20,
-        "ot_ics": 0,
-        "grc_audit": 10,
-        "security_automation": 30,
-        "ai_governance": 35
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No action is needed.",
-      "confidence": 0.85,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/more-pentests-without-more-pentesters-where-ai-safely-helps/",
-          "source": "BleepingComputer",
-          "published": "2026-11-25T15:00:10+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is sponsored vendor content.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 19.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.0,
-        "industry": 2.5,
-        "practice": 5.25,
-        "weighted_total": 19.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
-      "cluster_id": "3580e54f3bffc26a7ed9f60b",
-      "headline": "Belgian police advise disabling default admin accounts on smart devices",
-      "summary": "Belgian police are advising consumers to disable the default admin user on smart devices. They recommend using a separate account with a different name instead.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "This is general consumer hygiene advice.",
-      "location_relevance": {
-        "US": 5,
-        "Europe": 25,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [
-        "BE"
-      ],
-      "industry_relevance": {
-        "energy_services": 5,
-        "telecommunications": 15,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 10,
-        "retail_banking": 0,
-        "global_it_services": 5,
-        "logistics": 0,
-        "industrial_manufacturing": 5,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 5,
-        "vuln_exposure_mgmt": 15,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 25,
-        "email_phishing": 0,
-        "data_protection_dlp": 5,
-        "ot_ics": 5,
-        "grc_audit": 5,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "IoT devices"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "telecommunications",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Make sure default credentials are removed from IoT devices on corporate networks.",
-      "confidence": 0.8,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/963137/Belgische+politie+adviseert+uitschakelen+admin-gebruiker+op+slimme+apparaten?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-25T15:10:34+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is general consumer hygiene advice.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 18.0,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 3.75,
-        "industry": 1.5,
-        "practice": 3.75,
-        "weighted_total": 18.0,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "e47b58f9bb07daa0a9192713",
       "headline": "Commentary: social media age limits alone will not make platforms safer",
       "summary": "More countries are introducing age limits and age verification for social media and other platforms. This opinion piece argues that such limits do not make platforms safer and do not solve the underlying problem.",
@@ -8350,6 +7168,103 @@
       "included": false
     },
     {
+      "cluster_id": "fcbb41954277a0a1d4ec8475",
+      "headline": "Essay quote criticises homogenised AI-generated content",
+      "summary": "A blog post quotes an essay arguing that AI-generated text from Claude is making videos, talks and email pitches sound alike. It is commentary and contains no security incident or vulnerability.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Opinion piece with no operational security impact.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 2,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 3,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 15
+      },
+      "affected_technologies": [
+        "Claude"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-26T15:09:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Opinion piece with no operational security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 12.2,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.2,
+        "practice": 2.25,
+        "weighted_total": 12.2,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "2ada6bc927bcede3f5a7c48d",
       "headline": "Scott Aaronson comments on AI's impact on mathematical discovery",
       "summary": "Simon Willison quotes Scott Aaronson saying that AI is opening up large new areas of mathematical and complexity-theory results. The piece has no security content.",
@@ -8553,6 +7468,103 @@
         "industry": 0.3,
         "practice": 1.5,
         "weighted_total": 11.55,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "e7f1c23cf7eb37255791b5bd",
+      "headline": "Blogger comments on newspaper photojournalism editing standards amid Photoshop AI feature concerns",
+      "summary": "A blog post shares a Hacker News comment about a newspaper's strict rules against editing news photos. It was posted in a discussion about AI features in Photoshop. It has no security content.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Opinion and commentary with no security impact.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 2,
+        "MEA": 1,
+        "Other": 1
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 1,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "Adobe Photoshop"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/26/hn-50651685/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-26T05:08:46+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Opinion and commentary with no security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 11.35,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.1,
+        "practice": 1.5,
+        "weighted_total": 11.35,
         "severity_band": [
           0,
           34.99
@@ -8847,10 +7859,10 @@
     }
   ],
   "counts": {
-    "critical": 6,
-    "high": 18,
-    "medium": 37,
-    "low": 25
+    "critical": 7,
+    "high": 15,
+    "medium": 34,
+    "low": 20
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -8946,9 +7958,14 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 15,
+  "watch_hits": 14,
   "watch": {
     "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
+        "cluster_id": "0574110d7d17666e48071c3c"
+      },
       {
         "technology": "GitHub",
         "headline": "1Password says customer data was stolen through a compromised employee GitHub account",
@@ -8975,28 +7992,11 @@
         "cluster_id": "b4bc024f2578be5d491d93b5"
       }
     ],
-    "microsoft": [
-      {
-        "technology": "Azure",
-        "headline": "Microsoft patches Azure flaw after attacks on Norwegian energy companies; credential rotation advised",
-        "cluster_id": "49ce69661c7266e77dd48ebd"
-      },
-      {
-        "technology": "Sentinel",
-        "headline": "Gartner again names Microsoft a Leader in its 2026 SIEM Magic Quadrant",
-        "cluster_id": "a9a4f49583a18463cec2ea14"
-      }
-    ],
     "endpoint_network": [
       {
         "technology": "Palo Alto PAN-OS",
         "headline": "Attackers chain PHP2Shell and Fragnesia flaws against internet-exposed PAN-OS management interfaces",
         "cluster_id": "85d71203b57ce129093e26ee"
-      },
-      {
-        "technology": "Palo Alto PAN-OS",
-        "headline": "Palo Alto patches Fragnesia kernel flaw chained with PHP2Shell to gain root on firewalls",
-        "cluster_id": "651d4dc2a539860b3f5b5df2"
       }
     ],
     "ai": [
@@ -9047,6 +8047,13 @@
         "headline": "Incomplete fix in moby/sys/user lets crafted passwd/group files cause denial of service",
         "cluster_id": "ab952c05c0cbcfba1e0935c7"
       }
+    ],
+    "microsoft": [
+      {
+        "technology": "Sentinel",
+        "headline": "Gartner again names Microsoft a Leader in its 2026 SIEM Magic Quadrant",
+        "cluster_id": "a9a4f49583a18463cec2ea14"
+      }
     ]
   },
   "regulations": {
@@ -9065,41 +8072,26 @@
             "date_inferred": false
           }
         ]
-      },
-      {
-        "key": "gdpr",
-        "nature": "enforcement",
-        "effective_or_deadline_date": null,
-        "name": "GDPR",
-        "headline": "Dutch shoe retailer vanHaren warns customers of data breach involving personal data",
-        "sources": [
-          {
-            "url": "https://www.security.nl/posting/963145/Schoenenwinkel+vanHaren+waarschuwt+klanten+voor+datalek?channel=rss",
-            "source": "Security.NL",
-            "published": "2026-11-25T15:24:00+00:00",
-            "date_inferred": false
-          }
-        ]
       }
     ]
   },
-  "other_count": 22,
+  "other_count": 19,
   "source_health": {
-    "at": "2026-11-26T14:43:57.201438+00:00",
+    "at": "2026-11-26T15:57:23.020556+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 361,
+    "new": 4,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 5
+        "new": 1
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 4
+        "new": 1
       },
       {
         "name": "Ars Technica Security",
@@ -9109,27 +8101,27 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -9139,7 +8131,7 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "CyberScoop",
@@ -9154,7 +8146,7 @@
       {
         "name": "Microsoft Security Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Unit 42",
@@ -9164,7 +8156,7 @@
       {
         "name": "Cisco Talos",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "CISA OT Advisories",
@@ -9187,12 +8179,12 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 4
+        "new": 2
       },
       {
         "name": "Socket.dev Blog",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "SANS ISC",
@@ -9242,7 +8234,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -9308,16 +8300,12 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 307,
-        "entries": 35988,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
         "ok": true,
-        "new": 1,
+        "new": 0,
         "entries": 24,
         "invalid": 0,
         "future": 0,
@@ -9342,29 +8330,25 @@
       "f8d0d1935ac4bbfbbe273bf5",
       "451f3a785e324bf13d51d4b9",
       "85d71203b57ce129093e26ee",
-      "651d4dc2a539860b3f5b5df2",
       "cc622f5f1349b4145e7fb236",
-      "a14e0b8f3e82a832af28a86c",
       "bb8a3d866a040418bdfe4b0e",
-      "918f8236c2b641c6e4b63133",
       "bf18db22975aecdd991a7431",
       "ca6b5c835c576484ca2bb1df"
+    ],
+    "security-in-the-delivery-path": [
+      "0574110d7d17666e48071c3c",
+      "29838573f890e4f70a254f98",
+      "8720d53f4644220497d09ae0",
+      "022e83af403003b93c046431",
+      "b4bc024f2578be5d491d93b5"
+    ],
+    "secure-development-for-automotive": [
+      "0574110d7d17666e48071c3c"
     ],
     "security-at-telecom-scale": [
       "e5ae44210f7d499350fbf829",
       "d0206795fb84391a5e0abfba",
       "96063772354653ddbb84ebfb"
-    ],
-    "security-in-the-delivery-path": [
-      "29838573f890e4f70a254f98",
-      "8720d53f4644220497d09ae0",
-      "022e83af403003b93c046431",
-      "b4bc024f2578be5d491d93b5",
-      "f30f7b2280e93ffe991309f7"
-    ],
-    "zero-trust-at-enterprise-scale": [
-      "49ce69661c7266e77dd48ebd",
-      "0e6539094e7bdd0a275d00e1"
     ],
     "security-foundations-for-logistics": [
       "254f31cd6a1c6527243d6b1b"
@@ -9372,6 +8356,9 @@
     "security-visibility-for-manufacturing": [
       "820a6be24763a5428c472775",
       "9aea632362aa41cec1fdd234"
+    ],
+    "zero-trust-at-enterprise-scale": [
+      "0e6539094e7bdd0a275d00e1"
     ]
   }
 }
