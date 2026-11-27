@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-27",
-  "start": "2026-11-26T14:42:45.049868+00:00",
-  "end": "2026-11-27T14:42:45.049868+00:00",
+  "start": "2026-11-26T15:45:40.401348+00:00",
+  "end": "2026-11-27T15:45:40.401348+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -104,90 +104,79 @@
       "included": true
     },
     {
-      "cluster_id": "0574110d7d17666e48071c3c",
-      "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
-      "summary": "SafeDep reports that the PolinRider campaign has hidden a Python loader in thousands of GitHub repositories, inside small utils packages or conftest.py files. The loader runs when the file is imported. It reportedly gets its next step from blockchain transaction data. The activity has been linked to North Korea and may date back to February 2025.",
-      "category": "supply_chain",
+      "cluster_id": "0b5d82f7ad3e712fc950e7e6",
+      "headline": "US Air Force Cloud One platform reportedly breached amid wave of federal attacks",
+      "summary": "Hackers have reportedly breached the US Air Force's Cloud One computing platform. The report places it within a recent wave of attacks on US agencies, including the FBI, CIA and Treasury. Details of scope, attribution and access method are unconfirmed.",
+      "category": "data_breach",
       "importance": "critical",
-      "importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
+      "importance_rationale": "Reported major breach at a US government/defense organization, which is a target industry in a target region. The report remains unconfirmed.",
       "location_relevance": {
-        "US": 85,
-        "Europe": 85,
-        "MEA": 85,
-        "Other": 85
+        "US": 100,
+        "Europe": 20,
+        "MEA": 15,
+        "Other": 10
       },
-      "countries_mentioned": [],
+      "countries_mentioned": [
+        "US"
+      ],
       "industry_relevance": {
-        "energy_services": 50,
-        "telecommunications": 50,
-        "private_banking": 50,
-        "investment_management": 50,
-        "government": 50,
-        "retail_banking": 50,
-        "global_it_services": 80,
-        "logistics": 50,
-        "industrial_manufacturing": 50,
-        "automotive": 50
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 40,
+        "logistics": 10,
+        "industrial_manufacturing": 15,
+        "automotive": 5
       },
       "practice_area_relevance": {
-        "zero_trust_cloud": 30,
-        "vuln_exposure_mgmt": 45,
-        "devsecops": 95,
-        "siem_detection": 60,
-        "iam_pam": 25,
-        "email_phishing": 5,
-        "data_protection_dlp": 30,
-        "ot_ics": 5,
-        "grc_audit": 25,
-        "security_automation": 30,
-        "ai_governance": 10
+        "zero_trust_cloud": 70,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 20,
+        "siem_detection": 50,
+        "iam_pam": 50,
+        "email_phishing": 10,
+        "data_protection_dlp": 55,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 15,
+        "ai_governance": 0
       },
       "affected_technologies": [
-        "GitHub",
-        "Python"
+        "Cloud One"
       ],
       "cves": [],
-      "threat_actors": [
-        "PolinRider"
-      ],
+      "threat_actors": [],
       "regulations": [],
       "attack_techniques": [],
       "detection_refs": [],
-      "detection_coverage_note": "Assessment: scan repositories for unexpected conftest.py or utils loaders. Watch developer endpoints for Python processes querying blockchain APIs. No rules were provided in the source.",
+      "detection_coverage_note": "No TTPs disclosed. Assessment: government cloud tenants should review cloud audit logs and identity sign-in anomalies.",
       "related_case_studies": [
-        "security-in-the-delivery-path",
-        "secure-development-for-automotive"
+        "security-in-the-delivery-path"
       ],
       "business_signal": {
         "present": false,
-        "type": "sector_campaign",
-        "sector": "global_it_services",
-        "region": "Other",
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
         "rationale": ""
       },
-      "recommended_action": "Check cloned or vendored GitHub code for suspicious conftest.py and utils modules. Pin dependencies and review them before use. Run untrusted code in sandboxes, and check the scope against SafeDep's indicators.",
-      "confidence": 0.75,
+      "recommended_action": "Government and defense contractors should review cloud identity and access logs and watch for official confirmation and IOCs, because the breach is still only reported.",
+      "confidence": 0.6,
       "sources": [
         {
-          "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
-          "source": "The Hacker News",
-          "published": "2026-11-26T15:13:41+00:00",
+          "url": "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T15:09:40+00:00",
           "date_inferred": false
         }
       ],
-      "overrides": [
-        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
-      ],
+      "overrides": [],
       "model_importance": "critical",
-      "model_importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
-      "watch_tech": [
-        {
-          "name": "GitHub",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "devops_appsec"
-        }
-      ],
+      "model_importance_rationale": "Reported major breach at a US government/defense organization, which is a target industry in a target region. The report remains unconfirmed.",
+      "watch_tech": [],
       "cve_details": {},
       "risk_evidence": {
         "exploitation_reported": [],
@@ -199,14 +188,14 @@
         "certificate_compromise": [],
         "worldwide": []
       },
-      "exposure_scope": "Globally deployed watch technology",
+      "exposure_scope": "Source-specific or unestablished",
       "independent_sources_24h": 1,
       "priority": 95.0,
       "priority_breakdown": {
         "importance": 60.0,
-        "location": 12.75,
-        "industry": 8.0,
-        "practice": 14.25,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 10.5,
         "weighted_total": 95.0,
         "severity_band": [
           85,
@@ -710,6 +699,12 @@
       "recommended_action": "Watch SAP advisories for the scope of the incident and any customer impact. Run third-party risk reviews of SAP connectivity and credentials.",
       "confidence": 0.6,
       "sources": [
+        {
+          "url": "https://www.security.nl/posting/963438/Softwarebedrijf+SAP+bevestigt+cybersecurity-incident?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T14:05:00+00:00",
+          "date_inferred": false
+        },
         {
           "url": "https://www.security.nl/posting/963438/Softwarebedrijf+SAP+bevestigd+cybersecurity-incident?channel=rss",
           "source": "Security.NL",
@@ -2537,104 +2532,6 @@
       "included": true
     },
     {
-      "cluster_id": "57d73d788295d6a09683ff8b",
-      "headline": "Remus infostealer uses fake Google Sheets Chrome extension to steal Gmail messages",
-      "summary": "The Remus infostealer uses a malicious Chrome extension that poses as Google Sheets to steal Gmail messages. Its operators advertised this as a Gmail zero-day, but the report describes it as extension abuse rather than a flaw in Gmail.",
-      "category": "research",
-      "importance": "medium",
-      "importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
-      "location_relevance": {
-        "US": 75,
-        "Europe": 75,
-        "MEA": 75,
-        "Other": 75
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 30,
-        "telecommunications": 30,
-        "private_banking": 35,
-        "investment_management": 35,
-        "government": 35,
-        "retail_banking": 35,
-        "global_it_services": 35,
-        "logistics": 30,
-        "industrial_manufacturing": 30,
-        "automotive": 30
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 20,
-        "devsecops": 5,
-        "siem_detection": 55,
-        "iam_pam": 40,
-        "email_phishing": 50,
-        "data_protection_dlp": 60,
-        "ot_ics": 0,
-        "grc_audit": 15,
-        "security_automation": 15,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "Google Chrome",
-        "Gmail"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Assessment: inventory and allow-list Chrome extensions, and monitor for unknown extensions that ask for Gmail or Google Sheets access. No rules were provided in the source.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Enforce allow-lists for browser extensions through managed Chrome policies. Review installed extensions for fake Google Sheets add-ons.",
-      "confidence": 0.7,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
-          "source": "BleepingComputer",
-          "published": "2026-11-26T15:23:28+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 50.75,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 11.25,
-        "industry": 3.5,
-        "practice": 9.0,
-        "weighted_total": 50.75,
-        "severity_band": [
-          35,
-          64.99
-        ]
-      },
-      "included": true
-    },
-    {
       "cluster_id": "63c10112653f861d2fb58995",
       "headline": "CVE-2026-40558: Perl Net::FTP flaw lets malicious FTP servers redirect passive-mode data connections",
       "summary": "A flaw in Perl's libnet Net::FTP module lets a malicious FTP server redirect a client's passive-mode data connection to an arbitrary third-party host. Net::FTP ships with Perl, and libnet v3.17 includes a fix. Amazon Linux's record does not confirm whether Amazon Linux is affected or whether a patch is available.",
@@ -4029,6 +3926,103 @@
       "included": false
     },
     {
+      "cluster_id": "dc95b561cad3799f329267ea",
+      "headline": "Vendor article highlights security risks of unmanaged and forgotten virtual machines",
+      "summary": "A sponsored piece from ISPsystem argues that forgotten VMs, unpatched servers and excessive permissions create blind spots in infrastructure. It promotes centralized management, access controls and lifecycle automation as mitigations. No specific incident or vulnerability is reported.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "Vendor marketing content with general guidance; no new threat, incident or vulnerability.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 30,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 5,
+        "siem_detection": 10,
+        "iam_pam": 30,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 30,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "virtual machines"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable; general guidance with no specific TTPs. Asset inventory coverage of virtualized workloads is the relevant control.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Check that asset inventory and vulnerability scanning cover all VMs. Then decommission orphaned workloads.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T15:00:10+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Vendor marketing content with general guidance; no new threat, incident or vulnerability.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 23.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 3.0,
+        "practice": 6.75,
+        "weighted_total": 23.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
       "cluster_id": "0b75246ced860331ec95f848",
       "headline": "Weekly roundup: NGINX exposure, malicious browser extensions and AI server hijacking",
       "summary": "This weekly recap covers about 20 stories. They include roughly 10 million NGINX services reportedly at risk, more than 250 malicious browser extensions and the hijacking of AI servers. The source excerpt does not give technical specifics.",
@@ -4621,103 +4615,6 @@
       "included": false
     },
     {
-      "cluster_id": "fcbb41954277a0a1d4ec8475",
-      "headline": "Essay quote criticises homogenised AI-generated content",
-      "summary": "A blog post quotes an essay arguing that AI-generated text from Claude is making videos, talks and email pitches sound alike. It is commentary and contains no security incident or vulnerability.",
-      "category": "other",
-      "importance": "low",
-      "importance_rationale": "Opinion piece with no operational security impact.",
-      "location_relevance": {
-        "US": 5,
-        "Europe": 5,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 2,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 3,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 15
-      },
-      "affected_technologies": [
-        "Claude"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No action needed.",
-      "confidence": 0.9,
-      "sources": [
-        {
-          "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
-          "source": "Simon Willison (prompt injection)",
-          "published": "2026-11-26T15:09:31+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "Opinion piece with no operational security impact.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 12.2,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 0.75,
-        "industry": 0.2,
-        "practice": 2.25,
-        "weighted_total": 12.2,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "24b01fe057d66b2638e58383",
       "headline": "Malwarebytes offers Black Friday discount on consumer security subscriptions",
       "summary": "Malwarebytes is running a 50% Black Friday discount on its consumer and small-business security products. This is a promotion with no threat content.",
@@ -4911,20 +4808,15 @@
   "counts": {
     "critical": 8,
     "high": 9,
-    "medium": 16,
+    "medium": 15,
     "low": 15
   },
   "unclassified": 0,
   "duplicates_removed": 0,
   "new_kev": [],
-  "watch_hits": 13,
+  "watch_hits": 12,
   "watch": {
     "devops_appsec": [
-      {
-        "technology": "GitHub",
-        "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
-        "cluster_id": "0574110d7d17666e48071c3c"
-      },
       {
         "technology": "GitHub",
         "headline": "SAP confirms GitHub intrusion; source code reportedly copied and altered using stolen tokens",
@@ -5088,21 +4980,21 @@
   },
   "other_count": 13,
   "source_health": {
-    "at": "2026-11-27T14:42:45.049868+00:00",
+    "at": "2026-11-27T15:45:40.401348+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 52,
+    "new": 3,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 6
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 9
+        "new": 2
       },
       {
         "name": "Ars Technica Security",
@@ -5112,12 +5004,12 @@
       {
         "name": "Help Net Security",
         "ok": true,
-        "new": 7
+        "new": 0
       },
       {
         "name": "SecurityWeek",
         "ok": true,
-        "new": 5
+        "new": 0
       },
       {
         "name": "Dark Reading",
@@ -5127,7 +5019,7 @@
       {
         "name": "Infosecurity Magazine",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Cybersecurity Dive",
@@ -5142,7 +5034,7 @@
       {
         "name": "The Record",
         "ok": true,
-        "new": 4
+        "new": 0
       },
       {
         "name": "CyberScoop",
@@ -5152,7 +5044,7 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -5245,7 +5137,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 9
+        "new": 1
       },
       {
         "name": "Contagio",
@@ -5311,11 +5203,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 8,
-        "entries": 35996,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
@@ -5342,11 +5230,8 @@
   ],
   "cases": {
     "security-in-the-delivery-path": [
-      "0574110d7d17666e48071c3c",
+      "0b5d82f7ad3e712fc950e7e6",
       "491e8129162380ab76877a25"
-    ],
-    "secure-development-for-automotive": [
-      "0574110d7d17666e48071c3c"
     ],
     "continuous-vulnerability-management": [
       "0f84e2352a98ac6f9e7a4242",
