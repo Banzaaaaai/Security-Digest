@@ -1,0 +1,5368 @@
+{
+  "kind": "daily",
+  "period": "2026-11-27",
+  "start": "2026-11-26T14:42:45.049868+00:00",
+  "end": "2026-11-27T14:42:45.049868+00:00",
+  "timezone": "Europe/Amsterdam",
+  "synthetic": false,
+  "items": [
+    {
+      "cluster_id": "eacbc3fb891825a038f40ab1",
+      "headline": "Reuters reports hackers accessed main US Air Force cloud platform",
+      "summary": "Reuters reports that hackers got into the main cloud platform used by the US Air Force. The single-source summary does not say who the attackers were, how they got in, or how much data was affected.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A major breach at a US government and defense organization, which is a target industry in a target region. Details are still limited.",
+      "location_relevance": {
+        "US": 100,
+        "Europe": 30,
+        "MEA": 20,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 5,
+        "global_it_services": 40,
+        "logistics": 10,
+        "industrial_manufacturing": 15,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 80,
+        "vuln_exposure_mgmt": 30,
+        "devsecops": 15,
+        "siem_detection": 50,
+        "iam_pam": 60,
+        "email_phishing": 15,
+        "data_protection_dlp": 55,
+        "ot_ics": 5,
+        "grc_audit": 40,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators have been published yet. As a general step, monitor cloud identity and access logs for unusual activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Track official statements for confirmed details. Government cloud tenants should review privileged access and conditional access controls.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963426/Reuters%3A+%E2%80%98Hackers+braken+in+op+cloudplatform+Amerikaanse+luchtmacht%E2%80%99_?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T13:22:06+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A major breach at a US government and defense organization, which is a target industry in a target region. Details are still limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 96.5,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 12.0,
+        "weighted_total": 96.5,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0574110d7d17666e48071c3c",
+      "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
+      "summary": "SafeDep reports that the PolinRider campaign has hidden a Python loader in thousands of GitHub repositories, inside small utils packages or conftest.py files. The loader runs when the file is imported. It reportedly gets its next step from blockchain transaction data. The activity has been linked to North Korea and may date back to February 2025.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 80,
+        "logistics": 50,
+        "industrial_manufacturing": 50,
+        "automotive": 50
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 95,
+        "siem_detection": 60,
+        "iam_pam": 25,
+        "email_phishing": 5,
+        "data_protection_dlp": 30,
+        "ot_ics": 5,
+        "grc_audit": 25,
+        "security_automation": 30,
+        "ai_governance": 10
+      },
+      "affected_technologies": [
+        "GitHub",
+        "Python"
+      ],
+      "cves": [],
+      "threat_actors": [
+        "PolinRider"
+      ],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: scan repositories for unexpected conftest.py or utils loaders. Watch developer endpoints for Python processes querying blockchain APIs. No rules were provided in the source.",
+      "related_case_studies": [
+        "security-in-the-delivery-path",
+        "secure-development-for-automotive"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Check cloned or vendored GitHub code for suspicious conftest.py and utils modules. Pin dependencies and review them before use. Run untrusted code in sandboxes, and check the scope against SafeDep's indicators.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+          "source": "The Hacker News",
+          "published": "2026-11-26T15:13:41+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A large-scale code supply-chain poisoning campaign on GitHub, a widely used platform, attributed to a nation-state.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 95.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 8.0,
+        "practice": 14.25,
+        "weighted_total": 95.0,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "73f2ff30155be912750c2dde",
+      "headline": "myColorado state digital ID app breach may affect about 100,000 users",
+      "summary": "Attackers breached myColorado, Colorado's state digital identification and document storage app, and accessed data that users had uploaded. Around 100,000 people may be affected.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A breach at a US government body, which is a target industry, exposing identity documents.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 10,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 5,
+        "investment_management": 0,
+        "government": 95,
+        "retail_banking": 10,
+        "global_it_services": 15,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 25,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 20,
+        "siem_detection": 25,
+        "iam_pam": 40,
+        "email_phishing": 20,
+        "data_protection_dlp": 75,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "myColorado"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "state_privacy_laws",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not describe how the attack happened, so no specific detections can be recommended.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Government digital-ID operators should review access controls and data minimization for document stores that hold user uploads.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/100000-potentially-impacted-by-colorado-data-breach/",
+          "source": "SecurityWeek",
+          "published": "2026-11-27T09:30:54+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A breach at a US government body, which is a target industry, exposing identity documents.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 95.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 14.25,
+        "industry": 9.5,
+        "practice": 11.25,
+        "weighted_total": 95.0,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "491e8129162380ab76877a25",
+      "headline": "SAP confirms GitHub intrusion; source code reportedly copied and altered using stolen tokens",
+      "summary": "SAP detected suspicious activity on GitHub, where attackers reportedly used stolen employee tokens to copy and modify source code. Reports have not confirmed whether altered code reached customer releases.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "Possible tampering with a major enterprise vendor's source code is a potential systemic supply-chain risk. SAP is a watched technology, though downstream impact is unconfirmed.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 55,
+        "retail_banking": 50,
+        "global_it_services": 65,
+        "logistics": 55,
+        "industrial_manufacturing": 60,
+        "automotive": 55
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 85,
+        "siem_detection": 45,
+        "iam_pam": 65,
+        "email_phishing": 5,
+        "data_protection_dlp": 40,
+        "ot_ics": 5,
+        "grc_audit": 45,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "SAP",
+        "GitHub"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment: GitHub audit logs for anomalous token use and repository changes are the key log source to review.",
+      "related_case_studies": [
+        "security-in-the-delivery-path"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Follow SAP advisories for integrity guidance and verify update sources. Rotate GitHub tokens and review their scopes in your own development pipelines.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/",
+          "source": "SecurityWeek",
+          "published": "2026-11-27T07:36:14+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "Possible tampering with a major enterprise vendor's source code is a potential systemic supply-chain risk. SAP is a watched technology, though downstream impact is unconfirmed.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "SAP",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "enterprise_apps"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 92.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 6.5,
+        "practice": 12.75,
+        "weighted_total": 92.0,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "13703c88841dcbc0e99a49ad",
+      "headline": "SAP confirms cyber incident after reports its development infrastructure and source code were accessed",
+      "summary": "SAP has confirmed a cybersecurity incident. It follows reports that attackers got into the company's software development infrastructure and may have accessed source code. It is not yet known whether customer-facing products or builds were affected.",
+      "category": "supply_chain",
+      "importance": "critical",
+      "importance_rationale": "A confirmed incident at a major enterprise software vendor that reportedly touches its development pipeline, which could have supply-chain consequences. The scope is still unconfirmed.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [
+        "DE"
+      ],
+      "industry_relevance": {
+        "energy_services": 55,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 55,
+        "retail_banking": 50,
+        "global_it_services": 70,
+        "logistics": 55,
+        "industrial_manufacturing": 60,
+        "automotive": 55
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 55,
+        "devsecops": 80,
+        "siem_detection": 45,
+        "iam_pam": 35,
+        "email_phishing": 5,
+        "data_protection_dlp": 40,
+        "ot_ics": 10,
+        "grc_audit": 45,
+        "security_automation": 15,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "SAP",
+        "GitHub"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is that SAP customers should watch for SAP security advisories and monitor for unusual activity on SAP systems. Any stolen source code could speed up vulnerability discovery by attackers.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Follow SAP's guidance and patch notes closely. Tighten patch cadence for internet-exposed SAP systems while the scope is still unconfirmed.",
+      "confidence": 0.65,
+      "sources": [
+        {
+          "url": "https://therecord.media/sap-germany-cyberattack-github",
+          "source": "The Record",
+          "published": "2026-11-27T13:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A confirmed incident at a major enterprise software vendor that reportedly touches its development pipeline, which could have supply-chain consequences. The scope is still unconfirmed.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "SAP",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "enterprise_apps"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 91.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 7.0,
+        "practice": 12.0,
+        "weighted_total": 91.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "9ae78e4f50bc8a36885aa520",
+      "headline": "UK DWP takes welfare and pension online services offline after cyber incident",
+      "summary": "The UK Department for Work and Pensions took its online services offline as a precaution after a cyber incident. It says regular pension and benefit payments have not been affected. The nature and cause of the incident have not been disclosed.",
+      "category": "other",
+      "importance": "critical",
+      "importance_rationale": "Major outage at a national government body in Europe, which is a target industry and region.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 100,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "GB"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 95,
+        "retail_banking": 15,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 35,
+        "iam_pam": 20,
+        "email_phishing": 10,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The incident type is unknown, so no detection guidance can be given yet.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for official updates. Public-sector organizations and their suppliers should be alert to phishing that uses the outage as a lure.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/uk-welfare-services-offline/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-27T11:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "Major outage at a national government body in Europe, which is a target industry and region.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [
+          "https://www.infosecurity-magazine.com/news/uk-welfare-services-offline/"
+        ],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 89.75,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 15.0,
+        "industry": 9.5,
+        "practice": 5.25,
+        "weighted_total": 89.75,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "e7c290313772211bd5f1cc6c",
+      "headline": "SAP confirms cybersecurity incident following Der Spiegel report",
+      "summary": "SAP has confirmed it was recently hacked, a day after Der Spiegel reported the incident. The source does not say what was affected, whether customer data was involved, or whether any products were impacted.",
+      "category": "data_breach",
+      "importance": "critical",
+      "importance_rationale": "A confirmed breach at a major European enterprise software vendor that is on the watch list. It could have downstream supply-chain effects, but none have been reported.",
+      "location_relevance": {
+        "US": 60,
+        "Europe": 85,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [
+        "DE"
+      ],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 45,
+        "retail_banking": 40,
+        "global_it_services": 80,
+        "logistics": 45,
+        "industrial_manufacturing": 50,
+        "automotive": 45
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 35,
+        "siem_detection": 45,
+        "iam_pam": 40,
+        "email_phishing": 10,
+        "data_protection_dlp": 50,
+        "ot_ics": 5,
+        "grc_audit": 50,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "SAP"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No indicators have been published. As a precaution, review SAP integration accounts and vendor connections for unusual activity.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Watch SAP advisories for the scope of the incident and any customer impact. Run third-party risk reviews of SAP connectivity and credentials.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963438/Softwarebedrijf+SAP+bevestigd+cybersecurity-incident?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T14:05:24+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A confirmed breach at a major European enterprise software vendor that is on the watch list. It could have downstream supply-chain effects, but none have been reported.",
+      "watch_tech": [
+        {
+          "name": "SAP",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "enterprise_apps"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 88.25,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 8.0,
+        "practice": 7.5,
+        "weighted_total": 88.25,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fbe947f1fd0b1f0b0cd0fc46",
+      "headline": "UK Department for Work and Pensions takes services offline after cyber incident",
+      "summary": "The UK Department for Work and Pensions reported a cyber incident and took several services offline as a precaution. It has not disclosed the nature of the incident or whether any data was affected.",
+      "category": "other",
+      "importance": "critical",
+      "importance_rationale": "A major government department in Europe, a target industry, has had a service outage caused by a cyber incident.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 85,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "GB"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 90,
+        "retail_banking": 10,
+        "global_it_services": 20,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 35,
+        "iam_pam": 25,
+        "email_phishing": 15,
+        "data_protection_dlp": 35,
+        "ot_ics": 0,
+        "grc_audit": 35,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators were disclosed, so specific detection guidance cannot be given.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Suppliers and partners connected to DWP should watch for official guidance. They should also be alert to phishing that uses the incident as a lure, because the cause is still unknown.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://therecord.media/uk-department-work-pensions-cyber-incident",
+          "source": "The Record",
+          "published": "2026-11-27T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "critical",
+      "model_importance_rationale": "A major government department in Europe, a target industry, has had a service outage caused by a cyber incident.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [
+          "https://therecord.media/uk-department-work-pensions-cyber-incident"
+        ],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 87.0,
+      "priority_breakdown": {
+        "importance": 60.0,
+        "location": 12.75,
+        "industry": 9.0,
+        "practice": 5.25,
+        "weighted_total": 87.0,
+        "severity_band": [
+          85,
+          100
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0f84e2352a98ac6f9e7a4242",
+      "headline": "Critical Linux kernel NFS server flaw (NFS2ROOT) could give remote attackers root access",
+      "summary": "A critical vulnerability in the Linux kernel NFS server, tracked as CVE-2026-99362 and nicknamed NFS2ROOT, could let remote attackers gain root privileges. The bug is reported to be about 12 years old. The report does not mention active exploitation.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "This is a critical remote root flaw in widely deployed Linux infrastructure, but no exploitation in the wild has been reported.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 55,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 55,
+        "retail_banking": 45,
+        "global_it_services": 65,
+        "logistics": 45,
+        "industrial_manufacturing": 45,
+        "automotive": 45
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 15,
+        "siem_detection": 45,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 30,
+        "ot_ics": 15,
+        "grc_audit": 15,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Linux kernel",
+        "NFS server"
+      ],
+      "cves": [
+        "CVE-2026-99362"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules. As an assessment, watching for unexpected NFS traffic to exposed servers and for unusual root processes may help.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find Linux hosts that run the NFS server and apply the kernel patches once vendors release them. Until then, limit NFS exposure to trusted networks.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T08:06:58+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "This is a critical remote root flaw in widely deployed Linux infrastructure, but no exploitation in the wild has been reported.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-99362": {
+          "kev": null,
+          "epss": 0.00755,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 77.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 6.5,
+        "practice": 13.5,
+        "weighted_total": 77.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "319bafb516c229f73fd2ee2c",
+      "headline": "Drupal warns a second critical site-takeover flaw is being exploited in attacks",
+      "summary": "The Drupal security team says attackers are actively exploiting a second critical vulnerability, an access bypass that allows takeover of unpatched sites. No CVE identifier was given in the source.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 80,
+        "Other": 80
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 45,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 65,
+        "retail_banking": 45,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 90,
+        "devsecops": 40,
+        "siem_detection": 60,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 25,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Drupal"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: review web server logs for unusual admin or account changes on Drupal sites. The source provided no detection rules.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Apply the Drupal security update urgently, then check sites for unauthorized accounts or content changes.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T10:10:15+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "Active in-the-wild exploitation of a widely deployed web content management system (CMS).",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 77.75,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 6.5,
+        "practice": 13.5,
+        "weighted_total": 77.75,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "1147158f7c1bb54f94b02be7",
+      "headline": "SAP confirms security incident after detecting suspicious GitHub activity",
+      "summary": "SAP confirmed it took urgent action to protect customers after detecting suspicious activity in its IT environment, linked to its GitHub presence. The scope and any customer impact have not been reported.",
+      "category": "supply_chain",
+      "importance": "high",
+      "importance_rationale": "An incident at a major enterprise vendor with possible supply-chain implications, but no confirmed customer compromise has been reported.",
+      "location_relevance": {
+        "US": 85,
+        "Europe": 85,
+        "MEA": 85,
+        "Other": 85
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 50,
+        "telecommunications": 50,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 50,
+        "retail_banking": 50,
+        "global_it_services": 70,
+        "logistics": 50,
+        "industrial_manufacturing": 55,
+        "automotive": 55
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 85,
+        "siem_detection": 45,
+        "iam_pam": 50,
+        "email_phishing": 5,
+        "data_protection_dlp": 35,
+        "ot_ics": 5,
+        "grc_audit": 40,
+        "security_automation": 20,
+        "ai_governance": 5
+      },
+      "affected_technologies": [
+        "SAP",
+        "GitHub"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: monitor SAP-sourced packages, tokens and integrations for anomalies until SAP publishes details.",
+      "related_case_studies": [
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Track SAP advisories, consider rotating any credentials shared with SAP GitHub integrations, and check recently pulled SAP open-source packages.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T09:56:36+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "Global deployment applicability: every region 85%; cross-industry relevance at least 50%"
+      ],
+      "model_importance": "high",
+      "model_importance_rationale": "An incident at a major enterprise vendor with possible supply-chain implications, but no confirmed customer compromise has been reported.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "SAP",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "enterprise_apps"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Globally deployed watch technology",
+      "independent_sources_24h": 1,
+      "priority": 77.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 12.75,
+        "industry": 7.0,
+        "practice": 12.75,
+        "weighted_total": 77.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "979e934b372966d4ae8bd13b",
+      "headline": "Swiss cyber agency confirms first AI-agent-assisted intrusions, including at critical infrastructure",
+      "summary": "Switzerland's cybersecurity agency reported five confirmed attacks that used AI agents. Four of them succeeded, including two of the three that targeted critical infrastructure operators. No major disruption was reported, and the victims and attackers have not been identified.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "No source-reported exploitation or recent KEV evidence; vulnerability capped at high.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 100,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 65,
+        "telecommunications": 55,
+        "private_banking": 45,
+        "investment_management": 35,
+        "government": 60,
+        "retail_banking": 45,
+        "global_it_services": 45,
+        "logistics": 45,
+        "industrial_manufacturing": 45,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 55,
+        "devsecops": 15,
+        "siem_detection": 70,
+        "iam_pam": 45,
+        "email_phishing": 20,
+        "data_protection_dlp": 30,
+        "ot_ics": 45,
+        "grc_audit": 45,
+        "security_automation": 40,
+        "ai_governance": 60
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment: AI-driven intrusions may be faster and generate more activity. Detection for rapid automated reconnaissance and exploitation is likely to help, but no indicators were provided.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "energy_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review internet-facing exposure and how quickly your team detects automated attack activity. Check the Swiss agency's report for TTPs as details become available.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+          "source": "The Hacker News",
+          "published": "2026-11-27T06:04:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [
+        "No source-reported exploitation or recent KEV evidence; vulnerability capped at high"
+      ],
+      "model_importance": "critical",
+      "model_importance_rationale": "A national agency confirmed successful compromises of critical infrastructure operators in Switzerland, which is in Europe, a target region.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [
+          "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
+        ],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 77.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 15.0,
+        "industry": 6.5,
+        "practice": 10.5,
+        "weighted_total": 77.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "deebe28bb42d9ba3bda47a9e",
+      "headline": "'GoodGuys' phishing campaign uses fake paid expert interviews to steal Google and Okta logins",
+      "summary": "An ongoing phishing campaign called GoodGuys impersonates brands such as Google, Nvidia, Accenture and SpaceX. It sends fake invitations to paid expert interviews and webinars to harvest corporate Google and Okta credentials.",
+      "category": "fraud_phishing",
+      "importance": "high",
+      "importance_rationale": "A new, active credential-phishing campaign aimed at corporate identity providers.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 70,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 45,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 55,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 45,
+        "iam_pam": 75,
+        "email_phishing": 90,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Okta",
+        "Google Workspace"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: Okta and Google sign-in anomaly monitoring and email lure detection are likely to catch this activity. No detection rules were provided.",
+      "related_case_studies": [
+        "zero-trust-at-enterprise-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Warn staff about lures offering paid expert interviews or webinars. Enforce phishing-resistant MFA on Okta and Google accounts, and review recent unusual logins.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
+          "source": "BleepingComputer",
+          "published": "2026-11-26T17:15:27+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A new, active credential-phishing campaign aimed at corporate identity providers.",
+      "watch_tech": [
+        {
+          "name": "Okta",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "identity"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.25,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 11.25,
+        "industry": 5.5,
+        "practice": 13.5,
+        "weighted_total": 75.25,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "27f1645ed04a4e7e9931ae5a",
+      "headline": "Unpatched Cacti zero-day allows unauthenticated remote code execution; PoC published",
+      "summary": "A researcher has published details and a proof-of-concept for an unpatched Cacti flaw, called 4HTTP2SHELL/4HTTP2ROOT. Starting from guest access, it reaches command execution in four HTTP requests. No CVE has been assigned yet, and no exploitation in the wild has been reported.",
+      "category": "vulnerability",
+      "importance": "high",
+      "importance_rationale": "An unpatched remote code execution flaw with a public PoC in a widely used monitoring tool, with no confirmed exploitation.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 75,
+        "MEA": 75,
+        "Other": 75
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 60,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 45,
+        "retail_banking": 40,
+        "global_it_services": 60,
+        "logistics": 40,
+        "industrial_manufacturing": 45,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 25,
+        "vuln_exposure_mgmt": 85,
+        "devsecops": 15,
+        "siem_detection": 50,
+        "iam_pam": 20,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 15,
+        "grc_audit": 10,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Cacti"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: watch for unusual guest-session HTTP requests to Cacti and for unexpected child processes started by the web server.",
+      "related_case_studies": [
+        "continuous-vulnerability-management",
+        "security-at-telecom-scale"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "telecommunications",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Turn off Cacti guest access, restrict access to the Cacti interface to trusted networks, and apply a vendor patch once one is released. No exploitation has been confirmed so far.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+          "source": "The Hacker News",
+          "published": "2026-11-27T05:48:20+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "An unpatched remote code execution flaw with a public PoC in a widely used monitoring tool, with no confirmed exploitation.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [
+          "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+        ],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [
+          "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+        ],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 75.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 11.25,
+        "industry": 6.0,
+        "practice": 12.75,
+        "weighted_total": 75.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "fb1f1662f6eb09c6bff7a1e9",
+      "headline": "Hex package manager discloses web server command-execution flaw and possible data exposure",
+      "summary": "A flaw in hex.pm, the Elixir/Erlang package registry, allowed attackers to run commands on its web servers. Hex found no evidence that data was modified, but database reads are not logged, so data exposure cannot be ruled out.",
+      "category": "supply_chain",
+      "importance": "high",
+      "importance_rationale": "A package registry was compromised with possible data exposure. However, no package tampering has been found, so this does not yet amount to a systemic supply-chain compromise.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 65,
+        "Other": 65
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 40,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 30,
+        "retail_banking": 35,
+        "global_it_services": 55,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 80,
+        "siem_detection": 25,
+        "iam_pam": 35,
+        "email_phishing": 0,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 20,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "hex.pm",
+        "Elixir",
+        "Erlang"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment: monitor for misuse of Hex API keys and for unexpected new package versions.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Rotate Hex API keys and credentials. Pin dependencies and verify their checksums, then follow Hex.pm updates.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/hex-package-manager-warns-of-potential-data-breach/",
+          "source": "SecurityWeek",
+          "published": "2026-11-27T07:44:49+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A package registry was compromised with possible data exposure. However, no package tampering has been found, so this does not yet amount to a systemic supply-chain compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 73.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 10.5,
+        "industry": 5.5,
+        "practice": 12.0,
+        "weighted_total": 73.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "f35597f75676b1dd964d9acf",
+      "headline": "US DOJ announces its largest crackdown on scam rings, reporting nearly $17 billion seized",
+      "summary": "The US Justice Department says it has acted against more than 800 alleged scammers in over 400 cases across 85 federal districts, with 30 defendants extradited. US agents joined police in more than 10 countries to raid overseas scam call centers and compounds.",
+      "category": "law_enforcement",
+      "importance": "high",
+      "importance_rationale": "A major law-enforcement operation against fraud networks.",
+      "location_relevance": {
+        "US": 90,
+        "Europe": 20,
+        "MEA": 15,
+        "Other": 40
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 30,
+        "private_banking": 40,
+        "investment_management": 35,
+        "government": 40,
+        "retail_banking": 55,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 10,
+        "iam_pam": 10,
+        "email_phishing": 40,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators were provided.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Fraud teams at banks should check their scam-detection controls against these enforcement findings. They should also expect scam groups to relocate and resume activity.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/doj-scam-crackdown-800-scammers/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T05:30:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A major law-enforcement operation against fraud networks.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 70.0,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 13.5,
+        "industry": 5.5,
+        "practice": 6.0,
+        "weighted_total": 70.0,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "d8fcf47e119ce6e7da51fb26",
+      "headline": "Official Q-Dir and DesktopOK installers and updates trojanized to deliver remote access malware",
+      "summary": "Researchers report a supply-chain attack that tampered with Q-Dir and DesktopOK installation files distributed from the official SoftwareOK website. Evidence suggests malicious files were served both on direct download and during updates of existing installations, delivering remote access malware.",
+      "category": "supply_chain",
+      "importance": "high",
+      "importance_rationale": "A compromised vendor distribution channel delivering RATs, but these are niche freeware utilities, not a major enterprise vendor, so it does not meet the bar for a systemic compromise.",
+      "location_relevance": {
+        "US": 65,
+        "Europe": 65,
+        "MEA": 60,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 40,
+        "siem_detection": 65,
+        "iam_pam": 20,
+        "email_phishing": 5,
+        "data_protection_dlp": 25,
+        "ot_ics": 5,
+        "grc_audit": 25,
+        "security_automation": 20,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Q-Dir",
+        "DesktopOK",
+        "SoftwareOK"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: EDR software-inventory queries for Q-Dir and DesktopOK, together with hunting for unusual outbound connections from those processes, should help find affected hosts. The source links did not include any detection rules.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find Q-Dir and DesktopOK installations, isolate and investigate hosts that installed or updated them recently, and block unapproved freeware.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html",
+          "source": "The Hacker News",
+          "published": "2026-11-27T09:29:30+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "high",
+      "model_importance_rationale": "A compromised vendor distribution channel delivering RATs, but these are niche freeware utilities, not a major enterprise vendor, so it does not meet the bar for a systemic compromise.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [
+          "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html"
+        ],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 69.5,
+      "priority_breakdown": {
+        "importance": 45.0,
+        "location": 9.75,
+        "industry": 5.0,
+        "practice": 9.75,
+        "weighted_total": 69.5,
+        "severity_band": [
+          65,
+          84.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b44222591fc1fc506ee56cb7",
+      "headline": "Microsoft releases out-of-band hotpatch to fix Windows Server 2025 crashes caused by KB5131077",
+      "summary": "Microsoft has released an emergency hotpatch for Windows Server 2025. It fixes crashes that started after this month's security hotpatch, KB5131077, was installed. The issue is about stability, not a security exploit.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "This is a notable fix for an availability problem in widely deployed server software, but it is not a security exploit.",
+      "location_relevance": {
+        "US": 95,
+        "Europe": 95,
+        "MEA": 95,
+        "Other": 95
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 60,
+        "telecommunications": 60,
+        "private_banking": 60,
+        "investment_management": 60,
+        "government": 60,
+        "retail_banking": 60,
+        "global_it_services": 70,
+        "logistics": 60,
+        "industrial_manufacturing": 60,
+        "automotive": 60
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 5,
+        "siem_detection": 10,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 5,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows Server 2025"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules. As an assessment, crash and bugcheck events after patching can show which servers are affected.",
+      "related_case_studies": [
+        "vendor-release-automation"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Apply the out-of-band hotpatch to Windows Server 2025 hosts that installed KB5131077. Check server stability after the update.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/microsoft/new-out-of-band-oob-emergency-hotpatch-fixes-windows-server-2025-crashes/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T09:08:16+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a notable fix for an availability problem in widely deployed server software, but it is not a security exploit.",
+      "watch_tech": [
+        {
+          "name": "Windows Server",
+          "aliases": [
+            "Microsoft Windows Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 58.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 14.25,
+        "industry": 7.0,
+        "practice": 10.5,
+        "weighted_total": 58.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "d4f2d117646b8508f6d6f875",
+      "headline": "Microsoft to remove WSUS server role from Windows Server 2028",
+      "summary": "Microsoft will drop the Windows Server Update Services (WSUS) role from Windows Server 2028, its next major server release. Organizations that rely on WSUS to distribute patches will need to plan a move to other update-management tools.",
+      "category": "vendor_product",
+      "importance": "medium",
+      "importance_rationale": "Notable vendor change that affects how organizations manage patching.",
+      "location_relevance": {
+        "US": 80,
+        "Europe": 80,
+        "MEA": 80,
+        "Other": 80
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 45,
+        "private_banking": 45,
+        "investment_management": 45,
+        "government": 50,
+        "retail_banking": 45,
+        "global_it_services": 60,
+        "logistics": 45,
+        "industrial_manufacturing": 50,
+        "automotive": 45
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 70,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 30,
+        "grc_audit": 20,
+        "security_automation": 35,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Windows Server",
+        "WSUS",
+        "Intune"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [
+        "continuous-vulnerability-management"
+      ],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "List all servers that depend on WSUS, including in air-gapped and OT networks, and plan a migration to Intune, Autopatch or a third-party tool.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wsus-server-role-in-windows-server-2028/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T11:18:36+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Notable vendor change that affects how organizations manage patching.",
+      "watch_tech": [
+        {
+          "name": "Windows Server",
+          "aliases": [
+            "Microsoft Windows Server"
+          ],
+          "cross_industry": true,
+          "vendor": "microsoft"
+        },
+        {
+          "name": "Intune",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "microsoft"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 55.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 12.0,
+        "industry": 6.0,
+        "practice": 10.5,
+        "weighted_total": 55.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "628804bd4e43d38b9b4cffe0",
+      "headline": "Dutch NCSC warns of risks as business AI adoption rises",
+      "summary": "The Dutch NCSC has warned about the security risks of AI, responding to Statistics Netherlands (CBS) figures showing more businesses are using it. This is guidance only; the source summary does not describe any new obligations.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "Guidance from a national regulator on AI risk; it is not binding.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 75,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 35,
+        "retail_banking": 30,
+        "global_it_services": 40,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 10,
+        "siem_detection": 5,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 40,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 5,
+        "ai_governance": 85
+      },
+      "affected_technologies": [
+        "AI"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Dutch organizations should check their AI usage policies and data-handling controls against the NCSC guidance.",
+      "confidence": 0.65,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963395/NCSC+waarschuwt+voor+gevaren+van+toegenomen+gebruik+van+AI+door+bedrijven?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T11:28:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Guidance from a national regulator on AI risk; it is not binding.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 55.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 11.25,
+        "industry": 4.0,
+        "practice": 12.75,
+        "weighted_total": 55.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "6a24b17bba143008d3b5a27c",
+      "headline": "Microsoft: Chinese and North Korean state actors using ARTEX LLM-driven pentest framework",
+      "summary": "Microsoft Threat Intelligence reports that state-sponsored groups linked to China and North Korea are now using ARTEX in attacks. ARTEX is an open-source penetration testing framework, published on GitHub in July 2026, in which AI agents plan and carry out the steps needed to reach an operator-set goal. The source does not name specific victims or sectors.",
+      "category": "apt_nation_state",
+      "importance": "medium",
+      "importance_rationale": "Threat research describing new AI-automated attacker tooling. No specific campaign against critical infrastructure is reported.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 65,
+        "MEA": 55,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 45,
+        "telecommunications": 50,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 55,
+        "retail_banking": 40,
+        "global_it_services": 50,
+        "logistics": 40,
+        "industrial_manufacturing": 45,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 30,
+        "vuln_exposure_mgmt": 55,
+        "devsecops": 15,
+        "siem_detection": 70,
+        "iam_pam": 30,
+        "email_phishing": 10,
+        "data_protection_dlp": 20,
+        "ot_ics": 10,
+        "grc_audit": 15,
+        "security_automation": 35,
+        "ai_governance": 60
+      },
+      "affected_technologies": [
+        "ARTEX",
+        "AI agent frameworks",
+        "GitHub"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: automated scanning and exploitation may show up as fast, high-volume probing. Existing exposure-management and network detections probably apply, but no rules were provided.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Read Microsoft's report for indicators. Shorten patch times for internet-facing systems and check that detection covers fast, automated exploitation chains.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/artex-ai-pentest-framework-china-north-korea-state-hackers/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T11:06:57+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Threat research describing new AI-automated attacker tooling. No specific campaign against critical infrastructure is reported.",
+      "watch_tech": [
+        {
+          "name": "GitHub",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "devops_appsec"
+        },
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.5,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 5.5,
+        "practice": 10.5,
+        "weighted_total": 53.5,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "6d4c5baf41837f6006494721",
+      "headline": "Germany's BSI warns of growing threat from autonomously operating AI",
+      "summary": "Germany's federal cybersecurity agency, the BSI, has warned of a growing threat from AI systems that operate autonomously. The excerpt does not include specific incidents or technical details.",
+      "category": "regulation_policy",
+      "importance": "medium",
+      "importance_rationale": "This is regulator guidance or a warning, not binding regulation, and no specific threat is described.",
+      "location_relevance": {
+        "US": 35,
+        "Europe": 65,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [
+        "DE"
+      ],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 30,
+        "investment_management": 30,
+        "government": 45,
+        "retail_banking": 30,
+        "global_it_services": 45,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 15,
+        "siem_detection": 25,
+        "iam_pam": 25,
+        "email_phishing": 10,
+        "data_protection_dlp": 20,
+        "ot_ics": 5,
+        "grc_audit": 40,
+        "security_automation": 20,
+        "ai_governance": 80
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source includes no detection content. In our assessment, logging of agent actions and their identities is advisable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Review the BSI guidance when it is available. Inventory AI agent deployments and their permissions under AI governance controls.",
+      "confidence": 0.55,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963387/Duitse+cyberbeveiligingsauthoriteit+waarschuwt+voor+toenemende+dreiging+zelfstandig+opererende+AI?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T10:37:43+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is regulator guidance or a warning, not binding regulation, and no specific threat is described.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.75,
+        "industry": 4.5,
+        "practice": 12.0,
+        "weighted_total": 53.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "c60eeeaa334b435fe2df496f",
+      "headline": "Microsoft Store app used to deliver Vinci RAT via fake snipping tool site",
+      "summary": "eSentire describes an intrusion chain that begins with a redirect to a fake snipping-tool website. From there, victims receive a Microsoft-signed installer tied to a Microsoft Store app, which then drops the Vinci remote access trojan. Abusing a trusted distribution channel can get around controls that rely on reputation.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "Threat research describing new delivery TTPs through a trusted Windows channel. The source does not report a broad campaign against target industries.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 70,
+        "MEA": 70,
+        "Other": 70
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 45,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 10,
+        "siem_detection": 75,
+        "iam_pam": 15,
+        "email_phishing": 30,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 10,
+        "security_automation": 25,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Microsoft Store",
+        "Windows"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Our assessment is that EDR rules should flag unexpected child processes from Store-installed apps. Teams should also review web proxy logs for the reported lookalike domain.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Restrict Microsoft Store installs through Intune or GPO where practical. Block the reported domain and hunt for Snipping-Tool.exe installs from unusual sources.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/microsoft-store-app-found-delivering.html",
+          "source": "The Hacker News",
+          "published": "2026-11-27T11:49:34+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Threat research describing new delivery TTPs through a trusted Windows channel. The source does not report a broad campaign against target industries.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 4.5,
+        "practice": 11.25,
+        "weighted_total": 53.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "a76e3558432da8a0cd467adc",
+      "headline": "Japan's education ministry discloses breach of government procurement system",
+      "summary": "Japan's education ministry said hackers breached its government procurement system. Records containing business information and email addresses may have been exposed.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "A government breach outside the target regions, with limited data exposure.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 70
+      },
+      "countries_mentioned": [
+        "JP"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 80,
+        "retail_banking": 0,
+        "global_it_services": 15,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 25,
+        "devsecops": 10,
+        "siem_detection": 25,
+        "iam_pam": 20,
+        "email_phishing": 30,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical details have been published.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Suppliers that use the system should watch for follow-on phishing that uses the exposed email addresses.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://therecord.media/japan-education-ministry-cyberattack",
+          "source": "The Record",
+          "published": "2026-11-27T14:15:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A government breach outside the target regions, with limited data exposure.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 53.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 8.0,
+        "practice": 7.5,
+        "weighted_total": 53.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "57d73d788295d6a09683ff8b",
+      "headline": "Remus infostealer uses fake Google Sheets Chrome extension to steal Gmail messages",
+      "summary": "The Remus infostealer uses a malicious Chrome extension that poses as Google Sheets to steal Gmail messages. Its operators advertised this as a Gmail zero-day, but the report describes it as extension abuse rather than a flaw in Gmail.",
+      "category": "research",
+      "importance": "medium",
+      "importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
+      "location_relevance": {
+        "US": 75,
+        "Europe": 75,
+        "MEA": 75,
+        "Other": 75
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 35,
+        "investment_management": 35,
+        "government": 35,
+        "retail_banking": 35,
+        "global_it_services": 35,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 40,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 55,
+        "iam_pam": 40,
+        "email_phishing": 50,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 15,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Google Chrome",
+        "Gmail"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Assessment: inventory and allow-list Chrome extensions, and monitor for unknown extensions that ask for Gmail or Google Sheets access. No rules were provided in the source.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Enforce allow-lists for browser extensions through managed Chrome policies. Review installed extensions for fake Google Sheets add-ons.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+          "source": "BleepingComputer",
+          "published": "2026-11-26T15:23:28+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "New infostealer technique using a browser extension. No confirmed vulnerability in Gmail and no evidence of a wide enterprise campaign.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 50.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 11.25,
+        "industry": 3.5,
+        "practice": 9.0,
+        "weighted_total": 50.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "63c10112653f861d2fb58995",
+      "headline": "CVE-2026-40558: Perl Net::FTP flaw lets malicious FTP servers redirect passive-mode data connections",
+      "summary": "A flaw in Perl's libnet Net::FTP module lets a malicious FTP server redirect a client's passive-mode data connection to an arbitrary third-party host. Net::FTP ships with Perl, and libnet v3.17 includes a fix. Amazon Linux's record does not confirm whether Amazon Linux is affected or whether a patch is available.",
+      "category": "vulnerability",
+      "importance": "medium",
+      "importance_rationale": "Notable flaw in a widely distributed component, with no reported exploitation and no stated severity.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 50,
+        "MEA": 50,
+        "Other": 50
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 40,
+        "telecommunications": 40,
+        "private_banking": 40,
+        "investment_management": 40,
+        "government": 40,
+        "retail_banking": 40,
+        "global_it_services": 45,
+        "logistics": 40,
+        "industrial_manufacturing": 40,
+        "automotive": 40
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 60,
+        "devsecops": 30,
+        "siem_detection": 10,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Perl libnet Net::FTP",
+        "Amazon Linux"
+      ],
+      "cves": [
+        "CVE-2026-40558"
+      ],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No detection content was provided. Our assessment is that network monitoring for FTP passive-mode connections to unexpected hosts could help.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Find Perl scripts that use Net::FTP and update to libnet 3.17 or a fixed distribution package once your distribution confirms its status.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://explore.alas.aws.amazon.com/CVE-2026-40558.html",
+          "source": "Amazon Linux Security Center",
+          "published": "2026-11-26T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Notable flaw in a widely distributed component, with no reported exploitation and no stated severity.",
+      "watch_tech": [],
+      "cve_details": {
+        "CVE-2026-40558": {
+          "kev": null,
+          "epss": null,
+          "cvss": null
+        }
+      },
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 4.5,
+        "practice": 9.0,
+        "weighted_total": 48.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "138f1455adfb78aef1f800c3",
+      "headline": "Flight Centre reports breach of third-party accommodation booking system exposing some passport details",
+      "summary": "Flight Centre Travel Group told the Australian Securities Exchange that it is investigating unusual activity in a third-party accommodation booking system used by several of its brands. Customer names were accessed, and in rare cases passport and health details. The company says flight bookings were treated separately from the affected system.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "A breach at a travel company, which is not a target industry and is based in Australia, outside the target regions.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 5,
+        "Other": 70
+      },
+      "countries_mentioned": [
+        "AU"
+      ],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 5,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 15,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 5,
+        "siem_detection": 15,
+        "iam_pam": 20,
+        "email_phishing": 20,
+        "data_protection_dlp": 60,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source gives no technical details about the intrusion.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review how much personal data third-party booking providers can access, and how they are monitored.",
+      "confidence": 0.75,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/flight-centre-travel-group-data-breach-booking-system/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T09:31:44+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A breach at a travel company, which is not a target industry and is based in Australia, outside the target regions.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 48.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 1.5,
+        "practice": 9.0,
+        "weighted_total": 48.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "59c02d6db4c0dbe39534fc78",
+      "headline": "US recovery firm CEO charged with defrauding ransomware victims",
+      "summary": "US authorities have charged the founder and CEO of a US data recovery company with defrauding companies that had been hit by ransomware. The short source report gives few details about the alleged scheme.",
+      "category": "law_enforcement",
+      "importance": "medium",
+      "importance_rationale": "A law-enforcement action relevant to vetting incident response vendors. It is not a major takedown.",
+      "location_relevance": {
+        "US": 70,
+        "Europe": 15,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 15,
+        "investment_management": 15,
+        "government": 15,
+        "retail_banking": 15,
+        "global_it_services": 30,
+        "logistics": 15,
+        "industrial_manufacturing": 15,
+        "automotive": 15
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. This is a fraud case, not a technical threat.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "Pre-vet ransomware recovery and negotiation vendors as part of incident response planning.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963294/Ceo+recoverybedrijf+aangeklaagd+voor+oplichten+ransomware-slachtoffers?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T12:05:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A law-enforcement action relevant to vetting incident response vendors. It is not a major takedown.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 47.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 10.5,
+        "industry": 3.0,
+        "practice": 6.75,
+        "weighted_total": 47.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "0bee5ba43d922bf4abe46ce6",
+      "headline": "Kaspersky reports rise in Android devices shipped with preinstalled malware",
+      "summary": "Kaspersky says the number of Android devices that arrive with malware already installed has risen sharply. The source excerpt does not name device models, malware families or affected regions.",
+      "category": "supply_chain",
+      "importance": "medium",
+      "importance_rationale": "This is vendor research on a hardware supply-chain trend. No enterprise compromise or affected brands are named.",
+      "location_relevance": {
+        "US": 45,
+        "Europe": 45,
+        "MEA": 50,
+        "Other": 60
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 50,
+        "private_banking": 35,
+        "investment_management": 30,
+        "government": 35,
+        "retail_banking": 45,
+        "global_it_services": 40,
+        "logistics": 35,
+        "industrial_manufacturing": 30,
+        "automotive": 25
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 35,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 10,
+        "siem_detection": 30,
+        "iam_pam": 20,
+        "email_phishing": 5,
+        "data_protection_dlp": 35,
+        "ot_ics": 5,
+        "grc_audit": 30,
+        "security_automation": 10,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "Android"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source provides no detection rules or indicators. In our assessment, mobile threat defense and MDM device-attestation checks are the most relevant controls.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "telecommunications",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Buy Android devices only from vetted vendors. Enforce MDM enrollment and Play Protect certification for corporate and BYOD phones.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963306/Kaspersky+meldt+toename+van+Android-apparaten+geleverd+met+malware?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T10:17:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is vendor research on a hardware supply-chain trend. No enterprise compromise or affected brands are named.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 46.25,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 9.0,
+        "industry": 5.0,
+        "practice": 5.25,
+        "weighted_total": 46.25,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "8ac7cdd40a1d4c5bbe3d574a",
+      "headline": "FIFA confirms breach exposing limited personal and business data",
+      "summary": "FIFA, which is based in Zurich, has confirmed that attackers accessed a limited set of personal and business information and that some of it was published. It has not said when the attack happened or what data was taken, and it is working with law enforcement.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "A breach at a high-profile organisation outside the target industries. FIFA describes the data accessed as limited.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 55,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 0,
+        "siem_detection": 15,
+        "iam_pam": 15,
+        "email_phishing": 15,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "revised_fadp",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical details have been disclosed.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for phishing that uses leaked FIFA-related data, especially around major events.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/fifa-cyberattack-data-leak/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T13:21:50+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A breach at a high-profile organisation outside the target industries. FIFA describes the data accessed as limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 43.75,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 1.0,
+        "practice": 7.5,
+        "weighted_total": 43.75,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "edf002b95bb4521c84409d92",
+      "headline": "FIFA confirms cyberattack exposed limited personal and business information",
+      "summary": "FIFA has confirmed that a cyberattack exposed a limited set of personal and business information. The source does not describe the attack method, who was responsible or how many people were affected.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "This is a confirmed breach at a high-profile organization outside the target industries. The reported scope is limited.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 50,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 5,
+        "siem_detection": 20,
+        "iam_pam": 20,
+        "email_phishing": 30,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical details have been disclosed, so there is no detection guidance.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Organizations that work with FIFA should watch for follow-up phishing that uses the exposed business contact data.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/fifa-confirms-cyberattack/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-27T10:30:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "This is a confirmed breach at a high-profile organization outside the target industries. The reported scope is limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 43.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 1.0,
+        "practice": 7.5,
+        "weighted_total": 43.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "1bfd0310f4efb8cb795d69a6",
+      "headline": "FIFA discloses cyberattack that accessed personal and business information",
+      "summary": "FIFA says attackers accessed personal and business information in a cyberattack. The organization has not said when the attack happened or exactly what data was affected.",
+      "category": "data_breach",
+      "importance": "medium",
+      "importance_rationale": "A data breach at a prominent organization that is not in a target industry. Its scope and timing are undisclosed.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 50,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "CH"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 15,
+        "vuln_exposure_mgmt": 10,
+        "devsecops": 5,
+        "siem_detection": 20,
+        "iam_pam": 15,
+        "email_phishing": 15,
+        "data_protection_dlp": 50,
+        "ot_ics": 0,
+        "grc_audit": 30,
+        "security_automation": 5,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "revised_fadp",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source gives no technical details, so no specific detection guidance can be offered.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Watch for FIFA disclosures on the affected data. Be alert for follow-on phishing that may use FIFA-related lures.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/",
+          "source": "SecurityWeek",
+          "published": "2026-11-26T17:06:55+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "A data breach at a prominent organization that is not in a target industry. Its scope and timing are undisclosed.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 43.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 7.5,
+        "industry": 1.0,
+        "practice": 7.5,
+        "weighted_total": 43.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "b4edcd154cf40d6df997cb74",
+      "headline": "Cyberattack forces AFP to take global news distribution platform offline",
+      "summary": "Agence France-Presse was hit by a cyberattack and took one of its main news distribution platforms offline. The platform delivers content to media organizations worldwide. No attacker, method or data impact has been reported.",
+      "category": "other",
+      "importance": "medium",
+      "importance_rationale": "Disruptive incident at a major European organization, but media is not a target industry and details are limited.",
+      "location_relevance": {
+        "US": 15,
+        "Europe": 55,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "FR"
+      ],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 15,
+        "private_banking": 5,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 5,
+        "global_it_services": 15,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 35,
+        "iam_pam": 20,
+        "email_phishing": 15,
+        "data_protection_dlp": 20,
+        "ot_ics": 0,
+        "grc_audit": 25,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "No technical indicators were disclosed, so specific detection guidance cannot be given.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Organizations that rely on AFP feeds should check whether their services can keep running without them. They should also watch for official updates on the cause of the attack.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://therecord.media/france-afp-hit-by-cyberattack",
+          "source": "The Record",
+          "published": "2026-11-27T00:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "medium",
+      "model_importance_rationale": "Disruptive incident at a major European organization, but media is not a target industry and details are limited.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [
+          "https://therecord.media/france-afp-hit-by-cyberattack"
+        ],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": [
+          "https://therecord.media/france-afp-hit-by-cyberattack"
+        ]
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 42.0,
+      "priority_breakdown": {
+        "importance": 27.0,
+        "location": 8.25,
+        "industry": 1.5,
+        "practice": 5.25,
+        "weighted_total": 42.0,
+        "severity_band": [
+          35,
+          64.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "63167cd189c929aadea26473",
+      "headline": "CREST study finds most threat-led penetration testing providers now use AI",
+      "summary": "CREST research based on 26 providers found that 81% use AI in threat-led penetration testing beyond the experimental stage. The study focuses on financial services and raises questions about control of AI and how much assurance AI-assisted testing really provides.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "An industry survey with no direct operational risk.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 50,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 15,
+        "telecommunications": 15,
+        "private_banking": 50,
+        "investment_management": 50,
+        "government": 20,
+        "retail_banking": 50,
+        "global_it_services": 35,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 45,
+        "devsecops": 15,
+        "siem_detection": 15,
+        "iam_pam": 5,
+        "email_phishing": 5,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 55,
+        "security_automation": 20,
+        "ai_governance": 60
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "retail_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "Financial firms commissioning threat-led penetration tests should ask providers how they use and control AI. They should also ask how AI-assisted findings are checked.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/crest-ai-threat-led-penetration-testing/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T05:00:32+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "An industry survey with no direct operational risk.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 30.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 5.0,
+        "practice": 9.0,
+        "weighted_total": 30.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "486e58e584451dd1d14a2bd6",
+      "headline": "SailPoint predicts accountability pressure on AI agent identities in 2027",
+      "summary": "SailPoint's predictions report expects regulators, boards and insurers to demand governance of autonomous AI agents. Its research says 79% of enterprises run AI agents in production, but only 2% have identity controls designed for them.",
+      "category": "research",
+      "importance": "low",
+      "importance_rationale": "This is a vendor predictions report and has no operational threat attached.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 35,
+        "Other": 35
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 30,
+        "telecommunications": 30,
+        "private_banking": 35,
+        "investment_management": 35,
+        "government": 30,
+        "retail_banking": 35,
+        "global_it_services": 40,
+        "logistics": 30,
+        "industrial_manufacturing": 30,
+        "automotive": 30
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 25,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 60,
+        "email_phishing": 0,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 40,
+        "security_automation": 10,
+        "ai_governance": 65
+      },
+      "affected_technologies": [
+        "AI agent frameworks"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable: this is a predictions report.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Build an inventory of AI agent identities and their privileges as part of IAM governance.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/sailpoint-2027-ai-identity-security-predictions-report/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T06:30:14+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a vendor predictions report and has no operational threat attached.",
+      "watch_tech": [
+        {
+          "name": "AI agent frameworks",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 28.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 4.0,
+        "practice": 9.75,
+        "weighted_total": 28.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": true
+    },
+    {
+      "cluster_id": "28a296848837107cb64e0a43",
+      "headline": "Bits of Freedom criticises Dutch data protection authority as a failing regulator",
+      "summary": "The Dutch civil rights group Bits of Freedom has again criticised the Autoriteit Persoonsgegevens, calling it a failing regulator. The criticism concerns how privacy oversight is enforced in the Netherlands.",
+      "category": "regulation_policy",
+      "importance": "low",
+      "importance_rationale": "This is advocacy commentary about a regulator, with no new obligation or enforcement action.",
+      "location_relevance": {
+        "US": 0,
+        "Europe": 55,
+        "MEA": 0,
+        "Other": 0
+      },
+      "countries_mentioned": [
+        "NL"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 25,
+        "retail_banking": 10,
+        "global_it_services": 10,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 30,
+        "ot_ics": 0,
+        "grc_audit": 40,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [
+        {
+          "key": "gdpr",
+          "nature": "enforcement",
+          "effective_or_deadline_date": null
+        }
+      ],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable; there is nothing to detect.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "regulatory_deadline",
+        "sector": "government",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "No action is needed. Keep tracking Dutch GDPR enforcement trends.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963316/Bits+of+Freedom+kritisch+op+Autoriteit+Persoonsgegevens%3A+%27Falende+toezichthouder%27?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T08:31:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is advocacy commentary about a regulator, with no new obligation or enforcement action.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 25.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 8.25,
+        "industry": 2.5,
+        "practice": 6.0,
+        "weighted_total": 25.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "982bfc2fadcbc6850a49288f",
+      "headline": "Opinion: security metrics should reflect current exposure, not quarterly reporting",
+      "summary": "This opinion piece argues that many security metrics are assembled for presentations rather than for running operations. It calls for continuously updated measures of exposure as attackers move faster.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is an opinion or sponsored-style piece and contains no new threat.",
+      "location_relevance": {
+        "US": 30,
+        "Europe": 30,
+        "MEA": 30,
+        "Other": 30
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 5,
+        "vuln_exposure_mgmt": 40,
+        "devsecops": 5,
+        "siem_detection": 20,
+        "iam_pam": 5,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 45,
+        "security_automation": 55,
+        "ai_governance": 10
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No immediate action needed. Optionally, review whether security dashboards drive operational decisions.",
+      "confidence": 0.7,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/how-to-keep-your-security-picture.html",
+          "source": "The Hacker News",
+          "published": "2026-11-27T10:32:18+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is an opinion or sponsored-style piece and contains no new threat.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 24.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 2.5,
+        "practice": 8.25,
+        "weighted_total": 24.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "9b89881540e0cac7df46a086",
+      "headline": "Weekly roundup: tanker cyberattacks, EU Quantum Act, USDA payment breach, Radware hack",
+      "summary": "This SecurityWeek roundup briefly covers several items: cyberattacks on tankers, an EU Quantum Act, new VirusTotal capabilities and a breach of USDA payment systems. It also reports that security firm Radware was hacked and that RansomwareHelp has been accused of profiting from ransom payments. Few details are given for any item.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "This is a recap article with only minimal detail on each item.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 35,
+        "MEA": 15,
+        "Other": 15
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 25,
+        "telecommunications": 10,
+        "private_banking": 5,
+        "investment_management": 5,
+        "government": 35,
+        "retail_banking": 10,
+        "global_it_services": 25,
+        "logistics": 35,
+        "industrial_manufacturing": 10,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 15,
+        "devsecops": 10,
+        "siem_detection": 20,
+        "iam_pam": 10,
+        "email_phishing": 5,
+        "data_protection_dlp": 20,
+        "ot_ics": 20,
+        "grc_audit": 25,
+        "security_automation": 15,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "VirusTotal"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The roundup includes no detection details.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "logistics",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Track the Radware and USDA items for follow-up reporting, especially vendor-related exposure.",
+      "confidence": 0.5,
+      "sources": [
+        {
+          "url": "https://www.securityweek.com/in-other-news-tanker-cyberattacks-eu-quantum-act-new-virustotal-capabilities/",
+          "source": "SecurityWeek",
+          "published": "2026-11-27T11:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a recap article with only minimal detail on each item.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 23.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 3.5,
+        "practice": 3.75,
+        "weighted_total": 23.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "a89cd84775f2184785d21b2f",
+      "headline": "Schneier: recent US outages are unrelated and rooted in underinvestment, not cyberattacks",
+      "summary": "Bruce Schneier argues that recent outages were coincidences, not a coordinated attack. The affected organisations include Microsoft, the FAA, several banks, United Airlines, Apple and a classified NSA network. He links these failures to economic incentives that leave infrastructure underfunded.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Opinion essay. It reports no new security incident.",
+      "location_relevance": {
+        "US": 50,
+        "Europe": 15,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [
+        "US"
+      ],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 15,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 25,
+        "retail_banking": 25,
+        "global_it_services": 25,
+        "logistics": 20,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 10,
+        "vuln_exposure_mgmt": 5,
+        "devsecops": 5,
+        "siem_detection": 5,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 5,
+        "grc_audit": 30,
+        "security_automation": 5,
+        "ai_governance": 5
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable. No malicious activity was reported.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "major_incident_wave",
+        "sector": "government",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. The essay may be useful background for discussions about resilience and operational risk.",
+      "confidence": 0.85,
+      "sources": [
+        {
+          "url": "https://www.schneier.com/blog/archives/2026/11/recent-outages-have-economic-causes.html",
+          "source": "Schneier on Security",
+          "published": "2026-11-27T12:02:23+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Opinion essay. It reports no new security incident.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 23.5,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 7.5,
+        "industry": 2.5,
+        "practice": 4.5,
+        "weighted_total": 23.5,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "0b75246ced860331ec95f848",
+      "headline": "Weekly roundup: NGINX exposure, malicious browser extensions and AI server hijacking",
+      "summary": "This weekly recap covers about 20 stories. They include roughly 10 million NGINX services reportedly at risk, more than 250 malicious browser extensions and the hijacking of AI servers. The source excerpt does not give technical specifics.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "A recap article whose underlying details are not in the source.",
+      "location_relevance": {
+        "US": 40,
+        "Europe": 40,
+        "MEA": 40,
+        "Other": 40
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 20,
+        "telecommunications": 20,
+        "private_banking": 20,
+        "investment_management": 20,
+        "government": 20,
+        "retail_banking": 20,
+        "global_it_services": 25,
+        "logistics": 20,
+        "industrial_manufacturing": 20,
+        "automotive": 20
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 20,
+        "vuln_exposure_mgmt": 35,
+        "devsecops": 20,
+        "siem_detection": 25,
+        "iam_pam": 25,
+        "email_phishing": 10,
+        "data_protection_dlp": 15,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 5,
+        "ai_governance": 25
+      },
+      "affected_technologies": [
+        "NGINX",
+        "browser extensions"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not enough detail to assess detection coverage.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "Review the individual NGINX and browser-extension items before acting. Check your extension allowlists.",
+      "confidence": 0.5,
+      "sources": [
+        {
+          "url": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
+          "source": "The Hacker News",
+          "published": "2026-11-26T19:39:57+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "A recap article whose underlying details are not in the source.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 22.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 6.0,
+        "industry": 2.5,
+        "practice": 5.25,
+        "weighted_total": 22.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "d2e7ce2e1e1a7a38f7f36d44",
+      "headline": "Stolen iPhone used for more than €22,000 in fraudulent payment transactions",
+      "summary": "A thief used a stolen iPhone to make more than €22,000 in fraudulent payment transactions. Security.NL reported the case, which was most likely in the Netherlands. It shows the risk of account takeover through stolen mobile devices.",
+      "category": "fraud_phishing",
+      "importance": "low",
+      "importance_rationale": "This is a minor single-victim fraud incident.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 30,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 40,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 5,
+        "iam_pam": 25,
+        "email_phishing": 0,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [
+        "iPhone",
+        "mobile payments"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable to the enterprise SOC. As an assessment, banks' fraud monitoring is the relevant control.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "sector_campaign",
+        "sector": "retail_banking",
+        "region": "Europe",
+        "rationale": ""
+      },
+      "recommended_action": "No enterprise action is needed. Retail banks can review re-authentication for high-value mobile payments.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963326/Dief+doet+voor+22_000+euro+aan+frauduleuze+transacties+met+gestolen+iPhone?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T09:10:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a minor single-victim fraud incident.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 21.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 4.5,
+        "industry": 4.0,
+        "practice": 3.75,
+        "weighted_total": 21.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "c4ba2abd43f3c31a5f19de0c",
+      "headline": "Creator pulls open-source CyberStrikeAI offensive framework; enterprise version still available",
+      "summary": "The open-source version of CyberStrikeAI, an AI-driven pentesting framework, has been permanently removed by its creator. An enterprise version of the tool is still available.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is a tool availability change with no direct operational risk.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 10,
+        "telecommunications": 10,
+        "private_banking": 10,
+        "investment_management": 10,
+        "government": 10,
+        "retail_banking": 10,
+        "global_it_services": 20,
+        "logistics": 10,
+        "industrial_manufacturing": 10,
+        "automotive": 10
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 20,
+        "devsecops": 5,
+        "siem_detection": 15,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 10,
+        "ai_governance": 35
+      },
+      "affected_technologies": [
+        "CyberStrikeAI"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "The source does not link any detection rules.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action is needed. Copies of the open-source version that were already made may still circulate.",
+      "confidence": 0.6,
+      "sources": [
+        {
+          "url": "https://www.infosecurity-magazine.com/news/cyberstrikeai-shut-down-threatbook/",
+          "source": "Infosecurity Magazine",
+          "published": "2026-11-27T09:00:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is a tool availability change with no direct operational risk.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 19.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 2.0,
+        "practice": 5.25,
+        "weighted_total": 19.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "70e91d168c2b31e73863d555",
+      "headline": "Norton launches scam-detection connector for Claude chatbot users",
+      "summary": "Norton released a connector that brings its Genie AI scam-detection features into Claude. Users can submit suspicious messages, screenshots and links for analysis, and the connector does not require a Norton account. This is a consumer product showcase.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is product marketing for a consumer tool and has no operational threat attached.",
+      "location_relevance": {
+        "US": 20,
+        "Europe": 20,
+        "MEA": 20,
+        "Other": 20
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 5,
+        "telecommunications": 5,
+        "private_banking": 10,
+        "investment_management": 5,
+        "government": 5,
+        "retail_banking": 15,
+        "global_it_services": 10,
+        "logistics": 5,
+        "industrial_manufacturing": 5,
+        "automotive": 5
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 30,
+        "data_protection_dlp": 5,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 5,
+        "ai_governance": 25
+      },
+      "affected_technologies": [
+        "Claude",
+        "Norton Genie"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable: this is a product announcement.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action is needed. If you review AI connector policies, consider whether third-party connectors like this one are allowed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.helpnetsecurity.com/2026/11/27/product-showcase-norton-claude-scam-detection/",
+          "source": "Help Net Security",
+          "published": "2026-11-27T06:00:59+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is product marketing for a consumer tool and has no operational threat attached.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 18.0,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.0,
+        "industry": 1.5,
+        "practice": 4.5,
+        "weighted_total": 18.0,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "88ecfca74d0e8c3f368ca38e",
+      "headline": "Paper password notebooks reportedly gaining popularity in Japan amid data leaks",
+      "summary": "Security.NL reports that sales of paper notebooks for writing down login credentials are rising in Japan. The reported reason is the growing number of data leaks. This is a consumer-behaviour story with no direct operational impact on enterprises.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Consumer trend piece about Japan with no enterprise threat.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 25
+      },
+      "countries_mentioned": [
+        "JP"
+      ],
+      "industry_relevance": {
+        "energy_services": 3,
+        "telecommunications": 3,
+        "private_banking": 5,
+        "investment_management": 3,
+        "government": 3,
+        "retail_banking": 5,
+        "global_it_services": 3,
+        "logistics": 3,
+        "industrial_manufacturing": 3,
+        "automotive": 3
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 3,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 20,
+        "email_phishing": 3,
+        "data_protection_dlp": 10,
+        "ot_ics": 0,
+        "grc_audit": 5,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable; there is nothing technical to detect.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "retail_banking",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed. You could mention password managers and MFA in awareness training.",
+      "confidence": 0.8,
+      "sources": [
+        {
+          "url": "https://www.security.nl/posting/963289/%27Papieren+wachtwoordboeken+wegens+vele+datalekken+populair+in+Japan%27?channel=rss",
+          "source": "Security.NL",
+          "published": "2026-11-27T11:02:00+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Consumer trend piece about Japan with no enterprise threat.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 16.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 3.75,
+        "industry": 0.5,
+        "practice": 3.0,
+        "weighted_total": 16.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "ac6c22bfffe5cdc2a6ea45a3",
+      "headline": "OpenAI fixes GPT-6.2 usage-metering bug, so users will hit usage limits faster",
+      "summary": "OpenAI fixed a bug that had wrongly discounted GPT-6.2 usage. As a result, users will reach usage limits about 40% sooner than before. This is a billing change, not a security issue.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "A product usage change with no security impact.",
+      "location_relevance": {
+        "US": 10,
+        "Europe": 10,
+        "MEA": 10,
+        "Other": 10
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 2,
+        "telecommunications": 2,
+        "private_banking": 2,
+        "investment_management": 2,
+        "government": 2,
+        "retail_banking": 2,
+        "global_it_services": 5,
+        "logistics": 2,
+        "industrial_manufacturing": 2,
+        "automotive": 2
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 15
+      },
+      "affected_technologies": [
+        "OpenAI API"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "US",
+        "rationale": ""
+      },
+      "recommended_action": "AI program owners should review their usage budgets.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+          "source": "BleepingComputer",
+          "published": "2026-11-26T21:06:22+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "A product usage change with no security impact.",
+      "watch_tech": [
+        {
+          "name": "OpenAI API",
+          "aliases": [],
+          "cross_industry": false,
+          "vendor": "ai"
+        }
+      ],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 13.25,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 1.5,
+        "industry": 0.5,
+        "practice": 2.25,
+        "weighted_total": 13.25,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "fcbb41954277a0a1d4ec8475",
+      "headline": "Essay quote criticises homogenised AI-generated content",
+      "summary": "A blog post quotes an essay arguing that AI-generated text from Claude is making videos, talks and email pitches sound alike. It is commentary and contains no security incident or vulnerability.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Opinion piece with no operational security impact.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 2,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 3,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 15
+      },
+      "affected_technologies": [
+        "Claude"
+      ],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.9,
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+          "source": "Simon Willison (prompt injection)",
+          "published": "2026-11-26T15:09:31+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Opinion piece with no operational security impact.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 12.2,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.2,
+        "practice": 2.25,
+        "weighted_total": 12.2,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "24b01fe057d66b2638e58383",
+      "headline": "Malwarebytes offers Black Friday discount on consumer security subscriptions",
+      "summary": "Malwarebytes is running a 50% Black Friday discount on its consumer and small-business security products. This is a promotion with no threat content.",
+      "category": "vendor_product",
+      "importance": "low",
+      "importance_rationale": "This is product marketing.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "global_it_services",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/malwarebytes-antivirus-get-50-percent-off-during-black-friday-2026/",
+          "source": "BleepingComputer",
+          "published": "2026-11-27T14:22:06+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "This is product marketing.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 9.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.0,
+        "practice": 0.0,
+        "weighted_total": 9.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    },
+    {
+      "cluster_id": "0bd18f3d2e78de9a983976cd",
+      "headline": "NordVPN Black Friday promotion",
+      "summary": "This is a commercial VPN discount promotion. It contains no security-relevant event.",
+      "category": "other",
+      "importance": "low",
+      "importance_rationale": "Product marketing.",
+      "location_relevance": {
+        "US": 5,
+        "Europe": 5,
+        "MEA": 5,
+        "Other": 5
+      },
+      "countries_mentioned": [],
+      "industry_relevance": {
+        "energy_services": 0,
+        "telecommunications": 0,
+        "private_banking": 0,
+        "investment_management": 0,
+        "government": 0,
+        "retail_banking": 0,
+        "global_it_services": 0,
+        "logistics": 0,
+        "industrial_manufacturing": 0,
+        "automotive": 0
+      },
+      "practice_area_relevance": {
+        "zero_trust_cloud": 0,
+        "vuln_exposure_mgmt": 0,
+        "devsecops": 0,
+        "siem_detection": 0,
+        "iam_pam": 0,
+        "email_phishing": 0,
+        "data_protection_dlp": 0,
+        "ot_ics": 0,
+        "grc_audit": 0,
+        "security_automation": 0,
+        "ai_governance": 0
+      },
+      "affected_technologies": [],
+      "cves": [],
+      "threat_actors": [],
+      "regulations": [],
+      "attack_techniques": [],
+      "detection_refs": [],
+      "detection_coverage_note": "Not applicable.",
+      "related_case_studies": [],
+      "business_signal": {
+        "present": false,
+        "type": "technology_shift",
+        "sector": "telecommunications",
+        "region": "Other",
+        "rationale": ""
+      },
+      "recommended_action": "No action needed.",
+      "confidence": 0.95,
+      "sources": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/nordvpn-black-friday-deal-get-78-percent-off-vpn-plans-in-2026/",
+          "source": "BleepingComputer",
+          "published": "2026-11-26T17:58:42+00:00",
+          "date_inferred": false
+        }
+      ],
+      "overrides": [],
+      "model_importance": "low",
+      "model_importance_rationale": "Product marketing.",
+      "watch_tech": [],
+      "cve_details": {},
+      "risk_evidence": {
+        "exploitation_reported": [],
+        "rce": [],
+        "critical_flaw": [],
+        "emergency_patch": [],
+        "public_poc": [],
+        "supply_chain_compromise": [],
+        "certificate_compromise": [],
+        "worldwide": []
+      },
+      "exposure_scope": "Source-specific or unestablished",
+      "independent_sources_24h": 1,
+      "priority": 9.75,
+      "priority_breakdown": {
+        "importance": 9.0,
+        "location": 0.75,
+        "industry": 0.0,
+        "practice": 0.0,
+        "weighted_total": 9.75,
+        "severity_band": [
+          0,
+          34.99
+        ]
+      },
+      "included": false
+    }
+  ],
+  "counts": {
+    "critical": 8,
+    "high": 9,
+    "medium": 16,
+    "low": 15
+  },
+  "unclassified": 0,
+  "duplicates_removed": 0,
+  "new_kev": [],
+  "watch_hits": 13,
+  "watch": {
+    "devops_appsec": [
+      {
+        "technology": "GitHub",
+        "headline": "North Korea-linked PolinRider campaign plants Python loader in over 7,600 GitHub repositories",
+        "cluster_id": "0574110d7d17666e48071c3c"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "SAP confirms GitHub intrusion; source code reportedly copied and altered using stolen tokens",
+        "cluster_id": "491e8129162380ab76877a25"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "SAP confirms cyber incident after reports its development infrastructure and source code were accessed",
+        "cluster_id": "13703c88841dcbc0e99a49ad"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "SAP confirms security incident after detecting suspicious GitHub activity",
+        "cluster_id": "1147158f7c1bb54f94b02be7"
+      },
+      {
+        "technology": "GitHub",
+        "headline": "Microsoft: Chinese and North Korean state actors using ARTEX LLM-driven pentest framework",
+        "cluster_id": "6a24b17bba143008d3b5a27c"
+      }
+    ],
+    "enterprise_apps": [
+      {
+        "technology": "SAP",
+        "headline": "SAP confirms GitHub intrusion; source code reportedly copied and altered using stolen tokens",
+        "cluster_id": "491e8129162380ab76877a25"
+      },
+      {
+        "technology": "SAP",
+        "headline": "SAP confirms cyber incident after reports its development infrastructure and source code were accessed",
+        "cluster_id": "13703c88841dcbc0e99a49ad"
+      },
+      {
+        "technology": "SAP",
+        "headline": "SAP confirms cybersecurity incident following Der Spiegel report",
+        "cluster_id": "e7c290313772211bd5f1cc6c"
+      },
+      {
+        "technology": "SAP",
+        "headline": "SAP confirms security incident after detecting suspicious GitHub activity",
+        "cluster_id": "1147158f7c1bb54f94b02be7"
+      }
+    ],
+    "ai": [
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Swiss cyber agency confirms first AI-agent-assisted intrusions, including at critical infrastructure",
+        "cluster_id": "979e934b372966d4ae8bd13b"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Microsoft: Chinese and North Korean state actors using ARTEX LLM-driven pentest framework",
+        "cluster_id": "6a24b17bba143008d3b5a27c"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "Germany's BSI warns of growing threat from autonomously operating AI",
+        "cluster_id": "6d4c5baf41837f6006494721"
+      },
+      {
+        "technology": "AI agent frameworks",
+        "headline": "SailPoint predicts accountability pressure on AI agent identities in 2027",
+        "cluster_id": "486e58e584451dd1d14a2bd6"
+      },
+      {
+        "technology": "OpenAI API",
+        "headline": "OpenAI fixes GPT-6.2 usage-metering bug, so users will hit usage limits faster",
+        "cluster_id": "ac6c22bfffe5cdc2a6ea45a3"
+      }
+    ],
+    "identity": [
+      {
+        "technology": "Okta",
+        "headline": "'GoodGuys' phishing campaign uses fake paid expert interviews to steal Google and Okta logins",
+        "cluster_id": "deebe28bb42d9ba3bda47a9e"
+      }
+    ],
+    "microsoft": [
+      {
+        "technology": "Windows Server",
+        "headline": "Microsoft releases out-of-band hotpatch to fix Windows Server 2025 crashes caused by KB5131077",
+        "cluster_id": "b44222591fc1fc506ee56cb7"
+      },
+      {
+        "technology": "Windows Server",
+        "headline": "Microsoft to remove WSUS server role from Windows Server 2028",
+        "cluster_id": "d4f2d117646b8508f6d6f875"
+      },
+      {
+        "technology": "Intune",
+        "headline": "Microsoft to remove WSUS server role from Windows Server 2028",
+        "cluster_id": "d4f2d117646b8508f6d6f875"
+      }
+    ]
+  },
+  "regulations": {
+    "US": [
+      {
+        "key": "state_privacy_laws",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "state privacy laws",
+        "headline": "myColorado state digital ID app breach may affect about 100,000 users",
+        "sources": [
+          {
+            "url": "https://www.securityweek.com/100000-potentially-impacted-by-colorado-data-breach/",
+            "source": "SecurityWeek",
+            "published": "2026-11-27T09:30:54+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ],
+    "Europe": [
+      {
+        "key": "revised_fadp",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "revised FADP",
+        "headline": "FIFA confirms breach exposing limited personal and business data",
+        "sources": [
+          {
+            "url": "https://www.helpnetsecurity.com/2026/11/27/fifa-cyberattack-data-leak/",
+            "source": "Help Net Security",
+            "published": "2026-11-27T13:21:50+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "revised_fadp",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "revised FADP",
+        "headline": "FIFA discloses cyberattack that accessed personal and business information",
+        "sources": [
+          {
+            "url": "https://www.securityweek.com/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/",
+            "source": "SecurityWeek",
+            "published": "2026-11-26T17:06:55+00:00",
+            "date_inferred": false
+          }
+        ]
+      },
+      {
+        "key": "gdpr",
+        "nature": "enforcement",
+        "effective_or_deadline_date": null,
+        "name": "GDPR",
+        "headline": "Bits of Freedom criticises Dutch data protection authority as a failing regulator",
+        "sources": [
+          {
+            "url": "https://www.security.nl/posting/963316/Bits+of+Freedom+kritisch+op+Autoriteit+Persoonsgegevens%3A+%27Falende+toezichthouder%27?channel=rss",
+            "source": "Security.NL",
+            "published": "2026-11-27T08:31:00+00:00",
+            "date_inferred": false
+          }
+        ]
+      }
+    ]
+  },
+  "other_count": 13,
+  "source_health": {
+    "at": "2026-11-27T14:42:45.049868+00:00",
+    "enabled": 41,
+    "failures": 2,
+    "new": 52,
+    "updated": 0,
+    "sources": [
+      {
+        "name": "The Hacker News",
+        "ok": true,
+        "new": 6
+      },
+      {
+        "name": "BleepingComputer",
+        "ok": true,
+        "new": 9
+      },
+      {
+        "name": "Ars Technica Security",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Help Net Security",
+        "ok": true,
+        "new": 7
+      },
+      {
+        "name": "SecurityWeek",
+        "ok": true,
+        "new": 5
+      },
+      {
+        "name": "Dark Reading",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Infosecurity Magazine",
+        "ok": true,
+        "new": 3
+      },
+      {
+        "name": "Cybersecurity Dive",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "KrebsOnSecurity",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "The Record",
+        "ok": true,
+        "new": 4
+      },
+      {
+        "name": "CyberScoop",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Schneier on Security",
+        "ok": true,
+        "new": 1
+      },
+      {
+        "name": "Microsoft Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Unit 42",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Cisco Talos",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA OT Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 219,
+        "failed": 0
+      },
+      {
+        "name": "Claroty Team82",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "OWASP GenAI Security Project",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Simon Willison (prompt injection)",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Socket.dev Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "SANS ISC",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CISA IT Advisories",
+        "ok": false,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 38,
+        "failed": 1,
+        "failed_advisories": [
+          {
+            "status": "failed",
+            "advisory_id": "VA-26-274-03",
+            "error": "HTTPStatusError",
+            "http_status": 404
+          }
+        ],
+        "error": "Invalid or unavailable ROLIE/CSAF data; failed documents will be retried"
+      },
+      {
+        "name": "CISA Vulnerability Advisories",
+        "ok": true,
+        "new": 0,
+        "updated": 0,
+        "unchanged": 7,
+        "failed": 0
+      },
+      {
+        "name": "MSRC Update Guide",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Security Advisories",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "CERT-EU Threat Intelligence",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Security.NL",
+        "ok": true,
+        "new": 9
+      },
+      {
+        "name": "Contagio",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GitHub Security Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Google Project Zero",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "GreyNoise Labs",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Metasploit Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys Vulnerabilities and Threat Research",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "ReversingLabs Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Qualys ThreatPROTECT",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Seebug Vulnerabilities",
+        "ok": false,
+        "new": 0,
+        "error": "ValueError"
+      },
+      {
+        "name": "Censys Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Shodan Blog",
+        "ok": true,
+        "new": 0
+      },
+      {
+        "name": "Amazon Linux Security Center",
+        "ok": true,
+        "new": 8,
+        "entries": 35996,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 2
+      },
+      {
+        "name": "Anthropic Research",
+        "ok": true,
+        "new": 0,
+        "entries": 24,
+        "invalid": 0,
+        "future": 0,
+        "ignored": 0
+      }
+    ]
+  },
+  "enrichment_warnings": [],
+  "kev_provenance": {
+    "released": "2026-11-25T19:48:12.434400+00:00",
+    "version": "2026.11.25",
+    "count": 1805,
+    "source": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "checked": "2026-11-27T14:42:45.049868+00:00"
+  },
+  "coverage_notes": [
+    "CISA coverage includes KEV and structured IT, OT and vulnerability advisories. GovDelivery email announcements are not collected; broader CISA announcements may be absent.",
+    "Threat-intelligence additions use public publisher feeds and EPSS. Vendor research feeds do not provide full commercial database coverage. Contagio and GreyNoise Labs had no entries inside retention, and Seebug RSS was empty at verification on 2026-10-18."
+  ],
+  "cases": {
+    "security-in-the-delivery-path": [
+      "0574110d7d17666e48071c3c",
+      "491e8129162380ab76877a25"
+    ],
+    "secure-development-for-automotive": [
+      "0574110d7d17666e48071c3c"
+    ],
+    "continuous-vulnerability-management": [
+      "0f84e2352a98ac6f9e7a4242",
+      "319bafb516c229f73fd2ee2c",
+      "27f1645ed04a4e7e9931ae5a",
+      "d4f2d117646b8508f6d6f875"
+    ],
+    "vendor-release-automation": [
+      "1147158f7c1bb54f94b02be7",
+      "b44222591fc1fc506ee56cb7"
+    ],
+    "zero-trust-at-enterprise-scale": [
+      "deebe28bb42d9ba3bda47a9e"
+    ],
+    "security-at-telecom-scale": [
+      "27f1645ed04a4e7e9931ae5a"
+    ]
+  }
+}
