@@ -1,8 +1,8 @@
 {
   "kind": "daily",
   "period": "2026-11-28",
-  "start": "2026-11-27T13:54:12.147565+00:00",
-  "end": "2026-11-28T13:54:12.147565+00:00",
+  "start": "2026-11-27T14:41:36.738589+00:00",
+  "end": "2026-11-28T14:41:36.738589+00:00",
   "timezone": "Europe/Amsterdam",
   "synthetic": false,
   "items": [
@@ -100,118 +100,6 @@
         "industry": 9.5,
         "practice": 10.5,
         "weighted_total": 95.0,
-        "severity_band": [
-          85,
-          100
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "e7c290313772211bd5f1cc6c",
-      "headline": "SAP confirms cybersecurity incident following Der Spiegel report",
-      "summary": "SAP has confirmed it was recently hacked, a day after Der Spiegel reported the incident. The source does not say what was affected, whether customer data was involved, or whether any products were impacted.",
-      "category": "data_breach",
-      "importance": "critical",
-      "importance_rationale": "A confirmed breach at a major European enterprise software vendor that is on the watch list. It could have downstream supply-chain effects, but none have been reported.",
-      "location_relevance": {
-        "US": 60,
-        "Europe": 85,
-        "MEA": 60,
-        "Other": 60
-      },
-      "countries_mentioned": [
-        "DE"
-      ],
-      "industry_relevance": {
-        "energy_services": 45,
-        "telecommunications": 40,
-        "private_banking": 40,
-        "investment_management": 40,
-        "government": 45,
-        "retail_banking": 40,
-        "global_it_services": 80,
-        "logistics": 45,
-        "industrial_manufacturing": 50,
-        "automotive": 45
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 40,
-        "vuln_exposure_mgmt": 40,
-        "devsecops": 35,
-        "siem_detection": 45,
-        "iam_pam": 40,
-        "email_phishing": 10,
-        "data_protection_dlp": 50,
-        "ot_ics": 5,
-        "grc_audit": 50,
-        "security_automation": 15,
-        "ai_governance": 0
-      },
-      "affected_technologies": [
-        "SAP"
-      ],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No indicators have been published. As a precaution, review SAP integration accounts and vendor connections for unusual activity.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "global_it_services",
-        "region": "Europe",
-        "rationale": ""
-      },
-      "recommended_action": "Watch SAP advisories for the scope of the incident and any customer impact. Run third-party risk reviews of SAP connectivity and credentials.",
-      "confidence": 0.6,
-      "sources": [
-        {
-          "url": "https://www.security.nl/posting/963438/Softwarebedrijf+SAP+bevestigt+cybersecurity-incident?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-27T14:05:00+00:00",
-          "date_inferred": false
-        },
-        {
-          "url": "https://www.security.nl/posting/963438/Softwarebedrijf+SAP+bevestigd+cybersecurity-incident?channel=rss",
-          "source": "Security.NL",
-          "published": "2026-11-27T14:05:24+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "critical",
-      "model_importance_rationale": "A confirmed breach at a major European enterprise software vendor that is on the watch list. It could have downstream supply-chain effects, but none have been reported.",
-      "watch_tech": [
-        {
-          "name": "SAP",
-          "aliases": [],
-          "cross_industry": false,
-          "vendor": "enterprise_apps"
-        }
-      ],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 88.25,
-      "priority_breakdown": {
-        "importance": 60.0,
-        "location": 12.75,
-        "industry": 8.0,
-        "practice": 7.5,
-        "weighted_total": 88.25,
         "severity_band": [
           85,
           100
@@ -436,103 +324,6 @@
         "severity_band": [
           65,
           84.99
-        ]
-      },
-      "included": true
-    },
-    {
-      "cluster_id": "a76e3558432da8a0cd467adc",
-      "headline": "Japan's education ministry discloses breach of government procurement system",
-      "summary": "Japan's education ministry said hackers breached its government procurement system. Records containing business information and email addresses may have been exposed.",
-      "category": "data_breach",
-      "importance": "medium",
-      "importance_rationale": "A government breach outside the target regions, with limited data exposure.",
-      "location_relevance": {
-        "US": 5,
-        "Europe": 5,
-        "MEA": 5,
-        "Other": 70
-      },
-      "countries_mentioned": [
-        "JP"
-      ],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 80,
-        "retail_banking": 0,
-        "global_it_services": 15,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 20,
-        "vuln_exposure_mgmt": 25,
-        "devsecops": 10,
-        "siem_detection": 25,
-        "iam_pam": 20,
-        "email_phishing": 30,
-        "data_protection_dlp": 50,
-        "ot_ics": 0,
-        "grc_audit": 30,
-        "security_automation": 5,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "No technical details have been published.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "major_incident_wave",
-        "sector": "government",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "Suppliers that use the system should watch for follow-on phishing that uses the exposed email addresses.",
-      "confidence": 0.75,
-      "sources": [
-        {
-          "url": "https://therecord.media/japan-education-ministry-cyberattack",
-          "source": "The Record",
-          "published": "2026-11-27T14:15:00+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "medium",
-      "model_importance_rationale": "A government breach outside the target regions, with limited data exposure.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 53.0,
-      "priority_breakdown": {
-        "importance": 27.0,
-        "location": 10.5,
-        "industry": 8.0,
-        "practice": 7.5,
-        "weighted_total": 53.0,
-        "severity_band": [
-          35,
-          64.99
         ]
       },
       "included": true
@@ -1460,101 +1251,6 @@
       "included": false
     },
     {
-      "cluster_id": "24b01fe057d66b2638e58383",
-      "headline": "Malwarebytes offers Black Friday discount on consumer security subscriptions",
-      "summary": "Malwarebytes is running a 50% Black Friday discount on its consumer and small-business security products. This is a promotion with no threat content.",
-      "category": "vendor_product",
-      "importance": "low",
-      "importance_rationale": "This is product marketing.",
-      "location_relevance": {
-        "US": 5,
-        "Europe": 5,
-        "MEA": 5,
-        "Other": 5
-      },
-      "countries_mentioned": [],
-      "industry_relevance": {
-        "energy_services": 0,
-        "telecommunications": 0,
-        "private_banking": 0,
-        "investment_management": 0,
-        "government": 0,
-        "retail_banking": 0,
-        "global_it_services": 0,
-        "logistics": 0,
-        "industrial_manufacturing": 0,
-        "automotive": 0
-      },
-      "practice_area_relevance": {
-        "zero_trust_cloud": 0,
-        "vuln_exposure_mgmt": 0,
-        "devsecops": 0,
-        "siem_detection": 0,
-        "iam_pam": 0,
-        "email_phishing": 0,
-        "data_protection_dlp": 0,
-        "ot_ics": 0,
-        "grc_audit": 0,
-        "security_automation": 0,
-        "ai_governance": 0
-      },
-      "affected_technologies": [],
-      "cves": [],
-      "threat_actors": [],
-      "regulations": [],
-      "attack_techniques": [],
-      "detection_refs": [],
-      "detection_coverage_note": "Not applicable.",
-      "related_case_studies": [],
-      "business_signal": {
-        "present": false,
-        "type": "technology_shift",
-        "sector": "global_it_services",
-        "region": "Other",
-        "rationale": ""
-      },
-      "recommended_action": "No action needed.",
-      "confidence": 0.95,
-      "sources": [
-        {
-          "url": "https://www.bleepingcomputer.com/news/security/malwarebytes-antivirus-get-50-percent-off-during-black-friday-2026/",
-          "source": "BleepingComputer",
-          "published": "2026-11-27T14:22:06+00:00",
-          "date_inferred": false
-        }
-      ],
-      "overrides": [],
-      "model_importance": "low",
-      "model_importance_rationale": "This is product marketing.",
-      "watch_tech": [],
-      "cve_details": {},
-      "risk_evidence": {
-        "exploitation_reported": [],
-        "rce": [],
-        "critical_flaw": [],
-        "emergency_patch": [],
-        "public_poc": [],
-        "supply_chain_compromise": [],
-        "certificate_compromise": [],
-        "worldwide": []
-      },
-      "exposure_scope": "Source-specific or unestablished",
-      "independent_sources_24h": 1,
-      "priority": 9.75,
-      "priority_breakdown": {
-        "importance": 9.0,
-        "location": 0.75,
-        "industry": 0.0,
-        "practice": 0.0,
-        "weighted_total": 9.75,
-        "severity_band": [
-          0,
-          34.99
-        ]
-      },
-      "included": false
-    },
-    {
       "cluster_id": "753bd2f158f3ddf5127e96db",
       "headline": "Schneier's Friday squid blog post opens an off-topic discussion thread",
       "summary": "This is a regular non-security blog post about giant squid in Newfoundland. It also invites readers to discuss security news. It has no operational security content.",
@@ -1651,10 +1347,10 @@
     }
   ],
   "counts": {
-    "critical": 2,
+    "critical": 1,
     "high": 2,
-    "medium": 7,
-    "low": 5
+    "medium": 6,
+    "low": 4
   },
   "unclassified": 0,
   "duplicates_removed": 0,
@@ -1687,23 +1383,18 @@
       "knownRansomwareCampaignUse": "Unknown"
     }
   ],
-  "watch_hits": 3,
+  "watch_hits": 2,
   "watch": {
-    "enterprise_apps": [
+    "devops_appsec": [
       {
-        "technology": "SAP",
-        "headline": "SAP confirms cybersecurity incident following Der Spiegel report",
-        "cluster_id": "e7c290313772211bd5f1cc6c"
-      },
-      {
-        "technology": "SAP",
+        "technology": "GitHub",
         "headline": "SAP investigates suspected breach of its GitHub environment that may affect source code",
         "cluster_id": "523729cc90430a64aab939f2"
       }
     ],
-    "devops_appsec": [
+    "enterprise_apps": [
       {
-        "technology": "GitHub",
+        "technology": "SAP",
         "headline": "SAP investigates suspected breach of its GitHub environment that may affect source code",
         "cluster_id": "523729cc90430a64aab939f2"
       }
@@ -1717,23 +1408,23 @@
     ]
   },
   "regulations": {},
-  "other_count": 5,
+  "other_count": 4,
   "source_health": {
-    "at": "2026-11-28T13:54:12.147565+00:00",
+    "at": "2026-11-28T14:41:36.738589+00:00",
     "enabled": 41,
     "failures": 2,
-    "new": 67,
+    "new": 0,
     "updated": 0,
     "sources": [
       {
         "name": "The Hacker News",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "BleepingComputer",
         "ok": true,
-        "new": 3
+        "new": 0
       },
       {
         "name": "Ars Technica Security",
@@ -1753,7 +1444,7 @@
       {
         "name": "Dark Reading",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Infosecurity Magazine",
@@ -1763,7 +1454,7 @@
       {
         "name": "Cybersecurity Dive",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "KrebsOnSecurity",
@@ -1783,7 +1474,7 @@
       {
         "name": "Schneier on Security",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Microsoft Security Blog",
@@ -1821,7 +1512,7 @@
       {
         "name": "Simon Willison (prompt injection)",
         "ok": true,
-        "new": 2
+        "new": 0
       },
       {
         "name": "Socket.dev Blog",
@@ -1876,7 +1567,7 @@
       {
         "name": "Security.NL",
         "ok": true,
-        "new": 1
+        "new": 0
       },
       {
         "name": "Contagio",
@@ -1942,11 +1633,7 @@
       {
         "name": "Amazon Linux Security Center",
         "ok": true,
-        "new": 56,
-        "entries": 36052,
-        "invalid": 0,
-        "future": 0,
-        "ignored": 2
+        "new": 0
       },
       {
         "name": "Anthropic Research",
